@@ -1,0 +1,238 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd,mhchem,sidecap}
+
+\versuch{Substanzen im Magnetfeld}{SM}
+\author{L.~Jahn}
+\bearbeitet{M.~Kreller,A.~Otto,i.~A. Dr.~Escher}{}
+
+\buch{paus}{H.~J.~Paus}{Physik in Experimenten und Beispielen}{Verlag~C.-Hanser}{München 1995}
+\buch{strop}{H.~Stroppe}{Physik}{Fachbuch-Verlag}{Leipzig 1984}
+\buch{reck}{A.~Recknagel}{Physik: Schwingungen, Wellen, Wärmelehre}{Technik-Verlag}{Berlin 1990}
+\buch{nied}{H.~Niedrig}{Physik}{Springer-Verlag}{Berlin, Heidelberg 1992}
+\buch{kn}{E.~Kneller}{Ferromagnetismus}{Springer-Verlag}{Berlin 1962}
+\buch{weiss}{A.~Weiss, H.~Witte}{Magnetochemie}{Verlag Chemie}{Weinheim 1973}
+
+\begin{document}
+\maketitle
+
+\section{Aufgabenstellung}
+\begin{enumerate}
+ \item Im inhomogenen Magnetfeld ist nach Gouy die Suszeptibilität einer diamagnetischen Substanz (Cu) zu bestimmen.
+ \item Mit der Steighöhenmethode wird die paramagnetische Suszeptibilität $\chi$ sowie $\chi_{mol}$ einer Mn$^{2+}$-Lösung bestimmt.
+ \item Bestimmung des magnetischen Momentes eines Mn$^{2+}$-Ions.
+\end{enumerate}
+
+\section{Allgemeine Grundlagen}
+\subsection{Magnetisches Moment und Suszeptibilität}
+In den Maxwellschen Gleichungen ist in der Materialgleichung für magnetische Felder 
+\begin{equation}
+ B=\mu_0\mu H=\mu_0H+J=\mu_0(1+\chi)H\quad\text{mit}\quad
+ \chi\:=\:\frac{\Delta m^*/V}{\mu_0 \Delta H}=\frac{\Delta J}{\mu_0 \Delta H} 
+ \label{mu}
+\end{equation}
+der Zusammenhang zwischen der Induktion $B$, der Feldstärke $H$, der Polarisation $J$, dem magnetischen Moment $m^*$, der Permeabilität 
+$\mu $ und der Suszeptibilität $\chi$ gegeben. Die Größen $\mu$ und $\chi$ sind nur in Ausnahmefällen (z.B. bei diamagnetischen Stoffen)
+"'Materialkonstanten"', ansonsten abhängig von Feld, Temperatur und bei	Kristallen auch von der Richtung u.a. Unter der molaren 
+Suszeptibilität	versteht man
+\begin{equation}
+ \chi_{mol}=\frac{\Delta m^*/(V/V_{mol})}{\mu_0 \Delta H}=\chi\cdot V_{mol}
+ \label{chim}
+\end{equation}
+Die potentielle Energie eines Magneten mit dem magnetischen Moment $m^*$ im Feld $H$ beträgt
+\begin{equation}
+ W_{pot}=-\vec m^*\cdot \vec H=-m^*\,H\,cos\,\vartheta
+ \label{pot}
+\end{equation}
+Für die Enegiedichte $w_{mag}$ im magnetischen Feld gilt
+\begin{equation}
+ w_{mag}=\frac{1}{2}B\cdot H=\frac{1}{2\mu\mu_0}B^2=\frac{\mu\mu_0}{2}H^2
+ \label{w}
+\end{equation}
+Die magnetische Energiedichte entspricht einer mechanischen Zug-Spannung ($\sigma$, siehe Maxwellschen Spannungstensor) längs der Feldlinien
+($w_{mag}=\sigma =\diff F/\diff A $). Für den Fall, daß die Normale der Grenzfläche zweier Medien senkrecht zum Felde orientiert ist, 
+herrscht zusätzlich eine Druckspannung in Normalenrichtung. Die auf einen magnetischen Dipol mit dem Moment $m^*$ im inhomogen Feld ausgeübte 
+Kraft $F$ ist mit dem Feldgradienten gegeben zu
+\begin{equation}
+ |\vec F|=|\vec m^*|\cdot\left|\vec\nabla H\right|
+ \label{f}
+\end{equation}
+
+\subsection{Zur Ursache magnetischer Momente}
+Die magnetischen Momente der Stoffe sind eng mit den Elektronen	verknüpft und nur in einfachen Fällen quantentheoretisch zu berechnen.
+In der Theorie wird unterschieden zwischen dem:
+\begin{enumerate}
+ \item \textbf{lokalisierten Modell} für freie Atome (z.B. Mn-Lösung) und Isolatoren sowie dem
+ \item \textbf{Bändermodell} für Metalle.
+\end{enumerate}
+
+\subsubsection{Diamagnetismus}
+\begin{SCfigure}
+ \centering
+ \includegraphics[width=\linewidth/100*40]{abb1}
+ \caption{Induzuierter Strom in einem kreisförmigen  Leiter. (a) Normal-Leiter, (b) Supraleiter, (c) kreisendes Elektron. $B_n(t)$ gegeben.}
+ \label{fig:indu}
+\end{SCfigure}
+Die diamagnetischen Momente sind qualitativ durch Induktionsvorgänge in gewisser Analogie zum induzierten Strom in einem supraleitenden Ring 
+(Abb. \ref{fig:indu}b) zu verstehen und daher nach der Lenzschen Regel der Normalkomponente $\Delta B_n$ entgegengerichtet. (Abb. \ref{fig:indu}c)
+
+\subsubsection{Paramagnetismus}
+Diesen diamagnetischen Momenten	überlagert sich für Atome, bei denen die Summe aller Bahndrehimpulse (${\vec L}$) und Spins (${\vec S})$
+nicht gleichzeitig verschwinden, z.B. bei Elementen mit	ungeraden Elektronenzahlen oder nicht abgeschlossenen inneren Elektronenschalen 
+(Übergangsmetalle, Seltene Erden), das meistens stärkere paramagnetische Moment mit positivem Vorzeichen. Zur Berechnung im 
+\textbf{lokalisierten Modell} muss
+\begin{enumerate}
+ \item das Moment des einzelnen Atoms (Moleküls, Ions) bestimmt und
+ \item untersucht werden, wie sich die atomaren Momente ($\mu'$) im Magnetfeld ($H$) unter dem Einfluß der Wärmebewegung ausrichten.
+\end{enumerate}
+\textbf{1. Das atomare Moment:} ergibt sich i.A. über den Bahndrehimpuls ($L$) und Spin (Eigendrehimpuls, $S$) der Elektronen und dem daraus 
+resultierenden Gesamtdrehimpuls ($J^*$). Daraus folgt das magnetische atomare Gesamtmoment ($\mu'$) und die effektive Zahl der Bohrschen Magnetonen 
+($p_{eff}$) quantentheoretisch für Mangan oder Mn$^{2+}$-Ionen:
+\begin{equation}
+ \mu'=p_{eff}\mu_B=g\sqrt{J^*(J^*+1)}\mu_B=\num{5,9}\mu_B
+\end{equation}
+mit $\mu_B=e\hbar/(2m_e)=\SI{9,27e-24}{Am^2}$ als Bohrschem Magneton, $g$=Land\`e-Faktor (für Mn: $g=2$) und $J^*$=Gesamtdrehimpuls des Atoms 
+(Mn: $J^*=S=5/2$, siehe Anhang).\\
+\textbf{2. Ausrichten im Feld:} Im äußeren Magnetfelde $H$ werden diese atomaren magnetischen Momente $\mu'$ in Konkurrenz mit der Wärmebewegung 
+teilweise ausgerichtet (in gewisser Analogie der Wirkung der Schwerkraft beim Sedimentationsgleichgewicht, wobei einer Lage aller Teilchen auf	der 
+Erdoberfläche oder der idealen Ausrichtung ($\overline\vartheta=0)$ entspräche). Für höhere Temperaturen und technisch erreichbare Felder 
+($\mu_0\mu'H\ll kT$) gilt in klassischer Näherung für die paramagnetische Suszeptibilität
+\begin{equation}
+ \chi=\frac{J}{\mu_0H}=\frac{1}{\mu_0H}\frac{J_{\infty}x}{3}=\frac{n\mu_0^2\mu'^2H}{3kT\mu_0H}
+     =\frac{n\mu_0\mu'^2}{3kT}=\frac{C}{T}=np_{eff}^2K^*
+ \label{chi}
+\end{equation}
+mit $C=\chi T=np_{eff}^2\mu_B^2/3k\mu_0$ als Curiekonstanten, $n$=Anzahl der Atome pro $\SI{}{m^3}$, dem Sättigungswert	
+$J_s=J_{\infty}=n\mu_0\mu'=n\mu_0p_{eff}\mu_B$. Damit läßt sich aus $\chi$ das atomare magnetische Moment berechnen:
+\begin{equation}
+ \mu'=p_{eff}\mu_B=\sqrt{\frac{\chi}{nK^*}}\cdot\mu_B
+ \label{mu}
+\end{equation}
+Für die Auswertung wurde für $T=\SI{293}{K}$ die Konstante  $K^*$ eingeführt: $K^*=\mu_0\mu_B^2/3kT=\SI{0,890e-32}{m^3}$.
+	
+\subsubsection{Konzentration}
+Suszeptibilität $\chi$ und Konzentration $n$ ($\text{Atome}/m^3$) sind nach den Gleichungen \eqref{mu} und \eqref{chi} einander proportional. 
+Zur Berechnung des atomaren Momentes aus $\chi$-Messungen wird die Konzentration benötigt.\\
+Eine 1-molare Lösung enthält $\SI{1}{mol}$ pro Liter Lösung. Sind z.B. $\SI{197,8}{g}$ des Salzes $\text{MnCl}_2\cdot 4\text H_2\text O$ in einem Liter 
+Lösung enthalten, so hat man eine 1-molare Lösung mit $L_L=N_A=\num{6,02e23}$ Mn$^{2+}$-Ionen pro Liter Lösung.	Allgemein wird die Masse $m_s$ des 
+Salzes der relativen Molekülmasse $M_s$ im Volumen $V_W$ Wasser ($\rho_W=\SI{1}{g.cm^{-3}}$) gelöst, was eine Lösung mit der Dichte $\rho_{Lö}$ ergibt. 
+Von den beiden folgenden Varianten des Lösungsvorganges	ist die zweite vorzuziehen:
+\begin{enumerate}
+ \item Löst man einmalig die gegebene Salzmasse in der gegeben Wassermasse, so benötigt man die Dichte $\rho_{Lö}$ zur Bestimmung von $V_{Lö}$.
+ \item Löst man dagegen die gegebene Salzmasse zunächst in weniger Wasser und füllt dann mit Wasser auf, so kennt man sofort das Volumen der Lösung.
+\end{enumerate}
+
+\subsubsection{Beispiele für Suszeptibilitätswerte}
+Neben $\chi=\chi^V=\diff(m^*/V)/(\mu_0\diff H)$	und der molaren $\chi_{mol}$ (s. Gl. \eqref{chim}) wird gelegentlich auch die massenspezifische
+Suszeptibilität $\chi_{\sigma}=\diff(m^*/m)/(\mu_0\diff H)=\chi/\rho$ angegeben.
+\begin{table}[h]
+ \caption{Suszeptibilitätswerte (Gase bei Normaldruck)}
+ \centering
+ \begin{tabular}{|c|c|l|c|c|c|}\hline
+  Stoff         & Temp.          & Art  & $10^{6}\cdot\chi$ & $ 10^{12}\cdot\chi_{mol}$ & $10^{9}\cdot\chi_{\sigma}$\\
+	        & K              &      &                   & $\SI{}{m^3.mol^{-1}}$     & $\SI{}{m^3.kg^{-1}}$      \\\hline\hline
+  He            & $293$          & dia  &                   & $\num{-1,9}$              &                           \\\hline
+  Xe            & $293$          & dia  & $\num{-0,0018}$   & $\num{-43,0}$             &                           \\\hline
+  Luft          & $293$          & para & $\num{+0,4}$      & $\num{+9560}$             & $\num{+307}$              \\\hline\hline
+  Ag            & $300$          & dia  &                   &                           & $\num{-2,4}$              \\\hline
+  Cu            & $300\dots 800$ & dia  & $\num{-9}$        & $\num{-64}$               & $\num{-1,1}$              \\\hline
+  Kohle         &                & dia  &                   &                           & $\num{-12}\dots\num{-25}$ \\\hline  \hline
+  Al            & $300$          & para & $\num{+20,8}$     &                           & $\num{+7,7}$              \\\hline
+  Mn$^{2+}$-Lsg.& $300$          & para & $\num{+186,46}$   & $\num{+186000}$           & $\num{160}$               \\
+	1-molar &                &      &                   &                           &                           \\\hline
+ \end{tabular}
+\end{table}
+
+\newpage
+\section{Experimente}
+\subsection{Zylindermethode nach Gouy}
+\piccaption{Zylindermethode \label{fig:zylinder}}
+\parpic[r]{\includegraphics[width=\linewidth/100*40]{abb2}}
+Der Abb. \ref{fig:zylinder} entsprechend wird die lange zylinderförmige Probe vertikal so in einem starken inhomogenen Magnetfeld orientiert, daß sich ein 
+Probenende im Feldmaximum und das anderen Ende im Idealfall im feldfreien Raum befindet. Entsprechend Gleichung \eqref{f} erfährt ein Volumenelement 
+$\diff V=A\diff z$ mit dem magnetischen Moment $\diff m^*$ die infinitesimale Kraft $\diff F=\diff m^*(\diff H/\diff z)$. Nach Integration über die
+gesamte Zylinderhöhe folgt mit $\diff m^*=\mu_0\chi HA\diff z$
+\begin{equation}
+ F_z=\frac{1}{2}(\chi-\chi_u)\mu_0A\left[H^2(z_1)-H^2(z_2)\right]
+ \label{f1}
+\end{equation}
+War die Waage vorher abgeglichen, so wird zum erneuten Austarieren die Zusatzmasse $\Delta m$ benötigt.	Damit ergibt sich für die Suszeptibilität der Probe
+\begin{equation}
+ \chi=\frac{2\Delta mg}{\mu_0A\left[H^2(z_1)-H^2(z_2)\right]}+\chi_u=\frac{2\mu_0\Delta mg}{A\left[B^2(z_1)-B^2(z_2)\right]}+\chi_u
+ \label{zyl}
+\end{equation}
+\piccaption{Steighöhenmethode \label{fig:steig}}
+\parpic[r]{\includegraphics[width=\linewidth/100*40]{abb3}}
+Es bedeuten: $ H(z_1)$ bzw. $H(z_2)$ die Beträge der magnetischen Feldstärke an Ober- und Unterkante des Probenzylinders, $A$ die Grundfläche des Zylinders 
+und $\chi_u$ die Suszeptibilität der Umgebung (Luft). Zur Erhöhung der Feldstärke und Erzeugung eines inhomogenen Feldes sind die Eisenpolschuhe des 
+Weiß'schen Jochmagneten	zu Spitzen verjüngt. Die Feldstärke hängt vom Strom, der $z$-Koordinate	und dem Luftspalt ab. Letzterer wird durch ein Distanzstück 
+aus Messing konstant gehalten. Die vertikale Feldverteilung $H(z)$ ist angegeben.\\
+Die Wägung erfolgt mit einer geeigneten (Torsions-)Waage mit horizontalem Spannband, dessen Verdrillung optisch über einen festen und einen mitbewegten Spiegel 
+angezeigt wird.
+
+\subsection{Steighöhenmethode nach Quinke}
+Das Vorratsgefäß mit der zu untersuchendne Flüssigkeit ist mit einem Steigrohr verbunden, das sich im Luftspalt eines Eisenjochmagneten befindet 
+(Abb. \ref{fig:steig}).	Es stellt sich eine von $\chi$, $H$ und	$\rho$ abhängige Gleichgewichtshöhe $h$ ein, die gemessen wird.\\
+Eine Herleitung basiert auf Gleichung \eqref{f1} mit $F_z=A(\rho-\rho_u)gh$ und $H(z_1)=0$. Daraus folgt $(\rho-\rho_u)gh=\mu_0(\chi-\chi_u)H^2/2$ oder
+\begin{equation}
+ \chi=\frac{2(\rho-\rho_u)gh}{\mu_0H^2}+\chi_u=\frac{2\mu_0(\rho-\rho_u)gh}{B^2}+\chi_u
+ \label{steig}
+\end{equation}
+mit $\rho$ bzw. $\rho_u$ als Dichte der Flüssigkeit bzw. der Umgebung, $\chi_u$=Suszeptibilität der Umgebung. Uner Umständen sind $\chi_u$ und auch $\rho_u$ 
+zu vernachlässigen. Zur Erhöhung der Empfindlichkeit sind die Steigröhrchen geneigt. Bei einem Innendurchmesser der Steigrohre von $\SI{4}{mm}$ beträgt der
+Durchmesser des Vorratsgefäßes $\SI{40}{mm}$ (Korrektur!). Die störende kapillare Steighöhe hängt nicht vom Feld, aber vom Benetzungszustand ab.
+
+\section{Anhang}
+\subsection{Zur Theorie des Paramagnetismus}
+\subsubsection{Zum atomaren Moment}
+Die Beträge von $L$, $S$  und $J^*$ (in Einheiten von $\hbar$) folgen aus den Hund'schen Regeln (1. maximaler resultierender Spin; 2. $J^*=L\pm S$),
+z.B. für Mangan\footnote{Mn: $J^*=S=\num{2,5}$, $g=2$ (d.h. reiner Spin-Magnet), $p_{eff}=2\sqrt{\num{2,5}\cdot\num{3,5}}\approx\num{5,9}$, Lande-Faktor: 
+$g\,=\,1\,+\,[J^*(J^*+1)+S(S+1)-L(L+1)]/[2J^*(J^*+1)]$} nach Abb. \ref{fig:mn}.
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=\linewidth/100*70]{abb4}
+ \caption{Hundsche Regel für Mn: Es sind 5 von den 10 3d-Elektronen besetzt.}
+ \label{fig:mn}
+\end{figure}
+
+\subsubsection{Ausrichtung im Feld, Langevin-Funktion}
+Vernachlässigt man in klassischer Näherung die Richtungsquantelung und läßt alle Winkel $\vartheta$ zu, so ist die statistische Wahrscheinlichkeit ($\omega $) 
+eines Zustandes mit der	Energie $W_{pot}=-\mu_0\mu'H\cos\vartheta$ (Boltzmann-Anatz) (siehe \verweis{reck},\verweis{paus},\verweis{weiss},\verweis{kn})
+\begin{equation}
+ \omega\sim\eu{\frac{-E_{pot}}{kT}}=\eu{\frac{\mu_0\mu'H\cos\vartheta}{kT}}=\eu{x\cos\vartheta}
+\end{equation}
+mit $x=(\mu_0\mu'H)/(kT)$ und man erhält nach Integration über alle Winkel $\vartheta$ zwischen $0$ und $\pi$ als gemittelte Projektionen der atomaren 
+magnetischen Momente in die Feldrichtung
+\begin{equation}
+ \frac{J}{J_{\infty}}=\overline{\cos\vartheta}=\frac{\int\limits_0^\pi\eu{x\cos\vartheta}\sin\vartheta\cos\vartheta\diff\vartheta}
+ {\int\limits_0^\pi\eu{x\cos\vartheta}\sin\vartheta\diff\vartheta}=L(x)=\coth x-\frac{1}{x}\approx\frac{x}{3}-\frac{x^3}{45}+\dots\approx\frac{x}{3}
+ \label{klass}
+\end{equation}
+d.h. die Näherung der Langevin-Funktion $L(x)\approx x/3$. Die $1/3$-Näherung gilt auch in der Quantentheorie unter Beachtung der Richtungsquantelung.
+
+\subsection{Zur Steighöhen-Methode}
+Nach Gleichung \eqref{w} bewirken Differenzen in der Energiedichte eine mechanische Druckspannung $\Delta p=\Delta \sigma$ quer zum Feld. Der Unterschied 
+$\Delta p=1/2\cdot\Delta B\cdot H=1/2\cdot\mu_0\Delta(\chi + 1)H^2$ unterhalb und oberhalb der Flüssigkeitsgrenze verursacht eine nach oben gerichtete Kraft, d.h.
+\begin{equation}
+ \Delta p=(\rho-\rho_u)gh=\frac{1}{2}\mu_0(\chi+1-\chi_u-1)H^2=\frac{1}{2}\mu_0(\chi-\chi_u)H^2 
+ \label{p1}
+\end{equation}
+Die Gleichung \eqref{p1} folgt auch aus der verschwindenden Ableitung der Gesamtenergie (Energiedichte mal Volumen) nach der Höhe (die Masse wurde um 
+$h/2$ angehoben):
+\begin{equation}
+ \begin{split}
+  &0=\dquot{}{h}W_{ges}=\dquot{}{h}\left[W_{magn}+W_{schw}\right]=\dquot{}{h}\left[-\frac{1}{2}\mu_0Ah(\chi-\chi_u)H^2+(\rho-\rho_u)Ag\frac{h^2}{2}\right]\\
+  \Rightarrow\quad&0=-\mu_0(\chi-\chi_u)H^2+2(\rho-\rho_u)gh
+ \end{split}
+\end{equation}
+Gleichbedeutend ist: Die Differenz der Hubenergiedichte	$(\rho-\rho_u)gh$ ist gleich der Differenz der magnetischen Energiedichte $1/2\mu_0(\chi-\chi_u)H^2$.
+
+\frage{Wie beechnet sich die magnetische Feldstärke im Luftspalt eines Eisenjochmagneten? Wodurch ist die obere Grenze gegeben?}
+\frage{Nennen Sie Beispiele von dia-, para,- und ferromagnetischen Elementen.}
+\frage{Welche mechanische und magnetische Wirkung hat ein kreisendes Elektron im Bohrschen Atommodell?}
+\frage{Wie berechnet sich das Bohrsche Magneton?}
+\frage{Berechnen Sie die Sättigungspolarisation einer 1-molaren $Mn^{2+}$-Lösung!}
+\frage{Was sagen das Curie'sche und das Curie-Weiß'sche Gesetz aus?}
+\frage{Kräftegleichgewicht und Energiebetrachtung bei der Steighöhen- und der Zylinder-Methode.}
+\frage{Magnetisches Moment, Suszeptibilität und molare Suszeptibilität.}
+
+\end{document}

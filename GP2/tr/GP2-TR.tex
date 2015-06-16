@@ -1,0 +1,946 @@
+\documentclass[11pt,twoside,a4paper]{article}
+\usepackage{verbatim}
+\usepackage{amsmath,amsthm}
+\usepackage{graphicx}
+\usepackage{color}
+
+\usepackage[german]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+
+\usepackage{fancybox}
+\usepackage{textcomp}
+\usepackage{fancyhdr}
+\usepackage{rotating}
+\setcounter{secnumdepth}{3}
+
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\raggedleft\arraybackslash}X}
+\newcolumntype{Z}{>{\centering\arraybackslash}X}
+
+\textheight			25cm
+\textwidth			16.5cm
+\topmargin			-1cm
+\oddsidemargin		0cm
+\evensidemargin	-0.42cm
+
+\pagestyle{fancy}
+
+ \title{Versuch TR \\ Transformator \\}
+ \author{bearbeitet von \\ M. Kreller \\ i.A. Dr. Escher}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{table}[h]
+\begin{tabular}{|c|c|}
+\hline
+& \\
+\hspace{0.7cm} \begin{LARGE}Technische Universität Dresden \end{LARGE} \hspace{0.7cm} &
+\hspace{1cm}Physikalisches Praktikum \hspace{1cm} \\
+\begin{large} Fachrichtung Physik \end{large}               & \\
+\begin{footnotesize} L. Jahn 03/ 1996 \end{footnotesize}            & Versuch:
+\begin{LARGE} TR \end{LARGE} \\
+\begin{footnotesize} bearbeitet 04/ 2004 \end{footnotesize} & \\
+\hline
+\end{tabular}
+\end{table}
+\begin{huge}\textbf{Transformator}\end{huge}
+
+\tableofcontents
+\newpage
+
+\section{Aufgabenstellung}
+	\begin{enumerate}
+		\item Aus Leerlauf- und Kurzschluß-Versuchen werden die Induktivitäten und der Streufaktor
+		für verschiedene Luftspalte bestimmt.
+		\item Für eine veränderliche Ohmsche Last $R$ im Sekundärkreis ist für den
+		Primärstrom der Heylandkreis aufzunehmen und mit dem berechneten zu vergleichen.
+		\item Bestimmung der Permeabilität $\mu_r$ des Trafo-Blechs.
+	\end{enumerate}
+
+\section{Stromduchflossene Spule}
+\subsection{Spule mit Eisenkreis}
+\begin{minipage}{8cm}
+	Eine Spule mit der Windungszahl $n$ sei nach Abb.~1 auf ein
+	ringförmiges Ferromagnetikum mit
+	dem Querschnitt $A$ und der Länge $l$ gewickelt.
+	Die Hystereseschleife sei nur so weit ausgesteuert (Abb.~1~c(i)), daß gilt:
+	$\mu_r=\frac{\Delta B}{\mu_0 \Delta H}\approx$~konstant. Wir
+	unterscheiden:\\[.1cm]
+	Fall~1: Der Eisenkreis ist geschlossen.\\[.1cm]
+	Fall~2: Im Eisenkreis ist ein Luftspalt $d=2s$.\\[.2cm]
+	Durch die Spule nach Fall~1 bzw. Fall~2 fließt der
+	(Gleich-oder Wechsel-) Strom $I$. Aus dem
+	Durchflutungsgesetz $\oint H_s ds = nI$ folgt für Fall~1 die
+	Beziehung $H_{Fe} l= nI$. Die Feldstärke im Eisen berechnet sich für
+	die beiden Fälle aus:
+	\end{minipage} \hspace{.5cm}
+	\begin{minipage}{8cm}
+	\begin{center}
+	\includegraphics[scale=0.7]{abb1}\\
+	\end{center}
+	\end{minipage}\\
+	\begin{center}
+	Abb.~1:~Spule mit Eisenkreis für die Fälle 1.~und 2. (a,b);\\
+	(c) ~mögliche Aussteuerungen ($i;j;k$) einer Hystereseschleife. N: Neukurve
+	\end{center}
+	\begin{equation}
+	H_{Fe}=\frac{nI}{l}\quad({\rm Fall~1})\quad
+	{\rm bzw.}\quad
+	H_{Fe}\,l\;+\,H_L\;d=n\,I \quad({\rm Fall~2})\quad.
+	\label{tr001}
+	\end{equation}
+	Die zweite Gleichung von (\ref{tr001})
+	enthält zwei Unbekannte (die Feldstärke im Eisen $H_{Fe}$ und die in Luft
+	$H_L$). Die notwendige zweite Beziehung
+	liefert die Qellenfreiheit
+	von\\
+	$B$,~~ $\oint B_n d A=0$. Die Induktion (und der Fluß;
+	Näherung für großen Querschnitt $A$ und geringen Luftspalt $d$) in Luft und
+	Eisen sind gleich:
+	~$\mu_r \mu_0 H_{Fe}=B_{Fe}=B_L=\mu_0 H_L$.
+	Damit folgt für
+	die magnetische Feldstärke $H_{Fe}$ bzw. den
+	Fluß $\Phi$ für Fall~2:
+	\begin{eqnarray}
+	H_{Fe}=\frac{nI}{l+\mu_r d}=
+	\frac{nI}{l(1+\frac{\mu_r d}{l})}\quad(a);
+	\quad\Phi_L=\Phi_{Fe}=
+	\mu_0\mu_r A H_{Fe}=
+	\mu_0 A\frac{nI}{l}\frac{\mu_r}{(1+\frac{\mu_r d}{l})}
+	\quad(b).
+	\label{tr002}
+	\end{eqnarray}
+	Aus (\ref{tr002}) wird ersichtlich, daß die Feldstärke im Eisen
+	(und damit die Aussteuerung der Hystereseschleife) sowie der Fluß
+	und die effektive Permeabilität $\mu_{eff}$
+	bei gleichem Strom $I$ mit zunehmenden Luftspalt $d$ abnehmen:
+	\begin{center}
+	\fbox{\parbox{6cm}{
+	\begin{equation}
+	\mu_{eff}=\frac{\mu_r}{(1+\frac{d}{l}\mu_r)}\quad.
+	\label{tr003}
+	\end{equation}
+	}}
+	\end{center}
+	
+\subsection{Spule im Wechselstromkreis}
+	Legt man eine harmonische Wechselspannung
+	$\underline {U}=\hat U\,e^{j \omega t}$
+	an die Reihenschaltung der
+	Spule mit einem Widerstand $R$ (z.~B.~Wicklungswiderstand),
+	so lautet der Maschensatz
+	\begin{equation}
+	\underline {U}-L\,\frac{d \underline{I}}{dt}
+	=\underline{I}\,R\quad.
+	\label{tr0100}
+	\end{equation}
+	Mit dem Ansatz
+	$\underline {I}=\hat I e^{j(\omega t -\varphi)}$
+	ergibt sich für die Amplitude des Stromes bzw.~den Phasenwinkel
+	zwischen $\underline {U}$ und $\underline {I}$ im eingeschwungenen Zustand
+	\begin{center}
+	\fbox{\parbox{15cm}{
+	\begin{equation}
+	\hat {I} =\frac{\hat {U}}{\sqrt{R^2+\omega^2 L^2}}\quad(a);\quad
+	{\rm bzw.}\quad
+	tan \varphi=\frac{\omega L}{R}\;(b)\quad
+	{\rm mit}\quad
+	L=\mu_o\mu_{eff}\frac{n^2 A}{l}\;(c)
+	\label{tr010}
+	\end{equation}
+	}}
+	\end{center}
+	als Induktivität. Für $R\ll\omega L$
+	wird $\varphi\approx\pi/2$ und es fließt nur der
+	Blindstrom $\underline {I}=\underline {I_m}$ (Magnetisierungsstrom).
+	Sein Betrag kann
+	bei sehr großem $\mu_r$~(s.~idealer Trafo) beliebig klein sein (Abb.~2~b).
+	Er hält aber phasengleich
+	den endlichen harmonisch wechselnden magnetischen Fluß
+	$\underline {\Phi}$ aufrecht (s.~Abb.~1~c).
+	Als Folge dieses Wechselflusses wird in der Spule die Gegenspannung
+	\begin{equation}
+	-\underline {U}=
+	\underline {U}_i=-n\frac{d}{dt}\underline{\Phi}=
+	-\frac{\mu_0\mu_{eff}n^2 A}{l}
+	\frac{d \underline{I}_m}{dt}
+	=-L\,\frac{d \underline{I_m}}{dt}
+	=-j \omega L \underline I_m
+	\label{tr04}
+	\end{equation}
+	induziert, die schon im Maschensatz (\ref{tr0100}) berücksichtigt wurde.
+	{\footnotesize
+	Bei konstanter Spannung $\underline U$
+	steigt der Blindstrom $\underline I_m$ in dem Maße an,
+	wie $L$ mit $\mu_{eff}$, z.~B.~bei Verbreiterung des Luftspaltes, abnimmt.}\vspace{.4cm}\\	
+	\begin{minipage}{9cm}
+\section{Modell des idealen Trafos}
+	Wird eine zweite Spule auf den Eisen-Ring gewickelt und damit
+	von dem gleichen magnetischen Fluß durchsetzt,
+	so hat man einen Transformator (Abb.~2).\\
+	{\footnotesize
+	Transformatoren werden vor allem großtechnisch genutzt
+	für den im Mittel 6 mal benötigten Wechsel der Spannungsstufen bei der
+	Energieversorgung im
+	Leistungsbereich von einigen Watt bis zu vielen hundert Megawatt,
+	die die meiste Zeit (ca. 75\%) nahezu im Leerlauf arbeiten.\\[.1cm]
+	In der Meßtechnik wird z.~B. die
+	Möglichkeit der Potential-\\
+	trennung oder die Widerstandsanpassung
+	(Impedanzwandler)  ausgenutzt.
+	Im Zeigerdiagramm (Abb.~2~b) zeigt im folgenden
+	$\underline {U}_1$ stets (willkürlich)
+	vertikal (reele Achse).}
+	\end{minipage} \hspace{.5cm}
+	\begin{minipage}{8cm}
+	\begin{center}
+	\includegraphics[scale=0.6]{abb2}\\
+	\end{center}
+	\end{minipage}
+	\begin{center}
+	Abb.~2: Idealer Transformator: (a) im Leerlauf bzw.~mit mit Ohmscher Last;\\
+	(b) Zeigerdiagramm für Primärspannung $\underline {U}_1$,
+	Magnetisierungsstrom $\underline {I}_{1,m}$ und
+	magnet. Fluß $\underline {\Phi}$.
+	\end{center}
+	Unter einem idealen Trafo \cite{mull,paus,gert}
+	soll folgendes Modell verstanden werden: \\[-.5cm]
+	\begin{enumerate}
+	\item Die konstante Permeabilität $\mu_r$ des Trafo-Kerns
+	ist sehr groß ($\infty$), wodurch
+	die Induktivitäten ebenfalls sehr groß und die Blindströme
+	sehr klein werden ($\omega L\gg R$; im Betrieb wird dann nahezu im
+	Kurzschluß gearbeitet). Es gibt
+	keine Hysterese und damit verbundene Verluste und
+	Nichtlinearitäten.  
+	\item Das Ferromagnetikum sei elektrisch ein Isolator ($\lambda=0$).
+	Damit entfallen Wirbelstromverluste.                                                      
+	\item Die Kopplung zwischen beiden Spulen, ausgedrückt durch
+	die Gegeninduktivität $M$ (s.~Anhang), sei ideal. Es entfällt die
+	Streuung des magnetischen Flusses.
+	Für die Gegeninduktivität gilt:
+	$M=\sqrt{L_1L_2}$. Damit wird der Streufaktor $\sigma
+	=1-\frac{M^2}{L_1L_2}=0$
+	und der Kopplungsfaktor
+	$k^2=\frac{M^2}{L_1L_2}=1-\sigma=1$.
+	\item Die Wicklungswiderstände sind zu vernachlässigen
+	(keine Kupferverluste). 
+	\end{enumerate}
+	{\footnotesize Bei streuarmen Netz-Leistungs-Trafos liegen
+	die Wicklungen übereinander.
+	In der Starkstromtechnik wird bezüglich der Kupfer- und Eisen-
+	Verlustleistungen
+	auf ein ausgewogenes Verhältnis von etwa \\
+	$\overline P_{Cu}/\overline P_{Fe}\approx 5:1$
+	geachtet, da die Trafos die meiste Zeit im Leerlauf arbeiten }.
+	
+\subsection{Idealer Trafo im Leerlauf}
+	An die Primär-Wicklung wird im folgenden stets die bezüglich
+	Amplitude und Phase unveränderliche harmonische Wechsel-Spannung
+	$\underline {U}_1
+	=\hat U_1\,e^{j \omega t}$
+	angelegt.
+	Nach Gl.~(\ref{tr010}~a) fließt durch die Primärspule der
+	um $\pi/2$ nacheilende Magnetisierungs-Strom
+	$ \underline{I}_{1,m}=\underline{U}_1/j\omega L_1$
+	und baut die
+	phasengleichen Größen auf: Feldstärke $\underline {H}_{Fe}=
+	n_1\,\underline {I}_{1,m}/l$, ~Induktion
+	$\underline {B}=\mu_0\mu_{eff}H_{Fe}$
+	~ und der Wechsel-Fluß $\underline {\Phi}=\underline {B}\,A$.
+	Infolge der zeitlichen Flußänderung ($j\omega \underline {\Phi}$) werden nach
+	Gl.~(\ref{tr04})
+	in beiden Spulen die phasengleichen Spannungen ($\underline {U}_{i,1};
+	\;{\rm und}\;\underline {U}_{i,2}$)
+	induziert ($\underline {U}_1=-\underline{U}_{i,1};\;\underline {U}_2
+	=+\underline{U}_{i,2}$).
+	Ihre Beträge sind den Windungszahlen proportional:
+	Mit dem Übersetzungsverhältnis $ü=n_2/n_1$ gilt also
+	\begin{equation}
+	\hat U_{i,1}
+	=-L_1\,\frac{d \underline{I_{1,m}}}{dt} \quad;\quad
+	\hat U_{i,2}
+	=-L_2\,\frac{d \underline{I_{1,m}}}{dt} \quad{\rm bzw.}\quad
+	\left|\frac{\underline {U}_{i,2}}{\underline{U}_{i,1}}\right|
+	=\frac{\hat U_2}{\hat U_1}
+	=\sqrt{\frac{L_2}{L_1}}\,=\,\frac{n_2}{n_1}\:=\: ü\quad.
+	\label{tr06}
+	\end{equation}
+
+\subsection{Idealer Trafo mit Ohmscher Last}
+	\begin{minipage}{10cm}
+	Verbindet man die Klemmen der Spule 2 mit dem Belastungswiderstand $R_b$
+	(Abb.~2~b), so fließt durch den Ohmschen Widerstand der zu $\underline {U}_2$
+	phasengleiche Wirk-Strom $\underline {I}_2=\underline {U}_2/R_b
+	=\hat I_2\,e^{j(\omega t-\psi_2)}$.
+	Wegen $\mu_r\rightarrow \infty $~ gilt bei endlichem Wechselfluß
+	$\underline{\Phi}=\mu_0\mu_r(A/l)(n_1\underline{I}_1+n_2\underline{I}_2)
+	$:~ $\oint \underline{H}_{Fe}ds=
+	0=(\underline{H}_1+\underline{H}_2)l=
+	n_1 \underline {I}_1+n_2\underline {I}_2$. Es entsteht
+	durch die Belastung
+	beim idealen Trafo keine Zusatzdurchflutung und kein
+	Zusatzfluß.
+	Für das Verhältnis von Primär-und Sekundär-Strom findet man
+	\begin{flushright}
+	Abb.~3: Belasteter idealer Trafo: Phasenlage der Spannungen und Ströme
+	$\underline {I}_1$ und $\underline{I}_2$.
+	\end{flushright}
+	\begin{equation}
+	\begin{array}{c}
+	(\underline{H}_1+\underline{H}_2)\,l=\underline {I}_1n_1+\underline {I}_2 n_2 =0
+	\quad{\rm d.~h.} \\
+	\left|\frac{\underline{I}_2}{\underline{I}_1}\right|=
+	\frac{\hat I_2}{\hat I_1}=
+	\frac{n_1}{n_2}=
+	\frac{\hat U_1}{\hat U_2}=\frac{1}{ü}\quad.
+	\label{tr07}
+	\end{array}
+	\end{equation}\vspace{.5cm} \\
+	{\footnotesize Beim idealen Trafo ist das
+	Strom-Verhältnis der Kehrwert des Spannungsverhältnisses}.
+	\end{minipage}\hspace{.5cm}
+	\begin{minipage}{5cm}
+	\begin{center}
+	\includegraphics[width=5cm]{abb3}
+	\end{center}
+	\end{minipage}
+\newpage	
+\section{Streu-Trafo mit Ohmscher Last}
+	Läßt man beim Übergang zur Realität endliche Induktivitäten
+	und Streuung zu, so hat man einen ''Streu-Trafo''.\\[.2cm]
+	\begin{minipage}{8cm}
+	Ohmsche und Eisen-Verluste werden nicht betrachtet.
+	Der ideale Trafo folgt dann für $\sigma=0$.
+	Transformatoren mit großer Streuung werden, wie
+	z.~B.~beim Klingeltrafo, zur Verhinderung von Schäden im Kurzschlußfall
+	eingesetzt. Bei der Signalübertragung
+	mit höheren Frequenzen oder beim Netztrafo mit größeren Luftspalten
+	ist die Kopplung der Spulen oft gering.
+	Nur noch der Hauptfluß $\Phi_h$, nicht aber der
+	Streufluß $\Phi_{\sigma}$, erreicht die andere Spule.
+	
+\subsection{Ströme und Phasenwinkel}
+	An die Sekundärspule wird der Belastungswiderstand $R_b$ angeschlossen.
+	Der Strom $\underline {I}_2$ fließt auch durch die Spule 2 und baut einen
+	Fluß auf, der teilweise die Spule 1 durchsetzt.
+	\end{minipage}\hspace{.5cm}
+	\begin{minipage}{8cm}
+	\includegraphics[width=6cm]{abb4}
+	\end{minipage}
+	\hspace*{7.3cm}Abb.~4:~\parbox[t]{8cm}{Nutz-und Streufluß beim
+	realen Trafo (a);\\
+	Ersatzschaltbild für Streu-Verluste (b).}\vspace{.5cm}
+	Dabei wird eine Spannung
+	induziert, die $U_1$ entgegenwirkt. Der damit verbundene Primärstrom
+	$I_1$ hat eine geringere Wirkkomponente mit $0<\psi_1<\pi/2$; im
+	Vergleich zum idealen Trafo. Die (nicht ideale) Kopplung wird durch die
+	Gegeninduktivität (s.~Anhang) ~$L_{12}=L_{21}=M=k\sqrt{L_1L_2}$ ~mit ($k<1$)
+	ausgedrückt. Die Amplituden und Phasen der
+	gekoppelten harmonischen Größen berechnen sich aus dem Maschensatz,
+	angewandt auf beide Spulen und den Sekundär-Kreis:
+	\begin{eqnarray}
+	\underline{U}_1=L_1\,\frac{d \underline{I}_1}{dt}+M
+	\frac{d \underline{I}_2}{dt}\quad(a)\nonumber\hspace{7cm}\\
+	0=U_2+L_2\,\frac{d \underline{I}_2}{dt}+M
+	\frac{d \underline{I}_1}{dt}\quad(b)\;;\qquad\quad
+	\underline{U_2}=R_b
+	\underline{I}_2\quad(c)\quad.\hspace{2cm}
+	\label{tr08}
+	\end{eqnarray}
+	Setzt man die
+	Gln.(\ref{tr08}~b,c) in Gln.(\ref{tr08}~a) ein, so folgt  mit
+	$\underline{U}_1=\hat U_1\,e^{j\omega t}$ und
+	dem Ansatz
+	$\underline {I}_1=\hat I_1 e^{j(\omega t -\psi_1)}$
+	\begin{equation}
+	\hat U_1(R_b+j\omega L_2)=
+	\left[j\omega L_1 R_b-\omega^2L_1L_2+\omega^2 M^2\right]
+	\hat I_1e^{-j \psi_1}  \quad.
+	\label{tr09}
+	\end{equation}
+	Daraus ergibt sich mit dem Streufaktor $\sigma=(1-\frac{M^2}{L_1L_2})=(1-k^2)$
+	\begin{equation}
+	\frac{\hat U_1}{\hat I_1}
+	e^{j \psi_1}= \frac{
+	\left[j\omega L_1 R_b-\omega^2L_1L_2\sigma\right]}{(R_b+j\omega L_2)}
+	=
+	\frac{\omega L_1}{(R_b^2+\omega^2L_2^2)}\left[
+								R_b\omega L_2(1-\sigma)+
+	j(R_b^2+\omega^2L_2^2\sigma)
+	\right]
+	\label{tr11}
+	\end{equation}
+	schließlich die Amplitude (s.~Anhang) bzw.~der Phasenwinkel
+	des {\bf Primärstromes}
+	\begin{center}
+	\fbox{\parbox{12cm}{
+	\begin{equation}
+	\hat I_1=\frac{\hat U_1}{\omega L_1}\sqrt{\frac{R_b^2+\omega^2L_2^2}
+	{R_b^2+\omega^2L_2^2\sigma^2}}\quad(a)\quad {\rm bzw.}\quad
+	tan \psi_1=\frac{R_b^2+\omega^2L_2^2\sigma}{R_b\omega L_2(1-\sigma)}
+	\quad(b)\quad.
+	\label{tr12}
+	\end{equation}
+	}}
+	\end{center}
+	Die entsprechenden Größen auf der {\bf Sekundärseite} sind mit
+	$I_2=\hat I_2\,e^{j(\omega t-\psi_2)}$:
+	\begin{center}
+	\fbox{\parbox{15cm}{
+	\begin{equation}
+	\hat I_2=\frac{M\hat U_1}{L_1\sqrt{R_b^2+\omega^2L_2^2\sigma^2}}\quad(a)\;;
+	\;tan\,\psi_2=\frac{(\omega L_2 \sigma)}{R_b}\quad(b)\;\quad
+	U_2=R_b\,I_2\quad(c)\quad.
+	\label{tr12a}
+	\end{equation}
+	}}
+	\end{center}
+	{\footnotesize
+	($\psi_2$ bezieht sich auf $\underline {U}_1$.~
+	$\underline {I}_2$ und $\underline{U}_2$ sind in Phase (\ref{tr12a}~c).}
+	
+\subsection{Leerlauf und Kuzschluß}
+	Folgende Spezialfälle sind besonders geeignet, die Induktivitäten
+	und den Streufaktor zu messen:
+	
+\subsubsection{Leerlaufspannung}
+	Aus Gl.(\ref{tr12a}~a,c) ergibt sich für $R_b\rightarrow \infty$:
+	\begin{center}
+	\fbox{\parbox{9cm}{
+	\begin{equation}
+	\hat U_{2,leer}
+	=\frac{M}{L_1}\frac{1}{\sqrt{1
+	+\frac{\omega^2L_2^2\sigma^2}{R_b^2}}}\rightarrow k\sqrt{\frac{L_2}{L_1}}=k\,ü \quad.
+	\label{tr12b}
+	\end{equation}
+	}}
+	\end{center}
+	
+\subsubsection{Kurzschlußstrom}
+	{\bf Primärer Kurzschlußstrom:} Mit Gl.(\ref{tr12}~a) wird für $R_b=0$  \\[-.6cm]
+	\begin{center}
+	\fbox{\parbox{5cm}{
+	\begin{equation}
+	\hat I_{1,kurz}=\frac{\hat U_1}{\omega\,L_1\,\sigma}\quad.
+	\label{tr12c}
+	\end{equation}
+	}}
+	\end{center}
+	{\bf Sekundärer Kurzschlußstrom:}
+	Er folgt aus Gl.(\ref{tr12a}) für $R_b=0$:
+	\begin{center}
+	\fbox{\parbox{5cm}{
+	\begin{equation}
+	\hat I_{2,kurz}=\frac{M\,\hat U_1}{L_1\,\omega\,L_2\,\sigma}\quad.
+	\label{tr12d}
+	\end{equation}
+	}}
+	\end{center}
+	{\footnotesize
+	Die Kurzschlußströme werden durch den Streufaktor begrenzt und würden
+	in der Grenze $\sigma\rightarrow 0$ (idealer Trafo) zu ~$\infty$.
+	\\[-.5cm]
+	}
+
+\subsubsection{Primärer Leerlaufstrom}
+	\begin{center}
+	\fbox{\parbox{5cm}{
+	\begin{equation}
+	\hat I_{1,leer}=\frac{\hat U_1}{\omega\,L_1}\quad.
+	\label{tr12e}
+	\end{equation}
+	}}
+	\end{center}
+	{\footnotesize
+	Der Leerlaufstrom $I_{1,leer}$ ist eine Folge der endlichen Induktivität
+	$L_1$. Er baut als Blindstrom das Magnetfeld auf (und wird beliebig klein beim
+	idealen Trafo; dort $I_{1,m}$).
+	Durch die hier nicht betrachteten
+	Eisen-(=Leerlauf-) Verluste erhält $I_1$ eine Wirk-Komponente ($cos \psi_1>0$).
+	}
+
+\subsection{Ortskurve}
+	\begin{minipage}{9cm}
+	Sowohl Leerlaufstrom $\underline{I}_{1, leer}$ als auch
+	Kurzschlußstrom $I_{1,kurz}$ sind beim reinen Streutrafo
+	Blindströme ($\psi_1=\pi/2$; vergl.~(\ref{tr12}~b)).
+	Erhöht man aber, z.~B.~beginnend mit dem Kurzschlußstrom, schrittweise
+	den Ohmschen Widerstand $R_b$, so veringert sich $\psi_1$ auf ein
+	Minimum bei $R_{\psi,1,min}=\omega L_2\sqrt{\sigma}$.
+	Die Amplitude und Phase des primären
+	Stromes $\underline I_1$ in Abhängigkeit
+	von $0\le R_b\le \infty$
+	durchläuft beim reinen Streutrafo
+	als Ortskurve den {\bf Heylandkreis} (Abb.~5; s.~Anhang).
+	\begin{flushright}
+	Abb.~5: Heylandkreis für den Streutrafo.
+	\end{flushright}
+	\end{minipage}\hspace{.5cm}
+	\begin{minipage}{7cm}
+	\begin{center}
+	\includegraphics[width=6.5cm]{abb5}
+	\end{center}
+	\end{minipage}
+	
+\section{Experimente}
+\subsection{Leerlauf-und Kurzschluß-Versuche}
+	Der Luftspalt $d$ wird durch Plast-Beilagen der Dicke $s=d/2$ im Eisenjoch
+	variiert. Die Abnahme der Induktivitäten (und
+	effektiven Permeabilität) sowie die Zunahme
+	von $\sigma$ (bzw.~Abnahme von $k$) können durch Messung der Amplituden
+	(bzw. der Effektivwerte) von Strom und Spannung anhand der
+	Gln.(\ref{tr12b};\ref{tr12c};\ref{tr12d};\ref{tr12e}) bestimmt werden.
+	Durch Vertauschung von Primär-und Sekundärseite können sowohl $ü$ als auch $k$
+	ermittelt werden.
+	
+\subsection{Bestimmung des Phasenwinkels}
+	\begin{minipage}{9cm}
+	Strom und Spannung werden primärseitig mit
+	nebenstehender Schaltung bestimmt (Abb.~6). \\
+	Der Phasenwinkel $\psi_1$ kann \\
+	1.~nach der ''Drei-Instrumenten-Methode''
+	(Abb.~6~a) ermittelt werden: Es werden die drei Spannungen: Gesamtspannung
+	$U_{res}$;~ Spannung an der Primärspule $U_L$ sowie der Spannungsabfall am
+	Vorwiderstand $R_v$: $U_{R_v}$
+	gemessen. Es gilt: $cos\,\psi_1=U_L/\sqrt{U_{R_v}^2+U_L^2}$;\\[.1cm]
+	2.~mit
+	einem Zweistrahl-Oszillographen, dessen y-Buchsen einmal am Ohmschen
+	Vorwiderstand (Strom-Signal) und zum anderen an $L_1$ (Spannungs-Signal)
+	liegen,  bestimmt werden.
+	Man vergleicht die Nulldurchgänge der Schwingungen, nachdem diese
+	am Oszillographen auf gleiche Amplituden abgeglichen wurden;\\[.1cm]
+	3.~mit einem Wirkleistungsmesser $\overline P_1$ bestimmt und
+	berechnet werden: ~$cos\,\psi_1=
+	\frac{2 \overline P_1}{\hat U_1\,\hat I_1}=
+	\frac{ \overline P_1}{U_{1,eff}\,I_{1,eff}}$~.
+	\end{minipage}\hspace{.5cm}
+	\begin{minipage}{7cm}
+	\includegraphics[scale=0.8]{abb6}
+	\end{minipage}\\
+	\vspace{.4cm}\\ \hspace*{6cm}
+	Abb.~6:~\parbox[t]{8cm}{Bestimmung von $\psi_1$ nach
+	Drei-Instrumenten-Methode (a) und
+	mittels Zweistrahloszillograph (b).}
+	
+\subsection{Aufnahme des Heylandkreises}
+	Den Belastungswiderstand $R_b$ regelt man, ausgehend
+	vom Kurzschluß (Maximalwerte einstellen), in ca.~12 geeigneten
+	nichtlinearen Stufen bis zum Leerlauf. Für jede Einstellung
+	bei konstanter (bzw. nachgeregelter) Primär-Spannung wird der Primärstrom
+	und der Phasenwinkel nach Einstellung gleicher Amplituden am Oszillographen
+	durch Auszählen der Abszissen-Abstände der Nulldurchgänge ermittelt.
+	\subsection{Bestimmung der Permeabilität}
+	Im Leerlauf ergibt sich nach Umformung der Gl.~(\ref{tr04})
+	für $d=0$ aus dem Verhältnis von Primär-Strom und~-Spannung
+	die (im allgemeinen komplexe, s.~Anhang)
+	Permeabilität ($\mu_r$):
+	\begin{equation}
+	\mu_r=\frac{l}{\omega\,\mu_0,n^2\, A}
+	\frac{\hat U_{1,leer}}{\hat I_{1,leer}} \quad.
+	\label{tr042}
+	\end{equation}
+	Dazu muß die Geometrie des Eisenjochs (Querschnitt und mittlere
+	Eisenlänge), die Windungszahl und die Frequenz bekannt sein.
+	Es empfielt sich eine Meßreihe für verschiedene Aussteuerungen,
+	d.~h.~verschiedene Primärspannungen, anzufertigen.
+	
+\section{Anhang}
+\subsection{Gegeninduktivität, Leistung, Widerstandstransformation}
+\subsubsection{Zur Gegeninduktivität}
+	Man betrachte zwei beliebige, auch von der Geometrie unterschiedliche
+	Spulen (1;2) ohne Ohmsche Widerstände, die von den
+	Wechselströmen $\underline I_1$
+	und $\underline I_2$ durchflossen werden und dabei in beiden Spulen
+	Spannungen induzieren. Es wird zunächst $L_{21}\ne L_{12}$ angenommen:
+	\begin{equation}
+	\underline {U}_1=L_1\,\frac{d \underline{I_1}}{dt} +
+	L_{21}\,\frac{d \underline{I_2}}{dt}\quad;\quad
+	\underline {U}_2=L_2\,\frac{d \underline{I_1}}{dt} +
+	L_{12}\,\frac{d \underline{I_1}}{dt}\quad.
+	\end{equation}
+	Geht man zur Leistung über und addiert die beiden Anteile, so folgt
+	\begin{eqnarray}
+	\underline {U}_1\underline {I}_1=L_1\,\frac{d \underline{I}_1}{dt}I_1 +
+	L_{21}\,\frac{d \underline{I}_2}{dt}I_1\quad;\quad
+	\underline {U}_2I_2=L_2\,\frac{d \underline{I}_2}{dt}I_2 +
+	L_{12}\,\frac{d \underline{I}_1}{dt}I_2\quad;\nonumber \\
+	\Sigma \underline {U}\underline {I}=
+	\underline {U_1}\underline {I}_1+
+	\underline {U_2}\underline {I}_2=
+	L_1\,\frac{d \underline{I}_1}{dt}I_1 +
+	L_{21}\,\frac{d \underline{I}_2}{dt}I_1+
+	L_2\,\frac{d \underline{I}_2}{dt}I_2 +
+	L_{12}\,\frac{d \underline{I}_1}{dt}I_2\quad.
+	\label{lei1}
+	\end{eqnarray}
+	Diese Leistung muß der zeitlichen Änderung der
+	magnetischen Feldenergie entsprechen:
+	\begin{equation}
+	\frac{d }{dt}\,W_{magn}=
+	\frac{d }{dt}\left[\frac{1}{2}L_1\,\hat {I}_1^2+\frac{1}{2}L_2\,\hat {I}_2^2+
+	M\,\hat {I}_1\,\hat {I}_2\right]\quad.
+	\label{lei2}
+	\end{equation}
+	Das ist nur möglich, wenn $M=L_{12}=L_{21}$ ist, wie man sich durch Vergleich von
+	(\ref{lei1} und
+	\ref{lei2}) überzeugt.
+
+\subsubsection{Leistung des belasteten Streu-Trafos}
+	Beim reinen Streutrafo geht keine Energie verloren. Die Wirkleistung
+	wird vollständig übertragen.
+	Mit Gl.~(\ref{tr12}~a,b) und wegen $arc\,tan\,x=arc\,cos \frac{1}{\sqrt{1+x^2}}$
+	ist zunächst
+	\begin{equation}
+	cos \psi_1=
+	\frac{R_b\omega L_2(1-\sigma)}
+	{\sqrt{(R_b^2+\omega^2L_2^2\sigma^2)(R_b^2 +\omega^2L_2^2)}}\quad.
+	\label{cos1}
+	\end{equation}
+	Damit folgen die beiden Leistungen:
+	\begin{eqnarray}
+	\overline{P}_1=\frac{1}{2}\hat U_1 \hat I_1 cos (\psi_1)=
+	\frac{1}{2}\frac{\hat U_1^2}{\omega L_2}
+	\sqrt{\frac{R_b^2+\omega^2L_2^2}
+	{R_b^2+\omega^2L_2^2\sigma^2}}
+	\frac{R_b\omega L_2(1-\sigma)}
+	{\sqrt{(R_b^2+\omega^2L_2^2\sigma^2)(R_b^2 +\omega^2L_2^2)}} \nonumber \\[.1cm]
+	\overline{P}_1
+	=\frac{\hat U_1^2}{2\omega L_2}\frac{R_b\omega L_2(1-\sigma)}
+	{(R_b^2+\omega^2L_2^2\sigma^2)}\qquad; \quad
+	\overline{P}_2=\frac{1}{2}R_b\hat I_2^2=
+	\frac{1}{2}R_b\frac{M^2\,\hat U_1^2}{L_1^2(R_b^2+\omega^2L_2^2\sigma^2)}
+	\quad.\hspace{1cm}
+	\label{tr131}
+	\end{eqnarray}
+	Beide Leistungen sind identisch wegen $L_1L_2(1-\sigma)=M^2$.
+	
+\subsubsection{Widerstandstransformation beim idealen Trafo}
+	Aus der Wirk-Leistung $\overline P_1$ des Primärstromes
+	\\[-.5cm]
+	\begin{eqnarray}
+	\overline{P}_1=\frac{1}{2}\hat U_1 \hat I_1 cos\,\psi_1=
+	\frac{1}{2}\hat U_1^2\frac{L_2}{L_1R_b}=
+	\frac{1}{2}\frac{\hat U_1^2}{R_b}\,ü^2=
+	\frac{1}{2}\frac{\hat U_2^2}{R_b} \quad.
+	\label{tr130}
+	\end{eqnarray}
+	folgt die {\bf Übersetzung der Impedanzen; Widerstandsanpassung;
+	Impedanzwandler}.
+	Der Primärseite wird ein übersetzter Widerstand $R_1^*$ zugeordnet, für den
+	gilt \\[-.4cm]
+	\begin{equation}
+	\frac{R_1^*}{R_b}=
+	\frac{Z_1^*}{Z_b}=\frac{n_1^2}{n_2^2}
+	=\frac{L_1}{L_2}
+	=\frac{1}{ü^2}\quad.
+	\label{099}
+	\end{equation}
+
+\subsubsection{Zum Heylandkreis des Streu-Trafos}
+	Es soll gezeigt werden, daß der Radius $\rho$ der Ortskurve unabhängig von
+	$R_b$ und nur eine durch $f(U_1,\omega L_1,\sigma)$ bestimmte Konstante ist.
+	Die Ortskurve muß daher ein Kreis sein:\\
+	Enstprechend der Abb.~(6) sind $I_{1,kurz}; \;I_{1,leer}$ und deren
+	Mittelwert $I_0=\frac{\hat U_1}{\omega L_1}\,\frac{(\sigma +1)}{2\sigma}$
+	gegeben. Der cos-Satz in dem durch $\rho\;;\;I_0$ und $I_1$ aufgespannten Dreieck
+	lautet unter Verwendung von Gl.~(\ref{tr12}~a,b) und $arctan\,x =arc\,sin
+	\frac{x}{\sqrt{1+x^2}}$:
+	\begin{eqnarray}
+	\rho^2=
+	I_0^2+I_1^2-2I_0\,I_1\,cos(\pi/2-\psi_1)=
+	I_0^2+I_1^2-2I_0\,I_1\,sin\,\psi_1 \hspace{3cm} \nonumber\\
+	=\frac{\hat U_1^2}{\omega^2\,L_1^2}
+	\left[\frac{(\sigma+1)^2}{4\sigma^2}+\frac{R_b^2+\omega^2L_2}{R_b^2
+	+\omega^2L_2\sigma^2}-\frac{\sigma+1}{\sigma}\left(
+	\sqrt
+	{\frac{R_b^2+\omega^2L_2}{R_b^2+\omega^2L_2\sigma^2}}\cdot
+	\frac{\frac{R_b^2+\omega^2L_2\sigma}
+	{R_b\omega L_2(1-\sigma)}}{\sqrt{1+
+	\frac{(R_b^2+\omega^2L_2\sigma)^2}
+	{R_b^2\omega^2L_2^2(1-\sigma)^2}}} \right)
+	\right]
+	\label{tr133}
+	\end{eqnarray}
+	und nach Auflösen der Binome unter der Wurzel
+	\begin{eqnarray}
+	\rho^2
+	=\frac{\hat U_1^2}{\omega^2\,L_1^2}
+	\left[\frac{(\sigma+1)^2}{4\sigma^2}+\frac{R_b^2+\omega^2L_2}{R_b^2
+	+\omega^2L_2\sigma^2}-\frac{\sigma+1}{\sigma}
+	\frac{R_b^2+\omega^2L_2\sigma}
+	{R_b^2+\omega^2L_2\sigma^2} \right]
+	=
+	\frac{\hat U_1^2}{\omega^2\,L_1^2}
+	\left[\frac{(\sigma+1)^2}{4\sigma^2}-\frac{1}{\sigma}\right] \;.
+	\label{tr134}
+	\end{eqnarray}
+	Der Belastungswiderstand $R_b$ ist in der Gl.~(\ref{tr134}) für $\rho$ also
+	nicht mehr enthalten.
+	
+\subsubsection{Zum Primärstrom des Streu-Trafos}
+	Aus Gl.(\ref{tr11}) folgt
+	die Beziehung (\ref{tr12}~b) für den Phasenwinkel.
+	Zur Berechnung des Amplituden-Quadrats
+	\begin{equation}
+	\hat I_1^2=\frac{\hat U_1^2}{\omega^2\,L_1^2}\cdot
+	\frac{(R_b^2+\omega^2L_2^2)}{\sqrt{Z^2}}
+	\label{tr1202}
+	\end{equation}
+	führt man die Abkürzung $Z^2$ ein und findet:
+	\begin{equation}
+	Z^2= \left[R_b^2+\omega^2L^2\sigma \right]^2+R_b^2\omega^2L_2^2(1-\sigma)^2
+	\quad{\rm und }\quad
+	\label{tr1203}
+	\end{equation}
+	\begin{equation}
+	Z^2=
+	R_b^4+\omega^4L_2^4\sigma^2+R^2\omega^2L_2^2(1+\sigma^2)=
+	R_b^2(R_b^2+\omega^2L_2^2)+\omega^2L_2^2\sigma^2(\omega^2L_2^2+R_b^2)\quad;
+	\label{tr1204}
+	\end{equation}
+	und nach Zusammenfassung die Gl.~(\ref{tr12}~a).
+	
+\section{Realer Trafo}
+	Beim realen Trafo wären noch 1.~die Ohmschen Verluste an den
+	Wicklungs-Widerständen von Primär-und Sekundärspule ($R_1$ und $R_2$;
+	formal im Gl.-System (\ref{tr08}) durch $\underline I_1 R_1$ sowie
+	$\underline I_2 R_2$) und 2.~die Leerlauf-Verluste zu berücksichtigen.
+
+\subsection{Leerlauf-Verluste des realen Trafos}
+	Bei niedrigen Frequenzen haben die Leerlauf-
+	oder magnetischen Verluste zwei Ursachen:~ 1.~die Wirbelströme und 2.~die
+	Hysterese. Durch beides wird das Eisenjoch erwärmt, was einer
+	unerwünschten Wirkleistung entspricht.
+	Im Ersatzschaltbild werden die mit der Frequenz ansteigenden Verluste
+	zweckmäßig mit einem zur Primärspule parallel liegenden Ohmschen
+	Widerstand $R_{Fe}$ erfaßt, dessen Einfluß mit steigender Frequenz
+	größer wird (Abb.~7~a).
+
+\subsubsection{Wirbelstromverluste}
+	\begin{minipage}{9cm}
+	In Abb.~7 ist der Querschnitt eines Elektrobleches skizziert mit der
+	Flußrichtung, dem Querschnitt $A=a\,b$ und einer fiktiven Richtung eines
+	Wirbelstromes $I_{wb}$. $I_{wb}$ soll im folgenden Modell in einer
+	Richtung den halben Querschnitt einnehmen. Für die induzierte Spannung
+	im Blech gilt
+	$\underline {U}_{wb}\lambda A/l=\underline {U}_{wb}\lambda \,a\,b/l\sim b$.
+	Der Ohmsche Widerstand
+	der angenommenen Strombahn nimmt bei gegebener (sehr großer) Blechbreite
+	mit der Blechdicke $b$ ab.
+	Der Wirbelstrom nimmt
+	demzufolge mit $b$ zu.
+	demzufolge gilt $P_{wb}\sim b^2$.
+	\end{minipage}\hspace{.5cm}
+	\begin{minipage}{7cm}
+	\includegraphics[scale=0.6]{abb7}
+	\end{minipage}
+	\hspace*{8cm}Abb.~7:~\parbox[t]{8cm}{Elektroblech mit Wirbelströmen}\\[.2cm]
+	Zur Verringerung der Wirbelströme werden Netz-Trafos
+	aus Elektroblechen ($b\approx 0,35$ mm) hergestellt.
+	Für die verbleibende Verlustleistung
+	gilt \cite{mull,simon}
+	\begin{equation}
+	P_{wb}\sim \hat U_{wb} \cdot I_{wb}
+	\sim A\,l\,\lambda\,\omega^2\,b^2\,B^2\quad.
+	\label{wirb}
+	\end{equation}
+	
+\subsubsection{Hysterese-Verluste}
+	Die bei einem Zyklus im Eisen umgesetzte Hysteresearbeit berechnet sich zu
+	$V\cdot \oint{HdB}=V\cdot \oint{BdH}$, wobei
+	$\cdot \oint{BdH}$ die von der Hystereseschleife eingeschlossene Fläche
+	darstellt. Diese Fläche steigt nach Abb.~1~c stark mit
+	der Aussteuerung anfangs proportional zu $H$ und zu $B$, d.~h.~$\sim B^2$, an.
+	Daher gilt
+	\begin{equation}
+	P_{hy} \sim A\,l\,\omega\cdot\Phi^2 \quad.
+	\label {Hyst}
+	\end{equation}
+	Bei konstanter Frequenz und Blechdicke sind daher die beiden Anteile
+	$P_{wb}$ und $P_{hy}$ nicht zu trennen, so daß nur
+	die {\bf gesamten Eisen-Verluste} $P_{Fe}=
+	P_{wb}+P_{hy}$ bestimmt werden können.
+	
+\subsubsection{Eisen-Verluste und Verlustwinkel}
+	\begin{minipage}{9cm}
+	$P_{Fe}$ wird durch eine
+	Parallelschaltung von Primärinduktivität und
+	dem Eisen-Widerstand $R_{Fe}$ berücksichtigt.
+	Nach Anlegen von $\underline U_1=\hat U_1 e^{j\omega t}$
+	fließt der Strom $\underline I_{1,leer}=\hat I_1 e^{j(\omega t-\varphi_1)}$;
+	\begin{equation}
+	\underline I_{1,leer}=\frac{\underline U_1}{R_{Fe}} +
+	\frac{\underline U_1}{j \omega L_1}
+	\;{\rm d.~h.}\;
+	\hat I_{1,leer}=\frac{\hat U_1}{\omega L_1}
+	(1+j\frac{\omega L_1}{R_{Fe}})
+	\quad.
+	\label{hy1}
+	\end{equation}
+	\end{minipage}\hspace{.5cm}
+	\begin{minipage}{7cm}
+	\includegraphics[scale=0.6]{abb8}
+	\end{minipage}\\ \hspace*{9cm}
+	Abb.~8:~\parbox[t]{8cm}{Eisenwiderstand $R_{Fe}$ (a); Zeiger\\
+	für den primären Leerlaufstrom (b)}\\[.2cm]
+	Für Amplitude bzw.~Phasenwinkel (s.~Abb.~8) folgt aus (\ref{hy1})
+	\begin{equation}
+	\hat I_{1,leer}=\frac{\hat U_1}{\omega L_1}
+	\sqrt{1+\frac{\omega^2 L^2}{R^2_{Fe}}}
+	\quad(a)\quad{\rm bzw.}\quad
+	tan(\frac{\pi}{2}-\varphi_1)=\frac{\omega L_1}{R_{Fe}}\ll 1\quad(b)\quad.
+	\label {rfe2}
+	\end{equation}
+	Der meistens sehr kleine Wert $
+	tan(\frac{\pi}{2}-\varphi_1)
+	=tan\,\delta\approx \delta $ wird
+	Verlustwinkel genannt. Er ist
+	proportional den (in unserem Fall Leerlauf-) Verlusten.\\
+	Damit ergibt sich für die Leerlaufleistung (=Eisenverlust-Leistung)
+	\begin{equation}
+	\overline {P}_{Fe}=\frac{1}{2}\hat I_{1,leer}\hat U_1 cos \varphi_1=
+	\frac{U_1^2}{2 R_{Fe}}\approx
+	\frac{1}{2}\hat I_{1,leer}\hat U_1 tan\,\delta\quad.
+	\label {rfe3}
+	\end{equation}
+	$\overline {P}_{Fe}$ steigt mit der Aussteuerung ($\hat H\sim \hat I_m\sim \hat U_1$) und
+	wird im Leerlauf mit einem Wattmeter oder durch Amplituden- und
+	Phasen-Messung bestimmt.
+	
+\subsubsection{Verlust-Winkel und komplexe Permeabilität}
+	Durch Umstellung von Gl.~(\ref{hy1}) und Gl.~(\ref{rfe5}) ergeben sich
+	$R_{Fe}$ und $L_1$ über ihre Kehrwerte:
+	\begin{equation}
+	\frac{\hat I_{1,leer}^2}{\hat U_1^2}
+	=
+	\frac{1}{R^2_{Fe}}+
+	\frac{1}{\omega^2\,L_1^2}\quad(a);\quad
+	\frac{1}{R_{Fe}}=\frac{\hat I_{1,leer}}{\hat U_1}\,sin\,\delta\quad(b)\quad
+	\frac{1}{\omega\,L_1}=
+	\frac{\hat I_{1,leer}}{\hat U_1}\,cos\,\delta\quad(c)\quad.
+	\label{perm}
+	\end{equation}
+	Mit (\ref{perm}~b,c) und anhand der Gln.~(\ref{rfe7})
+	können Real- und Imaginärteil der Permeabilität berechnet werden.
+	Man kann die Gl.~(\ref{hy1}) unter Beachtung von
+	$\hat U_1=n_1 \omega \hat \Phi_1$ so umstellen, daß links der
+	Kehrwert der Permeabilität steht und man erkennt,
+	daß infolge der Verluste (d.~h.~$R_{Fe}\ne \infty$)
+	auch die Permeabilität komplex wird ($\mu_r\rightarrow \underline \mu$). Aus
+	\begin{equation}
+	\frac{\hat I_{1,leer}\,j\,\omega\,R_{Fe}\,L_1}{\hat U_1}\,e^{-j\varphi_1}
+	=
+	\frac{\hat I_{1,leer}\,\omega\,R_{Fe}\,L_1}{n_1\omega \hat
+	\Phi_1}\,e^{(\pi/2-j\varphi_1)}
+	=R_{Fe}+j\omega L_1
+	\label {rfe40}
+	\end{equation}
+	folgt
+	\begin{equation}
+	\frac{1}{\frac{\underline\mu\mu_0n_1^2\,A}{l}}\,e^{j\delta}
+	=\frac{1}{L_1}+j\frac{\omega}{R_{Fe}} \quad{\rm oder}\quad
+	\frac{1}{\underline\mu}\,e^{j\delta}   =
+	\frac{\mu_0n_1^2\,A}{l}\left[
+	\frac{1}{L_1}+j\frac{\omega}{R_{Fe}}\right]\quad.
+	\label {rfe4}
+	\end{equation}
+	Damit ergeben sich (in unserem Falle des parallel angesetzten
+	Verlustwiderstands; Index$_p$)
+	die Kehrwerte von Real-und Imaginärteil der komplexen
+	Permeabilität sowie der Verlustwinkel $\delta $:
+	\begin{equation}
+	\frac{1}{\underline \mu}\,e^
+	{j \delta}=\frac{1}{\mu_p'}+j\frac{1}{\mu_p''} \quad {\rm bzw}\quad
+	tan\,(\frac{\pi}{2}-\varphi_1)=tan\,\delta=
+	\frac{1/\mu_p''}{1/\mu_p'}
+	=\frac{\mu_p'}{\mu_p''}
+	=\frac{\omega L}{R_{Fe}} \quad.
+	\label {rfe5}
+	\end{equation}
+	Stellt man Gl.~(\ref{rfe5}) um, so folgt aus den durch Messungen bestimmten
+	Größen ($\omega L_1\;;\;R_{Fe})$ der
+	Real~($\mu_p'$)-~und Imaginär-Teil ($\mu_p''$) der Permeabilität:
+	\begin{equation}
+	\mu_p'=\frac{l}{\mu_0n_1^2\,A}\cdot L_1\qquad;\qquad
+	\mu_p''=\frac{l}{\mu_0n_1^2\,A}\cdot \frac{R_{Fe}}{\omega}\quad.
+	\label {rfe7}
+	\end{equation}
+	Der Realteil ist proportional zur Induktivität $L_1$ entsprechend (\ref{tr042}).
+	Ein großer Parallelwiderstand $R_{Fe}$ bedeutet einen großen Imaginärteil
+	der Permeabilität und geringe Verluste.
+	
+\subsection{Abschätzung des Eisenquerschnittes}
+	Da $\mu_r\approx \frac{\Delta B}{\mu_0 \Delta H}$ endlich ist und die maximale
+	Feldstärke bzw.~Induktion den zum Erreichen von etwa $80\%$ der
+	Sättigungsinduktion notwendigen Wert nicht übersteigen sollte,
+	wird auf die für eine Dimensionierung eines Trafos
+	wichtige Beziehung hingewiesen:
+	\begin{equation}
+	\hat U_1=n_1\,\omega\,\hat \Phi=
+	n_1\,A\,\omega\,\hat B
+	\quad{\rm bzw.}\quad
+	\hat B\;=\;\frac{\hat U_1}{n_1\,A\,\omega}
+	\quad{\rm oder}\quad
+	A_{min}\ge\frac{\hat U_1}{n_1\,\omega\,\hat B_{max}}
+	\quad.
+	\label{tr088}
+	\end{equation}
+	Anhand der Gl.~(\ref{tr088}) kann man mit
+	$\hat B_{max}\approx 1,5$~T für Elektrobleche bei gegebener Primärspannung,
+	Windungszahl und Frequenz den notwendigen Eisenquerschnitt $A$ abschätzen.
+	
+\newpage
+\section{Fragen}
+	\begin{enumerate}
+	\item Wie erklären Sie die Wirkung eines idealen Trafos anhand
+	des Induktions-~und Durchflutungs-Gesetzes?
+	\item Wie berechnen sich Ohmscher, induktiver und kapazitiver Widerstand
+	im Wechselstromkreis?
+	\item Wie berechnet man den Effektivwert und Leistung von
+	Wechsel-Strömen?
+	\item Was versteht man unter dem magnetischen Widerstand?
+	\item Wie berechnet sich beim idealen Trafo mit Ohmscher Last
+	das Spannungs- und Strom-Verhältnis?
+	\item Was besagt der Maschensatz? Wie lautet er
+	für die Primär-und Sekundär- Spannungen (-Ströme) beim idealen Trafo?
+	\item Wie transformieren sich beim idealen Trafo Spannungen, Ströme,
+	Widerstände und Leistungen?
+	\item Wie berechnen sich die Induktivitäten und die Gegeninduktivität
+	beim idealen Trafo?
+	\item Wie ändern sich beim idealen Trafo Amplitude und Phase im Sekündarkreis
+	bei induktiver Last?
+	\item Berechnen Sie in der Vorbereitung einen Heylandkreis für die
+	Werte: $f=$~50~Hz; $L_1=$~0,3~H; $\sigma=0,8$; $U_1$~=~50~V.
+	\item Wie kann man experimentell den Streufaktor bestimmen?
+	\item Wie wirkt sich ein Luftspalt im magnetischen Kreis aus?
+	\item Welche Verluste treten beim realen Trafo auf?
+	\item Was versteht man unter Hystereseschleife ? Welchen prinzipiellen
+	Verlauf zeigt die Feldabhängigkeit der Permeabilität?
+	\item Was sind Wirbelströme?
+	\item Wie kann man Wechselspannungen, Wechselströme, Phasenverschiebungen
+	und Wechselstrom-Leistungen messen?
+	\end{enumerate}
+
+
+\bibliographystyle{unsrt}
+
+\begin{thebibliography}{NAM99}
+\bibitem{gert} Gerthsen, Physik~(H.~Vogel), Springer Berlin 1995  
+\bibitem{reck} A.~Recknagel, Physik, III, El.-Lehre
+\bibitem{lam} E.-H.~Lämmerhirt, El. Maschinen .., V. Hanser, 1989
+\bibitem{feld} H.~Feldtkeller, Spulen und Übertrager, 1949
+\bibitem{lunze} K.~Lunze, Berechnung elektrischer Stromkreise,
+V.Techn.,Bln.1979
+\bibitem{mull} G.~Müller, Elektrische Maschinen, V. Technik, Bln. 1985
+\bibitem{seinsch} H.-O.~Seinsch, Grundlagen elektrischer Masch. u.
+Antriebe, V.Teubner 1988
+\bibitem{simon}
+K.~Simony, Theoretische Elektrotechnik, Berlin, 1956
+\bibitem{paus}
+H.-J.~Paus, Physik in Experimenten und Beispielen, V.
+C.-Hanser München 1995
+\end{thebibliography}
+
+\end{document}

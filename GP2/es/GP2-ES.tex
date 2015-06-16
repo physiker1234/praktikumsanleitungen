@@ -1,0 +1,419 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd,mhchem,listliketab,array}
+
+\versuch{Erzwungene Schwingungen}{ES}
+\author{M.~Kreller,i.~A. Dr.~Escher}
+\bearbeitet{A.~Otto}{}
+
+\buch{1}{H.~Niedrig}{Physik}{Springer-Verlag}{Berlin, Heidelberg 1992}
+\buch{2}{A.~Recknagel}{Physik: Schwingungen, Wellen, Wärmelehre}{Technik-Verlag}{Berlin 1990}
+\buch{3}{H.~Stroppe}{Physik}{Fachbuch-Verlag}{Leipzig 1984}
+\buch{4}{F.~Kohlrausch}{Praktische Physik, Band 2}{Teubner-Verlag}{Stuttgart 1996}
+\buch{5}{H.~J.~Paus}{Physik in Experimenten und Beispielen}{Verlag~C.-Hanser}{München 1995}
+\buch{6}{C.~Gerthsen, H.~Vogel}{Physik}{Springer-Verlag}{Berlin, Heidelberg 1995}
+\buch{7}{R.~Worg}{Deterministisches Chaos}{BI-Wissenschaftsverlag}{Mannheim 1993}
+\buch{8}{B.~Vongxaya}{Nichtlineare Schwingungen, Comp.-Lernprogr.}{TU Dresden}{Dissertation 1994}
+ 
+%Vom Aussehen her sollte das meiste getan sein. Inhaltlich ist nur der Anhang etwas konsisten gemacht worden.
+ 
+\begin{document}
+\maketitle
+
+\section{Aufgabenstellung}
+\begin{enumerate}
+	\item Bestimmung der Eigenfrequenz $\omega_0$ der ungedämpften Schwingung
+	sowie der Dämpfungsfaktoren $\delta$ für verschiedene $B$-Werte der
+	Wirbelstrombremse.
+	\item Messung der Frequenzabhängigkeit von Amplitude $\hat\varphi(\omega)$ und
+	Phase $\alpha(\omega)$ mit Hilfe des Pohlschen Rades im
+	Bereich von $f=\num{0,2}$ bis $\SI{1,2}{Hz}$ für drei verschiedene
+	Dämpfungen $\left(\delta\approx\frac{\omega_0}{4}~;~\frac{\omega_0}{8}~;~\frac{\omega_0}{20}\right)$.
+	\item Vergleich a.) des Güte-Wertes und der Bandbreiten mit der theoretischen
+	Näherung und b.) einer auf den Maximal-Wert normierten
+	experimentellen Resonanzkurve mit der berechneten (in der Vorbereitung für
+	$\omega_0=4\delta$ sowie $\omega_0=\SI{3,14}{Hz}$).
+\end{enumerate}
+
+\section{Allgemeine Grundlagen}
+\subsection{Freie Schwingungen}
+	Die Bewegungsgleichungen für \textbf{freie ungedämpfte bzw. gedämpfte}
+	harmonische Drehschwingungen lauten
+	\begin{equation}
+	J\cdot\frac{\diff^2 \varphi}{\diff t^2}+M_d\cdot\varphi=0 \quad \text{bzw.} \quad
+	J\cdot\frac{\diff^2 \varphi}{\diff t^2}+r\cdot\dquot{\varphi}{t}+M_d\cdot\varphi=0
+	\label{frei}
+	\end{equation}
+	mit den Lösungen
+	\begin{equation}
+	\underline {\varphi}(t)=\hat{\varphi}\cdot\mathrm e^{j\omega_0 t} \quad	\text{bzw.} \quad
+	\underline {\varphi}(t)=\hat{\varphi}\cdot\mathrm e^{-\delta t}\cdot e^{j\omega t}
+	\label{los}
+	\end{equation}
+	für geringe Dämpfung ($\delta<\omega_0$). Dabei bedeuten:\\
+	\storestyleof{itemize}
+	\begin{listliketab}
+	\begin{tabular}{ll}
+		$\varphi$ & Drehwinkel\\
+		$r$ & Reibungskonstante\\
+		$(r\cdot\dquot{\varphi}{t})$ & Dämpfungsmoment ($[r]=\SI{}{Nms/rad}$)\\
+		$J$ & Massen-Trägheitsmoment\\
+		$M_d$  & Direktionsmoment\\
+		$\omega_0=\sqrt{\frac{M_d}{J}}$  & Eigen-Kreisfrequenz der ungedämpften Schwingung\\
+		$\omega=\sqrt{\omega_0^2-\delta^2}$ & Eigenfrequenz der gedämpften Schwingung\\
+		$\delta=\frac{r}{2J}$ & Dämpfungskonstante\\
+	\end{tabular}
+	\end{listliketab}
+
+\newpage
+\subsection{Erzwungene Schwingungen}
+\subsubsection{Amplitude und Phase}
+	\piccaption{Resonanz-Kurven für die Amplitude (a) und die Phase (b). Parameter: Dämpfungskonstante.}
+	\parpic[r]{\includegraphics[width=\linewidth/10*4]{abb1}}
+	Eine Spiralfeder mit dem Direktionsmoment $M_d$ erzeugt eine stabile
+	Gleichgewichtslage des Pohlschen Rades.
+	Mit einem Kurbelantrieb wird ein sinusförmiges Drehmoment
+	$\hat M\cdot\mathrm e^{j\omega t}$ erzeugt (Erreger). Dabei führt das Pohlsche Rad
+	(Resonator) Drehschwingungen mit der Kreisfrequenz
+	$\omega$ und der Amplitude
+	$\hat{\varphi}(\omega)$ aus.
+	Die Phase des Resonators ist bezüglich der des Erregers um
+	$\alpha(\omega)$ verschoben.
+	Die Bewegungsgleichung lautet
+	\begin{equation}
+	J\cdot\frac{\diff^2\varphi}{\diff t^2}+r\cdot\dquot{\varphi}{t}+M_d\cdot\varphi=
+	\hat M\cdot\mathrm e^{j\omega t}
+	\label{erzw1}
+	\end{equation}
+	Mit dem Lösungsansatz für (\ref{erzw1}): $\underline {\varphi}(t)=
+	\hat\varphi\cdot\mathrm e^{j(\omega t-\alpha)}$,
+	folgen für den eingeschwungenen Zustand die Lösungen
+	\begin{equation}
+	\hat\varphi(\omega)=\frac{\hat M/J}{\sqrt{(\omega_0^2-\omega^2)^2+4\delta^2\omega^2)}}
+	\label{erzw2}
+	\end{equation}
+	und
+	\begin{equation}
+	\tan{\alpha(\omega)}=\frac{2\delta\omega}{(\omega_0^2-\omega^2)}
+	\label{erzw3}
+	\end{equation}
+	Gleichung \eqref{erzw3} läßt sich normieren mit
+	\begin{equation}
+	A(\omega)=\frac{\hat\varphi}{\hat M/J}=
+	\frac{1}{\sqrt{(\omega_0^2-\omega^2)^2+4\delta^2\omega^2)}}
+	\label{erzw4}
+	\end{equation}
+	\\%FIXME: ich weiß nicht genau warum, aber ohne diese Newline sieht die pdf bescheiden aus...
+\subsubsection{Resonanzfrequenz}
+	Bei der dämpfungsabhängigen Resonanzfrequenz
+	$\omega_{res}$ wird die Amplitude nach \eqref{erzw2} maximal
+	\begin{equation}
+	\omega_{res}=\sqrt{\omega_0^2\,-\,2\delta^2}
+	\label{omres}
+	\end{equation}
+
+\subsubsection{Amplitude des statischen Grenzfalls}
+	Für $\omega=0$ folgt aus \eqref{erzw2} für die Amplitude des statischen
+	Grenzfalls
+	\begin{equation}
+	\hat{\varphi}_{stat}
+	=\frac{\hat M/J}{\sqrt{\omega_0^4}}=
+	\frac{\hat M/J}{\omega_0^2}
+	\label{stat}
+	\end{equation}
+
+\subsection{Resonanzamplitude, Güte}
+	Setzt man $\omega_{res}$ in \eqref{erzw2} ein, so ergibt sich für die
+	Resonanz-Amplitude
+	\begin{equation}
+	\hat{\varphi}_{res}=\frac{\hat M/J}
+	{2\delta \sqrt{\omega_0^2-\delta^2}}
+	\label{reso}
+	\end{equation}
+	Das Verhältnis aus (\ref{reso}) und (\ref{stat}) ist die
+	\textbf{Resonanzüberhöhung oder Güte $Q$}:
+	\begin{equation}
+	Q=\frac{\hat\varphi_{res}}{\hat\varphi_{stat}}=
+	\frac{\omega_0^2}{2\delta\sqrt{\omega_0^2-\delta^2}}
+	\label{q1}
+	\end{equation}
+
+\subsection{Näherung für schwache Dämpfung; Bandbreite}
+	\piccaption{Halbwertsbreite einer Resonanz-Kurve.}
+	\parpic[r]{\includegraphics[width=\linewidth/10*4]{abb2}}
+	Für $\delta\ll\omega_0$ folgt aus \eqref{reso}
+	\begin{equation}
+	Q\approx\frac{\hat{\varphi}(\omega_0)}{\hat\varphi_{stat}}=
+	\frac{\omega_0}{2\delta}=
+	\frac{\omega_0J}{r} =
+	\frac{\pi}{\Lambda}
+	\label{q1}
+	\end{equation}
+	mit $\Lambda$ als logarithmischem Dekrement.\\
+	\textbf{Bandbreite:}\\
+	Für geringe Dämpfung kann das Maximum von \eqref{erzw2} durch
+	$\hat{\varphi}(\omega_0)\approx
+	\frac{\hat M/J}{2\delta\omega_0}$ angenähert werden.
+	Im Abstand $\Delta\omega$ des etwa bei $\omega_0$ gelegenen
+	Maximums wird beidseitig der halbe Amplitudenwert
+	$\hat{\varphi}(\omega_0)/2=
+	\frac{\hat M/J}{4\delta\omega_0}$ erreicht.
+	Für $\Delta \omega$ findet man in grober Näherung (s.~Anhang)
+	\begin{equation}
+	\Delta \omega
+	\approx 2\delta\approx\frac{\omega_0}{Q}
+	\label{q3}
+	\end{equation}
+	Damit beträgt im Rahmen der Näherungen die
+	absolute Halbwertsbreite für die Amplitude
+	$2\,\Delta \omega_0\approx 4 \delta$ und
+	die relative Halbwertsbreite:
+	$\frac{2\Delta \omega}{\omega}\approx\frac{1}{2 Q}$.
+
+\subsection{Wirbelstromdämpfung}
+	Bewegt sich ein räumlich ausgedehnter massiver elektrischer Leiter
+	in $x$-Richtung senkrecht zu einem räumlich begrenzten Magnetfeld, so geschieht folgendes:
+	\begin{enumerate}
+	\item In der Teilfläche A des Leiters, in der $\dquot{B}{x}\neq 0$ ist, werden Wirbelströme
+	$I_w \sim A\cdot\dquot{B}{x}\cdot\dquot{x}{t}$ induziert.
+	\item Diese sind von magnetischen Momenten $m^*\sim I_w\sim A\cdot\dquot{B}{x}\cdot\dquot{x}{t}$ begleitet.
+	\item Diese magnetischen Momente erfahren Kräfte
+	$F\sim m^*\,\dquot{B}{x}\sim \left(\dquot{B}{x}\right)^2\cdot\dquot{x}{t}$
+	\end{enumerate}
+	Somit sind bei vorgegebener räumlicher Feldverteilung die durch
+	Wirbelströme induzierten Dämpfungsmomente näherungsweise
+	der Winkelgeschwindigkeit
+	$\left(\dquot{x}{t}\right)/R^*$ und $B^2$ proportional ($R^*$=Radius) und es gilt
+	\begin{equation}
+	\left(r\cdot\dquot{\varphi}{t}\right)\sim R^*\,B^2\cdot\dquot{\varphi}{t}\quad
+	\text{bzw.}\quad\delta\sim B^2
+	\label{wirb}
+	\end{equation}
+	Die Luftspaltinduktion $B=\mu_0H$ wird mit einem kleinen Elektromagneten
+	erzeugt, dessen Kennlinie $B(I_f)$ aufgrund der Hysterese weder linear
+	noch eindeutig ist ($I_f$=Feldstrom). Daher werden die gewünschten
+	$\delta$-Werte, stets beginnend in der Sättigung bei
+	$I_{f,\text{max}}\approx\SI{450}{mA}$, durch Erniedrigen des Feldstromes einreguliert.
+
+\section{Experimente}
+\subsection{Bestimmung der Eigenfrequenz und des Dämpfungsfaktors}
+	\begin{enumerate}
+	\item Bei minimaler Dämpfung wird durch wiederholte Messungen der
+	Schwingungsdauer $T$ des mit der Hand ausgelenkten Pohlschen Rades
+	die Eigen-Kreisfrequenz $\omega_0\approx 2\pi/T$ bestimmt.
+	\item Der Dämpfungsfaktor $\delta$ kann aus dem Abklingen der Amplitude
+	der freien Schwingung ermittelt werden.
+	Dazu werden für ca. 5 Dämpfungswerte nach einmaliger Auslenkung des Rades die
+	auf einer Seite aufeinanderfolgenden Amplituden ($\hat\varphi(t_1)$;
+	$\hat\varphi(t_1+T)$; $\hat\varphi(t_1+2T)$; \dots) notiert. Aus deren
+	Verhältnis ergibt sich über das logarithmische Dekrement $\Lambda$ der
+	Dämpfgungsfaktor
+	$\delta$
+	\begin{equation}
+	\Lambda=\ln\left[\frac{\hat\varphi(t_1)}{\hat\varphi(t_1+T)}\right]=
+	\ln\left[\frac{\hat\varphi(t_1+T)}{\hat\varphi(t_1+2T)}\right]=
+	\delta\cdot T \quad\text{bzw.}\quad
+	\delta=\frac{\Lambda}{T}=\frac{\Lambda\,\omega}{2\pi}
+	\label{dekr}
+	\end{equation}
+	Die ermittelten Dämpfungsfaktoren werden über $B^2$ graphisch dargestellt.
+	\end{enumerate}	
+	
+\subsection{Pohlsches Rad}
+	Mit dem Pohlschen Rad können bei fest eingestellter Amplitude des Erregers
+	und variabler Erregerfrequenz (regelbarer Gleichstrom-Motor mit Kurbeltrieb)
+	sowohl die Amplitude des Resonators als auch der Phasenwinkel zwischen
+	Erreger und Resonator bestimmt werden.\\
+	Mit zwei gegeneinander verdrehbaren Kurbelscheiben erfolgt die Voreinstellung des
+	Phasenwinkels $\alpha$ zwischen $0^\circ$ und $180^\circ$ in Schritten von $10^\circ$ .
+	Im Falle des scheinbaren Phasenabgleichs zwischen Erreger und Resonator 
+	(Gleichlauf der Zeiger) entspricht der voreingestellte Winkel dem gesuchten Phasenwinkel.
+
+\subsection{Aufnahme der Resonanzkurven}
+	Für drei unterschiedliche Dämpfungen
+	ist die Abhängigkeit der Amplitude und des
+	Phasenwinkels von der Erregerfrequenz aufzunehmen:
+	\begin{enumerate}
+	\item Mit der Feinregelung wird eine gewünschte Motordrehzahl einreguliert.
+	\item Der Phasewinkel wird solange verändert, bis ein Gleichlauf der
+	Zeiger erreicht ist.
+	\item Die Schwingungsdauer des Erregers wird mit der Stoppuhr gemessen.
+	\item Die Amplitude wird nach Beendigung des Einschwingvorganges
+	am Winkelmesser abgelesen.
+	\end{enumerate}
+	Die Resonanzkurven für Amplitude und Phase sind graphisch darzustellen
+	und die ermittelten Werte für die Resonanzfrequenz,
+	die Güte und die Bandbreite mit der Theorie zu vergleichen.
+
+\section{Anhang}
+\subsection{Zur Güte}
+	Bei den Kreisfrequenzen $\omega_{\pm1/2}$ ist die Amplitude beiderseits des Maximums auf den
+	halben Wert abgesunken. Man führt die halbe Halwertsbreite mit $\Delta\omega=|\omega_0-\omega_{1/2}|$ 
+	ein und vergleicht den halben Wert der normierten Amplitude nach \eqref{erzw4} für
+	$\omega=\omega_0$, d.h. $A(\omega_0)/2=1/(4\delta\omega_0)$ mit $A(\omega_{1/2})$. 
+	Für die Quadrate der Nenner folgt in grober Näherung
+	\begin{equation}
+	16\delta^2\omega_0^2\approx
+	[(\omega_0-\omega_{1/2})(\omega_0+\omega_{1/2})]^2+4\delta^2\omega_0^2=
+	[\Delta\omega\cdot 2\omega_0]^2+ 4\delta^2 \omega_0^2=
+	4\omega_0^2(\Delta\omega^2+\delta^2)
+	\label{halb}
+	\end{equation}
+	oder
+	\begin{equation}
+	3 \delta^2\approx\Delta\omega^2\quad\text{bzw.}\quad
+	\Delta\omega\approx\sqrt{3} \delta \approx 2\delta
+	\label{halb2}
+	\end{equation}
+
+\subsection{Resonanz von elektrischen Schwingkreisen}
+\subsubsection{Reihen-Schwingkreis}
+	Die Reihenschaltung eines Widerstandes $R$, einer Induktivität $L$ und
+	einer Kapazität $C$ führt beim Einspeisen einer harmonischen
+	Wechselspannung $\underline U=\hat U\mathrm e^{j\omega t}$ erzwungene Schwingungen
+	durch. Mit $\underline Q^*$ als Ladung folgt die den Vorgang
+	beschreibende Differentialgleichung aus dem Maschensatz $\sum U =0$:
+	\begin{equation}
+	L\dquot{\underline I}{t}+R\underline I+\frac{\underline Q^*}{C}=\hat U\mathrm e^{j\omega t}
+	\label{reihres}
+	\end{equation}
+	 
+ 	\begin{table}
+ 	\centering
+  	\begin{tabular}{|c|c|c|c|c|} \hline
+	Oszillator& Elongation      & $\omega_0^2$ & $\delta$ & Güte\\\hline\hline
+	linearer  & Länge: $x$ & $\displaystyle\frac{k}{m}$ & $\displaystyle\frac{r^*}{2m}$  & $\displaystyle\frac{\omega_0m}{r^*}$\rule{0pt}{17pt}\\[0.5em]\hline
+	Rotator   & Winkel: $\varphi$ & $\displaystyle\frac{M_d}{J}$    & $\displaystyle\frac{r}{2J}$ & $\displaystyle\frac{\omega_0J}{r}$\rule{0pt}{17pt}\\[0.5em]\hline
+	Reihen-Kreis & Ladung: $Q^*$ & $\displaystyle\frac{1}{LC}$   & $\displaystyle\frac{R}{2L}$  & $\displaystyle\frac{\omega_0L}{R}$\rule{0pt}{17pt}\\[0.5em]\hline
+	Parallel-Kreis & magn. Fluß: $\Phi$ & $\displaystyle\frac{1}{LC}$ & $\displaystyle\frac{G}{2C}$ & $\displaystyle\frac{\omega_0C}{G}$\rule{0pt}{17pt}\\[0.5em]\hline
+	\end{tabular}
+  	\caption{Analoge Größen für mechnische und elektrische Resonanzen.}
+  	\label{tabanalog}
+ 	\end{table}
+ 	
+	Beachtet man 
+	\begin{equation}
+	\underline I=\dquot{\underline Q^*}{t}
+	\label{strom}
+	\end{equation}
+	und setzt das in \eqref{reihres} ein, so erhält man eine DGL für $\underline Q^*$:
+	\begin{equation}
+	L\frac{\diff^2 Q^*}{\diff t^2} +R\dquot{Q^*}{t}+\frac{1}{C}\,Q^*=\hat U\mathrm e^{j\omega t}
+	\end{equation}
+	Diese gleicht \eqref{erzw1}, wenn man $\varphi$	durch $\underline {Q}^*$, $r$ durch $R$, 
+	$J$ durch $L$, $M_d$ durch $1/C$ und $\hat M$ durch $\hat U$ ersetzt. Entsprechend kann man wieder den
+	Ansatz $\underline Q^*=\hat Q^*\cdot\mathrm e^{j(\omega t-\alpha)}$ machen und erhält die Lösung
+	\begin{equation}
+	\hat Q^*(\omega)=\frac{\hat U/L}{\sqrt{(\omega_0^2-\omega^2)^2+4\delta^2\omega^2)}}\quad\text{und}\quad
+	\tan{\alpha(\omega)}=\frac{R\omega}{L(\omega_0^2-\omega^2)}
+	\label{reihres1}
+	\end{equation}
+	Zu beachten ist beim Reihen-Schwingkreis, daß nicht $\hat Q^*$,
+	sondern $\hat I$ (beim Parallelkreis $\hat U$ anstelle von $\hat \Phi$)
+	gemessen wird. Aus \eqref{strom} und \eqref{reihres1} folgt somit für den
+	Wechselstrom
+	\begin{equation}
+	\underline {I}=
+	j\omega\hat Q^*\cdot\mathrm e^{j(\omega t-\alpha)}
+	=\dots
+	=\frac{\hat U}{\sqrt{(\omega L-\frac{1}{\omega C})^2+R^2)}}\cdot\mathrm e^{j(\omega t-\alpha+\pi/2)}
+	\end{equation}
+	mit $\alpha$ nach \eqref{reihres1}.
+	Zu beachten:
+	\begin{enumerate}
+	\item Es existiert zwar für $\hat Q^*$ nicht aber für $\hat I$
+	eine endliche Amplitude für $\omega =0$.
+	\item Für die Phase der maßgeblichen harmonischen Größe
+	$\underline Q^*$ gilt zwar die der Gl.~\eqref{erzw3}
+	entsprechende Beziehung, der Phasenwinkel zwischen Strom und
+	Spannung unterscheidet sich aber davon wegen (\ref{strom}) um $\pi/2$.
+	\end{enumerate}
+
+\subsubsection{Parallel-Schwingkreis}
+	Ausgehend vom Reihenkreis sind jetzt $\underline {U}$ durch $\underline {I}$
+	bzw.~$L$ durch $C$
+	sowie der Reihenwiderstand $R_r$ durch den Leitwert $G=1/R_p$ zu ersetzen.
+	Beim Einspeisen in die Parallel-Schaltung von
+	$R_p$, $L$ und $C$ wird eine erzwungene Schwingung für die Spannung
+	beobachtet. Analog zu (\ref{strom}) gilt für den magnetischen Fluß in der
+	Spule $\frac{d \underline {\Phi}}{d t}=\underline {U}$ und die maßgebliche DGL lautet
+	\begin{equation}
+	C\frac{\diff^2\underline \Phi}{\diff t^2}+G\dquot{\underline {\Phi}}{t}+\frac{1}{L}\underline \Phi
+	=\hat I\mathrm e^{j\omega t}
+	\end{equation}
+	Mit einem analogen Ansatz folgt die Lösung:
+	\begin{equation}
+	\hat{\Phi}(\omega)=\frac{\hat I/C}{\sqrt{(\omega_0^2-\omega^2)^2+4\delta^2\omega^2)}}\quad\text{und}\quad
+	\tan{\alpha(\omega)}=\frac{G\omega}{C(\omega_0^2-\omega^2)}
+	\label{paral}
+	\end{equation}
+	Für die harmonische Wechselspannung folgt
+	\begin{equation}
+	\underline {U}=j\omega\hat\Phi\cdot\mathrm e^{j(\omega t-\alpha)}
+	=\dots
+	=\frac{\hat I}{\sqrt{(\omega C-\frac{1}{\omega L})^2+G^2)}}\cdot\mathrm e^{j(\omega t-\alpha+\pi/2)}
+	\label{par}
+	\end{equation}
+
+\subsection{Nichtlinearitäten}
+	{(\footnotesize B.~Vongxaya 1993)}\\[.1cm]
+	Mit den folgenden Ausführungen wird gezeigt, wie man mit Hilfe
+	des Pohlschen Rades durch Anbringen einer Zusatzmasse (Unwucht am Umfang von z.B. $\SI{45}{g}$)
+	typische nichtlineare Phänomene erzeugen kann.
+	\piccaption{Resultierendes Drehmoment (links) und Doppelmulden-Potential (rechts).\label{doppelmulde}}
+	\parpic[r]{\includegraphics[width=\linewidth/10*4]{abb3}}
+	Die Zusatzmasse erzeugt ein zusätzliches in $\varphi$ nichtlineares Drehmoment
+	$M_{mech}=mgl\cdot sin\;\varphi $, was ein Doppelmuldenpotential zur Folge hat
+	(Vergl. Abb. \ref{doppelmulde}). Dadurch treten nichtlineare Sprungphänomene, Periodenvervielfachung
+	und chaotische Lösungen auf. Der endgültige Schwingungszustand hängt stark 
+	von den Anfangsbedingungen, sowie der Erregerfrequenz, Erregeramplitude und Dämpfung ab.
+	
+	\begin{description}
+	\item[1. Sprungphänomen: ] Bei geringer Dämpfung und langsamen Durchfahren der
+	Erregerfrequenz ändert sich die Amplitude sprungartig. 
+	\piccaption{Beispiel für Bistabilität}
+	\parpic[r]{\includegraphics[width=\linewidth/10*4]{abb4}}
+	Wenn man die Resonanzkurve in verschiedenen Richtungen durchfährt, bemerkt man zwei
+	verschiedene Schwingungen mit unterschiedlichen Amplituden (Bistabilität).
+	\item[2. Peridenverdopplung: ] Bei fester Erregerfrequenz und
+	variabler Erregeramplitude kann
+	bei bestimmter Dämpfung eine weitere Schwingung mit der
+	Frequenz $f/2$ beobachtet werden.
+	\item[3. Chaos: ] Bei hinreichend geringer Dämpfung und großer Erregeramplitude
+	treten weitere Periodenvervielfachungen und schließlich chaotische Schwingungen auf.
+	\end{description}
+	\textbf{Mögliche Aufgaben:}
+	\begin{enumerate}
+	\item Bei einer Zusatzmasse von $\SI{45}{g}$ ist für einen Bremsstrom von $\SI{240}{mA}$
+	die Frequenzabhängigkeit der Amplitude und daraus der Bereich der
+	Bistabilität zu ermitteln.
+	\item Bei fester Erregerfrequenz ($\omega>\omega_{res}$) ist die Dämpfung in
+	$\SI{10}{mA}$-Schritten zu verringern und die erste Periodenverdopplung und die erste
+	chaotische Schwingung zu suchen.
+	\end{enumerate}
+
+	\frage{Unter welcher Voraussetzung kann eine mechanische Anordung
+	harmonische Schwingungen ausführen?}
+	\frage{Man löse und diskutiere die Differentialgleichungen der gedämpften
+	und erzwungenen Schwingung.}
+	\frage{Wodurch wird die Eigenfrequenz des Pohlschen Rades bestimmt?
+	Wie kann man die Einflußgrößen berechnen?}
+	\frage{Mit welcher Frequenz schwingt das Pohlsche Rad bei einer erzwungenen
+	Schwingung und bei einer freien gedämpften Schwingung? Bei welcher
+	Frequenz ist die Resonanzamplitude maximal?}
+	\frage{Zeichen und erläutern Sie eine Resonanzkurve für Amplitude und Phase.}
+	\frage{Nennen Sie Analogien zwischen mechanischen und elektrischen Schwingungen
+	für den Reihen-und Parallel-Schwingkreis. Was besagt die Thomsonsche
+	Schwingungsgleichung?}
+	\frage{Bis zu welcher Dämpfung hat die Resonanzkurve ein Maximum?}
+	\frage{Was versteht man unter dem logarithmischen Dekrement?
+	Wie bestimmt man experimentell den Dämpfungsfaktor?}
+	\frage{Wodurch werden die Güte und die Bandbreite von Resonatoren bestimmt?}
+	\frage{Man berechne (zu Hause!) eine normierte Resonanzkurve ($
+	\frac{\hat{\varphi}(\omega)}{M^*/J}=f(\omega, \omega_0,\delta)$
+	für $\delta=\num{0,25}\omega$; $\omega_0=\SI{3,14}{Hz}$.}
+	\frage{Was sind und wie entstehen Wirbelströme? Wie berechnet sich das
+	Dämpfungsmoment einer Wirbelstrombremse?}
+	\frage{Erläutern Sie die Abhängigkeit von Amplitude und Phase des
+	Pohlschen Rades von der Erregerfrequenz und der Erregeramplitude.}
+
+\end{document}

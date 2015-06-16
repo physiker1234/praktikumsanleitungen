@@ -1,0 +1,117 @@
+\documentclass[platz]{tudphygp}
+\usepackage{tudphymd,mhchem,listliketab,lmodern}
+
+\versuch{Lichtelektrischer Effekt}{HB}
+
+\begin{document}
+\maketitle
+
+\section*{Aufgabenstellung} 
+Bestimmung des Planckschen Wirkungsquantums $h$ und der Ablösearbeit $A$ für das 
+Anodenmaterial einer Photozelle durch Nutzung des äußeren lichtelektrischen Effekts.
+Verständnis der Wirkungsweise einer Photozelle und Ermittlung ihrer typischer Eigenschaften
+wie Sättigungsstrom und Linearität der Lichtempfindlichkeit.
+
+\section*{Versuchsdurchführung}
+\subsection*{Justierung der Photozelle und Schaltungsbau}
+Die Photozellenbox ist oben zu öffnen. Das Licht der Halogenlampe ist so auf die Photokathode 
+-- Rückseite der Photozelle -- zu justieren, dass eine kleine, möglichst intensive 
+Belichtungsfläche entsteht. Beachte: keinesfalls darf die ringförmige Anode direkt belichtet
+wird. Die Justierung ist am besten mit grünem Licht durchführbar. Danach erfolgt der Aufbau 
+der Messanordnung gemäß dem Schaltbild aus der Praktikumsanleitung. Es sind zwei Varianten 
+vorgesehen.\\
+\storestyleof{itemize}
+\begin{listliketab}
+\begin{tabular}{clcl}
+  \textbullet & Photoelementbetrieb & -- & Ringelektrode positiv $U_E$\\
+  \textbullet & Gegenfeldbetrieb & -- & Ringelektrode negativ $U_G$\\
+\end{tabular}
+\end{listliketab}\\
+Die Schaltung wird vor Inbetriebnahme durch den Betreuer überprüft!
+
+\subsection*{Messung im Photoelementbetrieb}
+\subsubsection*{Aufnahme der $U_E$-$I_\text{Phot}$-Charakteristik der Photozelle}
+Im Photozellenbetrieb wird unter Verwendung von grünem Licht bei konstanter Beleuchtungsstärke 
+der Photokathode die Anodenspannung schrittweise von 0 bis auf \SI{+15}{V} gesteigert und so der 
+Sättigungsbereich des Photostroms $I_\text{Phot}$ bestimmt, in dem alle aus der Kathode 
+freigesetzten Elektronen gesammelt werden.
+
+\subsubsection*{Bestimmung des Photostroms in Abhängigkeit von der Beleuchtungsstärke}
+Bei einer Anodenspannung $U_E$, bei der das Erreichen des Sättigungsbereiches vom Photostrom 
+gewährleistet ist, wird IPhot bei verschiedenen Beleuchtungsstärken gemessen. Hierbei wird die 
+Beleuchtungsstärke durch Einstellung definierter Blendendurchmesser variiert.
+
+\subsection*{Messungen im Gegenfeldbetrieb}
+\subsubsection*{Aufnahme von $I_\text{Phot}$ als Funktion der Spannung $U_G$}
+Unter Verwendung von möglichst kurzwelligem Licht wird bei zwei unterschiedlichen Beleuchtungsstärken 
+der Photokatode (Nutzung von zwei Blendendurchmessern, bei denen eine direkte Belichtung der der 
+Ringelektrode sicher ausgeschlossen werden kann) die Abhängigkeit von $I_\text{Phot}$ von der 
+Spannung $U_G$ gemessen. Die Gegenspannung wird von 0 bis zu \SI{-5}{V} variiert. Aus den beiden 
+erhaltenen Kurven kann die "`Grenzspannung"' $U_G^0$ (d.h. der Photostrom $I_\text{Phot}(U_G^0)$ wird 
+gleich Null) ermittelt werden. Auf genügend viele Messwertpaare im Nahbereich von $U_G^0$ ist zu 
+achten, damit eine sichere Extrapolation ermöglicht wird! Bei starker Vergrößerung der Gegenspannung 
+$U_G$ wird nach dem Nulldurchgang ein schwacher Strom entgegengesetzter Polarität gemessen (Ursache?)
+
+\subsubsection*{Bestimmung von $U_G^0$ für verschiedene Wellenlängen}
+Unter Anwendung der Bremsfeldmethode wird für Licht verschiedener Wellenlänge durch Variation der 
+Gegenspannung der Wert für $U_G^0$ ermittelt, bei dem $I_\text{Phot}$ gleich 0 wird. (z.B. aus der 
+Polaritätsänderung der $I_\text{Phot}$-Anzeige oder durch sorgfältige Messungen von $I_\text{Phot}$ 
+im Nahbereich von $U_G^0$ und Extrapolation). Diese $U_G^0$-Bestimmung wird für alle 7 Wellenlängen 
+durchgeführt.
+
+\section*{Auswertung der Messergebnisse}
+\begin{itemize}
+ \item Aus dem Diagramm $I_\text{Phot} = f(U_E)$ lässt sich die Arbeitspannung der Photozelle im
+  Photoelementbetrieb angeben.
+  \item Aus dem Diagram $I_\text{Phot} = f(\text{Blendgröße})$ ist der Linearitätsbereich der
+  Lichtempfindlichkeit der Photozelle ablesbar.
+  \item Die Abhängigkeit $I_\text{Phot} = f(U_G)$ ermöglicht die Bestimmung von $U_G^0$ sowie 
+  Aussagen über den Zustand der Photozelle und die Perfektion der Bestrahlungsgeometrie.
+  \item Aus der graphischen Darstellung $U_G^0 = f(v)$ sind $h$ und die Austrittsarbeit $A$ zu
+  bestimmen. Der maximale Fehler von $h$ ist unter Berücksichtigung von $\Delta U_G^0$ und 
+  $\Delta\lambda$ zu ermitteln.
+\end{itemize}
+
+\section{Angaben zum Messzubehör}
+\textbf{Messstäbe zur Bestimmung der Blendendurchmesser}\\[2pt]
+\begin{tabular}{|c|c|}
+\hline
+Messstab & Durchmesser in mm\\\hline
+A & $\num{2,1}\pm\num{0,1}$\\
+B & $\num{3,1}\pm\num{0,1}$\\
+C & $\num{5,6}\pm\num{0,1}$\\
+D & $\num{8,0}\pm\num{0,1}$\\
+E & $\num{10,1}\pm\num{0,1}$\\
+F & $\num{15,0}\pm\num{0,1}$\\\hline
+\end{tabular}\\[2em]
+\begin{minipage}{0.4\textwidth}
+\textbf{Filtersatz1}\\[2pt]
+\begin{tabular}{|c|c|c|}
+\hline
+Farbe & $\lambda$ in nm & $\Delta\lambda$ in nm\\\hline
+ultraviolett & \num{368} & \num{10}\\
+violett      & \num{408} & \num{9}\\
+dunkelblau   & \num{437} & \num{8,5}\\
+blaugrün     & \num{492} & \num{4}\\
+grün         & \num{544} & \num{8}\\
+gelb         & \num{578} & \num{7}\\
+rot          & \num{625} & \num{8}\\\hline
+\end{tabular}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\textbf{Filtersatz2}\\[2pt]
+\begin{tabular}{|c|c|c|}
+\hline
+Farbe & $\lambda$ in nm & $\Delta\lambda$ in nm\\\hline
+ultraviolett & \num{370} & \num{10}\\
+violett      & \num{401} & \num{9}\\
+dunkelblau   & \num{432} & \num{8,5}\\
+blaugrün     & \num{493} & \num{4}\\
+grün         & \num{549} & \num{8}\\
+gelb         & \num{578} & \num{7}\\
+rot          & \num{655} & \num{8}\\\hline
+\end{tabular}
+\end{minipage}
+
+
+\end{document}

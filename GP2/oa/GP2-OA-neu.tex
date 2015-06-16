@@ -1,0 +1,618 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd,mhchem}
+
+\versuch{Optische Abbildung}{OA}
+\author{M.~Lehmann}
+\bearbeitet{S.~Socher,i.~A. Dr.~Escher}{}
+
+\buch{1}{W.~Walcher}{Praktikum der Physik}{Teubner Studienbücher}{1994}
+\buch{2}{E.~Hecht}{Optik}{Addison Wesley}{1989}
+\buch{3}{Bergmann,~Schäfer}{Lehrbuch der Experimentalphysik III, Optik}{de Gruyter, 
+Berlin, New York}{1987}
+\buch{4}{W.~Demtröder}{Experimentalphysik, Band 2: Elektrizität und Optik}{}{1995}
+
+\begin{document}
+\maketitle
+
+\section{Aufgabenstellung}
+
+Die grundlegenden Eigenschaften der optischen Abbildung mittels einer dünnen Linse sind 
+weitläufig bekannt. Gegenstand dieses Versuches ist jedoch die Bestimmung von 
+Brennweiten dicker Linsen bzw. Linsensystemen, wie sie z.B. in Kameraobjektiven eingesetzt 
+werden. Hier spielt die Konstruktion über Hauptebenen eine entscheidende Rolle.
+
+\section{Grundlagen}
+
+In der Lichtoptik sind Linsen lichtdurchlässige Körper, deren Material einen höheren 
+Brechungsindex aufweist als das umgebende Medium. Ihre Eintritts- und Austrittsflächen sind 
+meist Kugelflächen, da diese technisch am einfachsten mit hoher Genauigkeit herstellbar sind. 
+Sammellinsen (= Konvexlinsen) sind in der Linsenmitte dicker als am Rand, während es bei 
+Zerstreuungslinsen (= Konkavlinsen) genau umgekehrt ist. Bei Sammellinsen wird ein 
+parallel zur optischen Achse einfallendes Lichtbündel in dem \emph{hinter} der Linse liegenden 
+Brennpunkt $F'$ gesammelt. Eine Zerstreuungslinse hingegen zerstreut das Licht, als ob es aus 
+einem \emph{vor} der Linse liegenden Brennpunkt $F'$ käme. Man unterscheidet dicke und dünne 
+Linsen.
+
+\subsection{Dicke Linsen und Linsensysteme}
+
+In der Näherung für achsennahe, schlanke Lichtbündel (Gauß'sche Optik) kann die 
+Abbildung einer dicken Linse oder eines Linsensystems durch die Lage ihrer Hauptebenen $H$ 
+und $H'$ und die im Abstand $f$ und $f'$ (Brennweiten) von den Hauptebenen befindlichen 
+Brennpunkten $F$ und $F'$ eindeutig beschrieben werden. Entsprechend der DIN 1335 werden 
+Größen und Abstände, die auf den einfallenden Strahl bezogen werden, mit ungestrichenen 
+Variablen bezeichnet, alle Größen und Abstände  des ausfallenden Strahls mit gestrichenen 
+Variablen.
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centerline{\includegraphics[height=8cm]{abb1.png}} 
+\fi 
+\captionof{figure}{Abbildung eines Gegenstandes $y$ durch eine dicke Sammellinse, die durch ihre 
+Hauptebenen $H$ und $H'$ und Brennpunkten $F$ und $F'$ charakterisiert wird. Die eingeklammerten 
+Vorzeichen weisen auf die Vorzeichenkonvention hin.  \label{abb1}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+Der Gegenstand soll vor dem gegenstandsseitigen Brennpunkt $F$ stehen. Dann erfolgt die 
+Bildkonstruktion mit Hilfe der Hauptebenen so, dass der vom Gegenstand der Größe $y$ 
+ausgehende Parallelstrahl bis zur bildseitigen Hauptebene $H'$ verlängert wird. Anschließend 
+geht dieser Strahl durch den bildseitigen Brennpunkt $F'$. Den zweiten Strahl erhält man, 
+indem vom Gegenstand aus der Lichtstrahl durch den gegenstandsseitigen Brennpunkt $F$ bis 
+zur gegenstandsseitigen Hauptebene $H$ gezogen wird, und von dort aus parallel zur optischen 
+Achse verlängert wird. Am Schnittpunkt beider Strahlen findet man ein reelles, umgekehrtes 
+Bild der Größe $y'$. Aufgrund der Bildumkehrung besitzt $y'$ ein inverses Vorzeichen zu $y$. 
+
+\medskip
+
+Befindet sich sowohl im Gegenstandsraum als auch Bildraum das gleiche Medium (z.B. Luft 
+mit Brechungsindex $n = n' \approx 1$), dann gilt für die Brennweiten $f = -f'$, d.h. die Brennweiten 
+sind dem Betrage nach gleich, ihre Vorzeichen sind jedoch unterschiedlich. Dies hängt damit 
+zusammen, dass Abstände vor der gegenstandsseitigen Hauptebene $H$ ein negatives 
+Vorzeichen besitzen, wohingegen Abstände hinter der bildseitigen Hauptebene $H'$ ein 
+positives Vorzeichen haben. Diese Unterscheidung ist insbesondere bei Zerstreuungslinsen 
+und Linsensystemen von Bedeutung. Daher werden in den Abbildungen dieser 
+Versuchsanleitung entsprechende Größen mit eingeklammerten Vorzeichen versehen, um an 
+die Vorzeichenkonvention, wie sie in der DIN 1335 zusammengefasst ist, zu erinnern.
+
+\medskip
+
+Besitzen die Medien vor und hinter der Linse unterschiedliche Brechungsindices $n \ne n'$ wie 
+z.B. bei der Augenlinse, dann gilt: 
+
+\begin{equation*}
+\frac{n'}{f'} = - \frac{n}{f} = D.
+\end{equation*}
+
+Die Größe $D$ heißt Brechwert und hat die Dimension einer inversen Länge und als Einheit 
+die Dioptrie: $[D] = [\frac{n}{f}] = \mathrm{m}^{-1} = \mathrm{dpt}$.  
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centerline{\includegraphics[height=4cm]{abb2.png}} 
+\fi 
+\captionof{figure}{Lage der Hauptebenen in Abhängigkeit von der Linsenform.  \label{abb2}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+Die Hauptebenen liegen nicht notwendigerweise in der Linse: Je nach Konstruktion der Linse 
+können die Hauptebenen auch außerhalb des Linsenkörpers liegen (Abb. \ref{abb2}). Das gilt 
+insbesondere auch für Linsensysteme, die später eingeführt werden. Allerdings ist in der 
+Lichtoptik die Reihenfolge von $H$ und $H'$ fest, was nicht der Fall in der Elektronenoptik ist.
+
+\subsection{Gauß'sche Abbildungsgleichung}
+
+Bezeichnet man mit $a$ die Gegenstandsweite und mit $a'$ die Bildweite, so lautet die 
+Gauß'sche Abbildungsgleichung für eine Linse oder Linsensystem an Luft (Brechungsindex 
+$n = n' \approx 1$): 
+
+\begin{equation}
+\frac{1}{a'} - \frac{1}{a} = \frac{1}{f'} = -\frac{1}{f}
+\quad \text{bzw. in Betragsschreibweise:} \quad
+\frac{1}{\left| a' \right|} + \frac{1}{\left| a \right|} = \frac{1}{\left| f' \right|} = \frac{1}{\left| f \right|}
+\end{equation}
+
+Das Verhältnis Bildgröße $y'$ zu Gegenstandsgröße $y$
+
+\begin{equation}
+\beta = \frac{y'}{y} = \frac{a'}{a}
+\end{equation}
+
+nennt man den Abbildungsmaßstab $\beta$. Der Abbildungsmaßstab kann auch aus Gegenstands- 
+und Bildweite bestimmt werden (vgl. Abb. \ref{abb1}).
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centerline{\includegraphics[height=15cm]{abb3.png}} 
+\fi 
+\captionof{figure}{Lage des Bildes in Abhängigkeit von der Position des Gegenstandes. Die 
+eingeklammerten Vorzeichen weisen auf die Vorzeichenkonvention hin.   \label{abb3}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+Das Vorzeichen des Abbildungsmaßstabes $\beta$ gibt wieder, ob das Bild aufrecht oder umgekehrt 
+ist. Dies hängt wiederum von der Lage des Gegenstandes bezüglich des gegenstandsseitigen 
+Brennpunktes $F$ ab, was in Abb. \ref{abb3} dargestellt ist. Dabei sind die folgenden Situationen 
+zu unterscheiden:
+
+\begin{itemize}
+ \item $a \to -\infty \, \Rightarrow \, a' = f'$: Aus dem Unendlichen kommende Lichtstrahlen (z.B. 
+ Sonnenlicht) werden im Brennpunkt $F'$ gesammelt. 
+ \item $a < 2f$: Das Bild $y'$ ist reell, umgekehrt und verkleinert (Abb. \ref{abb3}a).
+ \item $a = 2f$: Gegenstand $y$ und Bild $y'$ sind dem Betrage nach gleich groß, aber umgekehrt, 
+ d.h. $y' = -y$ und Abbildungsmaßstab $\beta = -1$ (Abb. \ref{abb3}b).
+ \item $2f < a < f$: Das Bild $y'$ ist reell, umgekehrt und vergrößert (Abb.\ref{abb3}3b). 
+ \item $a = f$: Das Bild $y'$ liegt im Unendlichen des Bildraumes.
+ \item $f < a < 0$: Der  Gegenstand $y$ liegt innerhalb der gegenstandseitigen Brennweite $f$. 
+ Entsprechend der Abbildungsgleichung wird die Bildweite $a'$ negativ. Daher erhält 
+ man ein virtuelles, aufrechtes Bild (Abb. \ref{abb3}d und e). 
+\end{itemize}
+
+Die Abbildungsgleichung und der Abbildungsmaßstab sind in dieser Form auch für 
+Zerstreuungslinsen gültig. Dabei ist jedoch zu beachten, dass die Lage der Brennpunkte $F$ und 
+$F'$ zueinander vertauscht sind. Daher ist für Zerstreuungslinsen die bildseitige Brennweite $f'$ 
+negativ.
+
+\subsection{Dünne Sammel- und Zerstreuungslinsen}
+
+Dünne Sammel- und Zerstreuungslinsen zeichnen sich dadurch aus, dass in guter Näherung 
+die Hauptebenen $H$ und $H'$ zusammenfallen. Entsprechend vereinfacht sich die 
+Strahlkonstruktion. Sie ist in Abb. \ref{abb4} dargestellt. Die Abbildungsgleichung und der 
+Abbildungsmaßstab sind weiterhin gültig.
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centerline{\includegraphics[height=7cm]{abb4.png}} 
+\fi 
+\captionof{figure}{Strahlengang für dünne Sammel- und Zerstreuungslinse. Die eingeklammerten 
+Vorzeichen weisen auf die Vorzeichenkonvention hin.  \label{abb4}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+\subsection{Linsensysteme}
+
+Betrachtet man ein System bestehend aus zwei dünnen Linsen mit Brennweiten $f'_1$ und $f'_2$ im 
+Abstand $d$, so gilt für die resultierende Brennweite
+
+\begin{equation*}
+\frac{1}{f'_{res}} = \frac{1}{f'_1}+\frac{1}{f'_2} - \frac{d}{f'_1 f'_2}
+\end{equation*}
+
+Insbesondere bei einem System bestehend aus Sammel- und Zerstreuungslinsen ist auf das 
+Vorzeichen der Brennweiten zu achten. 
+
+\medskip
+
+Die Methode der Hauptebenen bewährt sich nicht nur in der Beschreibung dicker Linsen, 
+sondern sie kann auch zur Charakterisierung ganzer Linsensysteme angewandt werden. Die 
+Lage der Hauptebenen $H$ und $H'$ und der Brennpunkte $F_{res}$ und $F'_{res}$ des Systems lassen sich 
+dann aus der Abbildung eines Gegenstandes durch die Einzellinsen konstruieren, was in 
+Abb. \ref{abb5} und Abb. \ref{abb6} dargestellt ist: 
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centerline{\includegraphics[height=10cm]{abb5.png}} 
+\fi 
+\captionof{figure}{Konstruktion der Lage der Hauptebenen $H$ und $H'$ und resultierenden Brennpunkten 
+$F_{res}$ und $F'_{res}$ eines zweistufigen Linsensystems.  \label{abb5}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+Ausgehend vom Gegenstand $y_{S1}$ wird zunächst mit Hilfe des Parallel- und Brennpunktstrahls 
+die Abbildung durch Sammellinse $S_1$ konstruiert. Dann wird das resultierende Zwischenbild 
+$y'_{S1}$ als Gegenstand $y_{S2}$ der Sammellinse $S_2$ behandelt und das Bild $y'_{S2}$ bestimmt 
+(durchgezogene Linien). Die bildseitige Hauptebene $H'$ und Brennpunkt $F'_{res}$ erhält man 
+durch Verlängerung des vom Objekt ausgehenden Parallelstrahls parallel zur optischen Achse 
+und durch Verfolgung des Parallelstrahls durch beide Linsen (gepunktete Linien). Der 
+Schnittpunkt dieser Linie mit der optischen Achse ergibt den bildseitigen Brennpunkt $F'_{res}$, 
+der Schnittpunkt mit der parallel zur optischen Achse gezogenen Linie die Lage der 
+Hauptebene $H'$. Die gegenstandsseitige Hauptebene $H$ und Brennpunkt $F_{res}$ werden analog 
+konstruiert, indem man das System rückwärts durchläuft. In diesem Beispiel ist die 
+resultierende bildseitige Brennweite $f'_{res}$ negativ, da der Brennpunkt $F$' vor der Hauptebene $H'$ 
+liegt. Im Gegensatz zu einer einzelnen Zerstreuungslinse können jedoch hier auch reelle 
+Bilder entstehen.
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centerline{\includegraphics[height=10cm]{abb6.png}} 
+\fi 
+\captionof{figure}{Konstruktion des Bildes, wenn nur die Brennpunkte und Hauptebenen gegeben sind, 
+entsprechend der Situation in Abb. \ref{abb5}. Die durchgezogene Linie bezeichnet den Parallelstrahl, 
+der an der Hauptebene $H'$ gebrochen wird und durch den Brennpunkt $F'_{res}$ geht. Die gepunktete Linie 
+bezeichnet den Brennpunktstrahl, der an der Hauptebene $H$ gebrochen wird. Der Schnittpunkt beider 
+Linien ergibt die Lage und Größe des Bildes.  \label{abb6}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+\subsection{Bildfehler}
+
+Abweichungen von den idealen Gauß'schen Bedingungen werden durch Abbildungsfehler, 
+den sogenannten Aberrationen, beschrieben. Man unterscheidet zwischen chromatischen und 
+monochromatischen Aberrationen: 
+
+\medskip
+ 
+\textbf{Chromatische Abberation:} \\
+Da die Brechzahl des Linsenmaterials von der Wellenlänge des einfallenden Lichts abhängt 
+(= Dispersion), ergeben sich für verschiedene Wellenlängen unterschiedliche Brennweiten. 
+Dabei ist die Brennweite des blauen Lichts kleiner als die des roten Lichts (Abb. \ref{abb7}). 
+Folglich entstehen insbesondere bei der Abbildung mit weißem Licht je nach Wellenlänge 
+unterschiedliche Foki des Objektes, was man an den Farbsäumen um das Objekt herum 
+erkennt. Dieser Fehler wird als chromatische Aberration oder auch als Farbfehler 
+bezeichnet. Im  Kreis kleinster Verwirrung findet man die geringsten Abbildungsfehler. 
+Daher sollte das Bild an dieser Stelle registriert werden. In sogenannten Achromaten wird 
+der chromatische Fehler durch Kombination von Sammel- und Zerstreuungslinsen mit 
+unterschiedlichen Brechzahlen und folglich Dispersionen korrigiert. In der Elektronenoptik 
+wird intensiv an der Realisierung eines Korrektors für die chromatische Aberration geforscht.
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centerline{\includegraphics[height=4cm]{abb7.png}} 
+\fi 
+\captionof{figure}{Chromatische Aberration. Die Stelle $C$ bezeichnet den Kreis kleinster Verwirrung. \label{abb7}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+\medskip
+ 
+\textbf{Sphärische Abberation:} \\
+Selbst bei der Abbildung mittels monochromatischem Licht (z.B. Laser) treten Bildfehler auf. 
+Sie beruhen darauf, dass Reflexions- und Brechungsgesetze, die eigentlich nur für ebene 
+Flächen gelten, hier auf sphärische Flächen angewendet werden. Diese Gesetze liefern jedoch 
+nur für kleine Winkel von achsennahen Strahlen (Gauß'sche Optik) brauchbare Ergebnisse. 
+Für größere Winkel und achsenferne Strahlen treten Abweichungen auf, die durch 
+monochromatische Aberrationen beschrieben werden. 
+
+\medskip
+
+Wichtigster Vertreter monochromatischer Aberrationen ist die sphärische Aberration 
+(Öffnungsfehler), wo achsenferne Strahlen stärker oder schwächer gebrochen werden als 
+achsennahe Strahlen (Abb. \ref{abb8}). Wiederum findet man im Kreis kleinster Verwirrung das 
+schärfste Bild. Bei Hohlspiegeln kann man diesen Fehler minimieren, indem der Spiegel nicht 
+in einer kugelförmigen, sondern in einer parabolischen Form gefertigt wird. Bei Linsen ist 
+man jedoch im allgemeinen auf Korrekturmethoden angewiesen, da nur kugelförmige Flächen 
+exakt und kostengünstig herzustellen sind. Eine Korrektur kann z.B. durch Ausblenden 
+achsenferner Strahlen geschehen, jedoch auf Kosten der Bildhelligkeit und Auflösung 
+aufgrund der Einschränkung des Aperturwinkels. Eine bessere Methode ist die Kombination 
+einer Sammellinse mit einer geeigneten Zerstreuungslinse, da beide Linsentypen ein 
+umgekehrtes Vorzeichen im Wert der sphärischen Aberration besitzen und folglich die 
+sphärische Aberration korrigieren können. Ein solches Linsensystem wird Aplanat genannt. 
+In der Elektronenoptik existieren keine einfachen Zerstreuungslinsen. Erst vor wenigen Jahren 
+gelang die Korrektur der sphärischen Aberration mittels aufwendiger Multipolsysteme. Dieser 
+sogenannte Cs-Korrektor ist ein Meilenstein in der atomar auflösenden 
+Elektronenmikroskopie.
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centerline{\includegraphics[height=4cm]{abb8.png}} 
+\fi 
+\captionof{figure}{Sphärische Aberration: Die Stelle $C$ bezeichnet den Kreis kleinster Verwirrung. \label{abb8}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+\section{Experimentelle Verfahren}
+
+\subsection{Brennweitenbestimmung einer dünnen Sammellinse}
+
+Nach Scharfstellung des Bildes kann die bildseitige Brennweite $f'_S$ einer dünnen Sammellinse 
+durch Messung der Gegenstandsweite $a$ und Bildweite $a'$ bestimmt werden. Hierzu wird die 
+Gauß'sche Abbildungsgleichung nach der bildseitigen Brennweite $f'_S$ umgestellt: 
+
+\begin{equation*}
+\left| f'_S \right| = \frac{\left| a \right| \cdot \left| a' \right|}{\left| a \right| + \left| a' \right|}
+\end{equation*}
+
+Um eine bessere statistische Sicherheit zu haben, wird das Scharfstellen für unterschiedliche 
+Linsen- und Schirmpositionen wiederholt.
+
+\subsection{Besselsches Verfahren zur Bestimmung der Brennweite}
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centerline{\includegraphics[height=11cm]{abb9.png}} 
+\fi 
+\captionof{figure}{Besselsches Verfahren zur Bestimmung der Brennweite. \label{abb9}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+Wenn die Lage sowie der Abstand der Hauptebenen nicht bekannt sind, können Gegenstandsweite  
+$a$ und Bildweite $a'$ und folglich die Brennweite $f'$ nicht direkt ermittelt 
+werden. Hier hilft das Besselsche Verfahren zur Bestimmung der Brennweite dicker Linsen 
+und Linsensystemen weiter: Bei hinreichend großem Abstand
+
+\begin{equation*}
+L = \left| a \right| + \left| a' \right| + e > 4~\left| f' \right|
+\end{equation*}
+
+($e$ bezeichnet den Hauptebenenabstand) zwischen Gegenstand und Bild findet man zwei 
+Positionen der Linse, bei denen auf dem Schirm ein scharfes Bild entsteht. Dabei ist das eine 
+Bild vergrößert, das andere verkleinert. Der Grund hierfür ist die Umkehrbarkeit des 
+Lichtweges. Der Abstand dieser beiden Positionen  $l_v$ (vorne) und  $l_h$ (hinten) sei $l = l_h - l_v$. \\
+Ausgehend von der Gauß'schen Abbildungsgleichung findet man die Bestimmungsgleichung 
+für die Brennweite (siehe Anhang) 
+
+\begin{equation}
+f' = \frac{1}{4} \cdot \left[ \left( L-e \right) - \frac{l^2}{L-e} \right]
+\end{equation}
+
+Bei dünnen Sammellinsen oder Linsen, die direkt aneinander liegen, gilt in der Regel, dass 
+der Hauptebenenabstand $e$ gegenüber dem Abstand $L$ zwischen Gegenstand und Bild 
+vernachlässigt werden kann, d.h. $e << L$. Damit vereinfacht sich die Bestimmungsgleichung zu
+
+\begin{equation*}
+f' = \frac{1}{4} \cdot \left[ L - \frac{l^2}{L} \right]
+\end{equation*}
+
+\subsection{Brennweitenbestimmung einer dünnen Zerstreuungslinse}
+
+Die Brennweite einer Zerstreuungslinse kann nicht ohne weiteres gemessen werden, da ein 
+virtuelles Bild bei der Abbildung entsteht. Daher wird die Zerstreuungslinse $Z$ mit einer 
+Sammellinse $S$ bekannter Brennweite $f'_S$ kombiniert, so dass eine reelle Abbildung des 
+Gegenstandes entsteht. Die Brennweite der Zerstreuungslinse $f'_Z$ lässt sich dann aus den 
+Brennweiten der Sammellinse $f'_S$ und der Linsenkombination $f'_{res}$ mit Hilfe der Beziehung 
+(siehe oben)
+
+\begin{equation*}
+\frac{1}{F'_{res}} = \frac{1}{f'_S} + \frac{1}{f'_Z} - \frac{d}{f'_S f'Z}
+\end{equation*}
+
+berechnen. Bringt man beide Linsen sehr nahe beieinander, so dass der Linsenabstand $d \approx 0$ 
+ist, so vereinfacht sich die Bestimmung zu 
+
+\begin{equation}
+f'_Z = \frac{f'_S f'_{res}}{f'_S - f'_{res}}
+\end{equation}
+
+\subsection{Bestimmung von Brennweite und Hauptebenen nach Abbe}
+
+Solange man bei einem Linsensystem die Lagen der Hauptebenen und Brennpunkte nicht 
+kennt, bleiben auch Gegenstandsweite $a$ und Bildweite $a'$ unbekannt. Abbe beschreibt ein 
+Bestimmungsverfahren, dass die Ermittlung sowohl der Brennweite und als auch der 
+Hauptebenen dennoch zulässt.
+
+\medskip
+
+Ähnlich wie beim Besselschen Verfahren sucht man die beiden Positionen "`vorne"' und 
+"`hinten"', wo ein scharfes reelles Bild auf dem Schirm registriert wird. Ausgehend von einer 
+Ablesemarke $A$ werden jeweils die Gegenstandsweiten $b_v$ und $b_h$ sowie deren Bildweiten $b'_v$ 
+und $b'_h$ gemessen (Abb. \ref{abb10}). Zudem werden die Abbildungsmaßstäbe  $\beta_v = \frac{y'_v}{y}$ und 
+$\beta_h = \frac{y'_h}{y}$ bestimmt. 
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centerline{\includegraphics[height=11cm]{abb10.png}} 
+\fi 
+\captionof{figure}{Brennweitenbestimmung nach Abbe. Die Zeichnung definiert die Bezeichnungen und 
+die eingeklammerten Vorzeichen weisen auf die Vorzeichenkonvention hin. \label{abb10}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+Brennweite und Lage der Hauptebenen werden wie folgt bestimmt: Ausgehend von der 
+Gauß'schen Abbildungsgleichung und unter Verwendung des Abbildungsmaßstabes gelten für 
+Gegenstandsweiten $a_{v,h}$ und Bildweiten $a'_{v,h}$:
+
+\begin{equation*}
+a_{v,h} = f' \cdot \left( \frac{1}{\beta_{v,h}} -1 \right)
+\quad \text{und} \quad
+a'_{v,h} = f' \cdot \left( 1 - \beta_{v,h} \right)
+\end{equation*}
+
+Alle vier Größen sind jedoch nicht direkt messbar, da die Lage der Hauptebenen noch 
+unbekannt ist. Bekannt sind jedoch die Gegenstandsweiten $b_{v,h}$ und Bildweiten $b'_{v,h}$ bezüglich 
+der Ablesemarke $A$ mit
+
+\begin{equation*}
+b_{v,h} = h - a_{v,h} \quad \text{und} \quad  b'_{v,h} = a'_{v,h} - h'
+\end{equation*}
+
+Daraus ergibt sich ein Satz bestehend aus vier Gleichungen: 
+
+\begin{equation*}
+b_{v,h} = h-f' \cdot \left( \frac{1}{\beta_{v,h}} - 1 \right) = b \left( \frac{1}{\beta} \right)
+\quad \text{und} \quad
+b'_{v,h} = f' \cdot \left( 1- \beta_{v,h} \right) -h' = b'\left( \beta \right)
+\end{equation*}
+
+Die Brennweite $f'$ und die Abstände $h$ und $h'$ der Hauptebenen $H$ und $H'$ von der Ablesemarke 
+$A$ können sowohl graphisch als auch rechnerisch bestimmt werden.\\
+Zur graphischen Bestimmung werden die Messwerte $b_{v,h}$ in Abhängigkeit von $\frac{1}{\beta_{v,h}}$ und 
+$b'_{v,h}$ in Abhängigkeit von $\beta_{v,h}$ in ein Diagramm eingetragen und durch zwei Geraden angenähert. 
+Damit erhält man den Funktionsverlauf für $b(\frac{1}{\beta})$ und $b'(\beta)$. Die Abstände $h$ und $h'$ von der 
+Ablesemarke $A$ zu den Hauptebenen $H$ und $H'$ werden dann aus dem Achsenwert für  $b(1)$ bzw. $b'(1)$ 
+abgelesen. Die resultierende Brennweite $f'$ bestimmt sich dann aus $f' = b(0) - h$ bzw. 
+$f' = b'(0) + h'$. 
+
+\medskip
+
+\emph{(Für Physikstudenten)} Zur rechnerischen Bestimmung werden die Gleichungen für $b_h$ und $b_v$ bzw. $b'_h$ 
+und $b'_v$ voneinander subtrahiert und nach der Brennweite $f'$ aufgelöst (Anmerkung: $f'$ ist die Steigung 
+der Geraden $b(\frac{1}{\beta})$ bzw. $b'(\beta)$). Es ergibt sich die gesuchte Brennweite $f'$ zu 
+
+\begin{equation}
+f' = \frac{b_h - b_v}{\frac{1}{\beta_v} - \frac{1}{\beta_h}} = \frac{b'_h - b'_v}{\beta_v - \beta_h}
+\end{equation}
+
+Aus den Gleichungen $b(\frac{1}{\beta})$ und $b'(\beta)$ können dann der Abstand der Hauptebenen zur 
+Ablesemarke $A$ bestimmt werden: 
+
+\begin{equation}
+h = b_v + f' \cdot \left( \frac{1}{\beta_v} -1 \right) = b_h + f' \cdot \left( \frac{1}{\beta_h} -1 \right)
+\quad \text{und} \quad
+h' = f' \cdot \left( 1-\beta_v \right) - b'_v = f' \cdot \left( 1-\beta_h \right) - b'_h
+\end{equation}
+
+\subsection{\emph{(Für Physikstudenten}) Bestimmung der sphärischen Aberration}
+
+Die Brennweite einer Sammellinse mit sphärischen Grenzflächen hängt vom Abstand $r$ der 
+einfallenden Strahlen von der optischen Achse ab. Diese sogenannte sphärische Aberration 
+soll durch Verwendung von Zonenblenden bestimmt werden. Dazu wird zunächst das Objekt 
+mittels einer extrem dicken Sammellinse und einer Lochblende, die außenliegende Strahlen 
+ausblendet, scharf abgebildet und die Brennweite $f'_0$ der Linse über das Besselsche Verfahrens 
+bestimmt. Dann werden unterschiedliche Zonenblenden mit Radius $r$ eingeführt, die nur eine 
+Abbildung durch außenliegende Bereiche der Linse zulassen. Wiederum wird die Brennweite 
+$f'$ über das Besselsche Verfahren bestimmt. Für die Brennweite einer Sammellinse mit 
+sphärischen Grenzflächen, Krümmungsradius $R$ und Brechungsindex $n$ gilt (siehe Anhang):
+
+\begin{equation*}
+f' \approx R \cdot \left[ \frac{n}{n-1} - \frac{r^2}{2n(n-1)R^2} \right]
+\end{equation*}
+
+d.h. für parallel zur optischen Achse einfallende Strahlen nimmt die Brennweite $f'$ quadratisch 
+mit dem Abstand $r$ entsprechend $f' = f'_0 - \triangle f'(r^2)$ ab. Dieser Zusammenhang soll zusammen 
+mit den Messwerten in einem Schaubild mit $f' = f'(r^2)$ dargestellt werden. 
+
+\section{Versuchsdurchführung}
+
+Für den Versuch stehen eine Lampe, ein Objekt, ein Linsenhalter für die Aufnahme von 
+dünnen Sammel- und Zerstreuungslinsen, und ein Schirm zur Verfügung. Alle Elemente 
+werden auf einer optischen Bank mit Millimetereinteilung aufgebaut. Zum Anfang des 
+Versuchs erhalten Sie eine dünne Sammellinse $S$ und eine dünne Zerstreuungslinse $Z$ 
+unbekannter Brennweiten. Ziel ist es, die Brennweiten der Einzellinsen und als System zu 
+bestimmen. Der Versuch wird in den folgenden Teilschritten durchgeführt: 
+
+\begin{enumerate}
+ \item Bestimmung der Brennweite $f'_S$ der dünnen Sammellinse $S$ aus der Abbildung eines 
+ Objektes mit Hilfe der Abbildungsgleichung.
+ \item Bestimmung der Brennweite $f'_Z$ der dünnen Zerstreuungslinse $Z$ durch Kombination 
+ mit der Sammellinse $S$ und dem Hauptebenenabstandes $d = e \approx 0$ mit Hilfe des 
+ Besselschen Verfahrens.
+ \item Bestimmung der Brennweite $f'_{res}$ des Linsensystems bestehend aus Sammellinse und 
+ Zerstreuungslinse im Abstand $d = e = 50~\mathrm{mm}$ mit Hilfe des Abbe-Verfahrens.
+ \item \emph{(Für Physikstudenten)} Bestimmung der sphärischen Aberration einer extrem dicken Linse mit Hilfe 
+ von Loch- und Zonenblenden und des Besselschen Verfahrens. 
+\end{enumerate}
+
+\section{\emph{(Für Physikstudenten)} Anhang}
+
+\subsection{Zur Herleitung der Bestimmungsgleichung im Besselschen Verfahren}
+
+Nach Umformung der Gleichungen
+
+\begin{equation*}
+L = \left| a \right| + \left| a' \right| + e 
+\quad \text{und} \quad
+\frac{1}{f'} = \frac{1}{\left| a \right|} + \frac{1}{\left| a' \right|}
+\end{equation*}
+
+und ineinander einsetzen bei gleichzeitiger Elimination der Gegenstandsseite folgt die 
+quadratische Gleichung
+
+\begin{equation*}
+\left| a \right|^2 + (e-L) \left| a' \right| + (e-L) f' = 0
+\end{equation*}
+
+Diese Gleichung hat zwei Lösungen $a'_v$ und $a'_h$, die der Vertauschung von Gegenstand und
+Bild entsprechen:
+
+\begin{align*}
+a'_{v,h} & = -\frac{e-L}{2} \pm \sqrt{\left( \frac{e-L}{2} \right)^2 -4(e-L)f'} \\
+		 & =  \frac{L-e}{2} \cdot \left[ 1 \mp \sqrt{1- \frac{4f'}{L-e}} \right].
+\end{align*}
+
+Berechnet man $l = a'_v - a'_h$, so ergibt sich  	
+
+\begin{equation*}
+l = a'_v - a'_h = (L-e) \cdot \sqrt{1-\frac{4f'}{L-e}}	
+\end{equation*}
+
+was einfach in die gesuchte Gleichung durch Quadrierung umgeformt werden kann:
+
+\begin{equation*}
+f' = \frac{1}{4} \cdot \left[ (L-e) - \frac{l^2}{L-e} \right]
+\end{equation*}
+
+\subsection{Bestimmung der sphärischen Aberration}
+
+Die Brennweite $f'$ einer Linse mit sphärischen Grenzflächen (Krümmungsradius $R$) hängt vom 
+Abstand $h$ der parallel zur optischen Achse einfallenden Strahlen ab. 
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centerline{\includegraphics[height=7cm]{abb11.png}} 
+\fi 
+\captionof{figure}{Abhängigkeit der Brennweite $f'$ vom Abstand $r$ der parallel zur optischen Achse 
+einfallenden Strahlen. \label{abb11}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+Aus Abb. \ref{abb11} kann die Brennweite mit 
+
+\begin{equation*}
+f' = R+b \quad \text{mit} \quad b = R \frac{\sin \beta}{\sin \gamma}
+\end{equation*}
+
+abgelesen werden. Zusammen mit dem Brechungsgesetz (Brechungsindex $n$ der Linse) 
+
+\begin{equation*}
+\sin \beta = \frac{\sin \alpha}{n}
+\end{equation*}
+
+und den geometrischen Zusammenhängen
+
+\begin{equation*}
+\sin \alpha = \frac{r}{R} \quad \text{und} \quad \alpha = \beta + \gamma
+\end{equation*}
+
+ergibt sich für die Brennweite $f'$ einer Linse mit sphärischer Aberration: 
+
+\begin{align*}
+f' & = R + \frac{r}{n \sin \gamma}= R \cdot \left[ 1+ \frac{1}{n \cos \beta - \cos \alpha} \right] \\
+   & = R \cdot \left[ 1 + \frac{1}{\sqrt{n^2 - {\sin}^2 \alpha} - \sqrt{1- {\sin}^2 \alpha}} \right] \\
+\Leftrightarrow f' & = R \cdot \left[ 1+ \frac{1}{n \sqrt{1- \frac{r^2}{n^2 R^2}} - \sqrt{1- \frac{r^2}{R^2}}} \right].
+\end{align*}    
+
+Für \emph{achsennahe} Strahlen kann man den Term mit $\frac{r^2}{R^2} << 1$ vollständig vernachlässigen, so
+dass sich die Brennweite $f'_0$ einer sphärischen Grenzfläche mit Krümmungsradius $R$ wie folgt
+geschrieben werden kann: 
+
+\begin{equation*}
+f'_0 \approx R \cdot \frac{n}{n-1} . 
+\end{equation*}
+
+Für \emph{achsenferne} Strahlen müssen die Wurzeln der Brennweitengleichung entsprechend
+
+\begin{equation*}
+\sqrt{1-x} \approx 1-\frac{1}{2} x \quad \text{für} \quad x<<1
+\end{equation*}
+
+genähert werden. Es folgt: 
+
+\begin{equation*}
+f' \approx R \cdot \left[ 1 + \frac{1}{n \left( 1- \frac{r^2}{2n^2 R^2} \right) - \left( 1- \frac{r^2}{2R^2} \right)} \right]
+ = R \cdot \left[ 1+ \frac{1}{n-1} \cdot \frac{1}{1- \frac{r^2}{2nR^2}} \right]
+\end{equation*}
+
+Mit der Näherung $(1-x)^{-1} \approx 1+x$ für $x<<1$ erhält man 
+
+\begin{equation*}
+f' \approx R \cdot \left[ 1+ \frac{1}{n-1} \left( 1- \frac{r^2}{2nR^2} \right) \right] = R \cdot \left[ \frac{n}{n-1} - 
+ \frac{r^2}{2n(n-1)R^2} \right],
+\end{equation*}
+
+d.h. für parallel zur optischen Achse einfallende Strahlen nimmt die Brennweite $f'$ quadratisch
+mit dem Abstand $r$ entsprechend $f' = f'_0 - \triangle f' (r^2)$ ab.
+  
+\frage{Was versteht man unter der Brechzahl? Wovon ist diese abhängig?}
+\frage{Was versteht man unter dem Begriff "`Dispersion"'?}
+\frage{Warum kann man unter Wasser nicht scharf sehen?}
+\frage{Wie konstruiert man den Strahlengang an einer Sammel- bzw. Zerstreuungslinse für einen beliebig auftreffenden Strahl?}
+\frage{Wodurch unterscheiden sich dünne und dicke Linsen bezüglich der Bildkonstruktion?}
+\frage{Wie konstruiert man den Strahlengang durch eine dicke Zerstreuungslinse?}
+\frage{Wie bestimmt man experimentell und konstruktiv die Hauptebenen eines Linsensystems?}
+\frage{Was versteht man unter sphärischer und chromatischer Aberration und wie wirken sich diese Bildfehler aus? 
+Kennen sie noch andere Bildfehler?}
+\frage{Mit Hilfe einer Sammellinse werde ein entfernter Gegenstand abgebildet, der langsam näher kommt. Wie muss der 
+Schirm verschoben werden, damit das Bild scharf bleibt? Ab wann sieht man kein Bild mehr auf dem Schirm und warum?}
+
+\end{document}
+

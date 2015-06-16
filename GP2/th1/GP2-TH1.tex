@@ -1,0 +1,396 @@
+\documentclass[11pt,twoside]{article}
+\usepackage{verbatim}
+\usepackage{amsmath,amsthm}
+\usepackage{graphicx}
+
+\usepackage[german]{babel}
+\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc}
+
+\usepackage{fancybox}
+\usepackage{textcomp}
+\usepackage{fancyhdr}
+\usepackage{rotating}
+\setcounter{secnumdepth}{3}
+
+\textheight         23cm
+\textwidth          16.5cm
+\topmargin          15pt
+\oddsidemargin      4pt
+\evensidemargin     -7pt
+
+\pagestyle{fancy}
+
+ \title{Versuch TH 1 \\ Thermoelement \\}
+ \author{bearbeitet von \\ M. Kreller \\ i.A. Dr. Escher}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{table}[h]
+\begin{tabular}{|c|c|}
+\hline
+& \\
+\hspace{0.7cm} \begin{LARGE}Technische Universität Dresden \end{LARGE} \hspace{0.7cm} & \hspace{1cm}Physikalisches Praktikum \hspace{1cm} \\
+\begin{large} Fachrichtung Physik \end{large}               & \\
+\begin{footnotesize} L. Jahn, C.G. Oertel 07/ 1998 \end{footnotesize}
+& Versuch: \begin{LARGE} TH 1 \end{LARGE} \\
+\begin{footnotesize} bearbeitet 03/ 2004 \end{footnotesize} & \\
+\hline
+\end{tabular}
+\end{table}
+\begin{huge}\textbf{Thermoelement}\end{huge}
+
+\tableofcontents
+\newpage
+
+\section{Aufgabenstellung}
+ \begin{enumerate}
+	\item Messung von Thermospannungen nach dem Kompensationsverfahren
+	und Aufnahme einer (Newtonschen) Abkühlungskurve zur Bestimmung des
+	Abkühlkoeffizienten $K$ für einen
+	Stahlkörper
+	\item Kalibrieren eines Thermoelementes anhand von vorgegebenen
+Phasenumwandlungspunkten mit der differentielllen Thermoanalyse
+ \end{enumerate}
+
+\section {Allgemeine Grundlagen}
+\subsection{Thermospannung, Seebeckeffekt}
+\begin{minipage}{8cm}
+Seebeck-, Peltier- und Thomson-Effekt sind die wichtigsten
+thermoelektrischen Erscheinungen\\
+ (s.~Anhang). Besteht zwischen den zwei
+Kontaktstellen (''Lötstellen'') der Leiter A und B eines
+elektrischen Stromkreises eine Temperaturdifferenz, so entsteht
+eine Thermospannung (Seebeck-Effekt).\\
+Der Betrag und das Vorzeichen der Thermospannung werden durch das Produkt
+aus dem Temperaturunterschied $\Delta T$ und der differentiellen
+Thermospannung $S=\frac{\partial U}{\partial T}(T)$ mit $S$~als
+Seebeckkoeffizient bestimmt ($U_{th}=S\cdot \Delta T$; Beispiele s.~Tab.~1).
+$S$ hängt von der
+Metallkombination, der absoluten Temperatur sowie von der Reinheit
+(Gitterstörungen, Verunreinigungen) der Metalle ab.
+(Die hohen differentiellen Thermospannungen von Halbleitern können zur
+thermoelektrischen Energiewandlung genutzt werden).\\
+\end{minipage}\hspace{.5cm}
+\begin{minipage}{7cm}
+\includegraphics{abb1} \\ \\
+{\small {\bf Abb.~1:}\\
+ \parbox[t]{7.5cm}{
+a. Nachweis des Seebeck-Effekts einer Kombination aus 2 Metallen, A,~B~(Cu)\\
+b. Messung der Thermospannung gegen ein
+Bezugsmetall B (z.~B.~Cu) im Kompensationsverfahren}}
+\end{minipage}
+~\\
+Beim einfachen Versuchsaufbau nach Abb.~1~a wird eine
+Lötstelle auf $0^o$~C und die andere auf die variable Temperatur $T$
+gebracht. Genauer
+ist das Kompensationsverfahren (Abb.~1~b), bei dem $U_{th}$ spannungsrichtig
+gemessen wird.
+\newpage
+{\bf Tab.~1:} Differentielle Thermospannungen (
+$\frac{\partial U}{\partial T}$) einiger gebräuchlicher
+Metall/Legierungs-Kombinationen.
+\begin{center}
+\begin{tabular}{|l|c|c|} \hline
+Metall-Kombination & $S/[\frac{{\rm mV}}{(0-100)^o{\rm C}}]$ & Einsatztemperatur $^o$C \\ \hline
+Cu/Konstantan $^*$     &  4,25               &     -200  ....+ 350   \\ \hline
+Fe/Konstantan      &  5,37                &       - 200 ...+ 800 \\ \hline
+Ni/Cr-Ni           &  4,10                 &   - 270  ...+1370   \\ \hline
+Pt/Pt-Rh           &  0,64                  &  - 50  .....+ 1769  \\ \hline
+Ni-Cr/Konstantan   &  6,21           &            -200 ...+800   \\ \hline
+(Fe/Ni-Cr)           & (ca.~0,3)            & (0....+ 1000)   \\ \hline
+\end{tabular}\\
+\end{center}
+{\footnotesize ~~$^*$ 54~Cu/1~Mn/45~Ni}\\[-.9cm]
+\subsection{Abkühlungskurven}
+\subsubsection{Newtonsches Abkühlungsgesetz}
+Ein Körper wird auf eine Temperatur $T$, höher als die
+Umgebungstemperatur $T_u$ aufgeheizt und die zeitliche Abnahme der
+Temperatur aufgenommen ($T(t)$-Kurve).
+Durch die gleichzeitige Wirkung der Wärme-Leitung,~-Konvektion,~-Strahlung
+(s.~Versuch KW), erfaßt durch den Abkühlungskoeffizienten $K$,
+ kühlt sich der Körper ab.\\
+Die Abkühlungskurve $T(t)$ ist eine monoton abfalende Exponentialfunktion.
+Sie folgt aus der Energiebilanz bzw.~der Gleichheit der Wärmeströme:
+$I_w^{(1)}$ als abgeleitete Wärme und $I_w^{(2)}$) als bei der Abkühlung
+frei werdende Wärme mit $C=mc$ als Wärmekapazität ({\bf Thermodynamisches
+Gleichgewicht}) und Integration:\\[-.3cm]
+\begin{equation}
+I_w^{(1)}=\frac{\lambda\,A\,(T-T_u)}{l}=K\,(T-T_u)=K\,T'\quad (a)\quad{\rm und}
+\quad I_w^{(2)}=-C\frac{dT'}{dt}\quad(b) \quad{\rm zu}
+\label{th1}
+\end{equation}
+\begin{center}
+\fbox{\parbox{10cm}{
+\begin{equation}
+T'(t)=T(t)-T_u=(T(t_0)-T_u)e^{-\frac{K}{C}\,t}\quad.
+\label{th02}
+\end{equation}
+}}
+\end{center}
+~\\[-.3cm]
+$(T-T_u)=T'$; $T(t_0)$~=~Ausgangs-,
+~$T_u$~=~Umgebungs-, ~$T(t)$~=~Meßtemperatur.\\[.2cm]
+\begin{minipage}{4.5cm}
+Nach der Zeit $\tau=C/K$ hat sich der Körper also
+um $1/e$
+{\bf monoton} abgekühlt (Abb.~2~a).\\[.2cm]
+Treten jedoch {\bf Phasenübergänge} auf, so sind die
+gemessenen  Abkühlungskurven $T(t)$
+{\bf nicht monoton} und weisen z.B.~einen
+Haltepunkt (Fall b) oder Knick (Fall c der Abb.~2) auf.
+\end{minipage}\hspace{.5cm}
+\begin{minipage}{11cm}
+\includegraphics{abb2} \\ \\
+{\small {\bf Abb.~2:}\\
+\parbox[t]{11cm}{$T(t)$-Kurven: monotone Abkühlung nach Newton (a);
+mit dem Haltepunkt erstarrt eine reine homogene Schmelze kongruent (b);
+(gestrichelt mit Verunreinigungen). Am Knick beginnt die inkongruente
+Ausscheidung einer Phase (c)}} \\[.2cm]
+\end{minipage}\\[.2cm]
+\subsubsection{Abkühlungskurven im Temperaturbereich mit Phasenübergängen}
+Eine kongruent erstarrende Schmelze (z.~B.~ein Element) zeigt
+in der $T(t)$-Kurve
+am Schmelzpunkt bei $T=T_s$ einen Haltepunkt (Abb.~2~b). Hier herrscht
+energetisches Gleichgewicht
+zwischen abgeleitetem Wärmestrom und dem beim Erstarren frei
+werdendem Kondensationswärmestrom. Dabei
+erstarrt in der Zeiteinheit $\Delta t$ gerade so viel des Metalls $\Delta m$,
+daß die (Erstarrungs-) Temperatur konstant bleibt.
+Kongruente Phasenübergänge von reinen Metallen eigenen sich besonders gut
+zum Kalibrieren von Thermoelementen.\\
+Erstarrt nur eine von mehreren Phasen in der Flüssigkeit (inkongruente
+Erstarrung), so zeigt die $T(t)$-Kurve eine Žnderung im
+Kurvenverlauf (Abb.~2~c).
+\subsection{Temperaturabhängigkeit der Thermospannung}
+Im allgemeinen ist die Temperaturabhängigkeit der gemessenen integralen
+Thermospannung $U_{th}(T)=\int_{T_0}^{T_1}\,S(T) dT$ nicht linear
+und kann mit einer Parabel durch den
+Nullpunkt ($0^o$~C) angenähert werden:
+\begin{equation}
+U^{th}\:=\:a\;T\:+\:b\;T^2 \quad.
+\label{th021}
+\end{equation}
+Hier sind $a$ und $b$ thermoelektrische Materialkonstanten und $T$ die
+Temperaturdifferenz bezogen auf die Bezugstemperatur $T_0$ (meist 0$^o$C).
+\section {Experimente}
+\subsection{Messung der Thermospannung}
+\subsubsection{Kompensationsschaltung}
+\begin{minipage}{6cm}
+Thermospannungen sollten spannungsrichtig, z.~B.~ mit der
+Kompensations-Schaltung nach Abb.~1~b gemessen werden.
+Mit Hilfe der Gleichstromquelle sowie des groben und feinen
+Vorwiderstandes wird im Widerstandsnormal
+(R$_N$ = 1 Ohm) ein Vergleichsstrom solange eingeregelt, bis
+dessen Spannungsabfall am Normalwiderstand nach Vorzeichen und Betrag
+der zu messenden Thermospannung gleicht.
+Dann ist das Nullinstrument
+stromlos (''spannungsrichtige'' Messung, Abb.~1~b).
+\end{minipage}\hspace{.5cm}
+\begin{minipage}{8.5cm}
+\includegraphics{abb3} \\ \\
+{\small {\bf Abb.~3:} \parbox[t]{6.8cm}{
+Messung der $T(t)$-Kurven mit Hilfe der differentielllen
+Thermoanalyse. P: Probe; P': Vergleichsprobe ohne Phasenumwandlung}}
+\end{minipage}\\[.2cm]
+\subsubsection{Differentielle Thermoanalyse}
+Zur genaueren Untersuchung von Phasenübergängen und zur Erhöhung
+der Auflösung ist es zweckmäßig, nahezu die gesamte Thermospannung
+zu kompensieren. Dazu läßt man eine zweites identisches Thermoelement-Paar
+im gleichen Thermostaten in einer zweiten Substanz (P') mit möglichst
+gleicher Wärmekapazität $C$ ohne Phasenübergang (unterschiedlichem $K$)
+abkühlen und schaltet beide
+Elemente gegeneinander (Abb.~3). Bei rein Newtonscher Abkühlung beider
+Körper ist die geringe verbleibende Spannungsdifferenz konstant.\\[.1cm]
+{\bf Aufgabe:} Machen Sie sich den Temperaturverlauf der
+Differenzspannung für den Fall
+klar, daß eine Substanz kongruent erstarrt!
+\subsection{Kalibrierung von Thermoelementen}
+Als Fixpunkte für die Kalibrierung stehen folgende Stoffe mit den
+in Tab. 2 aufgelisteten Siede- bzw. Schmelzpunkten zur Verfügung:\\
+\begin{center}
+{\bf Tab.~2:} Fixpunkte zur Kalibrierung der Thermoelemenete.\\[.2cm]
+\begin{tabular}{|c|c|c|}\hline
+Stoff       & Fixpunkt    &     Fixtemperatur/ $^o$C\\ \hline
+H$_2$O      & Schmelzpunkt &  0           \\ \hline
+  H$_2$O   & Siedepunkt   &  f(p)    \\ \hline
+  Pb      &  Schmelzpunkt &   327,3   \\ \hline
+ Sn       & Schmelzpunkt  &  281,8            \\ \hline
+ Bi      & Schmelzpunkt  &  271,3             \\ \hline
+   \end{tabular}
+\end{center}
+Als {\bf Temperatur-Fixpunkte} zur Kalibrierung von
+Thermometern werden reine Substanzen benutzt, deren Phasenumwandlung beim
+Abkühlen bei konstanten
+Druck und im thermodynamischen Gleichgewicht einen wohldefinierten
+horizontalen Bereich in der $T(t)$-Kurve nach Abb.~2~b aufweisen, so daß
+die gemessene Umwandlungstemperatur nicht von der Zeit abhängt.
+\section{Anhang}
+\subsection{Transportphänomene und Thermokraft}
+{\small
+Sowohl elektrische Felder ($\vec E$) als auch Temperaturgradienten
+($\vec {\nabla T}$) bewirken einerseits elektrische ($\vec j_e$)
+und andererseits Wärmeströme ($\vec j_q$), was formal mit (im
+kubischen System skalaren) 4 Koeffizienten beschrieben
+werden kann ($\nabla=$~Gradient):
+\begin{eqnarray}
+\vec j_e &=& \beta_{00}\,\vec E+\beta_{01}\,\vec {\nabla T} \nonumber\\
+\vec j_q &=& \beta_{10}\,\vec E+\beta_{11}\,\vec {\nabla T}\quad.
+\label{th5}
+\end{eqnarray}
+Bei Benutzung der 4 gemessenen physikalischen Größen:\\
+$\rho$~=~spezifischer elektrischer Widerstand,\\
+$\lambda$~=~thermische Leitfähigkeit,\\
+$S$~=~(differentielle) Thermokraft (Seebeck-Koeffizient),\\
+$P$~=~Peltierkoeffizient~ ~
+läßt sich Gl.~(\ref{th5}) umschreiben($\nabla=$~Gradient):
+\begin{eqnarray}
+\vec E&=&\rho\,\vec j_e +S\,\vec {\nabla T} \nonumber\\
+\vec j_q &=& P\,\vec j_e-\lambda\,\vec {\nabla T} \quad.
+\label{th6}
+\end{eqnarray}
+Bei der stromlosen Bestimmung der {\bf Thermospannung} $(U^{th}_{AB})$
+zwischen zwei Metallen  A und B nach der Kompensations-Methode
+gilt daher für die elektrische Feldstärke und für
+die Thermokraft $S=d U^{th}_{AB}/dT$
+\begin{equation}
+\vec (\nabla U^{th}_{AB})=\vec E=S\,\vec {\nabla T}\;(a)\quad{\rm oder}\quad
+|U^{th}_{AB}|=S\,T\;(b)\quad.
+\label{th7}
+\end{equation}
+{\bf Peltier-Effekt} (Umkehrung des Seebeck-Effekts \cite{kohl}):\\
+Fließt durch einen Kontakt (Lötstelle) zweier Metalle ein Strom, so wird
+unabhängig von der Joulschen Wärme eine Peltier-Wärme aufgenommen
+oder abgegeben, die sich in einer Temperaturerhöhung der einen
+Lötstelle bzw.~Abkühlung der anderen äußert und die proportional zum
+Strom (beachte: Joulsche Wärme $\sim I^2$) ist ($P=$~Peltierkoeffizient):
+\begin{equation}
+\frac{d Q}{d t}=P\,\Delta T\,I
+\quad.
+\label{th8}
+\end{equation}
+{\bf Thomson-Effekt}:\\
+Fließt durch einen Leiter ein Strom $I$ und besteht zwischen seinen Enden eine
+Temperaturdifferenz $\Delta T$, so wird (neben der Joulschen Wärme)
+der Wärmestrom aufgenommen oder abgegeben ($\mu=$~Thomsonkoeffizient)
+\begin
+{equation}
+\frac{d Q}{d t}=\mu\,\Delta T\,I\quad.
+\label{th9}
+\end{equation}
+Für die Koeffizienten zweier Leiter untereinander gelten die
+{\bf Beziehungen} \cite{kohl}:
+\begin{eqnarray}
+P_{AB}=T\int_0^T\frac{\mu_B-\mu_A}{T}dT\;(a);\quad
+U^{th}_{AB}=\int_{T_1}^{T_2}\frac{P_{AB}}{T}dT\;(b);\quad
+S_{AB}=\frac{d U^{th}}{d T}=\int_0^T\frac{\mu_B-\mu_A}{T}dT\;(c);\quad
+\label{th10}
+\end{eqnarray}
+}
+Die Größe $S=\int\frac{\mu}{T}$ heißt absolute Thermospannung.
+\subsection{Zur Ursache der Thermospannung}
+\begin{minipage}{7cm}
+{\small
+Der Ursprung der Thermokraft von Metallen ist in den freien Elektronen,
+ihrer unterschiedlichen Affinität (Berührungsspannung) und
+Neuverteilung durch Temperaturänderung zu sehen.\\
+Qualitative Beschreibung:\\
+1.~Die Volta'sche Berührungsspannung ist proportional der Differenz der
+Austrittsarbeiten zweier Metalle $V_{Volta}=(W_A-W_B)/e$ (s.~Abb.~4)
+}.\\
+\end{minipage}\hspace{.5cm}
+\begin{minipage}{8cm}
+\centering{\includegraphics{abb4}} \\
+{\small {\bf Abb.~4:}
+ \parbox[t]{6cm}{Schematische Darstellung der Austrittsarbeiten
+$W$ und der Fermienergie $\zeta$ für zwei Metalle (A,B) bei $T_0$ sowie
+ihre Temperaturabhängigkeit
+ }}
+\end{minipage}\\[.2cm]
+{\small
+2.~Die Differenz der Fermi-Energien ($\zeta$, elektrochemisches Potential)
+entspricht der Galvani-Spannung
+$V_{Galvani}=(\zeta_A-\zeta_B)/e$, die schwach von der Temperatur
+abhängt.\\
+3.~Stehen zwei Metalle in Kontakt, so stimmen ihre
+Fermi-Energien $\xi$ überein. In einem geschlossenen Leiterkreis mit
+konstanter Temperatur aus den
+zwei Metallen A,B  kompensieren sich die Potententialdifferenzen und
+die Thermospannung wird
+($U^{th}_{AB}\;\approx\; W_A-W_B-(\xi_B-\xi_A)+ W_B-W_A-(\zeta_A-\zeta_B)=0$.\\
+4. Haben die beiden Kontaktstellen dagegen unterschiedliche
+Temperaturen, so bleibt eine endliche Thermospannung bestehen.\\[.1cm]
+Die Elektronen diffundieren vom Metall
+mit höherer Elektronendichte zum Metall mit geringerer
+Elektronendichte.
+Das Metall mit der kleineren Austrittsarbeit
+ist positiv. Die freien Elektronen folgen einem Konzentrationsgefälle, indem
+sie vom Ort höherer Temperatur (höhere Konzentration von Elektronen mit
+höherer Energie) zu einem Ort
+niedrigerer Temperatur abfließen.
+\newpage
+~\\
+{\bf Tab.~3:} Stellung einiger Metalle in der thermoelektrischen
+Spannungsreihe;  absolute Thermokraft $S$ und
+Fermi-Energie $\zeta$ \cite{schu,gert,kohl}
+~\\[.2cm]
+\begin{minipage}{6cm}
+\begin{center}
+\begin{tabular}{|c|c|c|} \hline
+Metall & $S/(\mu$V/K)&$\zeta/$eV  \\ \hline
+Sb$_{\parallel}$&+ 20,6 & \\
+Fe     &   + 17&\\
+Cu     &   + 1,7 &7,0\\
+Ag     &   +1,4 &5,5\\\hline
+\end{tabular}
+\end{center}
+\end{minipage}
+\hspace{1cm}
+\begin{minipage}{6cm}
+\begin{center}
+\begin{tabular}{|c|c|c|} \hline
+Metall & $S/(\mu$V/K)&$\zeta/$eV  \\ \hline
+Au     &    +1,1 &5,5\\
+Al     &    -1,6 &11,6\\
+K      &   -15,6& 2,1\\ \hline
+\end{tabular}
+\end{center}
+\end{minipage}
+
+}
+
+\section {Fragen}
+\begin{itemize}
+\item Was sagen die Kirchhoffschen Gesetze, insbesondere der Maschensatz mit
+Innenwiderstand, Außenwiderstand, Urspannung und Klemmenspanmnung aus?\\[-.7cm]
+\item Skizzieren und erläutern Sie die stromlose Spannungsmessung mit einer
+Kompensationsschaltung. \\[-.7cm]
+\item Was versteht man unter Seebeck,-Peltier- und Thomson-Effekt?  \\[-.7cm]
+\item Wovon hängt die Thermospannung an der Lötstelle zweier
+Metalle (A;B) ab?                            \\[-.7cm]
+\item Wie lautet die Bedingung für thermodynamisches Gleichgewicht?
+a. im Gebiet momotoner Abkühlung; b an einem Haltepunkt?\\[-.7cm]
+\item Man erläutere die Newtonsche Abkühlungskurve (mathematisch, Skizze).                \\[-.7cm]
+\item Warum ist das thermodynamische
+Gleichgewicht bei einer Abkühlungskurve besser einzustellen als bei
+einer Aufheiz-Kurve?                                        \\[-.7cm]
+\item Nennen Sie Beispiele für nicht monotone Abkühlungskurven.     \\[-.7cm]
+\end{itemize}
+
+\bibliographystyle{unsrt}
+
+\begin{thebibliography}{NAM99}
+\bibitem{ilb}
+W.~Ilberg, M.~Krötsch, D.~Geschke, P.~Kirsten, W.~Schenk,\\
+ A.~Schneider, H.~Schulze, Physikalisches Praktikum für Anfänger,\\
+  Leipzig 1994
+\bibitem{gert}
+Gerthsen (H.~Vogel), Physik,~V.~Springer 1995
+\bibitem{wal}
+W.~Walcher, Praktikum der Physik, V.~Teubner, Stuttgart 1989
+\bibitem{kohl}
+F.~Kohlrausch, Praktische Physik, Band 1,~V.~Teubner, Stuttgart 1996
+\bibitem{schu}
+G.~E.~R.~Schulze, Metallphysik, Berlin 1967
+\end{thebibliography}
+\end{document}

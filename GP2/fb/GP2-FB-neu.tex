@@ -1,0 +1,840 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd,mhchem}
+
+\versuch{Fraunhoferbeugung}{FB}
+\author{H.~Lichte,M.~Linck}
+\bearbeitet{S.~Socher,i.~A. Dr.~Escher}{}
+
+\buch{1}{E.~Hecht}{Optik}{Add. Wesley}{1989}
+\buch{2}{I.~N.~Bronstein}{Taschenbuch der Mathematik}{Teubner}{1996}
+\buch{3}{W.~Walcher}{Praktikum der Physik}{Teubner}{1994}
+
+\begin{document}
+\maketitle
+
+\section{Aufgabenstellung}
+
+Beugung und Interferenz spielen in vielen Bereichen der Physik eine zentrale Rolle. 
+Beispielsweise nutzt man in der Festkörperphysik Röntgen-, Neutronen- und 
+Elektronenbeugung zur Strukturbestimmung. Die Interferenzen der am Festkörper 
+gebeugten Wellen (Welle-Teilchen-Dualismus) geben Aufschluss über vielerlei 
+Eigenschaften der untersuchten Objekte.  In diesem Zusammenhang spielt immer wieder 
+die Fouriertransformation eine zentrale Rolle. \\
+Die Fouriertransformation - benannt nach dem französischen Mathematiker Jean Baptiste 
+Joseph Fourier (1768-1830) - findet in vielen Bereichen der Physik und der Technik 
+Anwendung. Sei es in der Signalverarbeitung zur Beschreibung der Informationsübertragung, 
+zur Vereinfachung periodisch auftretender Eigenschaften von 
+Kristallen in der Festkörperphysik oder als Lösungsansatz für komplizierte 
+Differentialgleichungen, der Formalismus der Fouriertransformation wird ständig - wenn 
+auch nicht immer offensichtlich - benutzt. \\
+Dieser Praktikumversuch dient dazu, das Wesen der Fouriertransformation zu verstehen 
+und den Formalismus gezielt am Beispiel der Fraunhoferbeugung anzuwenden. 
+
+\section{Grundlagen}
+
+\subsection{Beugung und Interferenz}
+
+\subsubsection{Kohärenz}
+
+Beugung und Interferenz erfordern kohärente Wellen. Zwei Wellen sind kohärent 
+zueinander, wenn sie eine feste Phasenbeziehung besitzen. Dies ist der Fall, wenn die 
+Wellen von einer punktförmigen monochromatischen Lichtquelle emittiert werden.\\ 
+Im Realfall besitzt jede Lichtquelle natürlich eine gewisse Ausdehnung  und eine gewisse 
+Spektralbreite, die den Kontrast einer Interferenzerscheinung maßgeblich dämpfen. Die 
+Ausdehnung einer Lichtquelle verringert die Winkelkohärenz, während man bei einer 
+gewissen spektralen Breite einer Quelle von reduzierter Längenkohärenz spricht.  
+Bei einer ausgedehnten Lichtquelle erzeugt jeder Punkt der Quelle unter einem 
+Strahlteiler (z.B. Biprisma) ein eigenes Interferenzmuster, das gegenüber den anderen 
+lateral verschoben ist. Die Gesamtintensität ergibt sich aus der Summe der Intensitäten 
+aller Einzelinterferenzen. Der Kontrast der Gesamtinterferenz wird somit je nach 
+Ausdehnung der Lichtquelle gedämpft (Winkelkohärenz: Abb. \ref{abb1}, links). \\
+Für eine Punktquelle mit einer gewissen Spektralverteilung wird für jede einzelne 
+Energie der Verteilung auf dem Bildschirm ein eigenes Interferenzmuster mit eigener 
+Periodizität erzeugt. Der Interferenzstreifenkontrast der aus allen Einzelinterferenzen 
+summierten Gesamtintensität nimmt mit wachsendem Abstand von der optischen Achse 
+ab (Längenkohärenz: Abb. \ref{abb1}, rechts). 
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centerline{\includegraphics[height=6.5cm]{abb1_neu.png}} 
+\fi 
+\captionof{figure}{Winkelkohärenz (links): Eine ausgedehnte Quelle erzeugt gegenüber einer Punktquelle ein 
+gleichmäßig gedämpftes Interferenzstreifenmuster. Längenkohärenz (rechts): Eine Lichtquelle mit 
+spektraler Breite erzeugt ein Interferenzstreifenmuster, das stärker mit zunehmendem Abstand von der 
+optischen Achse gegenüber der Interferenzerscheinung einer monochromatischen Quelle gedämpft ist.  \label{abb1}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+Die Wellenzüge einer realen Lichtquelle besitzen einen gewissen Frequenzbereich $\triangle \nu$
+und eine endliche Länge $\triangle l$. Über die Unschärferelation
+
+\begin{equation}
+\triangle E \cdot \triangle t \approx \frac{h}{2}
+\end{equation}
+
+mit 
+
+\begin{equation*}
+\triangle E = h \triangle \nu 
+\quad \text{und} \quad
+\triangle t = \frac{\triangle l}{c}
+\end{equation*}
+
+und die Relation 
+
+\begin{equation*}
+\lambda \cdot \nu = c 
+\quad \text{d.h.} \quad
+\triangle \nu = \frac{\triangle \lambda \cdot c}{{\lambda}^2}
+\end{equation*}
+
+lässt sich für die Länge $\triangle l$ abschätzen: 
+
+\begin{equation} \label{ko_l}
+\triangle l \approx \frac{{\lambda}^2}{2\triangle \lambda}
+\end{equation}
+
+Diese Länge $\triangle l$, mit der zwei Wellenzüge gerade noch interferieren können wird auch als 
+\emph{Kohärenzlänge} bezeichnet. Die zugehörige Zeit $\triangle t = \frac{\triangle l}{c}$ heißt \emph{Kohärenzzeit}.
+
+Mit der Beziehung (\ref{ko_l}) lässt sich für Laserlicht der Wellenlänge $\lambda = 632,8~\mathrm{nm}$ und der 
+Spektralbreite $\frac{\triangle \lambda}{\lambda} = 2 \cdot 10^{-7}$ eine Kohärenzlänge von $\triangle l \approx 
+1,56~\mathrm{m}$ abschätzen. Da beim folgenden Versuch nur wesentlich geringere Gangunterschiede auftreten, ist die 
+Kohärenzlänge des Lasers mehr als ausreichend. 
+
+\subsubsection{Ebene Wellen}
+
+Der Welle-Teilchen-Dualismus erlaubt die Betrachtung eines Strahls von Photonen als elektromagnetische Welle. 
+Dabei genügt es, entweder den elektrischen oder den magnetischen Feldstärkevektor zu betrachten. 
+
+Die Wellengleichung 
+
+\begin{equation} \label{wellengl}
+\triangle \Psi (\vec{r},t) - \frac{1}{c^2} \frac{\partial^2 \Psi (\vec{r},t)}{\partial t^2} = 0
+\end{equation}
+
+ist eine Differentialgleichung zweiter Ordnung, d.h. es existiert ein zweidimensionaler Lösungsraum bestehend 
+aus den vollständigen und orthonormalen Funktionensystemen der Sinus- und Kosinusfunktionen. 
+Die Linearkombination zweier Lösungen ist auch wieder eine Lösung dieser Wellengleichung. \\
+Unter der Annahme monochromatischer paralleler Beleuchtung lässt sich der Vektor der 
+elektrischen Feldstärke $\Psi (\vec{r},t)$ als ebene harmonische Welle darstellen: 
+
+\begin{equation}
+\Psi (\vec{r},t) = A_0 \cdot \mbox{e}^{2 \pi i ( \nu t - \vec{k} \vec{r})}
+\end{equation}
+
+Die Amplitude der komplexen Welle ist die Maximalfeldstärke $A_0$, die Phase der Welle lautet $\nu t - \vec{k} \vec{r}$ 
+mit der Frequenz $\nu$ und dem Wellenzahlvektor $\vec{k}$, der über die Beziehung $\lambda = \frac{1}{\left| \vec{k} \right|}$ 
+mit der Wellenlänge $\lambda$ verknüpft ist. 
+
+Wird die Welle aufgezeichnet, geht die Phase der Welle bei der Intensitätsbildung verloren:
+
+\begin{equation*}
+I = \Psi \cdot \Psi^* = A_0 \cdot \mbox{e}^{2 \pi i ( \nu t - \vec{k} \vec{r})} \cdot A_0 
+ \cdot \mbox{e}^{-2 \pi i ( \nu t - \vec{k} \vec{r})} = A_0^2
+\end{equation*}
+
+\subsubsection{Zweistrahlinterferenz}
+
+Der Überlagerungsprozess zweier Wellen $\Psi_1$ und $\Psi_2$ kann aufgrund der Linearität der Wellengleichung 
+(\ref{wellengl}) durch Superposition (ungestörte Überlagerung) der beiden Wellen konstruiert werden, 
+d.h. jede Welle breitet sich so aus, als ob die andere nicht vorhanden wäre: 
+
+\begin{equation}
+\Psi = c_1 \Psi_1 + c_2 \Psi_2 
+\quad \text{mit} \quad
+c_1,~c_2 \in \mathbb C
+\end{equation}
+
+Da die beiden Teilwellen an jeder Stelle vektoriell addiert werden, bedeutet dies für die Intensität der resultierenden 
+Welle, dass sich die Intensitäten der Einzelwellen nicht einfach addieren, sondern das Betragsquadrat der resultierenden 
+Welle gebildet werden muss. Diese Abweichung von der Additivität der Einzelintensitäten bei der Überlagerung 
+wird als Interferenz bezeichnet. 
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centerline{\includegraphics[height=7cm]{abb2_neu.png}} 
+\fi 
+\captionof{figure}{Zweistrahlinterferenz: Bei der Überlagerung zweier Wellen werden für die Berechnung der Gesamtintensität 
+nicht die Einzelintensitäten addiert, sondern es wird das Betragsquadrat der resultierenden Welle gebildet. \label{abb2}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+Die beiden Wellen
+
+\begin{equation} \label{zwei_psi}
+\Psi_1 (\vec{r},t) = A_1 \cdot \mbox{e}^{2 \pi i ( \nu_1 t - \vec{k_1} \vec{r})}
+\quad \text{und} \quad
+\Psi_2 (\vec{r},t) = A_2 \cdot \mbox{e}^{2 \pi i ( \nu_2 t - \vec{k_2} \vec{r})}
+\end{equation}
+
+werden unter dem Winkel $\beta$ überlagert (vgl. Abb. \ref{abb2}). Die Anfangsamplituden lauten $A_1$ und $A_2$ und die 
+Frequenzen $\nu_1$ und $\nu_2$. Unterschiedliche Frequenzen $\nu_1$ und $\nu_2$ bedingen wegen $c = \lambda \cdot \nu$ 
+unterschiedliche Wellenzahlen $\vec{k_1} \ne \vec{k_2}$. Da dieser Effekt jedoch für geringe Frequenzunterschiede klein 
+ist, soll für die Wellenzahlvektoren $\left| \vec{k_1} \right| = \left| \vec{k_2} \right| = k = \frac{1}{\lambda}$ mit der 
+Wellenlänge $\lambda$ gelten. Der Ortsvektor sei $\vec{r} = \begin{pmatrix} x \\ z \end{pmatrix}$, wobei die $z$-Richtung 
+gemäß Abb. \ref{abb2} der optischen Achse entspreche. Die Wellenzahlvektoren lauten $\vec{k_1} = \begin{pmatrix} -k_x \\ k_z \end{pmatrix}$ 
+und $\vec{k_2} = \begin{pmatrix} k_x \\ k_z \end{pmatrix}$
+
+Zerlegt man die Phasenfaktoren in (\ref{zwei_psi}), so lassen sich die Wellen als
+
+\begin{equation*}
+\Psi_1 (\vec{r},t) = A_1 \cdot \mbox{e}^{-2 \pi i k_x x} \cdot \mbox{e}^{2 \pi i k_z z} \cdot \mbox{e}^{2 \pi i \nu_1 t} 
+\end{equation*}
+
+und 
+
+\begin{equation*}
+\Psi_2 (\vec{r},t) = A_2 \cdot \mbox{e}^{2 \pi i k_x x} \cdot \mbox{e}^{2 \pi i k_z z} \cdot \mbox{e}^{2 \pi i \nu_2 t}
+\end{equation*}
+
+darfstellen.
+
+Die Gesamtwelle ergibt sich nach dem Superpositionsprinzip zu 
+
+\begin{equation*}
+\Psi = \Psi_1 + \Psi_2
+\end{equation*}
+
+und als Intensität erhält man 
+
+\begin{align} \label{intensitaet}
+I & = \Psi \cdot \Psi^*	\nonumber \\
+  & = (\Psi_1 + \Psi_2) \cdot (\Psi_1 + \Psi_2)^* \nonumber \\
+  & = \left( A_1 \cdot \mbox{e}^{-2 \pi i k_x x} \cdot \mbox{e}^{2 \pi i k_z z} \cdot \mbox{e}^{2 \pi i \nu_1 t}
+           + A_2 \cdot \mbox{e}^{2 \pi i k_x x} \cdot \mbox{e}^{2 \pi i k_z z} \cdot \mbox{e}^{2 \pi i \nu_2 t} \right) \nonumber \\
+  & \cdot \left( A_1 \cdot \mbox{e}^{2 \pi i k_x x} \cdot \mbox{e}^{-2 \pi i k_z z} \cdot \mbox{e}^{-2 \pi i \nu_1 t}
+  		   + A_2 \cdot \mbox{e}^{-2 \pi i k_x x} \cdot \mbox{e}^{-2 \pi i k_z z} \cdot \mbox{e}^{-2 \pi i \nu_2 t} \right)
+\end{align}
+
+Aus (\ref{intensitaet}) folgt nach Ausmultiplizieren und Vereinfachen
+
+\begin{equation*}
+I = A_1^2 + A_2^2 + A_1 A_2 \cdot \left( \mbox{e}^{-2 \pi i \cdot 2 k_x x} \cdot \mbox{e}^{2 \pi i (\nu_1 - \nu_2)t} + 
+ \mbox{e}^{2 \pi i \cdot 2 k_x x} \cdot \mbox{e}^{-2 \pi i (\nu_1 - \nu_2)t} \right)
+\end{equation*}
+
+und nach Darstellung der Exponentialterme als Kosinus ergibt sich 
+
+\begin{equation} \label{int_cos}
+I = A_1^2 + A_2^2 + 2 A_1 A_2 \cos \left( 2 \pi \cdot 2 k_x x - 2 \pi (\nu_1 - \nu_2) t \right).
+\end{equation}
+
+ 
+Zunächst fällt auf, dass die Intensität (\ref{int_cos}) nicht von der Koordinate $z$ abhängt. Jedoch ist die kosinusförmige 
+Intensitätsverteilung zeitabhängig, d.h. die Kosinusstreifen bewegen sich kontinuierlich. Besitzen beide Primärwellen 
+die gleiche Frequenz $\nu = \nu_1 = \nu_2$, so reduziert sich (\ref{int_cos}) zu 
+
+\begin{equation} \label{int_cos2}
+I = A_1^2 + A_2^2 + 2 A_1 A_2 \cos (2 \pi \cdot 2k_x x)
+\end{equation}
+
+und die kosinusförmige Intensitätsverteilung wird stationär. Entsprechend Abb. \ref{abb3} besitzt das Kosinusmuster einen 
+konstanten Untergrund $A_1^2 + A_2^2$. Die Maxima der Intensität betragen $(A_1 + A_2)^2$ während die Minima den Wert 
+$(A_1 - A_2)^2$ annehmen. Der Streifenkontrast ist durch
+
+\begin{equation}  
+\mu =  \frac{I_{max} - I_{min}}{I_{max} + I_{min}} = \frac{2 A_1 A_2}{A_1^2 + A_2^2}
+\quad \text{mit} \quad
+0 \leq \mu \leq 1
+\end{equation}
+
+gegeben.
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centerline{\includegraphics[height=3.5cm]{abb3_neu.png}} 
+\fi 
+\captionof{figure}{Kosinusförmige Intensitätsverteilung. \label{abb3}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+Aus der Periodizitätsbedingung für das Kosinusmuster (\ref{int_cos2}) 
+
+\begin{equation*}
+2 k_x s = 1 
+\end{equation*}
+
+folgt für den Streifenabstand 
+
+\begin{equation} \label{streifenabstand}
+s = \frac{1}{2 k_x}
+\end{equation}
+
+Die Zerlegung der Wellenvektoren liefert mit Hilfe des Winkels $\beta$ (vgl. Abb. \ref{abb2}) 
+
+\begin{equation*}
+2 k_x = 2 k \cdot \sin \frac{\beta}{2}
+\end{equation*}
+
+Damit folgt aus (\ref{streifenabstand})
+
+\begin{equation} \label{streifen2}
+s = \frac{1}{2k \cdot \sin \frac{\beta}{2}} = \frac{\lambda}{2 \cdot \sin \frac{\beta}{2}} .
+\end{equation}
+
+Unter der Annahme kleiner Winkel $\beta$ ($\sin \beta \approx \beta$) vereinfacht sich (\ref{streifen2}) zu 
+
+\begin{equation}
+s = \frac{\lambda}{\beta}
+\end{equation}
+
+Somit stehen Überlagerungswinkel $\beta$ und Streifenabstand $s$ in einem direkten Zusammenhang. Je größer 
+der Überlagerungswinkel ist, desto feiner werden die Interferenzstreifen. Mit der Interferenzstreifenfrequenz  
+
+\begin{equation*}
+q = k \cdot \beta
+\end{equation*}
+
+gilt
+
+\begin{equation}
+q = \frac{1}{s}
+\end{equation}
+
+\subsubsection{Beugung am Objekt}
+
+Trifft eine ebene Welle  
+
+\begin{equation}
+\Psi_{in} = \mbox{e}^{2 \pi i k_z z}
+\end{equation}
+
+der Intensität $I = 1$ entlang der optischen Achse $z$ auf ein Objekt, so wird die einfallende Welle vom Objekt 
+moduliert (vgl. Abb. 4\ref{abb4}. Die Abschwächung der Amplitude der Welle wird durch eine Funktion $A(x)$ beschrieben, 
+während die Phase der Welle durch einen Phasenfaktor $\mbox{e}^{i \varphi (x)}$ beeinflusst wird. Diese Modulationen werden zur 
+Transmissionsfunktion des Objekts 
+
+\begin{equation*}
+o(x) = A(x) \cdot \mbox{e}^{i \varphi (x)}
+\end{equation*}
+
+zusammengefasst. Somit lautet die Objektaustrittswelle:
+
+\begin{equation}
+\Psi_{out} = o(x) \cdot \Psi_{in} = A(x) \cdot \mbox{e}^{i \varphi (x)} \cdot \mbox{e}^{2 \pi i k_z z}.
+\end{equation}
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centerline{\includegraphics[height=6cm]{abb4_neu.png}} 
+\fi 
+\captionof{figure}{Durchstrahlung eines Objekts: Eine einfallende Welle kann in Amplitude und Phase moduliert werden. 
+Ein reines Phasenobjekt verschiebt die Wellenfront, während ein reines Amplitudenobjekt die Amplitude der Welle abschwächt. 
+Allgemeine Objekte beeinflussen sowohl Amplitude, als auch Phase. \label{abb4}}
+\vspace{0.05\linewidth}
+\end{minipage}
+	
+Es treten allgemein dann Beugungsphänomene auf, wenn eine von einem Objekt 
+modulierte Welle sich im Raum ausbreitet. 
+
+Bei der Beugung unterscheidet man zwei Fälle: Als \textsc{Fresnel}sche Beugung wird der Fall der Beugung bezeichnet, bei dem 
+Beugungsobjekt und Abbildungsebene in voneinander kleinen Abständen angeordnet sind. Der Grenzfall unendlich großer Abstände 
+wird als \textsc{Fraunhofer}beugung bezeichnet (Abb. \ref{abb5}). 
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centerline{\includegraphics[height=6cm]{abb5_neu.png}} 
+\fi 
+\captionof{figure}{links: Der allgemeine Fall der Beugung wird als Fresnelbeugung bezeichnet. rechts: Der Grenzübergang zu 
+unendlich großen Abständen (z.B. durch Linsen realisiert) ist ein Spezialfall und heißt Fraunhoferbeugung. \label{abb5}}
+\vspace{0.05\linewidth}
+\end{minipage}
+ 
+Die Abbildung in unendlich großen Abständen gestaltet sich aus Platzgründen meist schwierig. Daher greift man im Experiment 
+auf Sammellinsen zurück. Platziert man die Lichtquelle und den Abbildungsschirm jeweils im Brennpunkt einer Linse 
+(vgl. Abb. \ref{abb5}), so kann auch die Fraunhoferbeugung unter Laborbedingungen realisiert werden. 
+
+Nach dem Prinzip von \textsc{Huygens} kann die Ausbreitung einer durch das Objekt modulierten Welle durch eine Überlagerung 
+von Kugelwellen aller Objektpunkte beschreiben. Abb. \ref{abb6} zeigt, wie sich zwei ebene Teilwellen am Strichgitter 
+ausbilden. 
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centerline{\includegraphics[height=6cm]{abb6_neu.png}} 
+\fi 
+\captionof{figure}{Prinzip von Huygens: Eine gebeugte Welle kann als Überlagerung von Kugelwellen aller Objektpunkte dargestellt 
+werden. Zwei der resultierenden ebenen Teilwellen sind schematisch abgebildet. Im Nahbereich liegt Fresnelsche Beugung, 
+im Fernbereich Fraunhoferbeugung vor. \label{abb6}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+Für große Abstände vom Beugungsobjekt, d.h. der Abstand zwischen Objekt und Schirm ist viel größer als das Beugungsobjekt, 
+können die kugelförmigen Wellenfronten der  Elementarwellen als ebene Wellen betrachtet werden. Damit ist die Welle nur noch vom
+Beugungswinkel $\alpha$ abhängig, jedoch nicht mehr von der Entfernung vom Objekt. 
+
+Die gebeugte Gesamtwelle in großer Entfernung vom Objekt lässt sich aus den einzelnen Huygens'schen Elementarwellen des Objekts 
+$o(x)$ in Richtung $\alpha$ summieren: 
+
+\begin{equation*} \label{psi_alpha}
+\Psi (\alpha) = \sum\limits_n \left( A(x_n) \cdot \mbox{e}^{i \varphi (x_n)} \cdot \mbox{e}^{2 \pi i \cdot k \sin \alpha \cdot x_n}
+ \right) \cdot \mbox{e}^{2 \pi i \cdot k \cos \alpha \cdot z}.
+\end{equation*}
+
+Der $z$-abhängige Faktor der Wellenfunktion wird im Folgenden weggelassen. Mit $k_x = k \cdot \sin \alpha$ ergibt sich für die 
+Welle (\ref{psi_alpha}) durch Substitution 
+
+\begin{equation*}
+\Psi (k_x) = \sum\limits_n \left( A (x_n) \cdot \mbox{e}^{i \varphi (x_n)} \cdot \mbox{e}^{2 \pi i \cdot k_x x_n} \right).
+\end{equation*}
+
+Der Phasenfaktor $\mbox{e}^{2 \pi i \cdot k_x x} = \mbox{e}^{2 \pi i \cdot k \sin \alpha \cdot x}$  gibt die optische Wegdifferenz 
+zwischen den Elementarwellen des Objekts aufgrund des Winkels $\alpha$ an (vgl. Abb. \ref{abb7}). Für den Grenzfall eines 
+kontinuierlichen Beugungsobjekts $(n \to \infty)$ wird aus der Summe ein Intergral über das gesamte Objekt: 
+
+\begin{equation*}
+\Psi (\alpha) = \int\limits_{\mathrm{Objekt}} \! A(x)  \cdot \mbox{e}^{2 \pi i \cdot k \sin \alpha \cdot x} \, \mbox{d}x
+\end{equation*}
+
+Wird der Integrationsbereich auf $\pm \infty$ ausgeweitet, so erhält man die Fouriertransformierte der Objektfunktion $o(x)$:
+
+\begin{equation}
+\Psi (\alpha) = \int\limits_{-\infty}^{+\infty} \! A(x) \cdot \mbox{e}^{i \varphi (x)} \cdot \mbox{e}^{2 \pi i \cdot k \sin \alpha
+ \cdot x} \, \mbox{d}x = \text{FT} \left[ A(x) \cdot \mbox{e}^{i \varphi (x)} \right]
+\end{equation}
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centerline{\includegraphics[height=5.5cm]{abb7_neu.png}} 
+\fi 
+\captionof{figure}{Um die Gesamtwelle für große Entfernungen vom Objekt zu bestimmen, wird über alle Huygens'schen Elementarwellen 
+in Richtung des Beugungswinkels $\alpha$ summiert. \label{abb7}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+\subsection{Fouriertransformation}
+
+\subsubsection{Fourierzerlegung} \label{fourierzerlegung}
+
+Jede periodische Funktion lässt sich als Summe aus Sinus- bzw. Kosinus-Schwingungen darstellen (Fourier-Reihe). 
+
+\small{Die Fourier-Zerlegung ist ein Spezialfall dafür, dass Funktionen durch Linearkombination von vollständigen Funktionensystemen 
+dargestellt werden können. Hier sind die $a_n$ und $b_n$ die Entwicklungskoeffizienten im vollständigen und orthonormalen 
+Funktionensystem der $\cos$- und $\sin$-Funktionen.}
+
+Sei $f(x)$ eine beliebige periodische Funktion der Periode $L$ und der Frequenz $q=\frac{1}{L}$, so lässt sich diese Funktion als 
+Überlagerung von Sinus- und Kosinusfunktionen schreiben: 
+
+\begin{equation} \label{zerlegung}
+f(x) = \frac{a_0}{2} + \sum\limits_{n=1}^{\infty} \left[ a_n \cdot \cos (2 \pi n q x) + b_n \cdot \sin (2 \pi n q x) \right]
+\end{equation}
+
+mit den Fourier-Koeffizienten 
+
+\begin{equation} \label{a_n}
+a_n = \frac{2}{L} \cdot \int\limits_0^L \! f(x) \cdot \cos (2 \pi n q x) \, \mbox{d}x
+\quad \text{mit} \quad
+n = 0,~1,~2,...
+\end{equation}
+
+und 
+
+\begin{equation} \label{b_n}
+b_n = \frac{2}{L} \cdot \int\limits_0^L \! f(x) \cdot \sin (2 \pi n q x) \, \mbox{d}x
+\quad \text{mit} \quad
+n = 1,~2,~3,...
+\end{equation}
+
+Die Fourier-Koeffizienten (\ref{a_n}) und (\ref{b_n}) geben an, wie stark die einzelnen Anteile der Frequenz $n \cdot q$ in der periodischen 
+Funktion $f(x)$ vertreten sind. 
+
+Dabei bedeuten die ganzzahligen Werte von $n$:
+
+\begin{tabular}{lll}
+$n=0$ & konstanter Untergrund & (Offset) \\
+$n=1$ & Grundschwingung		  & (erste harmonische Schwingung) \\
+$n=2$ & 1. Oberschwingung  	  & (zweite harmonische Schwingung) \\
+$n=3$ & 2. Oberschwingung     & (dritte harmonische Schwingung) \\
+... & &  \\
+\end{tabular}
+
+\textbf{Beispiel:} periodische Rechteckfunktion der Frequenz $q=\frac{1}{L}$.
+
+\begin{equation*}
+f(x) = \sum\limits_{n=1}^{\infty} \left[ b_n \cdot \sin (2 \pi (2n+1)qx) \right]
+\quad \text{mit} \quad 
+a_n = 0, \quad b_n = \frac{1}{2n+1}
+\end{equation*}
+
+ 
+Abb. \ref{abb8} zeigt den Graphen der resultierenden Fourierreihe mit den dazugehörigen Fourierkoeffizienten bis zum Vielfachen 
+$n = 10$ der Frequenz $q$. 
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centerline{\includegraphics[height=5.5cm]{abb8_neu.png}} 
+\fi 
+\captionof{figure}{Aufbau einer Rechteckmodulation aus mehreren Sinus- und Kosinusfunktionen unterschiedlicher Vielfache 
+$n \le 10$ der Frequenz $q$ und den dazugehörigen Amplituden $b_n$.  \label{abb8}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+\subsubsection{Komplexe Darstellung einer Fourierreihe}
+ 
+Aus der Euler-Beziehung zwischen Exponentialfunktion und den trigonometrischen Funktionen 
+
+\begin{equation}
+\mbox{e}^{ix} = \cos x + i \cdot \sin x
+\end{equation}
+
+lässt sich aus (\ref{zerlegung}) die komplexe Darstellung der Fourierreihe 
+
+\begin{equation}
+f(x) = \sum\limits_{n=-\infty}^{+\infty} \left[ c_n \cdot \mbox{e}^{2 \pi i n q x} \right]
+\end{equation}
+
+mit den Fourierkoeffizienten 
+
+\begin{equation}
+c_n = \frac{1}{L} \cdot \int\limits_{-\frac{L}{2}}^{+\frac{L}{2}} \! f(x) \cdot \mbox{e}^{-2 \pi i n q x} \, \mbox{d}x
+\quad \text{mit} \quad
+n=0,~\pm 1, ~ \pm 2,...
+\end{equation}
+
+ableiten. Die Fourierkoeffizienten $c_n$ und $a_n$ sowie $b_n$ hängen wie folgt zusammen: 
+
+\begin{align*}
+n=0: & \quad a_0 = 2 c_0 \\
+n>0: & \quad a_n = c_n + c_{-n} \quad \text{und} \quad b_n = i \cdot (c_n - c_{-n})
+\end{align*}
+
+\subsubsection{Definition der Fouriertransformation}
+
+Die allgemeine Überführung einer Funktion $f(x)$ aus dem Ortsraum $x$ in eine Funktion $F(q)$ im Frequenzraum $q$ wird als 
+Fouriertransformation bezeichnet.
+
+Die Funktion  
+
+\begin{equation}
+F(q) = \mbox{FT} \left[ f(x) \right] = \int\limits_{-\infty}^{+\infty} \! f(x) \cdot \mbox{e}^{2 \pi i q x} \, \mbox{d}x
+\end{equation}
+
+heißt Fouriertransformierte der Funktion $f(x)$. Die Rücktransformation 
+
+\begin{equation}
+f(x) = \mbox{FT}^{-1} \left[ F(q) \right] = \int\limits_{-\infty}^{+\infty} \! F(q) \cdot \mbox{e}^{-2 \pi i q x} \, \mbox{d}q
+\end{equation}
+
+wird inverse Fouriertransformation genannt. Der Frequenzraum wird auch als Fourierraum bezeichnet. 
+
+\subsubsection{Eigenschaften der Fouriertransformation}
+
+Seien $f(x)$ und $g(x)$ Funktionen im Ortsraum, und 
+
+\begin{equation*}
+F(q) = \mbox{FT} \left[ f(x) \right] = \int\limits_{-\infty}^{+\infty} \! f(x) \cdot \mbox{e}^{2 \pi i q x} \, \mbox{d}x
+\end{equation*}
+
+sowie
+
+\begin{equation*}
+G(q) = \mbox{FT} \left[ g(x) \right] = \int\limits_{-\infty}^{+\infty} \! g(x) \cdot \mbox{e}^{2 \pi i q x} \, \mbox{d}x
+\end{equation*}
+
+deren Fouriertransformierte, $a$ und $b$ komplexe Zahlen und $c$ eine reelle Zahl. Dann gilt: 
+
+\begin{enumerate}
+ \item \textbf{Parsevalsches Theorem:} (Erhaltung der Intensität)
+ \begin{equation}
+ \int\limits_{-\infty}^{+\infty} \left| f(x) \right|^2 \, \mbox{d}x = \int\limits_{-\infty}^{+\infty} \left| F(q) \right|^2 \, \mbox{d}q
+ \end{equation}
+ \item \textbf{Linearität:}
+ \begin{equation}
+ \mbox{FT} \left[ a \cdot f(x) + b \cdot g(x) \right] = a \cdot \mbox{FT} \left[ f(x) \right] + b \cdot \mbox{FT} \left[ g(x) \right]
+ \end{equation}
+ \item \textbf{Skalierung:} (gestreckte Funktion $\Leftrightarrow$ gestauchte Fouriertransformierte) 
+ \begin{equation}
+ \mbox{FT} \left[ f(c\cdot x) \right] = \frac{1}{c} \cdot F \left( \frac{q}{c} \right)
+ \end{equation}
+ \item \textbf{Verschiebung:} (verschobene Funktion $\Leftrightarrow$ phasenverschobene Fouriertransformierte) 
+ \begin{equation} \label{verschiebung}
+ \mbox{FT} \left[ f(x-x_0) \right] = \mbox{e}^{-2 \pi i q x_0} \cdot \mbox{FT} \left[ f(x) \right]
+ \end{equation}
+ \item \textbf{Faltungstheorem:} (Faltung im Ortsraum (siehe Abb. \ref{abb9}) $\Leftrightarrow$ Multiplikation im Fourierraum) 
+ \begin{align} \label{faltung}
+ f(x)\otimes g(x) & = \int\limits_{-\infty}^{+\infty} \! f(x') \cdot g(x-x') \, \mbox{d}x \nonumber \\
+ 	 	   		  & = \mbox{FT} \left[ f(x) \right] \cdot \mbox{FT} \left[ g(x) \right] \nonumber \\
+ 	 	   		  & = F(q) \cdot G(q) 
+ \end{align}
+ \item \textbf{Ableitung:} (Ableitung im Ortsraum $\Leftrightarrow$ zusätzlicher Faktor im Fourierraum) 
+ \begin{equation}
+ \mbox{FT} \left[ \frac{\partial f(x)}{\partial x} \right] = 2 \pi i q \cdot \mbox{FT} \left[ f(x) \right]
+ \end{equation}
+\end{enumerate}
+ 
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centerline{\includegraphics[height=9cm]{abb9_neu.png}} 
+\fi 
+\captionof{figure}{Faltung zweier Rechteckfunktionen: Das Faltungsintegral lässt sich anschaulich als 
+ortsabhängige Überlagerungsfläche zweier Funktionen verstehen.  \label{abb9}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+Im Zusammenhang mit dem Verschiebungssatz (\ref{verschiebung}) und dem Faltungssatz (\ref{faltung}) ist die Dirac'sche Deltafunktion 
+von großer Bedeutung: 
+
+\begin{equation}
+\delta (x) = \begin{cases}
+				\infty, & x=0 \\
+				0, 		& x\ne 0
+			 \end{cases}
+\quad \text{mit der Normierung} \quad
+\int\limits_{-\infty}^{+\infty} \! \delta (x) \, \mbox{d}x = 1.
+\end{equation}
+
+Die Dirac'sche Deltafunktion besitzt die Eigenschaften 
+
+\begin{equation*}
+\int\limits_{-\infty}^{+\infty} \! \delta (x) \cdot f(x) \, \mbox{d}x) = f(0)
+\end{equation*}
+
+und
+
+\begin{equation*}
+\int\limits_{-\infty}^{+\infty} \! \delta (x-x_0) \cdot f(x) \, \mbox{d}x = f(x_0)
+\end{equation*}
+
+Somit lässt sich mittels Fouriertransformation der Dirac'schen Deltafunktion 
+
+\begin{equation}
+\mbox{FT} \left[ \delta (x) \right] = \int\limits_{-\infty}^{+\infty} \! \delta (x) \cdot \mbox{e}^{2 \pi i q x} \, \mbox{d}x = \mbox{e}^{0} = 1
+\end{equation}
+
+und durch Verschieben des Arguments ein Phasenfaktor im Fourierraum generieren: 
+
+\begin{equation}
+\mbox{FT} \left[ \delta (x-x_0) \right] = \int\limits_{-\infty}^{+\infty} \! \delta (x-x_0) \cdot \mbox{e}^{2 \pi i q x} \, \mbox{d}x 
+ = \mbox{e}^{2 \pi i q x_0}
+\end{equation}
+
+Die Faltung einer Funktion mit der verschobenen Dirac-Funktion kann demnach genutzt werden, die Verschiebung dieser Funktion zu beschreiben: 
+
+\begin{align*}
+\mbox{FT} \left[ \delta (x-x_0) \otimes f(x) \right] & = \mbox{FT} \left[ \delta (x-x_0) \right] \cdot \mbox{FT} \left[ f(x) \right] \\
+													 & = \mbox{e}^{2 \pi i q x_0} \cdot \mbox{FT} \left[ f(x) \right] \\
+													 & = \mbox{FT} \left[ f(x-x_0) \right]
+\end{align*}
+
+Wird anstatt einer Dirac-Funktion eine Summe von Dirac-Funktionen genutzt, ist es auf diese Art und Weise möglich, eine Funktion zu 
+vervielfältigen: 
+
+\begin{align*}
+\mbox{FT} \left[ \left\{ \delta (x-x_1) + \delta (x-x_2) \right\} \otimes f(x) \right]
+			& = \left\{ \mbox{FT} \left[ \delta (x-x_2) \right] + \mbox{FT} \left[ \delta (x-x_2) \right] \right\} \cdot \mbox{FT} \left[ f(x) \right] \\
+			& = \left\{ \mbox{e}^{2 \pi i q x_1} + \mbox{e}^{2 \pi i q x_2} \right\} \cdot \mbox{FT} \left[ f(x) \right] \\
+			& = \mbox{e}^{2 \pi i q x_1} \cdot \mbox{FT} \left[ f(x) \right] + \mbox{e}^{2 \pi i q x_2} \cdot \mbox{FT} \left[ f(x) \right] \\
+			& = \mbox{FT} \left[ f(x-x_1) + f(x-x_2) \right]
+\end{align*}
+
+\subsubsection{Beispiele für Fouriertransformationen}
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centerline{\includegraphics[height=19cm]{abb10a_neu.png}} 
+\fi 
+\vspace{0.05\linewidth}
+\end{minipage}
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centerline{\includegraphics[height=19cm]{abb10b_neu.png}} 
+\fi 
+\vspace{0.05\linewidth}
+\end{minipage}
+
+\newpage
+
+\section{Versuchsdurchführung}
+
+\subsection{Aufgaben}
+
+\begin{enumerate}
+ \item Anhand der Beugungsbilder von Gittern unterschiedlicher Art und Geometrie soll die Fouriertransformation und deren Eigenschaften 
+ angewendet werden. 
+ \item Die Geometrie zweier Gitter ist aus den Beugungsbildern zu bestimmen und mittels Lichtmikroskop zu überprüfen.
+\end{enumerate}
+
+\subsection{Versuchsaufbau}
+
+Um die für Fraunhoferbeugung notwendige parallele Beleuchtung zu bewerkstelligen, wird der Laserstrahl auf der optischen Bank 
+durch einen Strahlaufweiter um den Faktor 50 aufgeweitet. Eine kombinierte Loch-/Schlitzblende ermöglicht es, den beleuchteten 
+Bereich auf dem dahinter befindlichen Gitter beliebig einzuschränken. Unmittelbar hinter dem Gitter ist eine langbrennweitige 
+Linse befestigt, die die Abbildung im Unendlichen in die hintere Brennebene verkürzt. Zur Aufzeichnung des Beugungsbildes 
+wird in der hinteren Brennebene der Linse eine CCD-Zeile positioniert, die über den Computer ausgelesen werden kann (Abb. \ref{abb10c}).  
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centerline{\includegraphics[height=3.7cm]{abb10c_neu.png}} 
+\fi 
+\captionof{figure}{Versuchsaufbau.  \label{abb10c}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+\subsection{Das Kosinusgitter}
+
+Ein unendlich ausgedehntes Kosinusgitter mit konstantem Untergrund 
+
+\begin{equation*}
+o(x) = 1 + A \cdot \cos (2\pi q_o x)
+\quad \text{mit} \quad
+0<A<1
+\end{equation*}
+
+liefert als Beugungsbild drei diskrete Reflexe. Im Allgemeinen ist jedes Beugungsobjekt jedoch räumlich begrenzt, was sich 
+durch die Multiplikation mit einer Rechteckfunktion beschreiben lässt (Abb. \ref{abb1}). \\
+Nach Anwendung des Faltungstheorems (\ref{faltung}) ergibt sich für das Beugungsbild eine Faltung von drei Delta-Peaks mit 
+einer $\mathrm{sinc}$-Funktion.
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centerline{\includegraphics[height=3cm]{abb11_neu.png}} 
+\fi 
+\captionof{figure}{Das endliche Gitter kann als Produkt von unendlichem Kosinusgitter und einer 
+Rechteckfunktion beschrieben werden. Damit ist das Beugungsbild eine Faltung von diskreten 
+Beugungsreflexen mit der Sinc-Funktion, d.h. die Reflexe werden verbreitert.   \label{abb11}}
+\vspace{0.05\linewidth}
+\end{minipage} 
+																			
+Der Beugungswinkel $\alpha$ ist direkt mit dem Gitterabstand $s$ des Kosinusgitters verknüpft: 
+
+\begin{equation*}
+q = \frac{1}{s} = k \cdot \alpha
+\end{equation*}
+
+Der Beugungswinkel lässt sich aus dem Abstand $b$ zwischen Nullstrahl und abgebeugten Reflex und dem Abstand $z_0$ zwischen 
+Objekt und CCD-Zeile bestimmen (vgl. Abb. \ref{abb12}): 
+
+\begin{equation*}
+\tan \alpha = \frac{b}{z_0} \quad \stackrel{\alpha \ll 1}{\Longrightarrow} \quad \alpha = \frac{b}{z_0}.
+\end{equation*}
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centerline{\includegraphics[height=3.7cm]{abb12_neu.png}} 
+\fi 
+\captionof{figure}{Der Beugungswinkel $\alpha$ lässt sich aus den Abständen $z_0$ (Objekt-CCD-Zeile) und $b$ 
+(Nullstrahl-Beugungsreflex) bestimmen.    \label{abb12}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+Da sich jede beliebige periodische Funktion in Sinus- und Kosinusfunktionen zerlegen lässt (siehe Abschnitt \ref{fourierzerlegung}), 
+ist die Beugung am Kosinusgitter der Elementarprozess der Beugung. Aufgrund der Linearität der Fouriertransformation 
+lässt sich das Beugungsbild jedes beliebigen periodischen Objekts aus diskreten Reflexen zusammensetzen. Dabei 
+spielen die Phasen der jeweiligen Reflexe, die beim Aufzeichnen durch die Intensitätsbildung verloren gehen, eine große 
+Rolle. Diese Phasen beinhalten die Information über die laterale Position des jeweiligen Sinus- bzw. Kosinusbeitrags 
+innerhalb des Objekts (siehe Eigenschaften der Fouriertransformation). Der Zugang zu den Phasen der Beugungsreflexe 
+ist nur über holografische Aufzeichnungsmethoden möglich, liefert jedoch zusätzliche Information über die Objektstruktur, 
+die z.B. im Falle der Elektronenbeugung an Kristallstrukturen interessante Eigenschaften der Festkörper aufdecken können. 
+
+\subsubsection{Der Einfachspalt}
+
+Als Beugungsbild eines Einzelspaltes der Breite $A$ erhält man nach Intensitätsbildung das Quadrat der $\mathrm{sinc}$-Funktion:
+
+\begin{equation*}
+I (\alpha) \propto \left( \frac{\sin (\pi A \frac{\alpha}{\lambda})}{\pi A \frac{\alpha}{\lambda}} \right).
+\end{equation*}
+
+Zur Bestimmung der Spaltbreite $A$ können die Nullstellen der $\mathrm{sinc}$-Funktion herangezogen werden. Die Bedingung 
+für $n$-te Nullstelle der $\mathrm{sinc}$-Funktion mit dem dazugehörigen Beugungswinkel $\alpha_n$ lautet: 
+
+\begin{equation} \label{einfachspalt}
+n \pi = \pi A \frac{\alpha_n}{\lambda}
+\end{equation}
+
+Die Ermittelung der Spaltbreite über die Positionen der Nebenmaxima gestaltet sich schwieriger, da diese nicht etwa bei 
+halbzahligen Vielfachen von $\pi$ zu finden sind $\left( \frac{3 \pi}{2},~\frac{5 \pi}{2},~\frac{7 \pi}{2},... \right)$,
+sondern nach Differenzieren von (\ref{einfachspalt}) und Null setzen durch
+
+\begin{equation*}
+\tan \left( \pi A \frac{\alpha}{\lambda} \right) = \pi A \frac{\alpha}{\lambda}
+\end{equation*}
+
+bestimmt sind. Solche transzendenten Gleichungen lassen sich in der Regel nur numerisch lösen. 
+
+\subsection{Der Doppelspalt}
+
+Stellt man den Doppelspalt als Faltung einer Rechteckfunktion mit zwei Delta-Peaks dar, so erhält man nach 
+Fouriertransformation ein Produkt zwischen einer $\mathrm{sinc}$-Funktion, die die Charakteristik jedes einzelnen Spalts 
+der Breite $A$ beeinhaltet, und einem Kosinus, dessen Periodizität auf den Abstand $a$ der beiden Spalte schließen lässt (Abb. \ref{abb13}). 
+
+Die gemessene Intensität lautet: 
+ 
+\begin{equation*}
+I (\alpha) \propto \left( A \cdot \frac{\sin (\pi A \frac{\alpha}{\lambda})}{\pi A \frac{\alpha}{\lambda}} \right)^2 \cdot
+ \cos^2 \left( \pi A \frac{\alpha}{\lambda} \right)
+\end{equation*}
+
+Analog zum Einzelspalt lässt sich die Spaltbreite $A$ über die Nullstellen der einhüllenden $\mathrm{sinc}$-Funktion bestimmen. 
+Der Abstand $a$ zwischen den beiden Spalten folgt aus den Maxima bzw. Minima der Kosinusmodulation. 
+ 
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centerline{\includegraphics[height=3cm]{abb13_neu.png}} 
+\fi 
+\captionof{figure}{Doppelspalt: Ein Doppelspalt lässt sich durch Faltung einer Rechteckfunktion mit zwei 
+Delta-Peaks beschreiben. Nach Fouriertransformation ergibt sich das Beugungsbild aus dem Produkt der 
+Sinc-Funktion mit einem Kosinusmuster.    \label{abb13}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+\subsection{Das Strichgitter}
+
+Analog zum Doppelspalt kann auch das Strichgitter als Faltung zweier einfacher Funktionen dargestellt werden. Die Faltung 
+der Rechteckfunktion der Breite $A$ eines einzelnen Spalts mit einem Delta-Kamm der Periode $a$ ergibt im Fourierraum ein Produkt 
+von $\mathrm{sinc}$-Funktion mit einem Delta-Kamm (Abb. \ref{abb14}). Dabei kommt es aufgrund der endlichen Ausdehnung des 
+Strichgitters zu einer Verbreiterung der Beugungsreflexe (siehe Kosinusgitter). 
+
+Die auf der CCD-Zeile gemessene Intensität lautet damit 
+
+\begin{equation*}
+I (\alpha) \propto \left( A \cdot \frac{\sin (\pi A \frac{\alpha}{\lambda})}{\pi A \frac{\alpha}{\lambda}} \cdot \frac{1}{a} 
+ \sum\limits_n \delta \left( \frac{\alpha}{\lambda} - \frac{n}{a} \right) \right)^2.
+\end{equation*}
+
+Analog zum Doppelspalt lässt sich die Spaltbreite $A$ über die Nullstellen der einhüllenden $\mathrm{sinc}^2$-Funktion 
+ermitteln. Die Gitterkonstante $a$ ist dagegen über die Position der $n$-ten Beugungsmaxima mit den dazugehörigen Beugungswinkeln 
+
+\begin{equation*}
+\alpha_n = \frac{n}{a} \cdot \lambda
+\end{equation*}
+
+bestimmbar.
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centerline{\includegraphics[height=3cm]{abb14_neu.png}} 
+\fi 
+\captionof{figure}{Strichgitter: Die Faltung einer Rechteckfunktion mit einem Delta-Kamm ergibt ein 
+Strichgitter. Im Fourierraum entspricht dies dem Produkt von $\mathrm{sinc}$-Funktion und Delta-Kamm. Da es sich 
+im Allgemeinen um ein endliches Strichgitter handelt, sind die resultierenden Beugungsreflexe leicht 
+verbreitert (vgl. Abb. \ref{abb11}).    \label{abb14}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+\frage{Wie hängt die Intensität einer Welle von der Amplitude und der Phase dieser Welle ab?}
+\frage{Wodurch unterscheiden sich die Fraunhoferbeugungsbilder eines Kosinus- und eines Sinusgitters?}
+\frage{Wie funktioniert ein Strahlaufweiter?}
+\frage{Was passiert mit den Beugungsreflexen eines Kosinusgitters, wenn das Kosinusgitter räumlich immer stärker begrenzt wird?}
+\frage{Was besagt das Prinzip von Babinet?}
+\frage{Warum können unter inkohärenter Beleuchtung keine Interferenzerscheinungen beobachtet werden?}
+\frage{Wie groß ist die Kohärenzlänge von Glühlampenlicht? ($\lambda = 0,5~\mathrm{\mu m}$, $\triangle \lambda = 0,3~\mathrm{\mu m}$)}
+
+\end{document}
+

@@ -1,0 +1,20 @@
+\[
+\begin{array}{l}
+ 1 \\ 
+ E_A \left( {E_{k,i}  = E_F } \right) = \Phi  \\ 
+ 2 \\ 
+ E_{k,a}  = m_e \frac{{v_a^2 }}{2} = E - E_A  \\ 
+ 3 \\ 
+ E = h \cdot \nu  \\ 
+ 4 \\ 
+ E_{a,\max }  = m_e \frac{{v_{a,\max }^2 }}{2} = h \cdot \nu  - \Phi  \\ 
+ 5 \\ 
+ I_{Ph}  = I_{Ph} \left( {U_A } \right) \\ 
+ 6 \\ 
+ U_A^0  = m_e \frac{{v_{a,\max }^2 }}{{2 \cdot e}} =  - \frac{{h \cdot \nu  - \Phi }}{e} =  - \frac{h}{e} \cdot \nu  - \varphi _K  \\ 
+ 7 \\ 
+ U_{AK}  = \varphi _A  - \varphi _K  \\ 
+ 8 \\ 
+ U_{A,\exp }^0  = U_A^0  + U_{AK}  = U_A^0  + \left( {\varphi _A  - \varphi _K } \right) =  - \frac{h}{e} \cdot \nu  + \varphi _A  \\ 
+ \end{array}
+\]

@@ -1,0 +1,263 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd,subfigure}
+\usepackage{booktabs}
+\usepackage{wrapfig}
+\renewcommand{\figurename}{Abb.}
+
+\versuch{Erzwungene Schwingungen}{ES}
+\author{M.~Kauer,B.~Scholz}
+\date{26.03.2012}
+\bearbeitet{}{}
+
+\begin{document}
+
+\maketitle
+
+\section{Aufgabenstellung}
+Gegenstand dieses Versuchs ist ein Drehpendel, das sog. Pohlsche Rad. Mithilfe dieses Systems sollen die
+\begin{enumerate}
+\item Eigenfrequenz des nahezu ungedämpften Systems,
+\item die Dämpfungskonstante in Abhängigkeit von der an der Wirbelstrombremse angelegten Stromstärke,
+\item und zwei Resonanzkurven gemessen werden.
+\end{enumerate}
+Ziel ist es, die charakteristischen Eigenschaften gedämpfter und erzwungener Schwingungen zu verstehen.
+
+\section{Theoretische Grundlagen}
+\subsection{Lineare, gedämpfte Schwingungen\label{sec:linschwing}}
+Wirkt auf einen Körper eine Kraft, die proportional zu seiner Auslenkung aus der Ruhelage ist und entgegen der Auslenkung wirkt (rücktreibende Kraft), so schwingt der Körper harmonisch. Es gilt entsprechend
+\begin{eqnarray}
+   F=m \ddot{x} = -Dx \\
+   \ddot{x}+\frac{D}{m}x = 0.
+\end{eqnarray}
+Die Bewegung des Körpers wird durch folgende Bewegungsgleichung beschrieben: 
+\begin{eqnarray}
+   x(t)=a\, \sin (\omega t) +b \cos (\omega t)\quad\text{mit}\quad
+   \omega=\sqrt{\frac{D}{m}}
+\end{eqnarray}
+Eine harmonische Schwingung erhält die Gesamtenergie des Systems, sie wird aber im Laufe der Schwingung ständig von potentieller in kinetische Energie umgewandelt und umgekehrt. Reale Schwingungen unterliegen aber noch zusätzlichen Reibungskräften, die dem System Energie entziehen. Oft ist die Reibung proportional zur Geschwindigkeit und es gilt:
+\begin{eqnarray}
+   F\,=\,m\ddot{x}\,=\,-Dx\,-\,k\dot{x} \\
+   m\ddot{x}\,+\,k\dot{x}\,+\,Dx\,=\,0
+   \label{eqn:schwing2}
+\end{eqnarray}
+Diese Differentialgleichung kann mit dem Ansatz $ x(t)\,=\,x_0\,e^{\lambda t}$ gelöst werden. Setzt man diesen in Gl. (\ref{eqn:schwing2}) ein erhält man
+\begin{eqnarray}
+   (m\lambda^2+k\lambda+D)\,x_0\,e^{\lambda t}=0
+\end{eqnarray}
+Die Gleichung besitzt eine Lösung, wenn $m\lambda^2+k\lambda+D\,=\,0$. Man erhält damit 2 Lösungen für $\lambda$:
+\begin{eqnarray}
+   \lambda_{1,2}=-\frac{k}{2m}\pm\frac{1}{2m}\sqrt{k^2-4 m D}
+   \label{eqn:lambda}
+\end{eqnarray}
+Zur Vereinfachung werden die Dämpfungskonstante $\delta=\frac{k}{2m}$ und die Kreisfrequenz $\omega = \sqrt{\frac{D}{m}-\frac{k^2}{4m^2}}=\sqrt{\omega_0^2-\delta^2}$ eingführt. Gl. (\ref{eqn:lambda}) vereinfacht sich damit zu:
+\begin{eqnarray}
+   \lambda_{1,2}=-\delta\pm \sqrt{\delta^2-\omega_0^2}
+   \label{eqn:lambda2}
+\end{eqnarray}
+
+\begin{figure}[htbp]
+   \centering
+   \includegraphics[width=0.8\linewidth]{./images/vergleich1.pdf}
+   \caption{Geplottet wurden hier eine ungedämpfte Schwingung (grün), eine gedämpfte Schwingung mit $\delta=\frac{1}{s}$ (schwarz), sowie die Einhüllende (rot).}
+   \label{fig:vergleich1}
+\end{figure}
+
+Abhängig von der Größe der Dämpfung ergeben sich insgesamt drei Fälle:
+\begin{enumerate}
+   \item $\delta^2<\omega^2_0$ - Gedämpfte Schwingung:\\
+   Das Argument unter der Wurzel ist negativ und es ergibt sich $\lambda_1\,=\,-\delta+i\omega$. Die Auslenkung wird durch
+   \begin{eqnarray}
+      x(t)\,=\,x_0\,e^{-\delta t}\,e^{i\omega t}
+   \end{eqnarray}
+   beschrieben. Das System ist schwingungsfähig, was eindeutig am Realteil $Re(x)\,=\,x_0\,e^{-\delta t} \cos{\omega t}$ erkennbar ist. Jedoch nimmt die Amplitude der Schwingung exponentiell ab (vgl. \ref{fig:vergleich1}). Es gibt mindestens einen Nulldurchgang, bevor das Pendel zur Ruhe kommt. Die Lösung für diesen Fall ist in Abb. (\ref{fig:vergleich1}) dargestellt. Da die Schwingung jedoch nicht in der maximal Auslenkung starten muss, wird eine Phasenverschiebung hinzugefügt, um eine allgemeine, mit allen Startbedingungen verträgliche Beschreibung des Vorgangs zu erhalten:
+   \begin{eqnarray}
+      x(t)\,=\,x_0\,e^{-\delta t}\,e^{i(\omega t+\phi)}\quad\text{oder}\quad Re(x)=x_0 e^{-\delta t} \cos{(\omega t+ \phi)}
+   \end{eqnarray}
+
+   \item $\delta^2=\omega^2_0$ - Aperiodischer Grenzfall:\\
+   In diesem Spezialfall verschwindet der Term unter der Wurzel in Gl.(\ref{eqn:lambda2}) genau, und die Auslenkung ist gegeben durch:
+   \begin{eqnarray}
+      x(t)\,=\,x_0\,(1+\delta t)\,e^{-\delta t}
+   \end{eqnarray}
+   Das Pendel kehrt schnellstmöglich in die Ruhelage zurück. Abhängig von den Anfangsbedingungen kann es hierbei zu keinem oder genau einem Nulldurchgang kommen. Die Lösung dieses Spezialfalles findet sich z.B. in \cite{Demtroeder} 11.4c.
+
+   \item $\delta^2>\omega^2_0$ - Kriechfall:\\
+   Die Wurzel in Gl.(\ref{eqn:lambda2}) wird reell und die Dämpfung nimmt zu: Es gilt damit
+   \begin{eqnarray}
+      x(t)\,=\,x_1\,e^{\lambda_1 t}\,+\,x_2\,e^{\lambda_2 t}\quad\text{mit}\quad\lambda_{1,2}=-\delta\pm \sqrt{\delta^2-\omega_0^2}
+   \end{eqnarray}
+   Die allgemeine Lösung ist eine Linearkombination aus den reellen Exponenten $\lambda_{1}$ und $\lambda_{2}$ zusammen. Das System ist nicht mehr schwingungsfähig und das Pendel kehrt sehr langsam, quasi kriechend, in die Ruhelage zurück. Es gibt währendessen keinen Nulldurchgang. Vergleiche hierzu \cite{Demtroeder} 11.4b.
+\end{enumerate}
+
+
+\subsection{Gedämpfte Drehschwingungen}
+\begin{table}[htbp]
+   \centering
+   \begin{tabular}{llll}
+      \multicolumn{2}{c}{Translation} & \multicolumn{2}{c}{Rotation}\\
+      \toprule
+      Ort & $x$ & Winkel & $\varphi$ \\
+      Geschwindigkeit & $v\,=\,\dot{x}$ & Winkelgeschwindigkeit & $\omega\,=\,\dot\varphi$\\
+      Beschleunigung & $a\,=\,\ddot{x}$ & Winkelbeschleunigung & $\alpha\,=\,\ddot\varphi$\\
+      Kraft & $F$ & Drehmoment & $M$\\
+      Leistung & $P\,=\,F\cdot v$ & Leistung & $P\,=\,M\cdot\omega$
+   \end{tabular}
+   \caption{Vergleich der eindimensionalen Translation und Rotation.}
+   \label{tab:vergleich}
+\end{table}
+Da die Beschreibung einer Drehschwingung in kartesischen Koordinaten als Translationsbewegung mühselig wäre, bietet es sich an, die Bewegung als Rotation zu beschreiben. Hierbei übernimmt der Winkel $\varphi$ die Rolle der Auslenkung, die Drehgeschwindigkeit $\dot\varphi$ die der Geschwindigkeit und die Drehbeschleungigung $\ddot\varphi$ die der Beschleunigung. Den Kräften entsprechen bei Drehbewegungen die sog. Drehmomente. Genaueres dazu im Versuch RO. Eine Gegenüberstellung der Translations- und Rotationsbewegung findet sich in Tab. \ref{tab:vergleich}.
+Die Bewegungsgleichung der Drehschwingung lautet analog zur Bewegungsgleichung für lineare Schwingungen:
+\begin{eqnarray}
+   I\ddot{\varphi}_D\,+\,k_D\dot{\varphi}_D\,+\,D_D\varphi_D\,=\,0\label{gl:gedaempfteschwingung}
+\end{eqnarray}
+Hierbei ist $\varphi$ der Auslenkungswinkel, $D_D$ Das Richtmoment, $I$ das Trägheitsmoment um die Drehachse und $k_D$ die Reibungskonstante. 
+Wird ein Drehmoment $M$ auf dieses System ausgeübt, so ergibt sich folgende Bewegungsgleichung:
+\begin{eqnarray}
+   I\ddot{\varphi}_D\,+\,k_D\dot{\varphi}_D\,+\,D_D\varphi_D\,=\,M
+\end{eqnarray}
+Es kann eine neue Variable $\varphi\,=\,\varphi_D\,-\,\frac{M}{D_D}$ eingeführt werden, womit vereinfacht geschrieben werden kann:
+\begin{eqnarray}
+   \ddot{\varphi}\,+\,2\delta\dot{\varphi}\,+\,\omega^2_0\varphi\,=\,0\label{gl:gedaempfteschwingung}
+\end{eqnarray}
+Hierbei stellt $\delta$ die Dämpfungskonstante und $\omega_0$ die Eigenfrequenz des Systems dar. Mithilfe eines Exponentialansatzes kann nun die Lösung der Bewegungsgleichung analog zu \ref{sec:linschwing} ermittelt werden. Diese ergibt sich für die gedämpfte Schwingung im Schwingfall ($\delta^2<\omega^2$) zu:
+\begin{eqnarray}
+   \varphi(t)\,=\,\varphi_0\,e^{-\delta t}\cos{(\omega t\,+\,\theta)}\label{gl:gedaempfteloesung}
+\end{eqnarray}
+Dabei ist $\varphi$ die Maximalamplitude und $\theta$ eine Phasenverschiebung, welche durch die Anfangsbedingungen gegeben sind. Des weiteren ist $\omega$ die Kreisfrequenz der gedämpften Schwingung, welche nicht mit $\omega_0$, der Eigenfrequenz des ungedämpften Systems, verwechselt werden darf. Es gilt jedoch ein einfacher Zusammenhang zwischen diesen beiden Größen:
+\begin{eqnarray}
+   \omega\,=\,\sqrt{\omega^2_0-\delta^2}
+\end{eqnarray}
+Es bleibt zu erwähnen, dass die Kreisfrequenz für eine gegebene Dämpfung während des gesamten Schwingungsvorgangs konstant bleibt. Nur die Amplitude der Schwingung verringert sich mit zunehmender Schwingungsdauer. Vergleiche hierzu Abb. \ref{fig:vergleich2}.
+
+\begin{figure}[htbp]
+   \centering
+   \includegraphics[width=0.8\linewidth]{./images/vergleich2.pdf}
+   \caption{Es wurden gedämpfte Schwingungen für fünf unterschiedliche Dämpfungskonstanten geplottet. Grün: $\delta\,=\,\frac{1}{s}$, rot: $\delta\,=\,\frac{3}{s}$, orange: $\delta\,=\,\frac{9.7}{s}$, schwarz: $\delta\,=\,\frac{4\,\pi}{s}\,=\,\omega$, lila: $\delta\,=\,\frac{12\,\pi}{s}$.}
+   \label{fig:vergleich2}
+\end{figure}
+
+\subsection{Erzwungene Schwingungen}
+Man spricht von einer erzwungenen Schwingung, wenn ein schwingungsfähiges System mit einem äußeren Erreger gekoppelt wird. Der Erreger, z.B. ein Motor, übt während der Schwingung auf das System ein zeitabhängiges Moment aus. Die Differentialgleichung, welche ein solches gekoppeltes System beschreibt, entspricht weitestgehend der Differentialgleichung für die gedämpfte Schwingung (vgl. Gl. \ref{gl:gedaempfteschwingung}). Jedoch tritt ein zusätzlicher, zeitabhängiger Term auf, der den Erreger und das von ihm ausgeübte Moment beschreibt. Für den Fall einer kosinusförmigen äußeren Anregung erhält man dann:
+\begin{eqnarray}
+   \ddot{\varphi}\,+\,2\delta\dot{\varphi}\,+\,\omega^2_0\varphi\,=\,A_E\,e^{i\omega_E t}
+   \label{eqn:dglErr}
+\end{eqnarray}
+Die Lösung einer solchen, inhomogenen Differentialgleichung lässt sich durch die Superposition der Lösung der homogenen Differentialgleichung und einer speziellen Lösung der inhomogenen Differentialgleichung finden.\\
+
+\paragraph{Allgemeine Lösung der homogenen DGL}
+Der allgemeine Ansatz wurde für den Fall der linearen gedämpften Schwingung ausführlich beschrieben.
+Es ergibt sich 
+\begin{eqnarray}
+	\varphi(t)=\varphi_0 e^{-\delta t} \cos{(\omega t+\theta)}
+\end{eqnarray}
+
+\paragraph{Spezielle Lösung der inhomogenen DGL}
+Man kann als geeigneten Ansatz
+\begin{eqnarray}
+   z\,=\,A e^{i(\omega_E t-\theta)}
+\end{eqnarray}
+wählen, vgl. hierzu \cite{Demtroeder} 11.5. Der Lösungsansatz beinhaltet zwei freie Parameter: Die Amplitude $A$ der erzwungenen Schwingung und ihre Phasenverschiebung $\theta$ gegenüber des Erregers. Setzt man diesen Ansatz in die Bewegungsgleichung (\ref{eqn:dglErr}) ein, so ergibt sich folgende komplexe Gleichung:
+\begin{eqnarray}
+   (\omega_0^2-\omega_E^2)\,+\,2i\delta\omega_E\,=\,\frac{A_E}{A}\,e^{i\theta}
+\end{eqnarray}
+Diese Gleichung lässt sich wiederrum in zwei einzelne Gleichungen für Real- und Imaginärteil zerlegen:
+\begin{eqnarray}
+   \text{Realteil:}&\omega_0^2-\omega_E^2\,=\,\frac{A_E}{A}\,\cos{\theta}\\
+   \text{Imaginärteil:}&2\delta\omega_E\,=\,\frac{A_E}{A}\,\sin{\theta}
+\end{eqnarray}
+Damit erhält man zwei Bestimmungsgleichungen für die zwei Unbekannten $A$ und $\theta$, womit diese eindeutig bestimmt sind. $A$ ist damit gegeben durch:
+\begin{eqnarray}
+   A(\omega_E)\,=\,\frac{A_E}{\sqrt{(\omega_0^2-\omega^2)^2+(2\delta\omega_E)^2}}
+   \label{eqn:amplitude}
+\end{eqnarray}
+Man kann also leicht erkennen, dass die Amplitude der erzwungenen Schwingung von folgenden Größen abhängt:
+\begin{itemize}
+   \item Amplitude $A_E$ des äußeren Drehmoments
+   \item Dämpfung $\delta$ des Systems
+   \item Eigenfrequenz $\omega_0$ und Erregerfrequenz $\omega_E$
+\end{itemize}
+Die Phasenverschiebung $\theta$ in Abhängigkeit von der Erregerfrequenz ergibt sich hingegen zu
+\begin{eqnarray}
+   \theta(\omega_E)\,=\,\text{ArcTan}\left(\frac{2\delta\omega_E}{\omega_0^2-\omega_E^2}\right).
+\end{eqnarray}
+
+\paragraph{Allgemeine Lösung der inhomgenen Differentialgleichung}
+Aus den beiden vorangegangenen Lösungen kann man nun die allgemeine Lösung der Differentialgleichung durch eine Superposition konstruieren. Es ergibt sich damit
+\begin{eqnarray}
+	\varphi(t)=\varphi_0 e^{-\delta t} \cos{(\omega t+\theta_0)} + A(\omega_E) \cos{(\omega_E t+\theta)}.
+\end{eqnarray}
+Der erste Term beschreibt dabei den Einschwingvorgang, dessen Amplitude exponentiell abnimmt. Der zweite Term beschreibt die durch den Erreger erzwungene Schwingung. Dies zeigt, dass das System nach einer gewissen Zeit eine harmonische Bewegung mit der Erregerfrequenz ausführt, die allerdings um eine Phase $\theta$ verschoben ist.
+\begin{figure}[htbp]
+   \centering
+   \includegraphics[width=0.8\linewidth]{./images/amplituden.pdf}
+   \caption{Resonanzkurven für verschiedene Dämpfungen. Die Erregeramplitude wurde zu $A_E\,=\,45\frac{°}{s^2}$ festgelegt. Man kann leicht die sog. Resonanzkatastrophe erkennen. Es gilt $\delta_{\text{rot}} = 0 < \delta_{\text{grün}} < \delta_{\text{schwarz}} < \delta_{\text{blau}}$ }
+   \label{fig:resonanzkurven}
+\end{figure}
+
+
+\subsection{Die Resonanzkurve}
+Aus Gl. (\ref{eqn:amplitude}) kann man durch Ableiten die Lage des Maximums der Resonanzkurve bestimmen. Das Maximum verschiebt sich mit zunehmender Dämpfung $\delta$.
+\begin{eqnarray}
+   \omega_{\text{max}}\,=\,\sqrt{\omega_0^2-2\delta^2}
+\end{eqnarray}
+
+
+\subsection{Phasenverschiebung}
+Die Phasendifferenz $\theta$ zwischen Erreger und System ist von der Erregerkreisfrequenz $\omega_E$ abhängig und springt im ungedämpften Fall bei $\omega_E=\omega_0$ von 0 auf $\pi$. Je größer die Dämpfung, desto langsamer geschieht der Sprung. Der Verlauf der Phasenverschiebung in Abhängigkeit von $\omega$ ähnelt für starke Dämpfungen einer Geraden.
+
+
+\subsection{Wirbelstrombremse\label{sec:wirbelstrombremse}}
+Die Wirbelstrombremse besteht aus einer Spule,welche bei angelegtem Strom $I$ über das Magnetfeld $B\sim I$ ein bremsendes Drehmoment auf das Pendel ausübt. Die induzierte Spannung im Drehpendel lässt sich mithilfe des Faradayschen Induktionsgesetzes zu $U_{\text{ind}}\sim B\cdot v$ berechnen. Das dämpfende Drehmoment der Wirbelstrombremse kann damit folgendermaßen abgeschätzt werden:
+\begin{eqnarray}
+   P_{\text{Brems}}\,&\sim&\,U^2_{\text{ind}}\,\sim\,B^2\cdot v^2\,\sim\,I^2\cdot\dot{\varphi}^2\\
+   M&=&\frac{P_{\text{Brems}}}{\dot\varphi}\,\sim\,I^2\cdot\dot{\varphi}
+\end{eqnarray}
+Daher ist eine $I^2$ Abhängigkeit der Dämpfungskonstanten $\delta$ zu erwarten.
+
+
+\section{Aufbau und Durchführung}
+Der Versuch wird mithilfe des Pohlschen Rads durchgeführt, vgl. hierzu Abb. \ref{fig:aufbau}. Dieses besteht aus einem drehbar gelagerten Kupferrad, welches durch eine Spiralfeder in Ruhelage gehalten wird. Zusätzlich kann das Drehpendel durch einen Motor angeregt werden. Mithilfe einer Wirbelstrombremse können weiterhin verschiedene Dämpfungen eingestellt werden.
+\begin{figure}
+\includegraphics[width=\linewidth]{./images/aufbau.jpg}
+\caption{Gezeigt ist der Versuchsaufbau wie Sie ihn im Praktikum vorfinden werden. In der Mitte können Sie das kupferfarbene Pohlsche Rad erkennen. Dieses kann mithilfe des gekoppelten Schrittmotors dazu genutzt werden erzwungene Schwingungen zu studieren.}
+\label{fig:aufbau}
+\end{figure}
+
+\subsection{Messung der Eigenfrequenz}
+Bestimmen Sie zunächst die Eigenfrequenz $\omega_0$ des Drehpendels mithilfe der Stoppuhr. Lenken Sie dazu das Drehpendel maximal aus und stoppen Sie die Zeit von mindestens fünf Schwingungen. Wiederholen Sie dies mindestens fünf mal und berechnen Sie hieraus die Eigenfrequenz im ungedämpften Zustand. Zeichnen Sie nun den Schwingungsvorgang mithilfe des PCs auf. Bestimmen Sie die Frequenz durch den Fit einer geeigneten Funktion an die aufgenommene Kurve und vergleichen sie die Ergebnisse.
+
+
+\subsection{Messung der Dämpfungskonstante}
+Aus den Amplituden zweier benachbarter Maxima einer gedämpften Schwingung lässt sich die Dämpfungskonstante $\delta$ bestimmen. Es ergibt sich nämlich aus Gl. (\ref{gl:gedaempfteloesung}):
+\begin{eqnarray}
+   \frac{\varphi(t_0)}{\varphi(t_0\,+\,T)} = \frac{e^{-\delta\,t_0}}{e^{-\delta(t_0\,+\,T)}} = e^{\delta\,T}
+\end{eqnarray}
+Nimmt man zusätzlich an, dass sich die Eigenfrequenz des Pohlschen Rads nur wenig durch die zusätzliche Dämpfung ändert, ist die Annahme $T\,\approx\,T_0\,=\,\frac{2\,\pi}{\omega_0}$ gerechtfertigt.
+Stellen Sie die Stromstärke der Wirbelstrombremse nun auf 200mA ein und zeichnen Sie mithilfe des PCs eine gedämpfte Schwingung auf. Bestimmen Sie die Amplituden von mehreren aufeinanderfolgenden Maxima. Wiederholen Sie dies für zwei weitere Schwingungen bei der selben Stromstärke.
+Ermitteln Sie in gleicher Art die Dämpfungskonstanten für 400 und 600mA. Tragen Sie die ermittelten Dämpfungskonstanten gegen $I^2$ graphisch auf. Sind die von Ihnen berechneten Dämpfungskonstanten mit einer $I^2$ Abhängigkeit vereinbar? (Vgl. hierzu \ref{sec:wirbelstrombremse})
+Welche Dämpfungskonstante ergibt sich für $I\,=\,0$? Welche würden Sie für ein \underline{ideales} Drehpendel erwarten?
+
+
+\subsection{Aufnahme von Resonanzkurven}
+Vergewissern Sie sich zunächst, dass die Wirbelstrombremse ausgeschalten ist und sich das Pendel in Ruhelage befindet. Stellen Sie den Motor auf 15 Skalenteile ein. Während das Pendel einschwingt, bestimmen Sie die Anregungsfrequenz des Motors. Dazu messen Sie mindestens fünf Umläufe des Motors mithilfe der Stoppuhr und berechnen daraus die Umlaufzeit. Wiederholen Sie dies insgesamt drei mal, mitteln Sie die Ergebnisse und berechnen Sie hieraus die \underline{Kreisfrequenz} der Anregung. Starten Sie jetzt die Messung am PC und nehmen Sie die Bewegung des Pendels für ca. 30 Sekunden auf. Lesen Sie anschließend die Amplitude der Schwingung ab. Wiederholen Sie die gesamte Messung für verschiedene Motoreinstellungen im Bereich von 15-30 Skalenteilen, sodass Sie insgesamt ca. 15 Messpunkte erhalten. Es ist sinnvoll, dabei die Resonanzfrequenz genauer abzutasten. Wiederholen Sie die Aufgabe für eine Stromstärke von 400mA an der Wirbelstrombremse. Zeichnen Sie die beiden Resonanzkurven in einen Graphen. Vergleichen Sie diese im Anschluss. Lassen sich die theoretischen Vorhersagen für die Änderung der Kurvenform von $\delta\,\approx\,0$ zu $\delta\,>\,0$ erkennen? Diskutieren sie diese.
+
+\section{Fragen zur Vorbereitung}
+\begin{itemize}
+   \item Wie lautet der Zusammenhang zwischen Frequenz und Kreisfrequenz?
+   \item Was ist ein Drehpendel?
+   \item Welche Gleichung beschreibt eine Schwingung mit \underline{schwacher} Dämpfung?
+   \item Welche drei Fälle unterscheidet man je nach Stärke der Dämpfung?
+   \item Skizzieren Sie die zugehörigen Amplitudenverläufe in Abhängigkeit von der Zeit.
+   \item Erklären Sie die Funktionsweise der Wirbelstrombremse.
+   \item Zeichnen Sie eine Resonanzkurve einer erzwungenen Schwingung. Achsenbeschriftung! Was ist hierbei $\omega$?
+   \item Wie verändert sich die Resonanzkurve, wenn die Dämpfung erhöht wird? (Maximalamplitude und Lage des Maximums!)
+   \item Ein System besitzt die Eigenfrequenz $\omega_0$. Mit welcher Frequenz schwingt es, wenn eine Dämpfung der Größe $\delta\,=\,\frac{\sqrt{3}}{2}\omega_0$ angelegt wird?
+\end{itemize}
+
+\begin{thebibliography}{}
+   \bibitem{Walcher} Praktikum der Physik, Wilhelm Walcher, Teubner Verlag
+   \bibitem{Demtroeder} Experimentalphysik 1: Mechanik und Wärme, Wolfgang Demtröder, Springer Verlag
+   \bibitem{Hammer} Grundkurs der Physik 1: Mechanik - Wärmelehre, Hildegard Hammer, Oldenbourg-Verlag
+\end{thebibliography}
+
+\end{document}

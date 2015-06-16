@@ -1,0 +1,302 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd,mhchem}
+\usepackage{lmodern}
+
+\versuch{Elektronenbeugung}{EB}
+\author{M.~Kreller,i.A. Dr.~Escher}
+\bearbeitet{A.~Otto}{}
+
+\begin{document}
+\maketitle
+
+\section{Versuchsbeschreibung}
+Diesem Versuch beschäftigt sich mit der Wellennatur des Elektrons. Dazu wird ein gebündelter
+Elektronenstrahl an einem Graphit-Target gestreut und mit Hilfe eines Leuchtschirms betrachtet. 
+Mit der Braggschen Streubedingung lässt sich aus der Analogie zur Röntgenbeugung die Wellenlänge 
+des Elektrons bestimmen.
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.8\textwidth]{schema}
+\caption{Versuchsanordnung.\label{schema}}
+\end{figure}
+Der Aufbau des Versuches ist in Abbildung \ref{schema} dargestellt. Eine Kathode wird in einer 
+evakuierten Glasröhre mit Hilfe einer Glühwendel auf eine Temperatur von einigen hundert
+\SI{}{^\circ C} gebracht. Die Temperaturerhöhung führt dazu, dass ein sehr kleiner Bruchteil der 
+Elektronen eine Energie erhält, die es ihnen erlaubt, die Potentialbarriere zwischen dem Inneren 
+der Kathode und dem umgebenden Vakuum zu überwinden und aus der Kathode zu entweichen. Diese 
+Elektronen werden durch die positive Anodenspannung beschleunigt. Der Wechsel von geerdeten und
+auf positivem Potential liegenden rohrförmigen Elektroden dient der Fokussierung des so erzeugten 
+Elektronenstrahls. Am Abschluss dieser Anordnung trifft dieser auf ein Target aus polykristallinem 
+Graphit. Dort kommt es zu einer Streuung der Elektronen. Hinter dem Target befindet sich ein 
+Schirm, welcher mit einer phosphoreszierednen Schicht überzogen ist. Wenn ein Elektron auf diese 
+Schicht trifft, regt es diese zum Leuchten an und wird auf diese Weise sichtbar gemacht.
+
+\subsection{Versuchsvorbereitung}
+\begin{figure}[htb]
+\centering
+\includegraphics[width=9cm]{netzteil}
+\caption{Netztgerät: (1) Ein/Aus-Schalter; (2) Potentiometer zum direkten kontinuierlichen Einstellen der Ausgangsspanung
+oder zur Vorwahl eines oberen Grenzwertes bei externer Steuerung der Ausgangsspannung über Eingang (9);
+(3) Digitalanzeige für die Ausgangsspannung; (4) Umschalter zur Aktivierung der Ausgänge (Stellung rechts:
+Ausgang (6); Stellung links: Ausgang (7); Stellung Mitte: Ausgänge (6) und (7) in Serie geschaltet);
+(5) Leuchtdioden zur Anzeige des aktivierten Ausgangs; (6) bzw. (7) Ausgänge zur Entnahme der über das Potentiometer
+(2) eingestellten oder über Eingang (9) extern gesteuerten Spannung (Ausgangsspannung strombegrenzt und erdfrei);
+(8) Erdbuchse, galvanisch mit Schutzerde verbunden; (9) Steuereingang zur externen Steuerung der Ausgangsspannung
+unterhlab eines oberen Grenzwertes, der mit Potentiometer (2) eingestellt wird; (10) (Gehäuserückseite)
+\SI{6,3}{V}-Ausgang, bis \SI{2}{A} belastbar zur Heizspannungsversorgung.\label{netzteil}}
+\end{figure}
+Schließen die Sie die Elektronenbeugungsröhre wie in Abbildung \ref{schema} dargestellt an das Netzgerät an.
+Das Netzgerät ist in Abbildung \ref{netzteil} dargestellt.
+Die Zuleitungen (10) für die Glühwendel befinden sich an der Rückseite des Netzgerätes.
+Legen sie eine positive Spannung
+an die Anode. Die Kathode legen sie über ein Multimeter an den mit "`-"' gekennzeichneten Pol
+des Ausgangs (6). Letzteren verbiden Sie mit der Erdbuchse (8). Das Multimeter sollte auf den Vollausschlag \SI{2}{mA} DC
+eingestellt sein. Drehen Sie den Hochspannungsregeler (2) auf minimale Spannung. Schalten Sie das Netzgerät ein und drehen
+Sie die Spannung langsam hoch. Der Strom sollte kleiner als \SI{0,2}{mA} bleiben.
+
+\subsection{Versuch: Wellennatur des Elektrons}
+Stellen Sie verschiedene Werte für die Spannung ein und messen Sie die Durchmesser $d$ aller sichtbaren Ringe
+mit einer Schieblehre. Schätzen Sie die Breite der Ringe ab. Der Mittelpunkt der Glaskugel fällt nicht mit dem Target 
+zusammen. Berechnen Sie den Abstand von Target und dem Bild auf dem Leuchtschirm nach Abbildung \ref{korrektur} und 
+berechnen Sie den Streuwinkel $2\,\theta$. Berechnen Sie die Wellenlänge und tragen Sie den Impuls der Elektronen
+gegen die Wellenlänge auf. Bestimmmen Sie die Proportionalitätskonstante und vergleichen Sie mit Gleichung (\ref{B1}).
+\begin{figure}[h]
+\centering
+\includegraphics[width=10cm]{korrektur}
+\caption{Korrektur des Abstandes des Bildes auf dem Leuchtschirm vom Target. Es sind $L=\SI{140}{mm}$ und 
+$R=\SI{66}{mm}$. $R$ ist der Innendurchmesser der Kugel. Die Dicke der Glasschicht beträgt \SI{1,5}{mm}.
+\label{korrektur}}
+\end{figure}
+
+\section{Theoretische Grundlagen}
+\subsection{Der Welle-Teilchen Dualismus}
+Seit der Veröffentlichung der Relativitätstheorie von Albert Einstein ist bekannt, dass jede Energie $E$
+gemäß der Beziehung $E=m\,c^2$ eine Masse $m$ repräsentiert ($c$: Lichtgeschwindigekit).
+Diese Interpretation hat zur Folge, dass sich auch dem Licht eine Masse zuweisen lässt.
+Seit der Arbeiten von Max Planck zur Erklärung der Strahlung eines schwarzen Körpers weiss man zudem, dass
+die Energie elektromagnetischer Strahlung mit der Frequenz dieser Strahlung über die Gleichung
+$E=h\nu$ verknüpft ist ($h$: Plancksches Wirkungsquantum).
+Da Photonen sich mit Lichtgeschwindigkeit bewegen, erhält man für ihren Impuls den Ausdruck
+\begin{equation}
+p=\frac{h\nu}{c}=\frac{h}{\lambda}\,\,.\label{B1b}
+\end{equation}
+Dabei ist $\lambda$ die Wellenlänge des Lichtes. Dass sich Photonen in der Tat wie Teilchen verhalten, wurde
+1922  von Arthur Compton mit dem später nach ihm benannten Effekt eindrucksvoll bewiesen.
+
+Wenn das Licht gleichzeitig die Eigenschaften einer Welle und die Eigenschaften eines Teilchens aufweist, dann stellt sich
+die Frage, ob umgekehrt Teilchen auch Welleneigenschaften besitzen.
+\begin{figure}[htb]
+\centering
+\includegraphics[width=8cm]{hexagonal}
+\hspace{1cm}
+\includegraphics[width=5cm]{graphit}
+\caption{Netzebenen im Graphit. Der rechte Teil der Abbildung zeigt den dreidimensionale Aufbau des Graphit.
+Die Schichtstruktur ist hervorgehoben.
+Die schraffierten Ebenen sind im linken Teil der Abbildung gesondert dargestellt.\label{hexagonal}}
+\end{figure}
+Dieser Gedanke geht auf Louis de Broglie zurück, der ihn 1924 in eine berühmte Formel fasste.
+Er forderte für die Beziehung zwischen Impuls und Wellenlänge eines Teilchens die folgende
+Gleichung (\ref{B1b}) sehr ähnliche Form:
+\begin{equation}
+p=\frac{h}{\lambda}\,\,.\label{B1}
+\end{equation}
+Bewegt sich ein beliebiges Teilchen mit einer Geschwindidgkeit $v$ -- wobei
+im Folgenden nur der nichtrelativistischen Fall $v\ll c$ betrachtet wird -- so lässt sich demnach
+$\lambda=h/(mv)$ schreiben, oder, wenn man die Energie $E$ des Teilchens zugrunde legt
+\begin{equation}
+\lambda=\frac{h}{\sqrt{2\,m\,E}}\,\,.
+\end{equation}
+Durchlaufen Elektronen eine Potentialdifferenz $U$, so werden Sie beschleunigt und erhalten eine kinetische Energie $E$,
+für die gilt:
+\begin{equation}
+E=\frac{p^2}{2\,m}=e\,U\,\,.
+\end{equation}
+Dabei ist $e$ die Elementarladung. Man erhält dann für die Wellenlänge
+\begin{equation}
+\lambda=\frac{h}{\sqrt{2\,m\,e\,U}}\,\,.
+\end{equation}
+Eine Wellenlänge von \SI{2}{\AA} (typischer Netzebenenabstand in Graphit) entspricht demnach einer Spannung von 
+$U=\SI{3,76}{kV}$.
+
+Die Beziehung (\ref{B1}) wurde von Clinton J. Davisson und Lester H. Germer 1927 in einem Experiment bewiesen. Sie nutzten
+die Analogie von elekromagnetischen Wellen und Teilchen, indem Sie das bereits lange vorher bekannte
+Phänomen der Röntgenbeugung an Kristallgittern auf Elektronen übertrugen.
+
+\subsection{Röntgenbeugung}
+Generell tritt das Phänomen der Beugung gerade dann auf, wenn die Wellenlänge in der Größenordnung der
+Beugungsstrukturen ist. Für Röntgenstrahlung, deren Wellenlänge im Bereich von \SI{e-10}{m} liegt, lässt sich so eine
+Struktur nicht mechanisch herstellen. Da trifft es sich gut, dass die Abstände in Kristallgittern gerade die gleiche
+Größenordnung haben. Dies macht Kristalle zu einem natürlichen Beugungsobjekt für Röntgenstrahlung.
+\begin{figure}[htb]
+\centering
+\includegraphics[width=10cm]{bragg}
+\caption{Braggbedingung für konstruktive Interferenz von Röntgenstrahlen bei Beugung an einem
+Kristallgitter.\label{bragg}}
+\end{figure}
+Im vorliegenden Experiment wird ein Graphit-Target verwendet. Graphit besteht aus Stapeln von Ebenen mit hexagonaler
+Symmetrie (siehe Abbildung \ref{hexagonal} rechts ). Diese Ebenen bezeichnet man auch als Basalebenen.
+Der linke Teil der Abbildung stellt eine dieser Basalebenen in der Draufsicht dar.
+Die eingezeichneten Linien markieren Ebenen welche senkrecht zu den Basalebenen verlaufen. Zwei Scharen von Ebenen
+mit Ebenenabständen $d_1$ und $d_2$ sind hervorgehoben.
+Man bezeichnet solche aus den Atomen eines Kristalls aufgebauten Ebenen auch als Netzebenen.
+
+Wird Röntgenstrahlung auf ein Kristallgitter gerichtet, so wird es an den Atomen der Kristallebenen elastisch gestreut
+oder, in anderen Worten, es wird von der Ebene reflektiert.
+Die von benachbarten Ebenen reflektierten Röntgenstrahlen können miteinander
+interferieren. Dies ist in Abbildung \ref{bragg} schematisch dargestellt. Wenn der Gangunterschied zwischen der
+an der oberen und der an der darunterliegenden Kristallebene gestreuten Röntgenstrahlung ein Vielfaches der Wellenlänge
+beträgt, kommt es zur konstruktiven Interferenz. Dies ist genau dann der Fall, wenn gilt
+\begin{equation}
+2 \,d\,\sin\theta=n\lambda\,\,.\label{B2}
+\end{equation}
+Dabei ist $d$ der Abstand der Kristallebenen, $n$ die Beugungsordnung und $\lambda$ die Wellenlänge der Röntgenstrahlung.
+Diese Bedingung ist unter der Bezeichnung Bragg-Bedingung bekannt, der Prozess der Refelxion von Röntgenstrahlung
+an Kristallebenen wird auch als Bragg-Reflexion bezeichnet.
+\begin{figure}[htb]
+\centering
+\includegraphics[width=10cm]{polycrystal3}
+\caption{Bedugung von Röntgenstrahlung bzw. von Elektronen an einem Polykristall.\label{polycrystal3}}
+\end{figure}
+
+Im vorliegenden Versuch wird statt eines perfekten unendlich ausgedehnten Kristalls (Einkristall)
+eine polykristalline Graphitschicht verwendet. Da diese aus
+kleinen, beliebig zueinander orientierten Kristalliten besteht, kann eine bestimmte Netzebenenschar relativ zum
+Röntgenstrahl eine beliebige Orientierung haben. Dieser Zusammenhang  ist in Abbildung \ref{polycrystal3} veranschaulicht.
+Eine bestimmte Netzebene ist dabei hervorgehoben, die Darstellung gilt aber auch für jede andere
+Netzebene.
+Die Reflexion an einer beliebigen Ebene kann in vielen verschiedenen Richtungen erfolgen. Konstruktive Interferenz
+kann es jedoch nur für die Richtungen geben, für die Gleichung (\ref{B2}) erfüllt ist. Da die Orientierung der
+Kristallite in allen Raumrichtungen liegen kann, bilden die in konstruktiver Interferenz gestreuten Röntgenstrahlen
+Kreise um die Richtung des einfallenden Strahles. Für andere Netzebenen ergeben sich ebenfalls Kreise,
+allerdings mit anderen Durchmessern. Aus Gleichung (\ref{B2}) folgt, dass der Durchmesser
+umso größer sein muss, je kleiner der Netzebenenabstand $d$ ist.
+
+Welche Durchmesser sind beim Graphit zu erwarten?
+Auf Grund der großen Anisotropie von Graphit bleibt die Schichtstruktur im Wesentlichen auch bei polykristallinen
+Schichten erhalten. Lediglich die Orientierung der Kristallite innerhalb dieser Schichten ist beliebig.
+Im vorliegenden Versuch ist die Oberfläche des Graphit-Targets in etwa parallel zu den Basalebenen. Der Elektronenstrahl
+trifft daher (siehe Abbildung \ref{schema} )senkrecht auf diese Ebenen. Man kann sich leicht überlegen, dass dann bei
+der gegebenen Geometrie von diesen Ebenen keine Reflexionen zu sehen sein wird.
+Nur Ebenen, welche senkrecht zu den Basalebenen liegen, können zur Reflexion führen. Aus Röntgenversuchen ist
+bekannt, dass von allen möglichen Ebenen, welche man senkrecht zu diesen Ebenen durch die Atome de Gitters legen kann,
+nur die beiden in Abbildung \ref{hexagonal} eingezeichneten zu einer sichtbaren Refelxion führen.
+
+Wenn man nun statt Röntgenstrahlen Elektronen verwendet kann man die de-Broglie-Beziehung (\ref{B1}) testen.
+Wenn sich die Elektronen nicht wie Wellen verhalten, sollte man ein vollständig diffuses Streubild erwarten, dass
+nur schwach von der Energie der Elektronen abhängt. Verhalten sich Elektronen dagegen wie Wellen mit einer durch
+(\ref{B1}) gegebenen Wellenlänge, so sollte man auf dem phosphoreszierenden Schirm hinter dem Target analog
+zur Röntgenbeugung Ringe erkennen. Der Radius dieser Ringe muss in diesem Fall mit der Wellenlänge, oder in
+anderen Worten, mit der Energie der Elektronen korreliert sein.
+
+%\section{Auswertung der Messergebnisse}
+
+
+%Es konnten bis zu einer Spannung von 2.5~kV auf dem Leuchtschirm jeweils zwei Ringe beobachtet
+%werden.
+%Bei Spannungen unterhalb 2.5~keV sind die Ringe kaum noch zu erkennen. Die Durchmesser der Ringe
+%wurden
+%von 2.5~keV bis 5~keV in Schritten von 0.5~keV gemessen. Mit Ausnahme der Spannung $U$=2.5~keV
+%wurden jeweils
+%zwei Werte notiert, einer für den äusseren und einer für den inneren Rand des Ringes.
+
+%Aus Abbildung \ref{korrektur} ergibt sich für den Abstand $D$ bei einem Durchmesser $d$ der
+%beobachteten Ringe
+%\begin{equation}
+%D=R\Bigl[1-\sqrt{1-\Bigl(\frac{d/2}{R}\Bigr)^2}\,\,\Bigr]\,\,.
+%\end{equation}
+%Für den Winkel $\theta$ gilt
+%\begin{equation}
+%\tan(2\theta)=\frac{d}{2}\frac{1}{L-D}\,\,.
+%\end{equation}
+%Aus Abbildung \ref{hexagonal} folgt für die Ebenenabstände $d_1$=2.14~{\AA} und $d_2$=1.24~{\AA}.
+%Damit lässt sich über Gleichung (\ref{B2}) die Wellenlänge berechnen.
+%Die Tabellen \ref{Messwerte1} und \ref{Messwerte2} zeigen die gemessenen Werte und die daraus
+%berechneten Wellenlängen.
+%Der Fehler bestimmt sich hauptsächlich aus der Ungenauigkeit in der Bestimmung der
+%Kreisdurchmesser.
+%Da $D\ll L$ und $\theta \ll 1$,  gilt näherungsweise\nolinebreak ~$\lambda=2\,\,d_i\theta$ (i=1,2)
+%und $\theta=d/(4\,L)$.
+%Damit folgt für den Fehler von $\lambda$
+%\begin{equation}
+%\delta \lambda=\frac{d_i}{2\,L}\,\,\delta d\,\,,i=1,2\,\,.
+%\end{equation}
+%Für $\delta d$ wurde hier ein Wert von $\pm$0.5~mm für den kleineren Ring und $\pm$1~mm für den
+%größeren
+%Ring angenommen. Bei der Spannung $U$=2.5~keV wurde $\pm$1~mm bzw. $\pm$2~mm angenommen
+
+%Aus den für $\lambda$ ermittelten Werten wurden Mittelwerte gebildet und gegen
+%$1/\sqrt{E/\textrm{keV}}$ aufgetragen.
+%Durch diese Werte wurde eine Ausgleichsgerade gelegt.
+%Das Ergebnis zeigt Abbildung \ref{Gerade}. Für die Ausgleichsgerade $\lambda=a_0+a_1/\sqrt{E/keV}$
+%ergibt sich $a_0$=0.00647$\pm 0.05$~{\AA} und $a_1$=0.38303$\pm 0.15$~{\AA}.
+%Der Fehler lässt sich über die beiden Grenzgeraden, welche die Fehlerbalken der Messwerte
+%gerade noch treffen, abschätzen. Der Messwert für die Spannung $U$=2.5~keV wurde dabei nicht
+%verwendet.
+%Nach Gleichung (\ref{B1}) ergibt sich für die Steigung der Geraden 0.388.
+%Die übereinstimmung mit den gemessenen Werten ist erstaunlich gut.
+
+%\begin{figure}[p]
+%\centering
+%\includegraphics[width=10cm,clip]{Gerade.eps}
+%\caption{Ausgleichsgerade zur überprüfung der Bragg-Bedingung. Der Fehler wurde über die beiden
+%Grenzgeraden ermittelt.
+%Der letzte Messwert wurde dabei nicht verwendet.\label{Gerade}}
+%\end{figure}
+
+
+%\begin{table}[p]
+%\centering
+%\renewcommand{\arraystretch}{1.2}
+%\begin{tabular}[htb]{|c|c|c|c|c|c|}\hline
+%$U$/keV&$d_I$&$d_A$&$\bar{d}$&$\theta$/rad&$\lambda$/{\AA}\\ \hline
+%5&20.6&23.9&22.3&0.0397&0.170$\pm0.002$\\
+%4.5&22.8&26.7&24.8&0.0441&0.0189$\pm0.002$\\
+%4&25.0&28.7&26.9&0.0478&0.0205$\pm0.002$\\
+%3.5&26.2&29.4&27.8&0.0495&0.0212$\pm0.002$\\
+%3&27.2&32.1&29.7&0.0528&0.0226$\pm0.002$\\
+%2.5&-&-&34.2&0.0608&0.0260$\pm0.003$\\\hline
+%\end{tabular}
+%\caption{Gemessene Durchmesser und berechnete Wellenlängen für den kleineren Ring
+%($d_1=21.4$~{\AA}).
+%Die Größen $d_I$ und $d_A$ bezeichnen den inneren bzw. den äußeren Durchmesser der Ringe.
+%Die Größe $\bar{d}$ bezeichnet den Mittelwert aus $d_I$ und $d_A$.
+%\label{Messwerte1}}
+%\end{table}
+
+
+
+%\begin{table}[p]
+%\centering
+%\renewcommand{\arraystretch}{1.2}
+%\begin{tabular}[htb]{|c|c|c|c|c|c|}\hline
+%$U$/keV&$d_I$&$d_A$&$\bar{d}$&$\theta$/rad&$\lambda$/{\AA}\\ \hline
+%5.0&37.6&42.9&40.3&0.0714&0.176$\pm0.002$\\
+%4.5&41.3&46.4&43.9&0.0777&0.191$\pm0.002$\\
+%4.0&42.7&48.2&45.5&0.0805&0.198$\pm0.002$\\
+%3.5&45.6&52.6&49.1&0.0868&0.213$\pm0.002$\\
+%3.0&49.2&56.1&52.7&0.0930&0.228$\pm0.003$\\
+%2.5&-&-&54.1&0.0955&0.235$\pm0.003$\\\hline
+%\end{tabular}
+%\caption{Gemessene Durchmesser und berechnete Wellenlängen für den größeren Ring
+%($d_1=1.23$~{\AA}).
+%Die Größen $d_I$ und $d_A$ bezeichnen den inneren bzw. den äußeren Durchmesser der Ringe.
+%Die Größe $\bar{d}$ bezeichnet den Mittelwert aus $d_I$ und $d_A$.
+%\label{Messwerte2}}
+%\end{table}
+
+\frage{Berechnen Sie die Abstände der Ebenen in Abbildung \ref{hexagonal} ! ($a=\num{0,1425}$)}
+\frage{Welche Energie hat eine Elektrone, dessen Wellenlänge gerade den Abständen $d_1$ und $d_2$ aus
+       Abbildung \ref{hexagonal} entspricht?}
+\frage{Der Ebenenabstand für die in Abbildung \ref{hexagonal} gezeigten (im rechten Teil 
+       hervorgehobenen) Ebenen beträgt etwa \SI{3,4}{\AA}. Berechnen Sie daraus den Abstand 
+       benachbarter Atome $a$ (Hinweis: Das Atomgewicht von Graphit beträgt \SI{12}{g/mol}, die Dichte 
+       beträgt \SI{2,25}{g/cm^3})!}
+\frage{Relativistische Effekte müssen ab einer Energie von etwa $\num{0,1}\,m\,c^2$ berücksichtigt werden.
+       Welche Spannung wäre notwendig, um solche relativistische Elektronen zu erzeugen?}
+\frage{Bei Beugungsexperimenten mit sichtbarem Licht verwendet man zur Beugung des Lichtes mechanich
+       hergestellte Gitter. Warum geht das mit Röntgenstrahlung  nicht?}
+
+\buch{Ott93}{G.~Otter, R.~Honecker}{Atome--Moleküle--Kerne, Band I Atomphysik}{Teubner-Ver\-lag}{Stuttgart 1993}
+\buch{Ash01}{N.~W.~Ashcroft, N.~D.~Mermin}{Solid State Physics}{Harcourt Brace College Publ.}{1976}
+
+\end{document}

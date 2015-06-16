@@ -1,0 +1,66 @@
+\documentclass[platz]{tudphygp}
+
+\versuch{Thermische Ausdehnung}{TA}
+
+\begin{document}
+\maketitle
+
+\subsection*{Aufgabenstellung}
+
+\begin{enumerate}
+ \item Bestimmen Sie den \emph{mittlere Längenausdehnungskoeffizienten} $(\overline\alpha \pm \Delta\overline\alpha)$ eines Metallstabes im Temperaturbereich zwischen Raumtemperatur und \SI{60}{\degC} mit Hilfe des \emph{Hebelverfahrens}.
+ \item Bestimmen Sie den \emph{mittleren Volumenausdehnungskoffizienten} $(\overline\gamma \pm\Delta\overline\gamma)$ einer Flüssigkeit im Temperaturbereich zwischen Raumtemperatur und \SI{60}{\degC} mit Hilfe des \emph{Dilatometers}.
+\end{enumerate}
+
+\subsection*{Längenausdehungskoeffizient}
+
+\begin{enumerate}
+ \item Messen Sie die Ausgangslänge $l_0$ des Stabes bei Raumtemperatur $T_0$.
+ \item Bringen Sie den Stab in der Versuchsapparatur in ein Wasserbad, dessen Temperatur mittels Themostat veriiert werden kann. Ein Stabende \emph{liegt} an einem festen Anschlag \emph{an}. Die thermische Längenänderung des Stabes wird von seinem anderen Ende über einen Hebel (Hebelverhältnis $1:5$) auf eine Messuhr (Genauigkeitsklasse II; Messbereich $\num0\ldots\SI{10}{mm}$) übertragen.
+ \item Wählen Sie eine \emph{geeignete} Bezugstemperatur $T_1$, bei der Sie die Nullstellung der Messuhr festlegen.
+ \item Messen Sie die Längenänderung des Metallstabes bis \SI{60}{\degC} in \emph{sechs} Schritten.
+ \item Stellen Sie die \emph{relativen} Längenänderungen $\Delta l / l_0$ über der Temperaturdifferenz $\Delta T$ dar.
+  \[
+   \frac{\Delta l}{l_0} = \frac{l(T) - l(T_1)}{l_0} \quad\text{und}\quad \Delta T = T - T_1
+  \]
+ \item Ermitteln Sie aus dem Zusammenhang $\Delta l / l_0 = f(\Delta T)$ mittels Geradenausgleich den mittleren Anstieg der Messkurve und damit den mittleren Längenausdehnungskoeffizienten:
+  \[
+   \overline\alpha = \frac{l(T_2) - l(T_1)}{l(T_1)} \cdot \frac1{T_2 - T_1}
+  \]
+  Hierbei gilt in guter Näherung $l(T_1) \approx l(T_0) = l_0$, falls $T_1$ geeignet gewählt wurde (warum?).
+ \item Ermitteln Sie aus dem minimalen und dem maximalen Anstieg den Fehler $\Delta\overline\alpha$.
+\end{enumerate}
+
+\subsection*{Volumenausdehnungskoffizient}
+
+\begin{table}[b] \centering
+ \begin{tabular}{llcc}
+  Nr. & Flüssigkeit      & $\varrho_\mathrm{Fl}$ / \SI{}{g.cm^{-3}} & $m_\mathrm{K}$ / \SI{}g \\\hline
+  1   & Ameisensäure     & \num{1,238}                          & \num{41,030} \\
+  2   & Paraffinöl       & \num{0,826}                          & \num{45,279} \\
+  3   & Lüvakol          & \num{0,869}                          & \num{42,210} \\
+  4   & Iso-(2-Propanol) & \num{0,781}                          & \num{40,720}
+ \end{tabular}
+ \caption{Dichte $\varrho_\mathrm{Fl}$ von Flüssigkeiten bei \SI{25}{\degC}; Kolbenleermasse $m_\mathrm{K}$}\label{tab::dichte}
+\end{table}
+
+\begin{enumerate}
+ \item Bestimmen Sie die Gesamtmasse $m$ der Messanordnung als Summe der Masse des leeren Kolbens $m_\mathrm{K}$ und der Masse der zu untersuchenden Flüssigkeit $m_\mathrm{Fl}$. Erhalten Sie daraus das Volumen $V_0$ der Flüssigkeit. Die dazu nötigen Werte entnehmen Sie Tabelle \ref{tab::dichte}.
+ \item Platzieren Sie den Glaskolben etwa \SI{20}{mm} über den Boden des Gefäßes mit dem Wasserbad, dessen Temperatur über ein Thermostat geregelt werden kann.
+ \item Wählen Sie ein \emph{geeignete} Bezugstemperatur $T_1$.
+ \item Nehmen Sie \emph{sechs} Messwerte der relativen Volumenausdehnung $\Delta V / V_0$ bei der Erwärmung bis \SI{60}{\degC} auf, indem Sie die Änderung direkt an der Skala am Steigrohr ablesen. Nutzen Sie während der Erwärmung der Thermostatflüssigkeit den Magnetrührer im Glaskolben.
+  \[
+   \frac{\Delta V}{V_0} = \frac{V(T) - V(T_1)}{V_0}
+  \]
+  Wurde $T_1$ geeignet gewählt, gilt wiederum in guter Näherung $V(T_1) \approx V_0$ (warum?).
+ \item Stellen Sie die relative Volumenänderung $\Delta V / V_0$ über der Temperaturänderung $\Delta T$ grafisch dar.
+ \item Ermitteln Sie aus dem Zusammenhang $\Delta V / V_0 = f(\Delta T)$ mittels Geradenausgleich den mittlere Anstieg der Messkurve. Nutzen für den Geradenausgleich einmal die \emph{grafische Methode} und einmal die \emph{Methode der kleinsten Fehlerquadratsumme}. Berechnen Sie aus dem Anstieg den mittleren Volumenausdehnungskoffizienten $\overline\gamma$:
+  \[
+   \overline\gamma = \frac{V(T_2) - V(T_1)}{V(T_1)} \cdot \frac1{T_2 - T_1} + 3\alpha_\mathrm{Glas} \cdot \frac{V(T_2)}{V(T_1)} \quad\text{mit}\quad \alpha_\mathrm{Glas} = \SI{8e-6}{K^{-1}}
+  \]
+ \item Bestimmen Sie den Fehler $\Delta\overline\gamma$ mittels grafischer Methode.
+\end{enumerate}
+
+%TODO: Foto des Versuches
+
+\end{document}

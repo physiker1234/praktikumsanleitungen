@@ -1,0 +1,356 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd}
+
+\versuch{Zeeman-Effekt}{ZE}
+\author{M.~Günther}
+\date{12.04.2011}
+\bearbeitet{}{}
+
+\buch{demt}{W.~Demtröder}{Experimentalphysik 3}{Springer-Verlag}{Berlin, Heidelberg [u.~a.] 1998}
+
+\begin{document}
+\maketitle
+
+\section{Aufgabenstellung}
+
+\begin{enumerate}
+ \item Kalibrieren Sie die magnetische Flussdichte des Permanentmagneten mit der Hallsonde.
+ \item Erzeugen Sie ein scharfes Interferenzbild des Fabry-P\'{e}rot Etalons.
+ \item Bestimmen Sie die Polarisationen der verschiedenen Übergangslinien in transversaler und longitudinaler Geometrie
+       um die $\lambda_n=643,847 \;\mathrm{nm}$ Linie.
+ \item Bestimmen Sie die Aufspaltung der Linien für verschiedene Felder und bestimmen Sie das Bohrsche Magneton $\mu_B$.
+ \item Bestimmen Sie die Anzahl der Linien in transversaler und longitudinaler Geometrie
+       und deren Polarisation um die $\lambda_n=508,588 \;\mathrm{nm}$ Linie. Vergleichen Sie Ihre Ergebnisse mit Ihren Beobachtungen
+       der roten $\lambda_n=643,847 \;\mathrm{nm}$ Linie.
+\end{enumerate}
+
+\section{Grundlagen}
+Cadmium besitzt den elektronischen Grundzustand $[\mol{Kr}]4d^{10}5s^2$. Die vier inneren Schalen sind voll besetzt
+und tragen keinen Gesamtbahndrehimpuls oder Gesamtspin. An den hier beobachteten optischen Übergängen nehmen nur die $5s$-Elektronen
+teil, da sie die kleinsten Anregungsenergien haben.
+Die inneren Schalen sind also auch in angeregten Zuständen voll besetzt und sollen daher in den folgenden Betrachtungen vernachlässigt werden.
+
+Kleinbuchstaben $\vec{l}$ und $\vec{s}$ stehen im Folgenden für Bahndrehimpulse und Spins einzelner Elektronen.
+Großbuchstaben $\vec{L}=\sum{\vec{l}_i}$ und $\vec{S}=\sum{\vec{s}_i}$ für die Summen von Bahndrehimpulsen und Spins,
+also Gesamtbahndrehimpulse oder Gesamtspins mehrerer Elektronen in atomaren Zuständen.
+Mit $\vec{J}=\vec{L}+\vec{S}$ wird die Summe von Gesamtbahndrehimpuls und Gesamtspin in einem Zustand bezeichnet und heißt 
+Gesamtdrehimpuls. Zugehörige Quantenzahlen sind mit dem Betrag der Vektoren verknüpft und werden mit den gleichen Buchstaben bezeichnet.
+So gilt zum Beispiel für die Quantenzahl $L$ des Gesamtdrehimpulses: $|\vec{L}|=\hbar \sqrt{L(L+1)}$.
+Die Quantenzahl der Projektionen eines Drehimpulses oder Spins in eine Richtung wird $m_I$ oder $M_I$ genannt.
+Die Groß- bzw Kleinschreibweise dieser magnetischen Quantenzahlen orientiert sich an der Schreibweise der
+Drehimpulse. Als tiefgestelltes $I$ steht das Symbol der korrespondierenden Drehimpulsquantenzahl.
+ $M_S$ ist also beispielsweise eine magnetische Quantenzahl des Gesamtspins.  
+
+Die beiden Elektronen im $5s^2$ Zustand haben die gleichen räumlichen Quantenzahlen.
+Sie müssen sich in einem Spinsingulettzustand befinden. Die Situation ist mit dem Grundzustand des Heliums $1s^2$ vergleichbar.
+Ein Singulettzustand ist gekennzeichnet durch die
+Spinquantenzahl $S=0$. Die Spins der Elektronen sind antiparallel und kompensieren sich.
+Ohne Gesamtspin verschwindet auch das damit verknüpfte magnetische Moment. In einem
+Triplettzustand ist die Quantenzahl des Gesamtspins $S=1$. Man spricht von parallelen Spins.
+
+\subsection{Halbklassische Einleitung}
+In einer klassischen Betrachtungsweise der Bewegung eines Elektrons auf einer Kreisbahn
+stellt dieses einen Kreisstrom
+\[
+I= -e \frac{v}{ 2 \pi r}
+\]
+dar. Dabei ist $-e$ die bewegte Ladung des Elektrons, $v$ die Bahngeschwindigkeit und $r$ der Radius der Kreisbahn.
+Dieser Kreisstrom erzeugt ein magnetisches Moment
+\begin{equation} \label{eq:mu_kl}
+\vec{\mu}= I \vec{A} = I \pi r^2 \vec{n} = -e v \frac{r}{2} \vec{n}.
+\end{equation}
+ $|A|$ ist die von der Kreisbahn umschlossene Fläche und $\vec{n}$ deren Normalenvektor.
+Der Bahndrehimpuls eines Elektrons der Masse $m_e$ lautet
+\begin{equation} \label{eq:l_kl}
+\vec{l}=\vec{r}\times \vec{p}= m_e \vec{r}\times \vec{v} = m_e r v \vec{n}.
+\end{equation}
+Durch Vergleich von Gleichung \ref{eq:mu_kl} und \ref{eq:l_kl} erhält man eine Beziehung zwischen magnetischem Moment und Bahndrehimpuls:
+\begin{equation} \label{eq:mu_von_l_kl}
+\vec{\mu}=-\frac{e}{2m_e} \vec{l}.
+\end{equation}
+Bringt man ein magnetisches Moment in ein Magnetfeld $\vec{B}$, so ist dessen potentielle Energie gegeben durch
+\begin{equation} \label{eq:E_kl}
+E=-\vec{\mu} \vec{B}.
+\end{equation}
+Um einen nützlichen Zusammenhang zwischen der potentiellen Energie des rotierenden Elektrons im magnetischen Feld und dessen Bahndrehimpuls zu erhalten,
+benutzt man die Quantenbedingungen $|\vec{l}|=\hbar \, \sqrt{l(l+1)}$ und $l_z= m_l \hbar $ mit ganzzahligen $l\ge0$ und $-l\le m_l \le l$.    
+Nun definiert man die Richtung des äußeren Feldes als $z$-Richtung und setzt Gleichung \ref{eq:mu_von_l_kl} in \ref{eq:E_kl} ein:
+\begin{equation}
+E=\frac{e}{2m_e} l_z B_z = \frac{e}{2m_e} \hbar m_l B .
+\end{equation}
+Den Faktor $\mu_B=\frac{e\hbar}{2m_e}$ wird Bohrsches Magneton genannt. Die ohne äußeres Magnetfeld entarteten 
+ $2l+1$ Zustände zu unterschiedlichem $m_l$ erfahren also
+im Feld eine zusätzliche Energie von  
+\begin{equation}
+E_{m_l} = \mu_B m_l B.
+\end{equation}
+
+
+\subsection{Normaler Zeeman-Effekt}
+Im Versuchsteil zum normalen Zeeman-Effekt werden Übergänge zwischen $3\,{}^1D_2$ und $2\,{}^1P_1$ Zuständen
+der beiden äußeren Hüllelektronen beobachtet. Ein Term $n\,{}^{(2S+1)}X_J$ bezeichnet dabei
+atomare Zustände und ist folgendermassen zu verstehen: $n$ bezeichnet die Schale in der sich das angeregte
+Elektron befindet, wenn man die Schale des Grundzustandes als erste Schale zählt.
+ $(2S+1)$ wird Multiplizität des Zustandes genannt. Die Multiplizität des Singulettzustandes
+ist also $1$ und die des Triplettzustandes $3$. Die Großbuchstaben $X$ stehen für die Quantenzahl des 
+Gesamtbahndrehimpulses $L$ ($X=S$ für $L=0$, $X=P$ für $L=1$, $X=D$ für $L=2$, ...).
+Zuletzt wird tiefgestellt die Quantenzahl des Gesamtdrehimpulses $J$ hinzugefügt.
+Beispielsweise bezeichnet $3\,{}^1D_2$ als einen Zustand in dem die Elektronen keinen Gesamtspin tragen und einen Gesamtbahndrehimpuls zur Quantenzahl
+ $L=2$, die Quantenzahl des Gesamtdrehimpulses ist $J=2$. Ein Elektron wurde energetisch in die siebente Schale gehoben.  
+ $3\,{}^1D_2 \to 2\,{}^1P_1$ steht also für Übergänge von Singulett Zuständen. Sowohl im Anfangs- als auch im Endzustand
+ist kein Gesamtspin vorhanden und das magnetische Moment des Systems wird durch den Bahndrehimpuls bestimmt:
+\begin{equation}
+\vec{\mu}_L = - \frac{e}{2 m_e} \vec{L}= - \frac{\mu_B}{\hbar} \vec{L}
+\end{equation}
+Der Betrag des Bahndrehimpulses wird
+durch die ganze Quantenzahl $L\ge 0$ bestimmt: $|\vec{L}|=\hbar \sqrt{L(L+1)}$ .
+Die potentielle Energie des magnetischen Momentes in einem Magnetfeld $\vec{B}$ entlang der $z$-Richtung wird durch
+  $E_{M_L}=M_L \mu_B B$ gegeben (vergleich klassische Einführung). $M_L$ ist die Quantenzahl der Projektion des Bahnmomentes auf die $z$-Achse und kann die Werte
+ $M_L=-L, M_L=-L+1, ... , M_L=L$ annehmen. 
+\begin{figure}[!h] 
+\begin{center}
+\includegraphics[width=\textwidth]{term_skizze}
+\caption{Termschema zum Normalen und Anormalen Zeeman-Effekt }
+\label{fig:term_skizze}
+\end{center}
+\end{figure} 
+Im Zustand $3\,{}^1D_2$ ist $L=2$ und $M_L$ kann die Werte $0,\pm1,\pm2$ annehmen. Jeder der fünf durch $M_L$ charakterisierten 
+Zustände hat eine individuelle Energie im äußeren Feld $\vec{B}$ .
+Analog spalten die drei ohne Feld entarteten $2\,{}^1P_1$ Zustände im äußeren Magnetfeld auf.
+Der Abstand zweier benachbarter Niveaus beträgt dabei immer $\Delta E=\mu_B B$.
+Die Auswahlregeln für elektrische Dipolübergänge verlangen $\Delta M_L = 1,0,-1$.
+Es können also 3 energetisch äquidistante Übergangsenergien beobachtet werden.
+Eine Zusammenfassung der Aufspaltung beider Singulettzustände im Feld und der erlaubten Übergänge
+befindet sich in Abbildung \ref{fig:term_skizze}.
+
+
+
+\subsection{Anomaler Zeeman-Effekt}
+
+Der Anormale Zeeman-Effekt muss durch eine allgemeinere Beschreibung erklärt werden.
+Befindet sich das atomare System nicht in einem Singulettzustand, müssen Bahndrehimpuls und Spin
+gemeinsam berücksichtigt werden. Das magnetische Moment eines Spins ist durch 
+\begin{equation}
+ \vec\mu_S = - g_S \frac{e}{2 m_e} \vec{S} =  - g_S \frac{\mu_B}{\hbar} \vec{S} 
+\end{equation}
+gegeben. $g_S \approx 2$ heißt gyromagnetischer Faktor des Spins und gibt an, um wieviel das magnetische Moment
+im Vergleich zum dem eines Elektrons auf einer Kreisbahn größer ist. Der Betrag des Gesamtspins $\vec{S}$ 
+ist im Triplettsystem $|\vec{S}|=\hbar \sqrt{S(S+1)}$ für $S=1$. Liegen Bahndrehimpuls und Spin gleichzeitig
+in einem System vor, wird in der sogenannten
+ $L-S$-Kopplung der Gesamtdrehimpuls $\vec{J}$ gegeben durch
+\begin{equation}
+ \vec{J}=\vec{L}+\vec{S}.
+\end{equation} 
+Das magnetische Moment setzt sich nun aus einem Bahn- und einem Spinanteil zusammen, jedoch mit unterschiedlichem Vorfaktor:
+\begin{equation}
+ \vec\mu_J=\vec \mu _L+\vec \mu_S=-\frac{\mu_B}{\hbar} (\vec{L} + 2 \vec{S}).
+\end{equation} 
+Gesamtdrehimpuls und magnetisches Moment sind also nicht länger parallel.
+Mit Hilfe des Lande-Faktors $g_J$ für den Gesamtdrehimpuls wird die potentielle Energie im Feld zu
+\begin{equation}
+ E_{M_J}=M_J g_J \mu_B B \qquad \mathrm{mit}\qquad g_J=1+ \frac{J(J+1)+S(S+1)-L(L+1)}{2J(J+1)}.
+\end{equation}
+Die Übergänge $2\,{}^3S_1 \to 2\,{}^3P_2$ finden im Triplettsystem statt.
+Beiden Zuständen werden unterschiedliche $g_J$ zugeordnet und die Anzahl der möglichen Übergangsfrequenzen beträgt nun neun.
+In Abbildung \ref{fig:term_skizze} wird die Situation zusammenfassend dargestellt.
+
+\subsection{Fabry-P\'{e}rot Interferometer}
+Das Fabry-P\'{e}rot Interferometer erzeugt Interferenzen mit Hilfe einer 3 mm starken und beidseitig beschichteten Quarzglasplatte 
+(90\% Reflektion, 10\% Transmission). Abbildung \ref{fig:etalon_skizze}  skizziert den Strahlengang.
+Die Interferenzbedingung lautet
+\begin{equation}
+ n\lambda = 2\mu t \cos \theta.
+\end{equation}
+Dabei ist $n$ eine ganze Zahl, $\lambda$ die Wellenlänge des einfallenden Lichtes, $\mu$ der Brechungsindex der
+Quarzplatte und $\theta$ der Winkel zwischen einfallendem Strahl und Plattennormalen.
+Die parallelen Strahlen $B,D,F,...$ werden mit einer Linse der Brennweite $f$ fokussiert.
+Winkel $\theta$, die die Interferenzbedingung erfüllen, bilden in der Brennebene konstruktive Ringe mit einem Radius
+\begin{equation}  \label{eq:r_n}
+ r_n = f \tan \theta_n \approx f \theta_n.
+\end{equation} 
+Die Näherung gilt für kleine Winkel $\theta_n$.
+\begin{figure}[b!]
+\begin{center}
+\includegraphics[width=\textwidth]{etalon_skizze}
+\caption{Strahlengang im Fabry-P\'{e}rot Interferometer und die Fokussierung der Interferenzringe in der Brennebene.}
+\label{fig:etalon_skizze}
+\end{center}
+\end{figure}
+Aus der Interferenzbedingung erhält man weiterhin:
+\begin{equation} 
+n=\frac{2\mu t}{\lambda} \cos \theta_n = n_0 \cos \theta_n \approx n_0(1-\frac{\theta^2_n}{2})
+\end{equation} 
+mit $n_0= \frac{2 \mu t}{\lambda}$. Stellt man dies nach $\theta_n$ um, so ergibt sich
+\begin{equation}  \label{eq:theta_n}
+ \theta_n= \sqrt{\frac{2(n_0-n)}{n_0}}.
+\end{equation}
+Ist $\theta_n$ der Winkel zu einem Interferenzring, so ist $n$ ganzzahlig. $n_0$
+gibt die Bedingung für das Zentrum ($\theta=0$), ist jedoch im allgemeinen nicht ganzzahlig.
+Bezeichnet man die Ordnung des ersten Ringes mit $n_1$, so ist
+\begin{equation}
+ n_1=n_0 \cos \theta_{n_1} < n_0.
+\end{equation}
+Nun definiert man ein $\epsilon$ mit $0<\epsilon<1$, so dass
+\begin{equation}
+n_1=n_0-\epsilon
+\end{equation}
+ $n_1$ ist die grösste ganze Zahl, die kleiner ist als $n_0$.
+Zählt man die Ringe vom Zentrum aus, so gilt für den $p$-ten Ring:
+\begin{equation}  \label{eq:n_p}
+ n_p=(n_0-\epsilon)-(n_p-1).
+\end{equation} 
+Aus Gleichungen \ref{eq:r_n}, \ref{eq:theta_n} und \ref{eq:n_p} ergibt sich für den Radius des Ringes $p$
+\begin{equation} \label{eq:rp}
+  r_p=\sqrt{\frac{2f^2}{n_0}} \sqrt{(p-1)+\epsilon}.
+\end{equation} \label{eq:rp_square}
+Die Differenz der Quadrate zweier benachbarter Ringe ist damit konstant:
+\begin{equation}  \label{eq:rp_square}
+ r^2_{p+1}-r^2_p = \frac{2 f^2}{n_0}
+\end{equation}
+Spaltet nun eine Spektrallinie in 2 eng benachbarte Komponenten a und b der Wellenlängen $\lambda_a$ und $\lambda_b$ auf,
+lässt sich für jede der Komponenten ein Ausdruck für $\epsilon$ aufschreiben:
+\begin{equation}
+ \epsilon_a = \frac{2 \mu t}{\lambda_a}-n_{1,a} = \frac{\mu t k_a}{\pi} - n_{1,a} 
+\end{equation} 
+\begin{equation} 
+  \epsilon_b = \frac{2 \mu t}{\lambda_b}-n_{1,b} = \frac{\mu t k_b}{\pi} - n_{1,b}.
+\end{equation} 
+ $k_a=\frac{2\pi}{\lambda_a}$ und $k_b=\frac{2\pi}{\lambda_b}$ sind die zu den Wellenlängen korrespondierenden Wellenzahlen.
+ $n_{1,a}$ ist die Interferenzordnung des ersten Ringes der Komponente a und $n_{1,b}$ die der Komponente b.
+ Die Differenz der Wellenzahlen lässt sich durch
+\begin{equation} \label{eq:deltak}
+ \Delta k= k_a-k_b= \pi \frac{\epsilon_a-\epsilon_b}{\mu t}
+\end{equation}
+ ausdrücken. Aus Gleichung \ref{eq:rp} und \ref{eq:rp_square} erhält man
+\begin{equation} 
+ \frac{r^2_{p+1}}{r^2_{p+1}-r^2_p}-p=\epsilon.
+\end{equation} 
+Wendet man das auf die Komponenten a und b an, ergibt sich:
+\begin{equation}
+ \frac{r^2_{p+1,a}}{r^2_{p+1,a}-r^2_{p,a}}-p=\epsilon_a
+\end{equation}
+und
+\begin{equation}
+ \frac{r^2_{p+1,b}}{r^2_{p+1,b}-r^2_{p,b}}-p=\epsilon_b
+\end{equation}
+Substituiert man damit in Gleichung \ref{eq:deltak}, so erhält man für die
+Wellenzahldifferenz:
+\begin{equation} \label{eq:deltak2}
+ \Delta k = \frac{\pi}{\mu t}( \frac{r^2_{p+1,a}}{r^2_{p+1,a}-r^2_{p,a}}-\frac{r^2_{p+1,b}}{r^2_{p+1,b}-r^2_{p,b}})
+\end{equation}
+Die Differenzen der Quadrate der Radien ergeben sich dann aus Gleichung \ref{eq:rp_square}:
+\begin{equation}
+\Delta^{p+1,p}_a=r^2_{p+1,a}-r^2_{p,a}=\frac{2f^2}{n_{0,a}}
+\end{equation}
+und
+\begin{equation}
+\Delta^{p+1,p}_b=r^2_{p+1,b}-r^2_{p,b}=\frac{2f^2}{n_{0,b}}.
+\end{equation}
+Für kleine Aufspaltung der Linien können beide Größen als gleich angesehen werden:
+\begin{equation}
+ \Delta^{p+1,p}_a=\Delta^{p+1,p}_b
+\end{equation}
+Demnach sollten auch die Differenzen
+\begin{equation}
+ \delta^p_{a,b}=r^2_{p+1,a}-r^2_{p+1,b}
+\end{equation} 
+unabhängig von $p$ die gleichen Werte haben. 
+Die Differenz der Quadrate der Radien verschiedener Linien aber gleicher Ordnung wird also vereinfacht mit $\delta$ bezeichnet,
+unabhängig von deren Ordnung. Ebenfall ist dann $\Delta$ die Differenz der quadrierten Radien gleicher Komponenten aber benachbarter Ordnung.
+Eingesetzt in Gleichung  \ref{eq:deltak2} ergibt sich nun endlich:
+\begin{equation} \label{eq:deltak_final}
+\Delta k = \frac{\pi}{\mu t} \frac{\delta}{\Delta}.
+\end{equation}
+Diese Gleichung hängt nun nicht mehr von der Dimension der verschiedenen Radien ab!
+
+
+
+\section{Versuchsdurchführung}
+\subsection{Kalibrieren des Magneten und Justieren des Spektrometers}
+Der Zeeman-Effekt wird in diesem Versuch anhand des Lichtes einer Cadmiumlampe im Magnetfeld 
+eines Permanentmagneten demonstriert. Der Abstand der Polschuhe des Magneten ist variabel und
+somit der Betrag der magnetischen Flussdichte $B$. Mit Hilfe einer Hallsonde soll zuerst die magnetische Flussdichte
+des Magneten kalibriert werden, um später bei definierten Feldwerten arbeiten zu können.
+
+Aus dem Spektrum aller vorhandenen atomaren
+Übergänge der Lampe wird mit Hilfe eines roten Farbfilters ein schmaler Bereich um die 
+ $\lambda_n=643,847 \;\mathrm{nm}$ Linie zur Beobachtung gewählt. 
+ Mit Hilfe eines Fabry-P\'{e}rot Etalons kann dieser aufgelöst
+und die Aufspaltung der Linien transversal und longitudinal zum Magnetfeld beobachtet werden. 
+Bei longitudinaler Beobachtung ist die optische Achse parallel zur magnetischen Flussdichte und die Bohrung
+im Pohlschuh dient als Lichtquelle. In transversaler Beobachtung wird anstelle der Bohrung eine Irisblende eingesetzt,
+die dann als Lichtquelle dient. Linse $L_1$ erzeugt zusammen mit einer Linse der Brennweite $f=100 \;\mathrm{mm}$ (fest im Fabry-P\'{e}rot Etalon eingebaut)
+einen fast parallelen Strahlenverlauf, der zur Erzeugung der Interferenzen benötigt wird.
+Die Linsen $L_2$ und $L_3$ dienen als Teleskop, dessen Bild von der CCD-Kamera aufgenommen wird und am PC
+ausgewertet werden kann. Abbildung \ref{fig:aufbau_bank_skizze} zeigt die Anordnung der verschiedenen optischen Komponenten und deren
+ungefähre Positionen im longitudinalen Fall. Die Geometrie des Aufbaus ist so lang zu variieren, bis die
+Kamera ein scharfes Bild aufnehmen kann.
+\begin{figure}[!h] 
+\begin{center}
+\includegraphics[width=\textwidth]{aufbau_bank_right}
+\caption{Die Komponenten und deren ungefähre Positionen in cm zur Beobachtung der roten $\lambda_n=643,847 \;\mathrm{nm}$ Linien in longitudinaler Geometrie}
+\label{fig:aufbau_bank_skizze}
+\end{center}
+\end{figure} 
+
+\subsection{Normaler Zeeman-Effekt: Polarisation}
+Bei atomaren elektrischen Dipolübergängen lautet eine Auswahlregel für eine Komponente des Gesamtdrehimpulses
+ $\Delta M_J= 0, \pm 1$. Übergänge zu $\Delta M_J=0$ werden $\pi$-Linien gennannt und solche mit $\Delta M_J= \pm 1$
+ $\sigma$-Linien.
+Mit Hilfe eines Polarisationsfilters zwischen $L_2$ und $L_3$ kann zwischen verschiedenen Polarisationsrichtungen unterschieden werden.
+Wechseln Sie dazu zur transversalen Geometrie des Aufbaus und setzen Sie die Irisblende an die Stelle der Polschuhbohrung.
+Während ohne Polarisationsfilter drei Übergänge im Fall des normalen Zeeman-Effektes beobachtet werden können, werden mit
+vertikalem Filter nur die $\sigma$-Linien und bei horizontalem Filter nur die $\pi$-Linie beobachtet.
+Dokumentieren Sie dazu Ihre eigenen Beobachtungen.
+
+
+Wird nun zum longitudinalen Aufbau gewechselt, sind unabhängig vom Winkel des Polarisationsfilters 2 Linien
+sichtbar. Die $\pi$-Übergänge sind in longitudinaler Richtung nicht beobachtbar.
+Ein $\lambda/4$-Plättchen überführt zirkular polarisiertes Licht in eine lineare Polarisation.
+Die Richtung der Polarisation ist nach dem Durchgang der Welle um $\pi / 4$ gegenüber der optischen Achse des Plättchens gedreht. 
+Der Polarisationsfilter kann dann gegenüber der optischen Achse des 
+ $\lambda /4$-Plättchens gedreht werden und so die anfänglich zirkulare Polarisation des Lichtes gezeigt.
+ Bringen Sie das $\lambda/4$-Plättchen zwischen $L_2$ und dem Polarisationsfilter an und
+protokollieren Sie Ihre Beobachtungen für verschiedene Winkeleinstellungen des Polarisationsfilters.
+
+Abbildung \ref{fig:polarisations_skizze} fasst die Polarisation der Linien im Magnetfeld zusammen.
+
+\begin{figure}[!h] 
+\begin{center}
+\includegraphics[width=\textwidth]{polarisations_skizze}
+\caption{Polarisation in longitudinaler und transversaler Beobachtungsrichtung}
+\label{fig:polarisations_skizze}
+\end{center}
+\end{figure} 
+
+
+\subsection{Normaler Zeeman-Effekt: Bestimmung des Bohrschen Magnetons}
+Mit Hilfe der im Theorieteil entwickelten Gleichungen kann die Aufspaltung der Linien im Feld
+quantitativ in Abhängigkeit von der Flussdichte bestimmt werden.
+Bestimmen Sie dazu für 5 verschiedene Felder zwischen $150$ und $450 \, \mathrm{mT}$ in transversaler
+Geometrie die von den Interferenzringen umschlossenen Flächen für die ersten 3 Ordnungen. Die Flächen sind proportional
+zum Quadrat des Radius, der Faktor $4 \pi$ kürzt sich in Gleichung \ref{eq:deltak_final}.
+Stellen Sie $\Delta E = h \Delta f$ in Abhängigkeit von $B$ dar, indem Sie die Mittelwerte der Flächen nutzen
+($c=2,99 \;10^8 \frac{\mathrm{m}}{\mathrm{s}}$, $h=6,626 \;10^{-34}\frac{\mathrm{J}}{\mathrm{s}}$). 
+Bestimmen Sie $\mu_B$ für die einzelnen Feldpunkte und vergleichen Sie Ihr Ergebnis mit dem Literaturwert
+ $\mu_B = 9,273 \;10^{-24} \frac{\mathrm{J}}{\mathrm{T}}$. Der Brechungsindex der Quarzglasplatte des Etalons
+ beträgt $\mu_{\mathrm{644 nm}} = 1,4560$ ( $\mu_{509 \mathrm{nm}}=1,4519$). Die Dicke der Platte ist $t=3 \mathrm{mm}$.
+
+
+\subsection{Anomaler Zeeman-Effekt}
+Für die Übergänge der grünen  $\lambda_n=508,588 \;\mathrm{nm}$ Linie im Feld
+werden kompliziertere Interferenzen beobachtet. Entfernen Sie den roten Farbfilter
+und bringen Sie den grünen Interferenzfilter an Linse $L_2$ an.
+Wiederholen Sie die Experimente zur Polarisation in longitudinaler und transversaler
+Geometrie. Vergleichen Sie Ihre Ergebnisse mit den Eigenschaften des $2^3S_1$ und $2^3P_2$
+Zustandes, zwischen denen die Übergänge stattfinden und Ihren Ergebnissen zum normalen Zeeman-Effekt.
+
+
+\frage{Wie ist die Funktionsweise eines $\lambda / 4$-Plättchens, eines Polarisationsfilters und eines Interferenzfilters?}
+\frage{Wie entstehen am Fabry-P\'{e}rot Etalon Interferenzen?}
+\frage{Machen Sie sich mit den Energieniveauschemata zum Zeemaneffekt vertraut. Was sind die Unterschiede in der Aufspaltung der
+Spektrallinien bei normalem und anormalem Zeeman-Effekt?}
+
+
+\end{document}
+

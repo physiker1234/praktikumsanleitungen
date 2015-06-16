@@ -1,0 +1,351 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd,mhchem}
+
+\versuch{Mikroskop}{MI}
+\author{M.~Lehmann}
+\bearbeitet{S.~Socher,i.~A. Dr.~Escher}{}
+
+\buch{1}{Bergmann, Schäfer}{Lehrbuch der Experimentalphysik III - Optik}{de Gruyter, Berlin, New York}{1987}
+\buch{2}{Müller}{Übungsbuch Physik}{Fachbuchverlag Leipzig im Hanser-Verlag}{1996}
+\buch{3}{Recknagel}{Physik - Optik}{VEB Verlag Technik Berlin}{1975}
+
+\begin{document}
+\maketitle
+
+\section{Aufgabenstellung}
+
+Das Lichtmikroskop ist trotz seines scheinbar einfachen Aufbaus ein sehr komplexes, aber auch vielseitiges Instrument. In diesem 
+Versuch sollen die Grundlagen der Bildentstehung und der Abbildung durch ein zweistufiges optisches System kennengelernt werden.
+
+\section{Grundlagen}
+
+\subsection{Das menschliche Auge}
+
+Die optische Wirkung des menschlichen Auges beruht auf der Abbildung des betrachteten Gegenstands $y$ auf die Netzhaut (Abb. \ref{abb1}). 
+Ohne Akkomodation des Auges - d.h. ohne Anspannung der Augenmuskulatur - wird ein Gegenstand $y$ normalerweise in einer Gegenstandsweite 
+$a$ von Unendlich bis herab zur deutlichen Sehweite ($S=25~\mathrm{cm}$), auch als Bezugssehweite bezeichnet, als scharf empfunden. 
+Der Grund dafür liegt in der Struktur der Netzhaut: solange der abgebildete Objektpunkt nicht wesentlich größer als der Querschnitt 
+eines einzelnen Stäbchens oder Zäpfchens ist, bleibt der Eindruck eines scharfen Bildpunktes erhalten. Erst wenn der Leuchtfleck 
+mehrere Stäbchen bzw. Zäpfchen beleuchtet, wird dies als unscharf empfunden.
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centering{\includegraphics[height=4.5cm]{abb1.png}} 
+\fi 
+\captionof{figure}{Das menschliche Auge aus der Sicht eines Physikers: Der Gegenstand $y$ wird durch die Augenlinse in das Bild $y'$ auf der 
+Netzhaut abgebildet. Dabei ist nur der Mittelpunktstrahl eingezeichnet, der mit der optischen Achse den Sehwinkel $\sigma_0$ einschließt
+ \label{abb1}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+Die Stelle der größten Bildschärfe befindet sich in der Netzhautgrube, da hier die Zapfen am dichtesten stehen. Ihr gegenseitiger Abstand 
+beträgt dort etwa $4~\mathrm{\mu m}$. Damit ein Netzhautbild von dieser Größe zustande kommt, müssen zwei Strahlen durch den Mittelpunkt 
+der Augenlinse unter einem Sehwinkel von $\sigma_0 = 1' = 291~\mathrm{\mu rad}$ eintreten. Dies ist z.B. für zwei Strahlen erfüllt, die von 
+zwei $y=0,2~\mathrm{mm}$ entfernten Punkten aus einer Entfernung von $a=1~\mathrm{m}$ kommen. Diese Punkte können vom Auge gerade noch aufgelöst 
+werden. Man bezeichnet den Sehwinkel von $\sigma_0 = 1'$ als physiologischen Grenzwinkel des Auges.
+
+\subsection{Allgemeine Wirkungsweise optischer Instrumente}
+
+Das menschliche Auge kann von zu weit entfernten oder zu kleinen Gegenständen Einzelheiten nicht mehr erkennen, wenn diese unter eine zu 
+kleinen Sehwinkel $\sigma_0$ erscheinen. Andererseits können durch die begrenzte Akkomodationsfähigkeit des Auges kleine Gegenstände 
+nicht beliebig nahe herangebracht werden. Aufgabe von optischen Instrumenten wie Lupe, Mikroskop und Fernrohr ist es, Bilder zu erzeugen, die 
+dem Auge unter einem hinreichend großen Sehwinkel $\sigma_m$ erscheinen. Diese Eigenschaft der optischen Instrumente wird mit dem Begriff 
+Vergrößerung beschrieben und quantifiziert. Die Vergrößerung $M$ (Magnification) eines Instrumentes ist definiert als Verhältnis aus dem 
+Tangens des Sehwinkels $\sigma_m$ mit Instrument zum Tangens des Sehwinkels $\sigma_0$ ohne Instrument:
+
+\begin{equation} \label{vergroesserung}
+M = \frac{\tan \sigma_m}{\tan \sigma_0} \approx \frac{\sigma_m}{\sigma_0}
+\quad \text{für} \quad
+\sigma_i \ll 1
+\end{equation}
+
+Dies lässt sich anhand folgender Überlegungen bestätigen: Entsprechend Abbildung \ref{abb1} gilt
+
+\begin{equation*}
+\tan \sigma_0 = \frac{y}{a} = \frac{y'}{a'}
+\end{equation*}
+
+wobei $y'$ die Größe des auf die Netzhaut geworfenen Bildes und $a'$ der Abstand des Bildes von dem Mittelpunkt der Augenlinse ist. Wird nun 
+vom Gegenstand der Größe $y$ nach Zwischenschaltung eines optischen Instrumentes in der gleichen Entfernung $a$ vom Mittelpunkt der Augenlinse 
+ein Bild entworfen, dass dann dem Auge unter dem Sehwinkel $\sigma_m$ erscheint, so gilt
+
+\begin{equation*}
+\tan \sigma_m = \frac{y_m}{a} = \frac{y'_m}{a'}
+\quad \text{und damit} \quad
+M = \frac{\tan \sigma_m}{\tan \sigma_0} = \frac{y_m}{y} = \frac{y'_m}{y'}
+\end{equation*}
+
+wobei die mit dem Index $m$ versehenen Größen die Wirkung des optischen Instrumentes kennzeichnen. Die Vergrößerung ist in diesem Fall gleich 
+dem Größenverhältnis der auf die Netzhaut geworfenen Bilder mit und ohne Instrument.
+
+\subsection{Das Lichtmikroskop}
+
+\subsubsection{Entstehungsgeschichte} 
+
+Die historische Entwicklung des Lichtmikroskops umfasst einen langen Zeitraum. Hier sollen nur die wichtigsten Meilensteine genannt werden (nach [1]):
+A. van Leeuwenhoek (1673) gilt als Erfinder des einfachen, einlinsigen Mikroskops. C. Huygens erfand 1684 das zweilinsige Okular. C. Spencer entwickelte 
+um 1860 Mikroobjektive hoher numerischer Apertur und verbesserte deren Farbkorrektion durch Kombination von Glas und Fluorit. 1853 führte F. Wenham den 
+Dunkelfeldkondensor ein. E. Abbe (1840-1905) erfand apochromatische Mikroobjektive, führte Kompensationsokulare ein und entwickelte eine Theorie zur 
+Bildentstehung im Mikroskop. F. Zernike entwickelte 1932 das Phasenkontrastverfahren und erhielt dafür 1952 den Nobelpreis. 
+
+\subsubsection{Aufbau und Funktionsweise}
+
+Das Lichtmikroskop besteht aus zwei getrennten optischen Systemen, dem Objektiv und dem Okular (Abbilung \ref{abb2}). Das zu betrachtende kleine Objekt 
+$y$ liegt dicht vor dem vorderen (dingseitigen) Brennpunkt $F_{obj}$ der Objektivlinse. Das Objektiv, das eine kurzbrennweitige Sammellinse mit 
+Brennweite $f_{obj}$ ist, erzeugt in der Zwischenbildebene ein umgekehrtes reelles, vergrößertes Zwischenbild $y'$ des Objekts $y$. Das Zwischenbild 
+$y'$ liegt innerhalb der einfachen, vorderen Brennweite des Okulars $f_{ok}$. Daher wirkt das Okular (eine langbrennweitige Sammellinse) als Lupe 
+und erzeugt vom Zwischenbild $y'$ ein virtuelles, nochmals vergrößertes aufrechtes Bild $y''$. Das Auge sieht also in der Bezugssehweite $S=25~
+\mathrm{cm}$ vom Gegenstand $y$ ein umgekehrtes virtuelles, stark vergrößertes Bild $y''$. Die wesentlich gesteigerte Leistungsfähigkeit des Mikroskops 
+gegenüber einer Lupe beruht folglich auf der Tatsache, dass mit der Lupe (d.h. dem Okular) nicht direkt das Objekt, sondern das vom Objekt erzeugte, 
+vergrößerte Bild des Objekts betrachtet wird.
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centering{\includegraphics[height=11.0cm]{abb2.png}} 
+\fi 
+\captionof{figure}{Strahlengang eines Lichtmikroskops bestehend aus Objektiv und Okular bei Akkomodation des Auges auf Bezugssehweite $S$. Zur Ableitung 
+der Gesamtvergrößerung ist unten der Hauptstrahl von der Objektspitze zum unbewaffneten Auge dargestellt.  \label{abb2}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+Die Gesamtvergrößerung $M_{ges}$ ergibt sich bei diesem Strahlengang mit Objektiv und Okular zu
+
+\begin{equation}
+M_{ges} = \frac{\tan \sigma_m}{\tan \sigma_0} = \frac{\frac{y''}{S}}{\frac{y}{s}} = \frac{y''}{y}
+\quad \text{(nur bei} \; S=s)
+\end{equation}
+
+wenn man ohne Instrument das Objekt in der Bezugssehweite $S$ betrachtet und auch das virtuelle Bild im Abstand $S$ erscheint. Wählt man einen 
+anderen Abstand, so ändert sich die Vergrößerung. Aufgrund der Akkomodierfähigkeit kann sich das Auge den Veränderungen in einem weiten Bereich anpassen.
+
+Das angespannte Auge ermüdet jedoch sehr viel schneller als das entspannte Auge, das auf Objekte im Unendlichen eingestellt ist. Folglich ist beim 
+Mikroskopieren darauf zu achten, dass sich das virtuelle Bild $y''$ im Unendlichen befindet. Dies ist der Fall, wenn das Zwischenbild $y'$ in der 
+vorderen Brennebene des Okulars liegt (Abbildung \ref{abb3}). Man spricht dann von der Normalvergrößerung des Mikroskops. Für diese kann aus der 
+allgemeinen Definition der Vergrößerung (Gleichung (\ref{vergroesserung})) die Formel (\ref{normalvergr}) abgeleitet werden.
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centering{\includegraphics[height=8.0cm]{abb3.png}} 
+\fi 
+\captionof{figure}{Strahlengang eines Lichtmikroskops bestehend aus Objektiv und Okular bei entspanntem Auge. Im Vergleich zum Strahlengang in 
+Bezugssehweite (Abbildung \ref{abb2}) wurde nur die Gegenstandsweite $a_{obj}$ so vergrößert, dass das Zwischenbild $y'$ in der vorderen Brennebene 
+des Okulars entsteht. Folglich liegt das virtuelle Zwischenbild $y''$ in Unendlichen. Die Lichtstrahlen fallen dann paralell auf das entspannte 
+Auge.  \label{abb3}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+In einem ersten Schritt bildet das Objektiv das Objekt $y$ in das Zwischenbild $y'$ ab. Für den Abbildungsmaßstab des Objektivs, wo im Gegensatz zur 
+Vergrößerung nur das Größenverhältnis von Zwischenbild $y'$ und Objekt $y$ eingeht, gilt:
+
+\begin{equation} \label{abb_beta}
+\beta_{obj} = \frac{y'}{y} = - \frac{ \left| a' \right| }{\left| a \right| }
+\end{equation}
+
+Über die allgemeine Abbildungsgleichung für dünne Linsen 
+
+\begin{equation}
+\frac{1}{f} = \frac{1}{\left| a \right| } + \frac{1}{\left| a' \right| }
+\end{equation}
+
+kann der Abbildungsmaßstab $\beta_{obj}$ umgeformt werden zu:
+
+\begin{equation}
+\beta_{obj} = - \frac{a'_{obj}}{f'_{obj}} + 1.
+\end{equation}
+
+Da bei Normalvergrößerung das Zwischenbild in der vorderen Brennebene des Okulars liegt, ergibt sich für die Bildweite $a'_{obj} = f'_{obj} + t$, wobei 
+$t$ der Abstand zwischen dem hinteren (bildseitigen) Brennpunkt des Objektivs und dem vorderen Brennpunkt des Okulars ist und als optische 
+Tubuslänge bezeichnet wird. Für den Abbildungsmaßstab des Objektivs erhält man dann
+
+\begin{equation}
+\beta_{obj} = - \frac{t}{f'_{obj}}
+\end{equation}
+
+was leicht in Abbildung \ref{abb3} mittels des geometrischen Strahlensatzes nachvollzogen werden kann. 
+
+Im zweiten Schritt bildet das Okular das Zwischenbild $y'$, welches sich in der vorderen Brennebene des Okulars befindet, das virtuelle Bild $y''$ ab. 
+In diesem Fall gilt für die Okularvergrößerung (Normalvergrößerung einer Lupe):
+
+\begin{equation}
+M_{ok} = \frac{s}{f_{ok}}
+\end{equation}
+
+Die Normalvergrößerung des Mikroskops ergibt sich dann als Produkt aus Abbildungsmaßstab des Objektivs $\beta_{obj}$ und der Vergrößerung des Okulars 
+$M_{ok}$:
+
+\begin{equation}
+M_{norm} = \beta_{obj} \cdot M_{ok} = - \frac{ts}{f'_{obj} f_{ok}}.
+\end{equation}
+
+Die Normalvergrößerung des Mikroskops ist also direkt proportional zu Bezugssehweite $S$ sowie zur optischen Tubuslänge $t$, welche der Hersteller 
+festlegt, und ist umgekehrt proportional dem Produkt der beiden Brennweiten $f'_{obj}$ und $f_{ok}$. Das negative Vorzeichen berücksichtigt die auf 
+das Objekt bezogene Bildumkehr.
+
+\subsection{Das Lichtmikroskop mit Projektiv}
+
+Beim Mikroskopieren muss nicht unbedingt visuell beobachtet werden. Um ein reelles Endbild $y''$ zu erhalten, z.B. für die Aufzeichnung auf einer 
+Photoplatte, wird das Okular durch ein sog. Projektiv ersetzt. Auch das Projektiv ist eine Sammellinse. Um ein reelles Endbild zu erreichen, muss 
+jedoch das Zwischenbild $y'$ vor der vorderen Brennebene des Projektivs liegen. 
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centering{\includegraphics[height=8.0cm]{abb4.png}} 
+\fi 
+\captionof{figure}{Strahlengang eines Lichtmikroskops bestehend aus Objektiv und Projektiv. Dieser Aufbau ermöglicht die Aufzeichnung des reellen 
+vergrößerten Bildes auf einem Leuchtschirm oder einer Photoplatte. \label{abb4}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+In Abbildung \ref{abb4} ist der Versuchsaufbau eines Lichtmikroskops mit Objektiv, Projektiv und Leuchtschirm dargestellt. Das Beleuchtungssystem, 
+welches hier nicht dargestellt ist, erzeugt eine parallele Beleuchtung des Objekts. Die Objektivlinse vergrößert das Objekt $y$ in das reelle, 
+umgekehrte Zwischenbild $y'$, welches durch das Projektiv in das reelle, bezüglich es Objekts aufrechte Endbild $y''$ abgebildet wird. 
+
+Der Abbildungsmaßstab $\beta$ dieses Mikroskops berechnet sich aus dem Produkt der einzelnen Abbildungsmaßstäbe (Gleichung (\ref{abb_beta})) 
+von Objektiv $\beta_{obj}$ und Projektiv $\beta_{proj}$ zu:
+
+\begin{equation}
+\beta = \beta_{obj} \cdot \beta_{proj} = \frac{a'_{obj}}{a_{obj}} \cdot \frac{a'_{proj}}{a_{proj}} = \frac{y'}{y} \cdot \frac{y''}{y'}.
+\end{equation}
+
+\subsection{Die Bildentstehung im Mikroskop nach E. Abbe}
+
+E. Abbe entwickelte 1873 eine Theorie zur Bildentstehung im Mikroskop für den Fall, dass das Objekt mit einer kohärenten Lichtquelle beleuchtet 
+wird. Die Theorie lässt sich an einem einfachen Modellobjekt wie dem Strichgitter gut umreißen (Abbildung \ref{abb5}): Wird dieses Strichgitter 
+mit einer kohärenten Lichtquelle wie einem LASER beleuchtet, so befinden sich hinter dem Objekt gebeugte und ungebeugte Strahlen. Ungebeugte 
+Strahlen werden als Strahlen nullter Ordnung bezeichnet, gebeugte Stahlen je nach Ablenkwinkel als Strahlen erster oder höherer Ordnung. Damit sich 
+die am Gitter gebeugten Wellen so überlagern, dass Interferenzmaxima - d.h. Helligkeitsmaxima - entstehen, müssen die Gangunterschiede der Wellenzüge 
+im Fernfeld ganzzahlige Vielfache der Lichtwellenlänge $\lambda$ betragen. Die Ganze Zahl bezeichnet die Ordnung.
+
+Die Strahlen werden, soweit sie durch die Objektivlinse gehen, von ihr abgebildet. In der hinteren Brennebene der Objektivlinse liegen dann die Bilder 
+unterschiedlicher Beugungsordnung der Lichtquelle vor. Im Falle polychromatischen Lichtes erfolgt außerdem eine spektrale Zerlegung des Lichts in 
+seine Spektralfarben. Das eigentliche Bild des Objekts entsteht in der Bildebene durch kohärente Überlagerung aller Beugungsbilder. Mathematisch 
+gesehen wird die Abbildung des Objekts in ein sog. Beugungsspektrum und dann in das Bild durch zwei Fouriertransformationen (FT) beschrieben.
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centering{\includegraphics[height=5.5cm]{abb5.png}} 
+\fi 
+\captionof{figure}{Abbildung eines Strichgitters (Gitterkonstante $d$) mittels einer Linse. Das Strichgitter (Objekt), das in der Objektebene 
+liegt, ist als Transparenzfunktion dargestellt. Je mehr abgebeugte Strahlen unter höherem Beugungswinkel durch die Linse abgebildet werden, 
+desto getreuer wird das Bild. In diesem Fall kommen nur Strahlen nullter und erster Ordnung zur Abbildung; Strahlen zweiter und höherer Ordnung 
+tragen infolge des begrenzten Aperturwinkels $\alpha$ des Objekts nicht zur Abbildung bei. Das resultierende vergrößerte Bild des Strichgitters 
+entspricht daher einer Kosinusfunktion, die als Helligkeitsprofil in der Bildebene dargestellt ist.  \label{abb5}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+Dem Beugungsspektrum kommt eine besondere Bedeutung zu, da hier das Objekt in seinen periodischen Komponenten zerlegt vorliegt. Dies soll die 
+folgende Überlegung veranschaulichen: Das Beugungssprektrum eines strukturlosen Objekts würde bei paralleler Beleuchtung und idealer Abbildung nur 
+aus einem Punkt bestehen, dem Brennpunkt $F$. Die Information über die Struktur des Objekts muss also in den abgebeugten Strahlen und folglich 
+in den zusätzlichen Beugungsbildern $S_{+1}$ und $S_{-1}$ liegen. Je kleiner Objektdetails wie z.B. der Gitterabstand $d$ sind, desto weiter außen 
+liegen die Beugungsbilder. Dies bedeutet gleichzeitig aber auch, dass jeder Eingriff in den Strahlengang durch Ausblenden von Beugungsbildern 
+oder Begrenzung des Winkels der einfallenden Strahlen in das Objektiv das Bild gravierend verfälscht. Da die Beugungsbilder in ihrer Intensität mit 
+höherer Ordnung abnehmen, erkannte Abbe, dass zur Darstellung der Gitterstruktur neben dem zentralen Lichtbündel auch mindestens beide 
+Beugungsbilder erster Ordnung vom Objekt durchgelassen werden müssen. Das Bild wird umso getreuer, je mehr Strahlen (Beugungsmaxima) zur Abbildung 
+beitragen.
+
+Bei einem Strichgitter mit der Gitterkonstanten $d$ findet man das erste Beugungsmaximum unter dem Winkel $\varphi_1$, gegeben durch
+
+\begin{equation}
+\sin \varphi_1 = \frac{\lambda}{nd}
+\end{equation}
+
+
+wobei $\lambda$ die Wellenlänge des Lichtes ist und $n$ der Brechungsindex einer etwaigen Immersionsflüssigkeit, in welche man das Objekt einbetten 
+kann (wodurch also die Wellenlänge um den Faktor $\frac{1}{n}$ herabgesetzt würde). Damit die Gitterstruktur noch erkannt werden kann, muss 
+mindestens das Erste (unter de Winkel $\varphi_1$ auftretende) Intensitätsmaximum noch vom dem Objekt mit dem halben Öffnungswinkel $\alpha$ 
+erfasst werden. $\alpha$ ist der halbe Öffnungswinkel des Objektivs, unter welchem das Objekt vom Gegenstand aus erscheint. Er wird Aperturwinkel 
+des Objektivs genannt (apertur \emph{(lat.)}: Öffnung). Der mit dem Mikroskop gerade noch auflösbare Abstand zweier Punkte mit Abstand $d$, die 
+sog. Auflösungsgrenze beträgt demnach
+
+\begin{equation}
+d = \frac{\lambda}{n \sin \alpha} = \frac{\lambda}{\alpha}
+\end{equation}
+
+wobei nach Abbe unter $A$ die numerische Apertur verstanden wird. Je kleiner die Objektstruktur $d$ ist, desto besser muss das Auflösungsvermögen 
+des Mikroskops sein, welches durch
+
+\begin{equation}
+U = \frac{1}{d} = \frac{A}{\lambda}
+\end{equation}
+
+definiert wird. 
+
+Es soll noch auf den Umstand aufmerksam gemacht werden, dass die numerische Apertur neben dem Auflösungsvermögen auch die Helligkeit des Bildes 
+bestimmt. Je größer die Apertur, desto heller das Bild. Eine Einbettung des Objekts in Immersionsöl bewirkt also neben der Verbesserung des 
+Auflösungsvermögens auch eine Steigerung der Bildhelligkeit, da Lichtstrahlen in das Objektiv gelangen, die sonst ausgeblendet werden würden.
+
+In Abbes Theorie wird die Beugung des Lichts aufgrund des endlichen Durchmessers der Objektivlinse berücksichtigt. H. v. Helmholtz, der etwa zur 
+selben Zeit das Auflösungsvermögen optischer Instrumente untersuchte, entwickelte einen ähnlichen Ansatz jedoch für selbstleuchtende Objekte 
+(d.h. für inkohärentes Licht), in welchem die Auflösung des Mikroskops durch Beugung am Rand der Objektivlinse bestimmt wird. In diesem Fall 
+verringert sich die Auflösungsgrenze um einen konstanten Faktor zu
+
+\begin{equation}
+d = 0,61 \cdot \frac{\lambda}{n \sin \alpha} = 0,61 \cdot \frac{\lambda}{A}
+\end{equation}
+
+Trotz Verwendung von Zedernöl ($n=1,5$) als Immersionsflüssigkeit und einer Apertur nahe $\alpha = 90~°$ ergibt sich der kleinste noch aufzulösende 
+Abstand zweier Objektpunkte aus der Wellenlänge des verwendeten Lichts 
+
+\begin{equation*}
+d_{min} \approx \frac{\lambda}{2}
+\end{equation*}
+
+d.h. zwei Objektpunkte, die näher als die halbe Wellenlänge des benutzen Lichts beieinander liegen, können aufgrund der Wellennatur des Lichtes auch 
+im besten Mikroskop nicht getrennt wahrgenommen werden. Die Leistungsfähigkeit eines Lichtmikroskops ist demnach ausgeschöpft, wenn der Abstand 
+zweier Objektpunkte $d=200~\mathrm{nm}$ bei Verwendung von blauem Licht ($\lambda=400~\mathrm{nm}$) auf den physiologischen Grenzwinkel des Auges 
+vergrößert wird, was einem Abstand der vergrößerten Objektstruktur von etwa $0,2~\mathrm{mm}$ entspricht. Die dazu notwendige förderliche 
+Vergrößerung beträgt
+
+\begin{equation*}
+\frac{0,2~\mathrm{mm}}{200~\mathrm{nm}} = 1000.
+\end{equation*}
+
+Eine stärkere Vergrößerung würde zwar die Objektpunkte dem Auge noch weiter voneinander entfernt erscheinen lassen, jedoch keine neuen Einzelheiten 
+der Struktur des Gegenstands aufdecken. Man spricht von einer leeren Vergrößerung. 
+
+Noch feinere Strukturen lassen sich mit einem Elektronenmikroskop abbilden, da die Elektronen entsprechend der de-Broglie-Beziehung 
+
+\begin{equation*}
+\lambda = \frac{h}{m_e v}
+\end{equation*}
+
+($h$: Plancksches Wirkungsquantum, $m_e$: Elektronenmasse, $v$: Elektronengeschwindigkeit) eine Wellenlänge besitzen (Welle-Teilchen-Dualismus), die 
+je nach Geschwindigkeit der Elektronen etwa fünf Zehnerpotenzen kleiner ist als die des Lichts. Die Auflösung eine Elektronenmikroskops wird dann 
+jedoch nicht mehr durch die Wellenlänge der Elektronen, sondern vornehmlich durch die Abbildungsfehler der magnetischen Objektivlinse beschränkt. 
+Die Auflösungsgrenze beträgt bei modernen Geräten etwa $0,1 \ldots 0,2~\mathrm{nm}$ (Vergleich: $0,1~\mathrm{nm}$ entsprechen etwa dem Durchmesser des 
+Wasserstoffatoms). Folglich können im Elektronenmikroskop Strukturen mit atomarer Auflösung abgebildet werden.
+
+\section{Versuchsdurchführung}
+
+Der Versuch wird in den folgenden Teilschritten durchgeführt:
+
+\begin{enumerate}
+ \item Aufbau einer einfachen Abbildung, bestehend aus Beleuchtungssystem (LASER mit Aufweitungsoptik, Einstellung auf parallele Beleuchtung), Objekt, 
+ Objektivlinse und Schirm. \\ Bestimmung der Bildebene.
+ \item Abbildungsmodus: Komplettierung des Lichtmikroskops durch Einbau der Projektivlinse. Bestimmung des Abbildungsmaßstabes des Mikroskops und des 
+ Gitterabstandes im Objekt. Maßstabähnliche Zeichnung des optischen Abbildungssystems.
+ \item Beugungsmodus: Verschiebung der Projektivlinse so, dass die hintere Brennebene und damit das Beugungsbild des Objekts vergrößert abgebildet wird. 
+ Bestimmung des Gitterabstandes im Objekt aus dem Beugungsmuster. 
+ \item Einfügen einer Aperturblende in die hintere Brennebene und Umstellung der Projektivlinse in den Abbildungsmodus. Wie ändert sich das Bild, wenn 
+ Reflexe des Beugungsbildes durch die Aperturblende ausgeblendet werden?
+ \item \emph{(Für Physikstudenten)}: Bestimmung des Aperturwinkels des Objektivs aus der Lage des am weitesten abgebeugten Reflexes. 
+\end{enumerate}
+
+\frage{Wie ist ein Lichtmikroskop aufgebaut? Zeichnen sie den Strahlengang bestehend aus Objektiv und Okular für die Akkomodation des Auges auf 
+Bezugssehweite $S$. Was muss an dem Versuchsaufbau bei konstanter Tubuslänge $t$ geändert werden, um das Bild im Unendlichen zu sehen?}
+\frage{Wie unterscheidet sich der Versuchsaufbau, wenn statt dem Okular ein Projektiv eingesetzt wird? Konstruieren die den Strahlengang.}
+\frage{Wie ist die numerische Apertur des Objektivs definiert? Leiten sie die Formel für die Auflösungsgrenze an dem Beispiel der Abbildung eines 
+Strichgitters mit Gitterkonstante $d$ ab.}
+\frage{Welche Wirkung hat die Verwendung einer Immersionsflüssigkeit? Zeichnen Sie den Strahlengang eines Strichgitters vor dem Objektiv mit und ohne 
+Immersionsflüssigkeit. Wo liegt die physikalische Auflösungsgrenze, wenn man die Leistungsfähigkeit des Lichtmikroskops voll ausschöpft?}
+\frage{Was versteht man unter der "'förderlichen Vergrößerung"` eines Mikroskops?}
+\frage{Wie kann man dennoch die Auflösungsgrenze verbessern, um atomare Strukturen abbilden zu können?}
+
+\end{document}
+
+

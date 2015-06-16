@@ -1,0 +1,333 @@
+\documentclass[11pt,twoside]{article}
+\usepackage{verbatim}
+\usepackage{amsmath,amsthm}
+\usepackage{graphicx}
+
+\usepackage[german]{babel}
+\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc}
+
+\usepackage{fancybox}
+\usepackage{textcomp}
+\usepackage{fancyhdr}
+\usepackage{rotating}
+\setcounter{secnumdepth}{3}
+
+\textheight         23cm \textwidth          16.5cm \topmargin
+15pt \oddsidemargin      4pt \evensidemargin     -7pt
+
+\pagestyle{fancy}
+
+ \title{Versuch KW \\ Wärmeverlust eines Kalorimeters \\}
+ \author{bearbeitet von \\ M. Kreller \\ i.A. Dr. Escher}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{table}[h]
+\begin{tabular}{|c|c|}
+\hline
+& \\
+\hspace{0.7cm} \begin{LARGE}Technische Universität Dresden \end{LARGE} \hspace{0.7cm} & \hspace{1cm}Physikalisches Praktikum \hspace{1cm} \\
+\begin{large} Fachrichtung Physik \end{large}               & \\
+\begin{footnotesize} L. Jahn, S Däbritz 10/ 1997 \end{footnotesize}            & Versuch: \begin{LARGE} KW \end{LARGE} \\
+\begin{footnotesize} bearbeitet 03/ 2004 \end{footnotesize}  & \\
+\hline
+\end{tabular}
+\end{table}
+\begin{huge}\textbf{Wärmeverlust eines Kalorimeters}\end{huge}
+
+\tableofcontents
+\newpage
+
+\section{Aufgabenstellung}
+\begin{enumerate}
+\item Die Wärmekapazität $C_w$ eines
+Kalorimetergefäßes ist nach der Mischungsmethode zu bestimmen.
+
+\item Bestimmung des Abkühlungskoeffizienten $K^*$ für den
+Wärmeverlust des Kalorimeters aus der Abkühlkurve.
+\end{enumerate}
+
+\section{Allgemeine Grundlagen}
+\subsection{Kalorimeter}
+Zur Bestimmung der spezifischen Wärmekapazitäten von Flüssigkeiten
+und festen Körpern benutzt man Kalorimeter.
+Darin wird z.~B.~nach der
+Mischungsmethode die Mischtemperatur $T_m$ zweier zum Zeitpunkt t$_1$
+innerhalb des Kalorimeters in Kontakt gebrachter Körper mit
+unterschiedlicher Ausgangstemperatur gemessen.\\
+Ein {\bf ideales Kalorimeter} sollte die Wärmeenergie-Bilanz
+der beiden Körper nicht beeinflussen, d.h. die
+Wärmekapazität $C_w\rightarrow 0$ besitzen und ideale
+Wärmeisolation (einen adiabatischen Vorgang,
+d.~h.~$K^*\rightarrow 0$) realisieren.\\
+Bei einem {\bf realen Kalorimeter} sind zwei Einflüsse zu berücksichtigen:\\[.1cm]
+1.~ die Wärmekapazität  $C_w$ des Gefäßes; \\
+2.~ der Wärmeaustausch mit der Umgebung durch Leitung,
+Übergang,
+Konvektion und Strahlung, erfaßt mit der Konstanten $K^*$.\\[.1cm]
+
+\subsection{Bestimmung von $C_w$ nach der Mischungsmethode}
+\begin{minipage}{6cm}
+Im Kalorimeter der zunächst unbekannten Wärmekapazität $C_w$
+befindet sich die Wassermenge $m_{w1}$ mit der spezifischen Wärmekapazität
+$c_w$ und der Ausgangstemperatur $T_1$. \\
+Es wird die bekannte Wassermenge $m_{w2}$ mit der
+(im Beispiel geringeren) Temperatur $T_2$ hinzugefügt und bei
+Berücksichtigung der mit der endlichen
+Mischungszeit verbundenen Verluste über den $T(t)-$~Verlauf
+die Mischtemperatur $T_m$
+bestimmt (s.~Abb.~1).
+\end{minipage}
+\hspace{.5cm}
+\begin{minipage}{9cm}
+\includegraphics[width=7cm]{GP1-KW-Kurve}\\
+{\small {\bf Abbbildung~1:} Bestimmung von $T_1^*$ und $T_m$;
+Einsatz: Einfaches doppelwandiges Kalorimeter mit Thermometer und
+Rührer }
+\end{minipage}
+~\\[.2cm]
+Die {\bf Energiebilanz} (Äquivalenz von zugeführter und
+abgeführter Wärmeenergie) lautet
+\begin{equation}
+(c_w\;m_{w1}\;+\;C_w)(T_1^*-T_m)\:=\:(T_m-T_2)c_w\,m_{w2}
+\label{c}
+\end{equation}
+$T_1^*=$ korrigierte Ausgangstemperatur (sie entspräche
+im Idealfall $T_1$; 1 - warm, 2 - kalt).
+\subsection{Wärmeverlust des Kalorimeters}
+Ein reales, auf die Temperatur $T$
+aufgeheiztes Kalorimeter überträgt Wärmeenergie
+an die Umgebung (Temperatur $T_u$; s.~Anhang).
+Unter der Voraussetzung, daß alle Verluste
+proportional zur Temperaturdifferenz $(T-T_u)$ ~zwischen dem Innenraum im
+Gefäß ($T$) und der Umgebung sind, wird der abgegebene
+Wärmestrom $I_{w}^{(1)}$
+pauschal mit dem Abkühlungskoeffizienten $K^*$ durch folgenden Ansatz
+erfaßt: \\[-.4cm]
+\begin{center}
+{\fbox{\parbox{9cm}{
+\begin{equation}
+I_w^{(1)}=K^*\;(T-T_u)\quad.
+\label{w1}
+\end{equation}
+}}
+}
+\end{center}
+\subsection{{\sc Newton'sches} Abkühlungsgesetz}
+In Gl.~(\ref{w1}) nimmt $T$ kontinuierlich ab, da der
+Wärmestrom  $I_{w}^{(1)}$ dem Wärmestrom
+$I_w^{(2)}=-\frac{dQ^{(2)}}{dt}=-(m_w\,c_w+C_w)\;\frac{d(T-T_u)}{dt}$
+entspricht, der dem Gefäß entzogen wird.\\
+Gleichsetzen beider Wärmeströme ($I_w^{(1)}=I_w^{(2)}$) ergibt mit den
+Abkürzungen
+$(T-T_u)=T'$ und $(m_w\,c_w+C_w)=C^*$
+\begin{equation}
+-C^*\,\frac{dT'}{dt}=
+K^*\,T'\quad{\rm oder }\quad
+\frac{dT}{T'}=-\frac{K^*}{C^*}dt\quad.
+\label{w2}
+\end{equation}
+Die Lösung dieser Dgl.~führt auf das {\sc Newton}'sche exponentiell
+abfallende $T(t)$-Gesetz (man formuliere die analoge
+Dgl.~mit der Lösung $U(t)=U_0\cdot e ^{-t/\tau}$ beim Entladen
+eines Kondensators über einen Ohmschen Widerstand mit $\tau=RC$):
+\begin{center}
+{\fbox{\parbox{15cm}{
+\begin{equation}
+T'=T^0\cdot e^{-\frac{K}{C^*}t}\;\quad{\rm bzw.}\quad
+T(t)-T_u=[T_{(t=0)}-T_u]\cdot e^{-\frac{K^*}{(m_w\,c_w+C_w)}t}\quad.
+\label{w3}
+\end{equation}
+}}
+}
+\end{center}
+\section{Zur Versuchsdurchführung}
+\subsection{Wärmekapazität des Kalorimeters}
+Kaltes Wasser der Masse $m_{w2}=$~300~g und der Ausgangstemperatur
+$T_2$ steht bereit. Das Kalorimeter ist etwa halb mit warmem
+Wasser ($T_1\approx $ 50$^ o$C; $m_{w1}\approx 300$~g)
+gefüllt. Über eine Vorlaufzeit von ca.~3~min wird in
+{konstanten Zeitabständen} (z.~B.~$\Delta t =30$~s) der
+abfallende Temperaturverlauf ($T(t)$) im Gefäß gemessen
+und entsprechend Abb.~1~linear aufgezeichnet. Zu einem definierten
+Zeitpunkt $t_1$ wird das kalte Wasser eingefüllt und die
+Temperatur im Gefäß weitere ca.~5~min $T(t)$
+(Nachlaufzeit) im gleichen 30~s-Takt registriert (umrühren!).
+Die korrigierte Anfangstemperatur $T_1^*$  wird so bestimmt,
+daß die Senkrechte CD diejenige Fläche halbiert, die unter
+der aufgenommenen $T(t)$-Kurve liegt (zwischen B und E). Damit
+sind die beiden schraffierten Flächen gleich (Abb.~1). Die in
+Gl.~(\ref{c}) benötigte Mischtemperatur entspricht der Strecke
+CD ($T_1^*-\Delta T$). Sie wird der Grafik entnommen.
+\subsection{Abkühlungsgesetz und Wärmeverlust des Kalorimeters}
+Beginnend bei einer Anfangstemperatur $T(t=0)$
+wird die Temperatur im Kalorimeter $T(t)$
+in Abhängigkeit von der Zeit
+in z.~B.~60~s~-Schritten über einen längeren Zeitraum (z.~B.~ca.~40~min lang)
+gemessen.\\
+Zur Bestimmung von $K^*$ wird entsprechend Gl.~(\ref{w3})
+die normierte Differenz\\
+($T-T_u)/(T_{(t=0)}-T_u)$ ~ halblogarithmisch über der Zeit aufgetragen.
+Aus dem Anstieg erhält man ~$-\frac{K^*}{(m_wc_w+C_w)}$ ~und daraus bei
+bekanntem $C_w$ die Größe $K^*$.
+
+\section{Anhang}
+\subsection{Arten der Wärmeübertragung}
+Zur resultierenden Wärmeübertragungszahl $K^*$ tragen mit
+unterschiedlichen Anteilen die Wärmeleitung, der
+Wärmedurchgang, die Konvektion und die Strahlung bei. Bei
+teilweise grober Näherung und im stationären Fall sind
+alle
+Beiträge zum Wärmestrom proportional zu $(T_1-T_2)$:\\[.1cm]
+{\bf 1. Wärmeleitung:}\\
+Grenzen die parallelen Seitenflächen $A$ eines
+Körpers der Länge $l$ mit der spezifischen
+Wärmeleitfähigkeit $\lambda$ an Gebiete mit unterschiedlichen
+Temperaturen ($T_1$, $T_2$; bei ~$T_1>T_2$), so fließt durch den Körper der
+Wärmestrom $I_{w,l}$  \\[-.4cm]
+\begin{equation}
+I_{w,l}=\frac{Q}{t}=\frac{\lambda\,A\,(T_1-T_2)}{l}\quad.
+\label{i1}
+\end{equation}
+{\bf 2. Übergang:}\\
+An der Grenzfläche zwischen einem Gas und einer festen
+Wand unterschiedlicher Temperatur findet ein Wärmeaustausch durch
+Wärmeübergang statt. Der Wärmestrom ist der Fläche $A$ und dem
+Wärmeübergangskoeffizienten $\alpha$ ([$\alpha]=\frac{\rm W}{\rm m^2\,K}$)
+proportional: \\[-.4cm]
+\begin{equation}
+I_{w,ü}=\frac{Q}{t}=\alpha\,A\,(T_1-T_2)   \quad.
+\label{i2}
+\end{equation}
+Die Kombination von 1. und 2. wird als {\bf Wärmedurchgang} bezeichnet.  \\
+Z.~B.~gilt für eine Wand, die beidseitig an die Gase 1 und 2 angrenzt, mit
+$k$ als Wärmedurchgangskoeffizienten:\\[-.4cm]
+\begin{equation}
+I_{w,d}=\frac{Q}{t}=k\,A\,(T_1-T_2)\quad;\:{\rm mit}\quad
+\frac{1}{k}= \frac{1}{\alpha_1}+ \frac{l}{\lambda}+\frac{1}{\alpha_2}   \quad.
+\label{i3}
+\end{equation}
+{\bf 3. Konvektion:}\\
+Eine Flüssigkeit (oder ein Gas) strömt von dem Gebiet mit der
+Temperatur $T_1$ zu dem Gebiet
+mit der Temperatur $T_2$. Dabei transportiert die Flüssigkeit (oder das Gas)
+den Wärmestrom ~$I_{w,v}$~ ($\rho=$~Dichte; $V=$~Volumen)        \\[-.4cm]
+\begin{equation}
+ I_{w,v}=
+ \frac{\Delta Q_v}{\Delta t}= c\,\rho\,\Delta V\,(T_1-T_2)\quad.
+\label{i4}
+\end{equation}
+{\bf 4. Strahlung:}\\
+Stehen sich die parallelen Oberflächen ($A_1=A_2=A$)
+zweier ideal strahlender Materialien (schwarze Strahler,
+Emissionsvermögen = Absorptionsvermögen,
+keine Reflexion) mit unterschiedlichen Temperaturen eng gegenüber
+(analoges gilt für den diffus strahlenden Raum als 2.~Körper), so
+betragen  die beiden abgestrahlten Leistungen
+entsprechend dem Gesetz von Stefan-Boltzmann
+(mit $\sigma=5,67\cdot 10^{-8}$~W/m$^2$K$^4$~ als
+Stefan-Boltzmann-Konstante):        \\[-.4cm]
+\begin{equation}
+  P_1=A\,\sigma\,T_1^4\quad;{\rm bzw.}\quad P_2=A\,\sigma\,T_2^4\quad.
+\end{equation}
+Die Strahlung wird jeweils vom anderen Körper aufgenommen.
+Für eine geringe
+Temperaturdifferenz $\Delta T=(T_1-T_2)$ (mit $T$  als absoluter
+Temperatur; $T_1>T_2$) wird die Differenz der
+Strahlungsleistungen (Wärmeströme) proportional zu $\Delta T$:     \\[-.4cm]
+\begin{equation}
+I_{w,str}=(P_1-P_2)=A\sigma((T_2+\Delta T)^4-T_2^4)
+\approx 4 A\sigma T_2^3
+\Delta T = k_{str} (T_1-T_2) \quad.  \label{i5}
+\end{equation}
+($k_{str}=$~effektiver Koeffizient für die Wärmeübertragung infolge Strahlung
+bei geringen Temperaturdifferenzen).
+
+\subsection{Beweis für die Gleichheit der Flächen}
+Es geht um die Berechnung der von einem realen Kalorimeter
+aufgenommenen (oder abgegebenen) Wärmeenergie, z.B.~der linken
+Seite von Gl.~(\ref{c}), worin die Temperaturdifferenz
+verfälscht wäre, wenn anstelle der schon korrigierten
+Größe $T_1^*$ direkt $T_1$ eingesetzt würde. Diese
+Korrektur gelingt bei Berücksichtigung der an die Umgebung mit
+der Temperatur $T_u$ während der endlichen Mischungszeit
+($\Delta t_m$, zwischen B und E der Abb.~1) abgeleiteten
+Wärmenenergie $Q^u$, die sich mit dem
+Abkühlungskoeffizienten $K^*$ entsprechend  Gl.~(\ref{w1}) aus
+\begin{equation}
+d Q^u=K^*\,(T-T_u)\,dt  \label{u}
+\end{equation}
+~\\[-.4cm]
+berechnet. Es werden zwei Abkühlungskurven (Abb.~1) verglichen:\\[.1cm]
+1. Ohne Mischungsvorgang würde die Kurve $T_1(t)$ von A über B~C~F~ ..
+verlaufen und die dabei abgeleitete Wärme wäre
+nach Gl.~(\ref{u})\\[-.3cm]
+\begin{equation}
+Q_1^u=K^*\int_0^{\infty}(T_1-T_u)\,dt\quad. \label{w4}
+\end{equation}
+~\\[-.4cm]
+2. Bei dem Mischungsexperiment läuft die Kurve
+von A über B~E~ und die dabei an die Umgebung abgegebene Wärme ist \\[-.3cm]
+\begin{equation}
+Q_m^u=K^*\int_0^{\infty}(T_m-T_u)\,dt\quad.           \label{w5}
+\end{equation}
+~\\[-.4cm]
+Die Differenz beider Beträge nach Gln.~(\ref{w4},\ref{w5})
+\begin{equation}
+Q_1^u- Q_m^u=K^*\,\int_0^{\infty}(T_1-T_m)\,dt \label{w6}
+\end{equation}
+stellt als Fläche die zu messende Wärmemenge (linke Seite von
+Gl.~(\ref{c})) dar. Sie muß
+unabhängig von der Mischzeit $\Delta t_m$ sein, also auch für den
+Idealfall ~$\Delta t_m\rightarrow 0$~ (Temperatursprung, Kurve ~A~B~C~D~E),
+gelten.
+Damit ist zu fordern, daß die Flächen (Integrale), die zu den Kurven ~A~B~E~
+bzw. A~B~C~D~E~  gehören, identisch sind.
+Das bedeutet aber, daß die schraffierten Flächen
+in Abb.~2 gleich sein müssen ~\cite{west}.
+
+\section{Fragen}
+\begin{enumerate}
+\item Was versteht man unter der Wärmekapazität und der
+spezifischen Wärmekapazität?
+
+\item Wie lautet die Energiebilianz bei der Mischungsmethode?
+
+\item Man skizziere qualitativ $T(t)$-Kurven (mit
+$T_1^*$-Korrektur) für das Einbringen eines wärmeren und
+eines kälteren Körpers in ein Kalorimeter und formuliere
+die Energiebilanzen.
+
+\item An welchen Orten innerhalb oder außerhalb des
+Kalorimeters findet man vorzugsweise Wärmeübertragung
+infolge Leitung, Übergang, Konvektion bzw.~Strahlung?
+
+\item Wie berechnen sich die verschiednen Arten der Wärmeübertragung?
+
+\item Nennen Sie Möglichkeiten der Unterdrückung der einzelnen Wärmeverluste!
+
+\item Unter welchen Voraussetzungen gilt das
+Newtonsche Abkühlungsgesetz?
+
+
+\item Vergleichen Sie den elektrischen Ohmschen Widerstand eines
+Drahtes  mit dem Wärmewiderstand eines Wärmeleiters!
+\end{enumerate}
+
+\bibliographystyle{unsrt}
+
+\begin{thebibliography}{NAM99}
+\bibitem{il}
+W.~Ilberg, M.~Krötzsch et al.,
+Physikalisches Praktikum. V. Teubner, Leipzig 1994
+
+\bibitem{reck}
+A.~Recknagel, Physik, Schwingungen, Wellen Wärmelehre
+\bibitem{strop}
+H.~Stroppe, Physik, Fachbuch-V.- Leipzig 1984 
+\bibitem{west}
+W.~H.~Westphal, Physikalisches Praktikum, 1952
+\end{thebibliography}
+
+\end{document}

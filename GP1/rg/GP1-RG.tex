@@ -1,0 +1,143 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd}
+
+\versuch{Reale Gase}{RG}
+\author{E.~Beyer}
+\date{01.01.2008}
+\bearbeitet{J.~Kelling,F.~Lemke,S.~Majewsky,M.~Justus}{}
+
+\buch{gert}{C.~Gerthsen, D.~Meschede (Hrsg.)}{Gerthsen Physik}{Springer-Verlag}{Berlin, Heidelberg [u.~a.] 2002}
+\buch{eich}{H.~J.~Eichler, H.~D.~Kronfeldt, J.~Sahm}{Das neue physikalische Grundpraktikum}{Springer-Verlag}{Berlin, Heidelberg [u.~a.] 2006}
+\buch{kuch}{H.~Kuchlin}{Taschenbuch der Physik}{Fachbuchverlag Leipzig im Carl Hanser Verlag}{München / Wien, 17. Auflage, 2001}
+
+\begin{document}
+\maketitle
+
+\section{Aufgabenstellung}
+
+\begin{enumerate}
+ \item Messen Sie vier Isothermen eines realen Gases (Schwefelhexafluorid, \mol{SF_6}) 
+ \item Bestimmen Sie das Koexistenzgebiet von gasförmiger und flüssiger Phase und den kritischen Punkt.
+ \item Bestimmen Sie aus den Messdaten die Stoffmenge und die
+       van-der-Waals-Koeffizienten. Berechnen das molare Volumen für den
+       kritischen Punkt.
+ \item \emph{(Für Physikstudenten)} Bestimmen Sie aus der Dampfdruckkurve $p_S(T)$
+                                die molare Verdampfungsw\"arme und zu jedem
+                                Messpunkt mit $T < T_c$ die Verdampfungsw\"arme $Q$.
+\end{enumerate}
+
+\section{Grundlagen}
+
+\subsection{Zustandsgleichung}
+
+Das Modell des idealen Gases beruht auf der Annahme, dass es sich bei den Molekülen des Gases um ausdehnungslose Massepunkte ohne Eigenplatzbedarf handelt, die keinerlei zwischenmolekulare Wechselwirkungskräfte aufeinander ausüben. Ist dies gegeben, so gilt die Zustandsgleichung idealer Gase:
+
+\begin{equation}
+ p \cdot V = N \cdot k_B \cdot T= n \cdot R \cdot T \label{KINGASTH}
+\end{equation}
+
+Hierbei sind $N$ die Teilchenanzahl, $k_B$ die Boltzmannkonstante, $R = \SI{8,314}{\frac{J}{K \cdot mol}}$ die universelle Gaskonstante und $n$ die Stoffmenge.
+
+Unter bestimmten Bedingungen, z.~B. bei relativ hohen Temperaturen und niedrigem Druck, ist das Verhalten \emph{realer Gase} auch durch diese Gleichung beschreibbar. Bei großen Dichten (d.~h. großen Drücken oder kleinen Temperaturen) gibt es jedoch deutliche Abweichungen vom "`idealen"' Verhalten, die durch das in diesem Fall nicht mehr vernachlässigbare Eigenvolumen der Teilchen und durch die vor allem bei kleinen Abständen merklichen attraktiven Wechselwirkungen zwischen den Teilchen hervorgerufen werden.
+
+Um zu einer das Verhalten realer Gase beschreibenden Zustandsgleichung zu gelangen, muss man in Gleichung \eqref{KINGASTH} entsprechende Korrekturen anbringen und kommt damit zur van-der-Waalsschen Zustandsgleichung für reale Gase:
+\begin{equation}
+ \kla{p + \frac{n^2 \cdot a}{V^2}} \cdot (V - nb) = n \cdot R \cdot T  \label{VDWGL}
+\end{equation}
+
+Die Gleichungen \eqref{KINGASTH} und \eqref{VDWGL} unterscheiden sich durch zwei Terme:
+Das van-der-Waals'sche Kovolumen $b$ entspricht etwa dem vierfachen Eigenvolumen der Teilchen, welches für ihre Bewegung nicht zur Verfügung steht, die Größe $a$ berücksichtigt die Wechselwirkung zwischen den Teilchen und dem daraus resultierenden Binnendruck (Kohäsionsdruck) $n^2 \cdot \frac{a}{V^2}$. Ist $p$ der Druck auf die das Gasvolumen begrenzende Wand, dann wirkt auf die Teilchen im Gasinnern der effektive Druck:
+\begin{equation}
+ p_\mathrm{eff} = p + n^2 \cdot \frac{a}{V^2} \label{BIDR}
+\end{equation}
+
+\piccaption{Abstandsabhängiges Zwei-Teilchen-Wechselwirkungspotential \label{fig::WWP}}
+\parpic[r]{
+ \includegraphics[width=\linewidth/3]{GP1-RG-WWPotential}
+}
+
+Qualitativ kann man die Größen Eigenvolumen und Binnendruck verstehen, wenn man die Wechselwirkungsenergie $U_{12}$ zwischen zwei Atomen oder Molekülen (Teilchen) in Abhängigkeit von ihrem gegenseitigen Abstand $r$ betrachtet (Abb.~\ref{fig::WWP}). Der sehr stark abstoßende Teil des Potentials für $r < r_0$ bedingt das Eigenvolumen, während der anziehende Teil für $r > r_0$ den nach außen auf die Wände wirkenden Druck reduziert.
+
+In Abbildung \ref{fig::ISOTHERMEN} ist für ein reales Gas der Druck $p$ als Funktion des Volumens $V$ für verschiedene Temperaturen aufgetragen. Die Isothermen sind Hyperbeln dritten Grades mit entweder einem Maximum und einem Minimum oder keinem Extremum. Experimentell werden die Extrema nicht realisiert, sie entsprechen labilen Zuständen. Der Verlauf der Isothermen zwischen den Extrema ist physikalisch ausgeschlossen, da bei $T = \mathrm{const.}$ mit steigendem Volumen der Druck nicht steigen kann.
+
+\begin{figure}[hb]
+ \centering
+ \includegraphics[width=\linewidth/2]{GP1-RG-VanDerVaals}
+ \caption{Van-der-Waals-Isothermen. Der Eintrittspunkt einer Isotherme in das Koexistenzgebiet (Bereich unter der gestrichelten Kurve) wird im Folgenden mit $V_g$ bezeichnet, der Austrittspunkt mit $V_f$. \label{fig::ISOTHERMEN}}
+\end{figure}
+
+Wird nun das reale Gas bei hinreichend niedrigen Temperaturen ($T < T_k$)
+isotherm komprimiert, so nimmt der Druck zu, bis bei $V_g$ der
+Kondensationsvorgang beginnt. Der Druck $p_S$ (Sättigungsdampfdruck) bleibt
+bei weiterer Volumenverringerung konstant (die Zustandsänderung verläuft
+entlang der sogenannten Maxwell-Geraden), bis bei $V_f$ das gesamte Gas verflüssigt ist. Die gestrichelte Linie in Abbildung~\ref{fig::ISOTHERMEN} kennzeichnet das Koexistenzgebiet von Flüssigkeit und Gas.
+Der Versuch, das Volumen weiter einzuschränken, führt wegen der weitgehenden Inkompressibilität von Flüssigkeiten zu einem starken Druckanstieg.
+
+Bei der kritischen Temperatur ($T = T_k$), entartet der Bereich zwischen $V_f$ und $V_g$ zu einem Punkt. An diesem verschwinden die Unterschiede in den physikalischen Eigenschaften zwischen Flüssigkeit und Gas. Oberhalb $T_k$ findet kein Phasenübergang mehr statt. Aus den kritischen Zustandsgrößen $p_k$, $V_k$  und $T_k$, die experimentell bestimmt werden können, lassen sich die stoffspezifischen van-der-Waals-Koeffizienten $a$ und $b$ bestimmen. Am kritischen Punkt (Horizontalwendepunkt) gilt für die ersten beiden Ableitungen:
+\[
+ \kla{\pdquot pV}_{T_k} = 0  \quad\text{und}\quad \kla{\pdquot[2] pV}_{T_k} = 0
+\]
+Aus Gleichung~\eqref{VDWGL} folgt damit:
+\begin{equation}
+ a = 3 p_k \cdot \kla{ \frac{V_{k}}{n} }^2
+ \quad\text{und}\quad
+ b = \frac{V_k}{3n} \label{KOEFF}
+\end{equation}
+
+\subsection{Bestimmung der Stoffmenge}
+
+Der Ermittlung der Stoffmenge $n$ liegt die Vorstellung zugrunde, dass ein sehr stark verdünntes Gas in guter Näherung als ideales Gas beschrieben werden kann. Es gilt also
+\begin{equation}
+ \lim\limits_{V \to \infty} (p \cdot V) = n \cdot R \cdot T \label{LIM}
+\end{equation}
+Wird $p \cdot V$ über $1/V$ grafisch aufgetragen und nach $1/V = 0$ extrapoliert, so kann aus \eqref{LIM} die Stoffmenge berechnet werden.
+
+\subsection{Dampfdruckkurve und Verdampfungsenthalpie}
+
+Im Bereich der Koexistenz von flüssiger und gasförmiger Phase stellt sich (im thermodynamischen Gleichgewicht) ein konstanter Druck ein. Dieser sogenannte Dampfdruck $p_S$ ist damit nur noch von der Temperatur abhängig. Der funktionale Zusammenhang $p_S(T)$ wird als \emph{Dampfdruckkurve} bezeichnet. Die Steigung dieser hängt von der molaren Verdampfungsenthalpie $L$ ab.
+
+\subsubsection*{Herleitung nach Clausius und Clapeyron}
+
+Für das thermische Gleichgewicht zweier Phasen gilt nach Clausius-Clapeyron die Beziehung:
+\begin{equation}
+ Q = T \cdot \dquot{p_S}{T}(V_g - V_f) \label{CCG}
+\end{equation}
+Mit $Q$ als Verdampfungswärme und $V_g$ und $V_f$ als Volumina der gasförmigen bzw. flüssigen Phase.
+Im allgemeinen ist $V_g \gg V_{f}$. Damit kann Gleichung \eqref{CCG} angenähert werden durch:
+\begin{equation}
+ \dquot{p_S}{T} = \frac{Q}{T V_g} \label{NAEHERUNG1}
+\end{equation}
+Wird weiter angenommen, dass $Q$ über einen größeren Temperaturbereich konstant ist, folgt aus Gleichung \eqref{NAEHERUNG1} unter Verwendung der Gasgleichung $p_S V_g = nRT$ und $L = Q/n$ die Beziehung
+\[
+ \frac{\diff p_S}{p_S} = L \frac{\diff T}{RT^2}
+\]
+Durch Integration ergibt sich
+\[
+ \ln p_S = -\frac{L}{RT} + \ln p_0
+\]
+Daraus folgt als Beziehung zwischen $L$ und $p_S$ die Dampfdruckkurve
+\begin{equation}
+ p_S (T) = p_0 \cdot \eu{- \frac{L}{RT}} \label{DDK}
+\end{equation}
+Wird nun $\ln p_S$ gegen $1/T$ aufgetragen, so kann über die Steigung, die dem konstanten Faktor $-L/R$ entspricht, die molare Verdampfungsenthalpie $Q$ bestimmt werden.
+
+\section{Versuchsaufbau}
+
+Zur Experimentieranordnung gehören ein Gerät zur Untersuchung des kritischen Punktes, mit Manometer und Versuchskammer und ein Umwälzthermostat.
+Das Gerät zur Untersuchung des kritischen Punktes besteht aus einer durchsichtigen Messzelle besonders druckfester Ausführung, in der sich das zu untersuchende Gas \mol{SF_6} befindet. Das Volumen in der Messzelle wird durch Drehung des Handrades verändert. Der Druckaufbau erfolgt über ein Hydrauliksystem mit Rizinusöl. Messzelle und Hydrauliksystem sind durch eine Hutdichtung getrennt, die sich bei einer Volumenvergrößerung einrollt. Das Manometer misst anstelle des Gasdruckes den Öldruck.
+
+Die Messzelle ist von einer transparenten Wasserkammer umgeben, welche die Beobachtung des Gases gestattet. Die Temperatur des Wassers kann mit Hilfe des Umwälzthermostaten geregelt und mit einem genauen Thermometer gemessen werden.
+
+Die kritische Temperatur von \mol{SF_6} beträgt $\vartheta_k = \SI{45,5}\degC$ .
+
+\frage{Wie wird ein ideales Gas definiert? Wo liegen die Unterschiede zum realen Gas?}
+\frage{Nennen Sie die Gleichung von Clausius und Clapeyron. Wie wird Sie hergeleitet?}
+\frage{Wie verläuft der von Clausius und Clapeyron beschriebene Kreisprozess?
+Handelt es sich dabei um einen reversiblen Prozess? Begründen Sie ihre Antwort.}
+\frage{Welche Phänomene treten in der Nähe des kritischen Punktes auf?}
+\frage{Machen Sie sich mit Literaturwerten für den kritischen Punkt (Druck,
+  Temperatur, molares Volumen) und die Verdampfungsenthalpie von
+  Schwefelhexaflourid vertraut.}
+
+\end{document}
+

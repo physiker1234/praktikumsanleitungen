@@ -1,0 +1,451 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd,mhchem}
+
+\versuch{Michelson-Interferometer}{IF}
+\author{L.~Jahn,H.~Lichte,E.~Koske}
+\bearbeitet{S.~Socher,i.~A. Dr.~Escher}{}
+
+\buch{1}{H.-J.~Paus}{Physik in Experimenten und Beispielen}{V. C.-Hanser München}{1995}
+\buch{2}{E.~Hecht}{Optik}{Add. Wesley}{1989}
+\buch{3}{W.~Ilberg,~M.~Krötsch,~D.~Geschke,~P.~Kirsten,~W.~Schenk,~A.~Schneider,~H.~Schulze}
+	{Physikalisches Praktikum für Anfänger}{Leipzig}{1994}
+\buch{4}{W.~Walcher}{Praktikum der Physik}{Teubner}{1989}
+
+\begin{document}
+\maketitle
+
+\section{Aufgabenstellung}
+
+\begin{enumerate}
+ \item Justierung eines Michelson-Interferometers.
+ \item Anwendung des Interferometrs zur Längenmessung (Hysterese eines
+ Piezo-Aktors) und zur Bestimmung der Druckabhängigkeit der Brechzahl von Luft.
+ \item Ziel: Kennenenlernen von Interferenz-Apparaten als hochempfindliche Längenmessgeräte und
+ in Hinblick für das Verständnis der optischen und Elektronen-Holographie.
+\end{enumerate}
+
+\section{Grundlagen}
+
+\subsection{Zweistrahl-Interferenz ebener Wellen}
+
+Die Zeit- und Ortsabhängigkeit der Elongation $\xi$ (z. B. elektrische Feldstärke $\vec{\xi} = \vec{E}(z, t))$ 
+einer sich in positiver (oberes Vorzeichen) oder negativer $z-$ (bzw. $\vec{r}-$) Richtung ausbreitenden ebenen Welle
+kann beschrieben werden durch
+
+\begin{equation}
+\xi (z,t) = \hat{\xi} \mbox{e}^{j ( \omega t \mp kz + \varphi)}
+\quad \text{bzw.}
+\xi (\vec{r},t) = \hat{\xi} \mbox{e}^{j ( \omega t \mp \vec{k} \vec{r} + \varphi)}
+\end{equation}
+
+Es bedeuten: $\hat{\xi}$ - Amplitude; $(\omega t \mp kz + \varphi)$ - Phase; $k = \frac{2 \pi}{\lambda}$ - Wellenzahl;
+$\omega = \frac{2 \pi}{T}$ - Kreisfrequenz; $\varphi$ - Nullphasenwinkel.\\
+Die Phasengeschwindigkeit der Welle $v_{Ph}$ - im Vakuum gleich der Lichtgeschwindigkeit $c_{vac} = c_0$ - folgt aus der 
+Bedingung, dass die Phase $(\omega t - kz + \varphi)$ konstant ist, zu $\frac{dz}{dt} = v_{Ph} = \frac{\omega}{k}$. 
+Interferenzen entsteht immer, wenn zwei (oder mehrere) Wellenzüge an einem Ort zusammnetreffen. Die Wellenerregung $\xi_{res}$ 
+kann durch ungestörte Überlagerung (Superposition, Addition) berechnet werden: Jede Welle breitet sich so aus, als wäre die 
+andere nicht vorhanden. Je nach Phasenlage verstärken oder schwächen die Wellen einander. Die an den Begrenzungen 
+auftretenden Beugungserscheinungen spielen bei den Interferenzapparaten keine Rolle. Die wichtigste Voraussetzung für 
+Beobachtbarkeit von Interferenzen ist, dass die beiden zu überlagernden Wellenzüge (bei Ausbreitung in $z$-Richtung)
+
+\begin{equation*}
+\xi_1 (z,t) = \hat{\xi_1} \mbox{e}^{j ( \omega t - kz_1 + \varphi_1)}
+\quad \text{und} \quad
+\xi_2 (z,t) = \hat{\xi_2} \mbox{e}^{j ( \omega t - kz_2 + \varphi_2)}
+\end{equation*}
+
+kohärent sind, d.h. ein feste Phasenbeziehung zueinander haben. $\omega$ und $t$ sind nicht zu beeinflussen. Die Phasendifferenz 
+beider Wellen ist unter Berücksichtigung eines zweiten Mediums $(k_2 = \frac{2 \pi}{\lambda_2}):~\triangle \Psi = (k_1 z_1 + 
+\varphi_1) - (k_2 z_2 + \varphi_2)$.
+
+Eliminieren sich, wie im vorliegenden Experiment, die paarweise auftretenden Phasensprünge infolge von Reflexionen am festen Ende, 
+so ist die Ursache für die Phasendifferenz die Differenz der Größen $kz$ bzw. $nz$. Letztere wird als optische Weglänge bezeichnet. 
+($n$ = Brechzahl). Unter dem Gangunterschied versteht man die Differenz der optischen Weglängen $\triangle = (n_1 z_1 - n_2 z_2) = 
+\frac{\triangle \Psi}{2 \pi} \lambda_{vac} = \frac{\triangle \Psi}{k_{vac}}$.
+
+\subsection{Intensität}
+
+In der Optik werden Intensitäten $I$, die durch das Amplitudenquadrat $(\xi_1^2 = I_1)$ gegeben sind, wahrgenommen. Überlagern sich 
+zwei Wellen $\xi_1(z,t)$ und $\xi_2(z,t)$ mit dem Phasenunterschied $\triangle \Psi$, so beträgt die resultierende Intensität (s. Anhang)
+
+\begin{equation}
+I = I_1 + I_2 + 2 \sqrt{I_1 I_2} \cdot \cos \triangle \Psi
+\end{equation}
+
+ \piccaption{Beispiel für destruktive Interferenz bei unterschiedlichen Amplituden: $I = I_1 + I_2 - 2 \sqrt{I_1 I_2}$ \label{abb1}} 
+ \parpic[r]{
+  \includegraphics[height=4.0cm]{abb1.png} 
+ }
+
+Die resultierende Intensität ist gegeben durch die Summe der Einzelintensitäten und den wesentlichen Interferenzterm
+$2 \sqrt{I_1 I_2} \cdot \cos \triangle \Psi$. Somit erfolgt Verstärkung (konstruktive Interferenz) für $\cos \triangle \Psi =1$ oder 
+$\triangle \Psi = 2 \pi n \, (n=1,2,3,...)$ und maximale Abschwächung (destruktive Interferenz, Auslöschung) bei $\hat{\xi_1} = \hat{\xi_2}$)
+für $\cos \triangle \Psi = -1$ oder $\triangle \Psi = (2n+1) \pi$ (Abb. \ref{abb1}).
+
+\bigskip
+
+\subsection{Kohärenzlänge und Köhärenzbedingung} 
+
+Bei den bisherigen Überlegungen lagen ideale, d.h. monochromatische sowie zeitlich und räumlich unbegrenzte Wellen zugrunde.
+ 
+Jedoch hat eine Welle, auch jede emittierte Spektrallinie, aufgrund ihrer endlichen Bandbreite $\triangle f$ (bzw. spektralen Breite 
+$\triangle \lambda$) eine endliche Länge des Wellenzuges, die Kohärenzlänge $L_k$, bei entsprechend begrenzter Kohärenzzeit 
+$\triangle t = \frac{L_k}{c_0}$. Infolge der Unschärferelation\footnote{$\triangle p \cdot \triangle z \approx \frac{\hbar}{2};~ \triangle E
+\cdot \triangle t = h \cdot \triangle f \cdot \triangle t \approx \frac{\hbar}{2} = \frac{h}{4 \pi};~ \triangle f \cdot \triangle t \approx 
+\frac{1}{4 \pi};$ Grundgesetz der Nachrichtentechnik} gilt (\ref{L_k}). Danach lässt sich für die in Abb. \ref{abb2} gegebene Spektrallinie 
+$(\triangle \lambda \approx 10^{-3}~\mathrm{nm})$ eine Kohärenzlänge von $L_k \approx 3,2~\mathrm{cm}$ abschätzen.
+
+\begin{equation} \label{L_k}
+\triangle f \cdot \triangle t \approx \frac{1}{4 \pi} 
+\quad \text{daher} \quad
+\triangle f \cdot \frac{L_k}{c_0} \approx \frac{1}{4 \pi}
+\quad \text{und} \quad 
+L_k \approx \frac{1}{4 \pi} \frac{\lambda_0^2}{\left| \triangle \lambda \right|}.
+\end{equation}
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centering{\includegraphics[height=5.5cm]{abb2.png}} 
+\fi 
+\captionof{figure}{Spektrale Breite der roten \ce{Cd}-Linie [2] \label{abb2}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+Die begrenzte Kohärenzlänge bestimmt die maximal möglichen Gangunterschiede in Interferenzapparaten.
+
+In vielen Geräten wird die Kohärenz der zur Überlagerung kommenden Teilwellen durch Aufspaltung des Primärstrahls z.B. mit Hilfe von 
+halbdurchlässigen Spiegeln erzeugt. Dies gelingt jedoch bei ausgedehnten Lichtquellen (seitliche Ausdehnung $A$) nur dann, wenn die Kohärenzbedingung
+erfüllt ist ($u$ = Öfnnungswinkel des Strahls):
+
+\begin{equation}
+2A \sin u \ll \frac{\lambda}{2}
+\end{equation}
+
+\textbf{Kohärentes LASER-Licht:}
+
+LASER-Licht ist besonders kohärent mit Kohärenzlängen in der Größenordnung von $1~\mathrm{m}$. Es entsteht durch stimulierte Emission. 
+Die vorher angeregten Atome strahlen die durch den Spiegelabstand ausgewählte Frequenz phasengleich ab. Bis vor wenigen Jahren wurden 
+nahezu ausschlißlich Gaslaser angewendet. Beispielsweise erfolgt in einem \ce{He}-\ce{Ne}-Gaslaser die  Anregung der Elektronen der
+Neon-Atome in den maßgeblichen 3s- (2s) Zustand über Elektronenstöße mit den Helium-Atomen in der Gasentladung und
+durch Energieübertragung (Stöße 2. Art). In diesem Laser wird bei schmaler Bündelung die Wellenlänge $\lambda = 632,8~\mathrm{nm}$
+($\lambda_2$ in Abb. \ref{abb3}) erzeugt.
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centering{\includegraphics[width=9.0cm]{abb3.png}} 
+\fi 
+\captionof{figure}{Aufbau (a) und Termschema (b) eines \ce{He}-\ce{Ne}-Lasers \label{abb3}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+In den letzten Jahren haben Halbleiterlaser die Gaslaser auf vielen Gebieten ersetzt. Diese Laser decken ein breites 
+Leistungs- und Farbspektrum ab und gestatten durch mittlerweile breite Anwendung eine preiswerte Herstellung.
+
+ \piccaption{prinzipieller Aufbau eines DPSS-Lasers \label{abb3a}} 
+ \parpic[r]{
+  \includegraphics[width=\linewidth/2 ]{DPSSL.png} 
+   }
+
+Da die Empfindlichkeit des menschlichen Auges im grünen Licht maximal ist, haben sich beispielsweise für Laserpointer 
+oder Laseranlagen der Unterhaltungstechnik grün leuchtende Laser durchgesetzt. Ein solcher Lasertyp wird auch im vorliegenden Versuch verwendet. 
+Den Prinzipaufbau eines solchen grünen Halbleiterlasers, eines sog. Diode-Pumped-Solid-State-Laser (DPSSL), zeigt Abb. \ref{abb3a}.
+In diesem Laser wird kein Gas, sondern ein Festkörper, im vorhandenen Laser-Typ RLDD532 ein Nd:YVO$_4$- 
+(Neodymium Yttrium Vanadat)-Kristall, mit einer Infrarot-Laserdiode (einer speziellen Leuchtdiode), 
+mit Licht der Wellenlänge von 808nm angeregt. Dieser Kristall emmittiert bevorzugt Laserstrahlung im IR-Bereich der Wellenlänge 1064nm.
+Um diese Laserstrahlung in den sichtbaren Bereich zu transformieren, wird ein Kalium-Titanyl-Phosphat-Kristall (KTP-Kristall) 
+als Frequenzverdoppler verwendet, so dass von der entstehenden Laserstrahlung noch alle niederfrequenten Anteile herausgefiltert werden müssen 
+und nur die Strahlung der Wellenlänge von 532nm den DPSS-Laser verlassen kann.
+   
+   
+
+\section{Versuchsdurchführung}
+
+\textbf{Beim Experimentieren mit dem LASER nie direkt oder indirket (nach Reflexionen) in den Strahl sehen!} 
+
+\subsection{Aufbau, Messprinzipien und Justierung}
+
+
+  
+Das verwendete Interferometer wird auf einem Breadboard (s. Abb. \ref{abb4a}) aufgebaut, seine Funktionsweise wird anhand Abb. \ref{abb4} dargestellt. Im Gegensatz zum Orginal Michelson-Experiment wird als Lichtquelle ein 
+LASER (speziell ein Halbleiter-Laser) und als Strahlteiler ein Würfel verwendet. Dieser Würfel besteht aus zwei Prismen, deren Berührungsflächen halbdurchlässig verspiegelt sind.
+Zur groben Justierung der Laserstrahlen im Michelson-Interferometer werden jeweils weiße Schirme in die Strahlengänge
+gebracht. 
+
+ \piccaption{Versuchsaufbau Michelson-Interferometers \label{abb4a}} 
+ \parpic[r]{
+  \includegraphics[width=\linewidth/2 ]{Aufb_IF.png} 
+   }
+
+Zuerst justieren Sie mit Hilfe der beiden Justierschrauben an der Halterung des Lasers den Laserstrahl so, dass er parallel zur Oberfläche und zur langen Außenseite des Breadboards
+in einer Höhe verläuft, die in etwa der Mitte des Strahlteilers entspricht. Die Grobjustage des dem Laser gegenüber stehenden Spiegels $(S_1)$ erfolgt so, 
+dass der Laserstrahl nahezu aber nicht exakt in sich selbst reflektiert wird (weshalb?).
+
+Die Grobjustage des Strahlteilers muss nun so erfolgen, dass die Höhe der Strahlen über dem Breadboard konstant bleibt und der am Spiegel $S_1$ und am Strahlteiler reflektierte Strahl einen rechten Winkel bilden.  
+Mit dem zweiten justierbaren Endspiegel $(S_2)$ werden nun beide Strahlen nach Rücklauf durch 
+den Teiler-Würfel zur Überlagerung gebracht. Diese Überlagerung wird mit einer Linse kurzer Brennweite zwischen Strahlteiler und Schirm (nicht eingezeichnet) auf einem Schirm sichtbar gemacht und sollte 
+bei gelungener Justierung konzentrische Kreise bzw. Kreissegmente als erwartete Überlagerungsfiguren zeigen. 
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centering{\includegraphics[width=\linewidth]{Michelson-IF.png}} 
+\fi 
+\captionof{figure}{(a) Strahlengang, Variation der Spiegelentfernung um $\triangle L$; (b) Streifenabstand $s$ als Folge der Spiegelverkippung 
+ (siehe Gl. (\ref{streifenabstand})); (c) Zur Überlagerung zweier um $\beta$ zueinander geneigter ebener Wellenfronten mit den Wellenvektoren 
+ $\vec{k_1}$ und $\vec{k_2}$ mit Streifenabstand $s$ in der Schirmebene $(x-y-Ebene)$ \label{abb4}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+Eine Feinjustierung kann auch durch geringe Verkippung des zweiten Spiegels nach Abb. \ref{abb4}b erfolgen, bis man die konzentrischen 
+Kreissegmente bzw. Streifen mit dem Abstand $s$ sieht. Der Schirm kann nun durch die CCD-Kamera ersetzt werden, so dass ein 
+kleiner Ausschnitt des bisherigen Bildes auf einem Monitor erfasst und die Zählung und Auswertung vereinfacht wird. 
+\\
+Die hellen bzw. dunklen Streifen bzw. Ringe in der $x-y$-Ebene haben den Abstand $s$. Im Interferenzterm muss neben $z$ auch $x$ berücksichtigt 
+werden (Abb. \ref{abb4}c; siehe Anhang).
+
+Es gibt mehrere Möglichkeiten, die Interferenzstreifen und deren Veränderung zu beobachten:
+
+1. Einer der beiden Spiegel wird nach Abb. \ref{abb4}b um einen bestimmten Winkel verkippt. Wie groß muss dieser Winkel sein, damit die 
+Wellenzahlvektoren $\vec{k_1}$ und $\vec{k_2}$ beim Interferieren um den Winkel $\beta$ geneigt sind?\\
+Die Abstände $s$ der beobachteten Streifen in $x$-Richtung (Querrichtung) sind nach Abb. \ref{abb4}c um so breiter, je geringer $\beta$ ist:
+ 
+\begin{equation} \label{streifenabstand}
+s = \frac{\lambda_{vac}}{\beta}
+\end{equation}
+
+Entsprechend Gleichung (\ref{streifenabstand}) steigt die Empfindlichkeit eines Längenmessgerätes mit $\frac{1}{\beta}$ an.
+
+2. Bei konstantem, möglichst geringem Winkel wird eine der Entfernungen $(L_1; L_2)$ um $\triangle L$ 
+geändert (Abb. \ref{abb4}a). 
+Der entsprechende Gangunterschied ist bei konstanter Brechzahl durch \mbox{$\triangle = 2 \triangle L$} gegeben und man beobachtet $m$ durchlaufende 
+Streifen:
+
+\begin{equation} \label{streifenanzahl}
+m = \frac{2 \triangle L}{\lambda}
+\end{equation}
+ 
+3. Bei konstantem $\beta$ und konstanten $L_1; L_2$ bringt man vor den einen Spiegel eine evakuierbare Küvette - der Innenabstand zwischen Ein- und Austrittsfenster sei $d$ - an. Auf dieser 
+Länge $d$ kann das Medium und damit die Brechzahl um $\triangle n$ geändert werden. Im Versuch werden Vakuum und Luft von Normaldruck 
+verglichen. Die Anzahl $m$ der durchlaufenden Streifen ist proportional zum Gangunterschied $2 d \triangle n$:
+
+\begin{equation*}
+\lambda m = 2 d \triangle n
+\end{equation*}
+
+\subsection{Anwendungen des Michelson-Interferometers}
+
+\subsubsection{Bestimmung der Brechzahl von Luft}
+
+In einen Strahl des Interferometers nach Michelson wird eine evakuierbare Küvette - der Innenabstand zwischen Ein- und Austrittsfenster beträgt $d = 40mm$ - eingebracht. Diese kann evakuiert und 
+schrittweise wieder mit Luft gefüllt werden. Bei beiden Vorgängen werden nach Gleichung (\ref{brechzahl_luft}) $m$ Streifen gezählt, die 
+der Brechzahldifferenz proportional sind:
+
+\begin{equation} \label{brechzahl_luft}
+\triangle = m \lambda = 2d \triangle n = 2d (n-1)
+\quad \text{d.h.} \quad
+n = 1 + \frac{m \lambda}{2d}
+\end{equation}
+
+\textbf{Korrektur der Brechzahl:}\\
+Die Messung wird bei der Temperatur $T$ und dem Druck $p$ durchgeführt: $n(p,T) = 1+ \frac{m \lambda}{2d}$. Die Korrektur auf 
+Normalbedingungen $(p_0 = 1013~\mathrm{mbar};~ T_0 = 273~\mathrm{K})$ erfolgt anhand der Zustandsgleichung idealer Gase (siehe Anhang):
+
+\begin{equation}
+n(0) = 1 + \frac{m \lambda}{2d} \cdot \frac{p_o}{p} \frac{T}{T_0}
+\end{equation}
+
+
+\subsubsection{Hysterese eines Piezo-Aktors}
+
+Wird ein geeignetes piezoelektrisches Material, z.B. Quarz oder Bariumtitanat (\ce{BaTiO3}) einer mechanischen Zug- oder Druckspannung 
+ausgesetzt, so entsteht an den Endflächen eine elektrische Spannung. Bringt man umgekehrt den Kristall in ein elektrisches Feld, so ändert 
+er seine Länge, was dynamisch z.B. beim Schwingquarz und statisch z.B. beim Piezo-Aktor angewendet wird. Piezo-Aktoren werden auch zur 
+elektrisch gesteuerten Positionierung der Spitze im Rastertunnelmikroskop oder zur Justierung von Interferometerspiegeln benutzt. Dabei 
+können die kleinsten Schritte im nm-Bereich liegen. Aktoren müssen mit Gleichfeldstärken im Bereich von kV/mm vorpolarisiert werden, da 
+der Piezo-Effekt infolge Depolarisierung durch Temperatur- und Feldeinwirkung reduziert wird.\\
+Allgemein zeigen Aktoren Hysterese, d.h. einen nichtlinearen und nicht eindeutigen Zusammenhang zwischen Längenänderung $\triangle l$ und 
+elektrischer Spannung $U$, der stark von der Vorgeschichte abhängt.\\
+Zur Aufnahme der Längen-Hysterese des Piezo-Aktors wird die angelegte Spannung zwischen $+ 100~\mathrm{V}$ bis $- 10~\mathrm{V}$ variiert.
+
+
+\section{Anhang}
+
+\subsection{Weitere Interferenzapparate}
+
+Der Vollständigkeit halber sollen einige weitere Interferenzapparate erwähnt werden.
+
+\subsubsection{Interferenzen am Keil}
+
+Auf der ebenen Glasplatte des Tisches eines Messmikroskops erzeugt man mit Hilfe eines geraden Drahtes und einer planparallelen Glasplatte 
+einen Luft- (oder Flüssigkeits-) Keil (Abb. \ref{abb5}).
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centering{\includegraphics[width=7.5cm]{abb5.png}} 
+\fi 
+\captionof{figure}{Beobachtung von Interferenzen am Keil \label{abb5}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+Monochromatisches Licht wird über eine Glasplatte $G$ (siehe Abb. \ref{abb6}) eingespiegelt. Man beobachtet abwechselnd helle und dunkle 
+Streifen (Interferenzen gleicher Dicke), deren Anzahl $N$ pro Längeneinheit $x$ durch Auszählen im Messmikroskop ($x$ = Koordinate senkrecht 
+zu den Streifen) gemessen und grafisch ausgewertet wird. Dem Kehrwert des Abstands zweier benachbarter Streifen $(x_i-x_{i-1})$ entspricht 
+der Anstieg $\frac{\triangle N}{\triangle x} = \frac{1}{x_i - x_{i-1}}$. Da der Phasensprung $\pi$ an der unteren Glasplatte für alle 
+Teilwellen gleich ist und bei der Differenzbildung herausfällt, ist der Phasenunterschied der jeweils zur Interferenz kommenden Teilwellen 
+von einem dunklen Streifen (Strahlen-Paar 1) zum nächsten (2, siehe Abb. \ref{abb5}) gegeben durch den Gangunterschied:
+
+\begin{equation*}
+\triangle = 2y = 2 \tan \alpha \cdot (x_i - x_{i-1})
+\end{equation*}
+
+oder 
+
+\begin{equation}
+\frac{\triangle m}{\triangle x} = \frac{1}{x_i - x_{i-1}} = \frac{2 \tan \alpha}{\lambda}
+\quad \text{bzw.} \quad
+\lambda = \frac{2n \tan \alpha}{\frac{\triangle m}{\triangle x}}.
+\end{equation}
+
+\subsubsection{Newtonsche Ringe}
+
+ \piccaption{Zur Beobachtung von Newtonschen Ringen \label{abb6}} 
+ \parpic[r]{
+  \includegraphics[width=5.0cm]{abb6.png} 
+ }
+
+Die Anordung (Abb. \ref{abb6}) entspricht der Abb. \ref{abb5}, wobei die obere Glasplatte durch eine plankonvexe Linse ersetzt wird. Die 
+Interferenzen gleicher Dicke sind jetzt konzentrische Kreise, deren Durchmesser $D_i$ quadratisch mit den Gangunterschieden $\triangle_i = 
+2 (d_i + d_0) \approx 2 d_i$ verknüpft sind und die in Abhängigkeit von der Anzahl $N$ gemessen werden. (Erwarten Sie den zentralen Punkt 
+hell oder dunkel?) Mit $R$ als Linsenradius (typisch $R \approx 10~\mathrm{m}$) und $d \approx \frac{D^2}{8R}$; $(d \ll D)$
+hängt für $d_0 \approx 0$ die Differenz der Quadrate zweier benachbarter Durchmesser mit der Differenz der zugehörigen Gangunterschiede 
+$(d_i - d_{i-1}) = \frac{\lambda}{2}$ wie folgt zusammen:
+
+\vspace{0.2cm}
+
+\begin{equation*}
+d_i - d_{i-1} = \frac{1}{8R} \left( D_i^2 - D_{i-1}^2 \right) 
+\end{equation*}
+
+woraus
+
+\begin{equation} \label{lambda_gang}
+\lambda = \frac{1}{4R} \left( D_i^2 - D_{i-1}^2 \right) = \frac{1}{4R} \frac{\triangle \left(D^2 \right)}{\triangle m}
+\end{equation}
+
+folgt. Mittels Gleichung (\ref{lambda_gang}) kann eine unbekannte Größe ($\lambda$ oder $R$) bestimmt werden.
+
+\subsubsection{Interferometer nach Jamin}
+
+ \piccaption{Jamin'sches Interferometer \label{abb7}} 
+ \parpic[r]{
+  \includegraphics[width=5.0cm]{abb7.png} 
+ }
+
+Hier findet eine zweimalige Aufspaltung des Primärstrahls je an der Vorder- und Hinterseite zweier planparalleler Platten statt. Von
+den 4 entstehenden Teilstrahlen werden die beiden äußeren ausgeblendet. An jeder der (nahezu) gleichen Platten wird der Gangunterschied 
+$\triangle$ zwischen dem gebrochenen und an der Rückseite reflektierten ($2~x$) und dem direkt reflektierten Strahl ($y$) betrachtet.
+
+Der Gangunterschied an der ersten Platte beträgt
+
+\begin{equation}
+\triangle_1 = 2x - y = \frac{2 d_1 n}{\cos \beta} - 2 d_1 \frac{\sin \beta \cos \alpha_1}{\cos \beta}.
+\end{equation}
+
+Mit
+
+\begin{equation*}
+\sin \alpha_1 = \frac{y}{2 d_1 \tan \beta} \quad ; \quad
+a = d_1 \tan \beta \quad ; \quad
+\sin \beta = \frac{\sin \alpha_1}{n}
+\end{equation*}
+
+wird
+
+\begin{equation} \label{gangunterschied}
+\triangle_1 = 2 d_1 \left[ \frac{n}{\sqrt{ 1-\frac{{\sin}^2 \alpha_1}{n^2} }} - \frac{\frac{\sin \alpha_1}{n} \cdot \sin \alpha_1}
+{\sqrt{	1-\frac{{\sin}^2 \alpha_1}{n^2} }} \right] = 2 d_1 \sqrt{n^2 - {\sin}^2 \alpha_1}.
+\end{equation}
+
+Der gleiche Gangunterschied tritt an der zweiten planparallelen Platte auf, so dass bei völliger Gleichheit und Parallelität beider 
+Platten der gesamte Gangunterschied $\triangle_1 - \triangle_2$ verschwindet. Sind die Dicken und Neigungswinkel beider Platten etwas 
+verschieden, so folgt aus Gleichung (\ref{gangunterschied}) ein resultierender Gangunterschied
+
+\begin{equation}
+\triangle_1 - \triangle_2 = 2 d_1 \sqrt{n^2 - {\sin}^2 \alpha_1} - 2 d_2 \sqrt{n^2 - {\sin}^2 \alpha_2}
+\end{equation}
+
+Durch Verkippen (Änderung von $\alpha_1$) einer Platte können die Abstände der beobachteten Streifen variiert werden. Wird in einen der 
+beiden Strahlengänge ein anderes Medium (Brechzahl $n_1$; Länge der Küvette $L$) eingebracht, so entsteht ein zusätzlicher Gangunterschied 
+$\triangle$ infolge der optischen Wegänderung $L(n_0 - n_1)$ (vergleiche mit (\ref{streifenanzahl}):
+
+\begin{equation}
+L(n_0 - n_1) = \triangle = m\lambda
+\end{equation}
+
+\subsubsection{Zum Interferenzterm der Intensität}
+
+Zur Berechnung der Intensität der Elongation $\xi_{res} = \xi_1 + \xi_2$ muss $\xi_{res}$ komplex quadriert werden (Beachtung der Eulerschen 
+Gleichung: $\cos \varphi = \frac{1}{2} \left( \mbox{e}^{j \varphi} + \mbox{e}^{-j \varphi} \right)$ sowie des Spezialfalls gleicher
+Amplituden $\hat{\xi}_1 = \hat{\xi}_2$).\\
+Die Phasendifferenz berechnet sich zweidimensional zu: $\triangle \Phi = \triangle ( \vec{k} \vec{r} ) = \triangle \left( k_x x + k_z z
+\right)$.
+
+\begin{align*}
+I_{res} & = \left[ \hat{\xi_1} \mbox{e}^{j (\omega t + k_x x - k_z z)} + \hat{\xi_2} \mbox{e}^{j (\omega t - k_x x - k_z z + \triangle \Phi)} \right]
+ \cdot \left[\hat{\xi_1} \mbox{e}^{-j (\omega t + k_x x - k_z z)} + \hat{\xi_2} \mbox{e}^{-j (\omega t - k_x x - k_z z + \triangle \Phi)} \right] \nonumber \\
+ 		& = \mbox{e}^{j(\omega t - k_x x - k_z z)} \left[ \hat{\xi_1} + \hat{\xi_2} \mbox{e}^{j \triangle \Phi} \right] \cdot
+ 			\mbox{e}^{-j(\omega t - k_x x - k_z z)} \left[ \hat{\xi_1} + \hat{\xi_2} \mbox{e}^{-j \triangle \Phi} \right] \nonumber \\
+ 		& = \hat{\xi_1} + \hat{\xi_2} + \hat{\xi_1	} \hat{\xi_2} \cdot \left( \mbox{e}^{j \triangle \Phi} + \mbox{e}^{-j \triangle \Phi} \right) \nonumber \\
+ 		& = \hat{\xi_1} + \hat{\xi_2} + 2 \hat{\xi_1} \hat{\xi_2} \cdot \cos \triangle \Phi \nonumber \\
+ 		& = I_1 + I_2 + 2 \sqrt{I_1 I_2} \cdot \cos \triangle \Phi \\
+\end{align*}
+
+Der maßgebliche Phasenwinkel $\triangle \Phi$ nach Gleichung (\ref{phasenwinkel}) und damit der Interferenzterm $\cos \triangle \Phi$ soll für zwei 
+Spezialfälle diskutiert werden.
+
+\begin{equation} \label{phasenwinkel}
+\triangle \Phi = (k_{z1}	z_1 - k_{z2} z_2 ) + k_x \triangle x = 2 k_z \triangle L + \beta k_x x
+\end{equation}
+
+\begin{enumerate}
+ \item Bei konstantem $\beta$ existieren nur Variationen in $z$-Richtung: $\triangle \Phi = 2 k_z \triangle z = 2 k_z \triangle L$ (Längenmessung).
+ \item  Zum Anderen ist bei einer reinen Verkippung eines Spiegels die Phase nur mit $\beta$ veränderlich $(\triangle z = 0)$.
+\end{enumerate}
+
+\subsubsection{Zur Dichteabhängigkeit der Brechzahl}
+
+Die Maxwellsche Relation lautet $\varepsilon = n^2$ (für hinreichend hohe Frequenzen und starke Verdünnung, keine Wechselwirkung). Mit $n = 1 + 
+\triangle n; ~n - 1 \ll 1$, z.B. in Luft gilt
+
+\begin{equation}
+\chi_{el} = \varepsilon - 1 = n^2 -1 
+\quad \text{bzw.} \quad
+(1+ \triangle n)^2 -1 \approx 2(n-1) = 2 \triangle n
+\end{equation}
+
+(Vernachlässigung von $(\triangle n)^2$ gegen $2 \triangle n$). Der Dichtezuwachs $\triangle n$ beim Übergang von Vakuum in Luft ist wie $\chi_{el} 
+\sim N$ ($N$ - Teilchenzahl), d.h. $\sim p$ oder $\sim \rho$. Die Korrektur folgt aus der Zustandsgleichung:
+
+\begin{equation*}
+\frac{\rho_0}{\rho (p.T)} = \frac{N_0}{N(p,t)} = \frac{T p_0}{T_0 p}
+\end{equation*}
+
+\frage{Wie beschreibt man mathematisch eine ebene harmonische Welle? Wodurch wird die Phase bestimmt?}
+\frage{Nennen Sie Ursachen für Phasenunterschiede; wie kann man den Gangunterschied beeinflussen (Interferenzapparate)?}
+\frage{Unter welcher Voraussetzung können zwei Wellen interferieren? Was versteht man unter Kohärenzbedingung?}
+\frage{Wie groß ist die Kohärenzlänge von Glühlampenlicht: $\lambda \approx 0,5~ \mathrm{\mu m};~\triangle \lambda \approx 0,3~
+	\mathrm{\mu m}$?}
+\frage{Was versteht man unter konstruktiver und destruktiver Interferenz?}
+\frage{Warum ist LASER-Licht besonders gut kohärent?}
+\frage{Skizzieren Sie den Strahlenverlauf in einem Michelson-Interferometer.}
+\frage{Wie wurde das historisch berühmte Michelson-Experiment zum Beweis der Konstanz der Lichtgeschwindigkeit im Vakuum durchgeführt?}
+\frage{Wie lauten die Differentialgleichungen für eine Seilwelle, eine ebene elastische und eine ebene elektromagnetische Welle? Wovon hängen 
+	die jeweiligen Phasengeschwindigkeiten ab?}
+\frage{Wie berechnet man den Gangunterschied bei beim Michelson-Interferometer und anderen Interferenzapparaten?}
+\frage{Worauf beruht das Tolanski-Verfahren zur Dickenbestimmung?}
+\frage{Wie funktioniert ein Interferenzfilter? Wie und wozu stellt man eine vergütete Optik her?}
+	
+\end{document}

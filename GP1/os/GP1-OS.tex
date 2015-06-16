@@ -1,0 +1,162 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd,subfigure}
+
+\versuch{Oberflächenspannung}{OS}
+\bearbeitet{M. Kreller,J.~Kelling,F.~Lemke,S.~Majewsky,i.~A. Dr. Escher}{}
+
+\buch{praktikum}{W.~Ilberg (Hrsg.), M.~Krötzsch (Hrsg.) et.~al.}{Physikalisches Praktikum für Anfänger}{Teubner-Verlag}{Leipzig 1992}
+\buch{wal}{W.~Walcher}{Praktikum der Physik}{Teubner-Verlag}{Stuttgart 1994}
+\buch{demtr}{W.~Demtröder}{Experimentalphysik~I}{Springer-Verlag}{Berlin, Heidelberg 1994}
+\buch{gert}{C.~Gerthsen, H.~Vogel}{Physik}{Springer-Verlag}{Berlin, Heidelberg 1999}
+\buch{hansel}{H.~Hänsel, W.~Neumann}{Physik~--~Mechanik und Wärmelehre}{Spektrum-Verlag}{Heidelberg 1993}
+
+\begin{document}
+\maketitle
+
+\section{Aufgabenstellung}
+Kalibrieren Sie eine Torsionswaage. und bestimmen Sie mit dem Abreißverfahren die Oberflächenspannung einer Flüssigkeit.
+
+\section{Grundlagen}
+Warum steigt Wasser in einem Schwamm auf? Wieso können bestimmte Insekten auf einer Wasseroberfläche laufen? Dies sind Fragestellungen, deren Beantwortung eng mit den wirkenden Kräften zwischen den Wassermolekülen verknüpft ist.
+
+Grundsätzlich bestimmen Kräfte zwischen den Molekülen oder Atomen den Aggregatzustand von Materie: Je nach Größe der Kräfte entstehen feste, flüssige oder gasförmige Substanzen. Die Moleküle einer Flüssigkeit befinden sich im Gleichgewicht in einem \emph{festen Abstand} voneinander und wirken einer Vergrößerung oder Verkleinerung dieses Abstandes entgegen. Dies bedeutet, dass die Molekularkräfte in einem kleineren Abstand als dem Gleichgewichtsabstand abstoßend und in einem größeren Abstand anziehend sein müssen. Wir können uns daher zwischenmolekulare Kräfte als Überlagerung einer Abstoßungskraft mit kürzerer Reichweite und einer Anziehungskraft mit längerer Reichweite vorstellen, die sich im Gleichgewichtsabstand der Moleküle gerade kompensieren, bei jeder Veränderung dieses Abstandes allerdings zur Wirkung kommen.
+
+Man schreibt diesen Molekularkräften eine kugelförmige sogenannte \emph{Wirkungssphäre} (Wirkkugel) zu, in der ein im Mittelpunkt liegendes Molekül nur auf Moleküle, die sich innerhalb dieses Raumgebietes befinden, Kräfte ausüben kann. Der Radius dieser Wirkungssphäre liegt bei etwa \SI{e-10}m bis \SI{e-8}m. Die Anziehungskräfte zwischen den Bausteinen eines Stoffes (Atome, Moleküle, Ionen) werden \emph{Kohäsionskräfte} genannt. Entsprechend gibt es an Grenzflächen verschiedener Stoffe ebenfalls anziehende Kräfte, die zwischen deren (verschiedenen) Bausteinen wirken. Diese Kräfte werden als \emph{Adhäsionskräfte} bezeichnet. Besonders auffällig werden die Wirkungen dieser Molekularkräfte in Flüssigkeiten bei den Erscheinungen der Oberflächenspannung.
+
+\begin{figure}[b] \centering
+ \includegraphics[width=\linewidth/2]{GP1-OS-Molekuele}
+ \caption{Wirkungssphären von Molekülen in einer Flüssigkeit}
+ \label{fig::Wirkkugel}
+\end{figure}
+
+\subsection{Oberflächenspannung}
+
+In Abbildung \ref{fig::Wirkkugel} sind in einer Flüssigkeit drei Moleküle $M_1$, $M_2$ und $M_3$ mit ihren Wirkungssphären in verschiedener Entfernung von der Flüssigkeitsoberfläche dargestellt. $M_1$ befindet sich mit seiner Wirkungssphäre vollständig in der Flüssigkeit. Von allen Seiten wirken die Anziehungskräfte gleich stark, so dass sie sich gegenseitig aufheben. $M_2$ befindet sich nahe an der Oberfläche. Die Wirkungssphäre wird somit um den Teil über der Oberfläche verringert. In diesem Bereich fehlt die anziehende Kraft der Nachbarmoleküle, denn die Dichte der Gasmoleküle oberhalb der Grenzfläche ist so klein, dass deren Wirkung vernachlässigt werden kann. Es entsteht also eine resultierende Kraft $\vec F_2$, die senkrecht in die Flüssigkeit zeigt. Diese Kraft nimmt ihren größten Wert an, wenn sich das Molekül direkt an der Oberfläche befindet ($M_3$). Es erfahren demnach alle in der Flüssigkeitsoberfläche und der darunter liegenden Schicht von der Dicke des halben Durchmessers der Wirkungssphäre befindlichen Moleküle einen in Richtung des Flüssigkeitsinneren gerichteten Druck, der als \emph{Kohäsionsdruck} bezeichnet wird. Um ein Flüssigkeitsteilchen aus dem Inneren an die Oberfläche zu bringen, ist Arbeit notwendig, während der umgekehrte Vorgang mit einem Gewinn von Energie verbunden ist. Somit besitzen alle an der Flüssigkeitsoberfläche liegenden Moleküle einen Vorrat an potentieller Energie (\emph{Oberflächenenergie}).
+
+\begin{figure}[b] \centering
+ \includegraphics[width=\linewidth/2]{GP1-OS-Modellversuch}
+ \caption{Modellversuch zur Vergrößerung einer Flüssigkeitsoberfläche}
+ \label{fig::Modell}
+\end{figure}
+
+Bei der Vergrößerung einer Flüssigkeitsoberfläche $A$ um $ \Delta A$ müssen mehr Moleküle zur Oberfläche oder in oberflächennahe Bereiche gebracht werden, was eine zur Oberflächenänderung proportionale Arbeit $\Delta W$ erfordert. Der Proportionalitätsfaktor
+\begin{equation}
+ \sigma = \frac{\Delta W}{\Delta A}
+\end{equation}
+ist die spezifische Oberflächenenergie, die im Allgemeinen als \emph{Oberflächenspannung} bezeichnet wird. Betrachtet man die Kraft $F$, gegen die die Arbeit $\diff W$ verrichtet werden muss, dann lässt sich für $\sigma$ noch ein anderer Ausdruck angeben. Hierzu wird eine Flüssigkeitshaut untersucht, die in einem Drahtbügel $D$ aufgespannt ist. Auf diesem Bügel gleitet ein dünner Draht der Länge $l$ (siehe Abb.~\ref{fig::Modell}). Wird dieser Draht mit der Kraft $F$ in die in der Zeichnung angegebenen Richtung gezogen, so muss die Arbeit $\diff W = F \dif x$ verrichten werden. Dabei wird die Oberfläche der Flüssigkeit um
+\[
+ \diff A = 2 l \cdot \diff x
+\]
+vergrößert. Der Faktor $2$ berücksichtigt, dass die Flüssigkeitshaut zwei Oberflächen besitzt, die beide um $l \cdot \diff x$ vergrößert werden. Damit ergibt sich für $\sigma$:
+\begin{equation}
+ \sigma = \frac{\Delta W}{\Delta A} = \frac{F \dif x}{2 l \cdot \diff x} = \frac F{2l}
+ \label{eqn::sigma}
+\end{equation}
+Aufgrund der doppelten Oberfläche ist $2l$ die Länge der beweglichen Oberflächenbegrenzung. Bezeichnet man diese mit $s$, erhält man die folgende Gleichung für $\sigma$ sowie ihre äquivalente differentielle Form:
+\begin{equation}
+ \sigma = \frac Fs \quad\text{und}\quad \sigma = \frac{\diff F}{\diff s}
+\end{equation}
+
+\subsection{Grenzflächenspannung}
+
+Von Oberflächenspannung wird im engeren Sinne nur dann gesprochen, wenn die Flüssigkeit an ihren eigenen gesättigten Dampf grenzt. In allen anderen Fällen handelt es sich  korrekterweise um \emph{Grenzflächenspannungen}. Auf ein Randmolekül wirken dann sowohl Kohäsionskräfte $F_K$ in die Flüssigkeit hinein als auch Adhäsionskräfte $F_A$ in Richtung des angrenzenden Mediums.
+
+Im Weiteren wird die Gestalt der Grenzfläche betrachtet, wenn sich eine Flüssigkeit in einem Gefäß im Schwerefeld befindet. Dabei tritt unter der Wirkung der Oberflächenspannung die sogenannte \emph{Randkrümmung} auf. In engen Gefäßen (Kapillaren) kommt es dadurch sogar zum Ansteigen oder auch Absenken der Flüssigkeitssäule.
+
+\begin{figure}[t] \centering
+ \subfigure[Grenzflächenspannungen]{
+  \label{fig::Grenz}
+  \includegraphics[width=\linewidth/2-1em]{GP1-OS-Grenzflaechenspannung}
+ }
+ \subfigure[Resultierende Randkrümmung]{
+  \label{fig::Rand}
+  \includegraphics[width=\linewidth/2-1em]{GP1-OS-Randkruemmung}
+ }
+ \caption{Flüssigkeit in einem Gefäß}
+\end{figure}
+Am Molekül $M$ der Flüssigkeit grenzen die drei Medien Wand (1), Luft (2) und Flüssigkeit (3) aneinander (Abb.~\ref{fig::Grenz}). Es greifen daher am Molekül drei Grenzflächenspannungen an. Die beiden Grenzflächenspannungen $\sigma_{12}$ und $\sigma_{13}$ sind entgegengesetzt gerichtet und haben ungleiche Beträge. $\sigma_{23}$ hat bei dieser Zeichnung keinen Einfluß auf das Gleichgewicht, da waagerechte Spannungen von der Wand kompensiert werden. Das System befindet sich also nicht im Gleichgewicht. Da hier $\sigma_{12}$ größer ist als $\sigma_{13}$, wird das Molekül nach oben gezogen. Die Oberfläche der Flüssigkeit krümmt sich. Dadurch entsteht eine Komponente von $\sigma_{23}$, die nach unten gerichtet ist. Die senkrechte Komponente von $\sigma_{23}$  hat die Größe $\sigma_{23} \cdot \cos\phi$. Im Gleichgewicht gilt dann:
+\begin{equation}
+ \sigma_{13} + \sigma_{23} \cdot \cos\phi = \sigma_{12} \quad\Rightarrow\quad \cos\phi = \frac{\sigma_{12}-\sigma_{13}}{\sigma_{23}}
+\end{equation}
+
+Für $\sigma_{12} > \sigma_{13}$ wird $\phi < \ang{90}$, d.h. die Oberfläche krümmt sich wie in Abbilding \ref{fig::Rand} von oben gesehen konkav. Ist $\sigma_{12} < \sigma_{13}$, so wird $\phi > \ang{90}$, d.h. die Oberfläche krümmt sich konvex. Dieser Effekt ist beispielsweise bei Quecksilber zu beobachten.
+
+Wenn $|\sigma_{12}-\sigma_{13}| > \sigma_{23}$ ist, kann sich kein Gleichgewicht einstellen und das System strebt einem Grenzwert zu ($\phi = \ang0$: vollständige Benetzung; $\phi = \ang{180}$: keine Benetzung). Die Grenzflächenspannung $\sigma_{23}$ zwischen der Flüssigkeit und dem Gas kann näherungsweise mit der Oberflächenspannung $\sigma$ der Flüssigkeit gleichgesetzt werden. Sie wirkt wie in Abb.~\ref{fig::Rand} zusammen mit $\sigma_{13}$ der nach oben gerichteten Spannung $\sigma_{12}$ entgegen. Bei einer bestimmten Oberflächenkrümmung stellt sich ein Gleichgewicht ein.
+
+\section{Messprinzip}
+
+\subsection{Abreißverfahren\label{sub::Verfahren}}
+
+Zur Bestimmung der Oberflächenspannung nach dem Abreißverfahren werden spezielle Bügel verwendet. Die Bügel bestehen aus einem Metallrahmen, in dem ein dünner Metalldraht (Platin) eingespannt ist. Es ist jeweils die Kraft zu messen, die erforderlich ist, um die Unterkante des Metalldrahtes aus der Flüssigkeit zu reißen. Bei der Kraftmessung handelt es sich um eine Differenzmessung, die mit einer Torsionswaage durchgeführt wird. Zur Bestimmung der Gewichtskraft $F_G$ des Bügels und der Auftriebskräfte $F_A$, die an ihm angreifen, wird die Waage so eingestellt, dass der Metalldraht des Bügels ca.~\SI1{mm} unterhalb der Wasseroberfläche zu sehen ist (Messwert $F_1$). Dabei ist darauf zu achten, dass noch keine Oberflächeneffekte des Drahtes mit der Oberfläche auftreten. Danach wird der Bügel langsam aus der Wasseroberfläche herausgezogen, wobei unterhalb des Metalldrahtes eine Lamelle entsteht. Die zweite Kraftmessung $F_2$ erfolgt im Moment des Abreißens der Wasserlamelle. Dabei wird sowohl die Kraft $F_\sigma$ gemessen, die zur Vergrößerung der Flüssigkeitsoberfläche aufgebracht wurde sowie die unveränderten Komponenten der Gewichtskraft $F_G$ und der Auftriebskraft $F_A$. Damit entpricht die Kraftkomponente $F_\sigma$ zur Vergrößerung der Oberfläche der untersuchten Flüssigkeit gerade der Differenz der beiden gemessenen Kräfte:
+\[
+ \left.\begin{aligned}
+  F_1 &= F_G - F_A \\
+  F_2 &= F_G - F_A + F_\sigma
+ \end{aligned}\right\} \quad\rightarrow\quad F_\sigma = F_2 - F_1
+\]
+Durch Ermittlung der Drahtlänge der Bügel wird über Gleichung $(\ref{eqn::sigma})$ der Zugang zur Bestimmung der Oberflächenspannung ermöglicht.
+
+\subsection{Torsionswaage}
+
+\begin{figure}[!b] \centering
+ \includegraphics[width=\linewidth/2-1em]{GP1-OS-Torsionswaage}
+ \caption{Schematische Darstellung einer Torsionswaage}
+ \label{fig::Waage}
+ %TODO: Foto der Waage (in möglichst derselben Perspektive) als subfigure hinzufügen
+\end{figure}
+
+Zur Bestimmung der Kräfte $F_i$ dient eine Torsionswaage, die auf dem Prinzip der Verdrillung eines Metalldrahtes basiert. Die Verdrillung erfolgt im linearen (Hooke'schen) Bereich, in dem die Auslenkung um den Winkel $\alpha$ proportional ist zum auftretenden Drehmoment $M$ (und damit zur Kraft $F$ in einem bestimmten Abstand $R$).
+
+Die Torsionswaage (siehe Abb.~\ref{fig::Waage}) besteht aus einem gespannten Draht $D$, an dem ein ungleicharmiger Hebel $H$ angebracht ist. Das zu einer Spitze $S$ auslaufende Ende des Hebelarms ist mithilfe einer Tariermutter $T$, die auf dem anderen Hebelende verschoben werden kann, auf eine feste Marke $M$ einzustellen. Diese Nulllage der Waage ist möglichst so einzustellen, dass am Winkelmesser $W$ eine Auslenkung von $\alpha = \ang0$ vorliegt. Belastet man den Hebel $H$ bei $R$ durch eine Kraft $F$, so wird der Draht aufgrund des auftretenden Drehmoments verdrillt, und die Spitze $S$ verschiebt sich gegen die Markierung $M$. Um diese Verschiebung zu kompensieren, wird der Draht durch Drehen der Verstellschraube $V$ um den Winkel $\alpha$ zusätzlich verdrillt. Der Winkel $\alpha$ ist somit ein Maß für die Kraft $F$. Da allerdings noch keine Aussage über den Proportionalitätsfaktor vorliegt, ist es notwendig, vor der Messung der Abreißkräfte die Kalibrierungskurve $F(\alpha)$ der Torsionswaage aufzunehmen. Dazu stehen am Arbeitsplatz mehrere Gewichte zur Verfügung.
+
+\section{Versuchsdurchführung}
+
+\subsection{Vorversuch}
+
+In einem Vorversuch sollen mit dem größten zur Verfügung stehenden Bügel die maximal auftretenden Auslenkungen $\alpha_\mathrm{max}$ an der Torsionswaage ermittelt werden.
+
+\subsection{Kalibrierung der Torsionswaage}
+
+\begin{figure}[!b]\centering
+ \includegraphics[width=10cm]{GP1-OS-Kalibrierung}
+ \caption{Prinzipieller Verlauf der Kalibrierungskurve}
+ \label{fig::Kalibrierung}
+\end{figure}
+
+Mit den am Arbeitsplatz bereitgestellten Gewichten wird die Kalibrierungskurve $F_{m}(\alpha)$ aufgenommen. Dabei werden die Winkel $\alpha$ zu den entsprechenden Gewichtskräften $F_m$ bestimmt und in einem zu Abb.~\ref{fig::Kalibrierung} analogen Diagramm dargestellt.
+
+Eine Darstellung der Fehlerbalken für $\Delta\alpha $ ermöglicht es, den entsprechenden Fehlerschlauch in das Diagramm einzuzeichnen. Damit kann jedem nachfolgenden Messwert $\alpha_i$ nicht nur die entsprechende Kraft $F_i$ zugeordnet werden, vielmehr ist es ebenso möglich, eine Aussage zum zugehörigen Fehler $\Delta F_i$ zu treffen. Dieser ergibt sich als Summe aus dem grafischen Anteil $\Delta F_i(\Delta\alpha)$ und dem numerischen Anteil $\Delta m\cdot g$.
+
+\subsection{Aufnahme der Messreihe}
+
+Entsprechend dem in \ref{sub::Verfahren} dargelegten Messprinzip sind die Messungen für alle sechs am Arbeitsplatz befindlichen Bügel durchzuführen. Dabei empfiehlt sich eine Tabelle, in der für jeden Bügel die Werte $2l$, $\alpha_1$, $\alpha_2$, $F_1$, $F_2$ sowie $ F_\sigma$ eingetragen werden. $\alpha_1$ und $\alpha_2$ sind die Winkel, die zum einen bei knapp unter der Wasseroberfläche befindlichem Metalldraht und zum Anderen beim Abreißen der Lamelle gemessen werden. Entsprechend der Kalibrierungskurve lassen sich diesen Werten die Kräfte $F_1$ und $ F_2$ mit ihren Fehlern $ \Delta F_1$ und $ \Delta F_2$ zuordnen. Aus der Bestimmung von $F_\sigma$ aus der Differenz der gemessenen Kräft ergibt sich der Fehler:
+\begin{equation}
+F_\sigma = F_2 - F_1 \quad\Rightarrow\quad |\Delta F_\sigma| = |\Delta F_2| + |\Delta F_1|
+\end{equation}
+
+\subsection{Auswertung und Fehlerabschätzung}
+
+\begin{figure}[t] \centering
+ \includegraphics[width=2\linewidth/3]{GP1-OS-Auswertung}
+ \caption{Diagramm zur Auswertung (Skizze)}
+ \label{fig::Auswertung}
+\end{figure}
+
+Zur Bestimmung der Oberflächenspannung $\sigma$ von Wasser legt Gleichung $(\ref{eqn::sigma})$ nahe, $F_\sigma$ über $2l$ aufzutragen (Abb.~\ref{fig::Auswertung}) und die entsprechenden Fehlerkreuze hinzuzufügen. Die Gerade, die als bestmögliche Annäherung der einzelnen Messwerte einzuzeichnen ist, schneidet allerdings nicht den Nullpunkt und erzwingt eine Korrektur. Eine Anpassung von Gleichung $(\ref{eqn::sigma})$ führt zu einer Geraden mit einer Verschiebung $\mathcal O$:
+\begin{equation}
+F_\sigma = \sigma \cdot 2l + \mathcal O
+\end{equation}
+Hierbei ist also $\mathcal O$ der Durchgang durch die Ordinate. Damit läßt sich die Oberflächenspannung $\sigma$ als Anstieg der gezeichneten Gerade  identifizieren. Dieser kann mittels Anstiegsdreieck direkt aus dem Diagramm entnommen werden und erübrigt die Bestimmung des Nullterms in obiger Gleichung.
+
+Da den einzelnen Bügeln jeweils Fehlerkreuze zugeordnet sind, lassen sich zusätzlich noch Geraden mit minimalem  bzw. maximalen Anstieg $ \sigma_\mathrm{min} $ bzw. $ \sigma_\mathrm{max} $ einpassen. Damit wird gleichzeitig ein Bereich für $\sigma$ nach oben und nach unten abgegrenzt, der als Fehlerbereich der Gesamtmessung aufzufassen ist.
+
+\subsection{Zusammenfassung und Diskussion}
+
+Im letzten Versuchsteil sind die Messergebnisse übersichtlich zusammenzufassen. In der Diskussion wird auf einen Vergleich der Resultate mit der tatsächlichen Oberflächenspannung von Wasser  $\sigma_{\mol{H_2O}} = \SI{0,073}{N/m}$ Wert gelegt. Dabei sollten für die Erklärung auftretender Abweichungen vorrangig systematische Fehlerquellen betrachtet werden, die in der durchgeführten Fehlerabschätzung noch nicht ausreichend berücksichtigt wurden. In diesem Zusammenhang sollten Maßnahmen zur Verbesserung angesprochen werden.
+
+\frage{Informieren Sie sich zu anderen Verfahren zur Bestimmung der Oberflächenspannung von Flüssigkeiten.}
+\frage{Wenn keine äußeren Kräfte wirken, bilden die Oberflächen von Flüssigkeiten Minimalflächen. Was folgt daraus für die Oberflächenspannung? Wie sehen die Flüssigkeitshäutchen aus, wenn man ein würfelförmiges Drahtgestell aus einer Seifenlösung zieht?}
+\frage{Warum sammeln sich an der Oberfläche eines Flüssigkeitsgemisches bevorzugt die Moleküle derjenigen Flüssigkeit, die die kleinste Oberflächenspannung besitzt?}
+\frage{Die Beherrschung der Grundlagen der Fehlerabschätzung stellt eine Voraussetzung für alle Versuche des Physikalischen Praktikums dar.}
+
+\end{document}

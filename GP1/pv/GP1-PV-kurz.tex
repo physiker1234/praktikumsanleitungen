@@ -1,0 +1,49 @@
+\documentclass[platz]{tudphygp}
+\usepackage{tudphymd,nicefrac}
+
+\versuch{Poisson-Verteilung}{PV}
+
+\begin{document}
+\maketitle
+
+\section*{Aufgabenstellung}
+
+Nehmen Sie die Zählrohrcharakteristik eines Geiger-Müller-Zählrohrs auf, und bestimmen Sie die Aktivität eines $\beta^-$-Prüfstrahlers.
+
+Die Messserien für das Standardpräparat, die unbekannte Probe sowie den Nulleffekt sind dabei auf statistische Reinheit zu prüfen.
+
+\section*{Unterweisung zum Strahlenschutz}
+
+Für diese Versuche werden $\beta^-$-Strahler verwendet, die das Radionuklid \mol{{}^{85}_{36}Kr} enthalten. Die $\beta^-$-Strahlung wird im Plexiglaskörper der Quellhalterungen vollständig absorbiert. Die dabei entstehende Bremsstrahlung hat eine sehr geringe Intensität und ist daher vernachlässigbar.
+
+Weiterhin entsteht in den Quellen bei einem Anteil von etwa \SI{0,4}\% aller Zerfälle $\gamma$-Strahlung mit einer Energie von \SI{514}{keV}, die die Probenhalterung fast ungeschwächt verlässt. Für eine Quelle mit einer Aktivität von \SI{10}{MBq} beträgt die Dosisleistung in \SI1m Abstand ohne zusätzliche Schwächung ca.~\SI3{\nicefrac{nSv}h}. In einem Abstand von nur \SI{10}{cm} steigt die Dosisleistung auf \SI{0,3}{\nicefrac{\mu Sv}h} und liegt somit immer noch unter dem Grenzwert für die allgemeine Bevölkerung von \SI{0,5}{\nicefrac{\mu Sv}h}. Alle eingesetzten Quellen haben eine Aktivität von deutlich weniger als \SI{10}{MBq} -- die Dosisleistung ist entsprechend geringer --, was auch durch Strahlenschutzkontrollmessungen an jeder einzelnen Quelle verifiziert wurde.
+
+Trotzdem sollten sich die Quellen entsprechend StrlSchV (Strahlenschutzverordnung) nur während der Messungen an den Versuchsplätzen befinden. Nach Beendigung der Messungen sind sie dem Betreuer auszuhändigen, der sie wieder sicher einschließt.
+
+Jegliche Manipulationen an den Quellenhaltern oder gar eine Entnahme der Quelle sind zu unterlassen. Selbst eine Zerstörung der Quelle führt zu keinem Zeitpunkt zu einer Gefährdung von Personen. Das Krypton würde sich sehr schnell in der Raumluft verdünnen, wobei eine Inkorporation nach Inhalation aufgrund der chemischen und physikalischen Eigenschaften dieses Edelgases nicht stattfindet. Es empfiehlt sich lediglich, den Arbeitsraum sofort gründlich zu lüften.
+
+Beschädigungen durch unsachgemäße Handhabung stellen ein Vorkommnis, aber keine Gefährdung dar. Der Strahlenschutzbeauftragte ist vom Versuchsbetreuer unverzüglich zu benachrichtigen und ein Verlustprotokoll ist anzufertigen (siehe ausliegende Strahlenschutzanweisung).
+
+\textbf{Essen, Trinken, Rauchen und Benutzung von kosmetischen Artikeln sind im Arbeitsraum untersagt.}
+
+\newpage
+
+\section*{Hinweise zur Versuchsdurchführung}
+
+Beachten Sie unbedingt die ausführliche Anleitung, die auch die zur Auswertung notwendigen Formeln enthält.
+
+Die messtechnischen Anforderungen bei diesem Versuch sind nicht besonders hoch, jedoch besteht die große Gefahr, sich durch schlechte Planung zu verzetteln. Alle Messungen sollten in zwei Stunden gut zu bewältigen sein.Schon während der Durchführung der Messserien sollte zügig mit der Auswertung vorheriger Messungen begonnen werden. In Abstimmung mit dem Betreuer kann ggf. schon während des Testats eine längere Messung durchgeführt werden.
+
+Falls Sie im Umgang mit den verfügbaren Computerprogrammen ungeübt sind, verzichten Sie lieber darauf. Sie können aus dem Versuch die Motivation mitnehmen, sich in Datenverarbeitungsprogramme wie Origin oder QtiPlot einzuarbeiten. Das physikalische Praktikum ist aber nicht der richtige Ort für solche Übungsstunden.
+
+\section*{Ablauf des Versuchs}
+
+\begin{itemize}
+ \item Mit einem radioaktiven Standardpräparat der Aktivität $A_1$ (am Quellenhalter ist die Aktivität für das Bezugsdatum angegeben) werden die Einsatzspannung und die Zählrohrcharakteristik gemessen. Beachten Sie, dass die dort angegebene Nominalaktivität nicht für den Versuchstermin gilt.
+ \item Bei einer Messdauer von jeweils \SI1s wird dasselbe Präparat \num{1000}-mal ausgemessen (Gesamtdauer $t_1 = \SI{1000}s$). Vergleichen Sie die empirischen Erwartungswerte, Varianzen und Standardabweichungen zu bestimmen und mit den theoretischen Werten. Für diese Messserie wird eine detaillierte statistische Auswertung vorgenommen, das heißt: Die empirische Verteilungsfunktion wird auf statistische Reinheit überprüft. Dazu wird selbige Funktion einschließlich der jeweiligen zufälligen Messabweichungen (Achtung: Binomialverteilung!) abgebildet. Die theoretische Verteilungsfunktion wird durch den Mittelwert und mindestens ein weiteres Quantil als Gerade dargestellt.
+ \item Für ein Präparat mit einer unbekannten Aktivität $A$ wird eine analoge Messserie durchgeführt und ebenfalls statistisch analysiert.
+ \item Unter identischen Messbedingungen wird die Untergrundstrahlung (Zählrate ohne Anwesenheit eines radioaktiven Präparates) gemessen und statistisch analysiert. Aufgurnd der kleinen Impulszahl muss zur Prüfung auf statistische Reinheit die empirische Wahrscheinlichkeitsfunktion unmittelbar mit der erwarteten Poissonverteilung (grafisch) verglichen werden.
+ \item Berechnen Sie nun die Aktivität $A$ der unbekannten Probe, sowie deren systematische und zufällige Messabweichung.
+\end{itemize}
+
+\end{document}

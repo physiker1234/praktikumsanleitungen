@@ -1,0 +1,68 @@
+\documentclass[platz]{tudphygp}
+\usepackage{tudphymd,mhchem}
+
+\versuch{Optische Abbildung}{OA}
+
+\begin{document}
+\maketitle
+
+\section*{Aufgabenstellung}
+
+\begin{enumerate}
+
+\item \textbf{Bestimmung der Brennweite $f'_s$ einer dünnen Sammellinse (S) aus der einfachen Abbildung eines Objektes:}
+	\begin{itemize}
+	\item Für \emph{drei} unterschiedliche Schirmeinstellungen soll die Linse je \emph{dreimal} so eingestellt werden, dass das Objekt 
+	scharf abgebildet wird. Notieren Sie sich jeweils die Objekt- ($l_1$), die Linsen- ($l_2$) und die Schirmposition ($l_3$).
+	\item Bilden Sie den Mittelwert der Linsenposition $l_2$ jeweils für die drei unterschiedlichen Schirmpositionen $l_3$.
+	\item Aus diesen Daten bestimmen Sie die Gegenstandsweite $a$ und die Bildweite $a'$. Mit Hilfe der allgemeinen 
+	Abbildungsgleichung berechnen Sie die Brennweite $f'_s$ der Sammellinse.
+	\item Bestimmen Sie den absoluten Fehler $\triangle f'_s$ durch Fehlerfortpflanzung der verwendeten Abbildungsgleichung.
+	\end{itemize}
+	
+\item \textbf{Bestimmung der Brennweite $f'_z$ einer dünnen Zerstreuungslinse (Z) durch Kombination mit einer Sammellinse 
+und dem Hauptebenenabstandes $d \approx 0$ mit Hilfe des \textsc{Bessel}-Verfahrens:}
+	\begin{itemize}
+	\item Verschieben Sie den Schirm ganz nach hinten. Stecken Sie die Sammel- und Zerstreuungslinse möglichst dicht in die Halterung. 
+	Für \emph{eine} feste Schirmstellung soll die Linse je \emph{dreimal} so eingestellt werden, dass das Objekt jeweils "`vorne"' 
+	und "`hinten"' scharf abgebildet wird. Notieren Sie sich jeweils die Objekt- ($l_1$), die Linsen- ($l_{2,v,h}$) und die 
+	Schirmposition ($l_3$).
+	\item Bilden Sie den Mittelwert der Linsenpositionen $l_{2,v}$ bzw. $l_{2,h}$ und bestimmen daraus den Abstand beider 
+	Linsenpositionen $l$. Berechnen Sie die Brennweite $f'$ des Gesamtsystems.
+	\item Bestimmen Sie aus der allgemeinen Abbildungsgleichung die Brennweite $f'_z$ der Zerstreuungslinse.
+	\end{itemize}
+
+\item \textbf{Bestimmung der Brennweite $f'$ einer Linsenkombination unter Verwendung des Abbildungsmaßstabes (\textsc{Abbe}-Verfahren):}
+	\begin{itemize}
+	\item Stecken Sie die Sammel- und Zerstreuungslinse so in den Halter, dass der Abstand der Hauptebenen $d = 50~\mathrm{mm}$ beträgt. 
+	Beim Einbau auf die optische Bank soll die Sammellinse Richtung Lampe zeigen. Bestimmen Sie für \emph{fünf} verschiedene 
+	Schirmstellungen \emph{jeweils eine} "`vordere"' und "`hintere"' Position des Linsenhalters, wo das Objekt scharf abgebildet wird. 
+	Wählen Sie die Schirmabstände so, dass die Bildgrößen sich deutlich unterscheiden. Notieren Sie sich jeweils die Objekt- ($l_1$), 
+	die Linsen- ($l_{2,v,h}$) und die Schirmposition ($l_3$), sowie die Gegenstands- und Bildgrößen $y$ und $y'_{v,h}$.
+	\item Berechnen Sie für die fünf unterschiedlichen Schirmstellungen die Entfernungen $b_{v,h} = l_{2,v,h} - l_1$ und $b'_{v,h} = l_3 - l_{2v,h}$ 
+	zur Ablesemarke des Linsenhalters. Bestimmen Sie aus Objektgröße $y$ und Bildgrößen $y'_{v,h}$ die Abbildungsmaßstäbe $\frac{1}{\beta_{v,h}}$ 
+	und $\beta_{v,h}$.
+	\item Zeichnen Sie in ein Diagramm die Abstände $b$ und $b'$ als Funktion der Abbildungsmaßstäbe $\frac{1}{\beta}$ bzw. $\beta$ ein, 
+	d.h. $b(\frac{1}{\beta})$ und $b'(\beta)$. Wählen Sie den Wertebereich der $\frac{1}{\beta}$- und $\beta$-Achse vom gemessenen 
+	Minimalwert von $\frac{1}{\beta}$ bzw. $\beta$. Bestimmen Sie die Abstände $h$ und $h'$ von der Ablesemarke zu den Hauptebenen $H$ und $H'$ 
+	aus dem Achsenwert für $b(1)$ bzw. $b'(1)$. Bestimmen Sie die resultierenden Brennweiten aus $f' = b(0) - h$ bzw. $f' = b'(0) + h'$. 
+	Der Mittelwert beider Brennweiten ergibt die gesuchte Brennweite $f'$ der Linsenkombination.
+	\item Vergleichen Sie die experimentell bestimmte Brennweite $f'$ mit der theoretisch zu erwartenden Brennweite der Linsenkombination.
+	\end{itemize}
+	
+\item \textbf{\emph{(Für Physikstudenten)} Bestimmung der sphärischen Aberration einer extrem dicken Sammellinse als Brennweitenänderung 
+in Abhängigkeit von dem Abstand zur optischen Achse mittels \textsc{Bessel}-Verfahren:}
+	\begin{itemize}
+	\item Ersetzen Sie den Linsenhalter durch die extrem dicke Sammellinse, wobei die planparallele Seite in Richtung Schirm zeigen soll, 
+	und realisieren Sie die scharfe Abbildung des Objekts.
+	\item Bestimmen Sie mittels des \textsc{Bessel}-Verfahrens die Brennweite $f'_0$ der Sammellinse mit Lochblende, die Randstrahlen 
+	ausblendet. Der endliche Abstand der Hauptebenen wird dabei vernachlässigt.
+	\item Bestimmen Sie mittels des \textsc{Bessel}-Verfahrens die Brennweite $f' = f'(r^2)$ in Abhängigkeit vom Radius $r$ der 
+	unterschiedlichen Zonenblende. Wiederum wird der endliche Abstand der Hauptebenen vernachlässigt.
+	\item Tragen Sie alle Brennweiten in ein Diagramm $f' = f'(r^2)$ ein und bestimmen Sie die Ausgleichsgerade.
+	\item Warum treten an den Rändern des Objektes Farbsäume auf?
+	\end{itemize}
+	
+	
+\end{enumerate}
+\end{document}

@@ -1,0 +1,162 @@
+\documentclass[platz]{tudphygp}
+\usepackage{tudphymd,mhchem}
+\usepackage{xcolor}
+
+\versuch{Brechzahl und Dispersion}{DP}
+
+\begin{document}
+\maketitle
+
+\section*{Aufgabenstellung}
+
+\begin{enumerate}
+ \item Mit dem Refraktometer nach \textsc{Abbe} sind mit weißem Licht die Brechzahlen $n_D$ und die
+ Standard-Dispersion $n_F-n_C$ von destilliertem Wasser, einer zweiten Flüssigkeit und
+ einer Glasplatte zu bestimmen.
+ \item Es werden Brechzahl $n_D$ und Standard-Dispersion $n_F-n_C$ für den ordentlichen und
+ den außerordentlichen Strahl eines Quarz-Kristalls bestimmt.
+ \item Für destilliertes Wasser ist bei Beleuchtung mit einer \ce{Cd}-Spektrallampe und einer \ce{Hg}-
+ Spektrallampe die Abhängigkeit der scheinbaren Brechzahl $x$ von der Wellenlänge $\lambda$
+ zu messen und daraus mittels Korrekturrechnungen die Dispersionskurve $n(\lambda)$ zu
+ bestimmen. Anschließend ist die Gültigkeit der von \textsc{Kislovskii} (1959) für Wasser
+ angegebenen Dispersions-Formel
+ 
+ \begin{equation*}
+ n(\lambda) = \left[ 1,29 + \frac{0,47 \cdot {\lambda}^2}{{\lambda}^2 - (0,119~\mathrm{\mu m})^2} - 
+  \frac{0,08 \cdot {\lambda}^2}{(2,92~\mathrm{\mu m})^2 - {\lambda}^2} \right]^{\frac{1}{2}}
+  \quad \text{mit} \quad \lambda ~ \text{in} ~ \mathrm{\mu m}
+ \end{equation*}
+ 
+ zu prüfen. Tragen Sie dazu in die grafische Darstellung des aus obiger Gleichung
+ errechneten $n(\lambda)$-Zusammenhangs die aus der Messung folgenden $n(\lambda)$-Werte ein und
+ vergleichen Sie diese Werte miteinander.
+\end{enumerate}
+
+\section*{Hinweise}
+
+\begin{itemize}
+ \item Das Messprisma des Refraktometers ist sehr vorsichtig zu behandeln; bitte nach jeder
+ Messung und abschließend mit Zellstoff und Alkohol sowie destilliertem Wasser
+ reinigen!
+ \item \textbf{Zu 1.:} Nach Einstellung der Beleuchtung mit der Glühlampe und Verdrehen des kleinen
+ Hilfsspiegels zur Aufhellung der linken inneren Skale wird das Prisma vorsichtig
+ geöffnet. Mit dem glatten Glasstab werden zwei Tropfen Wasser auf das horizontal
+ gestellte Prisma gebracht und dieses verschlossen. Nach dem Drehen des Prismas am
+ linken Knopf wird der in Einheiten von $n_D$ geeichte Winkel links abgelesen. Dies gelingt
+ nur, wenn vorher der Farbsaum mit dem Kompensator (rechter Drehknopf;
+ Geradsichtprismen-Paar nach Amici) beseitigt und scharf auf hell-dunkel abgeglichen
+ wurde. Die dazu notwendige Stellung des Kompensators wird auf der rechten Skala
+ abgelesen und notiert.
+ \item Zur Bestimmung der Dispersion wird mit dem notierten Kompensator-Wert (z.B. $z=40$)
+ unter Zuhilfenahme des $n_D$-Wertes nach der Hersteller-Betriebsanleitung verfahren.
+ \item \textbf{Zu 1. und 2.:} Bei der Messung der Brechzahl $n_D$ der Glasplatte und des Quarzkristalls
+ bleibt das Prisma ganz aufgeklappt und die Glasplatte bzw. die Quarzkristall-Scheibe
+ wird mit einem Tropfen Monobromnaphtalin (\ce{C10H7Br}; $n=1,6572$) auf das Messprisma
+ geklebt. Der streifende Einfall der Beleuchtung wird durch die matten Seitenflächen der
+ Körper (u.U. auch mit diffusem Tageslicht) erreicht. Danach wird analog zu 1. weiter
+ verfahren. \\
+ \textbf{Am Ende bitte das Prisma mit Zellstoff, Alkohol und dest. Wasser
+ vorsichtig reinigen!}
+ \item \textbf{Zu 3.:} Bei festgehaltener Kompensatorstellung (Null entspr. $z=30$) werden bei
+ Verwendung der \ce{Cd}-Spektrallampe die Grenzen der farbigen Felder ins Fadenkreuz des
+ Refraktometers gebracht (rechtes Okular) und im linken Okular die scheinbaren
+ Brechzahlen $x$ an der linken Skala abgelesen. Die Spektrallinien der \ce{Hg}-Lampe sind
+ mittels geeigneter Metallinterferenzfilter auszufiltern, so dass die zugeordnete
+ scheinbare Brechzahl $x$ anhand des zu beobachtenden Farbe-Schwarz-Übergangs zu
+ ermitteln ist.
+ \item Die Umrechnung der scheinbaren Brechzahlen $x(\lambda)$ auf die Brechzahlen $n(\lambda)$ erfolgt
+ nach Gl. (\ref{gl1}). Die dazu benötigten Brechzahlen des Messprismas $n^{'}$ und der
+ Prismenwinkel $\alpha$ sowie die Formel zur Berechnung von sind (Gl.(\ref{gl2})) sind unten
+ angegeben.
+\end{itemize}
+
+\textbf{Wesentliche Beziehungen:}
+
+\begin{equation} \label{gl1}
+n = \sin \alpha \cdot \sqrt{{n^{'}}^2 - {\sin}^2 \delta} - \cos \alpha \cdot \sin \delta
+\end{equation}
+\begin{equation} \label{gl2}
+\sin \delta  = \sin \alpha \cdot \sqrt{{{n_D}^{'}}^2 - x^2} - x \cdot \cos \alpha
+\end{equation}
+
+\textbf{Kennwerte des Messprismas:}
+
+Die Brechzahlen $n^{'}(\lambda)$ des Messprismas können unter Anwendung der \textsc{Cauchy}-Beziehung
+
+\begin{equation}
+n^{'} (\lambda) = \left( A_0^{'} + \frac{A_1^{'}}{{\lambda}^2} + \frac{A_2^{'}}{{\lambda}^4} \right)^{\frac{1}{2}}
+\end{equation}
+
+mit
+
+\begin{tabular}{rlll}
+neues Refraktometer, F9: & $A_0^{'}=2,88959$ & $A_1^{'}=0,04892~\mathrm{\mu m}^2$ & $A_2^{'}=0$ \\
+altes Refraktometer, F7: & $A_0^{'}=2,91277$ & $A_1^{'}=0,03439~\mathrm{\mu m}^2$ & $A_2^{'}=0,00220838~\mathrm{\mu m}^4$
+\end{tabular}
+
+berechnet werden (bis 5 Stellen nach dem Komma verwenden!).
+
+\textbf{Prismenwinkel:}
+
+$\alpha=62,937 ° \quad \text{(neues Refraktometer, F9)}$\\
+$\alpha=62,945 ° \quad \text{(altes Refraktometer, F7)}$
+
+\textbf{Vakuum-Wellenlängen der \ce{Hg}-Lampe, der \ce{Cd}-Lampe und dreier Fraunhofer-Linien:}
+
+{\renewcommand{\arraystretch}{1.1}
+
+\begin{center}
+\begin{tabular}{cc}
+
+\ce{Hg}-Spektrum: & \ce{Cd}-Lampe: \\
+
+\begin{tabular}{|c|c|c|}
+\hline
+Linie & Farbe & $\lambda~[\mathrm{\mu m}]$ \\ 
+\hline
+1  & \textcolor[rgb]{1.0,0.2,0.2}{\textbf{rot schwach}} & 614,4 \\ 
+2  & \textcolor[rgb]{0.89,0.58,0.58}{\textbf{rot sehr schwach}} & 610,0 \\ 
+3  & \textcolor[rgb]{0.89,0.58,0.58}{\textbf{rot sehr schwach}} & 608,4 \\ 
+4  & \textcolor[rgb]{1.0,1.0,0.0}{\textbf{gelb stark}} & 579,1 \\ 
+5  & \textcolor[rgb]{1.0,1.0,0.0}{\textbf{gelb stark}} & 577,0 \\ 
+6  & \textcolor[rgb]{0.2,0.8,0.2}{\textbf{grün sehr stark}} & 546,1 \\ 
+7  & \textcolor[rgb]{0.0,0.96,0.96}{\textbf{blaugrün schwach}} & 498,1 \\ 
+8  & \textcolor[rgb]{0.2,0.6,1.0}{\textbf{blaugrün mittel}}  & 491,6 \\ 
+9  & \textcolor[rgb]{0.6,0.2,1.0}{\textbf{violett stark}} & 435,8 \\ 
+10  & \textcolor[rgb]{0.8,0.6,1.0}{\textbf{violett schwach}} & 407,9 \\ 
+11  & \textcolor[rgb]{0.7,0.4,1.0}{\textbf{violett mittel}} & 404,7 \\
+\hline 
+\end{tabular} 
+
+&
+
+\begin{tabular}{c}
+
+\begin{tabular}{|c|c|c|}
+\hline
+Linie & Farbe & $\lambda~[\mathrm{\mu m}]$ \\ 
+\hline
+1  & \textcolor[rgb]{1.0,0.2,0.2}{\textbf{rot schwach}} & 643,8 \\ 
+2  & \textcolor[rgb]{0.2,0.8,0.2}{\textbf{grün sehr stark}} & 508,6 \\ 
+3  & \textcolor[rgb]{0.0,0.8,1.0}{\textbf{blaugrün stark}} & 480,0 \\ 
+4  & \textcolor[rgb]{0.2,0.6,1.0}{\textbf{blaugrün mittel}} & 467,8 \\ 
+\hline
+\end{tabular} 
+\vspace{0.05\linewidth} \\
+Fraunhofer-Linien:\\
+\begin{tabular}{|c|c|c|}
+\hline
+Linie & Farbe & $\lambda~[\mathrm{\mu m}]$ \\ 
+\hline
+F  & \textcolor[rgb]{0.0,0.8,1.0}{\textbf{blaugrün}} & 486 \\ 
+C  & \textcolor[rgb]{1.0,0.0,0.0}{\textbf{rot}} & 656 \\ 
+D  & \textcolor[rgb]{1.0,1.0,0.0}{\textbf{gelb}} & 589 \\  
+\hline
+\end{tabular}
+\end{tabular}
+
+\end{tabular}
+\end{center}
+}
+
+\end{document}

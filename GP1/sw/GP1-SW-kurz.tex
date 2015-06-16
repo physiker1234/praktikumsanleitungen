@@ -1,0 +1,83 @@
+\documentclass[platz]{tudphygp}
+\usepackage{mhchem,tudphymd}
+
+\versuch{Stehende Wellen}{SW}
+
+
+\begin{document}
+\maketitle
+
+\section*{Aufgabenstellung}
+
+\begin{enumerate}
+ \item Nach der Methode von Quincke ist anhand der Schallgeschwindigkeit der Luft die
+ Frequenz $f$ zweier gegebener Stimmgabeln (Mittelwert von jeweils fünf Messreihen) zu
+ ermitteln.
+ \item Mittels Tonfrequenzgenerator, Lautsprecher und Mikrophon ist mit Hilfe stehender
+ Wellen in einem horizontalen Glasrohr (\textsc{Kundt}sches Rohr) nahe der Reflexionswand
+ die Schallgeschwindigkeit $c$ in Gasen (Luft) zu bestimmen und auf \SI0{\degC} umzurechnen.
+\end{enumerate}
+
+\section*{Hinweise zur Versuchsdurchführung}
+
+Sie benötigen die Beziehung zwischen Wellenlänge und Schallgeschwindigkeit $c = \lambda f$ und die Größe des Kontenabstandes: $d = \lambda/2$.
+
+\subsection*{zu 1.}
+
+\begin{itemize}
+ \item Beachten Sie zum Einspannen der Stimmgabel und Inbetriebnahme des Generators die Bedienungsanleitung unten.
+ \item Den Abstand der Stimmgabel möglichst nicht verändern, die Stimmgabel
+ gegebenenfalls mit dem kleinen Hammer anstoßen.
+ \item Mindestens zwei Stellungen (Knotenpositionen) der Wasseroberfläche im
+ Rohr, bei denen das Quincke-Rohr
+ in Resonanz für den Grundton mit maximaler Lautstärke gerät, durch zehnmaliges Ausmessen bestimmen.
+ \item Man darf sich durch mögliche, bei zu starker Rückkopplung mit angeregte
+ Oberschwingungen nicht beirren lassen.
+\end{itemize}
+
+\subsection*{zu 2.}
+\begin{itemize}
+ \item  Das Glasrohr ist an einer Seite mit einem Lautsprecher, an der anderen mit
+ einer Wand abgeschlossen. Durch die Wand wird ein Mikrophon in das Rohr
+ eingeführt. Der Lautsprecher wird mit einem RC-Generator angeregt. Im Resonanzfall
+ bilden sich im Rohr stehende Wellen aus. Der Verlauf des Schalldruckes 
+ wird über der Rohrlänge mit dem Mikrophon gemessen. Es werden
+ drei Frequenzen $f$ zwischen \num{2,5} und \SI{3,5}{kHz}
+ benutzt. Fehler der Frequenz ist kleiner als \SI1\%. Der Effektivwert der Spannung sollte etwa \num{0,06} bis \SI{0,08}V betragen.
+ \item Das batteriebetriebene Mikrophon, das auf den Schallwechseldruck reagiert,
+ muss nach \SI{30}{min} mit dem roten Knopf wieder eingeschaltet werden (Abschaltautomatik).
+%  ; Stellung = benutzen. HINWEIS: ???
+ Das Mikrophon wird an ein Multimeter im \SI2V-Messbereich angeschlossen. Die Empfindlichkeit des Mikrophons
+ ist zwischen \num{18} und \SI{300}{mV/mbar} einstellbar. Durch langsames (in \SI{}{mm}-Abständen)
+ Verschieben der Mikrophon-Achse in Längsrichtung können mehrere Knoten
+ und Bäuche ausgemessen werden (mindestens über drei Halbwellen). Der
+ Mikrophontransport erfolgt von Hand auf einem Transportwagen.
+ \item Durch grafische Darstellung der Spannung in der Nähe der Knoten kann die
+ Knotenposition mittels Extrapolation genauer bestimmt werden. In der Nähe
+ der Wand werden Knoten und Bäuche ausgemessen.
+ \item Nach Beendigung der Messung mit der jeweiligen Frequenz $f$ sollte diese
+ nachträglich präziser mit einem Frequenz-Zähler, dem Strahlungsmessgerät 20046, ermittelt werden.
+ Dazu ist die Spannung des Tonfrequenzgenerators auf \SI2V zu erhöhen, der Pegel des Diskriminators
+ auf \num{1,0} zu setzen, was etwa \SI10{\%} entspricht. Der zweite linke Knopf auf wird auf "`Dis."' gestellt,
+ der Verstärker auf \SI{16}{db} und die Impulsvorwahl auf \num{e5}.
+ Alle rechts befindlichen Knöpfe sind in die äussere Stellung zu bringen.
+ \item Arbeiten Sie entweder mit Zeitvorwahl (z.~B.~\SI{40}s), wobei die Impulszahl angezeigt wird, oder
+ Impulsvorwahl (z.~B.~\num{e5}) wobei die Zeit angezeigt wird. Bei letzterer Version hat man einen besseren
+ Einblick in die Genauigkeit der Zeitmessung.
+\end{itemize}
+
+\section*{Bedienung des Stimmgabelverstärkers}
+
+\begin{description}
+ \item [Einspannen der Gabel] Der Erregerkopf wird in die höchstmögliche Lage gebracht und die Stimmgabel
+ möglichst kurz eingespannt. Danach ist der Erregerkopf parallel im Abstand von
+ ca. \SI1{mm} so anzuordnen, dass er genau mit einem freien Gabelende abschließt.
+ \item [Inbetriebnahme des Generator] Schließen Sie den Netzstecker an und schalten Sie den Generator über den
+ Kippschalter ein, die Netzkontrolle sollte nun leuchteen. Nach der Anlaufzeit des Generators beginnt die
+ Stimmgabel zu schwingen. Stellen Sie zuletzt den Spalt zwischen Erregerkopf und Stimmgabel auf optimale Lautstärke minimal ein.
+ \item [Achtung!] Betreigen Sie den Generator immer bei ausreichendem Abstand zwischen Stimmgabel und
+ Erregerkopf, um ein Mitschwingen der Stimmgabelaufhängung und Überlas-
+ tungen zu vermeiden.
+\end{description}
+
+\end{document}

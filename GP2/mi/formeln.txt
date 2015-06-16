@@ -1,0 +1,38 @@
+\[
+\begin{array}{l}
+ 1 \\ 
+ M = \frac{{\tan \sigma _m }}{{\tan \sigma _0 }} \cong \frac{{\sigma _m }}{{\sigma _0 }} \\ 
+ 2 \\ 
+ \tan \sigma _0  = \frac{y}{g} = \frac{{y'}}{b} \\ 
+ 3 \\ 
+ \tan \sigma _m  = \frac{{y_m }}{g} = \frac{{y'_m }}{b} \Rightarrow M = \frac{{\tan \sigma _m }}{{\tan \sigma _m }} = \frac{{y_m }}{y} = \frac{{y'_m }}{{y'}} \\ 
+ 4 \\ 
+ M_{ges}  = \frac{{\tan \sigma _m }}{{\tan \sigma _0 }} = \frac{{\frac{{y''}}{s}}}{{\frac{y}{s}}} = \frac{{y''}}{y} \\ 
+ 5 \\ 
+ \beta _{obj}  = \frac{{y'}}{y} =  - \frac{b}{g} \\ 
+ 6 \\ 
+ \frac{1}{f} = \frac{1}{g} + \frac{1}{b} \\ 
+ 7 \\ 
+ \beta _{obj}  =  - \frac{{b_{obj} }}{{f'_{obj} }} + 1 \\ 
+ 8 \\ 
+ \beta _{obj}  =  - \frac{t}{{f'_{obj} }} \\ 
+ 9 \\ 
+ M_{ok}  = \frac{s}{{f_{ok} }} \\ 
+ 10 \\ 
+ M_{norm}  = \beta _{obj}  \cdot M_{ok}  =  - \frac{{t \cdot s}}{{f'_{obj}  \cdot f_{ok} }} \\ 
+ 11 \\ 
+ \beta  = \beta _{obj}  \cdot \beta _{proj}  = \frac{{b_{obj} }}{{g_{obj} }} \cdot \frac{{b_{proj} }}{{g_{proj} }} = \frac{{y'}}{y} \cdot \frac{{y''}}{{y'}} \\ 
+ 12 \\ 
+ \sin \varphi _1  = \frac{\lambda }{{n \cdot d}} \\ 
+ 13 \\ 
+ \sin \varphi  = \frac{\lambda }{{n \cdot s}} \\ 
+ 14 \\ 
+ U = \frac{1}{d} = \frac{A}{\lambda } \\ 
+ 15 \\ 
+ d = 0.61 \cdot \frac{\lambda }{{n \cdot \sin \alpha }} = 0.61 \cdot \frac{\lambda }{A} \\ 
+ 16 \\ 
+ d_{\min }  \cong \frac{\lambda }{2} \\ 
+ 17 \\ 
+ \frac{{0.2 \cdot {\rm{mm}}}}{{200 \cdot {\rm{nm}}}} = 1000 \\ 
+ \end{array}
+\]

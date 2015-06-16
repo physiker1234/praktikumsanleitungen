@@ -1,0 +1,247 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd,mhchem}
+
+\versuch{Diffusion}{DI}
+\author{K.~Prokert}
+\bearbeitet{M.~Lange,S.~Socher,i.~A. Dr.~Escher}{}
+
+\begin{document}
+\maketitle
+
+\section{Aufgabenstellung}
+
+Der Diffusionskoeffizient zwischen einer \ce{NaCl}-Lösung und destilliertem Wasser ist mit der
+Schlierenmethode nach \textsc{Wiener} zu bestimmen.
+
+\section{Grundlagen}
+
+\subsection{Diffusionsgleichung}
+
+Werden zwei unterschiedliche, aber mischbare Flüssigkeiten übereinander geschichtet, wird die
+anfänglich scharfe Grenze zwischen beiden Flüssigkeiten allmählich verwaschen. Diese gegenseitige
+Durchmischung beider Molekülsorten als Folge der molekularen Wärmebewegung wird als Diffusion
+bezeichnet.
+ \piccaption{Zum Massetransport bei der Diffusion \label{mtransport}}
+ \parpic[r]{
+  \includegraphics[width=4.5cm]{GP2-DI-abb1.png} 
+ }
+Betrachtet man einen Zylinder von Querschnitt $A$ (Abb. \ref{mtransport}), dessen Achse in der z-Richtung
+verläuft, und nimmt man an, dass in der Ebene an der Stelle $y$ die Konzentration $c$, in einer
+benachbarten Ebene an der Stelle $y+dy$ die Konzentration $c-dc$ aufrecht erhalten werden, dann
+besteht zwischen beiden Ebenen das Konzentrationsgefälle $dc/dy$. Nach dem 1. \textsc{Fick}schen
+Gesetz (1855) beträgt die Substanzmenge $dN$ (Molzahl), die in der Zeit $dt$ durch den Querschnitt
+A in Richtung der z- Achse hindurchwandert
+
+\begin{equation}
+dN= - D \cdot A \dfrac{dc}{dy} dt
+\end{equation}
+\picskip{0}
+wobei die Größe D als Diffusionskonstante bezeichnet wird.
+
+Der zeitliche Ablauf der Diffusion wird durch das 2. \textsc{Fick}sche Gesetz beschrieben. nimmt
+man an, dass zum Zeitpunkt $t=0$ die Begrenzungsebene zwischen beiden Flüssigkeiten bei $y=0$ in
+engen Kontakt gebracht wird, so wird die Konzentration $c$ sowohl eine Funktion des Ortes als auch
+der Zeit. Es ergibt sich in diesem Fall die Differentialgleichung
+
+\begin{equation} \label{diffgl}
+\frac{\partial c}{\partial t} = D \cdot \frac{\partial^2 c}{\partial y^2}
+\end{equation}
+
+Die meisten in der Praxis vorkommenden Diffusionsprozesse müssen auf der Basis dieser
+Gleichung beschrieben werden, nur spezielle Reaktionen lassen sich mit Hilfe des 1.
+\textsc{Fick}schen Gesetzes interpretieren.
+
+\subsection{Berechnung des Diffusionskoeffizienten}
+
+Durchläuft ein Lichtstrahl L ein einfach brechendes Mittel, bestehend aus einer Reihe
+planparaller Schichten endlicher Dicke und stetig verändertem Brechungsvermögen, so wird
+er eine mehrfach gebrochene Linie beschreiben.
+Das \textsc{Snellius}sche Brechungsgesetz leitet sich aus dem Grundgesetz der Wellenbewegung,
+dem \textsc{Huygens}schen Prinzip ab, aber nur für den Fall homogener Mittel. Für den Fall eines
+Mittels von stetig verändertem Brechungsvermögen muss somit von \textsc{Huygens}schen Prinzip
+ausgegangen werden.
+ 
+ \piccaption{Anwendung des \textsc{Huygens}schen Prinzips \label{abb2}}
+ \parpic[r]{
+  \includegraphics[height=5.0cm]{GP2-DI-abb2.png}
+ } 
+ 
+Es seien $A$ und $A^{'}$ zwei Punkte (Abb. \ref{abb2}) der Wellenfläche des in horizontaler 
+Richtung eintretenden Lichtstrahls. Sie bilden die Erregungszentren zweier sich mit
+unterschiedlicher Geschwindigkeit $v$ und $v^{'}$ ausbreitender Elementarwellen. Nach einer 
+kurzen Zeit $dt$ geht die Wellenfläche durch die gemeinsame Berührende $BB^{'}$ , der
+Schnittpunkt $M$ dieser Linie mit der Vertikalen $AA^{'}$ ist der Krümmungsmittelpunkt 
+des Lichtstrahls.\\
+Sein Abstand von $A$ ist der Krümmungsradius $r$ , er ergibt sich aus der Ähnlichkeit 
+der Dreiecke $ABM$ und $ACA^{'}$ . Wird der Abstand $AA^{'}$ zu $dy$ und der Unterschied 
+von $v$ und $v^{'}$ zu $dc$, so folgt:
+
+\begin{equation}
+\frac{dy}{r} = \frac{dv}{v}
+\end{equation}
+
+. Mit 
+
+\begin{equation}
+\left| \frac{dv}{v} \right| = \frac{dn}{n} \quad \text{und} \quad 
+ \left| \frac{dy}{r} \right| = \frac{dn}{n}
+\end{equation}
+
+ergibt sich schließlich
+
+\begin{equation} \label{kruemmung}
+\frac{1}{r} = \frac{1}{n} \cdot \frac{dn}{dy}
+\end{equation}
+
+In manchen Fällen kann der Zusammenhang zwischen Konzentration und Lichtbrechung 
+einer Lösung herangezogen werden, um den Verlauf von Diffusionsvorgängen zu 
+messen, da die Brechzahl für monochromatisches Licht von der Anzahldichte der 
+wirksamen Moleküle abhängt.\\
+Demzufolge ändert sich in der Diffusionszone zweier mischbarer Flüssigkeiten sowohl
+Konzentration als auch Brechzahl stetig. In diesem Gebiet mit einem Brechzahlgradienten
+werden gekrümmte Lichtstrahlen beobachtet.\\
+Die Abb. \ref{abb3} zeigt den Ausschnitt aus einer Küvette, die zwischen den beiden parallelen
+Platten $P_1$ und $P_2$ eine Lösung enthält, deren Brechzahl nach oben (in der positiven $y$-Richtung) 
+abnimmt.
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centerline{\includegraphics[height=6cm]{GP2-DI-abb3.png}} 
+\fi 
+\captionof{figure}{Schematische Darstellung eines Lichtbündels in einem Medium mit
+abnehmender Brechzahl in der positiven $y$-Richtung \label{abb3}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+Trifft von links kommend ein paralleles Lichtbündel $L$ senkrecht auf $P_1$ , so wird es im
+weiteren Verlauf in das Gebiet der größeren Brechzahl hinein gekrümmt. Der Grad der
+Krümmung wird durch die Gleichung (\ref{kruemmung}) angegeben, in der $r$ den Krümmungsradius
+des Lichtbündels und n die Brechzahl des Küvetteninhalts an dieser Stelle bedeuten.
+Die Grenzfläche von $P_2$ wird von dem Bündel nicht mehr senkrecht getroffen, es wird
+daher beim Austritt in die Luft gebrochen.
+
+\medskip
+
+Dabei gilt:
+
+\begin{equation} \label{alpha}
+\beta = \frac{n}{n_0} \cdot \alpha \quad \text{und} \quad 
+\frac{x}{r} \approx \alpha
+\end{equation}
+
+Somit wird
+
+\begin{equation}
+\beta = \frac{x}{n_0} \cdot \frac{dn}{dy} \approx \frac{Y}{E}
+\end{equation}
+
+wobei $x$ die Dicke der Küvette, $n_0$ die Brechzahl von Luft, $E$ die Entfernung zwischen
+Küvette und Schirm bedeuten und $Y$ angibt, wie weit sich der Auftreffpunkt des
+Lichtbündels auf dem Schirm von der geradlinigen Verlängerung des Lotes im Austrittspunkt
+entfernt.
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centerline{\includegraphics[width=13cm]{GP2-DI-prinzip.png}} 
+\fi 
+\captionof{figure}{Schema des experimentellen Aufbaus \label{prinzip}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+Für den Fall, dass in einer Küvette eine Lösung der Brechzahl $n_2$ über eine andere, mit ihr
+mischbare, mit der größeren Brechzahl $n_1$ geschichtet wurde, werden beide im Laufe der
+Zeit ineinander diffundieren. Die resultierende Brechzahl der entstehenden Mischung kann als
+linear abhängig von der Konzentration angesehen werden, so dass im ersten oder zweiten
+\textsc{Fick}schen Gesetz die Konzentration jeweils durch die Brechzahl ersetzt werden kann.
+
+\medskip
+
+Soll also der Diffusionskoeffizient $D$ bestimmt werden, ist die Beziehung (\ref{diffgl}) zu
+integrieren. Für den Fall, dass die Grenze zwischen den beiden Lösungen zu der Zeit $t = 0$
+bei $y = 0$ liegt, gilt:
+
+\begin{align*}
+n=n_1 \quad \text{bei} \quad y=+ \infty \\
+n=n_2 \quad \text{bei} \quad y=- \infty
+\end{align*}
+
+und für jeden Wert von $t$:
+
+\begin{equation} \label{brechzahl}
+n = \frac{n_1 + n_2}{2} \quad \text{bei} \quad y=0
+\end{equation}
+
+Es ergibt sich also:
+
+\begin{equation}
+n = n_2 + \frac{n_1 - n_2}{2} \cdot \left[ 1 - \frac{2}{\sqrt{\pi}} 
+ \int\limits_0^{y/2\sqrt{Dt}} \! \mbox{e}^{{-y^{'}}^2} \, dy^{'} \right] 
+\end{equation}
+
+und
+
+\begin{equation}
+\frac{dn}{dy} = - \frac{n_1 - n_2}{2 \sqrt{\pi D t}} \cdot \mbox{e}^{- \frac{y^2}{4Dt}}
+\end{equation}
+
+Bei $y=0$ durchläuft $\frac{dn}{dy}$ ein Maximum:
+
+\begin{equation}
+\left( \frac{dn}{dy} \right)_{y=0} = - \frac{n_1 - n}{2 \sqrt{\pi D t}}
+\end{equation}
+
+Nach Einsetzen von Gl. (\ref{brechzahl}) in Gl. (\ref{alpha}) ergibt sich die Beziehung für die Ermittlung des
+Diffusionskoeffizienten:
+
+\begin{equation} \label{diffkoeff}
+D = \frac{1}{Y_{max}^2} \cdot \frac{x^2 E^2 (n_1 - n_2)^2}{4 \pi n_0^2 t}
+\end{equation}
+
+Damit wird es möglich aus einer geeigneten grafischen Darstellung der Abhängigkeit
+$Y_{max} = f (t)$ den Diffusionskoeffizienten $D$ zu bestimmen.
+
+\section{Versuchsdurchführung}
+
+In einer Küvette K werden die beiden Flüssigkeiten sorgfältig übereinandergeschichtet. Ein Spalt
+S, der unter 45° gegen die Waagerechte geneigt ist, wird auf dem Projektionsschirm F abgebildet.
+Die Lichtstrahlen, die den Trog in verschiedener Tiefe ($y$-Richtung) durchsetzen, werden
+entsprechend dem Konzentrationsgefälle abgelenkt. Die maximale Ablenkung $Y_{max}$ kann aus dem
+Projektionsbild entnommen werden (Abb. \ref{prinzip}). Mit der Messung von $Y_{max}$ kann ab Werten von $25 \ldots
+30 ~\mathrm{cm}$ begonnen werden.
+
+\medskip
+
+Die Diffusionsküvette und die Vorratsbehälter sind in Abb. \ref{abb4} schematisch dargestellt. 
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centerline{\includegraphics[width=8cm]{GP2-DI-kurz-aufbau}} 
+\fi 
+\captionof{figure}{Diffusionsküvette \label{abb4}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+Zur Herstellung der Trennschicht sind folgende Schritte erforderlich:
+	
+\begin{itemize}
+ \item Füllen der Vorratsbehälter B1 mit der \ce{NaCl}-Lösung und B2 mit destilliertem Wasser.
+ \item Füllen der Küvette (Diffusionsgefäß) mit destilliertem Wasser aus B2 nach B3.\\
+ \textbf{Achtung:} Sehr langsam füllen um Luftblasen in den Leitungen und in der Küvette zu
+ vermeiden. Stellung des Zweiwegehahns H1 beachten.
+ \item Unterschichten der \ce{NaCl}-Lösung aus B1, bis die Trennschicht oberhalb von Hahn H4 steht.\\
+ \textbf{Achtung:} Sehr langsam unterschichten, um ein Durchmischen in größeren Teilen der
+ Küvette zu vermeiden.
+ \item Herstellen einer scharfen Trennschicht mittels Tropfhahn H4.\\
+ \textbf{Achtung:} Nach Bedarf Wasser aus B3 oder \ce{NaCl}-Lösung aus B1 nachströmen lassen
+\end{itemize}
+
+
+\frage{Wie hängt die Diffusionskonstante von der Temperatur ab?}
+\frage{Was versteht man unter der Diffusionsgeschwindigkeit und wie hängt sie mit der
+Diffusionskonstanten zusammen?}
+\frage{Wie ist die grafische Darstellung $Y_{max}=f(t)$ zu gestalten, um den Anstieg in Gleichung (\ref{diffkoeff}) zu bestimmen?}
+ 
+\end{document}

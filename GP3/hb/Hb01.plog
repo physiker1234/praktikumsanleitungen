@@ -1,0 +1,17 @@
+Chikrii SoftLab pseudoTeX 1.1 report.
+http://www.tex2word.com, mailto: support@tex2word.com
+
+Hb01.tex (Ln 11) Syntax Error: Undefined control sequence (\footheight)
+Hb01.tex (Ln 17) Error: Environment (picture) undefined
+Hb01.tex (Ln 18) Syntax Error: Undefined control sequence (\put)
+Hb01.tex (Ln 19) Syntax Error: Undefined control sequence (\framebox)
+Hb01.tex (Ln 20) Error: Environment (minipage) undefined
+Hb01.tex (Ln 28) Syntax Error: extra '}' in macro argument
+Hb01.tex (Ln 29) Syntax Error: Undefined control sequence (\put)
+Hb01.tex (Ln 30) Syntax Error: Undefined control sequence (\framebox)
+Hb01.tex (Ln 31) Error: Environment (minipage) undefined
+Hb01.tex (Ln 38) Syntax Error: extra '}' in macro argument
+Hb01.tex (Ln 44) Syntax Error: Undefined control sequence (\parbox)
+Hb01.tex (Ln 60) Error: Environment (minipage) undefined
+Hb01.tex (Ln 66) Syntax Error: Missing $ inserted
+Hb01.tex (Ln 66) Syntax Error: Missing $ inserted

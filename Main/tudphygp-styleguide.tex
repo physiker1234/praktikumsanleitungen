@@ -1,0 +1,155 @@
+\documentclass{tudphygp}
+\usepackage{xcolor,verbatim,moreverb,listings}
+\lstset{basicstyle=\footnotesize\ttfamily}
+
+\author{Jeffrey Kelling,Felix Lemke,Stefan Majewsky}
+\versuch[]{Styleguide}{Styleguide}
+
+% Darstellung von Codebeispielen: Zuerst muss der Code zwischen \begin{code} und \end{code} notiert werden. Danach kann das Codebeispiel mit \printcode ausgegeben werden. (Achtung: Nach \end{code} wird aus technischen Gründen alles weitere auf derselben Zeile ignoriert!)
+\def\code{\begingroup\verbatimwrite{\jobname.code.tmp}}
+\def\endcode{\endverbatimwrite\endgroup}
+\newcommand\printcode{
+ \par\fcolorbox{gray!20}{gray!20}{
+  \begin{minipage}{\linewidth*3/5-1.5em}
+   \vspace*{-0.5em}
+   \lstinputlisting{\jobname.code.tmp}
+   \vspace*{-0.5em}
+  \end{minipage}
+ }\hspace{0.4em}\fbox{
+  \begin{minipage}{\linewidth*2/5-1.5em}
+   \input{\jobname.code.tmp}
+  \end{minipage}
+ }\par
+}
+
+\def\TODO#1{\par{\color{red}\textbf{TODO:~}#1}\par}
+
+\begin{document}
+
+\maketitle
+
+\section{Vorwort}
+
+Das vorliegende Dokument fasst die Regeln zusammen, die wir für uns während der Überarbeitung der Grundpraktikums-Anleitungen erarbeitet haben, um einen hohen Grad an Konsistenz zwischen den verschiedenen Anleitungen zu erreichen, und grundlegende typografische Regeln einfach verständlich zu dokumentieren. Wir hoffen, dass diese Ratschlagssammlung den uns nachfolgenden Bearbeitern ermöglicht, den Satzstil der Anleitungen aufzugreifen und Überarbeitungen in einer übersichtlichen und angenehm lesbaren Form einzubringen.
+
+\section{Dokumentstruktur}
+
+Die Anleitungen sollten grundlegend wie folgt gegliedert sein:
+\begin{itemize}
+ \item Aufgabenstellung
+ \item Theoretische Grundlagen
+ \item Versuchsdurchführung
+ \item (nach Bedarf) Anhang
+ \item (implizit) Fragen/Literatur
+\end{itemize}
+Wir empfehlen auch die Aufteilung der Kapitel entlang dieser Struktur, allerdings kann man davon auch abweichen. Die Aufgabenstellung sollte in Platzanleitung und Anleitung identisch sein, und den grundlegenden Leitfaden zum Aufbau der folgenden Abschnitte darstellen.
+
+Sollten sich Aufgabenstellungen nur auf Physiker beziehen wird folgende Formatierung empfohlen:
+\begin{code}
+ \begin{itemize}
+  \item \emph{(Für Physikstudenten)} $\ldots$
+ \end{itemize}
+\end{code}
+\printcode
+
+Am Beispiel des Versuches "`Innere Reibung von Flüssigkeiten"' :
+\begin{itemize}
+ \item Geben Sie die Koeffizienten $A$ und $b$ der \emph{Andradeschen Gleichung}
+ \item \emph{(Für Physikstudenten)} Geben Sie die Standardabweichungen der Andradeschen Koeffizienten an. Berechnen Sie die \emph{Reynoldssche Zahl} $Re$ für die höchste Temperatur.
+\end{itemize}
+
+
+\section{Textsatz}
+
+Bei Definitionen und Aufzählungen derselben soll die \texttt{description}-Umgebung mit abschließendem Doppelpunkt in den Beschriftungen verwendet werden. Dasselbe gilt für sonstige betitelte Aufzählungen, hier sollte jedoch auf den Doppelpunkt verzichtet werden.
+%\TODO{Codebeispiel?} -- Nein.
+
+Für Zitate werden deutsche Anführungszeichen verwendet.
+
+\begin{code}
+ Falsch: ``englische Variante'' \\
+ Richtig: "`deutsche Variante"'
+\end{code}
+\printcode
+
+\section{Mathematischer Formelsatz}
+
+Beim Einbinden von Formeln in den Mengentext sollte mit Augenmaß vorgegangen werden:
+\begin{itemize}
+ \item Zu hohe Formeln erhöhen die Zeilenabstände und verringern den Grauwert, wodurch der Mengentext unruhig wirkt und schlechter zu lesen ist.
+ \item Bei zu langen Formeln besteht die Gefahr, dass sie nicht oder nicht richtig umgebrochen werden, was das Lesen erschwert.
+\end{itemize}
+
+Mehrzeilige herausgestellte Formeln sollten ausschließlich mit der \texttt{align}-Umgebung gesetzt werden. Wir empfehlen, die Ausrichtung auch im Code deutlich zu machen, damit andere Bearbeiter sich schneller einlesen können:
+
+\begin{code}
+ Formeln umstellen ist nicht schwer:
+ \begin{align*}
+  a^2 + b^2 &= c^2 \\
+        b^2 &= c^2 - a^2
+ \end{align*}
+\end{code}
+\printcode
+
+Formelnummern sollten nur vergeben werden, wenn die Formel wirklich später referenziert werden soll, oder einen für das Praktikum wichtigen Sinninhalt transportiert:
+
+\begin{code}
+ Formeln umstellen ist nicht schwer:
+ \begin{align}
+  a^2 + b^2 &= c^2 \nonumber\\
+        b^2 &= c^2 - a^2
+ \end{align}
+\end{code}
+\printcode
+
+Ein Name bzw. Beschreibung kann einer Formelzeile in einem \texttt{align} hinter einem zweiten \texttt{\&} hinzugefügt werden.
+
+\begin{code}
+ Formeln umstellen ist nicht schwer:
+ \begin{align*}
+  a^2 + b^2 &= c^2 &\text{Pythagoras}\\
+        b^2 &= c^2 - a^2
+ \end{align*}
+\end{code}
+\printcode
+
+
+Bei vektoriellen Größen ist darauf zu achten, dass ein eventueller Anstrich (wie in: $x'$) sich nicht mit dem Vektorpfeil überschneidet. Dafür ist bei Größen ohne unteren Index ein kleiner Abstand bzw. bei Größen mit Index ein kleiner negativer Abstand zwischen dem unteren Index und dem Anstrich zu verwenden:
+
+\begin{code}
+ Falsch: $\vec x'$, $\vec a_f'$
+ 
+ Richtig: $\vec x\,'$, $\vec a_f\!'$
+\end{code}
+\printcode
+
+Bei der Bildung von Gleichungsketten mit Trennsymbolen wie "`$\Rightarrow$"' oder Wörtern wie "`mit"' und "`und"' ist in herausgestellten Formeln um die Trennwörter bzw. -symbole ein Geviertabstand einzufügen. Steht die Formel im Text, so sollten im Allgemeinen keine Trennsymbole verwendet werden, sondern die Relation textuell formuliert werden, wobei die Verwendung von \lstinline{\text} vermieden werden sollte.
+
+\begin{code}
+ \[
+  a = b \quad\text{und}\quad c = d
+ \]
+ Daraus folgt $a = d$ wegen $b = c$.
+\end{code}
+\printcode
+
+Am Beginn einer Zeile (insb. in mehrzeiligen Formeln) sollte der Geviertabstand natürlich entfallen:
+
+\begin{code}
+ Formeln umstellen ist nicht schwer:
+ \begin{align}
+       a^2 + b^2 &= c^2 \nonumber\\
+  \to\quad b^2 &= c^2 - a^2
+ \end{align}
+\end{code}
+\printcode
+
+\TODO{Platzanleitung: Übernahme der Formelnummern mit refequation}
+\TODO{Formulierung der Aufgabenstellungen immer mit vollständigen Sätzen}
+\TODO{Zahlen und Größen immer mit num und SI, common-sense über das Aufschreiben von Einheiten}
+\TODO{Fettdruck nur bei Sicherheitshinweisen, ansonsten Betonungen bzw. Markierung neuer Begriffe mit emph}
+\TODO{Schreibung von Abkürzungen: "`z.~B."', aber auch "`s.~Tabelle~{\textbackslash}ref"'}
+\TODO{Verwendung von Trennlinien in Tabellen}
+\TODO{Jeffrey: Anpassen der align-Regeln (Beschriftung rechts mit zwei Et-Zeichen abtrennen)}
+
+\end{document}

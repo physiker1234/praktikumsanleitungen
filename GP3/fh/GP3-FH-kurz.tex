@@ -1,0 +1,131 @@
+\documentclass[platz]{tudphygp}
+\usepackage{tudphymd,mhchem,lmodern,listliketab,multirow}
+
+\versuch{Franck-Hertz-Versuch}{FH}
+
+\begin{document}
+\maketitle
+
+\section{Aufgabenstellung} 
+  \begin{enumerate}
+    \item Messen Sie die Anodenstromkurve $I_A(U_1)$ ($I_A$-Anodenstrom, $U_1$-Beschleunigungsspannung) einer mit 
+    Neon (\ce{Ne}) gefüllten Elektronenröhre bei drei verschiedenen Steuerspannungen $U_3$.
+    \item Nehmen Sie die Anodenstromkurve $I_A(U_1)$ einer mit Quecksilber (\ce{Hg}) gefüllten Elektronenröhre bei 
+    drei verschiedenen Temperaturen des \ce{Hg}-Dampfes ($\vartheta_1=\SI{175}{^\circ C}$, 
+    $\vartheta_2=\SI{180}{^\circ C}$, $\vartheta_1=\SI{185}{^\circ C}$) auf.
+    \item Bestimmen Sie aus den Lagen der Maxima des Anodenstromes ${U_1^\text{max}}_i$ ($i=2,\dots,N$) die mittlere 
+    Anregungsenergie von Quecksilber und Neon. Ermitteln Sie anhand der so bestimmten Anregungsenergien $E_a$ und 
+    den Termschemata der Elemente die Elektronenzustände nach der Stoßanregung. Berechnen Sie anschließend die 
+    Frequenz und die Wellenlänge der von den jeweiligen Atomen nach der Stoßanregung emittierten elektromagnetischen 
+    Strahlung
+    \item Überprüfen Sie durch eine geschickte Auftragung der Maxima des Anodenstromes 
+    $I_A^\text{max}(U_1^\text{max})$ der \ce{Hg}-Röhre (für $\vartheta_1=\SI{185}{^\circ C}$) die zu erwartende 
+    $U_2$-Abhängigkeit im Raumladungsgebiet der Elektronenröhre (Childsches-Raumladungsgesetz). Ermitteln Sie 
+    anschließend die Kontaktspannung $U_K$ zwischen Kathode und Anode.
+  \end{enumerate}
+
+\section{Hinweise zur Versuchsdurchführung}
+  Bauen Sie die Schaltung nach Abb. \ref{fig:betriebsgerät} auf, beginnen Sie Ihre Versuche mit der \ce{Ne}-Röhre.
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{betriebsgeraet.pdf}
+    \caption{Betriebsgerät mit \ce{Hg}-Röhre und Ofen des Franck-Hertz-Versuchs}
+    \label{fig:betriebsgerät}
+  \end{figure}
+
+\subsection{Aufbau\label{sec:aufbau}}
+  Verbinden Sie die \ce{Ne}-Röhre bzw. die \ce{Hg}-Röhre über ein 5-poliges Kabel und einem BNC-Kabel mit dem 
+  Betriebsgerät über die Anschlüsse (9) und (11) (Abb. \ref{fig:bedienelemente}).
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{bedienelemente.pdf}
+    \caption{Funktions- und Bedienelemente des Franck-Hertz-Betriebsgerätes}
+    \label{fig:bedienelemente}
+  \end{figure}
+  Bei der Verbindung der \ce{Hg}-Franck-Hertz-Röhre ist darauf zu achten, dass die Beschriftungen der \SI{4}{mm}-Stecker 
+  des 5-poligen Kabels mit denen der Buchsen auf der Frontplatte der Röhre übereinstimmen. Weiterhin ist für den Betrieb 
+  der \ce{Hg}-Röhre zusätzlich ein Temperatursensor (\ce{Ni Cr}-\ce{Ni}-Thermoelement) an den Anschluss (12) des 
+  Betriebsgerätes anzuschließen. Die Fühlerspitze des Thermoelements wird durch die Öffnung im Franck-Hertz-Ofen geführt 
+  und in der Höhe der Röhrenkathode positioniert. Des Weiteren ist der Ofen mittels der Anschlussleitung mit der 
+  Schukosteckdose auf der Rückseite des Betriebsgerätes zu verbinden. Der seitlich am Ofen befindliche Drehknopf ist auf 
+  Stellung 7 zu stellen. Es ist darauf zu achten, dass keine Kabel am Franck-Hertz-Ofen anliegen, da diese sonst während 
+  des Betriebs des Ofens "`verschmoren"'. \textbf{Achtung! Während des Betriebs des Franck-Hertz-Ofens nicht an das 
+  Gehäuse fassen!}\\ 
+  Zur Erfassung und Darstellung der Messwerte ist das Betriebsgerät (Anschluss 6) über ein RS232-Kabel mit der seriellen 
+  Schnittstelle des Computers zu verbinden.
+
+\subsection{Inbetriebnahme}
+  \textbf{Vor der Inbetriebnahme des Versuchsplatzes ist der Aufbau vom Betreuer abnehmen zu lassen!}
+
+  Inbetriebnahme:
+  \begin{enumerate}
+    \item Betriebsgerät an das Stromnetz (\SI{230}{V}) anschließen und mittels Netzschalter an der Rückseite einschalten.
+    \item Mit dem Tastschalter (3) am Betriebsgerät den Modus "`PC"' einstellen.
+    \item Computer und Monitor einschalten. Anschließend erfolgt die Anmeldung des Nutzers unter dem Passwort "`FH1"' am 
+    Messplatz 1 und unter "`FH2"' am Messplatz 2. Danach startet automatisch die Franck-Hertz-Messsoftware. Bitte warten 
+    bis das Programm vollständig geladen ist.
+  \end{enumerate}
+  
+\subsection{Aufnahme der Messwerte}
+  Das Messprogramm erkennt automatisch, ob eine Hg- oder eine Ne-Röhre angeschlossen ist.
+
+  \begin{enumerate}
+    \item Button "`Messaufnahme"' (roter Kreis) mittels Mausklick aktivieren.
+    \item In das sich danach öffnende Fenster die Betriebsparameter eintragen:\\\storestyleof{itemize}
+    \begin{listliketab}
+    \begin{tabular}{cll}
+      \textbullet & Mode & automatic control\\
+      \textbullet & X data & Voltage $U_1$ (bei Messung der Franck-Hertz-Kurve)\\
+                  &        & Time (bei Messung des Dunkelstromes $I_0$)\\
+      \textbullet & Channels & Current IA\\
+      \textbullet & Parameters & \\
+      \multicolumn{3}{l}{\begin{minipage}{\linewidth}
+      \renewcommand{\arraystretch}{1}
+      \begin{tabular}{|c|c|c|c|c|}\hline
+        Paramater  & Quecksilber            & Neon                 & $I_0$-\ce{Hg}      & $I_0$-\ce{Ne}\\\hline
+        $U1$       & Max. \SI{60}{V}        & Max. 85-\SI{99,9}{V} & 0                  & 0\\
+        $U2$       & 1-\SI{3}{V}            & 7-\SI{9}{V}          & 0                  & 0\\
+        $U3$       & --                     & 3-\SI{4}{V}          & --                 & 0\\
+        $UH$       & \SI{6,3}{V}            & 7-\SI{8}{V}          & \SI{6,3}{V}        & 7-\SI{8}{V}\\
+        Tsoll      & 175-\SI{185}{^\circ C} & --                   & \SI{185}{^\circ C} & --\\
+        tmax       & 1-\SI{3}{V}            & --                   & \SI{60}{s}         & \SI{60}{s}\\
+        $\delta t$ & 1-\SI{3}{V}            & --                   & \SI{0,1}{s}        & \SI{0,1}{s}\\\hline
+      \end{tabular}
+      \end{minipage}}\\
+      \textbullet & Display & Diagram\\
+      \textbullet & Continue & \\
+      \textbullet & \multicolumn{2}{p{0.95\linewidth}}{Bei Verwendung der \ce{Hg}-Röhre werden Sie durch das Erscheinen 
+      eines Fensters auf dem Monitor darauf hingewiesen, dass Sie zu warten haben, bis die eingestellte Solltemperatur 
+      erreicht ist.}\\
+      \textbullet & \multicolumn{2}{p{0.95\linewidth}}{Nach dem Erreichen der Solltemperatur erscheint erneut ein Fenster, 
+      in dem Sie die Messung starten können. Die Messkurve wird in Echtzeit auf dem Monitor dargestellt.}\\
+    \end{tabular}
+    \end{listliketab}\\
+  \end{enumerate}
+
+\subsection{Auswertung der Messdaten mit dem Messprogramm}
+  Das Messprogramm bietet die Möglichkeit, eine "`Peak"'-Analyse durchzuführen. Das heißt, die Maxima des Stromes aus der 
+  Messkurve zu extrahieren. Bevor der Menü-Punkt "`Peak"'-Analyse aktiviert wird, ist die Messkurve zu glätten, um 
+  Effekte des statistischen Rauschens herauszumitteln. Die geglättete Kurve wird danach in das Diagramm mit eingetragen 
+  (rechte Achse). Bezüglich der geglätteten Kurve ist dann die Peak-Analyse durchzuführen. Die Ergebnisse der 
+  Peak-Analyse ${U_1^\text{max}}_i$ und ${I_A^\text{max}}_i$ ($i=1,\dots,N$) sind in Tabellenform ins Protokollbuch zu 
+  übernehmen. Die Messwerte sind auf der Festplatte des Rechners unter dem Ordner /GrundpraktikumII/\-WS0506/\-Gruppexy 
+  (xy-Gruppennummer) zu speichern.
+
+\subsection{Auswertung von Messdaten in "`Origin"'}
+  Das von der Firma Phywe gelieferte Auswerteprogramm ist nicht in der Lage, mehrere Messkurven in einem Diagramm 
+  darzustellen, was die Untersuchung des Einflusses der einzelnen Messparameter auf den Verlauf der Franck-Hertz-Kurve 
+  erschweren würde. Deshalb sind die Messdaten über die Zwischenablage in das Programm "`Origin"' einzufügen und dort in 
+  entsprechenden Diagrammen darzustellen und von dort aus auch auszudrucken. "`Origin"' kann auch genutzt werden, um 
+  recht komfortabel und schnell lineare Regressionsanalysen durchzuführen.
+  
+\subsection{Wechsel der Franck-Hertz-Röhren}
+  \begin{itemize}
+    \item Funktion (3) am Betriebsgerät auf "`manuell"' stellen.
+    \item Betriebsgerät am Netzschalter (Rückseite des Betriebsgerätes) ausschalten.
+    \item Andere Röhre an das Betriebsgerät über die Anschlüsse (9) und (11) anschließen. Dabei sind die Hinweise unter 
+    \ref{sec:aufbau} zu beachten.
+    \item Betriebsgerät am Netzschalter einschalten.
+    \item Funktion (3) am Betriebsgerät auf "`PC"' stellen.
+  \end{itemize}
+\end{document}

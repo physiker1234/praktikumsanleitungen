@@ -1,0 +1,276 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd,mhchem}
+
+\versuch{Elektrolytischer Trog}{ET}
+\author{M.~Kreller,i.A. Dr.~Escher}
+\bearbeitet{A.~Otto}{}
+
+\buch{1}{A.~Recknagel}{Physik: Schwingungen, Wellen, Wärmelehre}{Technik-Verlag}{Berlin 1990}
+\buch{2}{W.~H.~Westphal}{Physikalisches Praktikum}{Vieweg-Verlag}{Braunschweig 1974}
+\buch{3}{G.~Wunsch, H.~G.~Schulz}{Elektromagnetische Felder}{Verlag Technik}{Berlin 1989}
+\buch{4}{K.~Simonyi}{Theoretische Elektrotechnik}{Verlag der Wissenschaften}{Berlin 1989}
+\buch{5}{L.~Bergmann, C.~Schaefer}{Lehrbuch der Experimentalphysik, Band 2: Elektromagnetismus}{Verlag de Gruyter}{Berlin 1999}
+\buch{6}{F.~X.~Eder}{Moderne Messmethoden der Physik}{Verlag der Wissenschaften}{Berlin 1960}
+\buch{7}{K.~Küpfmüller}{Einführung in die theoretische Elektrotechnik}{Springer}{Berlin 1990}
+\buch{8}{K.~Lunze}{Einführung in die Elektrotechnik}{Hüthig}{Berlin 1991}
+\buch{9}{H.~Niedrig}{Physik}{Springer-Verlag}{Berlin, Heidelberg 1992}
+
+\begin{document}
+\maketitle
+
+\section{Aufgabenstellung}
+\begin{enumerate}
+\item Für zwei bis drei Elektroden-Anordnungen im elektrolytischen Trog sind die Potentiallinien zu messen und zu zeichnen.
+\item Daraus werden die Verschiebungslinien konstruiert und die Kapazitäten bestimmt.
+\item Für einfache Geometrien sind die gemessenen C-Werte mit den berechneten zu vergleichen.
+\end{enumerate}
+
+\section{Allgemeine Grundlagen}
+\subsection{Zur Elektrostatik ebener Felder}
+	
+\textbf{Raum:} Die Grundgleichungen der Elektrostatik lauten im Vakuum:
+\begin{equation}
+\operatorname{rot}\vec E=0\quad(a)\quad;\quad \operatorname{div}\vec E=\frac{\rho_L}{\epsilon_0}
+\quad(b)
+\label{rot}
+\end{equation}
+mit $\rho_L=\frac{Q}{V}$ als Ladungsdichte. Oft muß aus gegebener Ladungsverteilung $\rho_L\left(\vec r\right)$ die Feldverteilung $\vec E(\vec r)$ ermittelt werden. 
+Dazu wird mit
+\begin{equation}
+\vec E=-\operatorname{grad}\varphi=-\frac{\partial\varphi}{\partial\vec r}
+\end{equation}
+die Potentialfunktion $\varphi $ eingeführt, was mit Gl. (\ref{rot}b) zur Poisson-Gleichung
+\begin{equation}
+-\operatorname{div} \vec E=\operatorname{div}\operatorname{grad}\varphi\equiv\Delta_L\varphi
+=-\frac{\rho_L}{\epsilon_0}
+\label{p}
+\end{equation}
+führt ($\Delta_L$ = Laplace-Operator). Im ladungsfreien Raum (zwischen den Elektroden) ist $\rho_L(r)=0$ und Gl. \eqref{p} 
+wird zur Laplace-Gleichung $\Delta_L\varphi=0$.\\\\
+\textbf{Ebene:} Sie lautet in der  x-y-Ebene in karthesischen bzw.
+Zylinderkoordinaten (räumliche Zylinderkoordinaten mit $\frac{\partial\varphi}{\partial z}=0)$
+\begin{equation}
+\frac{\partial ^2 \varphi}{\partial x^2}+\frac{\partial ^2 \varphi}{\partial y^2}=0\quad(a)
+\quad\text{bzw.}\quad
+\frac{1}{r}\frac{\partial}{\partial r}(r\frac{\partial\varphi}{\partial r})
++\frac{1}{r^2}(\frac{\partial ^2 \varphi}{\partial \alpha^2})=0\quad(b) 
+\label{L}
+\end{equation}
+Für den rotationssymmetrischen \textbf{Zylinderkondensator} vereinfacht sich die Gl. (\ref{L}b) zu
+\begin{equation}
+\frac{1}{r}\frac{\partial \varphi}{\partial r}+\frac{\partial^2\varphi}{\partial r^2}=0
+\quad\text{mit}\quad
+\varphi_2-\varphi_1=A^*(ln\,R_a-ln\,R_i)\quad{\rm und}
+\quad E=A^*\cdot\frac{1}{r}
+\label{Z1}
+\end{equation}
+Bei der Lösung der Gln. \eqref{L} und \eqref{Z1}\footnote{Zur Lösung von räumlichen Potentialgleichungen kann die Methode der
+finiten Elemente (heute vielfach als Software) herangezogen werden. In der Ebene können zusätzlich manche
+Probleme mit der konformen Abbildung auf einfache und bekannte Geometrien zurückgeführt und gelöst werden.},
+auch im Raum, müssen mit den Integrationskonstanten die \textbf{Randbedingungen} erfüllt werden:
+\begin{enumerate}
+\item nach Dirichlet: Der Wert von $\varphi$ an der Oberfläche ist festgelegt (z.B. Metallelektrode hat konstantes Potential).
+\item nach von Neumann: Die Richtungsableitung des Feldes senkrecht zur Oberfläche ist festgelegt 
+(z.B. die Feldlinien münden senkrecht in eine Metalloberfläche ein).
+\end{enumerate}
+
+\newpage
+\subsection{Elektrolytischer Trog}
+
+\piccaption{Prinzip des elektrolytischen Trogs \label{fig:prinzip_trog}}
+\parpic[r]{\includegraphics[width=\linewidth/10*5]{abb1}}
+In vielen Fällen wurden und werden elektrostatische Fragestellungen (auch Potentialströmungen betreffend) 
+experimentell an zweidimensionalen Modellen mit Hilfe des elektrolytischen Trogs\footnote{Anstelle des elektrolytischen Troges kann für gleiche Zwecke
+auch leitfähiges Papier benutzt werden, wobei die Elektroden durch dicke Striche mit weichem Bleistift markiert werden} gelöst.
+Dieser ist entsprechend Abb. \ref{fig:prinzip_trog} eine sehr flache, mit einer verdünnten Salzlösung gefüllte
+Schale. Er stellt für den Wechselstrom $I$ einen flächenhaften elektrischen Leiter zwischen den beiden beliebig geformten Elektroden dar.\\\\
+{\bf Ohmsches Gesetz:} Ein parallel zu den Feldlinien (Stromlinien) und senkrecht zu den Potentiallinien herausgeschnittenes Volumenelement 
+$\Delta V=h \Delta r \Delta s$ hat wegen $R=\frac{\rho\cdot l}{A}$ den elektrischen Widerstand
+\begin{equation}
+\Delta R=\frac{\rho\Delta r}{h\Delta s}=\frac{\Delta r}{\sigma h\Delta s}
+\label{rho}
+\end{equation}
+Aufgrund der Spannungs- (Potential-) Differenz zwischen den beiden Potentiallinien (a,b)
+\begin{equation}
+E\Delta r=\int^b_a {\vec E\diff\vec r}=-(\varphi_b-\varphi_a)=-\Delta U
+\label{pot}
+\end{equation}
+fließt über den Teilwiderstand $\Delta R$ der Strom $\Delta I$ bzw. die Stromdichte $j$
+\begin{equation}
+\Delta I=\frac{\Delta U}{\Delta R}=\frac{E\Delta rh\Delta s}{\rho\Delta r} \quad
+\quad\text{bzw.}\quad
+j=\frac{\Delta I}{\Delta A}=\frac{\Delta I}{h\Delta s}=\frac{E}{\rho}=\sigma E
+\label{feld}
+\end{equation}
+Bei konstanten Werten des spezifischen Widerstandes $\rho=1/\sigma$ und der Höhe $h$ der Lösung findet man 
+demnach die erwartete Proportionalität zwischen Stromdichte und Feldstärke.\\
+Üblicherweise werden die ebenen Schnitte der (Äqui-) Potentialflächen, d.h. die Potentiallinien in einer Brückenschaltung gemessen.
+An Orten großer Inhomogenität (z.B. in der Nähe spitzer Elektroden) sind Stromdichte und Feldstärke höher, der Spannungsabfall pro
+Länge $\Delta r$ größer und die Potentiallinien liegen dichter.\\
+Die Feldlinien (Verschiebungslinien) stehen senkrecht auf den Poteniallinien. Im Falle der abgeglichenen Meßbrücke entspricht die 
+Teilspannung $U_1$ an der Sonde dem mit dem Spannungsteiler ($R_1$,$R_2$) voreingestellten Wert.
+Führt man bei konstanter Stellung des Spannungsteilers die Sonde (durch Probieren) auf einer (Äqui-) Potentiallinie, 
+so bleibt die Brücke abgeglichen. Nach diesem Schema werden für eine dekadische Voreinstellung des Spannungsteilers
+die den Spannungswerten ($U_0$: erste Elektrode; $U_1;U_2;\dots;U_{10}$: zweite Elektrode) zugeordneten Potentiallinien aufgenommen.\\
+
+\subsection{Potentiallinien und Feldlinien}
+
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth/10*8]{abb2}
+\caption{Feldlinien (Stromlinien) und Potentiallinien beim Zylinderkondensator (a) und komplizierterer Geometrie (b)}
+\label{fig:feldlinien}
+\end{figure}
+Aus den gemessenen Potentiallinien müssen die Feldlinien konstruiert werden.
+Am \textbf{Beispiel des Zylinderkondensators} werden die dazu notwendigen Beziehungen erläutert. Wegen
+\begin{equation}
+CU=Q=\int{\epsilon\epsilon_0E\diff A}\quad
+\quad \diff\varphi=\diff U=\frac{Q}{\epsilon\epsilon_0A}\diff r
+\end{equation}
+und $A^*=\frac{Q}{2\pi \epsilon\epsilon_0h}$ (siehe Gl. \eqref{Z1}) folgt mit $A=2\pi rh$ und $E=\frac{Q}{2\pi\epsilon\epsilon_0hr}$
+für den Kehrwert der Kapazität des Zylinderkondensators
+\begin{equation}
+\frac{1}{Q}\int E\diff r=\frac{U}{Q}=\frac{1}{C}=\frac{1}{2\pi \epsilon\epsilon_0h}\int_{R_i}^{R_a}\frac{\diff r}{r}
+\label{zyl}
+\end{equation}
+woraus die normierte Kapazität pro Länge $h$ (analog zur Koaxialleitung) folgt zu
+\begin{equation}
+\frac{C}{\epsilon\epsilon_0 h}=\frac{2\pi}{\ln\left(\frac{R_a}{R_i}\right)}
+\label{Zylko}
+\end{equation}
+In der Abb. \ref{fig:feldlinien}a sind für $R_a=\SI{10}{cm}$, $R_i=\SI{2,5}{cm}$ sowie $\varphi_2-\varphi_1=\SI{100}{V}$
+mit $A^*=\frac{\SI{100}{V}}{\ln(10/\num{2,5})}=\SI{72,13}{V}$ Potentiallinien und Feldlinien gezeichnet.\\
+Für die Doppelleitung (Lecherleitung), d.h. zwei gleiche Zylinderelektroden (Radius $r$, Abstand $d$) liefert die Theorie:
+\begin{equation}
+\frac{C}{\epsilon\epsilon_0h}=\frac{\pi}{\ln\left(\frac{d}{2r}+\sqrt{(\frac{d}{2r})^2-1}\right)}    
+\label{Dopp}
+\end{equation}
+Im allgemeinen Fall (z.B. bei Abb. \ref{fig:feldlinien}b) werden, möglichst ausgehend von einer Symmetrieachse, die Feldlinien
+so konstruiert, daß sie mit den Potentiallinien Planquadrate bilden ($\Delta r=\Delta s$). Dazu zeichnet man, beginnend auf einer Symmetrielinie,
+im halben Abstand senkrecht zwischen zwei Potentiallinien im Abstand $\Delta s$ von der Symmetrielinie einen Punkt (x). Die Verbindung
+derartiger Punkte ergibt die Feldlinie.
+
+\subsection{Graphische Bestimmung der Kapazität aus den Potentiallinien und Feldlinien}
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c||c|c|c|c|c|}\hline
+$R_a$ & $R_i$ & $C_{th}$ & $\Delta\varphi$ & $\Delta r$ & $n$ & $m$ & $\frac{n}{m}$\\
+\SI{}{cm} & \SI{}{cm} & $\frac{2\pi}{\ln\frac{Ra}{Ri}}$ & $\varphi_2-\varphi_1$ & \SI{}{cm} & $\frac{2\pi R_a}{\Delta s}$ & $\frac{\varphi_2-\varphi_1}{\Delta \varphi}$ & \\[.5em]\hline\hline
+$10$ & $9$ & $\num{59,63}$ & $\num{0,1}$ & $\num{0,105}$ & $\num{599,5}$ & $10$ & $\num{59,9}$\\\hline
+" &  " &  " & $\num{0,01}$ & $\num{0,0105}$ & $5966$ & $100$ & $\num{59,7}$\\\hline\hline
+$10$ & $1$ & $\num{2,73}$ & $\num{0,1}$ & $\num{2,06}$ & $\num{30,54}$ & $10$ & $\num{3,05}$\\\hline
+" & " & " & $\num{0,01}$ & $\num{0,228}$ & $276$ & $100$ & $\num{2,76}$\\\hline\hline
+$12$ & $\num{0,5}$ & $\num{1,98}$ & $\num{0,1}$ & $\num{3,27}$ & $\num{23,1}$ & $10$ & $\num{2,31}$\\\hline
+" & " & " & $\num{0,01}$ & $\num{0,375}$ & $201$ & $100$ & $\num{2,01}$\\\hline
+\end{tabular}
+\caption{Für verschiedene Zylinderkondensatoren berechnete normierte Kapazitäten $C_{th}$ (Gleichung \eqref{Zylko}) im Vergleich zu den in zwei Näherungen
+für $\Delta r$ berechneten $n$ und $m$-Werten und dem Verhältnis $\frac{n}{m}$ (überprüfen!)}
+\label{tab:th_vs_mess}
+\end{table}
+Die aufgenommenen Potentiallinien und die konstruierten
+Feldlinien werden werden gezählt:
+\begin{enumerate}
+\item $m$ = Anzahl der Potentiallinien (inklusive einer Elektrode; ohne diese Elektrode müßte $m+1$ eingesetzt werden)
+\item $\Delta r$ = Abstand zweier Potentiallinien in Feldrichtung (z.B. außen)
+\item $n$ = Anzahl der Feldlinien (Verschiebungslinien)
+\item $\Delta s$ = Abstand der Verschiebungslinien senkrecht zur Feldrichtung (ebenfalls außen)
+\end{enumerate}
+(meistens wird $\Delta s=\Delta r$ angenommen)\\
+Wegen $U=\varphi_2-\varphi_1=|\int E \diff r|$ gilt
+\begin{equation}
+E=\frac{U}{m \Delta r}
+\end{equation}
+Mit $A=n h \Delta s$ wird
+\begin{equation}
+Q=DA=\epsilon\epsilon_0Enh\Delta s=\epsilon\epsilon_0\frac{U}{m\Delta r}nh\Delta s
+\end{equation}
+Damit ergibt sich die normierte Kapazität pro Längeneinheit zu
+\begin{equation}
+\frac{C}{\epsilon\epsilon_0h}=\frac{Q}{U\cdot\epsilon\epsilon_0 h}=
+\frac{n\Delta s}{m\Delta r}=\frac{n}{m}
+\label{kap}
+\end{equation}
+mit $\Delta s= \Delta r$ als Verhältnis aus der Anzahl der Feldlinien und der Anzahl der Potentiallinien. Die auf diese Weise bestimmte
+Kapazität wird um so genauer, je dichter die Abstände $\Delta r$ genommen werden, wie die berechnete Tabelle \ref{tab:th_vs_mess} ausweist.
+
+\subsection{Elektrischer Widerstand}
+
+Auch der Gesamtwiderstand zwischen den beiden Elektroden ist bei bekannten
+$\rho$ und $h$ eindeutig durch die Elektrodenanordnung bestimmt und kann daher zur Ermittlung
+der Kapazität herangezogen werden. Jedes Planquadrat der Abb. \ref{fig:feldlinien} besitzt den gleichen Teilwiderstand (siehe Gleichugn \eqref{rho}). 
+Der Gesamtwiderstand ergibt sich durch $m$-fache Reihen- und $n$-fache Parallel-Schaltungdieses Teilwiderstandes mit
+\begin{equation}
+I=j\cdot A=\frac{U}{\rho m\Delta r}\cdot hn\Delta s
+\end{equation}
+zu
+\begin{equation}
+R=\frac{U}{I}=\frac{\rho m\Delta r}{hn\Delta s}=\frac{\rho m}{hn}
+\label{r}
+\end{equation}
+Vergleicht man die Gleichungen \eqref{kap} und \eqref{r}, so findet man die Beziehung
+\begin{equation}
+\frac{R}{\rho}=\frac{\epsilon\epsilon_0}{C}
+\end{equation}
+Widerstand und Kapazität verhalten sich bei vorgegebener Geometrie gegenläufig
+und es könnte durch Widerstandsmessungen ebenfalls die Kapazität bestimmt
+werden. Dazu wäre es notwendig, den spezifischen Widerstnd durch eine
+Kalibrierung zu bestimmen, z.~B.~mittels plattenförmiger Elektroden, die
+die rechteckförmige Schale ganz ausfüllen, so daß aus dem berechenbaren
+Gesamtwiderstand
+$R=\frac{\rho l}{h s}$ der spezifische Widerstand $\frac{\rho}{h}$
+für konstante Höhe h ermittelt werden kann.
+
+\subsection{Grenzfläche zweier Medien}
+
+Modifiziert man in einem begrenzten Flächenbereich des Troges die Flüssigkeitshöhe, z.B. durch Einlegen einer Plaste-Platte
+von $h_1$ auf $h_2$, so läßt sich die Grenzfläche zweier Medien und die Brechung der Feldlinien simulieren 
+($\epsilon_1\sim h_1$; $\epsilon_2\sim h_2$). Dabei gilt für die \textbf{Normalkomponenten}:
+\begin{equation}
+D_{n1}=D_{n2}\quad;\quad\frac{E_{n1}}{E_{n2}}=\frac{\epsilon_2}{\epsilon_1}\quad;\quad 
+j_n=\sigma E_n\quad;\quad\frac{j_{n1}}{j_{n1}}=\frac{h_1}{h_2}
+\end{equation}
+\textbf{Tangentialkomponenten:}
+\begin{equation}
+E_{t1}=E_{t2}\quad;\quad j_{t1}=j_{t2}\quad;\quad
+\frac{D_{t1}}{D_{t2}}=\frac{\epsilon_1}{\epsilon_2}
+\end{equation}
+Damit folgt für die Vektoren $\vec E$, $\vec D$ und $\vec j$ das gleiche Brechungsgesetz:
+\begin{equation}
+\frac{\tan\alpha_1}{\tan\alpha_2}=\frac{E_{n2}}{E_{n1}}=\frac{D_{t1}}{D_{t2}}=\frac{j_{n2}}{j_{n1}}=
+\frac{h_1}{h_2}=\frac{\epsilon_1}{\epsilon_2}
+\end{equation}
+
+\section{Experimente}
+
+\subsection{Zur Versuchsdurchführung}
+
+Zur Vermeidung von Polarisation des Elektrolyten (wässrige Salzlösung) wird eine Wechselspannung
+zur Speisung der Wheatstone'schen Brücke benutzt. Als Nullinstrument dient ein Multimeter oder besser ein Kopfhörer. Um die maximale Empfindlichkeit
+des menschlichen Ohres auszunutzen, sollte etwa bei \SI{800}{Hz} gearbeitet werden (Mückenton). Als Brückenwiderstand wird eine Dekade mit konstantem, den
+Innenwiderständen der Spannungsquelle einerseits und des Kopfhöhrers andererseits angepaßtem Widerstnd benutzt. Damit kann durch Variation
+der Stellung des Mittelabgriffes das Potential in dekadischen Stufen eingestellt werden.
+
+\subsection{Einfluß des Randes}
+
+Nur innerhalb einer geschlossenen Elektrode ist der Außenraum feldfrei und die Messungen werden durch die endlichen Abmessungen des Troges sowie
+der möglichen metallischen Ausführung seines Randes nicht beeinflußt. In allen anderen Fällen der nach außen offenen Feldverteilungen
+werden die Feldlinien und Potentiallinien durch den Rand modifiziert.
+\begin{description}
+\item[1. Der Rand ist ein Nichtleiter:] In der Nähe des Randes kann der Strom nur parallel zum Rand fließen.
+Damit werden die Potentiallinien senkrecht zur Gefäßwand verlaufen.
+\item[2. Der Rand ist ein Leiter:] Der Rand spielt die Rolle einer zusätzlichen Elektrode,
+auf dem die Feldlinien senkrecht stehen. Die Potentiallinien stehen parallel zur Gefäßwand.
+\end{description}
+
+\frage{Maxwellsche Gleichungen}
+\frage{Elektrostatisches Potential, Spannung, Feldstärke}
+\frage{Kapazität des Platten- und Zylinder-Kondensators}
+\frage{Grundlagen der Elektrostatik}
+\frage{Potentialgldeichung bei Zylindersymmetrie}
+\frage{Ohmsches Gesetz in differntieller Form; Kirchhoffsche Gesetze}
+\frage{Elektrolytische Leitfähigkeit und Polarisation}
+\frage{Wheatstonesche Brücke; Spannungsteiler}
+\frage{Kontrollieren Sie die Rechnungen zu Abb. \ref{fig:feldlinien}a!}
+\frage{Kontrollieren Sie die berechneten Werte der Tab. \ref{tab:th_vs_mess}!}
+
+\end{document}

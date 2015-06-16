@@ -1,0 +1,238 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd,subfigure}
+
+\versuch{Drillungen und Drehschwingungen}{DD}
+\author{L.~Jahn}
+\date{01.09.1998}
+\bearbeitet{M.~Kreller,J.~Kelling,F.~Lemke,S.~Majewsky}{}
+
+\buch{ilb}{W.~Ilberg (Hrsg.), M.~Krötzsch (Hrsg.) et.~al.}{Physikalisches Praktikum für Anfänger}{Teubner-Verlag}{Leipzig 1994}
+\buch{paus}{H.~J.~Paus}{Physik in Experimenten und Beispielen}{Verlag~C.-Hanser}{München 1995}
+\buch{gert}{C.~Gerthsen, H.~Vogel}{Physik}{Springer-Verlag}{Berlin, Heidelberg 1995}
+\buch{reck}{A.~Recknagel}{Physik: Mechanik}{Verlag Technik}{Berlin 1990}
+\buch{wal}{W.~Walcher}{Praktikum der Physik}{Teubner-Verlag}{Stuttgart 1989}
+\buch{kohl}{F.~Kohlrausch}{Praktische Physik, Band 1}{Teubner-Verlag}{Stuttgart 1996}
+\buch{berg}{W.~Bergmann}{Werkstofftechnik~I}{Verlag~C.-Hanser}{München 1989}
+\buch{pauf}{P.~Paufler, G.~E.~R.~Schulze}{Physikalische Grundlagen mechanischer Festkörpereigenschaften~I}{Vieweg Friedrich~\&~Sohn Verlag}{Wiesbaden 1985}
+\buch{schulz}{G.~E.~R.~Schulze}{Metallphysik}{Springer-Verlag}{Berlin 1982}
+
+\begin{document}
+\maketitle
+
+\section{Aufgabenstellung}
+
+Das Schubmodul eines Drahtes ist statisch und dynamisch zu bestimmen.
+
+\section{Elastische und plastische Verformung}
+
+\subsection{Mechanische Spannungen im isotropen Körper}
+
+Unter der Einwirkung einer äußeren Kraft deformiert sich ein Festkörper. Das Verhältnis aus Kraft $\vec F$ und Fläche $\vec A = A \cdot \vec n$ heißt \textbf{Spannung}. Je nachdem, wie diese Kraft bezüglich der Normalen $\vec n$ der Angriffsfläche gerichtet ist, unterscheidet man zwischen
+\begin{itemize}
+ \item Normalspannung: $\sigma = F_n/A$
+ \item Tangential- bzw. Schubspannung: $\tau = F_t/A$
+ \item allseitigem Druck: $p = F/A$
+\end{itemize}
+
+\subsection{Hooke'sches Gesetz}
+
+Die mit diesen Spannungen gekoppelten \textbf{Deformationen} $\Delta l_n$, $\Delta l_t$ und $\Delta V$ können reversibel (\textbf{elastisch}) oder bleibend (\textbf{plastisch}) sein. Es gibt die folgenden relativen Verformungen:
+\begin{itemize}
+ \item relative Längenänderung: $\varepsilon = \Delta l_n / l$
+ \item Schubwinkel: $\gamma = \Delta l_t / l$
+ \item relative Volumenänderung: $\Delta V / V$
+\end{itemize}
+
+\piccaption{
+ \label{fig::poissonzahl}
+ Zusammenhang zwischen den elastischen Konstanten \verweis{kohl}
+}
+\parpic[r]{
+ \includegraphics[width=6cm]{GP1-DD-Poissonzahl}
+}
+
+Sie hängen mit den auf einem Festkörper lastenden Spannungen wie folgt zusammen:
+\begin{subequations}
+ \begin{eqnarray}
+    \sigma &=& \varepsilon \cdot E = \frac{\Delta l_n}l \cdot E \label{sd02a} \\
+      \tau &=& \gamma \cdot G = \frac{\Delta l_t}l \cdot G      \label{sd02b} \\
+  \Delta p &=& -\frac{\Delta V}V \cdot K                        \label{sd02c}
+ \end{eqnarray}
+ Bei der Dehnung eines Drahtes beobachtet man weiterhin eine zur relativen Längenänderung $\varepsilon$ proportionale Verringerung des Drahtdurchmessers $d$, die \textbf{Querkontraktion}:
+ \begin{equation}
+  \frac{\Delta d}d = -\mu \cdot \frac{\Delta l_n}l              \label{sd02d}
+ \end{equation}
+\end{subequations}
+Die vier damit definierten elastischen Konstanten eines isotropen Körpers (Elastizitätsmodul $E$, Schubmodul $G$, Kompressionsmodul $K$ und Poissonsche Querkontraktionszahl $\mu$) sind nicht unabhängig. Vielmehr gilt:
+\begin{subequations}
+ \begin{eqnarray}
+  E &=& 3K \cdot (1 - 2\mu) \label{sd03a} \\
+  E &=& 2G \cdot (1 + \mu) \label{sd03b}
+ \end{eqnarray}
+\end{subequations}
+
+\picskip0
+\vspace*{-2em}
+
+Aus Abbildung \ref{fig::poissonzahl} bzw. aus obigen Gleichungen erkennt man außerdem die folgenden Bedingungen:
+\[
+ 0 < \mu < \num{0,5} \quad\text{und}\quad \frac E3 < G < \frac E2
+\]
+Die Tabelle \ref{tab::beispiele} zeigt Richtwerte für elastische Konstanten einiger Metalle, sowie deren Zerreißfestigkeit $\sigma_z$ (bezogen auf den Ausgangsquerschnitt $A_0$). Man beachte, dass die tatsächlichen Werte stark vom Herstellungsverfahren (Gießen, Walzen, Wärmebehandlung, evtl. vorherige überelastische Beanspruchungen) abhängen.
+
+\begin{table}[t]\centering
+ \begin{tabular}{|c|cccc|}
+  \hline
+  \textbf{Material} & $E / \SI{}{GPa}$ & $G / \SI{}{GPa}$ & $\mu$ & $\sigma_z / \SI{}{GPa}$ \\
+  \hline
+  $\alpha$-Eisen & \num{211} & \num{82}  & \num{0,28} & \num{2}    \\
+  Gusseisen      & \num{100} & \num{35}  & \num{0,25} & \num{0,3}  \\
+  Kupfer         & \num{130} & \num{46}  & \num{0,34} & \num{0,4}  \\
+  Zinn           & \num{50}  & \num{18}  & \num{0,36} & \num{0,04} \\
+  Aluminium      & \num{71}  & \num{26}  & \num{0,35} & \num{0,06} \\
+  Blei           & \num{16}  & \num{5,6} & \num{0,44} & \num{0,02} \\
+  Nickel         & \num{200} & \num{76}  & \num{0,31} & \num{0,50} \\
+  Messing        & \num{100} & \num{38}  & \num{0,37} & \num{0,50} \\
+  \hline
+ \end{tabular}
+ \caption{
+  \label{tab::beispiele}
+  Richtwerte elastischer Konstanten und der Zerreißfestigkeit \verweis{pauf} \verweis{schulz}
+ }
+\end{table}
+
+\section{Schubelastizität und Drillung}
+
+\subsection{Statische Methode}
+
+In diesem Versuch wird die Schubelastizität im Rahmen des Hooke'schen Gesetzes betrachtet. Für eine Vorbetrachtung sei ein isotroper, elastischer Quader der Höhe $l$ an der Basisfläche fixiert (Abb.~\ref{fig::wuerfel}). An der Deckfläche wirkt die (hinreichend kleine) horizontale Tangentialkraft $F_t$, sodass die Deckfläche um die Strecke $\Delta l_t$ horizontal verschoben wird und die vertikalen Seiten um den Schubwinkel $\gamma=\Delta l_t/l$ gekippt werden. Der Zusammenhang dieses Schubwinkels mit der Tangentialspannung $\tau = F_t/A = F_t/a^2$ ist in Gleichung \ref{sd02b} gegeben.
+
+Im Praktikumsversuch wirkt auf einen vertikal hängenden, am oberen Ende eingespannten zylindrischen (dicken) Draht am unteren Ende ein Kräftepaar (siehe gestrichelte Pfeil in Abb.~\ref{fig::zylinder}) und somit ein Drehmoment. Die Kräfte werden durch zwei an Seilen aufgehängte Massen $m$ erzeugt (Gesamtmasse $2m$). Greift die Kraft tangential an, so steht die Kraft senkrecht auf dem Ortsvektor $\vec r_s$ des Angriffspunktes bzgl. der Drahtachse ($r_s$ ist der Radius der Kreisscheibe, an der die Seile befestigt sind) und der Betrag des äußeren Drehmomentes vereinfacht sich zu:
+\begin{equation}
+ M_a = 2 r_s \cdot mg \label{dd01}
+\end{equation}
+Durch die eintretende Drillung des Drahtes entsteht ein rücktreibendes Drehmoment $M_\mathrm{el} = D \cdot \phi$, das linear vom Drillwinkel $\phi$ abhängt, wobei das Richtmoment $D$ eine Materialkonstante ist. Im Gleichgewichtsfall heben sich $M_a$ und $M_\mathrm{el}$ auf. Dann hängen $D$ und $\phi$ wie folgt mit der Drahtlänge $l$, dessen Radius $R$ sowie dem Schubmodul $G$ zusammen:
+\begin{subequations}
+ \begin{eqnarray}
+  \phi &=& \frac{2l \cdot M_a}{\pi R^4 \cdot G} \label{sd04a} \\[0.5ex]
+  D &=& \frac{\pi R^4 \cdot G}{2l}              \label{sd04b}
+ \end{eqnarray}
+ Unter Beachtung von Gleichung (\ref{dd01}) folgt somit:
+ \begin{equation}
+  \boxed{G = 4 \cdot \frac{gl \cdot r_s}{\pi R^4} \cdot \frac m\phi} \label{sd04c}
+ \end{equation}
+\end{subequations}
+
+\begin{figure}[t!]\centering
+ \subfigure[Schubelastizität am Würfel]{
+  \label{fig::wuerfel}
+  \includegraphics[width=0.3\linewidth]{GP1-DD-Wuerfel}
+ }
+ \hspace{1em}
+ \subfigure[Verdrillung am Zylinder]{
+  \label{fig::zylinder}
+  \includegraphics[width=0.25\linewidth]{GP1-DD-ZylinderDrillung}
+ }
+ \hspace{1em}
+ \subfigure[Aufteilung eines Zylinders in Hohlzylinder]{
+  \label{fig::zylinder-sektionen}
+  \includegraphics[width=0.25\linewidth]{GP1-DD-ZylinderAufteilung}
+ }
+ \caption{Zur statischen Bestimmung des Schubmoduls}
+\end{figure}
+
+\subsection{Dynamische Methode}
+
+Der eingespannte, vertikal hängende zylindrische Draht (Abbildung \ref{fig::zylinder}) wird leicht verdrillt und führt nach dem Loslassen harmonische Drehschwingungen um die Drahtachse aus, deren Schwingungsdauer $T$ gemessen wird. Diese hängt vom rücktreibenden Richtmoment $D$ und dem Trägheitsmoment $J$ der schwingenden Anordnung ab:
+\begin{subequations}
+ \begin{equation}
+  T = 2\pi \cdot \sqrt{\frac JD}            \label{sd05a}
+ \end{equation}
+ Um eine stabile Rotation zu ermöglichen, wird der Draht am unteren Ende mit einem Zylinder beschwert. Das Gesamtträgheitsmoment $J_1$ von Draht und Zylinder ist nicht bekannt. Nun misst man zunächst:
+ \begin{equation}
+  T_1 = 2\pi \cdot \sqrt{\frac{J_1}D}       \label{sd05b}
+ \end{equation}
+ In dieser Gleichung gibt es zwei Unbekannte ($J_1$ und $D$). Zur Bestimmung des Richtmomentes $D$ braucht man eine zweite Gleichung. Diese erhält man, indem man einen Zusatzzylinder mit dem Trägheitsmoment $J_2$ anhängt und die veränderte Schwingungsdauer
+ \begin{equation}
+  T_2 = 2\pi \cdot \sqrt{\frac{J_1 + J_2}D} \label{sd05c}
+ \end{equation}
+\end{subequations}
+misst. Nunmehr kann das unbekannte Trägheitsmoment in (\ref{sd05b}) durch Gleichung (\ref{sd05c}) eliminiert werden und für das Richtmoment gilt:
+\begin{equation}
+ \boxed{D = \frac{4\pi^2 \cdot J_2}{T_2^2 - T_1^2}}
+\end{equation}
+Ist der Zusatzzylinder ein regelmäßiger rotationssymmetrischer Hohlzylinder mit den Radien $r_a$~(außen) und $r_i$~(innen), so lautet dessen Trägheitsmoment (siehe Anhang, Abschnitt \ref{herleitung-traegheitsmoment}):
+\[
+ J_2 = \frac m2 \cdot (r_a^2 + r_i^2)
+\]
+
+\section{Anhang}
+
+\subsection{Zusammenhang zwischen den elastischen Konstanten}
+
+Dehnt man einen Würfel geringfügig allseitig, so gilt zunächst überschlägig:
+\begin{equation}
+ \frac{\Delta V}V = \frac{(l + \Delta l)^3 - l^3}{l^3} \approx 3 \cdot \frac{\Delta l}l
+ = 3\varepsilon = 3\frac{\sigma}E \quad\text{und}\quad E \approx 3K
+\end{equation}
+Berücksichtigt man jedoch in jeder Richtung die Querkontraktion, erhält man mit $\varepsilon_\parallel = \sigma/E$ und $\varepsilon_\perp = -\mu \cdot \varepsilon_\parallel$ eine relative Längenänderung $\varepsilon = \varepsilon_\parallel + 2 \cdot \varepsilon_\perp$ und damit
+\begin{equation}
+ \frac{\Delta V}V = 3\varepsilon = 3 \cdot (\varepsilon_\parallel + 2\varepsilon_\perp)
+ = 3 \cdot (1 - 2\mu) \cdot \varepsilon_\parallel = 3 \cdot (1 - 2\mu) \cdot \frac\sigma E,
+\end{equation}
+
+\piccaption{
+ \label{fig::scherung}
+ Berechnung der Gesamtdeformation am gescherten Würfel nach \verweis{paus}
+}
+\parpic[r]{
+ \includegraphics[width=5cm]{GP1-DD-Schubspannung}
+}
+
+woraus nach Umstellen die Gleichung (\ref{sd03a}) folgt. Zur Herleitung der Gleichung (\ref{sd03b}) betrachtet man die in Abbildung~\ref{fig::wuerfel} bzw. Abbildung~\ref{fig::scherung} skizzierte Scherung eines Würfels durch eine Tangentialspannung $\tau = F_t/A = F_t/a^2$. Diese kann auch durch eine Zugspannung in Richtung der Flächendiagonalen $d = a \cdot \sqrt2$ erreicht werden. Diese ändert sich somit um $\Delta d = \Delta a / \sqrt2$. Dieser Zugspannung
+\[
+ \sigma = \frac{F_t \cdot \sqrt2}{ad} = \frac{F_t}{a^2} = \tau
+\]
+entspricht in Richtung der anderen Flächendiagonalen die Druckspannung $p = \tau$. Die resultierende Elongation in der verlängerten Diagonalen setzt sich wie folgt zusammen:
+\[
+ \frac{\Delta d}d = \kla{\frac{\Delta d}d}_\mathrm{zug} + \kla{\frac{\Delta d}d}_\mathrm{druck}
+ = \frac\sigma E + \mu \cdot \frac pE = (1 + \mu) \cdot \frac\tau E
+\]
+Hieraus folgt Gleichung (\ref{sd03b}), wenn man noch berücksichtigt:
+\[
+ \frac{\Delta d}d = \frac12 \cdot \frac{\Delta a}a = \frac12 \cdot \gamma = \frac12 \cdot \frac\tau G
+\]
+
+\picskip0
+\vspace{-1em}
+
+\subsection{Zur Verdrillung eines elastischen Zylinders}
+
+Ein Zylinder der Länge $l$ sei entsprechend der Abbildung~\ref{fig::zylinder-sektionen} aus infinitesimal dicken Hohlzylindern der Dicke $\diff r$ zusammengesetzt. Aus einem solchen Hohlzylinder denke man sich einen senkrechten Streifen der Breite $r \cdot \diff\phi$ herausgeschnitten und mit Abbildung~\ref{fig::wuerfel} verglichen. An jeder Stirnseite (oben und unten) greift gemäß Gleichung (\ref{sd02b}) die infinitesimale Schubkraft $\diff F_t = G\gamma \cdot r \cdot \diff r\diff\phi$ an. Eine erste Integration über $\phi$ ergibt $\delta F = G\gamma \cdot 2\pi r \cdot \diff r = G\gamma \cdot \diff A$. Diesem Kräftepaar entspricht das Drehmoment $\delta M = r \cdot \delta F = G\gamma \cdot 2\pi r^2 \cdot \diff r$. Der Zusammenhang zwischen Schubwinkel $\gamma$ und gemessenem Drillwinkel $\phi$ folgt aus der Gleichheit der Bögen ($r \cdot \phi = l \cdot \gamma)$, also folgt:
+\[
+ \delta M = G \cdot \frac{r \cdot \phi}l \cdot 2\pi r^2 \diff r
+ \quad\Rightarrow\quad
+ M = \int_0^R \delta M = \frac{\pi G \cdot \phi}{2l} \cdot R^4
+\]
+
+\subsection{Zum Massenträgheitsmoment \label{herleitung-traegheitsmoment}}
+
+Bei den Rechnungen zur dynamischen Methode wird das Trägheitsmoment eines Kreiszylinders vom Radius $r_a$ benötigt, der eine axiale Bohrung vom Radius $r_i$ aufweist. (Zum Vollzylinder gelangt man, indem man $r_i = 0$ setzt.) Wählt man in der allgemeinen Definition $J = \int r^2 \diff m$ als Massenelemente infinitesimal dicke Hohlzylinder mit dem Radius $r$ und der Dicke $\diff r$ (wie in Abbildung~\ref{fig::zylinder-sektionen}), so ist:
+\[
+ \diff m = \varrho l \cdot 2\pi r \cdot \diff r
+ \quad\Rightarrow\quad
+ J = \varrho l \cdot 2\pi \cdot \int_{r_i}^{r_a} r^3 \dif r
+\]
+Da der Zylinder die Gesamtmasse $m = \varrho l \cdot \pi (r_a^2 - r_i^2)$ hat, folgt unter Ausnutzung der dritten binomischen Formel:
+\[
+ J = \frac12 \cdot m (r_a^2 + r_i^2)
+\]
+
+\frage{Nennen sie Beispiele für mechanische Spannungen, elastische Verformungen und elastische Konstanten!}
+\frage{Wie hängen die 4 elastischen Konstanten eines isotropen Körpers zusammen?}
+\frage{Wie beschreibt man die Dehnung eines Drahtes im Bereich des Hooke'schen Gesetzes und darüber hinaus? Wie weist man nach, dass eine elastische Verformung im Bereich des Hooke'schen Gesetzes bzw. innerhalb der Elastizitätsgrenze verläuft?}
+\frage{Wie berechnet sich der Verdrillungswinkel eines verdrehten Zylinders?}
+\frage{An einen am oberen Ende eingespannten elastischen dünnen Metallstab wird ein Kreiszylinder der Masse $m$ gehängt und zu axialen Drehschwingungen angeregt. Wovon hängt die Schwingungsdauer ab? Wie lautet die Bewegungsgleichung und deren Lösung?}
+\frage{Wie ist das Massenträgheitsmoment definiert, und wie berechnet es sich für einen axial rotierenden Zylinder?}
+
+\end{document}

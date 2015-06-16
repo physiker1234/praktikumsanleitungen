@@ -1,0 +1,107 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd,subfigure}
+
+\versuch{Thermische Ausdehnung}{TA}
+\bearbeitet{M.~Kreller,J.~Kelling,F.~Lemke,S.~Majewsky,i.A.~Dr.~Escher}{}
+
+\buch{kittel}{C.~Kittel}{Einführung in die Festkörperphysik}{Oldenbourg-Verlag}{München, Wien 2006}
+\buch{reck}{A.~Recknagel}{Physik: Schwingungen, Wellen, Wärmelehre}{Technik-Verlag}{Berlin 1990}
+\buch{grim}{E.~Grimsehl}{Lehrbuch der Physik, Band 4: Struktur der Materie}{Teubner-Verlag}{Leipzig 1990}
+\buch{berg}{L.~Bergmann, C.~Schaefer}{Lehrbuch der Experimentalphysik, Band 1: Mechanik, Akustik, Wäremlehre}{Verlag de Gruyter}{Berlin 1954}
+\buch{eder}{F.~X.~Eder}{Moderne Messmethoden der Physik, Band 2: Thermodynamik}{Verlag der Wissenschaften}{Berlin 1960}
+\buch{west}{W.~H.~Westphal}{Physikalisches Praktikum}{Vieweg-Verlag}{Braunschweig 1974}
+\buch{}{W.~Ilberg (Hrsg.), M.~Krötzsch (Hrsg.) et.~al.}{Physikalisches Praktikum für Anfänger}{Teubner-Verlag}{Leipzig 1994}
+
+\begin{document}
+
+\maketitle
+
+\section{Aufgabenstellung}
+
+\begin{enumerate}
+ \item Bestimmen Sie den \emph{mittlere Längenausdehnungskoeffizienten} $(\overline\alpha \pm \Delta\overline\alpha)$ eines Metallstabes im Temperaturbereich zwischen Raumtemperatur und \SI{60}{\degC} mit Hilfe des \emph{Hebelverfahrens}.
+ \item Bestimmen Sie den \emph{mittleren Volumenausdehnungskoffizienten} $(\overline\gamma \pm\Delta\overline\gamma)$ einer Flüssigkeit im Temperaturbereich zwischen Raumtemperatur und \SI{60}{\degC} mit Hilfe des \emph{Dilatometers}.
+\end{enumerate}
+
+\section{Allgemeine Grundlagen}
+
+\subsection{Definition des Ausdehnungskoeffizienten}
+
+Temperaturänderungen führen bei Festkörpern und Flüssigkeiten zur Änderung des Volumens $V$. Zur Beschreibung dieses Phänomens bedient man sich des materialspezifischen und temperaturabhängigen \emph{Volumenausdehnungskoeffizienten} $\gamma$:
+\begin{equation}
+ \gamma = \frac1{V_0} \cdot \kla{\pdquot VT}_p
+\end{equation}
+Für kleine Temperaturbereiche erhält man in guter Näherung eine lineare Proportionalität zwischen relativer Volumenänderung $\Delta V / V_0$ und der Temperaturänderung $\Delta T$:
+\begin{equation}
+ \overline\gamma = \frac{\Delta V / V_0}{\Delta T} \quad\text{mit}\quad \frac{\Delta V}{V_0} = \frac{V - V_0}{V_0} \quad\text{und}\quad \Delta T = T - T_0 \label{eqn::volumen}
+\end{equation}
+Hierbei ist $\overline\gamma$ der \emph{mittlere} Volumenausdehnungskoeffizient.
+
+Bei Festkörpern wird die Angabe des \emph{Längenausdehnungskoeffizienten} $\alpha$ bevorzugt:
+\begin{equation}
+ \alpha = \frac1{L_0} \cdot \kla{\pdquot LT}_p
+\end{equation}
+Für isotrope Stoffe gilt $\gamma = 3\alpha$. Mit Hilfe der relativen Längenänderung $\Delta L / L_0$ findet man analog den \emph{mittleren} Längenausdehnungskoeffizienten:
+\begin{equation}
+ \overline\alpha = \frac{\Delta L / L_0}{\Delta T} \quad\text{mit}\quad \frac{\Delta L}{L_0} = \frac{L - L_0}{L_0} \label{eqn::laenge}
+\end{equation}
+
+\subsection{Temperaturabhängigkeit des Ausdehnungskoeffizienten. Grüneisen-Beziehung}
+
+Der thermische Ausdehnungskoeffizient ist eine stark temperaturabhängige Größe. Abbildung~\ref{fig::temp} zeigt am Beispiel von Kupfer einen typischen Temperaturverlauf.
+
+\begin{figure}[h!t] \centering
+ \includegraphics[width=\linewidth* 3/4]{GP1-TA-Temperaturabhaengigkeit}
+ \caption{Temperaturabhängigkeit des thermischen Ausdehnungskoeffizienten von Kupfer}\label{fig::temp}
+\end{figure}
+
+Die \emph{Grüneisen-Beziehung} gibt eine Orientierung für das Temperaturverhalten:
+\begin{equation}
+    \Gamma  = \frac\gamma{\kappa_T \cdot c_V \cdot \rho} \approx const. \label{eqn::grueneisen}
+\end{equation}
+Da die isotherme \emph{Kompressibilität} $\kappa_T$  und die Dichte $\rho$ nur schwach temperaturabhängig sind, folgt $\gamma$ im wesentlichen dem Verlauf der spezifischen Wärmekapazität $c_V(T)$. Die Angabe eines konstanten Ausdehnungskoeffizienten ist demzufolge nur für sehr kleine Temperaturintervalle gerechtfertigt. Bei den im Versuch zu ermittelnden Koeffizienten $\overline\gamma$ bzw. $\overline\alpha$ handelt es sich um
+Mittelwerte über das entsprechende Temperaturgebiet.
+
+\section{Experimente}
+
+\begin{figure}[h!b]
+ \subfigure[Volumenausdehnungskoeffizienten einer Flüssigkeit\label{fig::volumen}]{
+  \includegraphics[width=\linewidth/3 - 1em]{GP1-TA-Volumenausdehnung}} \hfill
+ \subfigure[Längenausdehnungskoeffizienten eines Festkörpers\label{fig::laenge}]{
+  \includegraphics[width=\linewidth*2/3 - 1em]{GP1-TA-Laengenausdehnung}}
+ \caption{Schematische Versuchsanordnungen zur Messung}
+\end{figure}
+
+\subsection{Volumenausdehnung einer Flüssigkeit}
+
+Für diese Messung wird ein \emph{Dilatometer} verwendet. Ein mit einem Steigrohr versehener Glaskolben (Leermasse des Kolbens $m_\mathrm{K}$) enthält die zu untersuchende Flüssigkeit (Abb.~\ref{fig::volumen}). Durch Wägung des gefüllten Kolbens und unter Einbeziehung der bekannten Dichte der Flüssigkeit wird deren Volumen $V_0$ bei der Starttemperatur $T_0$ ermittelt. In einem Wasserbad, dessen Temperatur mittels eines Thermostaten geregelt werden kann, werden Glasgefäß und Flüssigkeit gemeinsam erwärmt und die Volumenänderung als Funktion der Temperatur ermittelt. In einem Diagramm sind die Meßwerte der relativen Volumenänderung $\Delta V / V_0$ über der Temperaturdifferenz $\Delta T$ darzustellen.
+
+\subsection{Längenausdehnung eines Festkörpers}
+
+Ein Stab (Länge $L_0$ bei $T_0$) wird so in eine Messzelle eingebracht, dass eines seiner Enden über einen Hebel mit einem empfindlichen Längenmessgerät (Messuhr) kontaktiert wird (Abb.~\ref{fig::laenge}). Unter Verwendung eines Thermostaten kann die Temperatur $T$ des Stabes verändert werden und die Längenänderung $T$ aufgezeichnet werden. In einem Diagramm sind die Messwerte der relativen Längenänderung $\Delta L / L_0$ über der Temperaturdifferenz $\Delta T$ darzustellen.
+
+\section{Bestimmung des mittleren thermischen Ausdehnungskoeffizienten}
+
+Während beim Hebelverfahren die Temperatur des Basisgefäßes während der gesamten Messdauer nahezu konstant bleibt, muß beim \emph{Dilatometer} die Ausdehnung des Glaskolbens (Ausdehnungskoeffizient $\alpha_K$ ) bei der Auswertung berücksichtigt werden (Formel herleiten!)
+\begin{equation}
+ \gamma = \frac{V - V_0}{V_0 \cdot (T - T_0)} + 3 \alpha _K \cdot \frac V{V_0 }
+\end{equation}
+Ausgehend von den zur Berechnung von $\overline\gamma$ bzw. $\overline\alpha$ benutzten Formeln \eqref{eqn::volumen} bzw. \eqref{eqn::laenge} ist der Fehler des Ausdehnungskoeffizienten aus den Fehlern der Einzelmessungen abzuschätzen.
+
+\section{Deutung der Wärmeausdehnung von Festkörpern}
+
+\piccaption{Wechselwirkungspotential zwischen zwei Atomen eines Kristallgitters\newline $r_0$ = mittlerer Atomabstand\label{fig::kristall}}
+\parpic[r]{
+ \includegraphics[width=\linewidth/3 + 1.2cm]{GP1-TA-Kristallgitter}
+}
+Die atomaren Bausteine eines Körpers sind durch eine anziehende Kraft aneinander gebunden. Eine zweite, abstoßende Kraft sorgt für einen endlichen Abstand benachbarter Teilchen untereinander. Der Gleichgewichtsabstand $r_0$ liegt dort, wo die Summe dieser beiden Kräfte verschwindet. Für $T = 0$ würden sich die Teilchen in diesem Abstand voneinander in Ruhe befinden. Wären beide entgegengesetzt wirkenden Kräfte harmonisch, so würde sich in dem daraus resultierenden symmetrischen (parabolischen) Bindungspotential $W_\mathrm{harm}$ (Abb.~\ref{fig::kristall}) auch bei Temperaturerhöhung keine Vergrößerung des Gleichgewichtsabstandes der Teilchen ergeben.
+
+Erst durch die Einführung eines asymmetrischen (anharmonischen) Potentials $W_\mathrm{anharm}$ (Abb.~\ref{fig::kristall}), welches sich durch die
+Berücksichtigung der wesentlich längeren Reichweite der anziehenden im Vergleich zur abstoßenden Kraftkomponente ergibt, nimmt mit wachsender Teilchenenergie ($W_0 < W_1 < W_2$) der mittlere Teilchenabstand zu. Dieser Effekt wird als thermische oder Wärmeausdehnung bezeichnet. Das von Grüneisen entwickelte Modell der thermischen Ausdehnung basiert auf den Vorstellungen von Debye, der für die Berechnung der spezifischen Wärmekapazität das Schwingungsverhalten der Gitterbausteine durch \emph{harmonische Oszillatoren} beschreibt. Durch Einführung kleiner Anharmonizitäten lässt sich die Ausdehnung durch den in Gleichung \eqref{eqn::grueneisen} gegebenen Ausdruck erfassen. Diese wird für viele Materialien experimentell durch einen konstanten Grüneisenparameter $\Gamma$  bestätigt. Auf Grund der stärkeren Bindung der Atome im Festkörper im Vergleich zur Flüssigkeit liegt der Ausdehnungskoeffizient der Flüssigkeiten um rund eine Größenordnung über dem der Festkörper.
+
+\frage{Verschaffen Sie sich theoretische Vorstellungen zum Verständnis der thermischen Ausdehnung von Festkörpern und Flüssigkeiten.}
+\frage{Wie kann die thermische Ausdehnung mathematisch beschrieben werden? (relative Volumen- und Längenänderung, Volumen- und Längenausdehnungskoeffizienten, Beziehungen zwischen diesen Größen)}
+\frage{Diskutieren Sie die in der Anleitung beschriebenen Verfahren: Vor- und Nachteile, Fehlerquellen, Herleitung der zur Auswertung benötigten Formeln.}
+\frage{Nennen Sie Beispiele für technische Relevanz des Effektes der thermischen Ausdehnung als nützliche bzw. störende Größe.}
+
+\end{document}

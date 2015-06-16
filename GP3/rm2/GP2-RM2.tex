@@ -1,0 +1,370 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd,mhchem}
+\usepackage{listliketab}
+\usepackage{lmodern}
+\usepackage{mdwlist}
+
+\versuch{Absorption und Schwächung ionisierender Strahlung}{RM2}
+\author{P.~Eckstein,K.~Prokert,R.~Schwierz}
+\bearbeitet{A.~Otto}{}
+
+\buch{1}{W.~Stolz}{Radioaktivität: Grundlagen -- Messungen -- Anwendungen}{Teubner-Verlag}{Stuttgart/Leipzig 2003}
+\buch{2}{L.~Herforth,H.~Koch}{Praktikum der Radioaktivität und Radiochemie}{Verlag A. Barth}{Leipzig 1992}
+\buch{3}{T.~Mayer-Kuckuk}{Kernphysik}{Teubner-Verlag}{Stuttgart 1994}
+\buch{4}{G.~Musiol,J.~Ranft}{Kern- und Elementarteilchenphysik}{Verlag der Wissenschaften}{Berlin 1988}
+
+\begin{document}
+\maketitle
+
+\section{Aufgabenstellung}
+  \begin{enumerate}
+    \item Bestimmung der Reichweite und Ermittlung der Energie der $\alpha$-Strahlung.
+    \item Bestimmung der Schwächung der $\gamma$-Strahlung von \ce{^{60}Co} und \ce{^{137}Cs} durch verschiedene
+          Metalle und Ermittlung der betreffenden Massenschwächungskoeffizienten.
+  \end{enumerate}
+  
+\section{Grundlagen}
+  Die Wechselwirkung ionisierender ("`radioaktiver"') Strahlung mit Stoffen wird wesentlich durch die Art der 
+  Strahlung bestimmt. Die Wechselwirkungsreaktionen von geladenen oder ungeladenen Teilchen sowie von Photonen, 
+  die zu einer Ionisation führen, sind sehr verschieden. Geladene Teilchen, wie $\alpha$-Partikel, Protonen oder 
+  schwere Ionen ionisieren auf direktem Wege, während ungeladene Teilchen (Neutronen oder Photonen) zunächst 
+  geladene Teilchen erzeugen müssen, die dann die Ionisation bewirken. Daraus ergibt sich die übliche Unterscheidung 
+  in direkt oder indirekt ionisierende Strahlungsarten. Durch die auftretenden Wechselwirkungsprozesse überträgt die 
+  Strahlung ihre Energie an den Stoff und wird dabei entweder absorbiert oder umgewandelt. Diese Prozesse haben 
+  praktische Bedeutung z.B. für den Schutz vor Strahlung durch Abschirmungen, beim Nachweis von Strahlung durch 
+  Ausnutzung definierter Reaktion in Detektoren oder durch das Auftreten von Materialveränderungen. Hierbei sind 
+  nützliche Effekte möglich (z. B. gezielte Werkstoffmodifikation, Analyseverfahren, Strahlensterilisation), es 
+  treten aber auch schädigende Wirkungen (z.B. Strahlenschäden in Organismen oder an elektronischen Bauteilen bzw.
+  Konstruktionsmaterialien) auf.
+  
+\subsection{Wechselwirkungsprozesse direkt ionisierender Strahlung (z.B. von $\alpha$-Teilchen)}
+  Durchdringt ein geladenes Teilchen -- z.B. ein $\alpha$-Partikel -- Materie, so verliert es im wesentlichen durch 
+  Wechselwirkungen mit Elektronen seine kinetische Energie. Diese Prozesse führen zur Ionisation von Atomen im 
+  betreffenden Material. Da die kinetische Energie von $\alpha$-Teilchen i.a. groß gegen die Ionisationsenergie der 
+  Atome und die Masse der $\alpha$-Teilchen groß gegen die Elektronenmasse ist, ergibt sich ein geringer 
+  Energieverlust des Teilchens in einem einzelnen Wechselwirkungsprozeß. Dagegen verlieren $\beta$-Teilchen bis zur 
+  Hälfte ihrer Energie bei einer Wechselwirkung mit Hüllenelektronen der Atome. Die Anzahl der Elektronen in der zu 
+  durchdringenden Materie ist so groß, dass der Energieverlust eines schweren geladenen Teilchens (z.B. $\alpha$, p) 
+  als kontinuierlicher Prozess betrachtet werden kann. Dieser Prozess wird als \textbf{Ionisationsbremsung} 
+  bezeichnet und kann in guter Näherung durch die quantenmechanische Ableitung von Bethe und Bloch beschrieben werden. 
+  Der spezifische Energieverlust $\diff E/\diff x$ für $\alpha$-Teilchen ergibt sich zu
+  \begin{equation}
+    -\dquot{E}{x}=\frac{16\pi e_0^4\,n_e}{m_e v^2}\kla{\ln\frac{2m_e v^2}{\left\langle E_b^{(e)}\right\rangle}
+                  -\ln\kla{1-\beta^2}-\beta^2}
+    \label{for:bethe-bloch}
+  \end{equation}
+  mit $\displaystyle{\beta=\frac{v}{c}}$ und 
+  $\displaystyle{\left\langle E_b^{(e)}\right\rangle \approx Z\cdot\SI{13.5}{eV}}$ als mittleres Ionisationspotential 
+  für ein Material mit der Kernladungszahl $Z$. Durch die Ionisationsbremsung erreichen $\alpha$-Teilchen in Stoffen 
+  eine gut definierte Reichweite mit nahezu geradliniger Spur. Durch Integration ergibt sich nach \eqref{for:reichweite} 
+  die experimentell leicht zugängliche Größe der mittleren Reichweite
+  \begin{equation}
+    \langle R \rangle=\int\limits_E^0 \frac{\diff E}{-\kla{\dquot{E}{x}}}
+    \label{for:reichweite}
+  \end{equation}
+  Tatsächlich ist die mittlere Reichweite für $\alpha$-Teilchen in Luft durch Umladungseffekte bei geringen Energien etwas 
+  größer als in \eqref{for:reichweite} und wird meist durch empirische Näherungen für bestimmte Energiebereiche 
+  angegeben.
+  \begin{equation}
+    R_\alpha(\text{Luft})=\SI{3.1}{mm}\cdot\kla{E_\alpha/\SI{}{MeV}}^{3/2} \quad \text{für} \quad 4<E_\alpha/\SI{}{MeV}<7
+    \label{for:empirisch}
+  \end{equation}
+  \piccaption{
+    Braggsche Kurven für $\alpha$-Teilchen (Po:~\ce{^{210}Po}, RaC':~\ce{^{214}Po} aus der \ce{Ra}-Zerfallsreihe)
+    \label{fig:bragg}
+  }
+  \parpic[r]{
+    \includegraphics[width=\textwidth/10*4]{braggkurven.png}
+  }
+  In \eqref{for:bethe-bloch} wird sofort sichtbar, dass der spezifische Energieverlust bei der Abbremsung des 
+  $\alpha$-Teilchens zunimmt. Diesen Sachverhalt verdeutlichen die in Abb. \ref{fig:bragg} dargestellten sog. Braggschen 
+  Kurven -- hier für $\alpha$-Teilchen aus \ce{^{210}Po} bzw. \ce{^{214}Po}. Sie zeigen das Wachsen von $\diff E/\diff x$ mit 
+  der Abnahme von $E_\alpha$ entlang des Bremsweges $x$ bis zu der Energieschwelle, ab der keine Ionisation sondern nur noch 
+  Anregungsprozesse stattfinden. Direkt ionisierende Teilchen können auch durch \textbf{Strahlungsbremsung} mit Stoffen 
+  wechselwirken und dadurch Energie abgeben. Als Folge dieses Streuprozesses tritt Bremsstrahlung auf. Dieser Prozess ist 
+  proportional $Z^2$ und wächst in dem Maße, wie sich $v/c$ an 1 nähert (relativistische Energien). Daher ist die 
+  Strahlungsbremsung bei der Wechselwirkung von $\alpha$-Strahlung aus Radionuklidquellen ohne Bedeutung. Bei der 
+  Wechselwirkung energiereicher $\beta$-Strahlung ($E_\beta>\SI{1}{MeV}$) mit Stoffen hoher Kernladungszahl $Z$ ist das 
+  Auftreten von Bremsstrahlung schon merkbar. Daher ist die optimale Abschirmung von Elektronen sehr abhängig von ihrer 
+  Energie.
+
+\subsection{Die Wechselwirkungsprozesse indirekt ionisierender Strahlung (z.B. Photonen)}
+  Die Wechselwirkung von Photonen mit Stoffen unterscheidet sich grundsätzlich von der Wechselwirkung geladener Teilchen mit 
+  Materie. Die für Photonen relevanten Prozesse sind der \emph{Photoeffekt} (PE), die \emph{Compton-Streuung} (CS) und die 
+  \emph{Paarbildung} (PB). Die Wahrscheinlichkeit des Auftretens dieser drei Prozesse lässt sich durch ihre 
+  Wirkungsquerschnitte $\sigma_\text{PE}$, $\sigma_\text{CS}$ und $\sigma_\text{PB}$ bzw. durch deren Summe 
+  $\sigma_\text{tot}$, dem totalen Wirkungsquerschnitt, beschreiben.
+  
+  Der \textbf{Photoeffekt} ist die Emission eines Elektrons aus einer Schale der Elektronenhülle des Atoms infolge 
+  Absorption eines $\gamma$-Quants durch das Atom und stellt den Hauptprozess bei der Absorption energiearmer 
+  $\gamma$-Quanten in Elementen mit großem $Z$ dar. Bei Verbindungen muss mit einer effektiven Kernladungszahl $Z_\text{eff}$ 
+  gerechnet werden, die nach der Beziehung
+  \begin{equation}
+    Z_\text{eff}=\sum\limits_n p_n Z_n \quad \text{(}p_n=\text{Massenanteil des Elementes $Z_n$ in der Verbindung)}
+  \end{equation}
+  berechnet wird.\\
+  Um Energie- und Impulserhaltung zu gewährleisten, muss ein Teil des Impulses des $\gamma$-Quants auf das Atom übertragen 
+  werden, der Photoeffekt kann also nur an gebundenen Elektronen stattfinden. Das erklärt auch die Energieabhängigkeit von 
+  $\sigma_\text{PE}$:
+  \begin{itemize}
+    \item es treten hohe Maxima des Wirkungsquerschnitts auf, wenn die Energie des $\gamma$-Quants gerade ausreicht, um 
+          ein Elektron aus der $n$-ten Schale zu schlagen,
+    \item der Photoeffekt dominiert an der K-Schale für $E_\gamma \ge E_\text{b-K}$ (Bindungsenergie der K-Schale), 
+          seine Wahrscheinlichkeit sinkt jedoch mit steigender $\gamma$-Energie,
+    \item unterhalb dieser Energie findet der Photoeffekt an einer der äußeren Schalen statt.
+  \end{itemize}
+  Die Wahrscheinlichkeit des Photoeffekts ist extrem stark abhängig von der Elektronenzahl in
+  der Atomhülle, es gilt
+  \begin{equation}
+    \sigma_\text{PE} \sim Z^5  
+  \end{equation}
+  Als Folge eines Photoeffekts wird ein Röntgenquant emittiert, da die entstandene Elektronenlücke in der $n$-ten Schale 
+  aufgefüllt wird (z.B. entsteht die charakteristische $K_\alpha$- bzw. $K_\beta$-Strahlung eines Elements, wenn das 
+  Photoelektron der K-Schale entstammte).
+  
+  Der \textbf{Comptoneffekt} ist ein Streuprozess, bei dem nur ein Teil der $\gamma$-Energie an ein Elektron übertragen 
+  wird. Im Gegensatz zum Photoeffekt spielt hier die Bindung des Elektrons kaum eine Rolle, für praktische Berechnungen 
+  geht man von freien ruhenden Elektronen aus. Die gesamte Kinematik ist durch Energie- und Impulserhaltungssatz im 
+  relativistischen Fall beschreibbar, woraus für die Energie des gestreuten Quants ($\gamma'$) folgt:
+  \begin{align}
+    E_{\gamma'}=\frac{E_\gamma}{1+\frac{E_\gamma}{m_e c^2}(1-\cos\vartheta)} \quad 
+    &\vartheta \dots\text{Winkel zwischen $\gamma$ und $\gamma'$}\\\nonumber
+    &m_e \dots\text{Ruhemasse des Elektrons}
+  \end{align}
+  Die Energie des Compton-Elektrons beträgt nach der Streuung $E_e = E_\gamma-E_{\gamma'}$. Für große $\gamma$-Energien 
+  ($E_\gamma \gg m_e c^2$) ist der Wirkungsquerschnitt für den Comptoneffekt proportional $Z/E_\gamma$.
+  
+  Der \textbf{Paarbildungseffekt} ist die Bildung eines Elektron-Positron-Paares infolge der Absorption eines 
+  $\gamma$-Quants mit einer Energie $E_\gamma > 2m_e c^2 = \SI{1.022}{MeV}$ vor allem im Coulomb-Feld eines Atomkerns. 
+  Ein Stoßpartner ist erforderlich, da sonst der Impulserhaltungssatz verletzt würde. Bis zu $\gamma$-Energien von etwa 
+  $\SI{25}{MeV}$ folgt der Wirkungsquerschnitt für den Paarbildungseffekt der Beziehung
+  \begin{equation}
+    \sigma_\text{PB} \sim Z^2\ln E_\gamma
+  \end{equation}
+  mit weiterem Steigen von $E_\gamma$ wächst der Wirkungsquerschnitt langsamer und wird bei extrem hohen Energien 
+  nahezu konstant. Als Folge des Paarbildungseffektes entsteht $\gamma$-Strahlung der Energie $E_\gamma = \SI{511}{keV}$, 
+  da das entstandene Positron entsprechend der Annihilationsreaktion
+  \begin{equation*}
+    \ce{e^+ + e^- -> 2\gamma}
+  \end{equation*}
+  zerstrahlt.
+  
+  \piccaption{
+    Mit einem \ce{NaJ}-Szin\-tilla\-tions\-detek\-tor aufgenommenes Spektrum einer \ce{^{137}Cs}-Quelle
+    \label{fig:spektrum}
+  }
+  \parpic[r]{
+    \includegraphics[width=0.45\textwidth]{spektrum.png}
+  }
+  Die Überlagerung dieser Effekte muss bei der Messung von Photonenstrahlung berücksichtigt werden, denn auf diese Weise 
+  wird durch eine einfallende monoenergetische Strahlung ein komplexes Spektrum durch den Detektor erzeugt, s. Abb. 
+  \ref{fig:spektrum}. Wie stark die Schwächung von Photonenstrahlung einer bestimmten Energie in einem konkreten Material 
+  ist, hängt von dessen $\sigma_\text{tot}$ ab und ist durch den experimentell bestimmbaren Massenschwächungskoeffizienten 
+  $\mu/\rho$ angebbar.\\
+  Durch alle Absorptions- oder Streuprozesse von Photonenstrahlung in einem durchstrahlten Stoff wird die Flussdichte 
+  $\varphi$ des Strahlenbündels auf dem Weg $\diff x$ um $\diff\varphi$ verringert. Über die Beziehung
+  \begin{equation}
+    -\diff\varphi=\varphi\,n\,\sigma_\text{tot}\,\diff x
+  \end{equation}
+  ergibt sich das exponentielle Schwächungsgesetz
+  \begin{equation}
+    \varphi=\varphi_0\,\eu{-n\sigma_\text{tot}x}
+  \end{equation}
+  Die materialabhängigen Größen $n$ (Anzahldichte von Atomen) und $\sigma_\text{tot}$ können zum Schwächungskoeffizienten
+  \begin{equation}
+    \mu=n\,\sigma_\text{tot}=\sigma_\text{tot}\,\rho/A
+  \end{equation}
+  zusammengefasst werden, wobei $A$ die Atommasse bedeutet.\\
+  In der Praxis ist es üblich, den Massenschwächungskoeffzienten $\mu/\rho$ anzugeben. Das Schwächungsgesetz erhält dann 
+  die drei Formen:
+  \begin{equation}
+    \varphi=\varphi_0\,\eu{-\mu x} \quad \varphi=\varphi_0\,\eu{-\kla{\mu/\rho}d} \quad \varphi=\varphi_0\,\eu{-x/x_0}
+  \end{equation}
+  wobei $d$ die Massenflächendichte [\SI{}{g/cm^2}] und $x_0$ ($x_0=1/\mu$) die mittlere Reichweite der Photonen ist. Der 
+  Massenschwächungskoeffizient eines Materials ist eine von der Photonenenergie $E_\gamma$ abhängige Größe.
+  
+\section{Strahlungsdetektoren}
+  Aus den beschriebenen Wechselwirkungsprozessen ergibt sich, dass die Detektoren der zu messenden Strahlungsart angepasst 
+  sein müssen, um eine hohe Zählausbeute $\eta$ zu gewährleisten. Es gilt
+  \begin{equation}
+    \dot N=\eta\,A
+  \end{equation}
+  mit $\dot N=\text{Zählrate}$ und $A=\text{Aktivität}$ (Zahl der emittierten Teilchen pro Zeitenheit).\\
+  Abb. \ref{fig:detektor} zeigt den schematischen Aufbau eines Strahlungsdetektors. Die im empfindlichen Detektorvolumen 
+  auf direktem oder indirektem Wege gebildeten Ladungsträger werden durch ein elektrisches Feld abgesaugt und evtl. 
+  vervielfacht. Entstehen im Detektor Lichtquanten, so müssen diese durch einen geeigneten Konverter (Photomultiplier, 
+  Photodiode) ebenfalls in Ladungsträger umgewandelt werden. Die Wechselwirkungen im Detektor bestimmen die Form des 
+  Stromimpulses und ggf. seine Proportionalität zur absorbierten Strahlungsenergie (spektrometrische Detektoren). Wie in 
+  Abb. \ref{fig:detektor} angedeutet, fließt der Detektorstromimpuls $i(t)$ in die aus Arbeitswiderstand und Summe aus 
+  parasitärer Detektorkapazität und Eingangskapazität der Folgeelektronik (einige \SI{10}{pF}) gebildete $RC$-Kombination. 
+  Unter Annahme eines rechteckförmigen Stromimpulses $i(t$) erhält man einen Spannungsimpuls $u(t)$, der durch eine
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{detektor.png}
+    \caption{Schematischer Aufbau eines Strahlungsdetektors}
+    \label{fig:detektor}
+  \end{figure} 
+  schnell ansteigende und eine langsam abfallende Exponentialfunktion beschrieben wird. Der hier gezeichnete Vorverstärker 
+  hat die Aufgabe, das Signal für den Transport über eine längere Strecke aufzubereiten (Verstärkung und/oder 
+  Impedanzanpassung), wogegen der Hauptverstärker die endgültige Impulsformung (bevorzugt Gaußimpulsformung) für die 
+  nachfolgende Analyseelektronik übernimmt. Für diese Weiterverarbeitung der Ausgangssignale stehen elektronische Geräte 
+  zur Verfügung, die im einfachsten Falle lediglich eine Impulszählung gestatten. Eine Impulshöhendiskriminierung 
+  ermöglicht die Aufnahme integraler und differentieller Impulshöhenverteilungen. Spezielle Meßplätze zur Spektrometrie 
+  von Teilchen- oder Photonenstrahlung analysieren und registrieren das Impulshöhenspektrum eines hochauflösenden 
+  spektrometrischen Detektors mit Hilfe eines ADC.
+  
+\subsection{Si-Oberflächenbarrieredetektoren zur Messung von $\alpha$-Strahlung}
+  Diese Halbleiterdetektoren nutzen die Eigenschaften von pn-Übergängen in Halbleitermaterialien. Als Halbleitermaterial 
+  eignen sich \ce{Si} und \ce{Ge}, wobei \ce{Ge}-Detektoren zur Vermeidung des thermischen Rauschens gekühlt werden müssen. 
+  Bei diesen Detektoren handelt es sich um spezielle Halbleiterdioden, die in Sperrichtung gepolt werden, s. Abb. 
+  \ref{fig:hld}.
+  \piccaption{
+    Prinzipieller Aufbau eines Halbleiterdetektors für $\alpha$-Teilchen
+    \label{fig:hld}
+  }
+  \parpic[r]{
+    \includegraphics[width=0.6\textwidth]{hld.png}
+  }
+  Im Übergangsbereich entsteht daher eine Zone, die an beweglichen Ladungsträgern stark verarmt ist, wodurch
+  im Grenzschichtbereich eine Potentialdifferenz durch die unbeweglichen Donatoren und Akzeptoren und die angelegte 
+  Sperrspannung entsteht. Aufgrund der geringen Dicke der Grenzschicht treten merkliche Feldstärken auf, die in der Lage 
+  sind, Ladungsträger, die durch ein ionisierendes Teilchen entstanden sind, zu trennen und als kleinen Ladungsimpuls 
+  nachzuweisen. Infolge vollständiger Absorption des $\alpha$-Teilchens durch Ionisationsprozesse in der Verarmungsschicht 
+  ist die gesammelte Ladungsmenge der Energie $E_\alpha$ proportional, wodurch die Bedingung für eine spektrometrische 
+  Messung erfüllt ist. Für die Spektrometrie von $\alpha$-Teilchen werden hauptsächlich \ce{Si}-Oberflächenbarrieredetektoren 
+  eingesetzt, deren pn-Schichtdicke \SI{100}{\micro m} bis \SI{500}{\micro m} beträgt. Da die mittlere Reichweite von 
+  beispielsweise \SI{10}{MeV}-$\alpha$-Teilchen in \ce{Si} nur \SI{70}{\micro m} beträgt, darf die Totschicht oberhalb der 
+  Verarmungsschicht nur eine Dicke von \SI{1}{\micro m} besitzen. Zu den Vorteilen derartiger Detektoren gehören ein hohes 
+  Energieauflösungsvermögen, der Betrieb ohne spezielle Kühlung und eine relativ große Strahlenbelastbarkeit.
+
+\subsection{NaI(Tl)-Szintillationsdetektoren zu Messung von $\gamma$-Strahlung}
+  Ein Szintillationsdetektor besteht aus zwei Hauptbestandteilen, dem Szintillator und einem Lichtkonverter, in der Regel 
+  Photomultiplier, in Spezialfällen auch Photodioden, s. Abb \ref{fig:szinti}. Szintillatoren sind Substanzen, die unter 
+  der Einwirkung schneller geladener Teilchen Photonen im sichtbaren oder UV-Spektralbereich aussenden. Der Nachweis 
+  neutraler $\gamma$-, Röntgen- oder Neutronenstrahlung erfolgt daher erst über den Zwischenschritt der Erzeugung geladener
+  Teilchen. Das Szintillatormaterial sollte folgende Eigenschaften besitzen:
+  \begin{itemize}
+    \item hohe Wahrscheinlichkeit einer Vollenergieabsorption durch ausreichende Detektorvolumina (u.U. in Form von 
+          Einkristallen), wobei für Photonenstrahlung Zeff des Detektormaterials möglichst groß sein sollte, wohingegen für 
+          $\beta$-Strahlung ein niedriger $Z_\text{eff}$-Wert günstiger ist,
+    \item hohe Emissionswahrscheinlichkeit für Photonen im sichtbaren Bereich als Folge der Anregungsreaktionen,
+    \item gute Durchsichtigkeit im sichtbaren Bereich (Emissions- und Absorptionsspektrum müssen deshalb gegeneinander 
+          verschoben sein).
+  \end{itemize}
+  \piccaption{
+    Aufbau eines Szintillationsdetektors
+    \label{fig:szinti}
+  }
+  \parpic[r]{
+    \includegraphics[width=0.55\textwidth]{szinti.png}
+  }
+  Der Photomultiplier (PM) hat die Aufgabe, das sehr schwache optische Signal des Szintillators durch Elektronenemission 
+  einer Photokathode (K) in einen leicht zu registrierenden elektrischen Impuls umzuwandeln. Die an der Photokatode durch 
+  den äußeren Photoeffekt ausgelösten Elektronen werden durch ein geeignetes elektrisches Feld (Fokussierelektrode F)
+  abgesaugt und auf die erste Dynode (D1) beschleunigt. Hier löst jedes auftreffende Elektron im Mittel 2 bis 3 
+  Sekundärelektronen aus, die wieder zur nächsten Dynode beschleunigt werden. 10 bis 15 solcher Dynoden bewirken eine 
+  \num{e5}- bis \num{e9}-fache Verstärkung des Elektronenstroms. Dieser wird auf der Anode (A) aufgefangen und erzeugt 
+  einen leicht messbaren elektrischen Impuls. Für die Messung der Photonenstrahlung von Radionukliden werden in der Regel
+  $(3\cdot3\cdot3)\SI{}{cm^3}$-\ce{NaI}(\ce{Tl})-Detektoren in Kombination mit einem 12-Stufen-PM unter Verwendung einer 
+  S12-Photokatode (Katodenmaterial: \ce{Cs}-Antimonid) benutzt. Die verwendeten Messgeräte für die Detektorimpulse sind 
+  analog denen bei Halbleiterdetektoren. Die erzielbare Energieauflösung ist geringer als bei Halbleiterdetektoren, 
+  dagegen ist das zeitliche Auflösungsvermögen deutlich besser.
+
+\section{Erläuterungen zur Aufgabenstellung}
+\subsection{Bestimmung der Reichweite und Ermittlung der Energie von $\alpha$-Strahlung}
+  Prinzipiell ist die Bestimmung der Reichweite von $\alpha$-Teilchen in Luft bei konstantem Luftdruck und variiertem 
+  Abstand Quelle-Detektor möglich. Die sich dann stets ändernde Geometrie der Detektoranordnung erfordert jedoch 
+  Korrekturen an den ermittelten Zählraten.\\
+  Im Versuch wird daher ein anderes Messprinzip angewandt. In einer Vakuumkammer wird bei konstantem Abstand 
+  $x_R=\SI{80}{mm}$ zwischen Strahlungsquelle und Detektor der Luftdruck variiert. Aus der Abhängigkeit der gemessenen 
+  Zählraten vom Luftdruck in der Kammer ist die Reichweite $R$ der $\alpha$-Teilchen in Luft von Normaldruck berechenbar.
+  Für die Berechnung von $R$ wird Luft als ideales Gas angenommen mit $p \sim \rho\,T$. Damit ergibt sich
+  \begin{equation}
+    R=\frac{T_\text{normal}\cdot p}{p_\text{normal}\cdot T}\cdot x_R
+  \end{equation}
+  Für die Bestimmung der Energie der $\alpha$-Teilchen aus der berechneten Reichweite in Luft bei Normaldruck wird Formel 
+  \eqref{for:empirisch} verwendet.
+  
+\subsection{Ermittlung von Massenschwächungskoeffizienten in Abhängigkeit von der Energie der $\gamma$-Strahlung und vom 
+durchstrahlten Material}
+  Die charakteristischen Konstanten $\mu$, $\mu/\rho$ und $x_0$ können experimentell unter Verwendung eines schmalen 
+  kollimierten Strahlungsbündels und Einbringen von Abschirmmaterial in den Strahlengang durch Aufnahme der Abhängigkeit 
+  $\varphi=\varphi(x)$ bestimmt werden.
+ 
+\section{Hinweise zum Experiment (Einzelheiten siehe Platzanleitung)}
+\subsection{Reichweitebestimmung und Ermittlung der Energie von $\alpha$-Strahlung}
+  \textbf{Zubehör}
+  \begin{itemize}
+    \piccaption{
+      Versuchsaufbau Bestimmung der Reichweite der $\alpha$-Strahlung
+      \label{fig:reichweite}
+    }
+    \parpic[r]{
+      \includegraphics[width=0.4\textwidth]{aufbau_reichweite.png}
+    }
+    \item In einer evakuierbaren Messkammer sind die $\alpha$-Strahlungsquelle (\ce{^{241}Am}, $A=\SI{13.5}{kBq}$) und 
+          ein \ce{Si}-Oberflächenbarrieredetektor in festem Abstand $x_R=\SI{80}{mm}$ zueinander montiert (Abb. 
+          \ref{fig:reichweite}).
+    \item Das Vakuum in der Messkammer wird durch eine Vorvakuumpumpe erzeugt. Der Druck in der Messkammer ist über ein 
+          Nadelventil variierbar und an einem Vakuummeter ablesbar. Die Strahlungsmessung erfolgt durch Anschluss des 
+          Detektors an ein Messgerät, das die Messung der Gesamtzählrate sowie eine schrittweise Aufnahme der 
+          Impulshöhenverteilung ($\Rightarrow$ Energiespektrum des $\alpha$-Strahlers) gestattet.
+  \end{itemize}
+  \textbf{Versuchsdurchführung}
+  \begin{itemize}
+    \item Aufnahme eines Spektrums der $\alpha$-Strahlungsquelle bei bestmöglichem Vakuum.
+    \item Angabe des energetischen Auflösungsvermögens des Detektors für $\alpha$-Strahlung.
+    \item Festlegung der Diskriminatorschwelle für die folgenden Messungen der Gesamtzählrate und Bestimmung der 
+          Untergrundzählrate $Z_0$ bei diesen Bedingungen.
+    \item Bestimmung der Nettozählrate bei verschiedenem Luftdruck im Rezipienten.
+    \item Ermittlung der Reichweite aus der grafischen Darstellung dieser Abhängigkeit.
+    \item Berechnung der Energie der $\alpha$-Teilchen aus der ermittelten mittleren Reichweite.
+  \end{itemize} 
+
+\subsection{Messung von Massenschwächungskoeffizienten für verschiedene Elemente und unterschiedliche 
+$\gamma$-Strahlungsenergien}  
+  \textbf{Zubehör}
+  \begin{itemize}
+    \piccaption{
+      Versuchsaufbau Schwächung von $\gamma$-Strahlung
+      \label{fig:schwächung}
+    }
+    \parpic[r]{
+      \includegraphics[width=0.30\textwidth]{aufbau_schwaechung.png}
+    }
+    \item Kollimierte $\gamma$-Strahlungsquellen (\ce{^{60}Co} und \ce{^{137}Cs}) kombiniert mit einem kollimierten
+          \ce{NaI}(\ce{Tl})-Szin\-tillations\-detek\-tor und angeschlossenem PM (Abb. \ref{fig:schwächung}).
+    \item Die Strahlungsmessung erfolgt durch Anschluss des Detektors an ein Strahlungsmessgerät mit PC-Interface. 
+          Der PC stellt so einen Vielkanalanalysator (VKA) zur Verfügung, der die Aufnahme der Impulshöhenverteilung 
+          ($\Rightarrow$ Energiespektrum des $\gamma$-Strahlers) gestattet.
+    \item Metallplatten aus Blei, Kupfer und Aluminium unterschiedlicher Flächenmasse zur Schwächung der Strahlung.
+  \end{itemize}
+  \textbf{Versuchsdurchführung}
+  \begin{itemize}
+  \parpic[r]{\hspace{0.30\textwidth}\vspace{3ex}}
+    \item Aufnahme eines Spektrums der $\gamma$-Strahlungsquelle bei gewähltem Abstand zwischen Detektor und Quelle.
+    \item Angabe des energetischen Auflösungsvermögens des Detektors für $\gamma$-Strahlung.
+  \end{itemize}
+  \begin{itemize}
+    \item Festlegung des Auswertefensters im Energiespektrum für die folgenden Messungen der Gesamtzählrate und 
+          Bestimmung der Untergrundzählrate $Z_0$ bei diesen Bedingungen.
+    \item Einbringen von Abschirmkörpern in den Strahlengang und Aufnahme der Nettozählrate in Abhängigkeit von der 
+          Absorberdicke, also $\dot N=\dot N(x)$.
+    \item Ermittlung von $\mu$, $\mu/\rho$ und $x_0$ aus der graphischen Darstellung der gemessenen Abhängigkeit für 
+          eine $\gamma$-Energie und mindestens zwei Materialien.
+  \end{itemize} 
+  
+\section{Vorbereitungshinweise}
+  Die Versuchsvorbereitungen zu den Versuchen RM1, RM2 und RM3 sind auf Grund der Versuchsthematik in einem 
+  Zusammenhang zu sehen. Insbesondere sei bezüglich der Fehlerbetrachtung auf Versuch FA2 hingewiesen.
+  
+  \textbf{Schwerpunkte}
+  \begin{enumerate}
+    \item Arten und Entstehung von ionisierender Strahlung
+    \item Wechselwirkungsprozesse zwischen ionisierender Strahlung und Stoffen
+    \item Strahlungsdetektoren, insbesondere für $\alpha$- und $\gamma$-Strahlung
+    \item Einheiten in der Strahlungsmeßtechnik (Aktivität, Flußdichte, Dosis, ...)
+    \item Anwendung ionisierender Strahlung
+    \item Strahlenschutz
+  \end{enumerate}
+\end{document}

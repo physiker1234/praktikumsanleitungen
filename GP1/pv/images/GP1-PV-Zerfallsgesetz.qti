@@ -1,0 +1,185 @@
+QtiPlot 0.9.7 project file
+<scripting-lang>	muParser
+<windows>	1
+<multiLayer>
+Graph2	1	1	09.08.09 17:28
+geometry	0	0	510	430	active
+WindowLabel		2
+Margins	5	5	5	5
+Spacing	5	5
+LayerCanvasSize	417	323
+Alignement	0	0
+<graph>
+ggeometry	5	5	491	371
+PlotTitle		#000000	4228
+<Antialiasing>1</Antialiasing>
+Background	#ffffff	255
+Margin	0
+Border	0	#000000
+grid	0	0	0	0	#0000ff	0	0.5	#a0a0a4	2	0.4	#0000ff	0	0.5	#a0a0a4	2	0.4	0	0	2	0	0
+EnabledAxes	1	1	1	1	
+AxesTitles	t / s	A(t) / A<sub>0</sub>			
+AxesTitleColors	#000000	#000000	#000000	#000000	
+AxesTitleAlignment	5124	5124	5124	5124
+AxesTitleDistance	2	2	2	2
+TitleFont	Sans Serif	12	75	0	0	0
+ScaleFont0	Sans Serif	16	75	0	0	0
+ScaleFont1	Sans Serif	16	75	0	0	0
+ScaleFont2	Sans Serif	16	75	0	0	0
+ScaleFont3	Sans Serif	16	75	0	0	0
+AxisFont0	Sans Serif	14	50	0	0	0
+AxisFont1	Sans Serif	14	50	0	0	0
+AxisFont2	Sans Serif	14	50	0	0	0
+AxisFont3	Sans Serif	14	50	0	0	0
+EnabledTickLabels	1	0	1	0	
+AxesColors	#000000	#000000	#000000	#000000
+AxesNumberColors	#000000	#000000	#000000	#000000
+AxesBaseline	0	0	0	0	
+CanvasBackground	#ffffff	255
+<Function>
+<Type>0</Type>
+<Title>F1</Title>
+<Expression>0.5^(x/100)</Expression>
+<Variable>x</Variable>
+<Range>0	325</Range>
+<Points>100</Points>
+<Style>0</Style>
+<LineStyle>1</LineStyle>
+<Pen>
+	<Color>#000000</Color>
+	<Style>0</Style>
+	<Width>2</Width>
+</Pen>
+<xAxis>2</xAxis>
+<yAxis>0</yAxis>
+<Visible>1</Visible>
+</Function>
+<Function>
+<Type>0</Type>
+<Title>F2</Title>
+<Expression>0.5</Expression>
+<Variable>x</Variable>
+<Range>0	325</Range>
+<Points>2</Points>
+<Style>0</Style>
+<LineStyle>1</LineStyle>
+<Pen>
+	<Color>#000000</Color>
+	<Style>0</Style>
+	<Width>1</Width>
+</Pen>
+<xAxis>2</xAxis>
+<yAxis>0</yAxis>
+<Visible>1</Visible>
+</Function>
+<Function>
+<Type>0</Type>
+<Title>F3</Title>
+<Expression>0.25</Expression>
+<Variable>x</Variable>
+<Range>0	325</Range>
+<Points>2</Points>
+<Style>0</Style>
+<LineStyle>1</LineStyle>
+<Pen>
+	<Color>#000000</Color>
+	<Style>0</Style>
+	<Width>1</Width>
+</Pen>
+<xAxis>2</xAxis>
+<yAxis>0</yAxis>
+<Visible>1</Visible>
+</Function>
+<Function>
+<Type>0</Type>
+<Title>F4</Title>
+<Expression>1/8</Expression>
+<Variable>x</Variable>
+<Range>0	325</Range>
+<Points>2</Points>
+<Style>0</Style>
+<LineStyle>1</LineStyle>
+<Pen>
+	<Color>#000000</Color>
+	<Style>0</Style>
+	<Width>1</Width>
+</Pen>
+<xAxis>2</xAxis>
+<yAxis>0</yAxis>
+<Visible>1</Visible>
+</Function>
+scale	0	0.1	1	0	10	5	1	0
+scale	1	0.1	1	0	8	5	1	0
+scale	2	0	325	0	8	5	0	0
+scale	3	0	325	0	7	5	0	0
+LabelsFormat	0	4	0	4	0	4	0	4	
+AxisType	0	0	0	0	
+MajorTicks	3	3	3	3	
+MinorTicks	3	3	3	3	
+TicksLength	5	9
+DrawAxesBackbone	1
+AxesLineWidth	1
+LabelsRotation	0	0
+<line>	100	0.1	100	1	1	#000000	SolidLine	0	0	4	45	1</line>
+<line>	300	0.1	300	1	1	#000000	SolidLine	0	0	4	45	1</line>
+<line>	200	0.1	200	1	1	#000000	SolidLine	0	0	4	45	1</line>
+<Legend>
+<Frame>0</Frame>
+<Color>#000000</Color>
+<FrameWidth>1</FrameWidth>
+<LineStyle>0</LineStyle>
+<x>125</x>
+<y>0.6</y>
+<right>178.520286396181</right>
+<bottom>0.488631907097475</bottom>
+<Text>
+A = A<sub>0</sub>/2
+</Text>
+<Font>Sans Serif	10	50	0	0	0</Font>
+<TextColor>#000000</TextColor>
+<Background>#ffffff</Background>
+<Alpha>0</Alpha>
+<Angle>0</Angle>
+<AutoUpdate>0</AutoUpdate>
+</Legend>
+<Legend>
+<Frame>0</Frame>
+<Color>#000000</Color>
+<FrameWidth>1</FrameWidth>
+<LineStyle>0</LineStyle>
+<x>124.88066825776</x>
+<y>0.30030606447318</y>
+<right>178.400954653938</right>
+<bottom>0.244242092935547</bottom>
+<Text>
+A = A<sub>0</sub>/4
+</Text>
+<Font>Sans Serif	10	50	0	0	0</Font>
+<TextColor>#000000</TextColor>
+<Background>#ffffff</Background>
+<Alpha>0</Alpha>
+<Angle>0</Angle>
+<AutoUpdate>0</AutoUpdate>
+</Legend>
+<Legend>
+<Frame>0</Frame>
+<Color>#000000</Color>
+<FrameWidth>1</FrameWidth>
+<LineStyle>0</LineStyle>
+<x>125</x>
+<y>0.15</y>
+<right>201.789976133652</right>
+<bottom>0.12274448940813</bottom>
+<Text>
+A = A<sub>0</sub>/8
+</Text>
+<Font>Sans Serif	10	50	0	0	0</Font>
+<TextColor>#000000</TextColor>
+<Background>#ffffff</Background>
+<Alpha>0</Alpha>
+<Angle>0</Angle>
+<AutoUpdate>0</AutoUpdate>
+</Legend>
+</graph>
+</multiLayer>
+<open>1</open>

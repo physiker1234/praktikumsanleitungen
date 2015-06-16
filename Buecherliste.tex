@@ -1,0 +1,102 @@
+\documentclass{tudphygp}
+\versuch{Bücherliste}{Meta}
+
+\begin{document}
+
+Die Quelldatei dieses Dokumentes enthält vorbereitete Bücherreferenzen, bei denen die Daten anhand eines OPAC verifiziert wurden. Die Liste ist alphabetisch erst nach Nachnamen, dann nach Vornamen des ersten Autors, dann nach Titel sortiert, damit man Bücher schnell findet.
+
+\section*{Anleitung}
+
+Wie benutze ich die Liste?
+\begin{enumerate}
+ \item Buch suchen
+ \item Eintrag in den Anleitungsquellcode kopieren
+ \item internen Referenznamen aus dem Bestand übernehmen
+ \item evtl. Jahr anpassen (sollte aus dem Original übernommen werden, da zwischen den Auflagen Änderungen reinkommen können)
+\end{enumerate}
+Und wenn mein Buch noch nicht in dieser Liste ist?
+\begin{enumerate}
+ \item Eintrag zusammensetzen (für diese Liste bitte ohne internen Referenznamen)
+ \item alle Daten anhand eines OPAC (zum Beispiel webopac.slub-dresden.de) verifizieren (beim Verlagsnamen bitte auf Konsistenz in der Schreibweise mit den anderen Einträgen in der Liste achten, Strg-F hilft weiter!)
+ \item Eintrag in der Liste hinzufügen (bitte obengenannte Sortierung beibehalten!)
+\end{enumerate}
+
+%Jetzt machen wir noch ein paar Hacks, damit die Bücherliste in dieser Form kompiliert.
+\renewcommand\buch[5]{
+ \stepcounter{bookref}
+ \item[{[\arabic{bookref}]}] #2,~\textit{#3},~#4,~#5
+}
+\section*{Literatur}
+\begin{itemize}
+
+%---8<--------8<--------8<--------8<--------8<--------8<--------8<--------8<----
+
+\buch{}{J.~d'Ans (Hrsg.), E.~Lax (Hrsg.)}{Taschenbuch für Chemiker und Physiker}{Springer-Verlag}{Berlin, Heidelberg 1967}
+\buch{}{L.~Bergmann, C.~Schaefer}{Lehrbuch der Experimentalphysik}{Verlag de Gruyter}{Berlin 1954}
+\buch{}{L.~Bergmann, C.~Schaefer}{Lehrbuch der Experimentalphysik, Band 1: Mechanik, Akustik, Wärmelehre}{Verlag de Gruyter}{Berlin 1954}
+\buch{}{L.~Bergmann, C.~Schaefer}{Lehrbuch der Experimentalphysik, Band 1: Mechanik, Akustik, Wärmelehre}{Verlag de Gruyter}{Berlin 1987}
+\buch{}{L.~Bergmann, C.~Schaefer}{Lehrbuch der Experimentalphysik, Band 2: Elektromagnetismus}{Verlag de Gruyter}{Berlin 1999}
+\buch{}{L.~Bergmann, C.~Schaefer}{Lehrbuch der Experimentalphysik, Band 3: Optik}{Verlag de Gruyter}{Berlin 1993}
+\buch{}{W.~Bergmann}{Werkstofftechnik~I}{Verlag~C.-Hanser}{München 1989}
+\buch{}{L.~Bi\'etry}{Mettler-Wägelexikon}{Mettler-Verlag}{Greifensee 1982}
+\buch{}{I.~N.~Bronstejn, G.~Musiol, H.~Mühlig}{Taschenbuch der Mathematik}{Verlag Harri Deutsch}{Frankfurt am Main, Thun 1999}
+\buch{}{W.~Demtröder}{Experimentalphysik~I}{Springer-Verlag}{Berlin, Heidelberg 1994}
+\buch{}{W.~Demtröder}{Experimentalphysik~2: Elektronik und Optik}{Springer-Verlag}{Berlin, Heidelberg 1994}
+\buch{}{B.~Dörschel,V.~Schuricht,J.~Steuer}{Praktische Strahlenschutzphysik}{Spektrum Akademischer Verlag}{Heidelberg, Berlin 1992}
+\buch{}{F.~X.~Eder}{Moderne Messmethoden der Physik, Band 1: Mechanik, Akustik}{Verlag der Wissenschaften}{Berlin 1960}
+\buch{}{F.~X.~Eder}{Moderne Messmethoden der Physik, Band 2: Thermodynamik}{Verlag der Wissenschaften}{Berlin 1960}
+\buch{}{H.~J.~Eichler, H.~D.~Kronfeldt, J.~Sahm}{Das neue physikalische Grundpraktikum}{Springer-Verlag}{Berlin, Heidelberg [u.a.] 2006}
+\buch{}{H.~Engels, N.~Schmidt}{Oszilloskop-Messtechnik von A -- Z}{Franzis-Verlag}{München 1992}
+\buch{}{W.~Finkelnburg}{Einfuhrung in die Atomphysik}{Springer-Verlag}{Berlin 1967}
+\buch{}{C.~Gerthsen, H.~Vogel}{Physik}{Springer-Verlag}{Berlin, Heidelberg 1995}
+\buch{}{C.~Gerthsen}{Physik}{Springer-Verlag}{Berlin 1997}
+\buch{}{C.~Gerthsen, D.~Meschede (Hrsg.)}{Gerthsen Physik}{Springer-Verlag}{Berlin, Heidelberg [u.a.] 2002}
+\buch{}{W.~H.~Gränicher}{Messung beendet, was nun?}{vdf, Hochschulverlag an der ETH Zürich}{Zürich 1996}
+\buch{}{E.~Grimsehl}{Lehrbuch der Physik, Band 4: Struktur der Materie}{Teubner-Verlag}{Leipzig 1990}
+\buch{}{H.~Haken}{Atom- und Quantenphysik}{Springer-Verlag}{Berlin 1990}
+\buch{}{L.~Herforth,H.~Koch}{Praktikum der Radioaktivität und Radiochemie}{Verlag A. Barth}{Leipzig 1992}
+\buch{}{W.~Ilberg (Hrsg.), M.~Krötzsch (Hrsg.) et.~al.}{Physikalisches Praktikum für Anfänger}{Teubner-Verlag}{Leipzig 1994}
+\buch{}{G.~Joos, B.~Fricke}{Lehrbuch der theoretischen Physik}{Aula-Verlag}{Wiesbaden 1989}
+\buch{}{C.~Kittel}{Einführung in die Festkörperphysik}{Oldenbourg-Verlag}{München, Wien 2006}
+\buch{}{F.~Kohlrausch}{Praktische Physik, Band 1}{Teubner-Verlag}{Stuttgart 1996}
+\buch{}{F.~Kohlrausch}{Praktische Physik, Band 2}{Teubner-Verlag}{Stuttgart 1996}
+\buch{}{F.~Kohlrausch}{Praktische Physik, Band 3: Tabellen}{Teubner-Verlag}{Stuttgart 1996}
+\buch{}{K.~Küpfmüller}{Einführung in die theoretische Elektrotechnik}{Springer-Verlag}{Berlin 1990}
+\buch{}{W.~Lichten, D.~Meschede}{Skriptum Fehlerrechnung}{Springer-Verlag}{Berlin, Heidelberg 1988}
+\buch{}{K.~Lunze}{Einführung in die Elektrotechnik}{Verlag Hüthig}{Berlin 1991}
+\buch{}{T.~Mayer-Kuckuk}{Kernphysik}{Teubner-Verlag}{Stuttgart 1994}
+\buch{}{G.~Mierdel, S.~Wagner}{Aufgaben zur Theoretischen Elektrotechnik}{Technik-Verlag}{1959}
+\buch{}{G.~Musiol,J.~Ranft}{Kern- und Elementarteilchenphysik}{Verlag der Wissenschaften}{Berlin 1988}
+\buch{}{H.~Niedrig}{Physik}{Springer-Verlag}{Berlin, Heidelberg 1992}
+\buch{}{G.~Otter,R.~Honecker}{Atome--Moleküle--Kerne, Band I Atomphysik}{Teubner-Verlag}{Stuttgart 1993}
+\buch{}{L.~Papula}{Mathematik für Ingenieure und Naturwissenschaftler, Band 3: Vektoranalysis, Wahrscheinlichkeitsrechnung, Mathematische Statistik, Fehler- und Ausgleichsrechnung}{Vieweg Friedrich~\&~Sohn Verlag}{Wiesbaden 2001}
+\buch{}{L.~Papula}{Mathematik für Ingenieure und Naturwissenschaftler, Übungen}{Vieweg Friedrich~\&~Sohn Verlag}{Braunschweig, Wiesbaden 2001}
+\buch{}{P.~Paufler, G.~E.~R.~Schulze}{Physikalische Grundlagen mechanischer Festkörpereigenschaften~I}{Vieweg Friedrich~\&~Sohn Verlag}{Wiesbaden 1985}
+\buch{}{H.~J.~Paus}{Physik in Experimenten und Beispielen}{Verlag~C.-Hanser}{München 1995}
+\buch{}{P.~Profos}{Handbuch der industriellen Messtechnik}{Oldenbourg-Verlag}{München, Wien 1992}
+\buch{}{A.~Recknagel}{Physik: Mechanik}{Technik-Verlag}{Berlin 1990}
+\buch{}{A.~Recknagel}{Physik: Schwingungen, Wellen, Wärmelehre}{Technik-Verlag}{Berlin 1990}
+\buch{}{A.~Recknagel}{Physik: Elektrizität und Magnetismus}{Technik-Verlag}{Berlin 1990}
+\buch{}{E.W.~Schpolski}{Atomphysik--Band 1: Einfuhrung in die Atomphysik}{Barth-Verlag}{Leipzig 1993}
+\buch{}{G.~E.~R.~Schulze}{Metallphysik}{Springer-Verlag}{Berlin 1982}
+\buch{}{K.~Simonyi}{Theoretische Elektrotechnik}{Verlag der Wissenschaften}{Berlin 1989}
+\buch{}{W.~Stolz}{Radioaktivität: Grundlagen -- Messungen -- Anwendungen}{Teubner-Verlag}{Stuttgart/Leipzig 2003}
+\buch{}{H.~Stroppe}{Physik}{Fachbuch-Verlag}{Leipzig 1984}
+\buch{}{H.~A.~Stuart, G.~Klages}{Kurzes Lehrbuch der Physik}{Springer-Verlag}{Berlin, Heidelberg 2005}
+\buch{}{P.~Täubert}{Abschätzung der Genauigkeit von Messergebnissen}{Technik-Verlag}{Berlin 1987}
+\buch{}{J.~Topping}{Fehlerrechnung: eine Einführung für Naturwissenschaftler}{Physik-Verlag}{Weinheim 1975}
+\buch{}{H.-G.~Unger}{Elektromagnetische Wellen auf Leitungen}{Verlag Hüthig}{Heidelberg 1991}
+\buch{}{W.~Walcher}{Praktikum der Physik}{Teubner-Verlag}{Stuttgart 1989}
+\buch{}{I.~Waldemar, D.~Geschke, E.~Horst}{Physikalisches Praktikum}{Teubner-Verlag}{Stuttgart, Leipzig 1998}
+\buch{}{R.~Waldi}{Statistik für's Physik-Praktikum}{Skriptum der TU Dresden}{Dresden 1996}
+\buch{}{H.~Weber}{Einführung in die Wahrscheinlichkeitsrechnung und Statistik für Ingenieure}{Teubner-Verlag}{Stuttgart 1992}
+\buch{}{W.~H.~Westphal}{Physikalisches Praktikum}{Vieweg-Verlag}{Braunschweig 1974}
+\buch{}{R.~Worg}{Deterministisches Chaos}{BI-Wissenschaftsverlag}{Mannheim 1993}
+\buch{}{B.~Vongxaya}{Nichtlineare Schwingungen, Comp.-Lernprogr.}{TU Dresden}{Dissertation 1994}
+\buch{}{C.~Weissmantel, C.~Hamann}{Grundlagen der Festkörperphysik}{Springer-Verlag}{Berlin 1979}
+\buch{}{G.~Wunsch, H.~G.~Schulz}{Elektromagnetische Felder}{Technik-Verlag}{Berlin 1989}
+
+%---8<--------8<--------8<--------8<--------8<--------8<--------8<--------8<----
+
+\end{itemize}
+\end{document}

@@ -1,0 +1,55 @@
+\documentclass[platz]{tudphygp}
+\usepackage{tudphymd,subfigure}
+
+\versuch{Reversionspendel}{RP}
+
+\begin{document}
+\maketitle
+
+\subsection*{Aufgabenstellung}
+Mit Hilfe eines symmetrischen, inhomogenen Reversionspendels ist die örtliche Fallbeschleunigung $g$ mit möglichst hoher Genauigkeit
+\begin{enumerate}
+ \item aus dem Schnittpunkt der Kurven $T_A(x)$ und $T_B(x)$ und
+ \item nach dem Verfahren für näherungsweise abgeglichene Schwingungsdauern $T_A(x)$ und $T_B(x)$ (auf $\abs{\frac{\Delta g}g} \leq 0{,}3\%$) zu bestimmen.
+\end{enumerate}
+
+\subsection*{Hinweise zur Versuchsdurchführung}
+
+\begin{enumerate}
+ \item \textit{Positionierung der Lichtschranke:} Die Position der Lichtschranke kann mit einer Stellschraube variiert werden. Richten Sie sie so aus, dass sie beim Nulldurchgang des Pendels ausgelöst wird. (Warum an dieser Position?) Die richtige Position ist erreicht, wenn bereits bei Amplituden unter \SI{,2}{mm} eine Impulsfolge registriert wird. Für die Schwingungsdauermessung beträgt die günstigste Amplitude -- bezogen auf das Pendelstabende -- etwa \SI{10}{mm}. (Der Pendelstab hat einen Durchmesser von \SI{12}{mm}.)
+ \item \textit{Bedingung für den Abgleich der Schwingungsdauer:} Die geforderte Genauigkeit bedingt einen guten Abgleich der Schwingungsdauern $T_A$ und $T_B$ durch Verschieben der Abgleichkörper. Gleichen Sie zunächst das Pendel so ab, dass die folgende Bedingung erfüllt ist:
+  \[
+   \abs{\frac bT} = \frac{\abs{T_A-T_B}}{T_A+T_B} < \num{3e-4}
+  \]
+ \item \textit{Ausführung des Abgleichs:} Beide Abgleichkörper sind immer in derselben Entfernung $x$ vom Pendelstabende zu befestigen. (Weshalb?) Messen Sie zunächst die Schwingungsdauern für $x_1 \approx \SI{30}{mm}$ und $x_2 \approx \SI{110}{mm}$ (nutzen Sie das Tiefenmaß des Messschiebers). Die in ein Diagramm einzutragenden Messwerte ergeben einen Schnittpunkt $(x_3, T)$ der durch Geraden angenäherten Kurven $T_{A/B}(x)$. Messen Sie nun auch die Schwingungsdauern $T_A(x_3)$ und $T_B(x_3)$. Falls diese Schwingungsdauern noch nicht die Genauigkeitsforderung erfüllen, erhält man die nächste Position $x_4$ aus dem Schnittpunkt der Geraden, die durch $T_A(x_3)$ bzw. $T_B(x_3)$ parallel zu den zugehörigen Geraden in dasselbe Diagramm eingezeichnet werden. Diese Einschachtelung erfolgt solange, bis obengenannte Bedingung erfüllt ist. Nutzen Sie jeweils \num{20} Schwingungen für die Zeitmessungen und wiederholen Sie jede Messung um grobe Fehler auszuschließen.
+ \item \textit{Genaue Messung:} Bei der Zeitmessung zur genauen Bestimmung der Fallbeschleunigung nutzen sie bitte zwischen \num{50} und \num{99} Schwingungen, und wiederholen Sie die Messung zweimal. Die Gangunsicherheit (zufälliger Fehler) der Zeitmesseinrichtung beträgt:
+  \[
+   \Delta t_\mathrm{zuf} = \pm\brk{ \frac{t_\mathrm{max} - t_\mathrm{min}}2 + \SI1{Digit} } \quad\text{mit}\quad \SI1{Digit} = \SI{e-3}s
+  \]
+ \item[\textbf{Achtung:}] Das Pendel darf nur dann aus der Pendelhalterung entnommen bzw. in diese eingesetzt werden, wenn es mit der Hebevorrichtung (Stellschraube) angehoben worden ist. Das Absenken der gehärteten Schneide (Achse) auf die gehärtete Auflagefläche mit der Stellschraube muss vorsichtig und unter Beobachtung erfolgen.
+ \item \textit{Bestimmung der Längen $L$ und $s_{A/B}^*$:} Zur Messung des Schneidenabstands nutzen Sie das Kathetometer, wozu das Pendel in die an der Wand befindliche Halterung einzuhängen ist. Zunächst müssen Sie das Kathetometer wie folgt kalibrieren: (siehe Abbildung \ref{fig::kathetometer})
+  \begin{enumerate}
+   \item Stellen Sie das Fernrohr parallel zu $S_1S_2$ und damit parallel zur Wand, und gleichen Sie die Libelle mit $S_1$ und $S_2$ ab.
+   \item Kontrollieren Sie die Parallelstellung des Fernrohrs: Die Blase der Wasserwaage des Fernrohres muss innerhalb der beiden großen Teilstriche stehen. Schwenken Sie dazu das Fernrohr mehrmals um \ang{90} bzw. \ang{180} in beide Richtungen, und korrigieren Sie Fehlstellungen mit den Stellschrauben. Dabei sind die Stellschrauben gegenläufig zu bewegen, damit der Fußpunkt~$\boldsymbol\times$ der Kathetometersäule nicht verändert wird.
+   \item Diese Einstellung muss am oberen Messpunkt kontrolliert werden, da ein Auswandern der Blase um zwei Teilstriche eine Messabweichung von \SI1{mm} zur Folge hat. Der große Messschieber dient zur groben Kontrolle des Messwertes (evtl. peilt man die falsche Schneidenseite an).
+  \end{enumerate}
+ Danach ist das Fernrohr horizontal zu stellen (siehe Justieranleitung unten), das Fadenkreuz in eine \ang{45}-Stellung zu bringen und die $z$-Stellungen des Fernrohrs nach dem Anvisieren der Schneiden zu bestimmen. Der Schneidenabstand ergibt sich wie folgt:
+  \[
+   L = z_\mathrm{oben} - z_\mathrm{unten} + L_0 \quad\text{mit}\quad L_0 = 750 \pm \SI{0,01}{mm}
+  \]
+  Der systematische Fehler der Kathetometerskale entsprichte dem eines Messschiebers. Für die Messung der Längen $s_A^*$ und $s_B^*$ genügt ein Bankmaßstab.
+ \item \textit{Berechung von $g$ und Fehlerabschätzung:} (ausführlich siehe Anleitung)
+ \[
+  g = 4\pi^2 \cdot \frac{s_A^{*2} - s_B^{*2}}{T_A^2 \cdot s_A^* - T_B^2 \cdot s_B^*}
+ \]
+ Die Fehlerrechnung ist im Anhang (Kapitel 4.1) der Anleitung beschrieben. Schätzen Sie bei der Berechnung insbesondere den möglichen Fehler der gemessenen Schwingungsdauer, der durch Vernachlässigung der Amplitudenabhängigkeit entsteht.
+\end{enumerate}
+
+\begin{figure}[h!t]
+ \subfigure[Längenbezeichnungen am Reversionspendel bei horizontaler Aufhängung]{\includegraphics[width=\linewidth/2-5pt]{GP1-RP-Achse}} \hfill
+ \subfigure[Kathetometer; mit Auflagepunkt $P$, Fußpunkt $\times$ und Stellschrauben $S_1$ und $S_2$]
+  {\label{fig::kathetometer}\includegraphics[width=\linewidth/2-5pt]{GP1-RP-Kathetometer}}
+ \caption{Aufbau der Messapparaturen}
+\end{figure}
+
+\end{document}

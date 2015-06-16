@@ -1,0 +1,250 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd,mhchem}
+\usepackage{listliketab,multirow}
+\usepackage{lmodern}
+
+\versuch{Neutronenaktivierung von Silber}{RM3}
+\author{K.~Prokert,R.~Schwierz}
+\bearbeitet{A.~Otto}{}
+
+\buch{1}{W.~Stolz}{Radioaktivität: Grundlagen -- Messungen -- Anwendungen}{Teubner-Verlag}{Stuttgart/Leipzig 2003}
+\buch{2}{L.~Herforth,H.~Koch}{Praktikum der Radioaktivität und Radiochemie}{Verlag A. Barth}{Leipzig 1992}
+\buch{3}{W.~Ilberg (Hrsg.), M.~Krötzsch (Hrsg.) et.~al.}{Physikalisches Praktikum für Anfänger}{Teubner-Verlag}{Leipzig 1994}
+
+\begin{document}
+\maketitle
+
+\section{Grundlagen}
+  Durch Reaktionen zwischen Atomkernen und Teilchen (z.B. Protonen, $\alpha$-Partikeln, Neutronen) oder Photonen kann 
+  die Bildung anderer stabiler oder instabiler Nuklide erfolgen. Neutronen besitzen keine Ladung und benötigen daher 
+  keine Energie zur Überwindung der Coulomb-Barriere des Targetkerns, so dass Neutronen aller Energiegruppen (schnelle 
+  Neutronen $n_\text s$ mit einer Neutronenenergie $E_n > \SI{10}{keV}$, intermediäre Neutronen $n_\text i$ mit 
+  $E_n = \SI{0,4}{eV}\dots\SI{10}{keV}$ oder thermische Neutronen $n\text{th}$ mit $E_n < \SI{0,4}{eV}$) 
+  Kernreaktionen auslösen können.
+
+  Neutroneninduzierte Kernreaktionen sind:\\[-2.5em]
+  \begin{align*}
+  \intertext{\textbf{Austauschreaktionen} wie}
+      \ce{^{32}S + n} & \ce{-> ^{32}P + p} && \text{Kurzform} \quad \ce{^{32}S}\,(\ce n;\ce p)\,\ce{^{32}P}\\
+      \ce{^{27}Al + n} & \ce{-> ^{24}Na + \alpha} && \text{Kurzform} \quad \ce{^{27}Al}\,(\ce n;\alpha)\,\ce{^{24}Na}\\
+      \ce{^{113}In + n} & \ce{-> ^{113m}In + n^\prime} && \text{Kurzform} \quad \ce{^{113}In}\,(\ce n;\ce n^\prime)\,\ce{^{113m}In}\\
+  \intertext{\textbf{Einfangreaktionen} wie}
+      \ce{^{107}Ag + n} & \ce{-> ^{108}Ag + h\nu} && \text{Kurzform} \quad \ce{^{107}Ag}\,(\ce n;\gamma)\,\ce{^{108}Ag}\\
+  \intertext{\textbf{Spaltungsreaktionen} wie}
+      \ce{^{238}U + n} & \ce{-> \kla{^{239}\ce U^*} -> ^{95}Rb + ^{142}Cs + 2n} && \text{Kurzform} \quad \ce{^{238}U}\,(\ce n;\ce f)\,\ce{FP}\\
+      \ce{^{235}U + n} & \ce{-> \kla{^{236}\ce U^*} -> ^{94}Sr + ^{139}Xe + 3n} && \text{Kurzform} \quad \ce{^{235}U}\,(\ce n;\ce f)\,\ce{FP}\\
+      & && \text{FP}=\text{\emph{fission products}}
+  \end{align*}
+  Bei diesen Reaktionen wird die freiwerdende Bindungsenergie auf Grund der Massenverhältnisse praktisch vollständig auf 
+  das aus dem gebildeten Kern emittierte Teilchen übertragen bzw. es erfolgt Emission von Photonenstrahlung. Bedeutung 
+  besitzen derartige Kernreaktionen u.a. für die Energiegewinnung, die Isotopenproduktion und die Materialanalyse. Sind 
+  die durch Austausch- oder durch Einfangreaktionen gebildeten Nuklide ("`Folgekerne"' oder "`Tochterkerne"') wie in den 
+  angeführten Beispielen instabil ("`radioaktiv"'), so spricht man von einer \textsc{Neutronenaktivierung}. Die 
+  Wahrscheinlichkeit des Auftretens von solchen Reaktionen wird durch den Aktivierungsquerschnitt $\sigma_A$ angegeben, 
+  der stark von $E_n$ abhängt. 
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{aktivierungsquerschnitt.pdf}
+    \caption{Aktivierungsquerschnitt von Silber}
+    \label{fig:aktivierung}
+  \end{figure}
+  Besonders hohe Werte für $\sigma_A$ treten bei der Reaktion mit thermischen oder mit 
+  intermediären Neutronen auf. Die Abb. \ref{fig:aktivierung} zeigt die Energieabhängigkeit des 
+  Aktivierungsquerschnittes von Silber.\\
+  Für Aktivierungsreaktionen können Neutronenquellen, wie z.B. der Kernreaktor, Neutronengeneratoren (z.B. Ausnutzung 
+  der Reaktion \ce{^3_1H + ^2_1 H -> ^4_2He + n_{\SI{14}{MeV}}}) oder Isotopenneutronenquellen (z.B. des Typs 
+  $\ce{^9_4Be}\,(\alpha;n)\,\ce{^{12}_6C}$) benutzt werden.
+  
+  In den meisten Fällen erfolgt die Aktivierung der Proben durch thermische und intermediäre Neutronen, die durch 
+  "`Abbremsung"' der von den Quellen emittierten energiereichen (schnellen) Neutronen durch Stoßprozesse mit leichten 
+  Kernen (H, D oder C) erzeugt werden. Als sogenannte Moderatorssubstanzen dienen daher Wasser, schweres Wasser, 
+  Polyethylene oder Graphit.\\
+  Für den Fall, dass in der bestrahlten Probe ein radioaktives Nuklid entsteht, ist dessen Aktivität nach folgender 
+  Beziehung berechenbar:
+  \begin{equation}
+    A(t)=N_A\cdot\kla{1-\eu{-\lambda t}}\Int\varphi(E)\sigma_A(E)\diff E
+    \label{for:aktivierung}
+  \end{equation}
+  \begin{flalign*}
+    A(t) &=\text{Aktivität (zu Bestrahlungsende)}&\\
+    \varphi(E) &=\text{spektrale Neutronenflussdichte}&\\
+    t &=\text{Bestrahlungszeit}\\
+    N_A &=\text{Anzahl der aktivierbaren Kerne}\\
+    \sigma_A(E) &=\text{neutronenenergieabhängiger mikroskopischer Aktivierungsquerschnitt}\\
+    \lambda &=\text{Zerfallskonstante des gebildeten Radionuklids}
+  \end{flalign*}
+  
+  Für den Fall, dass thermische Neutronen mit einer Energieverteilung, die einem Maxwell-Spektrum entspricht, und eine 
+  mittlere Energie von \SI{0,025}{eV} besitzen und die Probe treffen, gilt $\varphi(E) = \varphi_\text{th}$ und es 
+  kann direkt mit den tabellierten $\sigma_{A,\text{th}}$-Werten gerechnet werden. Dies kann vorausgesetzt werden, 
+  wenn sich die Neutronen nach ihrer Abbremsung im Temperaturgleichgewicht ($\SI{25^\circ}{C}$) mit den Atomen ihrer 
+  Umgebung befinden. Für exakte Berechnungen muss jedoch der Einfluss der Energieabhängigkeit des 
+  Aktivierungsquerschnitts und des vorhandenen Neutronenenergiespektrums auf die Aktivierungsrate berücksichtigt werden. 
+  Da in diesem Versuch weder ein definiertes Maxwell-Spektrum thermischer Neutronen vorliegt noch des Energiespektrum 
+  der Neutronen exakt vermessen werden kann, wird in Tabelle 1 ein mittlerer Wirkungsquerschnitt $\sigma_\text{pr}$ 
+  angegeben, der für das vorliegende Energiespektrum der Neutronen, beschrieben durch den mittleren Fluss $\varphi_M$, 
+  nachfolgende Vereinfachung in der Aktivierungsgleichung \eqref{for:aktivierung} zulässt:
+  \begin{equation*}
+    \Int\varphi(E)\sigma_A(E)\diff E=\varphi_M\cdot\sigma_\text{pr}
+  \end{equation*}
+  
+  \section{Neutronenaktivierung von Silber}
+
+  Natürliches Silber besteht aus den beiden stabilen Isotopen mit den Massenzahlen 107 und 109, die mit thermischen und 
+  intermediären Neutronen über Einfangreaktionen vom Typ $(\ce n;\gamma)$ die drei Radionuklide \ce{^{108}Ag}, 
+  \ce{^{110}Ag} und \ce{^{110m}Ag} bilden können. In den Tabellen 1 und 2 sind die notwendigen Daten dieser Kerne für 
+  Berechnungen und Vergleiche mit den Experimenten zusammengefasst. Aus der Aktivierungsgleichung 
+  \eqref{for:aktivierung} ergibt sich, dass die zu Bestrahlungsende vorhandene Aktivität $A(t)$ der verschiedenen 
+  radioaktiven Silberisotope von den Größen $\varphi(E)$, $\sigma_A(E)$, $\lambda$, $N_A$ und $t$ abhängt. Es ist daher 
+  prinzipiell möglich, bei einer Neutronenaktivierungsanalyse (NAA) $N_A$ direkt aus dem gemessenen Wert von $A$ zu 
+  berechnen ( = \emph{Absolutverfahren der NAA}). Insbesondere wegen der Schwierigkeit, verlässliche Daten für die 
+  spektralen Flussdichten \emph{in} der zu aktivierenden Probe zu erhalten, wird in der Praxis hauptsächlich das 
+  \emph{Relativverfahren der NAA} genutzt, bei dem die Analyse durch Bestimmung des Zusammenhangs zwischen $A$ und $N$ 
+  mit Hilfe von Vergleichsproben ähnlicher Dimension und Zusammensetzung erfolgt, die unter analogen Bedingungen 
+  bestrahlt werden. 
+  \piccaption{Aufbauprinzip der Bestrahlungsanlage (Polyethylen moderiertes \ce{^{241}Am}-\ce{^9Be}-Quellenarray)
+  \label{fig:skizze}}
+  \parpic[r]{\includegraphics[width=0.4\textwidth]{skizze.pdf}}
+  Berechnungen unter Nutzung der Beziehung \eqref{for:aktivierung} sind bei der Planung einer NAA 
+  unumgänglich, da sie die Abschätzung der zu erwartenden Aktivität einer zu analysierenden Probe gestatten. Diese 
+  Vorausberechnung ist für die Handhabbarkeit des aktivierten Materials und die notwendigen Strahlenschutzmaßnahmen bei 
+  der Bearbeitung und Messung von großer Bedeutung. Im durchzuführenden Experiment erfolgt die Aktivierung der 
+  Silberproben in der in Abb. \ref{fig:skizze} dargestellten Anlage. Im Zentrum eines aus Polyethylen-Ziegeln 
+  zusammengesetzten Blockes mit den Abmessungen von $(84\cdot90\cdot110)\SI{}{cm^3}$ befindet sich ein Array von 
+  Amer\-ic\-ium-Beryllium-(Am-Be)-Quellen. Die beim Zerfall von \ce{^{241}Am} emittierten $\alpha$-Teilchen werden an 
+  \ce{^9Be}-Kernen eingefangen und bilden instabile \ce{^{13}C}-Kerne, die unter Emission eines Neutrons in \ce{^{12}C} 
+  übergehen. Diese Neutronen haben eine Maximalenergie von etwa \SI{10,5}{MeV} mit breiten Intensitätsmaxima um 
+  \SI{4}{MeV}, \SI{7,5}{MeV} und \SI{9,5}{MeV}. Im umgebenden Polyethylen werden diese moderiert. Durch die große 
+  Halbwertszeit von \ce{^{241}Am} ist die auch nach vielen Jahren praktisch konstant. Die gegebenen Werte gestatten 
+  unter Verwendung der Aktivierungsgleichung \eqref{for:aktivierung} die Berechnung folgender Daten:
+  \begin{itemize}
+    \item Maximal erzielbare Probenaktivität ("`Sättigungsaktivität"') einer Ag-Probe, die sich aus den S
+    ättigungsaktivitäten der Silberisotope zusammensetzt
+    \item Notwendige Bestrahlungszeiten für die gewünschte Annäherung an die Sättigungsaktivitäten (z.B. 75\%, 95\% bzw. 
+    99\%) für die verschiedenen Ag-Isotope.
+    \item Einfluss der \ce{^{110m}Ag}-Aktivität auf das Ergebnis kurzzeitiger Neutronenaktivierungen.
+  \end{itemize}
+  \picskip{0}
+  \begin{table}[p]
+    \centering
+    \caption{Daten der natürlichen Silberisotope}
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+     & Häufigkeit  &  & gemittelter  & berechneter\\
+     & im          &  & Aktivierungsquer- & Aktivierungsquer-\\
+     Isotop & natürlichen & entstehendes & schnitt $\sigma_\text{pr}$ im & $\sigma_{A,\text{pr}}$ für ein\\
+     & Isotopen- & Isotop & vorliegenden & Maxwell-Spektrum\\
+     & gemisch & & Neutronenspektrum & der Neutronen\\\hline
+    \ce{^{107}Ag} & \SI{51,83}{\%} & \ce{^{108}Ag} & \SI{46}{b} & \SI{37}{b}\\\hline
+    \multirow{2}{*}{\ce{^{109}Ag}} & \multirow{2}{*}{\SI{48,17}{\%}} & \ce{^{110}Ag} & \SI{244}{b} & \SI{86}{b}\\\cline{3-5}
+    & & \ce{^{110m}Ag} & \SI{6}{b} & \SI{4,5}{b}\\\hline
+    \multicolumn{5}{l}{$\SI{}{b}\rightarrow\text{barn}=\SI{e-24}{cm^2}$}\\
+    \multicolumn{5}{l}{$\sigma_\text{th}$ nach Technical Report Series No 273 Handbook on Nuclear Activation Data,}\\
+    \multicolumn{5}{l}{IAEA Wien 1987}
+    \end{tabular}
+  \end{table}
+  \begin{table}[p]
+    \centering
+    \caption{Daten der gebildeten, radioaktiven Silberisotope}
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    Isotop & Halbwertszeit  & Emission von Elektronen & Emission von Photonen\\
+           &                & \small{$E_\text{max}/$Wahrscheinlichkeit} & \small{Energie/Wahrscheinlichkeit}\\
+           &                & \small{der Emission} & \small{der Emission}\\\hline
+    \ce{^{108}Ag} & \SI{2,41}{min} & $\SI{1,77}{MeV}/\SI{99}{\%}$ & $\SI{632}{keV}/\SI{1,7}{\%}$\\\hline
+    \multirow{2}{*}{\ce{^{110}Ag}} & \SI{24,6}{s} & $\SI{2,24}{MeV}/\SI{50}{\%}$ & \multirow{2}{*}{$\SI{657}{keV}/\SI{4,5}{\%}$}\\
+    & & $\SI{2,82}{MeV}/\SI{40}{\%}$ & \\\hline
+    \multirow{2}{*}{\ce{^{110m}Ag}} & \SI{250}{d} & $\SI{0,087}{MeV}/\SI{58}{\%}$ & \multirow{2}{*}{$\SI{657}{keV}/\SI{90}{\%}$}\\
+    & & $\SI{0,53}{MeV}/\SI{35}{\%}$ & \\\hline
+    \end{tabular}
+  \end{table}
+  Die Aktivitätsmessung der Ag-Isotope erfolgt durch Messung der $\beta$-Strahlung. Eine sehr gute Zählausbeute $\eta$ 
+  wird bei Verwendung einer Detektorkombination Plastszintillator-PSEV erzielt. Bei bekanntem $\eta$ der vorliegenden 
+  Messanordnung (Abb. \ref{fig:anordnung}) kann entsprechend der Beziehung
+  \begin{equation}
+    A=\eta\,Z
+    \label{for:aktivität}
+  \end{equation}
+  die Probenaktivität bestimmt werden. Jedoch ist es insbesondere bei $\beta$-Strahlung schwierig, $\eta$ exakt zu 
+  bestimmen, da dieser Wert von verschiedenen Faktoren (z.B. Geometrie-, Absorptions-, Selbstabsorptions-, 
+  Lichtausbeutefaktor) beeinflusst wird. Daher erfolgt in der Praxis wieder die Anwendung einer Relativmessung bei der 
+  lediglich die Konstanz von $\eta$ gewährleistet sein muss.
+  \begin{figure}[p]
+    \centering
+    \includegraphics[width=0.9\textwidth]{schema.pdf}
+    \caption{Schema der Messanordnung für aktivierte Silberproben}
+    \label{fig:anordnung}
+  \end{figure}
+  
+\section{Aufgabenstellung}
+  \begin{itemize}
+    \item Optimierung für die Impulszählung mit der gegebenen Messanordnung (Festlegung des Diskriminatorpegels 
+    $U_\text{Dis}$ bei vorgegebener Arbeitsspannung $U_{D,A}$ des Detektors, um ein optimales Verhältnis zwischen 
+    Probenzählrate $Z$ und der Untergrundzählrate $Z_0$ zu erzielen.).
+    \item Berechnung der Bestrahlungszeit $t$, bei der $>95\%$ der Sättigungsaktivität der kurzlebigen 
+    Silberisotope erreicht wird. Abschätzung der zu erwartenden Probenaktivität.
+    \item Planung der Messbedingungen für die Aufnahme einer Abklingkurve der interessierenden Silberisotope 
+    (Festlegung der maximalen Zeit zwischen Bestrahlungsende und Messbeginn $t_\text{St}$, der Messzeit $t_\text M$, 
+    der Gesamtessdauer $t_\text G$ und ggf. des Messabstandes $t\text A$ zwischen dem Start der Einzelmessungen.).
+    \item Aufnahme einer Abklingkurve.
+    \item Bestimmung der Halbwertszeiten von \ce{^{108}Ag} und \ce{^{110}Ag} durch Zerlegung der komplexen 
+    Abklingkurve.
+    \item Berechnung des Isotopenverhältnisses $\ce{^{107}Ag}/\ce{^{109}Ag}$ in der Silberprobe.
+    \item Bestimmung des Silbergehaltes einer Münze unter Anwendung des Relativverfahrens der NAA.
+  \end{itemize} 
+ 
+\section{Hinweise zum Experiment}
+  \textbf{Zubehör:}
+  \begin{enumerate}
+    \item PC mit Einschubkarte für Kernstrahlungsmessung. Softwaregesteuerter Ablauf mittels LABVIEW und Auswertung 
+    der Messergebnisse unter EXCEL
+    \item Kernstrahlungsdetektor (Plastszintillator mit PSEV)
+    \item Silberproben (Massenangabe auf den Proben)
+    \item Probenhalter für Einführung in die Neutronenbestrahlungsanlage und Fixierung auf dem Detektor
+    \item Abgeschirmte Neutronenbestrahlungsanlage
+  \end{enumerate}
+  \textbf{Versuchsdurchführung und Auswertung}\\
+  (Einzelheiten auf Platzanleitung)
+  \begin{enumerate}
+    \item Alle Einstellungen der notwendigen Messparameter Detektorspannung $U_A$, Verstärkung $V$, Diskriminatorpegel 
+    $U_\text{Dis}$ und Messzeit $t_\text M$ (Länge eines Messzeitintervalls) werden der Platzanleitung entnommen bzw. 
+    in der Diskussion mit dem Betreuer festgelegt und am PC eingestellt. Desgleichen erfolgt die Speicherung aller 
+    Messwerte, deren Auswertung, sowie die Ausgabe der Ergebnisse am gleichen PC.
+    \item Die Silberstandardprobe wird in die Neutronen-Bestrahlungsanlage bis zum Erreichen von ca. \SI{95}{\%} der 
+    Sättigungsaktivität von \ce{^{108}Ag} bestrahlt.
+    \item Während der Bestrahlungszeit wird unter den eingestellten Bedingungen (siehe 1.) durch mehrfache Messung die 
+    Untergrundzählrate $Z_0$ ermittelt.
+    \item Die Silberstandardprobe wird aus der Neutronen-Bestrahlungsanlage entnommen, \textbf{\emph{gleichzeitig}} wird 
+    die Messung am PC gestartet (damit erfolgt die Festlegung von $t_0 = 0$ der Abklingkurve) und innerhalb von 
+    $1\cdot t_\text M$ die Probe auf dem Detektor fixiert.
+    \item Die Silberanalysenprobe wird in der Neutronen-Bestrahlungsanlage bestrahlt (analog zu Pkt. 2.).
+    \item Messung der Silberanalysenprobe entsprechend Pkt. 4. Da die Auswertung zur Bestimmung des Silbergehalts der 
+    Silberanalyseprobe anhand des Relativverfahrens der NAA erfolgt, ist die exakte Festlegung des Zeitpunktes $t_0$ 
+    bestimmend für die Zuverlässigkeit dieses Versuchsergebnisses.
+    \item Die Darstellung und Auswertung der gemessenen Abklingkurven unter Berücksichtigung der Untergrundzählrate $Z_0$ 
+    erfolgt entsprechend der Aufgabenstellung unter Nutzung des Tabellenkalkulationsprogramms EXCEL, wobei zunächst die 
+    Bestimmung der Halbwertszeiten aus den erhaltenen Diagrammen erfolgt. Werden aus den Grafiken $Z(t)$ die Werte für 
+    $T_{1/2}$ und $Z(t_0)$ für \ce{^{108}Ag} richtig bestimmt, ermöglichen die weiteren Programmschritte eine genaue 
+    Auswertung der Abklingkurve zur Ermittlung der Halbwertszeit $T_{1/2}$ von \ce{^{110}Ag} und der entsprechenden 
+    $Z(t_0)$-Werte bzw. der Zerfallskonstanten $\lambda$.
+    \item Diese Werte aus der Grafik bilden die Grundlage zur Berechnung des Isotopenverhältnisses der Silberstandardprobe 
+    und des Silbergehalts der Silberanalyseprobe.
+    \item Angabe und Diskussion des Analysenergebnisses.
+    \item Fehlerbetrachtungen (Grundlagen siehe Anleitungen RM 1 und F2).
+  \end{enumerate}
+
+  
+\section{Versuchsvorbereitung}
+  Die Versuchsvorbereitungen zu den Versuchen RM1, RM2 und RM3 sind auf Grund der Versuchsthematik in einem 
+  Zusammenhang zu sehen.
+  
+  \textbf{Schwerpunkte}
+  \begin{enumerate}
+    \item Charakterisierung der Arten ionisierender Strahlung ( Entstehung, Eigenschaften)
+    \item Grundgrößen bei der Messung von Kernstrahlung
+    \item Detektoren zum Nachweis ionisierender Strahlung (Typen, Funktionsweise)
+    \item Neutronenquellen und Neutronendetektoren
+    \item Wechselwirkungsprozesse von Neutronen mit Stoffen
+    \item Grundlagen und Anwendungsgebiete der Neutronenaktivierungsanalyse
+  \end{enumerate}
+\end{document}

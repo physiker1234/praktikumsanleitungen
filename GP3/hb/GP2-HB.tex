@@ -1,0 +1,152 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd,mhchem}
+\usepackage{lmodern}
+\usepackage[bf]{caption}
+
+\versuch{Lichtelektrischer Effekt}{HB}
+\author{Doz. Dr. G.~Försterling}
+\bearbeitet{A.~Otto}{}
+
+\begin{document}
+\maketitle
+
+\section{Aufgabenstellung}
+	Bestimmung des \textsc{Planck}schen Wirkungsquantums und der Ablösearbeit für das Anodenmaterial
+	einer Photozelle mit Hilfe des äußeren lichtelektrischen Effekts.
+
+\section{Allgemeine Grundlagen}
+	\piccaption{Potentialtopfmodell der freien Elektronen im Metall}
+	\parpic[r]{\includegraphics[width=0.4\textwidth]{abb1}}
+	Träger der Stromleitung in Metallen sind frei bewegliche Elektronen (Elektronengas) im Gitter der
+	positiv geladenen Atomrümpfe. Die Wechselwirkung zwischen den Gitterionen und dem Elektronengas ist
+	in erster Näherung zu vernachlässigen. Erst wenn ein Elektron aus dem Gitterverband herausgelöst
+	werden soll, treten rückwirkende Kräfte auf. Sie können mit der Annahme einer "`Spiegelladung"' 
+	symmetrisch zur Metalloberfläche (Ebene bei $x=0$) beschrieben werden ($F \sim x^{-2}$).
+	Daraus leitet sich das Potentialtopfmodell für die freien Elektronen des Metalls ab (vgl. Abb.
+	1).\\
+	Im inneren des Metalls haben die frei beweglichen Elektronen eine kinetische Energie $E_{k.i}$,
+	die einen bestimmten Betrag, die \textsc{Fermi-}Energie $E_F$ nicht überschreiten kann. Damit ist
+	die Beweglichkeit der Elektronen im inneren des Metalls eingeschränkt.
+	\captionsetup[parpic]{type=table}
+	\piccaption{Ablösespannungen für verschiedene Metalle (nach \textsc{Gerthsen} "`Physik"')}
+	\parpic[r]{
+	\begin{minipage}{0.45\textwidth}
+	  \centering
+	  \begin{tabular}{|p{4cm}|p{2cm}|}
+	    \hline
+	    Metall             & $\phi / \SI{}{V}$ \\ \hline \hline
+	    Wolfram            & \num{4,53} \\ \hline
+	    Molybdän           & \num{4,43} \\ \hline
+	    Silber             & \num{4,05} \\ \hline
+	    Kupfer             & \num{4,39} \\ \hline
+	    \ce{Cs}-Film auf W & \num{1,36} \\ \hline
+	    \ce{BaO}-Paste     & \num{0,99} \\ \hline
+	  \end{tabular} 
+	\end{minipage}
+	}
+	\captionsetup[parpic]{type=figure}
+	
+	Soll ein Elektron aus dem Metall herausgelöst werden, so muss es nach Abb. 1 mindestens eine Energie
+	$E_A$ aufnehmen (z.B. durch Erhitzen des Metalls oder Bestrahlen seiner Oberfläche mit Licht),
+	damit es den Rand des Potentialtopfes bei $E_{p,a}$ erreichen kann. Für Leitungselektronen mit der
+	Energie $E_{k,i}=E_F$ hat diese Energie einen materialcharakteristischen Wert
+	\begin{equation}
+	  E_A \left( {E_{k,i}  = E_F } \right) = \Phi 
+	\end{equation} 
+	die Austrittsarbeit $\Phi$ oder mit $\Phi / e = \phi$ die Austrittspannung $\phi$ (vgl.
+	Tabelle 1).\\
+	Wird einem Elektron die Energie $E > E_A$ zugeführt und verliert es auf dem Weg zur Metalloberfläche
+	keine Energie (z.B. durch Wechselwirkung mit anderen Leitungselektronen oder den Atomrümpfen des 
+	Metallgitters), dann hat es im Außenraum die kinetische Energie
+	\begin{equation}
+	  E_{k,a}  = m_e \frac{{v_a^2 }}{2} = E - E_A 
+	\end{equation} 
+	Bestrahlt man die Metalloberfläche mit Photonen (Frequenz $\nu$) der Energie
+	\begin{equation}
+	  E = h \cdot \nu
+	\end{equation} 
+	($h$ -- \textsc{Planck}sches Wirkungsquantum), so werden aus der Metalloberfläche 
+	($\SI{e-9}{m}\dots\SI{e-10}{m}$) Elektronen ausgelöst ("`äußerer lichtelektrischer Effekt"', W. 
+	Hallwachs 1888). Die Geschwindigkeitsverteilung $f(v_a)$ der Elektronen im Außenraum wird durch die
+	Anregungswahrscheinlichkeit der Leitungselektronen durch die Photonen und die Wechselwirkung der
+	Elektronen im Inneren des Metalls nur wenig gegenüber der Verteilung $f(v_i)$ verändert (wenn man
+	von der Anregung mit hochintensiver Strahlung, wie z.B. \textsc{Laser}-Licht, absieht). Man kann
+	also davon ausgehen, dass auch im Außenraum eine obere Grenze der kinetischen Energie $E_{a,max}$
+	entsprechend
+	\begin{equation}
+	  E_{a,\max }  = m_e \frac{{v_{a,\max }^2 }}{2} = h \cdot \nu  - \Phi  
+	\end{equation}
+	existiert.
+
+\section{Versuchsdurchführung}
+	\piccaption{Bremsfeldmethode}
+	\parpic[r]{\includegraphics[width=0.5\textwidth]{abb2}}
+	Die Bestimmung der maximalen kinetischen Energie $E_{a,max}$ der durch Licht der Frequenz $\nu$ aus
+	der Metalloberfläche ausgelösten Elektronen erfolgt mit Hilfe einer Photozelle nach der
+	"`Bremsfeldmethode"' (vgl. Abb. 2). Das monochromatische Licht der Energie $E > \Phi$ trifft auf 
+	die Oberfläche der Photokathode K und löst durch Photoelektronen mit einer Geschwindigkeitsverteilung 
+	$f(v_a)$ aus. Die Photoelektronen verlassen die Metalloberfläche der Photokathode in alle Richtungen 
+	gleichverteilt. Im Vakuum der Photozelle verlieren sie kein Energie und so kann ein teil der 
+	Photoelektronen zur Anode gelangen; es fließt ein Photostrom $I_{Ph}$. Legt man eine zunehmende 
+	Spannung so gerichtet zwischen Anode und Kathode an, dass die Bewegung dieser Elektronen durch das 
+	Feld gebremst wird (Gegenfeld), so erreichen bei einer Spannung $U_A$ entsprechend ihrer 
+	Geschwindigkeitsverteilung $f(v_a)$ immer weniger Photoelektronen die Anode, der Photostrom nimmt mit 
+	der Bremsspannung ab.
+	\begin{equation}
+	  I_{Ph}  = I_{Ph} \left( {U_A } \right) 
+	\end{equation}
+	Schließlich erreichen bei der Gegenspannung $U_A^0$ (Grenzspannung) nur noch die Photoelektronen
+	mit der Geschwindigkeit $v_{a,max}$ die Anode. Für dies Elektronen gilt dann
+	\begin{equation}
+	  U_A^0  = m_e \frac{{v_{a,\max }^2 }}{{2 \cdot e}} =  - \frac{{h \cdot \nu  - \Phi }}{e} =  -
+	  \frac{h}{e} \cdot \nu  - \phi _K 
+	\end{equation}
+	($\Phi_K$ -- Ablösearbeit, $\phi_K$ -- Ablösespannung des Kathodenmaterials.)\\
+	Bestimmt man diese Grenzspannung aus den experimentell ermittelten Abhängigkeiten des Photostroms
+	von der Bremsspannung entsprechend Gleichung (5) für Licht verschiedener Frequenzen, so kann man
+	aus dem Anstieg der Funktion in Gleichung (6) bei bekannter Elementarladung $e$ die Größe des
+	\textsc{Planck}schen Wirkungsquantums $h$ bestimmen.
+	
+	Um möglichst wenig Elektronen zusätzlich aus dem Anodenmaterial auszulösen, bildet man die Anode
+	als Ring aus, der möglichst nicht vom Licht getroffen wird und man wählt ein Material mit möglichst
+	hoher Ablösespannung. Im Gegensatz zum Kathodenmaterial, das eine möglichst niedrige Ablösespannung
+	haben soll. In diesem Fall ist es erforderlich, bei der in Gleichung (6) angegebenen Gegenspannung
+	das Kontaktpotential $U_{AK}$ zwischen Anode und Kathode zu berücksichtigen,
+	\begin{equation}
+	  U_{AK}  = \phi _A  - \phi _K
+	\end{equation}
+	die die auf die Photoelektronen wirkende Spannung $U_A^0$ gegenüber der angelegten Spannung
+	$U_{A,exp}^0$ verändert
+	\begin{equation}
+	  U_{A,exp }^0  = U_A^0  + U_{AK}  = U_A^0  + \left( {\phi _A  - \phi _K } \right) =  -
+	  \frac{h}{e} \cdot \nu  + \phi _A
+	\end{equation}
+	Damit liefert der Schnittpunkt der Funktion in Gleichung (8) mit der Ordinate die Ablösespannung 
+	des Anodenmaterials.
+	
+	Das monochromatische Licht wird durch Interferenzfilter aus dem Licht einer Hg- Dampf-
+	Hochdrucklampe herausgefiltert. Auf einem Filterwechsler stehen Filter für verschiedene
+	Wellenlängen zur verfügung. Zur Messung des sehr kleinen Photostroms (Größenordnung $\SI{e-9}{A}$) 
+	wird ein Meßverstärker verwendet. Die Versuchsanordnung und die Schaltung zur Einstellung der 
+	Bremsspannung und Messung des Photostroms sind in Abbildung (3) dargestellt.
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.7\textwidth]{abb3}
+		\caption{Schema der Versuchsanordnung}
+	\end{figure}
+
+\frage{Was ist der äußere lichtelektrische Effekt? Worin bestand die Schwierigkeit seiner Erklärung mit den 
+       Mitteln der klassischen Physik? Welche fundamentale Aussage der Quantentheorie führt zur Klärung des 
+       Sachverhalts?}
+\frage{Welche Energie- (Geschwindigkeits-) Verteilung haben die Leitungselektronen im Metall bei $T=\SI{0}{K}$? 
+       Wie wird sie durch die Temperatur beeinflusst? Welche Energieänderung liegt bei Raumtemperatur vor?}
+\frage{Erklären Sie andere experimentelle Methoden zur Messung der Energie (Geschwindigkeit) von Elektronen!}
+\frage{Welche Anforderungen müssen an das auf die Photozelle auftreffende Lichtbündel (außer Monochromasie) 
+       gestellt werden?}
+\frage{Machen sie sich das Verfahren der "`linearen Regression"' klar und wenden Sie es zur Bestimmung des 
+       Wirkungsquantum und der Ablösespannung aus den graphisch ermittelten Grenzspannungen an!}
+\frage{Erklären Sie die Wirkungsweise des Interferenzfilters! Welche anderen Möglichkeiten zur Erzeugung von 
+       monochromatischen Licht gibt es? Welche Kriterien könnte man für die "`Güte der Monochromasie"' angeben?}
+\frage{Wodurch könnte das experimentell Ergebnis der Ablösearbeit beeinflusst werden?}
+
+\end{document}

@@ -1,0 +1,268 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd}
+
+\versuch{Stoß}{ST}
+\author{T. Fischer}
+\date{01.08.2000}
+\bearbeitet{M.~Kreller,J.~Kelling,F.~Lemke,S.~Majewsky,i.~A.~Dr.~Escher}{}
+
+\buch{dem}{W.~Demtröder}{Experimentalphysik~I}{Springer-Verlag}{Berlin, Heidelberg 1994}
+\buch{ger}{C.~Gerthsen}{Physik}{Springer-Verlag}{Berlin 1997}
+\buch{rec}{A.~Recknagel}{Physik: Mechanik}{Technik-Verlag}{Berlin 1990}
+
+\begin{document}
+\maketitle
+
+\section{Aufgabenstellung}
+
+\begin{enumerate}
+ \item Der elastische Stoß zweier Körper a) gleicher und b) unterschiedlicher Masse ist in Abhängigkeit vom Stoßwinkel $\varphi$ (schiefer bzw. ungerader Stoß) qualitativ zu untersuchen.
+ \item Der gerade unelastische Stoß zweier Körper gleicher Masse ist quantitativ zu untersuchen und die Stoßzahl $k$ der verwendeten Materialien ist zu bestimmen.
+\end{enumerate}
+
+\section{Allgemeine Grundlagen}
+\subsection{Grundgleichungen der Mechanik}
+
+Die grundlegenden Gesetze der Mechanik spielen in diesem Versuch eine zentrale Rolle.
+\begin{description}
+ \item [1. Newton'sches Axiom:] Jeder Körper verharrt im Zustand der Ruhe oder gleichförmigen geradlinigen Bewegung, wenn keine Kraft auf ihn wirkt.
+ \item [2. Newton'sches Axiom:] Die Ursache einer Impulsänderung ist eine auf den Körper wirkende Kraft, die über die Beziehung
+ \[
+  \vec F = \dquot{\vec p}{t}
+ \]
+ definiert ist. Mit $\vec p=m\vec v$ erhält man:
+ \[
+  \vec F = \dquot{m}{t} \vec v + m \dquot{\vec v}{t}
+ \]
+ Für den Fall einer zeitlich konstanten Masse ($ \dquot mt = 0$) ergibt sich das \emph{Newton'sche Grundgesetz}:
+ \[
+  \vec F = m\vec{a}
+ \]
+ \item [3. Newton'sches Axiom:] Die Kraft $F_{12}$ eines Körpers 1 auf einen Körper 2 ist immer umgekehrt gleich zur Kraft $F_{21}$ des Körpers 2 auf den Körper 1 ($\mathrm{actio} = \mathrm{reactio}$), wenn keine weiteren Wechselwirkungen mit anderen Körpern existieren.
+ \[
+  \vec F_{12} = - \vec F_{21}
+ \]
+\end{description}
+
+\subsection{Impulserhaltung (IES)}
+
+Aus dem 1. und 2. Axiom lässt sich ableiten, dass man einem System von Körpern, auf das keine äußeren Kräfte wirken, einen konstanten Impuls $\vec{P}$ als Summe der Einzelimpulse $\vec p_i$ zuordnen kann. Dieser ist vollkommen unabhängig von den Wechselwirkungen, die zwischen den einzelnen Körpern stattfinden, denn diese müssen sich nach dem 3. Axiom kompensieren. Damit lässt sich der Impulserhaltungssatz wie folgt formulieren:
+\begin{equation}
+ \vec{P} = \sum_i \vec p_i = \mathrm{const.} \quad\text{mit}\quad \vec p_i=m_i \cdot \vec v_i \label{P}
+\end{equation}
+
+\subsection{Energieerhaltung der Mechanik (EES)}
+
+Den Energieerhaltungssatz der Mechanik erhält man durch Multiplikation des Newton'schen Grundgesetzes mit der Geschwindigkeit $\vec v$ und anschließender Integration über die Zeit.
+\begin{equation}
+ \int_{t_0}^t \vec F \cdot \vec v \dif t' = m \int_{t_0}^t \dquot{\vec v}{t'} \cdot \vec v \dif t' \label{mech}
+\end{equation}
+Das linke der beiden Integrale lässt sich für den Fall eines konservativen Kraftfeldes, d.h. es existiert ein Potenzial $V(\vec r)$ mit $\vec F = - \operatorname{grad} V$, berechnen. Man erhält dabei unter Berücksichtigung von $\vec v \dif t' = \diff\vec r\,'$:
+\begin{equation}
+\int_{\vec r_0}^{\vec r} \vec F \cdot \diff\vec r\,' = V(\vec r_0) - V(\vec r) \label{pot}
+\end{equation}
+Die Potenzialdifferenz $V(\vec r) - V(\vec r_0)$ ist per Definition die potenzielle Energie $E_\mathrm{pot}$, wobei man den Ort $\vec r_0 = \vec r(t_0)$ frei wählen kann. Die rechte Seite des Integrals erhält man über partielle Integration:
+\begin{align}
+ m \cdot \Int_{t_0}^t \dquot{\vec v}{t'} \cdot \vec v \dif t' &= m \cdot \brk{\vec v\,^2}_{t_0}^t - \underbrace{m \cdot \Int_{t_0}^t \vec v \cdot \dquot{\vec v}{t'} \dif t'}_{= \text{ linke Seite}} \nonumber\\
+ \Rightarrow\quad m \cdot \Int_{t_0}^t \dquot{\vec v}{t'} \cdot \vec v \dif t' &= \frac m2 \cdot \vec v\,^2(t) - \frac m2 \cdot \vec v\,^2(t_0) \label{kin}
+\end{align}
+
+Die kinetische Energie $E_\mathrm{kin}$ wird hier repräsentiert durch den Term $\frac{m}{2} v^2$ und der zweite Term ist eine Konstante, denn auch $\vec v_0=\vec v(t_0)$ ist beliebig wählbar konstant. Der in Gleichung (\ref{mech}) dargestellte Energiesatz erhält nach Einsetzen von (\ref{pot}) und (\ref{kin}) und Benutzung der Definitionen für die potenzielle und kinetische Energie die Gestalt:
+\[
+ E_\mathrm{mech} =  E_\mathrm{kin} + E_\mathrm{pot} = \mathrm{const.} \\
+\]
+Wenn man nun ein System aus mehren Teilchen betrachten möchte, erhält man den Energieerhalungssatz aus der Summe der Energien der einzelnen Teilchen.
+\[
+ \sum_i E_\mathrm{mech}^{i} = \mathrm{const.}
+\]
+
+\subsection{Stoßprozesse, Elastizität}
+
+Beim Stoß von zwei Körpern, die von außen unbeeinflusst bleiben, ist der Gesamtimpuls des Systems eine Erhaltungsgröße (Glg.~\ref{P}). Ebenso muss die Gesamtenergie immer eine Erhaltungsgröße sein. Die mechanische Energie, deren Erhaltung oben diskutiert wurde, muss jedoch nicht unbedingt erhalten bleiben. Es kann mechanische (bei Stoßprozessen speziell kinetische) Energie in andere Energieformen umgewandelt werden.
+
+Wenn auch die mechanische Energie eine Erhaltungsgröße ist, spricht man von einem \emph{vollkommen elastischen Stoß}. Wenn nur die kinetische Energie des Schwerpunktes als mechanische Energie verbleibt, spricht man von einem \emph{vollkommen unelastischen Stoß} (d.~h. es findet keine Relativbewegung der Stoßpartner mehr statt). Ein Parameter zur Kennzeichnung der Elastizität eines Stoßes ist die Stoßzahl $k$ (siehe unten).
+
+\newpage
+\section{Experimente}
+
+\subsection{Fallrinne}
+
+\piccaption{Versuchsaufbau. Seitenansicht}
+\parpic[r]{
+\includegraphics[width=\linewidth/5*2]{GP1-ST-Fallrinne}
+}
+Die Messung von Impulsen bzw. Geschwindigkeiten ist mit einfachen Mitteln nur sehr schwer möglich. Mit Hilfe der Fallrinne lässt sich aber die Messung der Impulse auf die Messung von Längen (und Massen) reduzieren.
+
+Die Geschwindigkeit $v_1$ der stoßenden Kugel ist bestimmt durch die Höhe $\bar h$ der Rinne und die der gestoßenen Kugel ist vor dem Stoß ${v}_2=0$. Nach dem Stoß führen die beiden Kugeln eine geradlinige, gleichförmige Bewegung in x- und y-Richtung aus, werden allerdings mit $g$ in z-Richtung beschleunigt. Aus dem Weg-Zeit-Gesetz in z-Richtung lässt sich eine Fallzeit~$t_F$ bestimmen, die für alle Kugeln gleichermaßen gilt.
+\begin{align*}
+ z = \frac{gt^2}{2} \quad &\Rightarrow \quad t_F = \sqrt{\frac{2h}{g}} \\
+ x(t) = v_x \cdot t \quad\text{und}\quad x_F = v_x \cdot t_F \quad &\Rightarrow \quad x_F  \sim v_x
+\end{align*}
+Somit ist die Geschwindigkeit $v_x$ bzw. $v_y$ proportional zu den Orten $x$ bzw. $y$ des Auftreffens auf dem Papier.
+
+\subsection{Elastischer Stoß}
+
+\piccaption{Stoßschema}
+\parpic[r]{
+ \includegraphics[width=\linewidth/3]{GP1-ST-Stoss}
+}
+Beim elastischen Stoß bleiben Impuls und mechanische Energie erhalten. Die Erhaltungssätze in vektorieller Form lauten dabei:
+\begin{align}
+ m_1 \cdot \vec v_1 &= m_1 \cdot \vec v_1{}' + m_2 \cdot \vec v_2{}' &&\mathrm{(IES)}\label{IES}\\[1em]
+ \frac{m_1}2 \cdot v_1^2 &= \frac{m_1}2 \cdot {v_1'}^2 + \frac{m_2}2 \cdot {v_2'}^2 &&\mathrm{(EES)}\label{EES}
+\end{align}
+\picskip{0}\vspace{-2em}
+Wenn man die Gleichungen in ihre Komponenten zerlegt und berücksichtigt, dass man keine Geschwindigkeiten sondern Orte misst, erhält man für die Auftreffpunkte der Kugeln Kreisgleichungen (siehe Anhang).
+
+Die Messung von $v_1$ erfolgt dabei, indem man die stoßende Kugel ohne einen Stoßpartner durch die Rinne laufen lässt und den Ort $x_0 = v_0 \kern2pt t_F$ misst. Die Mittelpunkte der beiden Kreise für stoßende und gestoßene Kugel sind dann am gleichen Punkt mit den Koordinaten:
+\begin{equation}
+ x_m = \frac{m_1}{m_1+m_2} \, x_0 \quad\text{und}\quad y_m = 0 \label{M}
+\end{equation}
+Die Radien der beiden Kreise unterscheiden sich allerdings, da sie von den Massen von stoßender und gestoßener Kugel abhängen.
+\begin{align}
+ r_1 &= \frac{m_2}{m_1+m_2} \, x_0 &&\text{stoßende Kugel} \label{r1}\\[1em]
+ r_2 &= \frac{m_1}{m_1 + m_2} \, x_0 &&\text{gestoßene Kugel}\label{r2}
+\end{align}
+In dem Versuch sollen jetzt mit Hilfe der Fallrinne die Auftreffpunkte der Kugeln durch Blaupapier abgebildet werden. Dazu ist es notwendig das Papier und das Blaupapier fest auf der Unterlage zu justieren (mit Hilfe von Reißzwecken). Wichtig ist weiterhin, dass die Stoßplattform der Fallrinne genau horizontal ausgerichtet ist, was man durch eine Höhenjustage mit einer Libelle erreicht.
+
+Der Nullpunkt unseres Koordinatensystems ist die senkrechte Projektion des Mittel\-punktes der Stoßplattform auf das Papier. Das erreicht man durch Markieren eines \textit{Lotpunktes} an der Vorderkante der Plattform und der Bestimmung des Radius.
+
+Es erfolgen zwei Messungen:
+\begin{enumerate}
+ \piccaption{Stoßscheibe. Draufsicht}
+ \parpic[r]{
+  \includegraphics[width=\linewidth/3]{GP1-ST-Scheibe}
+ }
+ \item Messen Sie zwischen $\varphi = \ang{-90}$ und $\varphi = \ang{90}$ in \ang{10}-Schritten. Dazu wird eine der beiden gleichschweren Stahlkugeln aus immer der selben Höhe (durch eine Kante markiert) auf die in einer kleinen Vertiefung der Plattform liegende zweite Kugel gestoßen. Vorher ist durch einfachen Durchlauf einer der beiden Kugeln der Punkt $x_0$ zu bestimmen und zu markieren.
+ \item Bei dieser Messung verwenden Sie unterschiedlich schwere Massen und ein neues Papier. Hier ist darauf zu achten, dass die Kugel mit der größeren Masse $m_1$ die stoßende Kugel ist.
+\end{enumerate}
+
+Nach den Messungen erfolgt die Bestimmung der Massen der benutzten Kugeln. Mit diesen Information kann man dann die durch Gleichung (\ref{M}) bzw. (\ref{r1}) und (\ref{r2}) definierten Kreise in das Bild der Auftreffpunkte eintragen. Die auftretenden Unterschiede zwischen den theoretischen Kreisen und den Messpunkten sind zu diskutieren.
+
+% HINWEIS: Physikstudenten führen den Versuch gar nicht durch
+% \begin{small}
+% Für Physikstudenten:\\
+% Bestimmen Sie den theoretischen Wert für $x_0$! Dazu ist es notwendig die Höhen $h$ und $\bar h$ zu messen.
+% \begin{equation}
+% x_0^t = v_0 \kern4pt t_F, \qquad E_{pot}^1(z=\bar h) = mg \bar h, \qquad E_{kin}^1(z=0)=\frac{m}{2}\kern3pt v_0^2
+% \end{equation}
+% Welcher Unterschied tritt zwischen $x_0^t$ und $x_0$ auf, woher kommt er?
+% \end{small}
+
+\subsection{Unelastischer Stoß}
+
+Betrachtet wird in diesem Experiment nur der gerade Stoß zweier Kugeln gleicher Masse und gleichen Materials. Der Stoßprozess läuft so ab, dass die Körper während der Wechsel\-wirkung sich gegenseitig verformen. Je nachdem wie stark diese Verformung nach dem Stoß erhalten bleibt, handelt es sich um einen mehr oder weniger unelastischen Stoß. Der Energieerhaltungssatz der Mechanik gilt in diesem Fall nicht, denn es wird Energie in andere Energieformen umgewandelt (z.~B. thermische Energie).
+
+Zur qualitativen Beschreibung ist es sinnvoll, den Stoß in zwei Perioden zu unterteilen.
+\begin{enumerate}
+ \item Die Körper drücken einander zusammen, von dem stoßenden Körper wird ein Impuls $p_A$ an den gestoßenen abgegeben. Zum Zeitpunkt der größten Verformung bewegen sich beide Körper mit der gemeinsamen Geschwindigkeit $v$ (der gestoßene Körper ist vor dem Stoß in Ruhe, d.~h. $v_2=0$):
+  \begin{align}
+   p_A &= m_1 \cdot (v_1 - v) = m_2 \, v \nonumber\\
+   v &=  \frac{m_1}{m_1+m_2}\, v_1 \label{v}
+  \end{align}
+ \item Die beiden Körper dehnen sich wieder aus, zwischen den Körpern wird der Impuls $p_B$ ausgetauscht, der im elastischen Fall kleiner oder gleich $p_A$ ist.
+  \[
+   p_B = m_1 \cdot (v - {v'}_1) =  m_2 \cdot ({v'}_2 - v)
+  \]
+\end{enumerate}
+Der Quotient dieser beiden Impulse wird als Stoßzahl $k$ bezeichnet und hat einen Wert zwischen $k=1$ für einen vollkommen elastischen Stoß und $k=0$ für den vollkommen unelastischen.
+\begin{equation}
+ \frac{p_B}{p_A} = k \quad \text{mit} \quad 0 \leq k \leq 1 \label{k}
+\end{equation}
+Wenn man die Impulse $p_A$ und $p_B$ in die Gleichung (\ref{k}) einsetzt und mit (\ref{v}) die Geschwindigkeit $v$ eliminiert, erhält man durch Erweitern mit $t_F$ die Gleichung:
+\begin{equation}
+ k = \frac{x_2 - x_1}{x_0} \label{k2}
+\end{equation}
+Mit deren Hilfe können die Stoßzahlen für verschiedene Materialien bestimmt werden.
+
+Da bei elastischeren Materialien das Abkippen der stoßenden Kugel von der Plattform einen anderen Auftreffpunkt erzeugt als den wahren Punkt $x_1$ (Warum?), ist es sinnvoll eine korrigierte Stoßzahl $k'$ anzugeben, die $x_1$ nicht mehr zur Berechnung benötigt. Diese erhält man indem man den Impulssatz
+\[
+ m_1\,v_0 = m_1\,v'_1 + m_2\,v'_2
+\]
+mit $t_F$ multilpiziert und wegen $m_1=m_2$ die Gleichung
+\[
+ x_0 = x_1 + x_2
+\]
+erhält. Diese eingesetzt in die Gleichung (\ref{k2}) ergibt für die korrigierte Stoßzahl $k'$:
+\[
+k' = \frac{2 x_2}{x_0} - 1
+\]
+Wenn keine Fehler durch das Abkippen der stoßenden Kugel auftreten, stimmen $k$ und $k'$ überein.
+
+Für die Messung bauen wir wieder die Fallrinne auf. Für mindestens drei der vier Materialien, die zur Verfügung stehen, werden die Orte $x_0$, $x_1$ und $x_2$ je mindestens zehn mal bestimmt. Man muss also eine der beiden Kugeln zehn mal ohne einen Stoßpartner durchlaufen lassen und die Punkte $x_0$ markieren. Danach wird die Prozedur mit einem gleichartigen Stoßpartner gleicher Masse wiederholt und die Punkte  $x_1$ und $x_2$ markiert. Der Nullpunkt dieser Messung ist jetzt der Lotpunkt.
+
+Berechnen Sie die Stoßzahlen und die korrigierten Stoßzahlen für die gemessenen Materialien. Bestimmen Sie den Fehler dieser Größen aus der statistischen Streuung der Messwerte für $x_0$, $x_1$ und $x_2$.
+
+\section{Anhang}
+
+\subsection{Kreisgleichungen}
+
+Die Gleichungen (\ref{IES}) und (\ref{EES}) lauten in Komponenten aufgegliedert:
+\begin{align}
+ m_1\,v_{1,x} &= m_1\,v'_{1,x} + m_2\,v'_{2,x} &&\text{IES}\\[.5em]
+ 0 &= m_1\,v'_{1,y} + m_2\,v'_{2,y}\nonumber\\[.5em]
+ \frac{m_1}2 \cdot v_{1,x}^2 &= \frac{m_1}2 \cdot \kla{{v'}_{1,x}^2 + {v'}_{1,y}^2} + \frac{m_2}2 \cdot \kla{{v'}_{2,x}^2 + {v'}_{2,y}^2} &&\text{EES}
+\end{align}
+Da wir keine Geschwindigkeiten messen, ersetzen wir nun die Geschwindigkeiten durch die Ortskoordinaten durch Multiplikation mit $t_F$ bzw. $t_F^2$. Die einzelnen Ortskoordinaten lauten:
+\[
+ x_i = v'_{i,x} \,t_F \quad\text{und}\quad y_i = v'_{i,y} \, t_F
+\]
+Eingesetzt ergibt sich:
+\begin{align}
+ m_1\,x_0 &= m_1\,x_1 + m_2 \,x_2 &&\text{IES}\label{iesx}\\[.5em]
+ 0 &= m_1 y_1 + m_2 \,y_2 \label{iesy}\\[.5em]
+ m_1 \cdot x_0^2 &= m_1 \cdot (x_1^2+y_1^2) + m_2 \cdot (x_2^2+y_2^2) &&\text{EES}\label{eesk}
+\end{align}
+Aus den Gleichungen (\ref{iesx}) und (\ref{iesy}) folgt durch geeignetes Quadrieren und Addieren:
+\begin{align}
+ m_1^2 \cdot (x_1^2 + y_1^2) &= m_2^2 \cdot (x_2^2 + y_2^2) + m_1^2 \cdot x_0^2 - 2 m_1\,m_2 \cdot x_0\,x_2 \label{1}\\
+ m_2^2 \cdot (x_2^2+y_2^2) &= m_1^2 \cdot (x_1^2+y_1^2) + m_1^2\,x_0^2 - 2 m_1^2 \cdot x_0\,x_1 \label{2}
+\end{align}
+Durch Einsetzen von Gleichung (\ref{1}) in (\ref{eesk}) bzw. (\ref{2}) in (\ref{eesk}) und Umordnen erhält man für die gestoßene und die stoßende Kugel jeweils eine Kreisgleichung.
+\begin{align}
+ \kla{x_1 - \frac{m_1}{m_1+m_2} x_0 }^2 + y_1^2 &= \kla{\frac{m_2}{m_1 + m_2} \, x_0 }^2 &\text{stoßende Kugel}\\[1em]
+ \kla{x_2 - \frac{m_1}{m_1+m_2} x_0 }^2 + y_2^2 &= \kla{\frac{m_1}{m_1 + m_2} \, x_0 }^2 &\text{gestoßene Kugel}
+\end{align}
+Beide Kreise haben die gleiche Mittelpunktskoordinate, aber unterschiedliche Radien.
+\begin{figure}[h!b]
+ \centering
+ \includegraphics[width=\linewidth/3*2]{GP1-ST-Kreise}
+ \caption{Geometrische Figur der Auftreffpunkte der Kugeln}
+\end{figure}
+
+\subsection{Fehler}
+
+Eine Fehlerrechnung ist notwendig für die beiden Stoßzahlen $k$ und $k'$. Das Fehlerfortpflanzungsgesetz lautet für die beiden Fehler:
+\begin{align*}
+ \Delta k &= \abs{-\frac{\Delta x_1}{x_0}} + \abs{\frac{\Delta x_2}{x_0}} + \abs{-\frac{x_2-x_1}{x_0^2} \, \Delta x_0}\\
+ \Delta k' &= \abs{\frac{2 \Delta x_2}{x_0}} + \abs{-\frac{2x_2 \cdot \Delta x_0}{x_0^2}}
+\end{align*}
+Damit ist die Bestimmung der Fehler für $k$ und $k'$ reduziert auf die Bestimmung der Messfehler für die einzelnen $x_i$. Da hier aber die statistische Streuung der Messpunkte deutlich größer ist als der systematische Fehler der Messinstrumente (Bankmaßstab), ist letzterer gegenüber dem statistischen Fehler zu vernachlässigen.
+
+Den statistischen Fehler einer Messgröße erhält man, wenn man die Standardabweichung $\sigma$ aus den Einzelmessungen ermittelt. Der statistische Fehler der Messgröße ergibt sich dann aus $\sigma$.
+\begin{align*}
+ \sigma &= \sqrt{\frac{\sum_{i=1}^N (\overline x - x_i)^2}{N-1}} \quad\text{wobei}\quad \overline x = \frac{1}{N} \sum_{i=1}^N x_i\\
+ \Delta x &= \frac{2\sigma}{\sqrt N}
+\end{align*}
+Mit dem Faktor Zwei vergrößert man die Wahrscheinlichkeit der Reproduzierbarkeit im Rahmen der Fehlerangabe von $P=\num{0.68}$ auf $P=\num{0.96}$. Das heißt, im Intervall $[\overline x - \Delta x, \overline x + \Delta x]$ liegen \SI{96}\% aller Messergebnisse.
+
+Die Berechnung dieser Fehler bzw. direkt die Berechnung von $\sigma$ ist mit Hilfe der Statistikfunktionen eines Taschenrechners sehr einfach möglich. Die Angabe des Ergebnisses erfolgt in der Form:
+\[
+ x = \overline x \pm \Delta x
+\]
+Man sollte dabei insbesondere auf die Anzahl der Stellen achten, deren Angabe mit Rücksicht auf den Fehler noch sinnvoll erscheint.
+
+% Über die folgenden Begriffe und Fragen sollte vor
+% dem Versuch Klarheit bestehen.
+
+\frage{Was bedeuten die Bergiffe Impulserhaltung und Energieerhaltung in der Mechanik?}
+\frage{Wann gelten diese Erhaltungssätze?}
+\frage{Warum kann man das Stoßexperiment auf das Messen von Längen reduzieren?}
+\frage{Was ist der Unterschied zwischen elastischem und unelastischem Stoß?}
+\frage{Wie ist die Stoßzahl definiert?}
+\frage{Welche Bedeutung kommt der Stoßzahl zu, was gibt sie an?}
+\frage{Warum führt man bei sehr elastischen Materialien eine korrigierte Stoßzahl $k'$ ein?}
+\frage{Was versteht man unter einem konservativen Kraftfeld?}
+\frage{Warum entstehen Kreise als geometrische Figuren der Auftreffpunkte?}
+
+\end{document}

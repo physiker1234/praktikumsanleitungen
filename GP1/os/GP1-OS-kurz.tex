@@ -1,0 +1,37 @@
+\documentclass[platz]{tudphygp}
+\usepackage{tudphymd}
+
+\versuch{Oberflächenspannung}{OS}
+
+\begin{document}
+\maketitle
+
+\subsection*{Aufgabenstellung}
+Kalibrieren Sie eine Torsionswaage und bestimmen Sie mit dem Abreißverfahren die Oberflächenspannung einer Flüssigkeit.
+
+\subsection*{Hinweise zur Versuchsdurchführung}
+\begin{itemize}
+ \item \textbf{Kalibrierung:} Stellen Sie die Nulllage der Torsionswaage ein.
+ \item Eichen Sie die Waage mit bekannten Massestücken. Stellen Sie dazu bei jeder Messung die Gleichgewichtslage her. Die Gewichte hängen Sie immer in einer Kerbe ein (warum?). Vor jeder Messung sollten Sie die Nulllage kontrollieren und ggf. neu einstellen.
+ \item Stellen Sie die Kalibrierungskurve $F(\alpha)$ mit Fehlerkreuzen grafisch dar.
+ \item \textbf{Bestimmung der Oberflächenspannung:} Messen Sie die Abreißkraft mit sechs verschiedenen Bügeln. (Die Drahtlänge $l$ bestimmen Sie mit einem Lineal.) Tauchen Sie dazu den Bügel ca.~\SI1{mm} unter die Wasseroberfläche ein. Justieren Sie die Fußschrauben des Statives nach, damit der Bügel immer parallel zur Oberfläche ist (zur Kontrolle das Spiegelbild nutzen). Bestimmen Sie $\alpha_1$ und daraus $F_1$, die Bügelgewichtskraft abzüglich der Auftriebskraft der eingetauchten Bügelteile.
+ \item Ziehen Sie den Bügel bis zum Abriss heraus. Bestimmen Sie $\alpha_2$ und daraus $F_2$. Für diese Kraft gibt es eine obere Grenze (Abriss erfolgt sofort) und eine untere Grenze (Abriss erfolgt nach einer gewissen Wartezeit). Dieses Verhalten soll in der Fehlerdiskussion mit besprochen werden.
+ \item Die Oberflächenspannung bestimmen Sie grafisch aus dem Anstieg der $F(l)$-Kurve:
+  \begin{refequation}{6}
+   F_\sigma = \sigma \cdot 2l + \mathcal O
+  \end{refequation}
+\end{itemize}
+Beachten Sie für die Auswertung die Hinweise in der ausführlichen Anleitung!
+
+\begin{table}[b]\centering
+ \begin{tabular}{c|c}
+  \textbf{Flüssigkeit} & $\sigma / \SI{}{Nm^{-1}}$ \\\hline
+  Aceton        & \num{0,0233} \\
+  Wasser        & \num{0,0727} \\
+  Quecksilber   & \num{0,4650} \\
+  Ethanol       & \num{0,0225}
+ \end{tabular}
+ \caption{Oberflächenspannungen einiger Flüssigkeiten bei $20\degC$}
+\end{table}
+
+\end{document}

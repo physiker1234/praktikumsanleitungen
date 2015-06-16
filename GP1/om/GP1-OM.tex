@@ -1,0 +1,313 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd,subfigure,url,tikz}
+
+\versuch{Oszilloskop - Messtechnik}{OM}
+\author{P.~Eckstein,R.~Schwierz}
+\date{01.08.2007}
+\bearbeitet{J.~Kelling,J.~Kelling,F.~Lemke,S.~Majewsky,i.~A.~Dr.~Escher}{}
+
+\buch{eich}{H.~J.~Eichler, H.~D.~Kronfeldt, J.~Sahm}{Das neue physikalische Grundpraktikum}{Springer-Verlag}{Berlin, Heidelberg [u.a.] 2006}
+\buch{eng}{H.~Engels, N.~Schmidt}{Oszilloskop-Messtechnik von A -- Z}{Franzis-Verlag}{München 1992}
+\buch{tek}{Tektronix}{Serie TDS1000B und TDS2000B Digitalspeicher-Oszilloskop Benutzerhandbuch}{Tektronix}{\protect\url{http://www.tek.com/}}
+
+\begin{document}
+\maketitle
+
+\section{Motivation}
+
+Das Oszilloskop ist das universelle Instrument der elektrischen bzw. elektronischen Messtechnik.
+Es dient der Visualisierung von Spannungen im Echtzeitbereich und ermöglicht damit beim
+Einsatz entsprechender Wandler die Darstellung und das Vermessen der Zeitverläufe physikalischer Größen.
+
+Gegenwärtig verlieren die in ihrer Funktionsweise sehr anschaulichen Elektronenstrahloszil-
+loskope gegenüber den Digital-Speicher-Oszilloskopen (DSO) rasant an Bedeutung. Letztere,
+mit zwei und mehr Kanälen ausgestattet und von einem Mikrokontroller gesteuert, erlauben
+neben den direkten Messungen von Amplituden und Zeitdifferenzen die Bestimmung von Frequenz
+und Phasenverschiebung ebenso wie eine Transformation von Zeitfunktionen in den
+Frequenzbereich (Fourieranalyse).
+
+Das Oszilloskop gehört zum Handwerkzeug eines Experimentalphysikers, ob beim Aufbau von
+Experimenten oder als permanenter Bestandteil von Messanordnungen. Folgerichtig kommt es
+auch in Versuchen des Grundpratikums und des Fortgeschrittenenpraktikums zum Einsatz.
+Im Versuch sollen Kenntnisse über die prinzipielle Funktionsweise von Digital-Speicher-Oszilloskopen
+erworben und mit einem \texttt{Tektronix TDS 2012B} die Bedienung und die grundlegende
+Messtechnik so geübt werden, dass funktionell gleiche Oszilloskope in den folgenden
+Praktika problemlos angewandt werden können.
+
+\section{Aufgabenstellung}
+
+\begin{itemize}
+ \item Zur Einführung sind bekannte, von einem Funktionsgenerator (\texttt{HM 8030-5}) erzeugte, Signale bei
+ unterschiedlichen Erfassungs- und Triggermodi auf dem Oszilloskop darzustellen und zu vermessen.
+ \item Im Zweikanal-Betrieb ist die Pasenverschiebung zwischen zwei harmonischen Signalen und
+ zwei Impulsfolgen zu bestimmen.
+ \item Anhand unterschiedlicher Impedanzen von Signalquellen und Anstiegszeiten von Impulsen
+ ist die Wirkung des passiven Tastkopfes zu studieren.
+ \item Zuletzt sind unbekannte Signale und Signalkombinationen zu erfassen und zu identifizieren.
+\end{itemize}
+Genaueres Entnehmen Sie bitte der Platzanleitung.
+
+\clearpage
+
+\section{Grundlagen}
+
+\subsection{Signale und Begriffe}
+
+\subsubsection{Periodische Signale}
+
+\piccaption{Sinusförmige Wechselspannung \label{fig::sinus}}
+\parpic[r]{
+ \includegraphics[width=\linewidth/2-2em]{GP1-OM-SinusSpannung}
+}
+In den Abbildungen \ref{fig::sinus}, \ref{fig::sinusOffset} und \ref{fig::sinusPhase} sind sinusförmige Wechselspannungen
+im Zeitbereich bzw. im Phasenbereich und ihre mathematische Beschreibung einschließlich der verwendeten
+physikalischen Größen dargestellt. Der Momentanwert der Spannung wird beschrieben durch:
+\[
+ u(t) = U_m \sin(\omega t-\varphi_u)
+\]
+Dabei sind $U_m$ die \emph{Amplitude} bzw. Spizenspannung, $\omega$ die Kreisfrequenz mit $\omega = 2\pi f = 2\pi/T$ und $\varphi_u$ die Phase bezüglich $t=0$. Man definiert auch die Spannung Spitze-Spitze $U_{ss}$ und die zeitliche Verschiebung $\tau_u = \varphi_u T /(2\pi)$ .
+
+\begin{figure}[hb]\centering
+ \subfigure[Sinusförmige Wechselspannung mit Offset]{
+  \includegraphics[width=\linewidth/2-2em]{GP1-OM-SinusSpannungOffset}
+  \label{fig::sinusOffset}
+  }
+  \subfigure[Verschiebung zweier Wechselspannungen im Phasenbereich]{
+  \includegraphics[width=\linewidth/2-2em]{GP1-OM-SinusSpannungPhase}
+  \label{fig::sinusPhase}
+  }
+  \caption{Überlagerte Sinusspannungen}
+\end{figure}
+
+
+Die Asymmetrie einer Wechselspannung bzgl. Der Bezugsspannung (Masse) wird als Offset
+bezeichnet (Abb. \ref{fig::sinusOffset}). Der gleiche Sachverhalt kann auch als Überlagerung
+einer Gleichspannung mit einer Wechselspannung beschriben werden, insbesondere dann, wenn die
+Gleichspannung der Informationsträger und die Wechselspannung eine Stör- oder Brummspannung ist.
+
+\frage{Wie lautet die mathematische Formulierung der Zeitfunktion $u(t)$ in Abbildung \ref{fig::sinusOffset}?}
+
+Die zeitliche Verschiebung zweier harmonischer Signale gleicher Frequenz oder zweier
+harmonischer Signale, deren Frequenzen sich um ein ganzzahliges Vielfaches unterscheidenden, wird
+als Phasenverschiebung bezeichnet und in Grad oder Bogenmaß angegeben. In Abbildung \ref{fig::sinusPhase}. sind
+zwei um $\Delta\varphi_u$ gegeneinander verschobene sinusförmige Wechselspannungen gleicher Frequenz dargestellt.
+
+\frage{Wie hängen Phasenverschiebung und zeitliche Verschiebung zusammen?}
+
+In Abbildung \ref{fig::SignalUeberlagerung} sind zwei harmonische Spannungen verschiedener Frequenz auf unterschiedliche
+Art überlagert. Im Beispiel links ist die Amplitude des hochfrequenten Signals durch das
+niederfrequente Signal moduliert. Es handelt sich um Amplitudenmodulation (AM), wie sie zur
+drahtlosen Übertragung von Informationen mittels Mittelwellensendern angewandt wird. Is Im
+rechts dargestellten Fall das hochfrequente Signal vom niederfrequenten Signal
+überlagert. Dann spricht man von einer "`Brummstörung"'. Ist dagegen das niederfrequente Signal
+das "`Nutzsignal"', dann spricht man von einem verrauschtem Signal.
+
+\frage{Wie lauten für die beiden Fälle in Abbildung \ref{fig::SignalUeberlagerung} die Zeitfunktionen $u(t)$?}
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[width=\linewidth-2em]{GP1-OM-SignalUeberlagerung}
+ \caption{Überlagerungen zweier harmonischer Signale unterschiedlicher Frequenz \label{fig::SignalUeberlagerung}}
+\end{figure}
+
+Die in Abbildung \ref{fig::RechteckSpannung} dargestellten rechteckförmigen Impulsfolgen mit konstanten Impulsamplituden
+$U_0$ und gleicher Folgefrequenz $f = 1/T$ unterscheiden sich durch Impulsdauer $t_I$ und damit durch
+ihr Tastverhältnis: $TV = t_I:T$. Dieses beträgt bei der linken Darstellung $TV = 1:2$, bei der
+rechten $TV = 1:4$. Gelegentlich wird das Tastverhältnis auch als Verhältnis von Puls zu Pause
+definiert.
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[width=\linewidth-2em]{GP1-OM-RechteckSpannung}
+ \caption{Rechteck-Impulsfolgen mit unterschiedlichem Tastverhältnis \label{fig::RechteckSpannung}}
+\end{figure}
+
+\label{sec::periodischeSignale} Die in Abbildung \ref{fig::DreieckSpannung} gezeigten dreieck- und sägezahnförmigen Impulsfolgen sind u.a. geeignet
+Kennlinien von Zweipolen mit Hilfe eines im X-Y-Modus betriebenen Oszilloskops darzustellen.
+
+\frage{Wie könnte eine Schaltung für die Darstellung der Kennlinien von Zweipolen im X-Y-Modus des DSO aussehen (siehe Ende von \ref{sec::periodischeSignale})?}
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[width=\linewidth-2em]{GP1-OM-DreieckSpannung}
+ \caption{Rechteck-Impulsfolgen mit unterschiedlichem Tastverhältnis \label{fig::DreieckSpannung}}
+\end{figure}
+
+\subsubsection{Einzelimpulse. nichtperiodische Impulse}
+
+Bestimmte Sensoren oder Signalgeber, wie z.B. Strahlungsdetektoren geben im Gegensatz zu
+periodischen Signalgebern zeitlich nicht vorhersagbare Signale ab. Häufig können diese auch
+noch in Form und Amplitude variieren. Neben Impulsen mit exponentiell ansteigenden und
+abfallenden Flanken (so genannte semigaußförmige Impulse) sind dies die in Abbildung \ref{fig::RechteckImpuls} dargestellten Stufen- und Rechteckimpulse. Ersterer entspricht einer ideal geschalteten Spannung d.h.
+einem prellfreien Schalter.
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[width=\linewidth-2em]{GP1-OM-RechteckImpuls}
+ \caption{Stufenimpuls, Rechteckimpuls \label{fig::RechteckImpuls}}
+\end{figure}
+
+Eine Impulsfolge wie sie z.B. bei der seriellen Datenübertragung auftreten kann zeigt Abbildung \ref{fig::RandomImpulse}.
+Kurze, unkorreliert auftretende Störimpulse sind oft die Ursache schwer zu findender Fehler bei
+Datenübertragung bzw. -verarbeitung.
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[width=\linewidth-2em]{GP1-OM-RandomImpulse}
+ \caption{Random-Impulsfolge mit kurzem Störimpuls \label{fig::RandomImpulse}}
+\end{figure}
+
+Variable Erfassungs- bzw. Abtastmodi und flexible Triggerregime moderner DSO erleichtern die
+Suche nach Störimpulsen, die sich in ihrer Amplitude und / oder in ihrer zeitlichen Struktur von
+den Standardimpulsen unterscheiden. Mit dem Triggern (s. Abschnitt \ref{sec::periodischeSignale}) auf derartige
+Störungen werden natürlich die Vor- und Nachtriggerdaten erfasst, sodass die Auswirkung der
+Störung analysiert werden kann.
+
+\frage{Mit welchen Einstellungen des DSO kann der dargestellte Störimpuls in Abbildung \ref{fig::RandomImpulse} sichtbar gemacht werden?}
+
+\piccaption{Realer Rechteckimpuls mit Verzerrungen und Definitionsgrößen \label{fig::RealerImpuls}}
+\parpic[r]{
+ \includegraphics[width=\linewidth/2-2em]{GP1-OM-RealerImpuls}
+}
+
+Die in den Abbildungen: \ref{fig::RechteckSpannung}, \ref{fig::RechteckImpuls} und \ref{fig::RandomImpulse}
+dargestellten Rechteckimpulse sind idealisiert. Reale
+Ausgangsimpulse beliebiger Signalgeber weisen endliche Anstiegs- und Abfallzeiten und mehr
+oder weniger stark abgerundete Ecken auf. Durch die verarbeitende Elektronik werden diese
+Impulse oft mittels RC-Glieder gezielt weiter geformt. Bei der Übertragung durch Kabel und
+durch parasitäre Kapazitäten und Induktivitäten erleiden sie weitere Verformungen d.h.
+Verzerrungen. Eine typische Impulsform eines realen Rechteckimpulses mit endlicher Flankensteilheit
+und mit Überschwingen ist einschließlich der Definitionsgrößen in Abbildung \ref{fig::RealerImpuls} dargestellt:
+Dabei sind $U_0$ die Impulsamplitude, $U_u$ die Amplitude des
+Überschwingens, $t_I$ die Impulsbreite, $t_r$ die Anstiegzeit ("`rise time"') und $t_f$ die Abfallzeit ("`fall time"').
+
+\subsection{Digital-Speicher-Oszilosskop (DSO)}
+
+\subsubsection{Funktionsprinzip}
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[width=\linewidth-1em]{GP1-OM-OsziSchaltplan}
+ \caption{Blockschaltbild der Oszilloskopfunktionen\verweis{tek}
+ \label{fig::OsziSchaltplan}}
+\end{figure}
+
+Wie dem funktionellen Blockschaltbild (Abb. \ref{fig::OsziSchaltplan}) zu entnehmen ist, wird die darzustellende
+Spannung am Eingang eines jeden Kanals des Oszilloskops zur Anpassung an die vertikale
+Auflösung des Bildschirmes verstärkt (Vertikalverstärker). In einem DSO wird das verstärkte
+Eingangssignal in einem bestimmten zeitlichen Abstand kontinuierlich abgetastet (Abb. \ref{fig::Abtastung})
+und gespeichert, d.h. als Analogwert kurzzeitig gespeichert und mittels Analog-Digital-Konverter
+in ein entsprechendes binär kodiertes Signal gewandelt. Dieses wird in einen zyklisch
+beschreibbaren Speicher geschrieben. Durch den Trigger, ein Signal, das den zeitlichen Bezugs-
+punkt fixiert wird entsprechend der gewählten Zeitbereiche (Darstellung vor und nach dem
+Triggerzeitpunkt) die Übergabe an den Bildspeicher und die Darstellung auf einem LCD-Display
+ausgelöst. Das Triggersignal wird intern vom Einganssignal eines der verfügbaren Kanäle abge-
+leitet. Der Kanal und die Triggerbedingungen sind wählbar.
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[width=\linewidth/4*3]{GP1-OM-Abtastung}
+ \caption{Blockschaltbild der Oszilloskopfunktionen\verweis{tek}
+ \label{fig::Abtastung}}
+\end{figure}
+
+\subsubsection{Grundlagen der Bedienung des DSO}
+
+Abbildung \ref{fig::Oszi} zeigt das Bedienfeld des \texttt{TDS 2012B}. In benutzerfreundliche Funktionsbereiche
+unterteilt ermöglicht es leichten Zugriff auf die Bedienelemente und die Funktionsmenüs.
+
+\begin{figure}[h!b]
+ \centering
+ \includegraphics[width=\linewidth-2em]{GP1-OM-Oszi}
+ \caption{Frontansicht des Zwei-Kanal-DSO \texttt{TDS 2012B} (auf Grundlage von \verweis{tek})
+ \label{fig::Oszi}}
+\end{figure}
+
+Im LCD-Display werden neben den Signalverläufen (Inhalt des Bildspeichers) auch Informatio-
+nen über die Signale selbst und Osilloskopeinstellungen angezeigt. Die wichtigsten Anzeigen
+und Details sind Abbildung \ref{fig::OsziDisplay} zu entnehmen.
+
+\newpage
+Für die Bedienung des Oszilloskops \emph{müssen} folgende Funktionen beherrscht werden:
+\begin{itemize}
+ \item Einstellung des DSO / Verwendung von Auto-Setup
+ \item Signalerfassung
+ \item Triggerung
+ \item Skalierung (Verstärkung) und Positionierung von Signalen
+ \item Durchführung von Messungen
+\end{itemize}
+
+\begin{description}
+ \item [Wichtig!] Die Bedienungsgrundlagen und das notwendige Grundwissen sind im Benutzerhandbuch des
+ Digital-Speicher-Oszilloskops auf den Seiten \num{11} bis \num{60} ausführlich dargestellt,
+ im Kapitel Referenz, Seite \num{99} bis \num{144} werden alle Details erläutert.
+ Im Anhang des Benutzerhandbuchs sind die technischen Parameter zu finden.
+\end{description}
+
+\begin{figure}[hb]
+ \centering
+ \includegraphics[width=\linewidth/4*3]{GP1-OM-OsziDisplay}
+ \caption{Signal- und Parameterdarstellungen im Display des \texttt{TDS 2012B}
+ \label{fig::OsziDisplay}}
+\end{figure}
+
+\section{Messtechnik}
+
+Als Signalquellen stehen ein Funktionsgenerator \texttt{HM 8030-5 (HAMEG)} sowie ein spezieller
+Signal Generator (Eigenentwicklung) auf der Basis eines Training-Kits (Tektronix) zur Verfü-
+gung (Abb. \ref{fig::Signalgenerator}).
+Der \texttt{HM 8030} generiert Sinus-, Rechteck-, Dreiecksignale im Frequenzbereich: \SI{,05}{Hz} bis \SI5{MHz}
+mit variabler Amplitude und zuschaltbarem Gleichspannungsoffset.
+Der Signal-Generator stellt eine Sinus- und eine Rechteckspannung sowie wählbare Signale
+zur Identifikation zur Verfügung. Die Signale können sowohl von den BNC-Ausgängen direkt
+über \SI{50}{\Omega}-Koaxialkabel zum Oszilloskop-Eingang geführt werden als auch mit einem passiven
+Tastkopf, der über eine 1:1 und eine 10:1 - Teilung verfügt, abgegriffen werden.
+Die Schaltung eines solchen Tastkopfes in Verbindung mit der Eingangs-Ersatzschaltung des
+DSO ist in Abbildung \ref{fig::TastkopfSchaltplan}. dargestellt.
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[width=\linewidth - 2em]{GP1-OM-Signalgenerator}
+ \caption{Frontansicht der Signalquellen \label{fig::Signalgenerator}}
+\end{figure}
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[width=\linewidth - 2em]{GP1-OM-TastkopfSchaltplan}
+ \caption{Frontansicht der Signalquellen \label{fig::TastkopfSchaltplan}}
+\end{figure}
+
+\subsection{Frequenz- und Phasenverschiebungsmessung mittels Lissajous-Figuren}
+
+Das DSO verfügt über eine Vielzahl von Messmöglichkeiten, die u.a. auch direkte Messungen
+im Zeitbereich (X-Achse) und daraus abgeleitet Frequenz- und Phasenmessungen ermöglichen.
+Die Genauigkeit dieser auf \num8-bit Wandlern basierenden Messungen kann übertroffen werden,
+wenn ein Frequenzgenerator mit höherer Anzeigegenauigkeit als Vergleichsgenerator zur Verfü-
+gung steht und dessen Signal im XY-Modus des DSO statt der Zeitbasis eingespeist wird. Die so
+entstehenden Lissajous-Figuren (siehe Tabelle \ref{tab::lissajous}) erlauben einen exakten Frequenzvergleich.
+
+% Die Lissajous-Figuren werden mit Tikz geplottet
+% \lissajous[weitere Beschriftung] {X} {Y} {\Delta \varphi}
+\newcommand{\lissajous}[4][]{
+ \begin{minipage}{4em}
+  \centering
+  \begin{tikzpicture}
+   \draw[scale=.4,domain=0:6.282,samples=30,smooth,variable=\t] plot ({sin((#2*\t) r)},{sin((#3*\t - #4/180.0*3.141) r )});
+  \end{tikzpicture}\\
+  \ang{#4} #1
+ \end{minipage}
+}
+
+\begin{table}[ht]
+ \centering
+ \begin{tabular}{c|cccccc}
+  Frequenzverhältnis & \multicolumn{6}{c}{Phasenverschiebung/Figur}\\\hline\\[-.5em]
+  $1:1$ & \lissajous11{0}& \lissajous11{45}& \lissajous11{90}& \lissajous11{180}& \lissajous11{270}& \lissajous11{360}\\[2em]
+  $1:2$ & \lissajous12{0}& \lissajous12{45}& \lissajous12{90}& \lissajous12{180}& \lissajous12{270}& \lissajous12{360}\\[2em]
+  $1:3$ & \lissajous13{0}& \lissajous13{45}& \lissajous13{90}& \lissajous13{180}& \lissajous13{270}& \lissajous13{360}\\[2em]
+  $1:4$ & \lissajous14{0}& \lissajous14{45}& \lissajous14{90}& \lissajous14{180}& \lissajous14{270}& \lissajous14{360}
+ \end{tabular}
+ \caption{Lissajous-Figuren \label{tab::lissajous}}
+\end{table}
+
+\end{document}

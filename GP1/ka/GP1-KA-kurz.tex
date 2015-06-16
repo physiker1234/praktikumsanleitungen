@@ -1,0 +1,58 @@
+\documentclass[platz]{tudphygp}
+\usepackage{tudphymd}
+
+\versuch{Spezifische Wärmekapazität}{KA}
+
+\begin{document}
+\maketitle
+
+\section*{Aufgabenstellung}
+
+Bestimmen Sie die Wärmekapazität eines Aufheizkalorimeters sowie mit dessen Hilfe die spezifische und molare Wärmekapapazität eines Festkörpers.
+
+\section*{Hinweise zur Versuchsdurchführung}
+
+\begin{enumerate}
+ \item \emph{Vorbereitung}
+  \begin{itemize}
+   \item Schalten Sie mindestens 20 Minuten vor Beginn der Messungen den Messwandler für die Temperaturmessung ein.
+   \item Schalten Sie den Arbeitsplatzrechner ein, und melden Sie sich als Benutzer KA (Passwort "`ka"') an. Der Drucker am Arbeitsplatz~2 wird von allen Messplätzen genutzt, somit muss der Rechner am Arbeitsplatz~2 auch dann eingeschaltet werden, wenn dieser Versuchsplatz nicht besetzt ist.
+   \item Starten Sie das Programm KA. Die Handhabung sollte selbsterklärend sein. Bitte klären Sie auftretende Probleme schnellstens mit dem Betreuer. Das Programm kann noch weiterentwickelt werden, Hinweise zu Fehlern und Verbesserungsvorschläge nimmt der Betreuer gerne entgegen.
+  \end{itemize}
+ \item \emph{Bestimmung der Wärmekapazität $C_\mathrm{ALL}$ des Kalorimeters mit Festkörper}
+  \begin{itemize}
+   \item Bringen Sie den Festkörper in das Kalorimeter und füllen Sie destilliertes Wasser ein. Überlegen Sie genau, wieviel Wasser sie einfüllen müssen!
+   \item Bauen Sie den Heizkreis gemäß der vom Computer angezeigten Schaltung auf. Bereiten Sie die Spannungs- und Strommessung für das Aufheizkalorimeter vor. Testen Sie die aufgebaute Schaltung.
+   \item Geben Sie am Computer die folgenden Parameter $t_1$ (Beginn des Hauptversuchs, Einschalten der Heizung), $t_2$ (Ende des Hauptversuchs, Ausschalten der Heizung) und $t_3$ (Ende des Nachversuchs) ein. Da eine Temperaturdifferenz von \SI{15}K nicht überschritten werden sollte, sind günstige Werte $(t_1,t_2,t_3) = (5,10,15)\SI{}{min}$ für die "`großen"' Probenkörper und $(t_1,t_2,t_3) = (7,14,21)\SI{}{min}$ für die "`kleinen"' Probenkörper.
+   \item Überprüfen Sie Ihre Versuchsvorbereitung anhand der Checkliste, die der Computer vor dem Start der Messung anzeigt.
+   \item Während der Heizperiode protokollieren Sie \emph{mindestens} zu jeder vollen Minute Strom und Spannung.
+   \item Ermitteln Sie aus der ausgedruckten Temperatur-Zeit-Kurve die erreichte Temperaturdifferenz und deren Fehler.
+   \item Berechnen Sie die Wärmekapazität $C_\mathrm{ALL}$ inkl. absolutem und relativem Fehler.
+  \end{itemize}
+ \newpage
+ \item \emph{Bestimmung der Wärmekapazität $C_\mathrm{KA}$ des Kalorimeters}
+  \begin{itemize}
+   \item Entnehmen Sie den Festkörper aus dem Kalorimeter und stellen Sie sonst die gleichen Anfangsbedingungen wie in der vorherigen Messung her. Was sollten Sie beachten, damit auch im zweiten Versuchsteil annähernd gleiche Versuchsbedingungen herrschen?
+   \item Der weitere Verlauf ist völlig analog zu dem des ersten Versuchsteils. Berechnen Sie schließlich die Wärmekapazität $C_\mathrm{KA}$ inkl. absolutem und relativem Fehler.
+  \end{itemize}
+ \item \emph{Bestimmung der spezifischen Wärmekapazität $c_k$ des Festkörpers}
+  \begin{itemize}
+   \item Berechnen Sie die Wärmekapazität $C_k$ des Festkörpers inkl. absolutem und relativem Fehler.
+   \item Wägen Sie den Festkörper.
+   \item Berechnen Sie die spezifische Wärmekapazität $c_k$ des Festkörpers inkl. absolutem und relativem Fehler.
+   \item Vergleichen Sie Ihr Ergebnis mit dem Tabellenwert (siehe Tab.~\ref{tab::waermekapazitaeten}).
+  \end{itemize}
+\end{enumerate}
+
+\begin{table}[t]\centering
+ \begin{tabular}{c|ccccc}
+  Material  & VA-Stahl  & Messing   & Aluminium & Kupfer    & Zinn \\\hline
+  \\[-1em]
+  $c / \SI{}{\frac J{kg.K}}$ & $\num{452}\ldots\num{523}$ & \num{381} & \num{888} & \num{381} & \num{226}
+ \end{tabular}
+ \caption{Spezifische Wärmekapazitäten einiger Metalle und Legierungen \label{tab::waermekapazitaeten}}
+\end{table}
+
+\end{document}
+
+%Aus Gründen der Zeitökonomie sollte während der rechnergeführten $T(t)$-Aufnahme mit Teilen der Auswertung begonnen werden. Die endgültigen Fehler $\Delta U$ und $\Delta I$ können erst am Ende der Auswertung bestimmt werden.

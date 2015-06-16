@@ -1,0 +1,90 @@
+\documentclass[platz]{tudphygp}
+\usepackage{tudphymd,subfigure}
+
+\versuch{Gekoppelte Schwingungen}{GS}
+
+\begin{document}
+
+\maketitle
+
+\subsection*{Aufgabenstellung}
+Das Wissen über physikalische Pendel und Schwingungen soll durch diesen Versuch vertieft werden. Messen Sie die Schwebungsfrequenz der gekoppelten Pendel als Funktion der Kopplungslänge direkt und indirekt. Die Messergebnisse sind mit den theoretisch berechneten Werten zu vergleichen.
+
+\subsection*{Hinweise zur Versuchsdurchführung}
+
+\begin{enumerate}
+ \item Nehmen Sie das \emph{Cassy-Messsystem} in Betrieb. (Nutzer: GS, Passwort: gs)
+ \item \emph{ungekoppeltes Pendel:} Überprüfen Sie die Schwingungsdauern der einzelnen Pendel über \num{100} Schwingungen. Entfernen Sie die Feder komplett für diese Messung, damit der Einfluss der Masse der Feder entfällt. Bei Abweichungen die verstellbare Pendelmasse nach Rücksprache mit dem Betreuer verschieben.
+ \item \emph{gekoppeltes Pendel:} Messen Sie für \emph{drei} verschiedene Koppellängen $l$ mit Hilfe des Cassy-Systems:
+  \begin{enumerate}
+   \item die Schwebungsdauer $\tau$ (Gesamtzeit $t_S$ für \num5 bis \num{10} Schwebungen messen)
+   \item Schwingungsdauer $T$ der gleichsinnigen Fundamentalschwingung (Gesamtzeit $t_{50}$ für \num{50} Schwingungen messen)
+   \item Schwingungsdauer $T'$ der gegensinnigen Fundamentalschwingung (Gesamtzeit $t_{50}'$ für \num{50} Schwingungen messen)
+  \end{enumerate}
+ \item[] Hinweis zur Durchführung: Bringen Sie die Koppelfedern sorgfältig so an, dass die Pendelspitzenlager nicht in der Führung über der Hallsonde bewegt werden und immer an den durch Ringmarken gekennzeichneten Positionen verbleiben.
+ \item Messen Sie die Federkonstante $k$ der Kopplungsfeder mittels dynamischer Methode (wie?).
+ \item[] Hinweis zur Durchführung: Verwenden Sie eine hinreichend große Masse. Dabei darf die Feder allerdings nicht zu weit gedehnt werden, da sich die Federkonstante bei großen Auslenkungen (u.~U. bleibend) ändert.
+\end{enumerate}
+
+\subsection*{Zur Benutzung des Cassy-Messsystems}
+
+\begin{itemize}
+ \item Überprüfung der Schwingungsdauern: Wählen Sie im Cassy-Datenerfassungsprogramm eine geeignete Achseneinteilung für die Hallspannung (z.~B. zwischen \num{-0,5} und \SI{0.5}V). Stellen Sie mit Hilfe des Offsetreglers an den Hallsonden für die Ruhelage der Pendel etwa \SI0V ein. Die Datenaufnahme sollte zunächst bei \SI{0,1}s liegen. Arbeiten Sie immer im Modus "`Automatische Aufnahme"'.
+ \item Bestimmung der Schwebungsdauer: Bei sehr kleinen Schwebungsdauern ist das Zeitintervall der Datenaufnahmen auf \SI{0.05}s zu reduzieren.
+ \item Zur Ermittlung der Zeiten $t_S$, $t_{50}$ und $t_{50}'$: Entweder lesen Sie die Zeiten aus der tabellarischen Darstellung der Hallspannungen ab, oder Sie nutzen das Messtool "`Markierung setzen -- Differenz Messen"'.
+\end{itemize}
+
+\subsection*{Auswertung}
+
+\begin{enumerate}
+ \item Drucken Sie die erhaltenen Messdiagramme für die gleichsinnige bzw. die gegensinnige Fundamentalschwingung und für die Schwebung jeweils zur \emph{größten} Koppellänge $l$ mit der entsprechenden Beschriftung (\texttt{Alt+T}) aus.
+ \item Berechnen Sie die Schwebungsfrequenz:
+  \begin{enumerate}
+   \item $f_{S,1}$: \emph{direkt} aus der der Schwebungsdauer $\tau$
+   \item $f_{S,2}$: \emph{indirekt} aus den Schwingungsdauern der beiden Fundamentalschwingungen $T$ und $T'$
+   \item $f_{S,3}$: \emph{theoretisch} aus der Federkonstante $k$ und den Parametern des Versuchplatzes (s.~Tab.~\ref{tab::platz})
+  \end{enumerate}
+  \[
+   f_{S,1/2/3} = \frac1\tau = \frac1{T'}  - \frac1T = \frac1T \cdot \kla{\sqrt{1 + \frac{2 \cdot k \cdot l^2}{m \cdot g \cdot s_A}} - 1}
+  \]
+ \item Stellen Sie die drei Schwebungsfrequenzen in einem \emph{gemeinsamen} Diagramm dar.
+ \item Berechnen Sie für alle drei Methoden die \emph{relativen} Maximalfehler für die kleinste und die größte Koppellänge.
+ \item Tragen Sie die Fehlerbalken der jeweiligen \emph{absoluten} Maximalfehler in das Diagramm ein.
+\end{enumerate}
+
+\begin{table}\centering
+ \begin{tabular}{cccc}
+  Messplatz & Hallsondennummer & $m / \SI{}{kg}$       & $s_A / \SI{}{cm}$  \\\hline
+  a         & 026 \& 030       & \errnum{1,322}{0,005} & \errnum{87,0}{0,5} \\
+  b         & 023 \& 025       & \errnum{1,316}{0,005} & \errnum{87,2}{0,5} \\
+  c         & 027 \& 022       & \errnum{1,310}{0,005} & \errnum{87,2}{0,5} \\
+  d         & 028 \& 024       & \errnum{1,318}{0,005} & \errnum{87,1}{0,5}
+ \end{tabular} \hspace{4em}
+ \begin{tabular}{cc}
+  $l / \SI{}{cm}$ \\\hline
+  \errnum{28,0}{0,2} \\
+  \errnum{52,8}{0,2} \\
+  \errnum{77,8}{0,2}
+ \end{tabular}
+ \caption{Parameter für die einzelnen Messplätze und Koppellängen an den drei Ringmarken}\label{tab::platz}
+\end{table}
+
+\subsection*{Hinweise für das Protokoll}
+
+\begin{table}[hb]\centering
+ \subtable[Bestimmung der Federkonstante]{
+  \begin{tabular}{c|c|c|c}
+   $m / \SI{}g$ & $T_{100,\mathrm{Feder}} / \SI{}s$ & $T_\mathrm{Feder} / \SI{}s$ & $k / \SI{}{N.m^{-1}}$ \\\hline
+   \vdots&\vdots&\vdots&\vdots
+  \end{tabular}
+ }\vspace{2em}
+ \subtable[Bestimmung der Schwebungfrequenz]{
+  \begin{tabular}{c|cc|cc|cc|ccc}
+   $l / \SI{}{cm}$ & $t_{50} / \SI{}s$ & $T / \SI{}s$ & $t_{50}' / \SI{}s$ & $T' / \SI{}s$ & $t_S / \SI{}s$ & $\tau / \SI{}s$ & $f_{S,1} / \SI{}{Hz}$ & $f_{S,1} / \SI{}{Hz}$ & $f_{S,1} / \SI{}{Hz}$ \\\hline
+   \vdots&\vdots&\vdots&\vdots&\vdots&\vdots&\vdots&\vdots&\vdots&\vdots
+  \end{tabular}
+ }
+ \caption{Empfohlene Tabellen für das Protokoll}
+\end{table}
+
+\end{document}

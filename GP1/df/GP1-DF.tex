@@ -1,0 +1,183 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd,tabularx,wasysym,subfigure,url,multirow}
+
+\versuch{Dichte von Flüssigkeiten}{DF}
+\bearbeitet{M. Keller,J.~Kelling,F.~Lemke,S.~Majewsky,i.A. Dr. Escher}{}
+
+\buch{reck}{A.~Recknagel}{Physik: Mechanik}{Technik-Verlag}{Berlin 1990}
+\buch{wal}{W.~Walcher}{Praktikum der Physik}{Teubner-Verlag}{Stuttgart 1989}
+\buch{ilb}{W.~Ilberg (Hrsg.), M.~Krötzsch (Hrsg.) et.~al.}{Physikalisches Praktikum für Anfänger}{Teubner-Verlag}{Leipzig 1994}
+\buch{bie}{L.~Bi\'etry}{Mettler-Wägelexikon}{Mettler-Verlag}{Greifensee 1982}
+
+\begin{document}
+\maketitle
+
+\section{Aufgabenstellung}
+
+\begin{enumerate}
+ \item Bestimmen Sie die Dichte eines Festkörpers nach dem \emph{Absolutverfahren}.
+ \item Bestimmen Sie die Dichte eines Festkörpers nach dem \emph{Relativverfahren}.
+ \item Bestimmen Sie die Dichte einer Flüssigkeit mit Hilfe eines \emph{Pyknometers}.
+ \item Vergleichen Sie die Genauigkeit der verwendeten Verfahren.
+\end{enumerate}
+
+\section{Allgemeine Grundlagen}
+
+\subsection{Waagetypen und Genauigkeit der Wägung}
+
+Die klassischen Waagen, die auf dem Hebelprinzip beruhen (z.B. Balkenwaage, mechanische Einschalenwaage) und Massen mit Normalen vergleichen, sowie Federwaagen verschiedener Ausführung, bei denen eine reversible, zur Gewichtskraft proportionale Auslenkung aus der Ruhelage als Messeffekt genutzt wird, sind inzwischen durch elektronische oder elektromechanische Einschalenwaagen weitestgehend abgelöst worden. Das Messprinzip ist ähnlich dem der Federwaage, nur dass hier die Gewichtskräfte der Last durch Verformungs- oder elektromagnetische Kräfte kompensiert werden.
+
+Auch in diesem Versuch wird eine elektronische Einschalenwaage verwendet, genauer eine Waage mit \emph{elektromagnetischer Kompensation} (EMFC = electrmagnetic force compensation). Wie Abbildung~\ref{fig::emfc} zeigt, wird ein Magnetfeld in eine stromdurchflossenen Spule erzeugt. Dieses Magnetfeld wird so eingesetzt, dass ein stromdurchflossener Leiter entgegengesetzt der Gewichtskraft angehoben wird. Damit lässt sich die Höhe eines Lastträgers einstellen, die wiederum von einer fotoelektrische Abtasteinrichtung erkannt wird. Bei einer Belastungsänderung verändert ein Regler mit Verstärker den durch die Spule fließenden Strom, sodass die Einspiellage wieder erreicht ist. Dabei bleibt der Strom bei kleiner Belastung für kurze Zeit und bei großer Belastung für längere Zeit eingeschaltet (\emph{Impulsbreitenmodulation}). Die Einschaltdauer des Stroms wird durch die Abtastung der Einspiellage mit einem Regelverstärker geregelt und ist direkt proportional der Belastung.
+
+Andere Beispiele für derartige Messmöglichkeiten sind:
+\begin{itemize}
+ \item Waage mit kapazitiven oder induktiven Messumformern/Messzellen. Die Gewichtskraft verformt einen Federkörper, dessen Abstand $A$ von einem Bezugspunkt eine Funktion der Last ist. Die Abstandsänderung wird mit kapazitiver oder induktiver Messwertumformung bestimmt.
+ \item Waage mit Dehnungsmessstreifen. Die Verformung eines Federkörpers wird mit Hilfe aufgeklebter Dehnungsmessstreifen als Widerstandsänderung registrierbar.
+ \item Waage auf der Basis des magnetoelastischen Prinzips. Die auf einen Federkörper wirkende Kraft ruft örtliche Materialspannungen hervor, die eine Änderung der magnetischen Kopplung zweier Spulenwicklungen bewirken.
+ \item Waage auf der Basis des piezoelektrischen Effekts. Hierbei entsteht eine elektrische Spannung als Folge einer gerichteten Druck- oder Zugbelastung eines Kristalls.
+ \item Waage nach dem gyrodynamischen Prinzip. Bei dieser Kreiselwaage ändert sich die Präzessionsgeschwindigkeit des Kreisels proportional mit der senkrecht zur Kreiselachse wirkenden Gewichtskraft der Last.
+ \item Waage nach dem Schwingsaitenprinzip. Bei dieser Saitenwaage wird die mit der Belastung zunehmende Schwingungsfrequenz einer Saite zur Gewichtskraftbestimmung genutzt.
+\end{itemize}
+
+\begin{figure}[t] \centering
+ \includegraphics[width=\linewidth * 3/4]{GP1-DF-EMFCWaage}
+ \caption{Elektronische Waage auf der Basis des EMFC-Prinzips (Schema und Blockschaltbild)} \label{fig::emfc}
+\end{figure}
+
+Die Ungenauigkeiten, die bei der Wägung mit einer elektronischen Einschalenwaage mit digitaler Anzeige auftreten, werden vor allem durch folgende Fehlerquellen bestimmt:
+
+\paragraph{Systematische Fehler:}
+\begin{itemize}
+ \item Kalibrierfehler: aktuelle Anzeige entspricht nicht dem Wert eines Massenormals
+ \item Linearitätsabweichung innerhalb des Messbereichs: kein streng proportionaler Zusammenhang zwischen Messwertanzeige und Masse)
+ \item Nichtberücksichtigung des Luftauftriebs: Dichteunterschied (damit Auftriebunterschied) zwischen Massenormal und Wägegut
+\end{itemize}
+
+\paragraph{Zufällige Fehler:}
+\begin{itemize}
+ \item Digitalisierungsfehler der Anzeige
+ \item Streuung der Messwerte vom gleichen Massenormal (Reproduzierbarkeit der Wägung)
+ \item Messwertänderung infolge geringfügiger örtlicher Platzierungsunterschiede des Materials bei der Wägung (tritt besonders bei Verwendung des JOLLY-Aufsatzes auf!)
+\end{itemize}
+
+\paragraph{Grobe Fehler:}
+\begin{itemize}
+ \item Wägung bei nicht geschlossenem "`Waagenhaus"'
+ \item Überlastung der Waage
+ \item Fehlerhafte Nullsetzung
+ \item Stark exzentrische Belastung der Waage
+\end{itemize}
+
+Die Angabe der Genauigkeit einer Massebestimmung bedarf daher sowohl der Berücksichtigung der Herstellerangaben, als auch der Durchführung von \emph{eigenen Kontrollmessungen}.
+
+\subsection{Volumenbestimmung und ihre Genauigkeit}
+
+\piccaption{Volumenmessgefäße (v.~l.~n.~r. Messzylinder, Maßkolben, Vollpipette, Pyknometer)\label{fig::gefaess}}
+\parpic[r]{
+ \includegraphics[width=\linewidth/3]{GP1-DF-Gefaesse}
+}
+Das Volumen von Festkörpern definierter geometrischer Form ist aus ihren Abmaßen berechenbar. Bei unregelmäßig geformten Proben wird ein Ersatzvolumen gemessen, z.~B. das Wasservolumen, das der betreffende Körper verdrängt. Zur Bestimmung von Flüssigkeitsvolumina bedarf es geeigneter Messgefäße. Dies sind vor allem Messbecher/Messzylinder, Maßkolben, Pipetten und Pyknometer (\ref{fig::gefaess}).
+
+Die Genauigkeit der Volumenbestimmung wird wesentlich durch den Kalibrierfehler (\emph{systematischer Fehler}) der Messmittel bestimmt. Dagegen können die Ablesefehler (\emph{zufällige Fehler}), außer bei Messbechern, klein gehalten werden. Spezialpipetten und Pyknometer gestatten die genauesten Volumenbestimmungen, da ihre Messprinzipien die sicherste Feststellung des Messgefäßinhalts erlauben.
+
+\subsection{Dichte und Dichtebestimmungsverfahren}
+
+Als Dichte $\varrho$ eines Stoffes wird der Grenzwert des Verhältnisses des Masseelements $\Delta m$ eines Stoffes zu seinem Volumenelement $\Delta V$ bezeichnet, wobei $\Delta V$ gegen Null geht.
+\begin{equation}%DONE: FORMEL FALSCH
+ \lim_{\Delta V\to0}  \frac{\Delta m}{\Delta V} = \dquot mV
+\end{equation}
+Bei Integration über das gesamte Volumen ergibt sich für einen homogenen Stoff die Dichte $\varrho_\mathrm{hom}$ und für einen inhomogenen Stoff die mittlere Dichte $\overline\varrho_\mathrm{inhom}$.
+\begin{align}
+ \varrho_\mathrm{hom} &= \frac mV\sublabel{eqn::hom} & \overline\varrho_\mathrm{inhom} &= \frac mV \sublabel{eqn::inhom} \label{eqn::dichte}
+\end{align}
+
+Die SI-Einheit der Dichte ist \SI{}{kg/m^3} bzw. der inkohärente Quotienten aus zulässigen Masse- und Volumeneinheiten (z.~B. die weitverbreitete Angabe der Dichte in \SI{}{g/cm^3}).
+
+Gelegentlich erfolgt auch die Angabe einer relativen Dichte $d$, eines reinen Zahlenwertes, der das Verhältnis der Dichte $\varrho$ zu der Dichte eines Bezugsstoffes $\varrho_0$ (z.~B. Wasser) angibt. Eine aus der Dichte ableitbare, kaum noch gebräuchliche, Größe ist die Wichte $\gamma$, die das Produkt aus $\varrho$ und der Fallbeschleunigung $g$ ist. Die SI-Einheit der Wichte ist \SI{}{N/m^3}. Ursprünglich war $\gamma$ als Quotient von Gewichtskraft $F_g$ und Volumen $V$ definiert, woraus die SI-fremde Dimension \SI{}{kp/dm^3} resultiert.%DONE: UMFORMULIERT
+
+Wie aus den Beziehungen \eqref{eqn::hom} und \eqref{eqn::inhom} folgt, beruht die Ermittlung der Dichte auf der Bestimmung der Masse $m$ und des Volumens $V$. Während $m$ problemlos mit hoher Genauigkeit bestimmbar ist, kann eine direkte Volumenmessung u.~U. unmöglich oder ungenau sein.
+
+\paragraph{Absolutverfahren} Bei diesem Verfahren, auch \emph{direkte Methode} genannt, lässt sich die Dichte eines Stoffes unmittelbar aus den Beziehungen in \eqref{eqn::dichte} berechnen. Dazu muss man das Volumen genau bestimmen können, z.~B. bei einem Festkörper mit berechenbarer Form oder Flüssigkeiten mit speziellen Messgefäßen (Pyknometer).
+
+\paragraph{Relativverfahren} Falls das Volumen $V$ nicht oder nur ungenau messbar ist, bedient man sich \emph{Relativverfahren} (auch: \emph{indirekte Methode}), bei denen die Volumenmessung umgangen wird bzw. $V$ bei der Berechnung eliminiert werden kann. Allerdings ist bei dieser Methodik eine Kalibrierungsflüssigkeit/ein Kalibrierungskörper mit bekannter Dichte notwendig. Um das Volumen zu eliminieren führt man zwei Messungen durch bei denen das Volumen konstant ist. Nach Gleichung~\eqref{eqn::dichte} folgt dann:
+\[
+ \frac{m_1}{\varrho_1} = V_1 \overset!= V_2 = \frac{m_2}{\varrho_2} \quad\Rightarrow\quad \varrho_2 = \frac{m_2}{m_1} \cdot \varrho_1
+\]
+
+\piccaption{Aräometer\label{fig::araeo}}
+\parpic[r]{
+ \includegraphics[width=\linewidth/3]{GP1-DF-Araeometer}
+}
+Häufig nutzt man das \emph{Archimedische Prinzip} für der Messung bei konstanten Volumen:
+
+~\hspace*{2em}\begin{minipage}{\linewidth/2}
+ "`Die auf einen in eine Flüssigkeit eingetauchten Körper wirkende Auftriebskraft ist gleich dem Gewicht, der vom Körper verdrängten Flüssigkeitsmenge."'
+\end{minipage}
+
+Das heißt, die Masse der verdrängten Flüssigkeit, die exakt das Volumen des zu messenden Körpers hat, ist gleich der Verringerung des gemessenen Gewichtes durch die Auftriebskraft. Erweitert man das Verhältnis der Massen mit der Fallbeschleunigung, so erhält man ein Verhältnis von Kräften, die ja eigentlich gemessen werden.
+
+Praktische Beispiele sind das Aräometer, die \emph{Mohrsche} und die \emph{Jollysche Waage}. Bei einem Aräometer (Abb.~\ref{fig::araeo}), einem Messkörper geeigneter Form und definierter Masse, beruht die Dichtemessung einer Flüssigkeit auf der Tatsache, dass die Gewichtskraft eines  Aräometers gleich der Auftriebskraft der Flüssigkeit ist. Nach der Kalibrierung lässt sich aus der Eintauchtiefe des schwimmenden Aräometers die Dichte der Flüssigkeit ablesen. Daraus folgt, dass für verschiedene Dichtebereiche entsprechend angepasste Aräometer (Messspindeln) benötigt werden.
+\picskip{0}\vspace{1em}
+
+\begin{figure}[h!b]\stepcounter{footnote}
+ \subfigure[Mohr-Westphalsche-Waage$^{\text{\thefootnote}}$\newline
+  A -- Gewichte\newline
+  B -- Glasschwimmer\newline
+  C -- Stellschrauben\newline (für horizontale Ausrichtung)\newline
+  D -- Salz zum Auflösen im Wasser
+ \label{fig::mohr}]
+ {\includegraphics[width=\linewidth/2 - 3cm]{GP1-DF-Mohr-Waage}}
+ \hfill
+ \subfigure[Jollysche Waage\label{fig::jolly}]{\includegraphics[width=\linewidth/2 + 2cm]{GP1-DF-Jolly}}
+ \caption{Dichtebestimmung mittels Auftriebskraft}
+\end{figure}\footnotetext{Fotograf: Oliver Kurmis, aufgenommen 2000 im Physik-Praktikum an der Uni-Jena, cc-by-sa-Lizens v2.0,\newline \url{http://de.wikipedia.org/wiki/Datei:Mohr-Westphalsche-Waage.jpg}}
+
+\paragraph{Mohrsche Waage} Bei der Mohrschen Waage wird eine Schwimmkörper an einem Hebelarm gehängt. Zunächst sollte der Hebelarm in einer horizontalen Lage sein. Dann wird der Schwimmkörper in eine Flüssigkeit (mit bekannter Dichte $\varrho_0$) getaucht und der Auftrieb $F_{A,0}$ durch Massestücke am Hebelarm ausgeglichen. Mit Hilfe der Massestücke und einer Skale am Hebelarm lässt sich die Auftribeskraft genau bestimmen. Anschließend taucht man den Schwimmkörper und die Flüssigkeit mit der unbekannten Dichte $\varrho_x$ und miss wiederum über den Ausgleich durch Massestücke die Auftriebskraft $F_{A,x}$. Die Dichte ergibt sich dann mit:
+\begin{equation}
+ \varrho_x = \frac{F_{A,x}}{F_{A,0}} \cdot \varrho_0 \label{eqn::mohr}
+\end{equation}
+
+\paragraph{Jollysche Waage} Die Jollysche Waage (Abb.~\ref{fig::jolly}) besteht aus einem Gestell mit zwei Schalen, welches an einer Feder hängt. Die untere Schale taucht in eine Flüssigkeit der Dichte $\varrho_0$. Nun wird zunächst die Masse mit der unbekannten Dichte $\varrho_x$ auf die obere Schale gelegt. Anhand der Auslenkung der Feder und der Federkonstanten erhält man die Gewichtskraft $F_\mathrm{Luft}$. Dieser Vorgang wird wiederholt mit der Masse auf der unteren Schale. Wiederum liest man die Auslenkung und damit die Kraft $F_\mathrm{Fl}$ ab. Die Dichte ergibt sich dann aus:
+\begin{subequations}
+ \begin{align}
+  \varrho_x &= \frac{F_\mathrm{Luft} \cdot \rho_0 - F_\mathrm{Fl} \cdot \rho_\mathrm{Luft}}{F_\mathrm{Luft} - F_\mathrm{Fl}} \label{eqn::jolly}\\
+  \varrho_x &\approx \frac{F_\mathrm{Luft}}{F_\mathrm{Luft} - F_\mathrm{Fl}} \cdot \rho_0 \label{eqn::ajolly}
+ \end{align}
+\end{subequations}
+Die Näherung \eqref{eqn::ajolly} gilt, falls man den Auftrieb der Luft in \eqref{eqn::jolly} vernachlässigen kann. Alternativ zu der Anordnung mit dem Gestell an einer Feder findet man häufig auch einen \emph{Jollyaufsatz}, den man mit einer Schalenwaage verbinden kann. Dabei misst die Waage die Gewichtskraft, bzw. die durch den Auftrieb reduziert Gewichtskraft. Da diese sich aus dem Produkt der Masse $m$ und der Fallbeschleunigung $g$ ergeben findet man für die Formel~\eqref{eqn::ajolly} die alternative Formulierung:
+\begin{equation}
+ \varrho_x \approx \frac{m_\mathrm{Luft}}{m_\mathrm{Luft} - m_\mathrm{Fl}} \cdot \rho_0 \label{eqn::mjolly}
+\end{equation}
+
+\paragraph{Pyknometer} Das Pyknometers dient der Sicherung eines konstanten Volumens. Für die Messung der Dichte eine \emph{Flüssigkeit} wird das Pyknometer zunächst mit einer Kontrollflüssigkeit der Dichte $\varrho_0$ bis zum Rand gefüllt und gewogen (Masse $m_1$). Über die Leermasse $m_P$ des Pyknometers erhält man die Flüssigkeitsmasse $m_0 = m_1 - m_P$. Anschließend reinigt man den Behälter und füllt die unbekannte Flüssigkeit mit der Dichte $\varrho_x$ bis zum Rand ein. Wiederum wiegt man alles (Masse $m_2$) und erhält damit die Masse $m_x = m_2 - m_P$. Die Dichte folgt aus:
+\begin{equation}
+ \varrho_x = \frac{m_x}{m_0} \cdot \varrho_0 \label{eqn::jolFl}
+\end{equation}
+
+Für die Messung der Dichte $\varrho_x$ eines \emph{Festkörpers} muss man zunächst seine Masse $m_x$ bestimmen (wiegen). Nun muss der Körper in das Pyknometer gelegt werden und das restliche Volumen ist mit der Kontrollflüssigkeit (Dichte $\varrho_0$) aufzufüllen. Misst man nun die gesamte Masse $m_3$ setzt sich diese aus der Masse des Festkörpers $m_x$, der Masse des Pyknometers $m_P$ und der Masse der \emph{nicht} verdrängten Kontrollflüssigkeit $m_\mathrm{n}$ zusammen. Daraus kann man die Masse der verdrängten Flüssigkeit berechnen:
+\[
+ m_\mathrm{v} = m_0 - m_\mathrm{n} = m_0 - (m_3 - m_P - m_x)
+\]
+$m_0$ ist entweder aus dem vorherigen Versuch bekannt oder muss gemessen werden. Mit dieser Größen kann man die Dichte berechnen:
+\begin{equation}
+ \varrho_x = \frac{m_x}{m_\mathrm{v}} \cdot \varrho_0 \label{eqn::jolFe}
+\end{equation}
+
+\paragraph{Luftauftrieb} In den Beziehungen \eqref{eqn::mohr}, \eqref{eqn::jolFl} und \eqref{eqn::jolFe} ist der Einfluss des Luftauftriebs vernachlässigt. Zur Veranschaulichung, dass diese Näherung vernachlässigbar ist, betrachten man das Verhältnis von Gewichts- und Auftriebkraft (siehe Archimedisches Prinzip für die Auftriebskraft):
+\[%DONE: andere Formel, anderer Wert
+ \frac{F_a}{F_g} = \frac{\varrho_\mathrm{Luft} \,V_\mathrm{Luft} \cdot g}{m_x \cdot g} \overset{V_\mathrm{Luft} = V_\text{verdrängt}}=
+ \frac{\varrho_\mathrm{Luft} \cdot \frac{m_x}{\varrho_x}}{m_x} = \frac{\varrho_\mathrm{Luft}}{\varrho_x}
+\]
+Betrachten wir nun eine Probe mit einer Dichte von \SI8{g.cm^{-3}}. Unter Normalbedingungen (Temperatur \SI{273}K, Druck \SI{101,325}{kPa}) hat die Luft eine Dichte von \SI{1,293}{mg.cm^{-3}}. In die eben hergeleitete Formel eingesetzt ergibt das ein Verhältnis von $\num{0.00016} = \SI{0,16}\permil$. Eine \SI{10}g schwere Probe wird damit gerade mal \SI{1,6}{mg} leichter. Werden genauere Dichtebestimmungen gefordert, ist jedoch die Beachtung des Luftauftriebs notwendig.
+
+\section{Versuchsdurchführung}
+Von den angegebenen Möglichkeiten der Dichtebestimmung werden die in der Aufgabenstellung erwähnten Methoden genutzt und die Ergebnisse sowie deren Genauigkeit verglichen. Geben Sie an, welche Fehlerquellen bei der Ermittlung von $\Delta \varrho_x$ ggf. vernachlässigt wurden (Begründung!). Geben Sie alle Ergebnisse in der Form $\varrho \pm \Delta\varrho$ an.
+
+
+\frage{Welche Waagenarten gibt es? Nennen Sie deren Messprinzipien}
+\frage{Welche Bedeutung hat der Auftrieb bei der Wägung?}
+\frage{Welche Verfahren zur Dichtebestimmung kennen Sie und wie genau sind diese Verfahren?}
+\frage{Wie wirken sich Druck und Temperatur auf die Dichte eines Stoffes aus?}
+\frage{Schätzen Sie die Genauigkeit von Wägung und Volumenbestimmung ab.}
+
+\end{document}

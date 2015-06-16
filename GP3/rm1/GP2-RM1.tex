@@ -1,0 +1,336 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd,mhchem}
+\usepackage{listliketab}
+
+\versuch{Geiger Müller Zählrohr}{RM1}
+\author{M.~Kreller,i.A. Dr.~Escher}
+\bearbeitet{K.~Prokert,A.~Otto}{}
+
+\buch{1}{W.~Ilberg (Hrsg.), M.~Krötzsch (Hrsg.) et.~al.}{Physikalisches Praktikum für Anfänger}{Teubner-Verlag}{Leipzig 1994}
+\buch{2}{W.~Stolz}{Radioaktivität: Grundlagen -- Messungen -- Anwendungen}{Teubner-Verlag}{Stuttgart/Leipzig 2003}
+\buch{3}{L.~Herforth,H.~Koch}{Praktikum der Radioaktivität und Radiochemie}{Verlag A. Barth}{Leipzig 1992}
+\buch{4}{B.~Dörschel,V.~Schuricht,J.~Steuer}{Praktische Strahlenschutzphysik}{Spektrum Akademischer Verlag}{Heidelberg, Berlin 1992}
+
+\setcounter{secnumdepth}{3}
+
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\raggedleft\arraybackslash}X}
+\newcolumntype{Z}{>{\centering\arraybackslash}X}
+
+\begin{document}
+\maketitle
+
+\section{Aufgabenstellung}
+	Nach der Aufnahme der Zählrohrcharakteristik eines {\sc Geiger-Müller}-Zählrohrs (GMZ) ist eine
+	Konzentrationsbestimmung einer $K_2CO_3$--Lösung durch die Bestimmung ihrer Aktivität vorzunehmen
+	sowie das relative Ansprechvermögen der vorhandenen Messanordnung mit einem GMZ zu ermitteln.
+
+\section{Grundlagen}
+\subsection{Radioaktivität und Zerfallsgesetz}
+	Instabile Atomkerne wandeln sich spontan auf direktem Wege oder in mehreren aufeinanderfolgenden
+	Schritten in einen neuen stabilen Kern um. Dabei werden Teilchen und/oder Photonen emittiert.
+	Schwere Elemente, bei denen die Bindungsenergie der Nukleonen im Kern gering ist, wandeln sich
+	durch Aussendung eines $_{2}^{4}He$--Kerns ($\alpha$--Strahlung) um, bei Atomkernen mit einem
+	instabilen Neutronen-Protonen-Verhältnis erfolgt eine Umwandlung dieser Nukleonen, wobei folgende
+	Reaktionen auftreten können:
+	\begin{align*}
+	  & n \rightarrow p+e^- +\overline{\nu} \quad(a)\\
+	  & p \rightarrow n+e^+ +\nu \quad(b)\\
+	  & p+e^- \rightarrow n+\nu \quad(c)\\
+	\end{align*}
+	Dabei gelten folgende Bezeichnungen:\\[4pt]
+	\storestyleof{itemize}
+	\begin{listliketab}\renewcommand{\arraystretch}{1}
+	\begin{tabular}{lcl}
+	  $n$ &--& Neutron\\
+	  $p$ &--& Proton\\
+	  $e^-$ &--& Elektron\\
+	  $e^+$ &--& Positron\\
+	  $\nu$ &--& Neutrino\\
+	  $\overline\nu$ &--& Antineutrino
+	\end{tabular}
+	\end{listliketab}\\[-15pt]
+	Die Elektronenemission aus dem Kern bei Reaktion (a) wird als $\beta^-$--Strahlung, die entsprechende 
+	Aussendung von Positronen bei Reaktion (b) als $\beta^+$--Strahlung und das Einfangen eines Elektrons 
+	bei Reaktion (c) als K--Einfang ($e^-$ stammt meist aus der K--Schale) oder EC ("`electron capture"') 
+	bezeichnet. Bei allen angeführten Umwandlungen können zunächst angeregte Kerne entstehen, die unter 
+	Aussendung von Photonen ($\gamma$--Strahlung) in den stabilen Grundzustand übergehen.
+	
+	Diese spontan ablaufenden Prozesse sind statistischer Natur, d.h. jeder instabile Kern besitzt
+	unabhängig von seiner Vorgeschichte die gleiche Umwandlungswahrscheinlichkeit, wobei der Zeitpunkt
+	seiner Umwandlung unbestimmt ist. Man kann also nicht mit Sicherheit sagen, wann sich ein Atomkern
+	umwandelt. Bekannt ist nur die Wahrscheinlichkeit, mit der das Umwandlungsereignis innerhalb eines
+	vorgegebenen Zeitintervalls eintritt. Daher ist nur für sehr viele zum Zeitpunkt $t$ vorhandene,
+	gleichartige, instabile Kerne $N$ die Anzahl der im Mittel auftretenden Umwandlungen $\diff N$  anhand
+	des sog. Zerfallsgesetzes
+	\begin{equation}
+	  \diff N = - \lambda \cdot N \cdot \diff t
+	  \label{for:zerfall}
+	\end{equation}
+	berechenbar, in dem $\lambda$ die nuklidspezifische Umwandlungskonstante darstellt. $\lambda $ ist
+	das Maß für die Umwandlungswahrscheinlichkeit eines Radionuklids, ihr Kehrwert stellt die mittlere
+	Lebensdauer $\tau$ des betreffenden Kerns dar.\hspace{.3cm}\\
+	Die Integration der Beziehung \eqref{for:zerfall} ergibt
+	\begin{align}
+	  &\int\limits_{N(0)}^{N(t)} \frac{\diff N}{N} = -\int\limits_0^t \lambda\cdot \diff t\\
+	  \text{bzw.}\quad &\ln N(t)-\ln N(0) = - \lambda \cdot t \notag
+	\end{align}
+	daraus folgt das \emph{exponentielle Umwandlungsgesetz} in der Form
+	\begin{equation}
+	  N(t) = N(0)\cdot\mathrm e^{-\lambda\cdot t} \label{for:zerf_int}
+	\end{equation}
+	in dem $N(t)$ die Zahl der Kerne zum Zeitpunkt $t$ und $N(0)$ die Zahl der Kerne zum Zeitpunkt 0
+	ist.\\
+	Die Lösung der Beziehung \eqref{for:zerf_int} für den Fall  $N(t) = \frac{1}{2} N(0)$ ergibt 
+	die sogenannte Halbwertszeit entsprechend der Beziehung
+	\begin{equation}
+	  t_{1/2}  = \frac{{\ln 2}}{\lambda } = \ln 2 \cdot \tau
+	\end{equation}
+	Die Umwandlungsrate oder die Aktivität $A$ ist der Zahl der instabilen Kerne proportional. Es gilt
+	\begin{equation}
+	  A = -\dquot{N}{t} = \lambda\cdot N
+	\end{equation}
+	Die SI Einheit der Aktivität ist $\SI{}{s^{-1}}$ mit dem eigenen Namen Becquerel (\SI{}{Bq}).\\
+	Die wichtigste, historische Aktivitätseinheit war das {\sc Curie} ($\SI{}{Ci}$), die etwa der Aktivität
+	von \SI{1}{g} $^{226}Ra$ entspricht. Umrechnung: $\SI{1}{Ci} = \SI{3,7e10}{Bq}$.\\
+
+\subsection{Das Radionuklid $^{40}_{19}K$}
+	Dieses instabile Isotop kommt im natürlichen Kalium mit einer Häufigkeit $\epsilon $ von $\SI{0,012}{\%}$
+	vor. Es besitzt eine Halbwertszeit von $\num{1,27e9}$ Jahren. Es ist daher  den langlebigen
+	radioaktiven Urnukliden (sog. primordialen Nukliden) zuzuordnen, die mit der Bildung der Erde
+	entstanden sind. Im Gegensatz hierzu wird z.B. das ebenfalls in der Natur vorkommende $^{14}C$
+	durch Reaktion von Protonen aus der kosmischen Strahlung mit dem Stickstoff der Atmosphäre ständig
+	nachgebildet. $^{40}K$ gehört neben 30 weiteren (z.B. $^{87}Rb$, $^{176}Lu$, $^{187}Re$) zu den
+	isoliert vorkommenden, natürlichen Radionukliden, die nicht einer Zerfallsreihe ($^{238}U$--,
+	$^{235}U$-- oder $^{232}Th$--Reihe mit insgesamt 46 Radionukliden) entstammen.\\
+	Aufgrund des instabilen Neutronen-Protonen-Verhältnisses wandelt sich $^{40}K$ entweder unter
+	Aussendung von $\beta$--Strahlung in $^{40}Ca$ oder durch Elektroneneinfang in $^{40}Ar$ um, wobei
+	in diesem Fall begleitende $\gamma$--Strahlung auftreten kann, wenn zunächst ein angeregter Kern
+	entsteht (siehe Abb. \ref{fig:ladung_spannung}).\\
+
+\subsection{Messung ionisierender Strahlung mit einem GMZ}
+	Die von radioaktiven Isotopen ausgesandte ionisierende Strahlung kann mit verschiedenen
+	Strahlungsdetektoren gemessen werden. Es sind Gasionisations-, Anregungs- und Halbleiterdetektoren
+	einsetzbar.\\
+	\piccaption{Zerfallsschema des Nuklids $^{40}K$ (Energieangaben in MeV) \label{fig:zerfallsschema}}
+        \parpic[r]{\includegraphics[width=\linewidth/10*4]{abb1}}
+	Das GMZ gehört zu den Gasionisationsdetektoren, bei denen die gebildeten Ladungsträger (Elektronen
+	und Ionen) infolge des elektrischen Feldes im Detektor zu den Elektroden gelangen und durch die
+	gesammelte Ladungsmenge in der Messanordnung einen registrierbaren Impuls auslösen. Die angelegte
+	Detektorspannung beeinflusst im starken Maße die entstehende Ladungsmenge und damit je nach
+	Schaltung des Messgeräts die Impulshöhe oder den Strom. \\
+	In Abb. \ref{fig:ladung_spannung} ist diese Abhängigkeit dargestellt, aus der sich die Arbeitsbereiche 
+	der verschiedenen Gasionisationsdetektorarten ableiten lassen.
+	
+	\begin{figure}[h]
+          \centering
+          \includegraphics[width=0.8\linewidth]{abb2}
+          \caption{Gesammelte Ladungsmenge Q als Funktion der Detektorspannung DU bei einem
+	Gasionisationsdetektor (Schematische Darstellung)}
+        \label{fig:ladung_spannung}
+        \end{figure}
+        
+	\begin{description}
+	  \item[I] \emph{Rekombinationsbereich}: Wegen zu geringer Detektorspannung/Feldstärke tritt Verlust 
+	  an durch Primärionisation gebildeten Ladungsträgern durch Rekombination ein.\\
+	  \item[II] \emph{Sättigungsbereich}: Alle durch Primarionisation gebildeten Ladungsträger werden an
+          den Elektroden gesammelt. \\
+	  \item[III] \emph{Proportionalbereich}: Auftretende Stoßionisation durch beschleunigte Elektronen aus
+	  der Primärionisation bewirkt eine Sekundärionisation, die in diesem Bereich proportional der
+	  primären Ionisation ist. \\
+	  \item[IV] \emph{Bereich der beschränkten Proportionalität}: Sekundäre Ionisation überwiegt zunehmend
+	  die Primäreffekte. \\
+	  \item[V] \emph{Auslösebereich}: Stoßionisation nimmt Lawinencharakter an und bestimmt unabhängig von
+          der Primärionisation die Ladungsmenge. \\
+	  \item[VI] Hohe Feldstärke führt zu Dauerentladungseffekten, die unabhängig vom Einfall ionisierender
+	  Strahlung auftreten.
+	  \item[$Q_P$] Mindestladungsmenge, um Zählung bei einer GMZ-Messanordnung auszulösen.
+	\end{description}
+	Im Bereich I--III unterscheiden sich daher die Kurven, wenn im Detektor z.B. $\alpha$--Strahlung (hohe 
+	Primärionisation) oder Elektronen--/$\beta$--Strahlung (geringere Primärionisation) gleicher Flussdichte
+	gemessen werden.\\	
+	Im Sättigungsbereich werden \emph{Ionisationskammern} betrieben, die eine Messung der absorbierten 
+	Energie im Detektor gestatten.\\
+	Im Proportionalbereich arbeiteten \emph{Proportionalzählrohre}, die neben der Bestimmung der Zählrate 
+	(Impulse/s) aus der gemessenen Impulshöhe auch Rückschlüsse auf die Größe der Primärionisation und damit 
+	auf Art bzw. Energie der einfallenden Strahlung ermöglichen.\\
+	Das \emph{GMZ} wird im Auslösebereich betrieben. Mit diesem Detektortyp  ist nur die Bestimmung der 
+	Zählrate (Impulse/s) möglich. Der Aufbau eines GMZ (radialsymmetrisches Feld, Gaszusammensetzung und 
+	Gasdruck -- z.B. Zählgas $Ar$: Löschgas Ethanoldampf $10 : 1$ bei $\SI{13}{kPa}$ Gesamtdruck) gewährleistet, 
+	dass der Auslösebereich schon bei geringer Spannung (einige $\SI{100}{V}$) erreicht wird. Die lawinenartige
+	Verstärkung ($f =10^8-10^{10}$) der primär gebildeten Ladungsmenge führt zu den typischen Eigenschaften 
+	dieses Zählrohrtyps:
+	\begin{itemize}
+	  \item Es sind nur Zählmessungen möglich, da durch die extrem hohe Sekundärionisation primäre
+	  Effekte überdeckt werden.
+	  \item Die große Impulshöhe ermöglicht einfache Nachfolgeelektronik bei Messgeräten mit GMZ
+	  (Prinzipschaltbild siehe Abb. \ref{fig:schaltung}).
+	  \item Die Messung hoher Zählraten ist fehlerbehaftet, da das zeitliche Auflösungsvermögen des GMZ
+	  ("`Totzeit"') unbefriedigend ist. Durch die Unterschiede in der Beweglichkeit der Elektronen und
+	  der Ionen bildet sich eine positive Raumladung ("`Ionenschlauch"') aus, welche die Feldstärke im
+	  Detektor herabsetzt. Die dadurch verminderte Stoßionisation führt zu Impulshöhen, die nicht mehr
+	  registriert werden. Diese Totzeit beträgt zwischen 100 und $\SI{300}{\mu s}$.
+	  \item Das GMZ bedarf eines Löschprozesses, da sonst, ausgelöst durch Photoelektronen aus
+	  angeregten Gasatomen oder durch Elektronenemission aus der von den Ionen getroffenen Katode, immer
+	  wieder neue Ladungsträgerlawinen entstehen würden. Diese Löschung erfolgt entweder durch
+	  Verminderung der Detektorspannung, die nach Zählung des Impulses auf elektronischem Wege
+	  vorgenommen wird. Nachteilig bei dieser Methode ist, dass sich die Totzeit bis in den 
+	  $\SI{}{ms}$--Bereich vergrößert. Bei sog. "`Selbstlöschenden GMZ"' werden durch das Löschgas 
+	  (Alkoholdampf oder chlorierte Kohlenwasserstoffe) die entstandenen energiearmen Elektronen gebunden. 
+	  Da sich das Löschgas dabei zersetzt, hat ein GMZ nur eine begrenzte Lebensdauer (Zählkapazität 
+	  $10^8$ bis $10^{10}$ Impulse).
+	\end{itemize}
+	Aus einer Darstellung der Zählrate $Z$ als Funktion der Detektorspannung, der sog. 
+	Zählrohrcharakteristik  (Abb. \ref{fig:schaltung}), kann die Arbeitsspannung $U_A$, die 50 bis 
+	$\SI{100}{V}$ über der Einsatzspannung $U_E$ liegen soll, ermittelt werden. Diese Charakteristik lässt 
+	sich auch aus der Abb. \ref{fig:ladung_spannung} ableiten, wenn eine Registrierung von Impulsen erst 
+	nach Erreichen einer bestimmten	Ladungsmenge $Q_P =$ Impulshöhe vorausgesetzt wird. Ein Maß für die 
+	Güte eines GMZ ist die Länge und die Steigung des Plateaus in der $Z = f(U_D)$--Darstellung. Bei 
+	neuwertigen Zählrohren sollte sich die Länge des Plateaus über einen Spannungsbereich von $>\SI{300}{V}$ 
+	erstrecken und eine Steigung von $\SI{5}{\%}/\SI{100}{V}$ nicht übersteigen.
+	\begin{figure}
+          \centering
+          \includegraphics[width=\linewidth/10*6]{abb3}
+          \caption{Schematischer Aufbau und Prinzipschaltbild eines GMZ und dessen $Z=f(U_D)$--Charakteristik}
+          \label{fig:schaltung}
+	\end{figure}
+	GMZ sind besonders zur Messung von $\beta$--Strahlung geeignet, da diese Strahlung im Gegensatz zur 
+	$\alpha$--Strahlung die Zählrohrwand durchdringen kann und das Zählgas im Vergleich zur 
+	$\gamma$--Strahlung stark ionisiert.\\
+	Das absolute Ansprechvermögen eines Strahlungsdetektors $\eta$ ist das Verhältnis von
+	registrierter Zählrate und der Zahl der ionisierenden Teilchen oder Photonen $S$, die in der
+	Zeiteinheit in den Detektor gelangen
+	\begin{equation}
+	  \eta  = \frac{Z}{S}
+	\end{equation}
+	$S$ ist aus der Aktivität $A$ der Messprobe unter Berücksichtigung von verschiedenen Korrektionsfaktoren 
+	berechenbar:
+	\begin{equation}
+	  S = A \cdot f_G  \cdot f_{St}  \cdot f_A  \cdot f_E
+	\end{equation}
+	
+	\begin{description}
+	  \item[$f_G$] Geometriefaktor, er berücksichtigt die Tatsache, dass nur ein Teil der Strahlung in
+	  Richtung des Detektors ausgesandt wird. \\
+	  \item[$f_{St}$] Streufaktor, er berücksichtigt die Strahlungsanteile, die in die Richtung oder aus 
+	  der Richtung des Detektors gestreut werden. \\
+	  \item[$f_A$] Absorptionsfaktor, er berücksichtigt Absorption von Strahlung auf dem Wege in den
+	  Detektor. \\
+	  \item[$f_E$] Ausbeutefaktor, er berücksichtigt den Teil der durch den Detektor messbaren Teilchen 
+	  oder Photonen, die bei einer Kernumwandlung gebildet werden. \\
+	\end{description}
+	Die Einführung weiterer Faktoren ermöglicht eine detailliertere  Beschreibung des Messvorgangs
+	sowie die Erhöhung der Genauigkeit der $\eta$--Bestimmung. Da die Korrektionsfaktoren oft nicht
+	einfach zu ermitteln sind, wird vielfach das relative Ansprechvermögen angegeben. Für definierte
+	Messbedingungen, d.h. $f_G$, $f_{St}$, $f_A$ sind konstant, ergibt sich daher
+	\begin{equation}
+	  \eta _{rel}  = \frac{Z}{A \cdot f_E}
+	  \label{for:eta}
+	\end{equation}
+
+\section{Experimentelle Durchführung}
+\subsection{Messung der Zählrohrcharakteristik}
+	Unter Verwendung einer wässrigen 4--molaren $K_2CO_3$--Lösung wird die Zählrate $Z$ eines GMZ in
+	Abhängigkeit von der Detektorspannung $U_D$ im Bereich zwischen Einsatzspannung $U_E$ und dem
+	Plateauende bzw. der Maximalspannung von $\SI{500}{V}$ gemessen. Die Schrittweite der 
+	Spannungserhöhung $\Delta U$ ($10\dots\SI{20}{V}$) ist in Abhängigkeit von der  Zählratenänderung 
+	$\Delta Z$ zu wählen. Aus der graphischen Darstellung Abhängigkeit $Z = f(U_D)$ sind ablesbar:
+	\begin{itemize}
+	  \item die Einsatzspannung $U_E$,
+	  \item die Arbeitspannung $U_A$ (Überprüfung der Regel: $U_A = U_E +(50\dots 100)\SI{}{V}$),
+	  \item die Länge und Steigung des Plateaus (die übliche Angabe ist: $\%$ pro $\SI{100}{V}$).
+	\end{itemize}
+	Die Messzeit ist so zu wählen, dass lediglich eine realtive Messunsicherheit von $\dfrac{\Delta
+	Z}{Z}=5 \%$ auftritt.
+
+\subsection{Radiometrische Kaliumbestimmung}
+	Die Radioaktivität aller Kaliumverbindungen ermöglicht deren Konzentrationsbestimmung durch
+	Aktivitätsbestimmungen. Es sind prinzipiell zwei Wege möglich, um aus einer Messung der Zählrate
+	$Z$ die Konzentration $c$ zu ermitteln.\\
+	Das \emph{Absolutverfahren} gestattet bei Kenntnis von $\eta$ bzw. $\eta_{rel}$ die Berechnung
+	von $A$ und damit auch von $c$ aus der Zählrate $Z$.\\
+	Das \emph{Relativverfahren} ist die gebräuchlichere Methode, bei der für eine definierte
+	Messmethodik eine Kalibrierkurve $Z = f(c)$ aufgenommen wird, die dann zur Konzentrationsbestimmung
+	bei Verwendung dieses Verfahrens dient. Dieses Vorgehen ist dann zu empfehlen, wenn die für eine
+	$\eta$--Bestimmung notwendigen Konstanten nicht hinreichend bekannt sind oder sich diese unter den
+	konkreten Versuchsbedingungen bei einer $c$--Änderung ebenfalls verändern können. Diese mögliche
+	Abweichung von der Linearität der $Z = f(c)$--Beziehung wird bei der Verwendung einer
+	experimentell bestimmten Kalibrierkurve berücksichtigt.\\
+	Da bei den vorhandenen Messbedingungen der lineare Zusammenhang zwischen $Z$ und $c$ gewährleistet
+	ist, kann die Kalibrierungsgerade unter Verwendung der $Z$--Werte für 4--molare $K_2CO_3$--Lösung
+	und für Wasser (Beitrag der Umgebungsstrahlung) gewonnen werden. Aus der gemessenen Zählrate der
+	unbekannten Probe kann dann deren Gehalt an Kalium bestimmt werden. Durch die Wahl ausreichend
+	langer Messzeiten ist die Messunsicherheit von $Z$ auf $<\SI{2}{\%}$ zu beschränken. Die Genauigkeit 
+	der Kalibrierungsgeraden wird weiterhin durch $\Delta c$ beeinflusst. Dieser Wert ergibt sich aus der
+	Genauigkeit der Wägung und der Volumenmessung bei der Herstellung von einem Liter einer 4--molaren
+	$K_2CO_3$--Lösung.
+
+\subsection{Bestimmung des relativen Ansprechvermögens $\eta_{rel}$ der Messanordnung}
+	Aus den im Versuchsteil 3.2 gewonnenen $Z$--Werten und den Daten für $^{40}K$ aus Abschnitt 2.2
+	ist für die vorhandene Messanordnung (hier für ein GM--Eintauchzählrohr und ein Probenvolumen $V =
+	\SI{40}{ml}$, das die $^{40}K$--Aktivität enthält) mit Hilfe der Beziehung \eqref{for:eta} 
+	$\eta_{rel}$ berechenbar. Bei der Ermittlung von $f_E$ ist zu berücksichtigen, dass das GMZ sowohl 
+	$\beta$-- als auch $\gamma$--Strahlung registriert. Es ergibt sich
+	\begin{equation}
+	  \eta _{rel}  = \frac{Z_{Probe}  - Z_{Wassser}}{c \cdot k \cdot K_A  \cdot \epsilon  \cdot
+	  \lambda  \cdot f_E  \cdot V}
+	\end{equation}
+	mit  $c=$ Konzentration in $\SI{}{Mol/l}$, $k=$ Zahl der Kaliumatome im Molekül und $K_A=$
+	Avogadro-Konstante.
+
+\subsection{Hinweise zur Fehlerbetrachtung}
+	Bei der Versuchsdurchführung wird die Unsicherheit der Resultate im Wesentlichen durch Fehler bei
+	der Bestimmung der Zählrate $Z$ bzw. der Konzentration $c$ der $K_2CO_3$--Lösung verursacht. Der
+	Einfluss von Ungenauigkeiten bei der Einstellung der Detektorspannung bzw. der Zeitmessung kann
+	vernachlässigt werden. Grobe Fehler wie z.B. ungleiche Füllung des Messbechers oder mangelnde
+	Säuberung von GMZ und Messbecher sind durch sorgfältiges Arbeiten zu vermeiden.
+  \subsubsection{Zur Unsicherheit der Zählrate $Z$}
+	Da der Kernumwandlungsprozess stochastischer Natur ist, sind statistische Schwankungen des
+	Messwerts $Z$ zu erwarten. Diese lassen sich aus Wahrscheinlichkeitsverteilungen berechnen. Da im
+	vorliegenden Fall die Messzeit $t$ wesentlich kürzer als die Halbwertszeit und die Zahl der Kerne
+	$N$ sehr viel größer als die Anzahl der Umwandlungen $n = A(t) \sim Z(t)$  ist, kann die sog.
+	Poisson-Verteilung als Berechnungsgrundlage angewendet werden. Diese Verteilung  gibt für den Fall
+	seltener Ereignisse ($n \ll N$) die Wahrscheinlichkeit an, mit der $n$ Ereignisse stattfinden, wenn
+	der Erwartungs- oder Mittelwert  ist. Wird $n$ groß, so geht die  Poissonverteilung in die Gaußsche
+	Normalverteilung über.\\
+	Für die Streuung  ($\approx$ Standardabweichung $\sigma$) von $n$ gilt
+	\begin{equation}
+	  \sigma _n  = \Delta n = \sqrt {\overline n}
+	\end{equation}
+	und damit folgt für die Unsicherheit der Zählrate $\Delta Z$ bei fehlerfreier Messzeit $t$
+	\begin{equation}
+	  \Delta Z = \frac{\Delta n}{t} = \frac{\sigma _n}{t} = \frac{\sqrt {\overline n}}{t}
+	\end{equation}
+	\begin{equation}
+	  \frac{\Delta Z}{\overline Z} = \frac{\Delta n}{\overline n} = \frac{\sqrt{\overline n}}{\overline n} =
+	  \frac{1}{\sqrt{\overline n}} = \frac{1}{\sqrt{\overline Z \cdot t}}
+	\end{equation}
+	Zur Verringerung der Messunsicherheit von Zählraten ist es daher gleichgültig, ob entweder einmal
+	eine lange Zeit $t_1$ oder $x$--mal die Zeit $t_1/x$ gemessen wird.\\
+	Bei der Bestimmung von Nettozählraten $Z_{nt} = Z_{br} - Z_0$ (wenn   $t_{br} = t_{nt}$) folgt
+	nach dem Fehlerfortpflanzungsgesetz für $\Delta Z_n$
+	\begin{equation}
+	  \Delta Z_{nt}  = \sqrt{\frac{\overline{n_b}}{t^2} + \frac{\overline n_0 }{t^2} = } \sqrt
+	  {\frac{\overline{Z_b}}{t} + \frac{\overline{Z_0}}{t}}
+	\end{equation}
+	Die Indizierung von $Z$ bedeutet: $Z_{nt}= $ "`Netto-"', $Z_{br}= $ "`Brutto-"' und $Z_0=$
+	"`Untergrundzählrate"'.\\
+	Wird ein Vertrauensniveau von 95 \%  gefordert, müssen die Messwerte mit ihrer doppelten
+	Standardabweichung (''$2\sigma$--Fehler'') angegeben werden.
+  \subsubsection{Zur Unsicherheit der Konzentrationsangabe $c$}
+	Zur Ermittlung von $\eta_{rel}$ oder für die Aufnahme einer Kalibrierungskurve wird eine 4--molare
+	$K_2CO_3$--Lösung benutzt, die durch Auflösen der entsprechenden Substanzmenge in Wasser gewonnen
+	wird. $\Delta c$ dieser Stammlösung ergibt sich daher aus den Ungenauigkeiten der Wägung $\Delta m$
+	und der Volumenmessung $\Delta V$. Um $\Delta c$ zu minimieren, ist die Herstellung größerer
+	Volumina (z.B. $\SI{1}{l}$) sinnvoll. Wird diese Stammlösung  weiter verdünnt, vergrößert sich $\Delta c$
+	mit jedem Verdünnungsschritt aufgrund weiterer "`Volumenfehler"' $\Delta V$.
+
+\section{Vorbereitungshinweise}
+	\begin{enumerate}
+	  \item Radioaktive Kernumwandlungen (Arten, Ursachen, Kinetik/Statistik)
+	  \item Ursachen der Umgebungsstrahlung ("`Nulleffekt"')
+	  \item Aufbau und Funktionsweise von Gasionisationsdetektoren, insbesondere des GMZ
+	  \item Nutzung ionisierender Strahlung und von Radionukliden in Technik und Medizin
+	  \item Grundregeln im Strahlenschutz
+	\end{enumerate}
+\end{document}

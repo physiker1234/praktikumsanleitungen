@@ -1,0 +1,268 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd,mhchem,lmodern,mathtools,mdwlist,multirow}
+
+\versuch{Spezifische Ladung des Elektrons}{ER}
+\author{G.~Oertel,R.~Schwierz}
+\bearbeitet{A.~Otto}{}
+
+\begin{document}
+\maketitle
+
+\section{Aufgabenstellung}
+  Die spezifische Ladung $e/m$ des Elektrons ist auf vier verschiedenen Wegen mittels einer Thomson-Röhre und einem 
+  Helmholtz-Spulenpaar zu bestimmen.
+  \begin{enumerate}
+    \item Der Elektronenstrahl wird bei bekannter Beschleunigungsspannung $U_B$ mit einem $\vec B$-Feld bekannter Größe 
+    abgelenkt. Aus $U_B$, $\vec B$ und Ablenkungsradius $R$ wird $e/m$ bestimmt.
+    \item Der Elektronenstrahl wird mit einem $\vec E$-Feld durch einen definierten Punkt $(x,y)$ gelenkt. Die Ablenkung 
+    wird durch ein Magnetfeld ausgeglichen. Aus $\vec E$, $\vec B$ und den Koordinaten des Punktes wird $e/m$ bestimmt.
+    \item Der Elektronenstrahl wird mit einem $\vec B$-Feld abgelenkt. Die Auslenkung wird mit einem $\vec E$-Feld 
+    kompensiert. Aus $\vec E$, $\vec B$ und der Geometrie wird $e/m$ bestimmt.
+    \item Bei bekannter Beschleunigungsspannung werden $\vec E$- und $\vec B$-Feld so überlagert, dass sich ihre 
+    Wirkungen kompensieren. Aus $\vec E$, $\vec B$ und $U_B$ wird $e/m$ bestimmt.
+  \end{enumerate}
+
+\section{Grundlagen}
+\subsection{Ablenkung im $\vec E$-Feld}
+  Ein Elektron bewege sich in einem elektrischen Feld der Stärke $\vec E$. Das Elektron erfährt die Kraft $\vec F$ und 
+  die Beschleunigung $\vec a$.
+  \begin{equation}
+    \vec F = m\cdot\vec a = e\cdot\vec E
+  \end{equation}
+  Durchläuft das Elektron eine Potentialdifferenz $U_B$, so ändert sich seine kin. Energie 
+  \begin{equation}
+    \Delta E_K = e\cdot U_B
+  \end{equation}
+  Werden Elektronen in einer Quelle erzeugt ($E_{K0} = 0$) und aus dieser heraus beschleunigt, so ist die Geschwindigkeit 
+  $v$ des Elektrons nach Durchlaufen der Potentialdifferenz $U_B$
+  \begin{equation}
+    e\cdot U_B = \frac{m}{2}\,v^2 \quad\text{bzw.}\quad \frac{e}{m} = \frac{v^2}{2\cdot U_B}
+    \label{for:E-Feld}
+  \end{equation}
+  Tritt das Elektron mit einer Geschwindigkeit $\vec v = v_x\cdot \vec e_x$ in ein $\vec E$-Feld entgegengesetzt zur 
+  $y$-Richtung ein, wird es in $y$-Richtung beschleunigtay
+  \begin{equation}
+    y=\frac{a_y}{2}\,t^2 = \frac{e\cdot E}{2\cdot m}\,t^2
+  \end{equation}
+  und mit $x = v_x\cdot t$ folgt die Bahn der Parabelgleichung
+  \begin{equation}
+    y=\frac{e\cdot E\cdot x^2}{2\cdot m\cdot v_x^2}
+    \label{for:parabelgleichung}
+  \end{equation}
+
+\subsection{Ablenkung im $\vec B$-Feld}
+  Ein Elektron im Magnetfeld erfährt die Lorentzkraft
+  \begin{equation}
+    \vec F = -e\cdot \vec v \times \vec B
+  \end{equation}
+  Wenn ein Elektron der Geschwindigkeit $\vec v$ die Elektronenkanone in ein zur Bewegungsrichtung senkrechtes homogenes
+   Magnetfeld verläßt, erfährt es eine Kraft konstanter Stärke, die es auf eine ebene Kreisbahn mit dem Radius $R$ zwingt.
+  Für diese Kraft gilt:
+  \begin{equation}
+    F = \frac{m\cdot v^2}{R} = e\cdot v\cdot B \implies v = \frac{e}{m}\cdot B\cdot R
+    \label{for:B-Feld}
+  \end{equation}
+  
+\subsection{Feld der Helmholtz-Spulen}
+  \parpic[left]{\includegraphics[width=0.45\textwidth]{helmholtz.png}}
+  Die Helmholtz-Konfiguration ist dadurch gekennzeichnet, daß zwei Spulen mit den Windungszahlen $n_1 = n_2$ und dem Radius 
+  $R$ im Abstand $R$ aufgestellt werden. Im Bereich zwischen den Spulen entsteht so ein homogenes Feld. Nach Biot-Savart 
+  gilt:
+  \begin{equation}
+    \vec B = \frac{\mu_0 I}{4\pi}\,\Int\frac{\diff\vec r\,^\prime \times \kla{\vec r-\vec r\,^\prime}}
+    {\left|\vec r-\vec r\,^\prime\right|^3}
+  \end{equation}
+  wobei $\vec r\,^\prime$ die Koordinate des stromführenden Leiters ist. Für eine Kreisspule senkrecht zur $z$-Achse bei
+  $z = 0$ ergibt dies auf der $z$-Achse:
+  \begin{equation}
+    \vec B = \frac{\mu_0 I\cdot n}{2}\frac{R_s^2}{\sqrt{R_s^2+z^2}^{\,3}}\,\vec e_z
+  \end{equation}
+  Mit zwei Spulen bei $z=-R_s/2$ und $z=+R_s/2$ durch deren jeweils $n$ Windungen der Strom in gleicher Richtung fließt, 
+  gilt auf der $z$-Achse:
+  \begin{equation}
+    \vec B = \frac{\mu_0 I\cdot n}{2}\brk{\frac{R_s^2}{\sqrt{R_s^2+\kla{z-\frac{R_s}{2}}^2}^{\,3}}+
+    \frac{R_s^2}{\sqrt{R_s^2+\kla{z+\frac{R_s}{2}}^2}^{\,3}}}\,\vec e_z
+  \end{equation}
+  Die Reihenentwicklung um $z=0$ ergibt
+  \begin{equation}
+    \vec B(z) = \frac{\mu_0 I\cdot n}{R\cdot\sqrt{\kla{\frac{5}{4}}^3}}\cdot\kla{1-\frac{144}{125}\frac{z^4}{R_s^4}+\dots}
+  \end{equation}
+  d.h. ein sehr homogenes Feld mit Abweichungen von weniger als \SI{1}{\%} bis $z = \num{0,3}\cdot R_s$ .
+
+\section{Experimente}
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{thomsonroehre.png}
+    \caption{Schema der Thomsonröhre}
+  \end{figure}
+  In der Thomsonröhre wird ein sichtbarer Elektronenstrahl erzeugt. Es können elektrische und magnetische Felder senkrecht 
+  zueinander überlagert werden. Der Strahl kann durch beide Felder abgelenkt werden. Durch einfaches Lösen der 
+  Bewegungsgleichungen kann dann die spezifische Ladung des Elektrons ermittelt werden.
+  
+  Verbinden Sie die Thomsonröhre entsprechend folgender Schaltung:
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{schaltskizze.png}
+    \caption{Schaltskizze}
+  \end{figure}
+  
+  \parpic[left]{\includegraphics[width=0.35\textwidth]{elektronenbahn.png}}
+  Die Anode $A_1$ wird auf Erdpotential, die Kathode $C_5$ auf negative Hochspannung gelegt. Der Bahnradius 
+  $R$ läßt sich aus der Ablenkung $L$ wie folgt bestimmen:
+  
+  Der Elektronenstrahl verläßt bei C die Kanone und bewegt sich in $x$-Richtung. Dabei wird er in $y$-Richtung abgelenkt. 
+  Die Kreisbahn habe den Radius $R$. 
+  
+  In der Röhre befindet sich ein auf der Spitze stehenden Quadrat, mit den Eckpunkten: 
+  C, E, F, G; außerdem ist die Kantenlänge $K = \SI{80}{mm}$ bekannt, die Länge $L = \abs{\mathrm{FA}}$ 
+  ist ablesbar.
+
+  Dann folgt für den gesuchten Radius $R$:\picskip{0}
+  \begin{flalign*}
+    &\triangle\text{ A,B,C: } c^2 = a^2+b^2-2ab\cdot\cos\gamma \xRightarrow{a=c=R} \cos\gamma=\frac{b}{2a} &\\
+    &\triangle\text{ A,C,D: } \cos\gamma = \frac{q}{b} = \frac{b}{2a} \implies R=a=\frac{b^2}{2q} &\\
+    &\triangle\text{ A,C,F: } b^2 = K^2+L^2 &\\
+    &\triangle\text{ A,G,H: } (K-L)^2 = q^2+q^2 \implies q=\sqrt\frac{(K-L)^2}{2} &\\
+    &\implies R^2 = \frac{1}{2}\,\kla{\frac{K^2+L^2}{K-L}}^2 \text{ und für } L=0 \implies R = \frac{1}{\sqrt{2}}\,K &
+  \end{flalign*}
+
+\subsection{Experiment 1: Klassischer Thomson-Versuch}
+  Um $e/m$ zu bestimmen (s. Gleichung \eqref{for:E-Feld}) wird die Geschwindigkeit $v$ der Elektronen nach der 
+  Beschleunigung mit $U_B$ durch Messung des Bahnradius $R$ der Elektronen in einem homogenen Magnetfeld (s. Gl. 
+  \eqref{for:B-Feld}) bestimmt also:
+  \begin{equation}
+    \frac{e}{m} = \frac{2U_B}{B^2\cdot R^2}
+  \end{equation}
+  \textbf{Durchführung:}
+  \begin{enumerate}
+    \item Die obere Ablenkplatte auf Erdpotential legen.
+    \item Die Beschleunigungsspannung auf $U_B=\SI{455}{V}$ einstellen.
+    \item Die Helmholtzspulen korrekt anschließen und den Spulenstrom so wählen, dass der Strahl durch einen gut sichtbaren 
+    Punkt verläuft.
+    \item Spulenstrom und Beschleunigungsspannung so variieren, daß der Strahl immer durch den gleichen Punkt verläuft und 
+    die Wertepaare $U_B$, $I_M$ notieren, $I_M^2$ über $U_B$ auftragen, die Steigung bestimmen.\\
+    \begin{minipage}{0.45\textwidth}
+    \centering
+    \begin{tabular}{|c|c|c|c|}\hline
+      $L/\SI{}{mm}$ & $U_B/\SI{}{V}$ & \hspace{10pt}$I_M/\SI{}{A}$\hspace{10pt} & \hspace{10pt}$I_M^2/\SI{}{A^2}$\hspace{10pt} \\\hline
+      $0/40$        &     2000       &                &                   \\
+      $0/40$        &     2500       &                &                   \\
+      $0/40$        &     3000       &                &                   \\
+      $0/40$        &     3500       &                &                   \\
+      $0/40$        &     4000       &                &                   \\
+      $0/40$        &     4500       &                &                   \\\hline
+    \end{tabular}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{diagramm.png}
+    \end{minipage}
+    \item Daraus $e/m$ bestimmen.
+    \item Wie groß ist $v$ bei $U_B=\SI{4.0}{kV}$? Wie groß ist $\abs{\vec B}$ mit $R=\frac{K}{\sqrt{2}}$ und $U_B=\SI{4.0}{kV}$?
+  \end{enumerate}
+  
+\subsection{Experiment 2: Feldausgleichversuch}
+  Unter der Wirkung der Lorentzkraft ändert sich ständig die Bewegungsrichtung des Elektrons. Wird die Lorentzkraft durch die 
+  Kraftwirkung eines elektrischen Feldes kompensiert, so ändert sich Bewegungsrichtung und Geschwindigkeit des Elektrons nicht, 
+  also mit
+  \begin{equation}
+    e\cdot E = e\cdot v_x\cdot B \implies v_x=\frac{E}{B}
+    \label{for:v_x}
+  \end{equation}
+  ist $v_x$ in \eqref{for:parabelgleichung} bestimmbar, sodass
+  \begin{equation}
+    y(x) = x^2\,\frac{e\cdot B^2}{2mE}
+  \end{equation}
+  zur Berechnung von $e/m$ benutzt wird.\\
+  Dabei sind $y$- und $x$-Koordinaten des Elektronenstrahls nur unter Wirkung des ablenkenden $\vec E$-Feldes. Für eine genaue 
+  Ablenkung des Elektronenstrahls durch einen Punkt werden an der Position $x=\SI{47}{mm}$ und $d/2=y=\pm\SI{4}{mm}$ angelötete 
+  Pins genutzt, auf die der Elektronenstrahl nur durch die Wirkung des $\vec E$-Feldes der Ablenkplatten gelenkt wird. Mit 
+  $E=U_A/d$ folgt:
+  \begin{equation}
+    \frac{e}{m} = \frac{U_A}{x^2\cdot B^2}
+  \end{equation}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{feldausgleich.png}
+    \caption{Zur Definition von $x$, $y$ und $d$}
+  \end{figure}
+  \textbf{Durchführung:}
+  \begin{enumerate}
+    \item Beschleunigungsspannung $U_B$ auf ca. \SI{4}{kV} stellen, $U_A$ auf \SI{150}{V} einstellen. Der Strahl wird in die Nähe 
+    eines Pins abgelenkt.
+    \item $U_B$ so einstellen, daß der Strahl durch den Pin abgeschnitten wird.
+    \suspend{enumerate}
+      Diese Einstellungen dürfen bis zur Messung von $I_M$ nicht verändert werden.
+    \resume{enumerate}
+    \item Stellen sie das Magnetfeld so ein, daß es den Strahl wieder durch den Punkt G zwingt. Notieren Sie $U_A$ und $I_M$.
+    \item Ändern Sie $U_A$ in \SI{50}{V} Schritten und wiederholen sie 2. und 3., notieren Sie $U_A$ und $I_M$. Tragen Sie $I_M^2$ 
+    über $U_A$ auf und bestimmen Sie die Steigung.\\[1em]
+    \begin{tabular}{|c|c|c|}\hline
+      $U_A/\SI{}{V}$ & \hspace{10pt}$I_M/\SI{}{A}$\hspace{10pt} & \hspace{10pt}$I_M^2/\SI{}{A^2}$\hspace{10pt} \\\hline
+      150 & &\\
+      200 & &\\
+      250 & &\\
+      300 & &\\
+      350 & &\\\hline
+    \end{tabular}
+    \item Bestimmen Sie $e/m$ aus der Steigung.
+  \end{enumerate}
+
+\subsection{Experiment 3}
+  Unter Verwendung der Kenntnisse aus Experiment 2 (Gleichungen \eqref{for:B-Feld}, \eqref{for:v_x}), wird mit $E=U_A/d$:
+  \begin{equation}
+    \frac{e}{m} = \frac{U_A}{B^2\cdot R\cdot d}
+  \end{equation}
+  Dabei ist $R$ der Radius der Bahn der Elektronen im $\vec B$-Feld ohne Wirkung des $\vec E$-Feldes. Das läßt sich umformen zu:
+  \begin{equation}
+    I_M^2 = k\,\frac{U_A}{R}
+  \end{equation}
+  \textbf{Durchführung:}
+  \begin{enumerate}
+    \item Man setzt $U_B \approx \SI{2,5}{kV}$
+    \item Man setzt $U_A = \SI{100}{V}$ und gleicht die Krümmung durch den Spulenstrom wieder aus, so daß der Strahl wieder durch 
+    den Punkt G verläuft.
+    \item Nun setzt man die Ablenkplatte wieder auf Erdpotential und notiert den Wert für $L$.
+    \item Dies wiederholt man für verschiedene $U_A$ und notiert $U_A$, $I_M$, $L$.\\[1em]
+    \begin{tabular}{|c|c|c|c|c|}\hline
+      $U_A/\SI{}{V}$ & \hspace{10pt}$I_M/\SI{}{A}$\hspace{10pt} & \hspace{10pt}$I_M^2/\SI{}{A^2}$\hspace{10pt} & \hspace{10pt}$L/\SI{}{mm}$\hspace{10pt} & \hspace{10pt}$R/\SI{}{mm}$\hspace{10pt} \\\hline
+      100 & & & &\\
+      150 & & & &\\
+      200 & & & &\\\hline
+    \end{tabular}
+    \item Bestimmen Sie aus den Meßwerten $e/m$.
+  \end{enumerate}
+  
+\subsection{Experiment 4}
+  Unter Verwendung der Kenntnisse aus Experiment 2 (Gleichungen \eqref{for:E-Feld}, \eqref{for:v_x}), wird mit $E=U_A/d$:
+  \begin{equation}
+    \frac{e}{m} = \frac{1}{2\cdot U_B}\,\kla{\frac{U_A}{B\cdot d}}^2 \quad\text{also:}\quad I_M^2 = k\,\frac{U_A^2}{U_B}
+  \end{equation}
+  \textbf{Durchführung:}
+  \begin{enumerate}
+    \item Beschleunigungsspannung auf $U_B = \SI{4}{kV}$ einstellen.
+    \item Ablenkspannung auf $U_A = \SI{100}{V}$ einstellen.
+    \item Das Magnetfeld so einstellen, daß der Strahl wieder durch den Punkt G verläuft.
+    \item Spannungen und Spulenstrom notieren, bei konstanter Beschleunigungsspannung $U_A$, $I_M$ variieren, $I_M$ über $U_A$ auftragen, 
+    die Steigung für zwei Beschleunigungsspannungen bestimmen.\\[1em]
+    \begin{tabular}{|c|c|c|}\hline
+      $U_B/\SI{}{V}$ & $U_A/\SI{}{V}$ & \hspace{10pt}$I_M/\SI{}{A}$\hspace{10pt} \\\hline
+      \multirow{5}{*}{4000} & 100 &\\
+       & 150 &\\
+       & 200 &\\
+       & 250 &\\
+       & 300 &\\\hline
+    \end{tabular}
+    \item $e/m$ aus den Steigungen bestimmen.
+  \end{enumerate}
+  
+\frage{Welche anderen experimentellen Möglichkeiten kennen Sie, um die spezifische Elektronenladung zu bestimmen?}
+\frage{Welche Möglichkeiten gibt es, die Ladung des Elektrons zu bestimmen?}
+\frage{Wie sieht die Elektronenbahn aus, wenn $\vec v$ nicht senkrecht auf $\vec B$ steht?}
+\frage{Diskutieren Sie ausführlich den Einfluß des Erdmagnetfeldes, wie kann man ihn abschätzen oder verringern?}
+\frage{Das homogene Magnetfeld wird durch zwei Spulen erzeugt, die in Reihe geschaltet werden. Wie kann man feststellen, ob sie richtig 
+gepolt sind?}
+\frage{Skizzieren Sie eine Schaltung zum Umpolen des Stromes, der durch das Helmholtz-Spulenpaar fließt.}
+
+\end{document}

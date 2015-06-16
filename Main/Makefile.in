@@ -1,0 +1,7 @@
+install : install_logos
+install_logos :
+	@mkdir -p $(INSTALLDIR)
+	@if test -d $(INSTALLDIR); then \
+		install -m 644 TUD-Icon\(sw\).pdf $(INSTALLDIR); \
+		install -m 644 TUD-Logo\(sw\).pdf $(INSTALLDIR); \
+	fi

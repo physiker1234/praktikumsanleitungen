@@ -1,0 +1,57 @@
+\documentclass[platz]{tudphygp}
+\usepackage{tudphymd}
+\versuch{Drillungen und Drehschwingungen}{DD}
+
+\begin{document}
+\maketitle
+
+\subsection*{Aufgabenstellung}
+
+Das Schubmodul eines Drahtes ist statisch und dynamisch zu bestimmen.
+
+\subsection*{Hinweise zur Versuchsdurchführung}
+
+\begin{enumerate}
+ \item \textit{Vorbereitungen:} Messen Sie zweimal die Länge $l$ sowie an zehn verschiedenen Stellen den Durchmesser $2R$ des Drahtes. Es stehen verschiedene Messgeräte zur Verfügung, benutzen Sie jeweils das mit der höchsten Genauigkeit. Wodurch wird die Genauigkeit der Messung begrenzt? Geben Sie Messfehler an (95-\%-Sicherheitsgrenzen bzw. Maximalfehler), wobei Sie die Zusammenstellung der Genauigkeiten verschiedener Messgeräte in der Praktikumseinführung benutzen sollten.
+ \item Spannen Sie den Draht mit dem großen Stahlzylinder (bei Durchmesser $<\SI3{mm}$ mit dem großen Aluminiumzylinder). Welcher systematische Fehler entsteht durch die Längenänderung? (Benutzen Sie die Elastizitätsmoduln aus Tabelle 1 der Versuchsanleitung.)
+ \item Bestimmen Sie an zwei verschiedenen Positionen den Durchmesser $2r_s$ der Kreisscheibe. Die Rillentiefe beträgt $t_r = (\num{1,0} \pm \num{0,1}) \;\SI{}{mm}$. Montieren Sie die Kreisscheibe unterhalb des Zylinders und justieren Sie die Anordnung so, dass sie senkrecht hängt und sich möglichst reibungsfrei in der Führungsspitze des Unterbaus drehen kann. Wo müssen die Kräfte zur Erzeugung des äußeren Drehmoments angreifen? Wickeln Sie soviel Schnur auf, dass genügend Spielraum für das gesamte Belastungsintervall bleibt. \textbf{Lassen Sie die Justage vor Beginn der Messungen vom Betreuer kontrollieren.}
+\end{enumerate}
+
+\subsection*{Statische Methode}
+
+\begin{enumerate}\setcounter{enumi}{3}
+ \item Messen Sie den Winkel $\phi$ als Funktion der angehängten Massen $m$ (mindestens zehn Messungen). Zeichnen Sie bereits während der Messung den Zusammenhang in ein geeignetes Diagramm, um abzusichern, dass Sie ausschließlich im Proportionalbereich (Gültigkeitsbereich des Hookeschen Gesetzes) messen. Kontrollieren Sie, ob der Draht nach Entlastung wieder in seine Ausgangslage $\phi_0$ zurückkehrt.
+ \item Ergänzen Sie Ihre Messpunkte durch Fehlerbalken: Die Genauigkeit der Gewichte liegt bei etwa \SI{0,1}\% (für genauere Werte siehe Angaben zu "`Handelsgewichtsstücken"' in der Praktikumseinführung). Bestimmen Sie grafisch die Steigung $A$ der Geraden $m(\phi)$ aus zwei weit entfernten Punkten auf der Geraden. Ermitteln Sie den Fehler des Anstiegs grafisch durch Variation des Anstiegs der Gerade im Rahmen der Fehlerbalken. Alternativ kann auch eine lineare Regression mit einem Taschenrechner durchgeführt werden.
+ \item Das Richtmoment und damit das Schubmodul ergibt sich aus dem eben ermittelten Anstieg:
+  \begin{refequation}{4c}
+   D = 2gr_s \cdot A \quad\Rightarrow\quad G = \frac{2l}{\pi R^4} \cdot D
+  \end{refequation}%
+  Überzeugen Sie sich von der Richtigkeit dieser Herleitung. Geben Sie das Schubmodul in der Maßeinheit $\SI{}{GPa}$ an. Achten Sie besonders auf Umrechnungsfaktoren. Schätzen Sie den Größtfehler für $G$ mithilfe des Fehlerfortpflanzungsgesetzes ab, wobei Sie unwesentliche Fehlerbeiträge und kleine Korrekturen vernachlässigen.
+\end{enumerate}
+
+\subsection*{Dynamische Methode}
+
+\begin{enumerate}\setcounter{enumi}{6}
+ \item Als Zusatzkörper ist der kleine Stahlzylinder bzw. der kleine Aluminiumzylinder zu verwenden. Bestimmen Sie Außenradius $r_a$ und Innenradius $r_i$. Seine Masse $m$ entnehmen Sie der untenstehenden Tabelle. Der Zusatzzylinder wird dabei unter dem schon vorhandenen Zylinder befestigt.
+ \item Messen Sie nun die Schwingungsdauer $T_1$ ohne und $T_2$ mit Zusatzzylinder. Machen Sie jeweils zwei Messungen \`a \num{50} Perioden. Kontrollieren Sie die Anzahl der Perioden durch Messungen mit \num1, \num5 und \num{15} Perioden. Als Start-/Stopp-Zeitpunkt eignet sich am besten eine Markierung nahe des Nulldurchganges (warum?). Malen Sie bitte \textit{keine zusätzlichen Markierungen} auf die Kreisscheibe.
+ \item Das Richtmoment erhalten Sie aus den beiden Periodendauern und dem Trägheitsmoment des Zusatzkörpers:
+ \begin{refequation}{6}
+  D = \frac{4\pi^2 \cdot J_2}{T_2^2 - T_1^2} \quad\text{mit}\quad J_2 = \frac m2 \cdot (r_a^2 + r_i^2)
+ \end{refequation}%
+ Überzeugen Sie sich von der Gültigkeit dieser Formel. Bestimmen Sie das Richtmoment und daraus mithilfe der Drahtgeometrie den Schubmodul $G$ des Drahtmaterials. Zu allen Messgrößen sind die Fehlergrenzen anzugeben.
+ \item \textit{Diskussion:} Vergleichen und diskutieren Sie die Resultate für das Richtmoment aus beiden Messverfahren insbesondere in Hinblick auf die Genauigkeit der unterschiedlichen Messverfahren bei der Bestimmung des Schubmoduls. Vergleichen Sie den von Ihnen ermittelten Schubmodul mit den Tabellenwerten (siehe Anleitung, Tabelle 1).
+\end{enumerate}
+
+\begin{table}[h!]\centering
+ \begin{tabular}{cc|cc}
+  \textbf{Stahl} & $m$ & \textbf{Aluminium} & $m$ \\
+  \hline
+  A & $(\num{1453,0} \pm \num{1,0}) \;\SI{}g$ & F & $(\num{513,7} \pm \num{1,0}) \;\SI{}g$ \\
+  B & $(\num{1449,0} \pm \num{1,0}) \;\SI{}g$ & E & $(\num{513,7} \pm \num{1,0}) \;\SI{}g$ \\
+  F & $(\num{1433,5} \pm \num{1,0}) \;\SI{}g$ & C & $(\num{514,4} \pm \num{1,0}) \;\SI{}g$ \\
+  G & $(\num{1431,5} \pm \num{1,0}) \;\SI{}g$ & D & $(\num{513,3} \pm \num{1,0}) \;\SI{}g$ \\
+ \end{tabular}
+ \caption{Massen der zur Verfügung stehenden Zusatzzylinder}
+\end{table}
+
+\end{document}

@@ -1,0 +1,76 @@
+\documentclass[platz]{tudphygp}
+\usepackage{mhchem,tudphymd}
+
+\versuch{Strömung im Rohr}{SR}
+
+
+\begin{document}
+\maketitle
+
+\section*{Aufgabenstellung}
+
+\begin{enumerate}
+ \item Bestimmen Sie den Druckabfall (indirekt über $\Delta h$) als Funktion der
+ Strömungsgeschwindigkeit von Wasser in einem horizontalen Rohr.
+ \item Berechnen Sie die Widerstandsbeiwerte ($c_w$) und Reynoldschen Zahlen ($Re$) im laminaren und turbulenten Gebiet, tragen Sie $c$ über $Re$ doppelt logarithmisch auf und und vergleichen Sie mit den theoretischen Werten.
+ \item Bestimmen Sie die kritische Reynoldszahl $Re_\mathrm{krit}$, diskutieren Sie das Ergebnis.
+ \item Führen Sie die Fehlerbetrachtung für $c_w$ und $Re$ für zwei weit auseinanderliegende Punkte des Diagramms durch.
+\end{enumerate}
+
+\section*{Hinweise zur Versuchsdurchführung}
+
+
+\begin{itemize}
+\item Die günstigste Ausgangshöhe der Flüssigkeit wird so eingestellt, dass sich die Wassersäulen in Augenhöhe befinden. Beachten Sie, dass ein Höhenunterschied von bis zu \SI{300}{mm} zu messen ist.
+%
+\item Im Bereich niedriger Druckdifferenzen sind möglichst
+viele Werte zu messen. Abwarten, bis der jeweilige $\Delta h$-Wert
+konstant ist. Verwenden Sie folgende Messpunkte:
+\[
+ \Delta h = (1, 2, 3, 4, 5, 6, 8, 10, 12, 15, 20, 50, 100, 200, 300) \SI{}{mm}
+\]
+\item Eingedrungene Luftblasen müssen (durch Klopfen) entfernt werden.
+\item Für die Aufnahme der Messwerte eignet sich Tabelle \ref{tab::messwerte}.
+\begin{table}[b]
+ \centering
+ \begin{tabular}{|c|c|c|c|c|c|c|}\hline
+  $\Delta h$/\SI{}{mm} & $V$ / \SI{}{ml} & $t$/\SI{}s & $\theta$ / \SI{}\degC & $\eta/\rho$ / \SI{}{cm^2/s} & $Re$ & $c_w$\\\hline
+  $\vdots$&&&&&&\\\hline
+ \end{tabular}
+ \caption{Beispiel Messwertetabelle \label{tab::messwerte}}
+\end{table}
+%
+\item Berechnen Sie zuerst die Konstanten ($R$ ist der Rohrradius und $l$ die Länge der Messstrecke):
+ \begin{align*}
+  K_{Re} &= \frac2{\pi R} & [K_{Re}] &= \SI{}{cm^{-1}}\\
+  K_c &= \frac1l\cdot \pi^2 g\cdot R^5 & [K_c] &= \SI{}{cm^2/s^2}
+ \end{align*}
+%
+\item Sie benötigen folgende Formeln:
+\[
+ c_w = K_c\cdot \frac{\Delta h}{\kla{\frac Vt}^2} \quad\text{und}\quad Re = \frac{K_{Re}}{\eta/\rho}\cdot\kla{\frac Vt}
+\]
+\item Die temperaturabhängige kinematische Zähigkeit von Wasser folgt der Formel:
+\[
+ %TODO: evtl. polynomieller statt exponentieller Fit
+ \frac\eta\rho(\theta) = \num{1,726}\cdot \eu{-\num{4,605}+\num{0,028}\theta /\SI{}\degC}\,\SI{}{cm^2/s}
+\]
+\end{itemize}
+
+\clearpage
+
+\section*{Geräteparameter}
+
+\begin{table}[h]
+ \centering
+ \begin{tabular}{|c|c|c|c|c|}\hline
+  Messplatz & Radius $R$ /\SI{}{mm} & $\Delta R$ / \SI{}{mm} & Länge $l$ / \SI{}{mm} & $\Delta l$ / \SI{}{mm}\\\hline
+  a & \num{3,5} & \num{,1} & \num{199,6} & \num{,5} \\
+  b & \num{2,5} & \num{,1} & \num{59,2} & \num{,5} \\
+  c & \num{5} & \num{,1} & \num{480,2} & \num{,5} \\
+  d & \num{5} & \num{,1} & \num{289,1} & \num{,5} \\\hline
+ \end{tabular}
+ \caption{Daten der Messaparaturen}
+\end{table}
+
+\end{document}

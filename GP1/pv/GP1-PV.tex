@@ -1,0 +1,677 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd,nicefrac,subfigure}
+
+\versuch{Poisson-Verteilung}{PV}
+\author{J.~Henniger, R.~Schwierz}
+\date{01.04.2004}
+\bearbeitet{J.~Kelling,F.~Lemke,S.~Majewsky}
+
+\buch{stolz}{W.~Stolz}{Radioaktivität: Grundlagen -- Messungen -- Anwendungen}{Teubner-Verlag}{Stuttgart/Leipzig 2003}
+\buch{papula3}{L.~Papula}{Mathematik für Ingenieure und Naturwissenschaftler, Band 3: Vektoranalysis, Wahrscheinlichkeitsrechnung, Mathematische Statistik, Fehler- und Ausgleichsrechnung}{Vieweg Friedrich~\&~Sohn Verlag}{Wiesbaden 2001}
+\buch{papulax}{L.~Papula}{Mathematik für Ingenieure und Naturwissenschaftler, Übungen, Kapitel X: Fehler- und Ausgleichsrechnung}{Vieweg Friedrich~\&~Sohn Verlag}{Braunschweig, Wiesbaden 2001}
+\buch{bronstejn}{I.~N.~Bronstejn, G.~Musiol, H.~Mühlig}{Taschenbuch der Mathematik}{Verlag Harri Deutsch}{Frankfurt am Main, Thun 1999}
+
+\begin{document}
+\maketitle
+
+\section{Aufgabenstellung}
+
+Nehmen Sie die Zählrohrcharakteristik eines Geiger-Müller-Zählrohrs auf, und bestimmen Sie die Aktivität eines $\beta^-$-Prüfstrahlers.
+
+\section{Allgemeine Grundlagen}
+
+Im Mittelpunkt dieses Versuches steht die Statistik von Zählmessungen. Hierzu sollten Sie mit den Grundlagen der Fehlerrechnung vertraut machen, wie sie im Kapitel "`Auswertung von Beobachtungen"' in der Anleitung zum Versuch "`Fehleranalyse"' eingeführt werden. Beachten Sie auch die dort angegebene Literatur für einen ausführlichen Überblick über dieses zentrale Thema naturwissenschaftlicher Methodik.
+
+\subsection*{Zur Begrifflichkeit der Messfehler}
+
+Alle Messungen sind immer mit \emph{Messabweichungen} behaftet. Im allgemeinen Sprachgebrauch wird für die Messabweichung meist noch der Begriff \emph{Messfehler} oder kurz \emph{Fehler} verwendet. Jedoch empfehlt z.~B.~die DIN-Norm~1319, diesen Begriff durch den der (Mess)Abweichung zu ersetzen.
+
+Dies betrifft somit auch die in der "`Fehlerrechnungsliteratur"' verwendeten Begriffe \emph{systematischer} und \emph{zufälliger} Fehler, die durch \emph{systematische} und \emph{zufällige Messabweichung} zu ersetzen sind. Lediglich die sogenannten \emph{groben Messfehler} können begrifflich so weiter geführt werden, denn deren Name drückt tatsächlich eine "`fehlerhafte"', sprich: falsche Handlung aus. Grobe Fehler sind prinzipiell vermeidbar oder können durch einfache Kontrollen gefunden werden.
+
+\subsection{Statistik von Zählmessungen}
+
+In diesem Versuch wird die Art von zufälligen Messabweichungen berücksichtigt, die bei sogenannten Zählmessungen a priori durch die statistische Schwankung der zu messenden Größe auftritt. Typische Aufgaben sind die Messung von Teilchenströmen (z.~B.~von Photonen oder Elektronen) geringer Intensität, wo selbst bei einer unmittelbaren Strommessung -- also nicht bei reinen Zählmessungen -- die statistischen Schwankungen der Messgröße stets gegenüber den zufälligen Abweichungen durch äußere Einflüsse überwiegen.
+
+Da solche Messungen aber auf Grund der geringen Intensität und des kleinen Signal-Rausch-Verhältnisses oft recht schwierig durchführbar sind, wird hier auf die Messung der Radioaktivität zurückgegriffen. Der Versuch hat aber Modellcharakter; die gewonnenen Erkenntnisse sind auf die verschiedensten Zählmessungen übertragbar. Im folgenden Abschnitt werden die entsprechenden Grundlagen zur Radioaktivität und dem statistischen Charakter dieser spontanen Kernumwandlung dargestellt.
+
+\begin{itemize}
+ \item[] \emph{Es gibt keinen Widerspruch zwischen Kausalität und dem Zufall. In der Welt herrscht der Zufall, und eben deshalb gibt es in der Welt Ordnung und Gesetz, die sich in den Massen von zufälligen Ereignissen, den Gesetzen der Wahrscheinlichkeit entsprechend, entfalten.}
+ \small Alfr\'ed R\'enyi (1921-1970), ungarischer Mathematiker und Wahrscheinlichkeitstheoretiker
+\end{itemize}
+
+\subsection{Radioaktivität und Zerfallsgesetz}
+
+Atome bestehen aus einem positiv geladenen Kern, bestehend aus \emph{Protonen} (Symbol $p^+$) und \emph{Neutronen} (Symbol $n$), sowie einer Hülle aus negativ geladenen \emph{Elektronen} (Symbol $e^-$). Die Protonen und Neutronen fasst man unter dem Oberbegriff \emph{Nukleonen} zusammen.
+
+Die verschiedenen Atome teilt man in Kategorien, die \emph{Nuklide}, auf. Die Nuklide unterscheiden sich in der Anzahl und Art der Nukleonen im Kern. Ein bestimmtes Nuklid hat eine bestimmte \emph{Nukleonenzahl} $A$ und eine bestimmte \emph{Neutronenzahl} $N$. Die Differenz $Z = A - N$ gibt sowohl die Anzahl der Protonen im Kern als auch die Anzahl der Elektronen in der Hülle an, da das Atom insgesamt nicht elektrisch geladen ist. $Z$ wird als \emph{Kernladungszahl} bzw. \emph{Ordnungszahl} bezeichnet. All diese Kennzahlen fasst man in der Notation
+${}^A_Z\mol X_N$ oder kurz ${}^A_Z\mol X$ zusammen, wobei $X$ beispielhaft für das chemische Symbol des Nuklids stehen soll (z.~B.~\mol{He} für Helium).
+
+Nicht alle Atomkerne befinden sich in einem stabilen Zustand. \emph{Radioaktivität} ist die spontane Umwandlung instabiler Atomkerne. Der mit der Umwandlung verbundene Übergang in ein stabiles Nuklid kann auf direktem Wege oder in mehreren aufeinanderfolgenden Schritten erfolgen. Dabei werden Teilchen und/oder Photonen emittiert.
+
+Schwere Elemente, bei denen die Bindungsenergie der Nukleonen im Kern gering ist, können sich unter Aussendung eines \mol{{}^4_2He}-Kerns ($\alpha$-Strahlung) umwandeln. Auch die spontane Kernspaltung ist eine radioaktive Kernumwandlung.
+
+Bei Atomkernen mit einem instabilen Neutronen-Protonen-Verhältnis erfolgt eine Umwandlung dieser Nukleonen durch $\beta$-Zerfall oder $e^-$-Einfang. Hierbei wird die Elektronenemission aus dem Kern als $\beta^-$-Strahlung, die entsprechende Aussendung von Positronen als $\beta^+$-Strahlung bezeichnet. Zum $\beta^+$-Zerfall gibt es die Alternative, dass ein Hüllenelektron vom Kern eingefangen wird.
+
+%TODO: Formatierung dieser Tabelle mit Felix besprechen
+\begin{table}[t]\centering
+ \begin{tabular}{ccrc}
+  Zerfallsart       & Kernumwandlung & \multicolumn2c{Umwandlung innerhalb des Kerns} \\\hline
+  \vspace{-2ex}\\
+  $\alpha$-Zerfall  & ${}^A_Z\mol X_N \to {}^{A-4}_{Z-2}\mol Y_{N-2} + {}^4_2\mol{He}_2$ & \multicolumn2c{Clusterbildung} \\[1ex]
+  $\beta^-$-Zerfall & ${}^A_Z\mol X_N \to {}^A_{Z+1}\mol X_{N-1} + e^- + \overline\nu$   & Neutronenüberschuss: & ${}^1_0n \to {}^1_1p^+ + e^- + \overline\nu$ \\[1ex]
+  $\beta^+$-Zerfall & ${}^A_Z\mol X_N \to {}^A_{Z-1}\mol X_{N+1} + e^+ + \nu$            & Protonenüberschuss: & ${}^1_1p^+ \to {}^1_0n + e^+ + \nu$ \\[1ex]
+  $e^-$-Einfang     & ${}^A_Z\mol X_N + e^- \to {}^A_{Z-1}\mol X_{N+1} + \nu$            & Protonenüberschuss: & ${}^1_1p^+ + e^- \to {}^1_0n + \nu$
+ \end{tabular}
+ \caption{Zerfallsarten (ohne Spontanspaltung) \label{tab::zerfallsarten}}
+\end{table}
+
+All diese Reaktionen sind in Tabelle~\ref{tab::zerfallsarten} zusammengefasst. Hierbei bezeichnet $e^+$ das \emph{Positron}, das Antiteilchen zum Elektron, $\nu$ ein \emph{Neutrino} bzw. $\overline\nu$ ein \emph{Antineutrino}. (Alle diese Teilchen sind Nebenprodukte des Kernzerfalls, die uns zunächst nicht weiter interessieren sollen.) Bei allen angeführten Umwandlungen können zunächst angeregte Kerne entstehen, die unter Aussendung von Photonen ($\gamma$-Strahlung) in den stabilen Grundzustand übergehen. Mit der Änderung der Ordnungszahl des Kerns ist zwangsläufig auch eine Umordnung der Elektronenstruktur der Hülle notwendig. Die Folge ist die Emission charakteristischer \emph{Röntgen-Strahlung} bzw. \emph{Auger-Elektronen}. Besonders deutlich wird dies beim Elektroneneinfang, wo infolge der erzeugten Vakanz in der $K$-Schale eine intensive Emission von $K_\alpha$- und $K_\beta$-Röntgenstrahlung beobachtet wird.
+
+Diese spontan ablaufenden Prozesse sind statistischer Natur, das heißt: Jeder instabile Kern besitzt unabhängig von seiner Vorgeschichte die gleiche Umwandlungswahrscheinlichkeit, wobei der Zeitpunkt seiner Umwandlung unbestimmt ist. Es kann also nicht vorhergesagt werden, wann sich ein konkreter Atomkern umwandelt. Bekannt ist nur die Warhscheinlichkeit, mit der das Umwandlungsereignis innerhalb eines vorgegebenen Zeitintervalls eintritt. Daher ist für sehr viele zum Zeitpunkt $t$ vorhandene, gleichartige, instabile Kerne $N$ die Anzahl der im Mittel auftretenden Umwandlungen $\diff N$ anhand des Zerfallsgesetzes
+\begin{equation}
+ \diff N = -\lambda \cdot N \cdot \diff t
+ \label{eqn::zerfall}
+\end{equation}
+berechenbar, wobei $\lambda$ die nuklidspezifische \emph{Zerfallskonstante} darstellt. $\lambda$ ist ein Maß für die Umwandlungswahrscheinlichkeit eines Radionuklids, ihr Kehrwert $\tau = \nicefrac1\lambda$ stellt die mittlere Lebensdauer des betreffenden Kerns dar. Die Integration von \eqref{eqn::zerfall} ergibt:
+\[
+ \Int_{N_0}^{N(t)} \frac{\diff N}N = -\Int_0^t \lambda \dif t
+ \quad\rightarrow\quad
+ \ln N(t) - \ln N_0 = -\lambda \cdot t
+\]
+Hieraus folgt das \emph{exponentielle Umwandlungsgesetz}:
+\begin{equation}
+ N(t) = N(0) \cdot \eu{-\lambda \cdot t}
+ \label{eqn::expzerfall}
+\end{equation}
+$N(t)$ ist die Zahl der zum Zeitpunkt $t$ noch nicht umgewandelten Kerne, und $N_0 = N(t = 0)$ ist die Zahl der Kerne zum Zeitpunkt $t = 0$. Die Lösung von \eqref{eqn::expzerfall} für den Fall $N(t = T_{1/2}) = \nicefrac{N_0}2$ ergibt die \emph{Halbwertszeit}:
+\begin{equation}
+ T_{1/2} = \frac{\ln 2}\lambda = \ln 2 \cdot \tau
+ \label{eqn::halbwert}
+\end{equation}
+Die Umwandlungsrate oder \emph{Aktivität} $A$ ist die Zahl der spontanen Kernumwandlungen pro Zeiteinheit und zur Anzahl der instabilen Kerne proportional. Ausgehend von der Anfangsaktivität $A_0 = A(t = 0)$ zum Zeitpunkt $t = 0$ findet man einen ebenfalls exponentiellen Zusammenhang:
+\begin{align}
+ A(t) &= -\dquot Nt = \lambda \cdot N(t) \nonumber\\
+ A(t) &= A_0 \cdot \eu{-\lambda \cdot t} \nonumber\\
+ A(t) &= A_0 \cdot \kla{\frac12}^{\frac t{T_{1/2}}}
+ \label{eqn::aktivitaet}
+\end{align}
+Die Einheit der Aktivität ist das \emph{Becquerel} ($\SI1{Bq} = \SI1{s^{-1}}$). Die Aktivität ist neben der Art und Energie der emittierten Strahlung die wichtigste Größe zur Charakterisierung einer radioaktiven Quelle. Besonders die Darstellung \eqref{eqn::aktivitaet} des Zerfallsgesetzes mit dem Faktor $\nicefrac12$ und $n = \nicefrac t{T_{1/2}}$ ist eine für Praktiker leicht handhabbare Form. Da die Potenzreihe $2^n$ hinreichend aus der Informatik bekannt ist (z.~B.~$2^{20} \approx \num{e6}$), lassen sich die Berechnungen nach \eqref{eqn::aktivitaet} schnell abschätzen.
+
+\piccaption{Umwandlungskurve eines Nuklids mit einer Halbwertszeit $T_{1/2} = \SI{100}s$ \label{fig::zerfallsgesetz}}
+\parpic[r]{
+ \includegraphics[width=\linewidth/2]{GP1-PV-Zerfallsgesetz}
+}
+
+Als Beispiel soll die Umwandlungskurve für ein Radionuklid mit einer Halbwertszeit von \SI{100}s dienen, die in Abbildung~\ref{fig::zerfallsgesetz} dargestellt ist. Das Verhaltnis $A(t) / A_0$ entspricht dem Anteil der ursprünglichen Aktivität nach dem Verstreichen der Zeit $T$. In halblogarithmischer Darstellung ergibt sich erwartungsgemäß eine Gerade. Nach Ablauf einer Halbwertszeit sind nur noch die Hälfte der Kerne vorhanden, und nach Ablauf von zehn Halbwertszeiten (nur etwas mehr als eine Viertelstunde) wären nur noch $\frac1{\num{1024}}$, also weniger als ein Promille des ursprünglichen radioaktiven Inventars vorhanden.
+
+\picskip0
+\subsection*{Das Radionuklid \mol{{}^{85}_{36}Kr}}
+
+Die im Versuch verwendeten Quellen enthalten das Radionuklid \mol{{}^{85}_{36}Kr} (Krypton). Dieses wandelt sich mit einer Halbwertszeit von \num{10,76} Jahren ausschließlich über den $\beta^-$-Zerfall in \mol{{}^{85}_{37}Rb} (Rubidium) um. Dabei wird mit einer Wahrscheinlichkeit von \SI{99,563}\% sofort der Grundzustand von \mol{{}^{85}_{37}Rb} erreicht. Die maximale Energie der $\beta^-$-Strahlung beträgt \SI{687,1}{keV}.
+
+Nur \SI{0,43}\% der Zerfälle erfolgen über einen angeregten Zwischenzustand von \mol{{}^{85}_{37}Rb}. Die begleitende $\gamma$-Strahlung mit einer Energie von \SI{514}{keV} hat bei Quellen mit hohen Aktivitäten ($A > \SI{e9}{Bq}$) u.~U.~Konsequenzen für den Strahlenschutz, da sich diese Strahlungskomponente wesentlich schlechter als die $\beta^-$-Strahlung abschirmen lässt.
+
+Die \mol{{}^{85}_{36}Kr}-Quellen haben in etwa die äußere Form einer kleinen Taschenlampenbirne. Das Edelgas Krypton befindet sich in den kleinen, dünnwandigen Glaskolben. Jeder Strahler ist wiederum in eine zylinderförmige Halterung aus Plexiglas eingeschraubt, die das radioaktive Präparat abschirmt und eine unmittelbare Berührung der Quelle verhindert. Durch Arretieren der Halterung in der Messeinrichtung taucht das für die Messungen verwendete Zählrohr tief in den Hohlzylinder ein und wird so durch das Präparat bestrahlt.
+
+\section{Statistik von Zählmessungen}
+
+Die Messung des radioaktiven Zerfalls erfolgt über die emittierte Strahlung durch \emph{Zählmessungen}. Das gilt sowohl für die sogenannten einfachen als auch für spektrometrische und/oder koinzidente Zählmessungen. Während erstere einfach Ereignisse zählen, werden z.~B.~bei letzteren bestimmte zusätzliche Kriterien für die Akzeptanz eines Zählimpulses herangezogen, etwa das Treffen eines Energie- oder eines Zeitfensters.
+
+Das unmittelbare Ergebnis einer Zählmessung ist eine gewisse Anzahl $x$ gezählter Ereignisse (bei elektronischer Messung: Zählimpulse), die in einer bestimmten Zeitspanne, der \emph{Messzeit} $t_m$, beobachtet werden. Die resultierende \emph{Zählrate}
+\begin{equation}
+ Z = \frac x{t_m}
+ \label{eqn::zaehlrate}
+\end{equation}
+ist ein Maß für für die Intensität oder Flussdichte der gemessenen Strahlung, und bei bekannter Effektivität $\eta_Z$ der Zähleinrichtung wegen $Z = \eta_Z \cdot A$ auch ein Maß für die zu messende Aktivität.
+
+Alle Zählmessungen unterliegen bestimmten statistischen Gesetzmäßigkeiten, die a priori zu statistischen Schwankungen des Messwertes, hier der Anzahl der gemessenen Zählimpulse, führen. Für die Messungen des radioaktiven Zerfalls gilt, dass schon der Zerfallsakt an sich ein stochastischer Prozess ist. Auch die verwendeten Versuchsapparaturen registrieren in den seltensten Fällen die Strahlung zu \SI{100}\%. Zum Beispiel können indirekt ionisierende Strahlungsarten (Photonen und Neutronen) den Detektor mitunter ohne jede Wechselwirkung passieren und werden somit nicht nachgewiesen.
+
+Im Folgenden sollen lediglich die statistischen Schwankungen der radioaktiven Kernumwandlungen für ein gegebenes Zeitintervall betrachtet werden. Ist die Wahrscheinlichkeit für den Nachweis eines Zerfallsaktes mit der entsprechenden Messapparatur konstant -- was im Allgemeinen als gegeben angesehen werden kann --, sind die dargestellten Gesetzmäßigkeiten auch für die entsprechenden Messungen relevant.
+
+Statistische Verteilungen werden durch die Wahrscheinlichkeitsfunktion $P(x)$ für diskrete bzw. durch die (Wahrscheinlichkeits)Dichtefunktion $f(x)$ für stetige Verteilungen beschrieben. Beide Funktionen sind definitionsgemäß auf $1$ normiert. Man definiert \emph{Mittelwert} $\mu$ und \emph{Varianz} $\sigma^2$:
+\begin{subequations}
+ \begin{align}
+       \mu &= \sum_x                             x \cdot P(x) &
+       \mu &= \Int_{-\infty}^{+\infty}           x \cdot f(x) \dif x \label{eqn::mittelwert} \\
+  \sigma^2 &= \sum_x                   (x - \mu)^2 \cdot P(x) &
+  \sigma^2 &= \Int_{-\infty}^{+\infty} (x - \mu)^2 \cdot f(x) \dif x \label{eqn::varianz}
+ \end{align}
+\end{subequations}
+
+\subsection{Binomialverteilung}
+
+Die Wahrscheinlichkeit, dass sich \textit{ein einzelner} Kern in der Zeit $t$ umwandelt, ist durch das exponentielle Umwandlungsgesetz \eqref{eqn::expzerfall} gemäß
+\[
+ p = 1 - \eu{-\lambda \cdot t}
+\]
+gegeben. Im Allgemeinen wird bei Experimenten kaum ein einzelner radioaktiver Kern beobachtet, sondern immer eine gewisse Anzahl $N$ von Kernen (die \emph{Grundgesamtheit}). Da die Kernumwandlungen voneinander unabhängig sind, können innerhalb einer gewissen Zeitspanne $t$ auch mehrere Zerfälle auftreten. Allerdings kann ein einmal umgewandelter Kern nicht nochmal auf dieselbe Art zerfallen; er ist also vom weiteren Geschehen ausgeschlossen. Unter der Berücksichtigung dieser Umstände folgt für die Wahrscheinlichkeit $P(x)$ für das Auftreten von genau $x$~Zerfallsereignissen:
+\begin{equation}
+ P(x) = \binom Nx \cdot p^x \cdot (1-p)^{N-x} = \binom Nx \cdot (1 - \eu{-\lambda \cdot t})^x \cdot (\eu{-\lambda \cdot t})^{N-x}
+ \label{eqn::binom}
+\end{equation}
+Dies ist die \emph{Binomialverteilung}. \verweis{stolz} \verweis{papula3} Mittelwert und Varianz lauten wie folgt:
+\begin{subequations}
+ \begin{align}
+       \mu &= N \cdot p = N \cdot (1 - \eu{-\lambda \cdot t})                                         \label{eqn::binommittelwert} \\
+  \sigma^2 &= N \cdot p \cdot (1-p) = N \cdot (1 - \eu{-\lambda \cdot t}) \cdot \eu{-\lambda \cdot t} \label{eqn::binomvarianz}
+ \end{align}
+\end{subequations}
+Diese Verteilungsfunktion gilt für die Statistik aller Umwandlungsprozesse mit einer fixen, nicht beeinflussbare Umwandlungskonstanten $\lambda$. Noch allgemeiner ausgedrückt handelt es sich um sogenannte \emph{Bernoulli-Experimente}, bei denen nur zwei verschiedene, sich gegenseitig ausschließende Ereignisse mit konstanter Wahrscheinlichkeit eintreten können.
+
+\subsection{Poisson-Verteilung}
+
+Die exakte Lösung für die Statistik des radioaktiven Zerfalls liefert die Binomialverteilung \verweis{stolz}. Wird nur eine geringe Anzahl $N$ von Kernen beobachtet, muss immer mit Binomialverteilungen gerechnet werden. Für relativ kleine $N$ bereitet die Berechnung der Binomialkoeffizienten auch kaum Schwierigkeiten; das ändert sich für große $N$ drastisch infolge der sehr großen Werte der Fakultät. Genau für diesen Fall aber, und wenn die Beobachtungszeit klein gegenüber der Halbwertszeit ist, gilt
+\begin{equation}
+ \lambda \cdot t = \frac{\ln 2 \cdot t}{T_{1/2}} \ll 1
+ \quad\text{und}\quad x \ll N
+ \label{eqn::poisson-bedingung}
+\end{equation}
+und die Binomialverteilung geht praktisch über in die \emph{Poisson-Verteilung}:
+\begin{equation}
+ P(X = x) = \frac{(N \cdot p)^x}{x!} \cdot \eu{-N \cdot p} = \frac{\mu^x}{x!} \cdot \eu{-\mu}
+ \label{eqn::poisson}
+\end{equation}
+
+\begin{figure}[t]\centering
+ \includegraphics[width=\linewidth/2]{GP1-PV-Poissonverteilung}
+ \caption{Wahrscheinlichkeitsfunktion für eine Poisson-verteilte Zufallsvariable $X$ mit $\mu = 3$ \label{fig::poissonverteilung}}
+\end{figure}
+
+Sie beschreibt die Verteilung äußerst seltener Ereignisse, die mit einer geringen, aber konstanten Wahrscheinlichkeit $p = 1 - \eu{-\lambda \cdot t}$ an einer sehr großen Anzahl von "`Probanden"' $N$ -- hier die Gesamtheit der betrachteten radioaktiven Atomkerne -- auftreten. Mit dem Übergang $N \cdot p \to \mu$ ist die weitere Betrachtung der Zahl $N$ radioaktiver Kerne entbehrlich geworden und es interessiert nur noch der Erwartungswert für die diskrete Zufallsgröße $X$. Der Erwartungswert ist zugleich auch die Varianz $\sigma^2$ bzw. für die Standardabweichung gilt $\sigma = \sqrt\mu$. Somit hat die Poisson-Verteilung nur einen Verteilungsparameter $\mu$.
+
+Die Beziehung \eqref{eqn::poisson} lässt sich insbesondere unter Zuhilfenahme rechentechnischer Hilfsmittel relativ leicht auswerten. Mit dem Startglied $P(0) = \eu{-\mu}$ entsteht eine \emph{Rekursionsformel}:
+\[
+ P(x) = \frac\mu x \cdot P(x-1)
+\]
+Bei der grafischen Darstellung der Wahrscheinlichkeitsfunktion diskreter Verteilungen sind nur Säulendiagramme zulässig (siehe z.~B.~Abbildung~\ref{fig::poissonverteilung}). Ein Verbinden der Werte zu geschlossenen Kurvenzügen verbietet sich aufgrund des diskreten Definitionsbereiches selbstredend.
+
+In den meisten praktischen Fällen werden die Bedingungen \eqref{eqn::poisson-bedingung} erfüllt. Die Poisson-Verteilung ist dann die richtige Form zur Beschreibung der Statistik des radioaktiven Zerfalls. Trotzdem gibt es einige Beschränkungen bei der praktischen Anwendung: Für große $\mu$ wird die Berechnung nach \eqref{eqn::poisson} ungenanu. Schwieriger ist die Anwendung statistischer Tests zur Prüfung auf sogenannte \emph{Reinheit} der Verteilung. Für diesen Zweck ist der Übergang zur stetigen \emph{Gauß-Verteilung} hilfreich.
+
+\subsection{Gauß-/Normalverteilung}
+
+Unter Verwendung der Stirling-Formel \verweis{bronstejn} zur Fakultätsberechnung für große Zahlen, sowie beim Übergang zu einer stetigen Zufallsvariablen folgt für Zählmessungen die Dichtefunktion
+\begin{subequations}
+ \begin{equation}
+  f(x) = \frac1{\sqrt{2\pi \cdot \mu}} \cdot \exp\brk{-\frac{(x-\mu)^2}{2\mu}},
+  \label{eqn::gauss1}
+ \end{equation}
+ die eine spezielle Form der Dichtefunktion
+ \begin{equation}
+  f(x) = \frac1{\sqrt{2\pi} \cdot \sigma} \cdot \exp\brk{-\frac12 \cdot \kla{\frac{x-\mu}\sigma}^2}
+  \label{eqn::gauss2}
+ \end{equation}
+\end{subequations}
+der Gauß-Verteilung darstellt. \eqref{eqn::gauss1} hat im Gegensatz zu \eqref{eqn::gauss2} nur einen Verteilungsparameter, da hier die Varianz $\sigma^2$ mit dem Erwartungswert $\mu$ zusammenfällt. Die Normalverteilung mit der Dichtefunktion \eqref{eqn::gauss1} ist der Grenzfall der Poisson-Verteilung für große Erwartungswerte. Die Approximation der diskreten Poisson-Verteilung mit der stetigen Gauß-Verteilung ist immer nur eine Näherung -- wenn auch für $\mu > 10$ eine brauchbare und für $\mu > 50$ eine relativ genaue Näherung. Dies ist bei einem unmittelbaren Vergleich von Zählmessungen mit dieser theoretischen Verteilungsfunktion stets zu beachten.
+
+\subsection{Theoretische und empirische Verteilungsfunktionen}
+
+Die Verteilungsfunktion $F(x)$ für eine diskrete bzw. stetige Zufallsvariable ist gemäß
+\begin{align}
+ F(X \leq x) &= \sum_{i=0}^x P(X = i) &
+ F(X \leq x) &= \Int_{-\infty}^x f(x') \dif x'
+ \label{eqn::verteilung}
+\end{align}
+definiert. Aufgrund der Normierung der Dichte- bzw. Wahrscheinlichkeitsfunktion gilt immer $F(-\infty) = 0$ und $F(\infty) = 1$. Sind $f(x)$ bzw. $P(x)$ nur für ein Intervall $[a,b]$ definiert, so gilt $F(a) = P(x = a)$ und $F(b) = 1$.
+
+Die Verteilungsfunktion zu \eqref{eqn::gauss1} ist nicht analytisch lösbar:
+\begin{equation}
+ F(X \leq x) = N(x) = \frac1{\sqrt{2\pi \cdot \mu}} \cdot \Int_{-\infty}^x \exp\brk{-\frac{(x'-\mu)^2}{2\mu}} \dif x'
+ \label{eqn::gauss3}
+\end{equation}
+Bei der praktischen Berechnung müssen numerische Verfahren herangezogen werden. Eine andere Möglichkeit ist die Verwendung von Tabellen für die Standardnormalverteilung $\Phi(u)$ mit dem Erwartungswert $\mu = 0$ und der Varianz $\sigma^2 = 1$. Die Umrechnung zwischen $\Phi(u)$ und anderen Normalverteilungen erfolgt mit den bekannten Umrechnungsvorschriften (siehe \verweis{papula3} und \verweis{bronstejn}).
+
+In der Praxis ist aber der Erwartungswert $\mu$ nicht bekannt, sondern soll erst durch die Messungen abgeschätzt werden. Dazu wird eine Serie von $n$ Einzelmessungen durchgeführt. Die Messwerte $x_i$ können bei Zählmessungen nur natürlichzahlige Werte annehmen. Der Mittelwert
+\begin{equation}
+ \overline x = \frac1n \cdot \sum_{i=1}^n x_i
+ \label{eqn::expmittelwert}
+\end{equation}
+ist eine positive rationale Zahl und stellt einen Schätzwert für den Erwartungswert $\mu$ dar. Er wird auch als \emph{statistischer} oder \emph{empirischer Erwartungswert} bezeichnet. Ein geeignetes Maß für die Streuung der Einzelmessungen ist die \emph{empirische Standardabweichung} $\sigma_x$ der Messreihe, die sich aus der Varianz $\sigma_x^2$ ergibt:
+\begin{equation}
+ \sigma_x^2 \approx \frac1{n-1} \cdot \sum_{i=1}^n (x_i - \overline x)^2
+ \label{eqn::expvarianz}
+\end{equation}
+Für die rechnerische Auswertung bietet sich die folgende Darstellung an:
+\[
+ \sigma_x^2 \approx \frac1{n-1} \cdot \kla{\sum_{i=1}^n x_i^2 - n \cdot \overline x^2} = \frac n{n-1} \cdot \kla{\overline{x^2} - \overline x^2} \approx \overline{x^2} - \overline x^2 \quad\text{für große } n
+\]
+Eine weitere wichtige Größe ist die \emph{Standardabweichung des Mittelwertes}:
+\begin{equation}
+ \sigma_{\overline x} \approx \frac{\sigma_x}{\sqrt n} = \sqrt{\frac1{n(n-1)} \cdot \kla{\sum_{i=1}^n x_i^2 - n \cdot \overline x^2}}
+ \label{eqn::expvarianzmittelwert}
+\end{equation}
+Die statistische Auswertung von Messserien mittels der Gleichungen \eqref{eqn::expmittelwert} bis \eqref{eqn::expvarianzmittelwert} ist keine Besonderheit von Zählmessungen, sondern auch für Messwerte mit einer stetigen Verteilung gültig (siehe Anleitung zum "`Fehleranalyse"'). In unserem Falle sind die Messreihen entsprechend \eqref{eqn::gauss2} und \eqref{eqn::gauss3} normalverteilt.
+
+Die Statistik der Zählmessungen gehorcht einer Poisson-Verteilung. Hierbei fällt -- wie schon gesagt -- der theoretische Wert der Varianz $\sigma^2$ mit dem Erwartungswert $\mu$ zusammen, die theoretische Standardabweichung ist also immer $\sigma = \sqrt\mu$. Bereits eine einzige Messung von $N$ Impulsen liefert eine Stichprobe für den Erwartungswert ($\mu \approx N$). Somit können die Varianz $\sigma^2 \approx N$, die Standardabweichung $\sigma \approx \sqrt N$ sowie die relative Standardabweichung $\varepsilon_\sigma \approx \nicefrac1{\sqrt N}$ abgeschätzt werden. Für die Messserien in diesem Versuch gilt:
+\[
+ N = \sum_{i=1}^n x_i
+\]
+$N$ stellt somit die Zahl der insgesamt gezählten Impulse dar, wobei es nicht von Interesse ist, ob diese Impulse in einer Einzelmessung oder in einer Serie von mehreren Messungen gezählt und saldiert wurden. Es gilt wieder $\mu\approx N$ und $\sigma\approx\sqrt N$ mit der Einschränkung, dass es sich auch hier wieder nur um eine statistische Schätzung handelt und dass Poisson-Statistik vorliegt.
+
+Bei einer Gesamtheit von $n$ gleichartigen Messungen ist der Mittelwert $\overline x = \nicefrac Nn$ nach \eqref{eqn::expmittelwert} der empirische Wert für den Erwartungswert $\mu_x$ einer Einzelmessung, und die theoretische Standardabweichung ist $\sqrt{\overline x} = \sqrt{\nicefrac Nn}$. Die \emph{relative Häufigkeitsfunktion} $h(X = x) = \nicefrac{H(X = x)}n$ ist gerade die empirische Wahrscheinlichkeitsfunktion, wobei $H(x)$ die absolute Häufigkeit der Ereignisse vom Typ $X = x$ ist.
+
+\begin{figure}[t]\centering
+ \subfigure[Empirische Häufigkeitsfunktion]{
+  \label{fig::gaussverteilung}
+  \includegraphics[height=.3\linewidth]{GP1-PV-Gaussverteilung}
+ }
+ \subfigure[Empirische Verteilungsfunktion]{
+  \label{fig::gausssumme}
+  \includegraphics[height=.3\linewidth]{GP1-PV-Gausssumme}
+ }
+ \caption{$n=\num{e6}$ Stichproben aus einer Poisson-Verteilung mit dem Erwartungswert $\mu = 49$ im Vergleich mit der Dichtefunktion der Gauß-Verteilung}
+\end{figure}
+
+In Abbildung~\ref{fig::gaussverteilung} sieht man die Gauß-Approximation einer großen Stichprobenmenge aus einer Poisson-Verteilung. Beide Verteilungen haben die Standardabweichung $\sigma = \sqrt\mu = \sqrt{49} = 7$. Die Asymmetrie der Poisson-Verteilung ist auch bei diesem großen Erwartungswert noch deutlich zu erkennen. Aufgrund der großen Anzahl von Stichproben konnte hier auf eine Darstellung der sehr kleinen Fehler verzichtet werden.
+
+Für die empirische Verteilungsfunktion steht die relative Summenhäufigkeit, die meist in der Einheit \SI{}\% angegeben wird:
+\[
+ s(X \leq x) = \sum_{k=1}^x h(k) = \frac1n \cdot \sum_{k=1}^x H(k)
+\]
+Zum Vergleich der empirischen Verteilungsfunktion (normierte Summenhäufigkeit) $s(x)$ mit der Gauß-Verteilungsfunktion wie in Abbildung~\ref{fig::gausssumme} müssen die "`experimentellen"' Werte allerdings am Ende des jeweiligen Intervalls eingetragen werden, also bei $x + \num{,5}$. Diese Stetigkeitskorrektion ist bei der Approximation von Verteilungen für diskrete Zufallsvariablen mit der kontinuierlichen Gauß-Verteilungsfunktion stets durchzuführen. \verweis{papulax} Lägen die Messpunkte z.~B.~in Abbildung~\ref{fig::gausssumme} auf den natürlichzahligen $x$-Werten, gäbe es keine Übereinstimmung.
+
+\begin{figure}[t]\centering
+ \includegraphics[width=\linewidth/2]{GP1-PV-RealeMesswerte}
+ \caption{Absolute Häufigkeit für \num{1000} Stichproben aus einer Poisson-Verteilung mit dem Erwartungswert $\mu = \num{49}$ im Vergleich mit der Dichtefunktion $\num{1000} \cdot f(x)$ für die Gauß-Verteilung \label{fig::realemesswerte}}
+\end{figure}
+
+In Abbildung \ref{fig::realemesswerte} sind eher realistische Daten dargestellt. Hierbei handelt es sich um einen wirklichkeitsnahen Versuch mit einer Gesamtheit von \num{1000} Stichproben, wie auch im vorliegenden Praktikum durchzuführen. Insgesamt wurden bei diesen \num{1000} Stichproben $N=\num{49212}$ Impulse gemessen, entsprechend einem empirischen Erwartungswert von $\overline x = \num{49,21}$ Impulsen. Der dazugehörige Wert für die theoretische Standardabweichung beträgt $\sigma = \num{7,02}$. Für die empirische Standardabweichung wurde $\sigma_x = \num{7,09}$ ermittelt. Die beobachtete (empirische) Streubreite $\sigma_{\overline x}$ für den Mittelwert war \num{,22}. Der gemessene Mittelwert lag bei diesem "`Experiment"' also noch gerade innerhalb der einfachen Streubreiten des "`wahren"' Wertes $\mu = \num{49}$. Wichtig ist aber, dass die theoretischen und empirischen Streubreiten sehr gut übereinstimmen. Ohne auf Details einzugehen, wäre hier eine Abweichung $\pm1$ auch noch akzeptabel.
+
+Verdächtig sind Messreihen, bei denen die empirischen deutlich kleiner als die theoretischen Standardabweichungen sind. Hier liegt meistens eine Korrelation innerhalb der Impulsfolge vor. Bei Zählmessungen treten diese Effekte insbesondere bei hohen Zählraten auf, die entweder vom eigentlichen Detektor oder der Nachfolgeelektronik nicht mehr richtig aufgelöst werden. (Es liegt somit ein Totzeitproblem vor.) Sehr breite empirische Verteilungen deuten wiederum auf äußere Störeinflüsse hin. Hier liefern Störimpulse, die weder der Messgröße noch dem Untergrund zugeordnet werden können, zusätzliche Beiträge zum gemessenen Effekt.
+
+\begin{figure}[b!]\centering
+ \subfigure[Absolute Häufigkeiten im Vergleich mit der Dichtefunktion $\num{1000} \cdot f(x)$ für die Gauß-Verteilung ($\mu = \num{49,2}$)]{
+  \label{fig::realemesswerte2}
+  \includegraphics[height=\linewidth/3]{GP1-PV-RealeMesswerte2}
+ }
+ \subfigure[Absolute Häufigkeiten im Vergleich mit den Werten für die Poisson-Verteilung ($\mu = \num{49,2}$)]{
+  \label{fig::realemesswerte3}
+  \includegraphics[height=\linewidth/3]{GP1-PV-RealeMesswerte3}
+ }
+ \caption{\num{1000} Stichproben aus einer Poisson-Verteilung mit dem Erwartungswert $\mu = \num{49}$ einschließlich zufälliger Messabweichung ($\pm2\sigma$-Fehler)}
+\end{figure}
+
+In Abbildung~\ref{fig::realemesswerte2} sind dieselben Messwerte noch einmal mit den zufälligen Messabweichungen $\pm2\sigma = \pm2 \cdot \sqrt{H(x)}$ der absoluten Häufigkeitsfunktion $H(X=x)$ dargestellt. Diese Abbildung könnte das Resultat einer praktischen Versuchsauswertung sein. Beachten Sie, dass der empirische Erwartungswert für die Gauß-Funktion verwendet und die Dichtefunktion mit dem Wert \num{1000} multipliziert wurde. Die Übereinstimmung zwischen den empirischen Werte und der Gaußschen Näherung ist sehr gut -- diese Approximation ist durchaus vertretbar. Ohne Nutzung rechentechnischer Hilfsmittel ist es allerdings nicht so einfach, solche Darstellungen zu erhalten.
+
+Eine Darstellung wie in Abbildung~\ref{fig::realemesswerte2} ist einfacher zu erhalten. Hier muss nur die Wahrscheinlichkeitsfunktion der Poisson-Verteilung für den empirischen Erwartungswert berechnet werden und gemeinsam mit den gemessenen und normierten Häufigkeiten aufgetragen werden. Das Resultat ist überzeugend. Für kleine Erwartungswerte -- im vorliegenden Versuch z.~B.~bei der Untergrundbestimmung -- besteht gar keine andere Möglichkeit des Tests, weil dann die Gaußsche Näherung versagt. Insgesamt sind diese Varianten des Tests insbesondere für große Erwartungswerte sehr mühselig, wenn keine Rechentechnik verfügbar ist oder entsprechende Software und/oder Fertigkeiten zu deren Bedienung nicht vorhanden sind.
+
+\piccaption{Darstellung der empirischen Verteilungsfunktion einschl.~zufälliger Messabweichung ($\pm2\sigma$-Fehler) im Wahrscheinlichkeitsnetz \label{fig::wahrscheinlichkeitsnetz}}
+\parpic[r]{
+ \includegraphics[width=\linewidth/2-1ex]{GP1-PV-Wahrscheinlichkeitsnetz}
+}
+
+Eine andere Möglichkeit ist die Darstellung der Messdaten in einem \emph{Wahrscheinlichkeitsnetz}. Hier wird die empirische Verteilungsfunktion (normierte Summenhäufigkeiten) $s(x)$ gegenüber $\tilde x = x + \num{,5}$ (Stetigkeitskorrektion \verweis{papulax}) abgetragen, wobei die Abszissenachse so verzerrt ist, dass Gauß-Verteilungsfunktionen automatisch eine Gerade ergeben. (Oft sind auch noch die Grenzen $\pm1\sigma, \pm2\sigma, \ldots$ mit eingezeichnet.) Bei der grafischen Auswertung wird durch numerische Approximation oder mit Augenmaß eine Gerade durch die Punkteschar der empirischen Verteilungsfunktion gelegt. Dabei muss beachtet werden, dass die Werte für die Summenhäufigkeiten immer binomialverteilt sind, weswegen sich die Varianz gemäß \eqref{eqn::binomvarianz} berechnet. Die so berechneten doppelten Standardabweichungen sind die zufälligen Messabweichungen für die Werte der relativen Summenhäufigkeiten und damit für die Länge der Fehlerbalken in entsprechenden Grafiken entscheidend.
+
+Da die Normalverteilung wiederum der Grenzfall der Poisson-Verteilung ist, gilt somit auch die \emph{Gaußsche Fehlerfortplanzung} zur Berechnung der zufälligen Messabweichung. An folgendem, einfachen Beispiel soll dies demonstriert werden.
+
+Die Nettozählrate $Z_n = Z_b - Z_0$ stellt die Differenz der Bruttozählrate $Z_b = \nicefrac{N_b}{t_b}$ von der Untergrund-/Nullzählrate $Z_0 = \nicefrac{N_0}{t_0}$ dar. Der Bruttomesseffekt von $N_b$ Impulsen wird in der Bruttomesszeit $t_b$ und der Nulleffekt $N_0$ innerhalb der Nulleffektmesszeit $t_0$ ermittelt. Die Standardabweichungen von $N_b$ und $N_0$ sind $\sqrt{N_b}$ bzw. $\sqrt{N_0}$, da es sich um Zählmessungen handelt. Für die Statistik der Nettozählrate folgt somit gemäß Gaußscher Fehlerfortpflanzung:
+\begin{equation}
+ \sigma_n^2 = \frac{N_b}{t_b^2} + \frac{N_0}{t_0^2}
+ \quad\rightarrow\quad
+ \sigma_n = \frac1{t_b} \cdot \sqrt{N_b + \frac{t_b^2}{t_0^2} \cdot N_0}
+ \label{eqn::bspfehlerfortpflanzung}
+\end{equation}
+Bei gleichen Messzeiten $t_b = t_0 \equiv t_\mathrm{mess}$ vereinfacht sich dies zu:
+\[
+ \sigma_n = \frac{\sqrt{N_b + N_0}}{t_\mathrm{mess}}
+\]
+Die Varianzen der einzelnen Messeffekte werden also einfach addiert. Für diese wichtigen Betrachtungen wurde die zufällige Messabweichung der Zeit vernachlässigt, da sie im Vergleich zum statistischen "`Zählfehler"' in diesem Versuch keine Rolle spielt.
+
+\section{Experimentelle Durchführung}
+
+\subsection{Messung ionisierender Strahlung mit dem Geiger-Müller-Zählrohr}
+
+Die von radioaktiven Isotopen ausgesandte ionisierende Strahlung kann mit verschiedenen Strahlungsdetektoren gemessen werden. Es sind z.~B.~Gasionisations-, Anregungs- und Halbleiterdetektoren einsetzbar.
+
+\begin{figure}[b!]\centering
+ \subfigure[Aufbauschema und Prinzipschaltung]{
+  \label{fig::gmz}
+  \includegraphics[width=\linewidth*2/5]{GP1-PV-GeigerMuellerZaehlrohr}
+ }
+ \subfigure[Beispiel für eine Zählrohrcharakteristik $N = f(U_D)$]{
+  \label{fig::zaehlrohrcharakteristik}
+  \includegraphics[width=\linewidth/2]{GP1-PV-Zaehlrohrcharakteristik}
+ }
+ \caption{Zum Geiger-Müller-Zählrohr}
+\end{figure}
+
+Das \emph{Geiger-Müller-Zählrohr} gehört zu den Gasionisationsdetektoren, bei denen die gebildeten Ladungsträger (Elektronen und Ionen) infolge eines elektrischen Feldes im Detektor zu den Elektroden gelagen und einen registrierbaren Impuls auslösen. Das Geiger-Müller-Zählrohr wird im sogenannten Auslösebereich betrieben: Die angelegte Detektorspannung ist so hoch, dass es zu einer lawinenartigen \emph{Gasentladung} durch Stossionisation in Anodennähe kommt. Die lawinenartige Verstärkung ($f = \num{e8} \ldots \num{e10}$) der primär gebildeten Ladungsmenge führt zu den typischen Eigenschaften dieses Zählrohrtyps:
+\begin{itemize}
+ \item Es sind nur Zählmessungen möglich, da durch die extrem hohe Sekundärionisation primäre Effekte überdeckt werden.
+ \item Die große Impulshöhe ermöglicht eine einfache Nachfolgeelektronik (siehe Abbildung~\ref{fig::gmz}).
+\end{itemize}
+Die Darstellung der Zählrate $Z$ als Funktion der Detektorspannung $U_D$ bezeichnet man als \emph{Zählrohrcharakteristik} (Abbildung~\ref{fig::zaehlrohrcharakteristik}). In dieser Darstellung sollte man ein deutliches Plateau erkennen, bei dem die Anzahl gezählter Impulse nicht von der Detektorspannung abhängig ist. Auf der linken Seite des Plateaus erkennt man eine steile Flanke, beginnend an der \emph{Einsatzspannung} $U_E$, die im Falle der Abbildung~\ref{fig::zaehlrohrcharakteristik} bei $U_E = \SI{312}V$ liegt. Die Arbeitsspannung $U_A$ des Zählrohrs, mit dem dann die eigentlichen Zählmessungen durchgeführt werden, sollte \SI{50}V bis \SI{100}V höher angesetzt werden, damit man sich tief im Plateau befindet. Im vorliegenden Fall wären somit Arbeitsspannungen von $U_A = \num{360}\ldots\SI{420}V$ zu empfehlen.
+
+Geiger-Müller-Zählrohre sind besonders zur Messung von $\beta$-Strahlung geeignet. Diese Strahlung kann dünnwandige Zählrohre (Glas, Wandstärke ca.~\SI{,1}{mm}) gut durchdringen und ionisiert das Zählgas hinreichend stark.
+
+\subsection{Versuchsaufbau}
+
+\begin{figure}[b!]\centering
+ \includegraphics[width=\linewidth*2/3]{GP1-PV-FotoMesskopf}
+ \caption{Messkopf für die Aktivitätsbestimmung (von links nach rechts: Anschlusskabel für das Zählgerät, Messbecher für die Untergrundmessung, Halterung mit Zählrohr und Bajonettfassung; darunter die PVC-Lichtschutzkappe) \label{fig::fotomesskopf}}
+\end{figure}
+
+\begin{figure}[b!]\centering
+ \includegraphics[width=\linewidth*2/3]{GP1-PV-Zaehlgeraet_USB}
+ \caption{Sicht auf das Gerät zum Betrieb des Zählrohrs. Die
+Zählrohrspannung $Det.-Voltage$ wird im virtuellen Strahlungsmessgerät am PC
+eingestellt. Das Ratemeter zeigt logarithmisch skaliert die Dichte der
+ankommenden Zählimpule an. \label{fig::fotozaehlgeraet}}
+\end{figure}
+
+\begin{figure}[b!]\centering
+ \includegraphics[width=\linewidth*3/4]{GP1-PV-LabView}
+ \caption{Ansicht des virtuellen Strahlungsmessgeräts, entwickelt im
+Elektronik-Labor des Instituts für Kern- und Teilchenphysik.
+\label{fig::labview}}
+\end{figure}
+
+Die Proben sind in der Zählrohrhalterung mit dem Bajonettverschluss (Abbildung~\ref{fig::fotomesskopf})zu
+arretieren. Anschließend wird die Lichtschutzkappe aus PVC über den Messkopf
+geschoben und es kann mit den Messungen begonnen werden.
+
+Die Elektronik zum Betrieb des Zählrohrs (siehe
+Abbildung~\ref{fig::fotozaehlgeraet}), entwickelt im Elektronik-Labor des
+Instituts für Kern- und Teilchenphysik, ist via USB mit einem PC verbunden. Unter LabView der Fa. ~\emph{National Instruments} wird nach Aufruf des Programms ``Radiometrie \& Zaehlstatistik'' ein virtuelles
+Strahlungsmessgerät zur Verfügung gestellt.
+
+Die Bedienung des Geräts ist selbsterklärend (siehe
+Abbildung~\ref{fig::labview}). Die sich während der Messungen
+aufbauenden beiden Grafiken mit berechnetem Mittelwert und Standardabweichung
+sollten nur informativ genutzt werden. Die statistische
+Auswertung der Messreihen erfolgt offline, was eine Abspeicherung der Messdaten nach jeder Messung erfordert.
+Dabei werden jeweils zwei Dateien mit den Messdaten in formatiertem Text unter D:\textbackslash DATA angelegt. 
+Die für weitere Auswertungen bevorzugte Datei der absoluten Häufigkeiten wird unter dem Dateinamen ``Gruppennummer--Datum--Uhrzeit.shv''  
+gespeichert.
+
+Für die weitere Verarbeitung steht Standardsoftware (Microsoft
+Excel${}^\text{\textregistered}$ und Microcal Origin${}^\text{\textregistered}$)
+zur Verfügung. Eine Nutzung dieser Möglichkeiten ist zur Lösung der
+Praktikumsaufgaben \textit{nicht} notwendig, erleichtert und beschleunigt die
+Arbeit aber sehr. Zur Orientierung sei auf die vorhandenen Hilfen und
+ausliegende Gerätebeschreibungen verwiesen.
+
+Begonnen wird mit der Messung der Standardprobe mit einer Aktivität $A_s(t_K)$
+zum Kalibrierzeitpunkt $t_K$. Vor der Lösung der eigentlichen Praktikumsaufgaben
+empfiehlt sich eine Orientierungsmessung. Dazu wird, beginnend mit $U_D =
+\SI{300}V$, durch vorsichtiges Erhöhen der Zählrohrspannung die Einsatzspannung
+$U_E$ ermittelt, bei der die ersten Impulse auftreten. Liegt diese über
+\SI{350}V, ist das Zählrohr höchstwahrscheinlich defekt. Nach der Ermittlung von
+$U_E$ wird die vorläufige Arbeitsspannung auf $\tilde U = U_E + \SI{100}V$
+festgelegt.
+
+\subsection{Messung der Zählrohrcharakteristik}
+
+Nun wird die Zählrate $Z$ des Zählrohrs in Abhängigkeit von der Detektorspannung $U_D$ im Bereich zwischen der Einsatzspannung $U_E$ und dem Plateau-Ende, höchstens jedoch bis zu einer Maximalspannung von \num{460} bis \SI{500}V, gemessen. Die Schrittweite der Spannungserhöhung sollte zunächst \SI4V betragen; nach Erreichen des Plateaus kann sie auf \num{20} bis \SI{40}V erhöht werden. Für alle diese Messungen ist die Messzeit so zu wählen, dass die relativen Standardabweichungen $\varepsilon_\sigma$ der Messwerte im Plateau kleiner als \SI5\% sind. Für die Darstellung einer Zählrohrcharakteristik sind \num{12} bis \num{15} Messpunkte ausreichend, die entsprechenden Messungen sollten in 20~Minuten abgeschlossen sein.
+
+Für eine feste Messzeit $\Delta t$ empfiehlt sich eine Darstellung $N = f(U_D)$. Die zufällige Messabweichung $\Delta N_z$ sollte für einen Vertrauensbereich von $\approx\SI{95}\%$ angegeben werden, es gilt also $\Delta N_z = 2\sigma_N = 2\sqrt N$. Auf die Darstellung eines Spannungsfehlers kann verzichtet werden, da dieser kleiner als \SI{\pm1}V ist und somit infolge des relativ geringen Plateauanstieges keine Bedeutung für die Genauigkeit der Messung hat.
+
+Aus der grafischen Darstellung $N = f(U_D)$ können die Einsatzspannung $U_E$, die Arbeitsspannung $U_A \approx U_E + \num{50}\ldots\SI{100}V$, die Länge des Plateaus sowie dessen absolute und relative Steigung abgelesen werden (letzteres in Einheiten \SI{}{V^{-1}} und $\nicefrac\%{\SI{100}V}$).
+
+
+\subsection{Relative Bestimmung einer unbekannten Aktivität}
+
+\begin{figure}[b]\centering
+ \includegraphics[width=\linewidth/2]{GP1-PV-Aktivitaetsbestimmung}
+ \caption{Grafische Darstellung der Messeffekte $N_1$, $N_0$ und $N$ für eine Messzeit von \SI{1000}s zur Bestimmung der unbekannten Aktivität (hier $A = \SI{2,2e7}{Bq}$) \label{fig::messeff}}
+\end{figure}
+
+Das \emph{Absolutverfahren} gestattet bei Kenntnis der Effektivität der Messanordnung die direkte Berechnung der Aktivität $A$ aus der Zählrate $Z$. Gebräuchlicher ist das \emph{Relativverfahren}. Dabei ruft eine bekannte Aktivität $A_1$ die Zählrate $Z_1$ hervor. Da jede Zählrate immer eine Kombination aus einem Nulleffekt und dem eigentlichen Nettoeffekt darstellt, muss ein Untergrundabzug vorgenommen werden. Die Untergrundzählrate $Z_0$ wird mit einer gleichartigen Probenhalterung ohne Anwesenheit eines radioaktiven Präparates gemessen.
+
+Ein Präparat mit der unbekannten Aktivität $A$ liefert dann einen Messeffekt $Z$. Wird von einem linearen Zusammenhang zwischen Messeffekt und Aktivität ausgegangen, folgt:
+\[
+ Z = Z_0 + \frac{Z_1 - Z_0}{A_1 - A_0} \cdot A
+\]
+Gilt $A_0 = 0$ und $Z = N / t_M$ ($N$ ist jeweils die gemessene Impulszahl und $t_M$ die aufgewendete Messzeit), vereinfacht sich die Beziehung bei gleichen Messzeiten $t_M$ zu:
+\[
+ N = N_0 + \frac{N_1 - N_0}{A_1} \cdot A,
+\]
+wobei $N$, $N_1$ und $N_0$ die gemessenen Impulszahlen für die unbekannte, die bekannte Aktivität sowie den Untergrund sind. Die Aktivitätsbestimmung erfolgt somit nach
+\begin{equation}
+ A = A_1 \cdot \frac{N - N_0}{N_1 - N_0}
+ \label{eqn::aktivitaetsbestimmung}
+\end{equation}
+Die berechnete Aktivität $A$ wird hierbei formal als Funktion $f(A_1,N,N_1,N_0)$ von vier Variablen betrachtet. Eine einfache grafische Darstellung dieses Zusammenhanges zeigt 
+Abbildung~\ref{fig::messeff}.
+
+Für alle drei Zählmessungen wird eine Gesamtmesszeit von jeweils \SI{1000}s vorgeschlagen.
+
+\subsection{Fehlerrechnung zur Aktivitätsbestimmung}
+
+Alle vier Größen zur Berechnung der unbekannten Aktivität gemäß \eqref{eqn::aktivitaetsbestimmung} werden experimentell bestimmt und sind somit fehlerbehaftet. Dabei ist konsequent zwischen systematischen und zufälligen Messabweichungen zu unterscheiden. Zur weiteren formalen Vereinfachung wird
+\[
+ A = A_1 \cdot \tilde f(N, N_1, N_0)
+\]
+gesetzt. Die Funktion $\tilde f$ ist dabei der Quotient
+\[
+ \tilde f(N, N_1, N_0) = \frac{N - N_0}{N_1 - N_0}
+\]
+der sogenannten Netto-Impulszahlen (Differenz aus Brutto- und Untergrundimpulszahlen). $\tilde f$ hat die physikalische Einheit $1$, da es sich um ein Verhältnis handelt.
+
+\subsection*{Berechnung der systematischen Messabweichung}
+
+Für die Berechnung der Messunsicherheit der Aktivität $A$ ist die Bildung der
+partiellen Ableitungen nach den vier unabhängigen Variablen $A_1$, $N$, $N_1$
+und $N_0$ notwendig ist. Es ergibt sich zunächst:
+\begin{align*}
+ \pdquot f{A_1} &= \tilde f                     & \pdquot f{N_1} &= A_1 \cdot \pdquot{\tilde f}{N_1} \\
+ \pdquot fN     &= A_1 \cdot \pdquot{\tilde f}N & \pdquot f{N_0} &= A_1 \cdot \pdquot{\tilde f}{N_0}
+\end{align*}
+
+Die auftretenden partiellen Ableitungen von $\tilde f$ lauten (mithilfe der
+Quotientenregel):
+\begin{align*}
+ \pdquot{\tilde f}N     &= \frac1{N_1 - N_0} &
+ \pdquot{\tilde f}{N_1} &= -\frac{N - N_0}{(N_1 - N_0)^2} &
+ \pdquot{\tilde f}{N_0} &= \frac{N - N_1}{(N_1 - N_0)^2}
+\end{align*}
+Eine systematische Messunsicherheit des Zählgerätes wirkt sich auf den
+berechneten Wert der Aktivität der unbekannten Quelle nicht aus, da man davon ausgehen kann, dass das Messgerät immer ein um einen konstanten Anteil
+zu kleines oder zu großes Zählergebnis liefert. Die systematische
+Messunsicherheit, die bedingt durch die nicht exakt gleiche
+Positionierung der Quellen in den Messbechern auftritt, wird mit einer relativen
+Messabweichung der Impulsraten von $\varepsilon_\mathrm{syst,N} = \SI{2}\%$
+abgeschätzt (95\% Sicherheit).
+Die relative systematische Messabweichung der Zählraten für die Quellen ist also immer gleich
+groß, für die Ungrundzählrate ist sie vernachlässigbar. Die Aktivität $A_1$ wurde mit einer relativen systematischen
+Messabweichung von $\varepsilon_\mathrm{syst,A} = \SI{3}\%$ bestimmt (95\%
+Sicherheit). 
+
+\begin{itemize}
+
+ \item \emph{(Für Physikstudenten)}
+
+Für die Berechnung der systematischen Messabweichung einer Funktion $f$ von $m$ unabhängigen (unkorrellierten)
+Variablen $x_i$ bevorzugt der Physiker das Gaußsche Fehlerfortpflanzungsgesetz:
+\begin{equation}
+ \Delta f_\mathrm{syst}^2 = \sum_{i=1}^m \kla{\pdquot f{x_i}}^2 \cdot
+\Delta x_{i,\mathrm{sys}}^2
+\end{equation}
+\verweis{papula3} \verweis{papula4} \verweis{bronstejn}.
+
+Für den vorliegenden Zusammanhang ergibt sich die systematische Messunsicherheit:
+
+\[
+ \Delta f_\mathrm{syst} = \sqrt{\kla{\tilde f \cdot \Delta A_{1,\mathrm{syst}}}^2 + A_1^2 \kla{\kla{\pdquot{\tilde f}N}^2 \Delta N_\mathrm{syst}^2 + \kla{\pdquot{\tilde f}{N_0}}^2 \Delta N_{0,\mathrm{syst}}^2 + \kla{\pdquot{\tilde f}{N_1}}^2 \Delta N_{1,\mathrm{syst}}^2}}
+\]
+
+und mit der Annahme einer 68\%-gen Sicherheit folgt:
+\begin{align*}
+ \Delta N_\mathrm{syst} = \num{0,5} \cdot \varepsilon_\mathrm{syst,N} \cdot N = \num{0,01}
+\cdot N  &
+ \num{ } &
+ \Delta A_{1,\mathrm{syst}} = \num{0,5} \cdot \varepsilon_\mathrm{syst,A} \cdot A_1 =
+\num{0,015} \cdot A_1
+\end{align*}
+
+Somit ist
+
+\begin{equation}
+ \Delta A_\mathrm{syst} = \Delta f_\mathrm{syst} = A_1 \cdot \sqrt{\kla{\frac{\varepsilon_\mathrm{syst,A}}{2} \cdot \tilde f}^2 + \frac{\varepsilon_\mathrm{syst,N}^2}{4} \kla{\kla{\pdquot{\tilde f}N}^2 N^2 + \kla{\pdquot{\tilde f}{N_1}}^2 N_1^2}}
+\end{equation}
+
+die endgültige Beziehung für die systematische Messabweichung der unbekannten Aktivität $A$.
+
+ \item \emph{(Für Studierende der Ingenieurwissenschaften)}
+
+Eine systematische Messabweichung einer Funktion $f$ von $m$ unabhängigen
+Variablen $x_i$ pflanzt sich unter der vereinfachten Berechnung der 
+maximalen Messunsicherheit
+\begin{equation}
+ \Delta f_\mathrm{syst} = \sum_{i=1}^m \abs{\pdquot f{x_i}} \cdot \abs{\Delta
+x_{i,\mathrm{sys}}}
+\end{equation}
+fort \verweis{papula3} \verweis{papula4} \verweis{bronstejn}.
+
+Für den vorliegenden Zusammanhang ergibt sich die systematische
+Messunsicherheit:
+\[
+ \Delta f_\mathrm{syst} = \tilde f \cdot \Delta A_{1,\mathrm{syst}}
+                        + A_1 \cdot \kla{\abs{\pdquot{\tilde f}N}     \cdot
+\abs{\Delta N_\mathrm{syst}}
+                                       + \abs{\pdquot{\tilde f}{N_0}} \cdot
+\abs{\Delta N_{0,\mathrm{syst}}}
+                                       + \abs{\pdquot{\tilde f}{N_1}} \cdot
+\abs{\Delta N_{1,\mathrm{syst}}}}
+\]
+
+und mit der Annahme einer 95\%-gen Sicherheit folgt:
+\begin{align*}
+ \Delta N_\mathrm{syst} = \varepsilon_\mathrm{syst,N} \cdot N = \num{0,02}
+\cdot N  &
+ \num{ } &
+ \Delta A_{1,\mathrm{syst}} = \varepsilon_\mathrm{syst,A} \cdot A_1 =
+\num{0,03} \cdot A_1
+\end{align*}
+
+Somit ist
+\begin{equation}
+ \Delta A_\mathrm{syst} = \Delta f_\mathrm{syst} = A_1 \cdot \kla{\varepsilon_\mathrm{syst,A} \cdot \tilde f + \varepsilon_\mathrm{syst,N} \cdot \kla{\abs{\pdquot{\tilde f}N} \cdot N + \abs{\pdquot{\tilde f}{N_1}} \cdot N_1}}
+ \label{eqn::systematischerfehler}
+\end{equation}
+die endgültige Beziehung für die maximale systematische Messabweichung der unbekannten Aktivität $A$.
+
+\end{itemize}
+
+\subsection*{Berechnung der Varianz der Aktivitätsbestimmung}
+
+Die Varianz $\sigma_f^2$ bzw. Standardabweichung $\sigma_f$ für einen Messwert, der als Funktion $f$ von $m$ unabhängigen Variablen $x_i$ darstellbar ist, berechnet sich nach dem Gaußschen Fehlerfortpflanzungsgesetz (auch \emph{Varianzfortplanzungsgesetz} genannt):
+\begin{equation}
+ \sigma_f^2 = \sum_{i=1}^m \kla{\pdquot f{x_i}}^2 \cdot \sigma_{x_i}^2
+\end{equation}
+Hierbei sind $\sigma_{x_i}^2$ die Varianzen der Variablen $x_i$. Für den konkreten Fall kann für $A_i$ keine zufällige Messabweichung gegeben werden, sodass
+\[
+ \sigma_A = A_1 \cdot \sqrt{\kla{\pdquot{\tilde f}N}^2 \cdot \sigma_N^2 +
+\kla{\pdquot{\tilde f}{N_0}}^2 \cdot \sigma_{N_0}^2 + \kla{\pdquot{\tilde
+f}{N_1}}^2 \cdot \sigma_{N_1}^2}
+\]
+gilt. Unter Beachtung von $\sigma_N^2 = N$ (und analog für $N_0$ und $N_1$) vereinfacht sich diese Gleichung zu
+\begin{equation}
+ \sigma_A = A_1 \cdot \sqrt{\kla{\pdquot{\tilde f}N}^2 \cdot N + \kla{\pdquot{\tilde f}{N_0}}^2 \cdot N_0 + \kla{\pdquot{\tilde f}{N_1}}^2 \cdot N_1}
+ \label{eqn::zufaelligerfehler}
+\end{equation}
+und es ist lediglich zu beachten, dass die schon zahlenmäßig bekannten partiellen Ableitungen von $\tilde f$ zu quadrieren sind. 
+
+\begin{itemize}
+ \item \emph{(Für Physikstudenten)}
+
+Die zufällige Messabweichung der gesuchten Aktivität wird für einen Vertrauensbereich von $\approx\SI{68}\%$ gemäß
+\[
+ \Delta A_z = \sigma_A
+\]
+angegeben. 
+
+ \item \emph{(Für Studierende der Ingenieurwissenschaften)}
+
+Die zufällige Messabweichung der gesuchten Aktivität wird für einen Vertrauensbereich von $\approx\SI{95}\%$ gemäß
+\[
+ \Delta A_z = 2 \cdot \sigma_A
+\]
+angegeben. Für diese Messaufgabe ist die Abschätzung einer maximalen Messunsicherheit mit einer Irrtumswahrscheinlichkeit von \SI5\% akzeptabel.
+
+\end{itemize}
+
+\subsection*{Angabe der gesamten Messabweichung der Aktivitätsbestimmung}
+
+\begin{itemize}
+ \item \emph{(Für Physikstudenten)}
+
+Für den Physiker ist es üblich, die systematische und statistische Messunsicherheit für einen Vertrauensbereich von $\approx\SI{68}\%$ getrennt anzugeben.
+
+ \item \emph{(Für Studierende der Ingenieurwissenschaften)}
+
+Die maximale Messabweichung der Aktivitätsbestimmung folgt durch Addition der zufälligen und systematischen Anteile:
+\[
+ \Delta A = \Delta A_\mathrm{syst} + \Delta A_z
+\]
+Die Angabe der relativen Messabweichung $\varepsilon_A = \nicefrac{\Delta A}A$, vorzugsweise in der Einheit \SI{}\%, sollte ebenfalls erfolgen.
+
+\end{itemize}
+
+\subsection*{Hinweise zur Fehlerbetrachtung}
+
+Bei der Versuchsdurchführung wird die Unsicherheit der Resultate im Wesentlichen durch Messabweichungen bei der Bestimmung der Zählrate $Z$ bzw. der Aktivität $A_1$ verursacht. Der Einfluss von Ungenauigkeiten bei der Einstellung der Detektorspannung bzw. bei der Zeitmessung kann vernachlässigt werden.
+
+Für die Fehlerrechnung ist es sinnvoll, die drei partiellen Ableitungen von $\tilde f$ numerisch zu berechnen. Welche physikalischen Einheiten haben diese Ableitungen? Mit einem Tabellenkalkulationsprogramm lassen sich leicht die jeweiligen Anteile der einzelnen Messeffekte an der systematischen und relativen Messabweichung der Aktivitätsbestimmung berechnen und saldieren. Ohne rechentechnische Hilfsmittel kann diese Rechnung auch einfach im Protokollheft erfolgen. Eine solche Vorgehensweise ist besser als die unmittelbare Eingabe der Beziehungen \eqref{eqn::systematischerfehler} und \eqref{eqn::zufaelligerfehler} in den Taschenrechner. Sie verringert die Gefahr eines groben Eingabefehlers und Sie erhalten ein Gefühl für den Einfluss der Einzelmesswerte auf die Messabweichungen.
+
+Ebenfalls sollte diskutiert werden, in welchem Maße die Verlängerung der Messzeit eine Erhöhung der Messgenauigkeit bewirkt. Was bedeutet das im Kontext der begrenzten Praktikumszeit für Ihre Versuchsplanung? Welche Messzeiten müssen am ehesten verlängert werden, um eine Verbesserung der Genauigkeit zu erzielen?
+
+\frage{In dieser Anleitung stehen mehrere Dutzende Gleichungen, die für eine halbwegs vollständige Darstellung des Stoffes notwendig sind. Für den eigentlichen Versuch brauchen Sie weit weniger Formeln. Bereits das Herausarbeiten dieser essentiell wichtigen Formeln stellt schon eine gute Art der Vorbereitung dar. Als Hilfestellung dienen Ihnen die folgenden Fragen.}
+
+\frage{Erarbeiten Sie sich ein Grundlagenwissen zur Radioaktivität (Definition, Größen und Einheiten, Zerfallstypen).}
+\frage{Wie kann der sogenannte Nulleffekt verringert werden?}
+\frage{Wann ist eine Aktivität auf ihren tausendsten bzw. millionsten Teil abgeklungen?}
+
+\frage{Unter welchen Bedingungen folgen bei Aktivitätsmessungen die ermittelten Impulszahlen einer Poisson-Verteilung?}
+\frage{Wie groß sind bei einer Zählmessung die Varianz und die Standardabweichung bei $N$ gemessenen Impulsen? Wie ist eine Messzeit $t_M$ festzulegen, wenn bei einer Zählmessung eine bestimmte Fehlergrenze für die relative zufällige Messabweichung unterschritten werden soll? (Formel!) Welche Informationen benötigen Sie zur Ermittlung dieser Messzeit?}
+
+\frage{Eine physikalische Größe $x$ soll durch eine Serie von $n$ Einzelmessungen bestimmt werden. (Es handelt sich im Allgemeinen nicht um Zählmessungen!) Wie lauten die fünf Formeln, mit denen man den Mittelwert sowie die Varianz und Standardabweichung der Einzelmesswerte bzw. des Mittelwertes ($\overline x$, $\sigma_x^2$, $\sigma_x$, $\sigma_{\overline x}^2$, $\sigma_{\overline x}$) ermittelt?}
+\frage{Wie hat die grafische Darstellung eines Zusammenhanges $M = f(x)$ zu erfolgen, wenn der Messeffekt das Resultat einer Zählmessung ist (siehe Abbildung~\ref{fig::zaehlrohrcharakteristik})?}
+\frage{Verifizieren Sie Gleichung \eqref{eqn::bspfehlerfortpflanzung}!}
+\frage{Für eine vorgegebene Gesamtmesszeit $t_\mathrm{ges} = t_b + t_0$ ist eine Optimierung der Aufteilung der Messzeiten für Brutto- und Nulleffektmessung vorzunehmen. In welchem Verhältnis $\eta = \nicefrac{t_b}{t_0}$ sollten die Messzeiten stehen, damit die zufällige Messabweichung minimal wird? (Die zu erwartenden Brutto- bzw. Nulleffektzählraten $Z_b$ und $Z_0$ sind näherungsweise durch Übersichtsmessungen bekannt.)}
+
+\end{document}
+
+% (1)  = eqn::zerfall
+% (4)  = eqn::expzerfall
+% (5)  = eqn::halbwert
+% (7)  = eqn::aktivitaet
+% (8)  = eqn::zaehlrate
+% (9)  = eqn::mittelwert
+% (10) = eqn::varianz
+% (12) = eqn::binom
+% (13) = eqn::binommittelwert
+% (14) = eqn::binom
+% (15) = eqn::binomvarianz
+% (16) = eqn::poisson-bedingung
+% (17) = eqn::poisson
+% (19) = eqn::gauss1
+% (20) = eqn::gauss2
+% (21) = eqn::verteilung
+% (22) = eqn::verteilung
+% (23) = eqn::gauss3
+% (24) = eqn::expmittelwert
+% (25) = eqn::expvarianz
+% (27) = eqn::expvarianzmittelwert
+% (30) = eqn::bspfehlerfortpflanzung
+% (31) = eqn::bspfehlerfortpflanzung
+% (34) = eqn::aktivitaetsbestimmung
+% (46) = eqn::systematischerfehler
+% (50) = eqn::zufaelligerfehler
+% T.1  = tab::zerfallsarten
+% A.1  = fig::zerfallsgesetz
+% A.2  = fig::poissonverteilung
+% A.4  = fig::gaussverteilung
+% A.5  = fig::gausssumme
+% A.6  = fig::realemesswerte
+% A.7  = fig::realemesswerte2
+% A.8  = fig::realemesswerte3
+% A.9  = fig::wahrscheinlichkeitsnetz
+% A.10 = fig::gmz
+% A.11 = fig::zaehlrohrcharakteristik
+% A.12 = fig::fotomesskopf
+% A.13 = fig::fotozaehlgeraet
+
+% [1]  = stolz
+% [3]  = papula3
+% [4]  = papulax
+% [5]  = bronstejn

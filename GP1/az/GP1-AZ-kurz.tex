@@ -1,0 +1,87 @@
+\documentclass[platz]{tudphygp}
+\usepackage{tudphymd,mhchem}
+
+\versuch{Adiabatische Zustandsänderungen}{AZ}
+
+\begin{document}
+\maketitle
+
+\subsection*{Aufgabenstellung} 
+
+Der Adiabatenexponent $\kappa = \frac{c_p}{c_v}$ von Luft ist auf folgende Arten zu bestimmen
+\begin{enumerate}
+ \item aus den Eigenfrequenzen einer mit offenen bzw. geschlossenen Hähnen schwingenden \ce{Hg}-Säule
+ \item nach der Methode von \textsc{Cl\`ement-Desormes}
+\end{enumerate}
+
+\section*{Hinweise zur Versuchsdurchführung}
+
+\subsection*{Schwingende Quecksilbersäule}
+
+\begin{enumerate}
+  \item Zur Bestimmung der Resonanz-Schwingungsdauern $T_\mathrm{o}^*$ (offene) und $T_\mathrm{zu}^*$ (geschlossene Hähne)
+ werden die U-Rohre in beiden Fällen mit Hilfe eines Motor-Antriebes zu erzwungenen
+ Schwingungen angeregt und zwei Resonanzkurven aufgenommen. Hierzu misst man die Amplitude der
+ erzwungenen Schwingung als Funktion der Anregungsfrequenz jeweils an sechs Messpunkten um die
+ Resonanzpunkte $T_\mathrm o^*$ und $T_\mathrm{zu}^+$ herum. Dabei wird für die jeweilige vom Motor vorgegebene
+ Frequenz die Schwingungsdauer über \num{50} Perioden $T$ gemittelt. Die den beiden
+ Resonanzpunkten zugeordneten Schwingungsdauern $T_\mathrm o^*$ und $T_\mathrm{zu}^*$ werden grafisch bestimmt und
+ unter Vernachlässigung der Dämpfung zur Auswertung benutzt.
+  \begin{figure}[ht]
+  \centering
+  \includegraphics[]{GP1-AZ-URohrn}
+  \caption{Kompletter Versuchsaufbau der Schwingenden Quecksilbersäule \label{fig::Aufbau}}
+ \end{figure}
+\item Die Frequenz wird mit der Drehzahlfeinregelung (Helipot mit 10 Umdrehungen) des Getriebemotors sehr genau eingestellt. Siehe Abbildung \ref{fig::Aufbau}
+ \end{enumerate}
+ \begin{enumerate}\setcounter{enumi}{2} %wenn das enumerate hier weitergeht, sind die items wegen dem parpic negativ eingerückt
+ \item Der Hahn 3 dient dem Luftdruckausgleich mit der Umgebung vor der Messung mit geschlossenen Hähnen 1 und 2 und wird vor dieser Messung nur kurzzeitig geöffnet und bleibt sonst geschlossen.
+ \item Die dem äußeren Luftdruck entsprechende Höhe $h_L$ der Quecksilbersäule wird mit dem
+ Quecksilberbarometer im Raum D113 gemessen.
+  \item Tragen Sie die Amplitude $X$ über der Schwingungsdauer $T_1$ auf, verwenden Sie dazu die veinfachte Form:
+ \begin{refequation}{10}
+  X \sim \frac{T_1}{T_2}
+ \end{refequation}
+ \item Der Adiabatenexponent folgt aus der Gleichung:
+ \begin{refequation}{9}
+  \kappa = \frac{V}{A h_L} \brk{\frac{T_o^{*2}} {T_{zu}^{*2}} - 1}
+ \end{refequation}
+\end{enumerate}
+
+\subsection*{Cl\`ement-Desormes}
+
+Führen Sie zehn Messungen nach folgendem Schema durch:
+\begin{enumerate}
+ \piccaption{Aufbau für den Versuch nach Cl\`ement-Desormes}
+ \parpic[r]{
+  \includegraphics[width=\linewidth/3]{GP1-AZ-Clement}
+ }
+ \item Nachdem der Federbolzen gespannt wurde, wird mit Hilfe der Handpumpe der Luftdruck in dem verschlossenen Gefäß um $\Delta p = \rho_w \cdot g h_1$
+ (ca. \SI{15}{cm} Wassersäule) \emph{erhöht} und dann das Ventil geschlossen. Dabei erhöht
+ sich die Temperatur der Luft in dem Gefäß leicht.
+ \item Danach wird ca. \emph{zwei Minuten} gewartet, bis die Temperatur im Gefäß wieder auf \emph{Raumtemperatur}
+ abgesunken ist und der Druck konstant bleibt.
+ \item Nun wird $h_1$ abgelesen und notiert.
+ \item Jetzt wird der Auslöser kurz gedrückt, so dass über den zurückschnellenden Federbolzen der Behälter für eine konstante kurze Zeit geöffnet und \emph{schnell} wieder
+ verschlossen wird. Bei der adiabatischen Expansion hat sich das Gasvolumen abgekühlt und es
+ erwärmt sich nun wieder bis zur Raumtemperatur, wonach der Druck wiederum konstant bleibt.
+ \item Zum Schluss wird $h_2$ abgelesen.
+ \item Der Adiabatenexponent $\kappa$ folgt aus der Beziehung:
+ \begin{refequation}{11}
+  \kappa = \frac{h_1}{h_1-h_2}
+ \end{refequation}
+\end{enumerate}
+
+\subsection*{Geräteparameter}
+
+\begin{table}[h!b]
+ \centering
+ \begin{tabular}{|ccc|}\hline
+      & Platz 1 & Platz 2 \\\hline
+  $V$ & \errSI{106,7}{,5}{cm^3} & \errSI{118,2}{,5}{cm^3} \\
+  $A$ & \errSI{62,1}{,6}{mm^2} & \errSI{54,7}{,1}{mm^2}\\\hline
+ \end{tabular}
+ \caption{Relevante Abmessungen des U-Rohrs am jeweiligen Versuchsplatz. Die Volumina in den Schenkeln eines U-Rohres sind jeweils gleich.}
+\end{table}
+
+\end{document}

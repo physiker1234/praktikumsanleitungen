@@ -1,0 +1,510 @@
+% \iffalse meta-comment
+%
+% Copyright 2009 by Felix Lemke <lemke.felix@ages-skripte.org>
+% Copyright 2009 by Stefan Majewsky <majewsky.stefan@ages-skripte.org>
+% -----------------------------------
+%
+% This file may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.2
+% of this license or (at your option) any later version.
+% The latest version of this license is in:
+%
+%     http://www.latex-project.org/lppl.txt
+%
+% and version 1.2 or later is part of all distributions of LaTeX
+% version 1999/12/01 or later.
+%
+% \fi
+%
+% \iffalse
+%<style>\NeedsTeXFormat{LaTeX2e}[2005/12/01]
+%<style>\ProvidesClass{tudphygp}
+%<style>   [2009/04/06 1.0RC1 Klasse für die Anleitungen des physikalischen Grundpraktikums]
+%
+%<*driver>
+\documentclass[ltxdoc]{tudphygp}
+ \usepackage[ngerman]{babel}
+ \usepackage[latin1]{inputenc}
+ \usepackage[T1]{fontenc}
+ \parindent0pt
+ \parskip.5em
+ \EnableCrossrefs
+ \CodelineIndex
+ \RecordChanges
+ \begin{document}
+  \DocInput{tudphygp.dtx}
+ \end{document}
+%</driver>
+%
+% \fi
+%
+% \CheckSum{459}
+%
+% \CharacterTable
+%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%   Digits        \0\1\2\3\4\5\6\7\8\9
+%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%   Dollar        \$     Percent       \%     Ampersand     \&
+%   Acute accent  \'     Left paren    \(     Right paren   \)
+%   Asterisk      \*     Plus          \+     Comma         \,
+%   Minus         \-     Point         \.     Solidus       \/
+%   Colon         \:     Semicolon     \;     Less than     \<
+%   Equals        \=     Greater than  \>     Question mark \?
+%   Commercial at \@     Left bracket  \[     Backslash     \\
+%   Right bracket \]     Circumflex    \^     Underscore    \_
+%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%   Right brace   \}     Tilde         \~}
+%
+% \DoNotIndex{\ifthenelse,\@ifundefined,\equal,\fi,\ifpdf,\NOT,\OR,\else,\IfFileExists,\@for,\do}
+% \DoNotIndex{\\,\arabic,\bfseries,\centering,\hfill,\hline,\item,\Large,\large,\linewidth,\makebox,\newpage,\parbox,\selectfont,\setlength,\small,\textsc,\texttt,\thepage,\today,\vskip,\vspace,\flushleft,\LARGE,\section,\flushright,\newline,\parskip,\resizebox,\vfill,\textbf}
+% \DoNotIndex{\begin,\end,\csname,\endcsname,\def,\edef,\endinput,\expandafter,\g@addto@macro,\global,\let,\newcommand,\newcounter,\PassOptionsToClass,\ProcessOptions,\protect,\relax,\renewcommand,\RequirePackage,\setcounter,\stepcounter,\includegraphics,\noexpand}
+% \DoNotIndex{\@temp@@newList,\@temp@Item}
+%
+% \changes{v0.1}{2009/02/21}{Initial Version}
+% \changes{v0.9}{2009/02/23}{beta1 (testing, but feature complete)}
+% \changes{v0.9}{2009/02/25}{beta2 (create tud@convertList)}
+% \changes{v1.0RC1}{2009/04/06}{first version for efficient working}
+% \changes{v1.0RC2}{2009/04/14}{new platz-option}
+% \changes{v1.0RC3}{2009/08/04}{new commands tud@printList (replaces tud@convertList) and optional}
+% \changes{v1.0RC4}{2009/08/04}{new frage* command}
+%
+% \GetFileInfo{tudphygp.cls}
+%
+% \title{Die \textsf{tudphygp}-Dokumentklasse\thanks{Dieses Dokument entspricht \textsf{\filename} Version \fileversion, \filedate}}
+% \author{Felix Lemke, Stefan Majewsky \\ \texttt{info@ages-skripte.org}}
+%
+% \maketitle
+% \begin{abstract}
+%  Diese Dokumentklasse ist optimiert auf die Anzeige von Praktikumsanleitungen des physikalischen Grundpraktikums der TU Dresden. Sie basiert auf der KOMA-Klasse |scrartcl|.
+% \end{abstract}
+%  \newpage
+% \tableofcontents
+% \newpage
+%
+% \section{Nutzung}
+%
+% \DescribeMacro{\documentclass\{tudphygp\}}
+% Die Dokumentklasse kann man mit |\documentclass|\oarg{Optionen}|{tudphygp}| einbinden. \oarg{Optionen} ist eine kommagetrennte Liste von optionalen Argumenten. Mögliches Argument ist |[ltxdoc]|, um statt der |scrartcl|- die |ltxdoc|-Klasse zu verwendet. Außerdem kann man für die Verwendung als Platzanleitung einen Parameter |platz| übergeben. Dieser ändert das Layout in eine etwas kompaktere Form.
+%
+% \DescribeMacro{versuch}
+% Der Befehl |\versuch|\marg{Versuchsname}\marg{Abkürzung} wird in der Präambel (d.h. vor |\begin{document}|) verwendet. Diese Informationen werden im Deckblatt und in der Kopfzeile verwendet. Zudem wird damit der Title des Dokuments in der Form |Versuchsname (Abkürzung)| festgelegt.
+%
+% \DescribeMacro{author}
+% \DescribeMacro{date}
+% Mit diesen beiden Befehlen werden weitere Informationen für das Deckblatt gesammelt. |\author|\marg{Autor} legt den ursprünglichen Autor der Versuchanleitung fest Dieses Argument kann auch eine kommagetrennte Liste sein. |\date|\marg{Datum} speichert das Datum der ersten Erstellung.
+%
+% \DescribeMacro{bearbeitet}
+% Wenn eine Anleitung nachträglich noch einmal bearbeitet wurde kann man mit |\bearbeitet|\marg{Name}\marg{Datum} dies als Information mit auf die Titleseite zu übernehmen. Das Argument \marg{Name} kann eine kommagetrennte Liste sein. Diese wird dann später aufgelöst und die Personen werden untereinander dargestellt.
+%
+% \DescribeMacro{buch}
+% Der Befehl |\buch|\marg{Alias}\marg{Autor}\marg{Title}\marg{Verlag}\marg{Erscheinungsdatum} speicht die gegeben Buchinformationen in einer Liste. Sobald ein Buch auf diese Weise definiert wurde, wird automatisch ein Literaturverzeichnis erstellt. Der Alias sollte kurz und \emph{eindeutig} gewählt sein, damit man später einfacher darauf verweisen kann. Wenn man auf ein definiertes Buch verweisen möchte, sollte man es vorher deklarieren. Es wird empfohlen die Liste der Bücher in der Präambel zu erstellen.
+%
+% \DescribeMacro{verweis}
+% Mit |\verweis|\oarg{Zusatz}\marg{Alias} kann man auf ein Buch, welchen mit diesem Alias definiert wurde, verweisen. Wenn dieses Buch zu dem Zeitpunkt noch nicht definiert ist, so gibt \LaTeX~eine Warnung aus. Der \oarg{Zusatz} dient dem Anhängen zusätzlichen Informationen, wie zum Beispiel einer Seitenzahl. Sowohl |\verweis| als auch das Literaturverzeichnis ist dem |\cite|-Befehl, bzw. der |\thebibliography|-Umgebung nachempfunden. Allerdings ist kein extra \emph{Bibtex}-Durchlauf nötig.
+%
+% \DescribeMacro{frage}
+% |\frage|\marg{Text} schreibt eine Frage oder auch Aufgabenstellung zur Vorbereitung in eine Liste. Sobald |\frage|  aufgerufen wird, wird am Dokumentende automatisch die gesammelte Liste der Fragen formatiert ausgegeben. Dieser Befehl kann an einer beliebigen Stelle in der Präambel oder im Dokument angewendet werden. Denkbar ist zum Beispiel zu Frage nach einem inhaltlich passenden Abschnitt zu stellen, damit die Konsistenz besser bewahrt werden kann.
+%
+% \DescribeMacro{maketitle}
+% Mit |\maketitle| wird das Deckblatt ausgegeben. Dieses wurde nach dem Vorbild der ursprünglichen Anleitungen erstellt. Es beinhaltet die mit |\versuch|, |\author| und |\date| festgelegten Werte. Außerdem wird automatisch das aktuelle Datum als Datum der letzten Erneuerung eingesetzt. Weiterhin wird auf der Titelseite das Inhaltsverzeichnis ausgegeben.
+%
+% \DescribeMacro{optional}
+% Der Befehl |\optional| kann einem Abschnittsbefehl (|\section| bis |\subsubsection|) vorangestellt werden, um diesen Abschnitt als optional bzw. fortgeschritten zu markieren. An der Abschnittsnummer erscheint dann ein Sternchen, so wie schwerere Aufgaben auf Übungsblättern oftmals mit einem Sternchen markiert werden.
+%
+% \DescribeMacro{changefont}
+% |\changefont|\marg{fontfamily}\marg{fontseries}\marg{fontshape} erlaubt es auf sehr kurze Weise das Schriftbild zu verändern.\\
+% |http://www.math.tu-dresden.de/~rudl/latex/fonts.pdf| gibt einen guten Überblick über die Möglichen Parameter.
+%
+% \DescribeMacro{tud@printList}
+% Der |\tud@printList|-Befehl gibt eine kommaseparierte Liste mit anderen Trennzeichen wieder aus. Das Standardtrennzeichen ist der Zeilenumbruch, dies kann durch Umdefinierung von |\tud@plSeparator| aber geändert werden.
+%
+% \section{Probleme und Wünsche}
+% Derzeit sind keine Probleme mit der Dokumentklasse \textsf{tudphygp} bekannt. Wir sind natürlich immer offen für Anregungen und konstruktive Kritik.
+%
+% \StopEventually{\PrintChanges\PrintIndex}
+% \section{Implementation}
+%
+% Um die Klassendokumentation zu bauen, wird die Option |ltxdoc| definiert. Dazu wird eine interne Variable definiert.
+%    \begin{macrocode}
+\DeclareOption{ltxdoc}{\def\tud@ltxdocIsLoaded{}}
+%    \end{macrocode}
+% Für die Platzanleitungen werden am Layout ein paar Änderungen vorgenommen.
+%    \begin{macrocode}
+\DeclareOption{platz}{\def\tud@buildAsPlatz{}}
+%    \end{macrocode}
+% Die \textsf{tudphygp} Dokumentklasse wird von der KOMA-Klasse |scrartcl| abgeleitet. Dazu werden alle nicht selbstdefinierten Optionen an die Klasse |scrartcl| weitergeleitet. Anschließende werden alle Optionen aus ausgeführt.
+%    \begin{macrocode}
+\DeclareOption*{\PassOptionsToClass{scrartcl}}
+\ProcessOptions\relax
+%    \end{macrocode}
+% Wenn die Optione |ltxdoc| gegeben wurde existiert die Variable |\tud@ltxdocIsLoaded| und die Klasse |ltxdoc| wird geladen. Anschließend wird das Einlesen der weiteren Klasse mit |\endinput| unterbunden. Im anderen Fall wird |scrartcl| genutzt.
+%    \begin{macrocode}
+\@ifundefined{tud@ltxdocIsLoaded}{%
+ \LoadClass[11pt]{scrartcl}
+ }{%
+ \LoadClassWithOptions{ltxdoc}\endinput}
+%    \end{macrocode}
+% Es sind weiter externe Pakete nötig, die für alle Praktikumsanleitung benutzt werden. Zudem wird an dieser Stelle das richtige Encoding gelade. Als erstes Paket wird |ifpdf| geladen. Dieses wird benötigt um das nächste Paket bedingt zu laden. |cmap| wird nur geladen, wenn man das Dokument als PDF baut. |cmap| speichert intern die Ligaturen als getrennte Buchstaben, damit sie beim Suchen erkannt werden können.
+%    \begin{macrocode}
+\RequirePackage{ifpdf}
+\ifpdf\RequirePackage{cmap}\fi
+\RequirePackage[ngerman]{babel}
+\RequirePackage[latin1]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{geometry}
+\RequirePackage{calc}
+\RequirePackage{tabularx}
+\RequirePackage{graphicx}
+\RequirePackage{amsmath,amssymb}
+\RequirePackage{sistyle}
+\RequirePackage{fancyhdr}
+\RequirePackage{ifthen}
+\RequirePackage[ngerman]{isodate}
+\RequirePackage{picins}
+%    \end{macrocode}
+%
+% Für die Anleitungen wird ein Seitenlayout festgelegt. Das geschieht mit Hilfe des |geometry|-Paketes, da hiermit die standardkonformen Verhältnisse eingehalten werden können. Weiterhin werden Kopf- und Fußzeile "`geleert"'. Erst mit dem ersten |\section|-Aufruf wird eine Kopfzeile erstellt.
+%    \begin{macrocode}
+\@ifundefined{tud@buildAsPlatz}{%
+ \geometry{a4paper,twoside,inner=2cm,top=2.8cm,bottom=2.2cm}
+}{%
+ \geometry{a4paper,left=2cm,top=2.8cm,bottom=2.2cm}
+}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{.5em}
+\setcounter{secnumdepth}{3}
+\SIstyle{German}
+\fancypagestyle{plain}{\pagestyle{fancy}}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead{}
+\fancyfoot{}
+\renewcommand\headrulewidth{0pt}
+\renewcommand\footrulewidth{0pt}
+%    \end{macrocode}
+% \begin{macro}{changefont}
+% Legt eine kürzere Schreibweise fest, um das Schriftbild zu wechseln
+%    \begin{macrocode}
+\newcommand\changefont[3]{%
+ \fontfamily{#1}\fontseries{#2}\fontshape{#3} \selectfont}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\versuch}
+% \begin{macro}{\bearbeitet}
+% \begin{macro}{\@versuchlabel}
+% \begin{macro}{\@versuch}
+% \begin{macro}{\@bearbeitetPerson}
+% \begin{macro}{\@versuchkurz}
+% \begin{macro}{\@bearbeitetDatum}
+% Intern werden die Befehle |\@versuch| und |\@versuchkurz| nach dem Vorbild von |\title| definiert. Anschließend wird der Titel aus dem Versuch zusammengesetzt. Ganz äquivalent wird |\bearbeitet| definiert.
+%    \begin{macrocode}
+\newcommand\versuch[3][Versuch:~]{\def\@versuchlabel{#1}\def\@versuch{#2}\def\@versuchkurz{#3}}
+\versuch{Versuchsname}{??}
+\title{\@versuch~(\@versuchkurz)}
+\newcommand\bearbeitet[2]{\def\@bearbeitetPerson{#1}}%\def\@bearbeitetDatum{#2}}
+\bearbeitet{}{}
+\author{}
+\date{}
+%    \end{macrocode}
+% \end{macro}
+% \end{macro}
+% \end{macro}
+% \end{macro}
+% \end{macro}
+% \end{macro}
+% \end{macro}
+%
+% \begin{macro}{\tud@Header}
+% In |\tud@Header| wir die Kopfzeile |\fancyhead| neu definiert. Anschließend wird |\sectionmark| neu definiert, damit bei jedem neuen Abschnitt die Kopfzeile angepasst werden kann. Die Kopfzeile selber besteht aus einer Tabelle |tabularx| über die komplette Seitenbreite, damit der |section|-Name zentriert zum Text dargestellt werden kann.
+%    \begin{macrocode}
+\newlength\tud@SideHeaderLength
+\newcommand\tud@Header[1]{%
+ \fancyhead[C]{%
+  \setlength\tud@SideHeaderLength{\widthof{\@versuchlabel\@versuchkurz}}
+  \begin{tabularx}{\linewidth}{%
+   @{}p{\tud@SideHeaderLength}@{}>{\centering}X@{}>{\hfill}p{\tud@SideHeaderLength}@{}}
+  \@versuchlabel\@versuchkurz & #1 & Seite~\thepage
+  \end{tabularx}\vskip-1em%
+}}%
+\renewcommand\sectionmark[1]{%
+ \renewcommand\headrulewidth{1pt}%
+ \tud@Header{#1}%
+}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\tud@printList}
+% \begin{macro}{\tud@plSeparator}
+% Das |\tud@printList|-Makro gibt eine kommaseparierte Liste mit anderen Trennzeichen wieder aus. Das Standardtrennzeichen ist der Zeilenumbruch, dies kann durch Umdefinierung von |\tud@plSeparator| aber geändert werden. In der Implementation verwenden wir den Befehl |\tud@plCurrentSep| als Trennzeichen. Das Trennzeichen wird in der |\@for|-Schleife vor jedem Element der Liste ausgegeben. Damit das Trennzeichen nicht schon vor dem ersten Listenelement erscheint, übernimmt |\tud@plCurrentSep| zu Beginn die Definition von |\tud@plInitSep|. Beim ersten Schleifendurchlauf wird deswegen kein Trennzeichen ausgegeben, sondern |\tud@plInitSep| evaluiert, was dazu führt, das |\tud@plCurrentSep| wieder auf das normale Trennzeichen gesetzt wird.
+%    \begin{macrocode}
+\newcommand\tud@printList[1]{%
+ \let\tud@plCurrentSep\tud@plInitSep
+ \@for\tud@plItem:=#1\do{%
+  \tud@plCurrentSep\tud@plItem%
+ }%
+}
+\def\tud@plInitSep{\let\tud@plCurrentSep\tud@plSeparator}
+\newcommand\tud@plSeparator{\newline}
+%    \end{macrocode}
+% \end{macro}
+% \end{macro}
+%
+% Die Abbildungen sollen von \LaTeX{} standardmäßig nummeriert werden, um Inkonsitenz zu vermeiden. Dazu wird aber der Untertitel angepasst. Damit sich das Layout nicht von \textsf{Babal} wieder geändert wird, werden die Formatierung erst am |\begin{document}| ausgeführt.
+%    \begin{macrocode}
+\renewcommand\capfont{\normalfont\small}
+\renewcommand\caplabelfont{\normalfont\small\bfseries}
+\AtBeginDocument{
+ \renewcommand\figurename{Abb.}
+}
+%    \end{macrocode}
+%
+% \begin{macro}{\maketitle}
+% Die Titelseite der |scrartcl|-Dokumentklasse wird überschrieben und durch eine kompaktere Version, die den ursprünglichen Anleitungen nachempfunden ist. |\tabularx| gibt die horizontale Einteilung, wobei die erste Spalte eine Breite erhält und die zweite Spalte sich anpasst. Dadurch ist gesichert, dass die Tabelle immer über die Linienbreite geht. |\numdate| sorgt für eine einheitliche Formatierung des Datums, sowohl für die letzte Aktualisierung, als auch für das Datum der ursprünglichen Erstellung. Zunächst wird allerdings die gegebene, kommagetrennte Liste der Personen konvertiert, indem das Komma durch ein geschützten |\newline|-Befehl ersetzt wird.
+%    \begin{macrocode}
+\@ifundefined{tud@buildAsPlatz}{
+ \renewcommand\maketitle{%
+  \numdate
+%    \end{macrocode}
+% Hier beginnt der eigentliche Kopf der Titleseite.
+%    \begin{macrocode}
+  \begin{tabularx}{\linewidth}{@{}|p{\linewidth/2+.8cm}|X|@{}}
+   \hline
+%    \end{macrocode}
+% |\parbox| sorgt für eine vertikal zentrierte Ausrichtung des Inhaltes. Die anschließende |minipage| über die gasamte Spaltenbreite sorgt mit |\centering| für eine horizontale Zentrierung.
+%    \begin{macrocode}
+   \parbox{\linewidth}{\vspace{1em}%
+    \begin{minipage}{\linewidth}%
+     \centering%
+%    \end{macrocode}
+% |\IfFileExists| überprüft, ob bei der Kompilierung das TUD-Logo gefunden wird und ersetzt es gegebenfalls durch eine Text um Fehler zu vermeiden. Die Unterscheidung mittels |\ifpdf| benötigt man, da für die Kompilierung als \emph{pdf} ein anderes Bildformat gebraucht wird, als die Kompilierung als \emph{dvi}.
+%    \begin{macrocode}
+     \ifpdf\IfFileExists{TUD-Logo(sw).pdf}{%
+       \includegraphics[width=\linewidth/2]{TUD-Logo(sw)}
+      }{{\LARGE\bfseries Technische Universität Dresden}}%
+     \else\IfFileExists{TUD-Logo(sw).eps}{%
+       \includegraphics[width=\linewidth/2]{TUD-Logo(sw)}
+      }{{\LARGE\bfseries Technische Universität Dresden}}%
+     \fi\\[1em]
+     {\large\bfseries Fachrichtung Physik}\\[.6em]
+     Physikalisches Grundpraktikum
+    \end{minipage}\vspace{1em}} &
+%    \end{macrocode}
+% Die zweite Spalte enthält auf ähnliche Weise die Funktionen. Es ist darauf zu achten, dass bei der Änderung der Höhe beide |\makebox|-Befehle angepasst werden die vertikale Zentrierung zu bewahren. |\printdate{\@date}| übergibt das in der Präambel definierte Datum an \emph{isodat} zur Formatierung. Aller Informationen werden nur angezeigt, wenn auch Werte angegeben sind.
+%    \begin{macrocode}
+   \parbox{\linewidth}{\vspace{1em}%
+    \begin{minipage}{\linewidth}\centering%
+     \resizebox{\linewidth/2}{!}{{\large \@versuchlabel}{%
+      \Large\changefont{cmr}{bx}{n}\@versuchkurz}}\\[1em]
+     \begin{tabularx}{\linewidth-.1cm}{l@{~}X}%\small\\%
+     \ifthenelse{\equal{\@author}{}}{}{Erstellt: & \tud@printList{\@author}\\}%
+% % %      \ifthenelse{\equal{\@date}{}}{}{& am \printdate{\@date}\\}%
+     \ifthenelse{\equal{\@bearbeitetPerson}{}}{}{\footnotesize Bearbeitet: & \footnotesize\tud@printList{\@bearbeitetPerson}\\}%
+     Aktualisiert: & am \today
+% % %      \ifthenelse{\equal{\@bearbeitetDatum}{}}{}{\ifthenelse{\equal{\@bearbeitetPerson}{}}{Bearbeitet:}{} & am \printdate{\@bearbeitetDatum}\\}%
+     \end{tabularx}
+   \end{minipage}\vspace{1em}}\\
+   \hline
+  \end{tabularx}\\[3em]
+%    \end{macrocode}
+% Hier wird der vollständige Name des Versuches ausgegeben. Die |\parbox| sorgt zum einen dafür, dass die Textformatierungen nur lokal gelten und sorgt gleichzeitig dafür, dass zu lange Text umgebrochen werden. Anschließend wird das Inhaltverzeichnis ausgegeben und eine neue Seite begonnen.
+%    \begin{macrocode}
+  \parbox{\linewidth}{%
+   \flushleft\fontsize{17}{17}\changefont{cmss}{bx}{n}\@versuch}
+  \vspace{3em}
+  \tableofcontents
+  \newpage
+ }
+}{%
+%    \end{macrocode}
+% Für die Ausgabe in der Platzanleitung wird ein wesentlich kompakterer Titel verwendet.
+%    \begin{macrocode}
+ \renewcommand\maketitle{%
+  \numdate
+  \begin{tabularx}{\linewidth}{@{}|p{\linewidth/2+.8cm}|X|@{}}
+   \hline
+   \parbox{\linewidth}{\vspace{1em}%
+    \begin{minipage}{\linewidth}%
+     \hspace{2ex}
+     \begin{minipage}[c]{4em}
+      \ifpdf\IfFileExists{TUD-Icon(sw).pdf}{%
+        \includegraphics[width=\linewidth]{TUD-Icon(sw)}
+       }{{\LARGE\bfseries Technische Universität Dresden}}%
+      \else\IfFileExists{TUD-Icon(sw).eps}{%
+        \includegraphics[width=\linewidth]{TUD-Icon(sw)}
+       }{}%
+      \fi
+     \end{minipage}\hspace{2ex}
+     \begin{minipage}[c]{\widthof{Physikalisches Grundpraktikum}}
+      {\Large\bfseries TU~Dresden}\\
+      {\large\bfseries Fachrichtung Physik}\\[1ex]
+      Physikalisches Grundpraktikum
+     \end{minipage}
+    \end{minipage}\vspace{1em}} &
+   \parbox{\linewidth}{\vspace{1em}%
+    \begin{minipage}{\linewidth}\centering%
+     \resizebox{4\linewidth/5}{!}{{\large Platzanleitung~}{%
+      \Large\changefont{cmr}{bx}{n}\@versuchkurz}}\\[1em]
+     \resizebox{4\linewidth/5}{!}{\@versuch}
+   \end{minipage}\vspace{1em}}\\
+   \hline
+  \end{tabularx}
+ }
+}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\optional}
+% Wir definieren die Zählerausgabebefehle für die Abschnittszähler um, und müssen sie dafür natürlich sichern.
+%    \begin{macrocode}
+\newcommand\optional[2]{
+ \let\tud@thesection\thesection
+ \let\tud@thesubsection\thesubsection
+ \let\tud@thesubsubsection\thesubsubsection
+ \def\thesection{\arabic{section}*}
+ \def\thesubsection{\arabic{section}.\arabic{subsection}*}
+ \def\thesubsubsection{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}*}
+%    \end{macrocode}
+% Hinter dem |\optional| folgt der Abschnittsbefehl und dessen Parameter, zum Beispiel |\optional\section{Test}|. Nun werden die Parameter wieder zusammengesetzt, damit der Abschnittsbefehl evaluiert wird.
+%    \begin{macrocode}
+ #1{#2}
+%    \end{macrocode}
+% Nachdem nun der Abschnittsbefehl evaluiert und damit der Zähler ausgelesen wurde, können die normalen Zähler wiederhergestellt werden.
+%    \begin{macrocode}
+ \let\thesection\tud@thesection
+ \let\thesubsection\tud@thesubsection
+ \let\thesubsubsection\tud@thesubsubsection
+}
+%    \end{macrocode}
+% \end{macro}
+%
+% Die beiden Listen |tud@listOfQuestions| und |tud@listOfLiterature| enthalten alle Fragen und Literaturangeben, müssen allerdings für das Anhängen von Informationen einmal leer erstellt werden.
+%    \begin{macrocode}
+\def\tud@listOfQuestions{}
+\def\tud@listOfLiterature{}
+%    \end{macrocode}
+%
+% \begin{macro}{frage}
+% Mit Hilfe der Makros |\g@addto@macro| wird der Liste |tud@listOfQuestions| die Frage angehängt. Jeder Frage wird ein |\item| vorangestellt, damit sie formatiert ausgegeben werden können. Das |\item| muss allerdings vor dem Expandieren mittels |\protect| geschützt werden.
+%    \begin{macrocode}
+\newcommand\frageWithoutStar[1]{%
+ \g@addto@macro{\tud@listOfQuestions}{\protect\item #1}
+}
+\newcommand\frageWithStar[1]{%
+ \g@addto@macro{\tud@listOfQuestions}{\protect\stepcounter{enumi}\protect\item[\arabic{enumi}.${}^*$] #1}
+ \global\def\tud@physikfrage{}
+}
+\def\frage{\@ifstar\frageWithStar\frageWithoutStar}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{buch}
+% Den Büchern wird eine eindeutige Nummer zugeordnet. Dazu wird ein Zähler mit dem Startwert |0| benötigt.
+%    \begin{macrocode}
+\newcounter{bookref}
+\setcounter{bookref}{0}
+%    \end{macrocode}
+% Für jedes Buch wird ein Befehl |\book@Alias| definiert, der die Informationen formatiert bereit hält. Zunächst wird aber getestet, ob es schon einen Befehl mit diesem Namen gibt. Wenn nicht, wird dieser angelegt. |\csname| generiert aus dem nachfolgenden Text (bin zu |\endcsname|) einen Befehlsnamen. Damit sind also auch Zahlen und andere Zeichen im Namen zugelassen. Weiterhin muss mit |\expandafter| verhindert werden, dass |\csname| durch |\def| neu definiert wird.
+%    \begin{macrocode}
+\newcommand\buch[5]{%
+ \expandafter\@ifundefined{book@#1}{%
+  \expandafter\def\csname book@#1\endcsname{%
+   #2,~\textit{#3},~#4,~#5%
+  }
+%    \end{macrocode}
+% Der Zähler der Buchnummerierung wird um Eins erhöht und in einem Befehl |\bookref@Alias| gespeichert. |\arabic| gibt den Zähler in der richtigen Formatierung aus und |\edef| sorgt dafür, dass der Befehl |\arabic| zunächst ausgeführt wird und anschließend das Ergebnis an |\bookref@Alias| weitergeben wird. Damit wird verhindert, dass bei der nächsten Countererhöhung sich der Wert für das Buch ändert.
+%    \begin{macrocode}
+  \stepcounter{bookref}
+  \global\expandafter\edef\csname bookref@#1\endcsname{\arabic{bookref}}
+%    \end{macrocode}
+% Nun wird der neue Inhalt der |tud@listOfLiterature| hinzugefügt. Wiederum muss das |\item| geschützt werden. Zudem erhält das Item ein optionales Argument mit der zugehörigen Buchnummer. Die |{}|-Klammer im optionalen Argument sorgen dafür, dass die Zugehörigkeit der |[]|-Klammern richtig interpretiert wird.
+%    \begin{macrocode}
+  \g@addto@macro\tud@listOfLiterature{%
+   \protect\item[{[\csname bookref@#1\endcsname]}] \csname book@#1\endcsname}
+  }{%
+%    \end{macrocode}
+% Dieser Codeteil wird ausgeführt, wenn der Buchalias bereits vergeben ist. Der \LaTeX-Lauf wird mit einem Hinweis abgebrochen, da das Überschreiben von Büchern zu schwer nachvollziehbaren Laufzeitfehlern führt.
+%    \begin{macrocode}
+  \ClassError{tudphygp}{%
+   Der Name `#1' ist bereits vergeben%
+  }{Geben sie einen neuen Namen für `#1' an.}%
+ }
+}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{tud@enddocument}
+% \begin{macro}{enddocument}
+% In |\tud@endocument| wird der originale |\enddocument|-Befehl zwischengespeichert. Anschließend wird |\enddocument| neudefiniert.
+%    \begin{macrocode}
+\let\tud@enddocument\enddocument
+\renewcommand\enddocument{%
+%    \end{macrocode}
+% Es wird geprüft ob die Liste der Fragen oder der Literaturverweise leer ist. Wurde ein Buch oder eine Frage (oder beides) gegeben, so wird eine neue Seite angelegt.
+%    \begin{macrocode}
+ \ifthenelse{%
+  \NOT\equal{\tud@listOfQuestions}{} \OR%
+  \NOT\equal{\tud@listOfLiterature}{}}{%
+   \vspace{1em}
+   \begin{minipage}{\textwidth}
+ }{}%
+%    \end{macrocode}
+% Nun werden beide Listen getrennt behandelt und nocheinmal geprüft, ob sie nicht leer sind. Diese "`doppelte"' Prüfung geschieht aufgrund von Lesbarkeit des Codes. Für die Abnschnitte werden jeweils eine neue |section| ohne Nummerierung angelegt. Jedoch werden sie in das Inhaltsverzeichnis aufgenommen. Zudem wird die Kopfzeile mit |\tud@Header| angepasst.
+%    \begin{macrocode}
+ \ifthenelse{\NOT\equal{\tud@listOfQuestions}{}}{%
+  \section*{Fragen}
+  \addcontentsline{toc}{section}{Fragen}
+  \tud@Header{Fragen}
+   \begin{enumerate}\setlength\itemsep{-0.2em}
+    \tud@listOfQuestions
+   \end{enumerate}
+ }{}%
+ \ifthenelse{\NOT\equal{\tud@listOfLiterature}{}}{%
+  \section*{Literatur}
+  \addcontentsline{toc}{section}{Literatur}
+  \tud@Header{Literatur}
+  \begin{itemize}\setlength\itemsep{-0.2em}
+   \tud@listOfLiterature
+  \end{itemize}
+ }{}
+%    \end{macrocode}
+% Nachdem die Fragen und das Literaturverzeichnis augegeben wurden, wird das ursprüngliche, in |\tud@enddocumen| gespeicherte Inhalt von |\enddocument| ausgeführt.
+%    \begin{macrocode}
+ \ifthenelse{%
+  \NOT\equal{\tud@listOfQuestions}{} \OR%
+  \NOT\equal{\tud@listOfLiterature}{}}{%
+   \end{minipage}
+  \@ifundefined{tud@physikfrage}{}{
+   \let\tud@savefootnote\thefootnote
+   \renewcommand\thefootnote{${}^*$}
+   \footnotetext{Nur für Physiker}
+   \renewcommand\thefootnote\tud@savefootnote
+  }
+ }{}%
+ \tud@enddocument%
+}
+%    \end{macrocode}
+% \end{macro}
+% \end{macro}
+%
+% \begin{macro}{verweis}
+% Zunächst wird geprüft, ob das Buch, auf das verwiesen wird bereits definiert ist, also ob der Befehl |book@Alias| vorhanden ist. Wenn nicht, gibt \LaTeX~eine Warnung aus.
+%    \begin{macrocode}
+\newcommand\verweis[2][]{%
+ \@ifundefined{book@#2}{%
+  \ClassWarningNoLine{tudphygp}{Das Buch `#2' wurde noch nicht definiert}
+}{%
+%    \end{macrocode}
+% Ist das Buch daklariert, so wird noch unterschieden, ob das optionale Argument gegeben ist, oder nicht. Im Fall mit zusätzlicher Informationen wird diese durch ein |,| getrennt an die Buchnummer angehängt.
+%    \begin{macrocode}
+ \ifthenelse{\equal{#1}{}}{%
+  [\csname bookref@#2\endcsname]%
+ }{%
+ [\csname bookref@#2\endcsname,~#1]%
+}}}
+%    \end{macrocode}
+% \end{macro}
+%
+% \newpage
+% \Finale

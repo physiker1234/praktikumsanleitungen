@@ -1,0 +1,177 @@
+\documentclass[11pt,twoside,a4paper]{article}
+\usepackage{verbatim}
+\usepackage{amsmath,amsthm}
+\usepackage{graphicx}
+\usepackage{color}
+
+\usepackage[german]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+
+\usepackage{fancybox}
+\usepackage{textcomp}
+\usepackage{fancyhdr}
+\usepackage{rotating}
+\setcounter{secnumdepth}{3}
+
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\raggedleft\arraybackslash}X}
+\newcolumntype{Z}{>{\centering\arraybackslash}X}
+
+\textheight			25cm
+\textwidth			16.5cm
+\topmargin			-1cm
+\oddsidemargin		0cm
+\evensidemargin	-0.42cm
+
+\pagestyle{fancy}
+
+ \title{Versuch DI \\ Diffusion \\}
+ \author{bearbeitet von \\ M. Kreller \\ i.A. Dr. Escher}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{table}[h]
+\begin{tabular}{|c|c|}
+\hline
+& \\
+\hspace{0.7cm} \begin{LARGE}Technische Universität Dresden \end{LARGE} \hspace{0.7cm} & \hspace{1cm}Physikalisches Praktikum \hspace{1cm} \\
+\begin{large} Fachrichtung Physik \end{large}               & \\
+\begin{footnotesize} Dr. G. Merz \end{footnotesize}            & Versuch:
+\begin{LARGE} DI \end{LARGE} \\
+\begin{footnotesize} bearbeitet 03/ 2004 \end{footnotesize} & \\
+\hline
+\end{tabular}
+\end{table}
+\begin{huge}\textbf{Diffusion}\end{huge}
+
+\tableofcontents
+\newpage
+
+\section{Aufgabenstellung}
+	Der Diffusionskoeffizient zwischen einer $NaCl-$ Lösung und destilliertem Wasser ist mit der
+	Schlierenmethode nach \textsc{Wiener} zu bestimmen.
+
+\section{Grundlagen}
+	Werden zwei unterschiedliche, aber mischbare Flüssigkeiten übereinandergeschichtet, wird die
+	anfänglich scharfe Grenze zwischen beiden Flüssigkeiten allmählich verwaschen. Diese gegenseitige
+	Durchmischung beider Molekülsorten als Folge der molekularen Wärmebewegung wird als Diffusion
+	bezeichnet.\vspace{.3cm}\\
+	\begin{minipage}{9cm}
+	Betrachtet man einen Zylinder von Querschnitt $A$ (Abb. 1), dessen Achse in der z- Richtung
+	verläuft, und nimmt man an, dass in der Ebene an der Stelle $z$ die Konzentration $c$, in einer
+	benachbarten Ebene an der Stelle $z+dz$ die Konzentration $c-dc$ aufrecht erhalten werden, dann
+	besteht zwischen beiden Ebenen das Konzentrationsgefälle $dc/dz$. Nach dem 1. \textsc{Fick}schen
+	Gesetz (1855) beträgt die Substanzmenge $dN$ (Molzahl), die in der Zeit $dt$ durch den Querschnitt
+	A in Richtung der z- Achse hindurchwandert
+	\begin{equation}
+	dN= - D \cdot A \dfrac{dc}{dc} dt
+	\end{equation}
+	wobei die Größe D als Diffusionskonstante bezeichnet wird.\\
+	\end{minipage}\hspace{.5cm}
+	\begin{minipage}{7cm}
+	\begin{center}
+	\includegraphics[scale=0.4]{abb1}\\
+	Abb. 1: Zum Massetransport bei der Diffusion
+	\end{center}
+	\end{minipage}\vspace{.3cm}\\
+	Der zeitliche Ablauf der Diffusion wird durch das 2. \textsc{Fick}sche Gesetz beschrieben. nimmt
+	man an, dass zum Zeitpunkt $t=0$ die Begrenzungsebene zwischen beiden Flüssigkeiten bei $z=0$ in
+	engen Kontakt gebracht wird, so wird die Konzentration $c$ sowohl eine Funktion des Ortes als auch
+	der Zeit. Es ergibt sich in diesem Fall die Differentialgleichung
+	\begin{equation}
+	\left(\frac{dc}{dt} \right)_x = D \left( \frac{d^2c}{dz^2} \right)_t
+	\end{equation}
+	Da die Brechzahl für monochromatisches Licht von der Anzahldichte der wirksamen Moleküle abhängt,
+	und sich innerhalb der Diffusionszone zweier mischbarer Flüssigkeiten die Konzentration und damit
+	die Anzahldichte optisch wirksamer Moleküle ständig ändert, wird ein Gefälle der Brechzahl in
+	diesem Gebiet erreicht.\\
+	\begin{minipage}{11cm}
+	In Gebieten mit einem Brechzahlgradienten werden Lichtbündel mit gekrümmten Grenzen betrachtet. Aus
+	Abb. 2 entnimmt man:
+	\begin{equation}
+	\begin{array}{c}
+	ds_1 = d\phi \cdot (r + dr)\\
+	ds_2 = d \phi \cdot r
+	\end{array}
+	\end{equation}
+	und für die optische Wellenlänge gilt:
+	\begin{equation}
+	ds_1 \cdot (n -dn) = ds_2 \cdot n
+	\end{equation}
+	Der Krümmungsradius eines Strahls am Ort $x$ ergibt sich damit:
+	\begin{equation}
+	r = \frac{n}{dn/dr}
+	\end{equation}
+	\end{minipage}\hspace{.5cm}
+	\begin{minipage}{4cm}
+	\begin{center}
+	\includegraphics{abb2}\\
+	Abb. 2: Zur Ableitung des Krümmungsradius
+	\end{center}
+	\end{minipage}\\
+	Ein senkrecht zum Konzentrationsgefälle einfallender Lichtstrahl wird in Richtung zunehmender
+	Konzentration gebrochen. Wenn sich die Diffusionszone in der vertikalen z- Richtung ausbildet, wird
+	der Lichtstrahl ebenfalls in der z- Richtung abgelenkt. Mit dem Fortschreiten der Diffusion wird
+	das Konzentrationsgefälle und damit auch die Ablenkung des Lichtstrahls immer geringer. Aus der
+	zeitlichen Änderung des maximalen Ablenkwinkels des Lichtes in z- Richtung $z_{max}$ kann auf die
+	zeitliche Änderung des Konzentrationsgefälles in der Diffusionszone geschlossen werden.\\
+	Für den Diffusionskoeffizienten erhält man:
+	\begin{equation}
+	\begin{array}{c}
+	D=\frac{1}{z_{max}^2 \cdot t} \frac{d^2 \cdot a^2 \cdot (n_2 - n_1)^2}{4 \cdot \pi}\\
+	D=\frac{1}{\alpha} \frac{d^2 \cdot a^2 \cdot (n_2 - n_1)^2}{4 \cdot \pi}\\
+	\end{array}
+	\end{equation}
+	\begin{tabular}{l l}
+	d: & durchstrahlte Flüssigkeitsdicke \\
+	a: & Abstand zwischen Mitte des Diffusionsgefäßes und Projektionsschirms \\
+	$n_1$: & Brechzahl des Lösungsmittels \\
+	$n_2$: & Brechzahl der Lösung
+	\end{tabular}
+
+\section{Versuchsdurchführung}
+	In einer Küvette K werden die beiden Flüssigkeiten sorgfältig übereinandergeschichtet. Ein Spalt
+	S, der unter 45° gegen die Waagerechte geneigt ist, wird auf dem Projektionsschirm F abgebildet.
+	Die Lichtstrahlen, die den Trog in verschiedener Tiefe (z- Richtung) durchsetzen, werden
+	entsprechend dem Konzentrationsgefälle abgelenkt. Die maximale Ablenkung $z_{max}$ kann aus dem
+	Projektionsbild entnommen werden (Abb. 3). Mit der Messung von $z_{max}$ kann ab Werten von $25...
+	30 cm$ begonnen werden.\\
+	\begin{minipage}{8cm}
+	Aus der grafischen Darstellung der zeitlichen Änderung von $z_{max}$ in geeigneter Form kann die
+	Größe $\alpha$ berechnet werden. Die für die Berechnung der Diffusionskonstanten benötigten
+	Brechzahlen können mit einem Refraktometer bestimmt werden.\vspace{.2cm}\\
+	Die Diffusionsküvette und die Vorratsbehälter sind in Abb. 4 schematisch dargestellt. Zur
+	Herstellung der Trennschicht sind folgende Schritte erforderlich:
+	\begin{itemize}
+		\item Füllen der vorratsbehälter B1 mit der $NaCl-$ Lösung und B2 mit destilliertem Wasser.
+		\item Füllen der Küvette (Diffusionsgefäß) mit destilliertem Wasser aus B2 nach B3.\\
+		\underline{Achtung!} Sehr langsam füllen um Luftblasen in den Leitungen und in der Küvette zu
+		vermeiden. Stellung des Zweiwegehahns H1 beachten.
+		\item Unterschichten der $NaCl-$ Lösung aus B1, bis die Trennschicht oberhalb von Hahn H4 steht.\\
+		\underline{Achtung!} Sehr langsam unterschichten, um ein Durchmischen in größeren Teilen der
+		Küvette zu vermeiden.
+	\end{itemize}
+	\end{minipage}\hspace{.5cm}
+	\begin{minipage}{9cm}
+	\begin{center}
+	\includegraphics[scale=0.5]{abb3}\\
+	Abb. 3: Schema des experimentellen Aufbaus\vspace{.3cm}\\
+	\includegraphics{abb4}\\
+	Abb. 4: Diffusionsküvette
+	\end{center}
+	\end{minipage}
+	\begin{itemize}
+		\item Herstellen einer scharfen Trennschicht mittels Tropfhahn H4.\\
+		\underline{Achtung!} Nach badarf Wasser aus B3 oder $NaCl-$  Lösung aus B1 nachströmen lassen
+	\end{itemize}
+
+\section{Fragen}
+	\begin{enumerate}
+		\item Wie hängt die Diffusionskonstante von der Temperatur ab?
+		\item Was versteht man unter der Diffusionsgeschwindigkeit und wie hängt sie mit der
+		Diffusionskonstanten zusammen?
+		\item Wie ist die grafische Darstellung $f_{max}=f(t)$ zu gestalten, um die Größe $\alpha$ zu
+		bestimmen?
+	\end{enumerate}
+\end{document}

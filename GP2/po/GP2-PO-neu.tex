@@ -1,0 +1,447 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd,mhchem}
+
+\versuch{Polarisation}{PO}
+\author{L.~Jahn, H.~Lichte }
+\bearbeitet{S.~Socher,i.~A. Dr.~Escher}{}
+
+\buch{1}{Bergmann, Schäfer}{Lehrbuch der Experimentalphysik III - Optik}{de Gruyter, Berlin, New York}{1993}
+\buch{2}{H.-J.~Paus}{Physik in Experimenten und Beispielen}{V. C.-Hanser, München}{1995}
+\buch{3}{E.~Hecht}{Optik}{Add. Wesley}{1989}
+\buch{4}{W.~Ilberg, M.~Krötsch, D.~Geschke, P.~Kirsten, W.~Schenk, A.~Schneider, H.~Schulze}
+ {Physikalisches Praktikum für Anfänger}{Leipzig}{1994}
+\buch{5}{Recknagel}{Physik - Optik}{Verlag Technik Berlin}{1990}
+\buch{6}{W.~Walcher}{Praktikum der Physik}{V. Teubner, Stuttgart}{1989}
+
+\begin{document}
+\maketitle
+
+\section{Aufgabenstellung}
+
+\begin{enumerate}
+ \item Mit einem Polarimeter wird der Drehwinkel der Polarisationsebene von monochromatischem Licht an einem Quarz-Kristall und einer 
+ Zuckerlösung bestimmt.
+ \item Bestimmung der Drehrichtung mit weißem Licht anhand der Rotationsdispersion.
+ \item An einer Flüssigkeit ist die Verdetsche Konstante zu messen.
+\end{enumerate}
+
+\section{Grundlagen}
+
+\subsection{Linear polarisiertes Licht}
+
+Licht ist eine elektromagnetische Transversalwelle, wobei sich die Vektoren $\vec{E}(z,t)$ (die elektrische Feldstärke) bzw. $\vec{H}(z,t)$ 
+(die magnetische Feldstärke, im folgenden nicht betrachtet) wellenförmig im Vakuum mit Lichtgeschwindigkeit $c_0 = \frac{\omega}{k} = 
+f \cdot \lambda = \sqrt{\frac{1}{\varepsilon_0 \mu_0}}$, im Folgenden in $z$-Richtung, ausbreiten. Der einfachste Ansatz führt auf eine 
+ebene Welle, die z. B. der partiellen Differentialgleichung für $E_y$ genügt
+
+\begin{equation} \label{wellengl}
+\frac{\partial^2 E_y}{\partial z^2} = \frac{1}{c^2} \cdot \frac{\partial^2 E_y}{\partial t^2}
+\quad \text{mit der Lösung} \quad
+E_y = \hat{E} \cdot \mbox{e}^{j(\omega t - kz)}.
+\end{equation}
+
+Gleichung (\ref{wellengl}) beschreibt eine ebene, in $y$-Richtung linear polarisierte Transversalwelle, die sich in positiver $z$-Richtung 
+ausbreitet. Die damit festgelegte Schwingungsebene SE (Polarisationsebene) des elektrischen Feldvektors ist die $y-z$-Ebene.
+
+\subsection{Natürliches und polarisiertes Licht}
+
+\begin{itemize}
+ \item Natürliches Licht ist ein Gemisch von Transversalwellen, deren $\vec{E}$-Vektoren statistisch verteilt in allen Raumrichtungen und 
+ damit auch in der $x-y$-Ebene schwingen.
+ \item Die Schwingungsrichtung jeder natürlichen Teilwelle enthält Komponenten sowohl in $x$- als auch in $y$-Richtung.
+ \item Durch einen Polarisator wird aus natürlichem Licht polarisiertes Licht hergestellt.
+ \item Der Polarisationsgrad $(0 \le V \le 1)$ gibt den Anteil der Intensität des polarisierten im Vergleich zum gesamten Licht an d.h.
+ \begin{equation*}
+ V = \frac{I_p}{I_p + I_u}.
+ \end{equation*}
+ \item Polarisation ist das Ausfiltern einer Schwingungsrichtung (hier $y$-Richtung) durch Ausnutzung eines der folgenden Effekte:
+ 
+ \textbf{Polarisatoren} (1, 2, 3 hauptsächlich genutzt):
+ \begin{enumerate}
+  \item Reflexion an dielektrischen Grenzschichten (z. B. Glasplatten);
+  \item Doppelbrechung (Kristalle, z B. Nicolsches Prisma);
+  \item Dichroismus (starke Dämpfung einer Schwingungsrichtung, z.B. Turmalin; Polarisationsfolien);
+  \item Streuung (z.B. Rayleigh-Streuung an Luft).
+ \end{enumerate}
+\end{itemize}
+
+\subsection{Zirkular polarisiertes Licht}
+
+Beschreibt die Projektion des elektrischen Feldvektors eine Kreisbahn in der $x-y$-Ebene (Spiralbahn), so spricht man mit Blick gegen 
+die Ausbreitungsrichtung  ($z$-Richtung) von rechts- bzw. links-zirkular polarisiertem Licht, wenn neben
+
+\begin{equation*}
+E_y = \hat{E} \cdot \mbox{e}^{j(\omega t - kz)}
+\end{equation*}
+
+auch
+
+\begin{equation}
+E_x^r = \hat{E} \cdot \mbox{e}^{j(\omega t - kz + \frac{\pi}{2})}
+\quad \text{und} \quad 
+E_x^l = \hat{E} \cdot \mbox{e}^{j(\omega t - kz - \frac{\pi}{2})}
+\end{equation}
+
+gilt. Bei festem Ort $z$ entspricht dies einer Kreisschwingung, z.B. für eine Linksdrehung 
+
+\begin{equation*}
+\vec{E} (t) = \hat{E}_y \vec{e}_y \cos \omega t + \hat{E}_x \vec{e}_x \cos (\omega t - \frac{\pi}{2} )
+\quad \text{sowie} \quad
+E^2 = E_y^2 + E_x^2 = \hat{E}^2 ( \cos^2 \omega t + \sin^2 \omega t)
+\end{equation*}
+
+Überlagert man zu gleichen Anteilen rechts- und links-zirkular polarisiertes Licht, so resultiert wieder linear polarisiertes Licht.\\
+Die Herstellung von zirkular polarisiertem aus linear polarisiertem Licht erfolgt z.B. durch ein $\frac{\lambda}{4}$-Plättchen (s.u.).
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centering{\includegraphics[height=3.0cm]{abb1.png}} 
+\fi 
+\captionof{figure}{Rechts zirkular polarisierte monochromatische Lichtwelle \label{abb1}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+\subsection{Polarisatoren}
+
+Mit einem Polarisator P, dessen Durchlaßrichtung im folgenden die $y$-Richtung sei, wird nur die $y$-Komponente durchgelassen. Zwei mechanische  
+Analogien sollen kurz die Wirkungsweise eines solchen Polarisators verdeutlichen: 
+
+\begin{itemize}
+ \item Eine erste Analogie wäre ein Rost aus in $y$-Richtung ausgerichteten Stäben (Zaun), durch die sich transversale Seilwellen nur dann 
+ ungeschwächt ausbreiten, wenn die Schwingungsrichtung die $y$-Richtung ist.
+ \item  Im Gegensatz dazu lässt ein Rost aus Metallstäben von senkrecht auftretenden Mikrowellen nur die Komponenten durch, die senkrecht zu 
+ den Stäben orientiert sind, da die Parallelkomponente durch sehr starke Dämpfung vernichtet wird (Beispiel für Dichroismus).
+\end{itemize}
+
+Wird eine zweite, gleiche Einrichtung, der Analysator A, in den weiteren Strahlengang gebracht, so kann die Vorzugsrichtung von P dadurch 
+kontrolliert werden, dass bei der Stellung von A in $x$-Richtung (gekreuzte Polarisatoren) Dunkelheit (bzw. ein Minimum an Lichterregung) 
+beobachtet wird.
+
+Für die von A und P durchgelassene Komponente gilt das Gesetz von Malus. Dabei wird die Abhängigkeit der hinter A beobachteten Intensität vom 
+Winkel $\vartheta$ zwischen P und A betrachtet. Die Amplitude genügt im Vakuum der Beziehung $e(\vartheta) \propto \hat{E}_0 \cos \vartheta$. Daher 
+gilt für die Intensität
+
+\begin{equation}
+E^2(\vartheta) \propto J (\vartheta) = J_0 \cos^2 \vartheta.
+\end{equation}
+
+\subsubsection{Polarisatoren aus Prismen, Doppelbrechung}
+
+Optisch einachsige Kristalle (z.B. Quarz oder Kalkspat) zeigen eine Anisotropie in der Dielektrizitätskonstanten (DK), damit auch in der 
+Phasengeschwindigkeit ($c_e \ne c_o$) und in der Brechzahl ($n_e = \frac{c_0}{c_e}; \, n_o = \frac{c_0}{c_o}$). Gilt $c_o < c_e$ (Quarz), d.h. 
+$n_e > n_o$, so spricht man von einem positiv doppelbrechenden Kristall (siehe Tab. 2). Der ordentliche (ordinäre) $o$-Strahl verhält sich offenbar 
+so, wie man es vom isotropen Glas kennt, wobei das Brechungsgesetz in bekannter Weise gilt. Der extraordinäre $e$-Strahl verhält sich, bedingt durch 
+die abweichende Polarisation, anders.
+
+Nur in einer ausgezeichneten Richtung, der optischen Achse OA sind die Brechzahlen gleich. Senkrecht dazu ist der Unterschied am größten. Zur 
+simplen Veranschaulichung kann man ein Modell mit unterschiedlichen Kopplungsfedern in den 3 Raumrichtungen betrachten (Abbildung \ref{abb2}).
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centering{\includegraphics[height=5.0cm]{abb2.png}} 
+\fi 
+\captionof{figure}{Mechanisches Modell für die Anisotropie der DK \label{abb2}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+Ein Hauptschnitt HS des Kristalls enthält die OA. $o$- und $e$-Strahl sind senkrecht zueinander polarisiert. Der $o$-Strahl ist senkrecht zum 
+HS, der $e$-Strahl parallel zum HS linear polarisiert.
+
+Im Nicolschen und auch Glan-Thompson-Prisma wird erreicht, dass der $e$-Strahl mit dem größeren $n_e$ Wert zur weiteren Benutzung das Prisma 
+verlässt, während der $o$-Strahl totalreflektiert und am Gehäuse absorbiert wird, da der $n_k$-Wert des Kanadabalsams zwischen $n_e$ und $n_o$ für 
+Kalkspat liegt ($n_o > n_k > n_e$).
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centering{\includegraphics[height=6.0cm]{abb3.png}} 
+\fi 
+\captionof{figure}{Nicolsches (a) und Glan-Thompson-Prisma (b)[6] \label{abb3}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+\subsection{Optische Aktivität, Rotationsdispersion}
+
+Substanzen, die die SE drehen, heißen optisch aktiv. Wird ein solches Medium zwischen die gekreuzten P und A gebracht, so beobachtet man eine 
+gewisse Aufhellung, die erst durch Weiterdrehen von A um den zu messenden Winkel $\alpha$ verschwindet.
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centering{\includegraphics[height=6.0cm]{abb4.png}} 
+\fi 
+\captionof{figure}{Rechts- bzw. linksdrehende Milchsäure (a); rechts- bzw. linksdrehender Quarz (b) \label{abb4}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+Der Drehwinkel $\alpha$ der 
+Polarisationsebene hängt ab vom Lichtweg (Probenlänge $d$) und der spezifischen Drehung $\gamma$ (inklusive Vorzeichen), als Eigenschaft der 
+Substanz (siehe Abbildung \ref{abb4}):
+
+\begin{equation*}
+\alpha = \pm \gamma \cdot d 
+\quad \text{mit} \quad
+\gamma \propto \frac{n_r - n_l}{\lambda}.
+\end{equation*}
+
+$\gamma$ hängt auch von der Wellenlänge ab (Rotationsdispersion). Die optische Aktivität ist bedingt durch die Symmetrie-Eigenschaften der 
+Kristalle bzw. der gelösten Moleküle bei Flüssigkeiten (Abbildung \ref{abb4}), womit unterschiedliche Lichtgeschwindigkeiten bzw. Brechzahlen 
+($n_r \ne n_l$) für die links- und rechts-drehende zirkular polarisierten Wellen verbunden sind (zirkulare Doppelbrechung). Bei einem razemischen 
+Gemisch kompensieren gleiche Anteile einer rechts- und einer links-drehenden Lösung die Drehung der SE.
+
+\subsubsection{Optische Aktivität im Kristall}
+
+Wird ein doppelbrechender Kristall im HS senkrecht zur OA zwischen die gekreuzten P und A gebracht, so beobachtet man eine Drehung der SE. Linear 
+polarisiertes Licht kann aufgefasst werden als Superposition einer rechts und einer links zirkular polarisierten Welle.\\
+Linear polarisiertes Licht kann als Superposition einer rechts und einer links zirkular polarisierten Welle aufgefasst werden.
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centering{\includegraphics[height=5.0cm]{abb5.png}} 
+\fi 
+\captionof{figure}{$\frac{\lambda}{4}$-Platte zur Erzeugung von (links, 1) zirkular polarisiertem Licht \label{abb5}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+Im Kristall ist die Differenz der $n$-Werte ($n_l - n_r$) für rechts- und linksdrehende zirkular polarisierte Wellen unterschiedlich, jedoch um 2 Größenordnungen geringer als ($n_e - n_o$) und von der Wellenlänge abhängig (Rotationsdispersion, Abbildung \ref{abb6}).
+
+\subsubsection{Herstellung von zirkular (aus linear) polarisiertem Licht}
+
+Die Dicke $d$ einer $\frac{\lambda}{4}$-Platte ist gerade so bemessen, dass gilt $(n_e - n_o) d = \frac{\lambda}{4}$ (Abbildung \ref{abb5}). Denn $o$- 
+und $e$-Strahl erfahren in diesem Fall keine Richtungsänderungen, sondern nur unterschiedliche Phasenverschiebungen. Nach der $\frac{\lambda}{4}$-
+Platte beträgt $\triangle \varphi$ gerade $\frac{\pi}{2}$ und eine zirkular polarisierte Welle läuft weiter.\\
+Kleine Phasenverschiebungen, die mit geringen Drehungen der SE (z.B. wenige Grad) verbunden sind, werden z.B. mit der Laurent-Platte (s.u.) im 
+Halbschatten-Polarimeter erzeugt.
+
+Wegen der Rotationsdispersion beobachtet man bei Beleuchtung mit weißem Licht bei rechtsdrehenden Substanzen bei Rechtsdrehung von A die 
+Komplementärfarbe der jeweils ausgelöschten Komponente. Sind die Längen $d$ groß, kommt es zu Überlagerungen von Spektren unterschiedlicher Ordnung. 
+Blaues Licht wird stärker gedreht als rotes Licht (Abbildung \ref{abb6}).
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centering{\includegraphics[height=6.0cm]{abb6.png}} 
+\fi 
+\captionof{figure}{Rotationsdispersion von Quarz [2], $d = 1~\mathrm{mm}$ \label{abb6}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+\subsection{Faraday-Effekt}
+
+Substanzen, die nicht optisch aktiv sind (z.B. Wasser, Benzol, Toluol, siehe Tab. 1), zeigen unter dem Einfluss eines Magnetfeldes 
+$\vec{H} = H_z \vec{e}_z$ ebenfalls eine Drehung der SE. Diese Magnetorotation lässt sich mit der (wellenlängenabhängigen) Verdetschen Konstanten $V$ 
+(siehe Tab. 1) beschreiben, wobei das Vorzeichen von $\alpha$ sich mit der Richtung von $\vec{H}$ umkehrt. Ist das Feld in $z$-Richtung inhomogen 
+($H_z = H_z(z)$), so gilt
+
+\begin{equation} \label{rotationsdisp}
+\alpha = V \cdot \int\limits_0^d \! H_z(z) \mbox{d}z 
+\quad \text{(homogen:} \quad
+\alpha = V \cdot d \cdot H_z).
+\end{equation}
+
+\section{Versuchsdurchführung}
+
+\subsection{Halbschatten-Polarimeter}
+
+Die Messung des Drehwinkels erfolgt meist mit dem Halbschatten-Polarimeter nach Lippich (Abbildung \ref{abb7}). Es ermöglicht einen parallelen 
+Strahlengang, der die beiden Nicolschen Prismen als Polarisatoren (P,A)
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centering{\includegraphics[height=2.0cm]{abb7.png}} 
+\fi 
+\captionof{figure}{Halbschatten-Polarimeter \label{abb7}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+sowie die Küvette durchsetzt und zum Meßfernrohr gelangt, das sich im Zentrum eines Winkelmessers befindet. Zur Verbesserung der Winkelauflösung 
+ist im Strahlengang ein Zusatzprisma P' (oder auch einer Laurent-Platte, $\frac{\lambda}{2}$-Quarzplatte) angebracht, das im oberen Teilstrahl 
+eine zusätzliche Drehung der SE um den geringen Winkel $2 \delta$ bewirkt.\\
+Man stellt den Analysator deshalb so ein, dass beide Gesichtsfelder gleich "`grau"' erscheinen.
+
+\subsection{Messung des Faraday-Effekts}
+
+Die ca. $40~\mathrm{cm}$ lange Küvette, an deren Ende sich P und A befinden, ist von einer kurzen dicken Zylinderspule mit inhomogener Feldverteilung 
+umgeben, innerhalb derer für die magnetische Feldstärke nicht mehr gilt $H = N \cdot \frac{I}{l}$ (lange Spule), sondern
+
+\begin{equation} \label{faraday}
+H \approx C \cdot I 
+\end{equation}
+
+Zur Auswertung wird ein Relativverfahren benutzt: Einen mittleren $C$-Wert (Gerätekonstante) erhält man durch einen Vergleich mit dem Faradayeffekt 
+an einer bekannten Flüssigkeit mit $V_0$. Deshalb wird im Vorversuch $\alpha_0(I)$ bestimmt und damit $C$ und danach $\alpha_x$ bzw. $V_x$ anhand der
+Gleichungen (\ref{rotationsdisp} und (\ref{faraday}) im Relativverfahren, bezogen auf den gleichen Stromanstieg $\triangle I$, berechnet:
+
+\begin{equation}
+V_x = V_0 \frac{\alpha_x}{\alpha_0} \cdot \frac{d_0}{d_x}.
+\end{equation}
+
+\subsection{Messung der Drehrichtung}
+
+Misst man ausgehend von gekreuzten "`Nicols"' (Dunkelstellung) mit monochromatischem Licht nach Einbringen der Probe mit konstanter Länge $d$ den 
+Drehwinkel $\alpha$, so ist eine Unterscheidung vom Komplementärwinkel ($360° - \alpha$) schwierig.\\
+Zur Unterscheidung von rechts- bzw. linksdrehend wird mit Hilfe von weißem Licht anhand der Rotationsdispersion die natürliche spektrale Farbfolge 
+(Abbildung \ref{abb6}) beim Drehen von A zu Hilfe genommen. Man beachte, dass die Komplementärfarbe der jeweils ausgelöschten Komponente beobachtet 
+wird. Jedoch können die erwähnten Überlagerungen verschiedener Ordnungen bei dickeren Quarzplatten zu Komplikationen führen.
+
+\section{Anhang}
+
+\subsection{Polarisation durch Reflexion, Brewstersches Gesetz}
+
+Fällt monochromatisches linear polarisiertes Licht unter dem Einfallswinkel $\alpha$ auf eine Glasplatte, so wird eine Teilwelle reflektiert und 
+eine andere dringt in die Glasplatte ein.\\
+Die Intensitäten von gebrochenem und reflektiertem Strahl hängen ab von $\alpha$ und von der SE der einfallenden Welle. Außerdem unterscheiden sich 
+beide Strahlen in ihrer Polarisationsrichtung. Mit den Fresnelschen Formeln (Gleichung (\ref{fresnel})) werden bezüglich der Einfallsebene die 
+Amplituden von gebrochenen (t) und reflektiertem (r) für beide Polarisationsrichtungen $(\bot; \|)$ theoretisch berechnet. In Abbildung \ref{abb8} 
+ist ein Ergebnis für den reflektierten Anteil dargestellt. 
+
+\begin{align} \label{fresnel}
+q_{\bot r} \frac{E_{\bot r}}{E_{e \bot}} = - \frac{\sin (\alpha - \beta)}{\sin (\alpha + \beta)} \quad (a); \quad &
+q_{\bot t} \frac{E_{\bot r}}{E_{e \bot}} = \frac{2 \cos \alpha \sin \beta}{\sin (\alpha + \beta)} \quad (b) \nonumber \\
+q_{\| r} \frac{E_{\| r}}{E_{e \|}} = - \frac{\tan (\alpha - \beta)}{\tan (\alpha + \beta)} \quad (c); \quad &
+q_{\| t	} \frac{E_{\| r}}{E_{e \|}} = \frac{2 \cos \alpha \sin \beta}{\sin (\alpha - \beta)} \quad (d) 
+\end{align}
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centering{\includegraphics[height=5.0cm]{abb8.png}} 
+\fi 
+\captionof{figure}{Winkelabhängigkeit für die Amplitude des reflektierten Strahles (A, Fresnelschen Formeln (\ref{fresnel} a,b)); mikroskopisches
+Modell (B) \label{abb8}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+Beim Polarisationswinkel $\alpha_p$ stehen reflektierter (r) und gebrochener (t) Strahl senkrecht aufeinander $(\alpha_p + \beta = 90°; \cos \alpha_p 
+= \sin \beta)$, woraus mit dem Brechungsgesetz das Brewstersche Gesetz folgt: $\tan \alpha_p = n$. Bei $\alpha_p$ verschwindet die Parallel-Amplitude 
+und das reflektierte Licht ist vollständig linear polarisiert, wenn natürliches Licht einfällt. Die Elektronen des Mediums strahlen als kleine angeregte Hertzsche Dipole nur senkrecht zu ihrer Schwingungsrichtung ab (Abbildung \ref{abb8} b).
+
+\subsection{Polarisation durch Dichroismus}
+
+\textbf{Dichroismus:} Zweifarbigkeit, Farbe hängt von SE ab. Doppelbrechende Kristalle, z.B. auch Kalkspat, besitzen unterschiedliche 
+Resonanzfrequenzen und damit auch Absorptionen in den drei Raumrichtungen, die aber meist im UV-Spektralbereich liegen.\\
+Beim trigonal kristallisierenden Turmalin (kompliziertes Borsilikat) ist diese Eigenschaft für grünes Licht besonders stark ausgeprägt (Abbildung 
+\ref{abb9}). Infolge dieser bezüglich der SE selektiven Absorption sind sie als Polarisatoren geeignet.
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centering{\includegraphics[height=5.5cm]{abb9.png}} 
+\fi 
+\captionof{figure}{Dichroismus im Turmalin-Kristall, Abhängigkeit der Absorption von der SE \label{abb9}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+\subsubsection{Polarisationsfolie}
+
+Sogenannte Polarisationsfilter bestehen z.B. aus Folien, in die kleine Kristallnadeln aus Jod-Chinin-Sulfat mit ausgeprägtem Dichroismus eingebettet 
+wurden. Diese Nadeln müssen zur optimalen Ausnutzung des Dichroismus gut orientiert, d.h. parallel ausgerichtet sein. Es werden Polarisationsgrade 
+von über 99\% erreicht. In einer anderen Variante wird die Spannungsdoppelbrechung von gestreckter Zellulosehydratfolie ausgenutzt [1].
+
+\subsubsection{Streuung}
+
+Tritt natürliches Licht in in $z$-Richtung ein Gas ein, so werden die Moleküle zu Schwingungen angeregt und können als kleine (Hertzsche) Dipole, die statistisch in der $x-y$-Ebene schwingen, angesehen werden. Dabei kommt als Schwingungsrichtung des seitlichen in $x$-Richtung beobachteten Streulichtes 
+nur die $y$-Richtung in Frage, da keine $z$-Komponente existiert. Benachbarte Richtungen zeigen partielle Polarisation. Die Intensität ist sehr stark wellenlängenabhängig $\left( \propto \frac{1}{\lambda^4}; \; \text{Rayleigh} \right)$.
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centering{\includegraphics[height=6.0cm]{abb10.png}} 
+\fi 
+\captionof{figure}{Streuung von natürlichem Licht an Luftmolekülen \label{abb10}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+\subsection{Laurent-Platte}
+
+Die $\frac{\lambda}{2}$-Quarz-Platte ist mit ihrer OA bezüglich der SE des einfallenden linear polarisierten Lichtes um den kleinen Winkel $\delta$ 
+verdreht. Im Kristall breiten sich $o$- und $e$-Strahl, in die das einfallende Licht zerlegt wird, unterschiedlich schnell aus (optisch positiv: 
+$c_o < c_e$). Am Ende des Kristalls beträgt der Phasenunterschied $\triangle \varphi = \frac{2 \pi d}{\lambda_0} (n_e - n_0) = \pi$ und die SE der 
+resultierenden linear polarisierten Welle ist um $2\delta$ verdreht (ein Drehung der SE um $\pi$ ist nicht nachzuweisen, Abbildung \ref{abb11}).
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centering{\includegraphics[height=6.0cm]{abb11.png}} 
+\fi 
+\captionof{figure}{Drehung der SE durch die Laurent-Platte Indizes: $\lambda_0$ Vakuum; $n_o$ ordinär; $n_e$ extraordinär. \label{abb11}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+\subsection{Zum doppelbrechenden Kristall}
+
+Der optisch einachsige doppelbrechende Kristall ist bei einem Hauptschnitt so geschliffen, dass die optische Achse in der Schnittebene liegt. \\
+In der optischen Achse stimmen die $c$-Werte überein. In allen anderen Richtungen gibt es zwei Geschwindigkeiten $c_o$ und $c_e$ infolge der 
+Anisotropie des Tensors der Dielektrizitätskonstanten. Daher sind beim "`schiefen"' Fall (Einstrahlung ist nicht parallel zu OA bzw. senkrecht 
+dazu) die Vektoren $\vec{E}$ und $\vec{D}$ nicht mehr parallel. Die Phasengeschwindigkeit wird abhängig von der Polarisationsrichtung.
+
+Die Abbildung \ref{abb12} zeigt sogenannte Wellenflächen, in denen die Lichtgeschwindigkeit im Medium in Abhängigkeit von der Richtung dargestellt 
+ist. Das linke Bild betrifft den optisch negativen Kristall ($c_o > c_e; \; n_e > n_o$; z.B. Kalkspat), das rechte den positiven ($c_o < c_e; \; n_o 
+> n_e$; z.B. Quarz).
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centering{\includegraphics[height=2.5cm]{abb12.png}} 
+\fi 
+\captionof{figure}{Wellenflächen im negativ (a) und positiv (b) einachsigen Kristall \label{abb12}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+\newpage
+
+\subsection{Tabellen}
+
+\begin{center}
+
+
+\begin{tabular}{|c|c|}
+\hline
+Stoff 				& $V$ [Winkelminuten pro Ampere] \\
+\hline
+Natriumchlorid		&	0,0467 \\
+Quarz				&	0,0209 \\
+Monobromnaphtalin	&	0,1029 \\
+Benzol				&	0,0380 \\
+Wasser				&	0,1083 \\
+\hline
+\end{tabular}
+
+\textbf{Tab. 1:} Verdetsche Konstanten für \ce{Na}-Licht ($V = \frac{\alpha}{dH}$ ; [$H$]=A/m]).
+
+\bigskip
+
+\begin{tabular}{|c|c|c|c|}
+\hline
+Kristall	& $n_o$ 	& $n_e$  & Bezeichnung der Doppelbrechung \\
+\hline
+Quarz		& 1,5442	& 1,5533 &  positiv\\
+Kalkspat	& 1,6584 	& 1,4864 &  negativ \\
+\hline
+\end{tabular}
+
+\textbf{Tab. 2:} Brechzahlen für optisch einachsige Kristalle für \ce{Na}-Licht.
+
+\end{center}
+
+\frage{Wie beschreibt man mathematisch eine ebene linear polarisierte elektromagnetische Welle bezüglich des E- und H-Feldes?}
+\frage{Wie kann man Licht polarisieren? Wozu benötigt man Kanadabalsam im Nicolschen Prisma?}
+\frage{Was sind die Einfalls- und die Schwingungsebene? Herleitung des Brechungsgesetzes mit Hilfe des Modells der Elementarwellen!}
+\frage{Wie verlaufen Lichtwellen im anisotropen Kristall (Kalkspat, Quarz)?}
+\frage{Was versteht man unter dem Faraday- und dem Kerr-Effekt? Worauf beruhen die LCD-Anzeigen?}
+\frage{Welche wesentlichen Bestandteile hat ein Polarimeter?}
+\frage{Was ist Dispersion und Rotationsdispersion?}
+\frage{Wie funktioniert eine $\frac{\lambda}{4}$-Platte zur Erzeugung von zirkular polarisiertem Licht?}
+\frage{Skizzieren Sie im rechtwinkligen Koordinatensystem für eine Ausbreitung in $z$-Richtung: die Schwingungsebene von linear polarisiertem 
+Licht; eine rechts- und links drehende zirkular polarisierte Welle; den Durchgang einer linear polarisierten Welle durch eine 
+$\frac{\lambda}{4}$-Platte.}
+\frage{Was versteht man unter elliptisch polarisiertem Licht?}
+\frage{Warum ist bei Lichtwellen in Nichtleitern das E-Feld maßgebend?}
+
+\end{document}
+ 
+ 

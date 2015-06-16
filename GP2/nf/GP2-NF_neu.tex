@@ -1,0 +1,281 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd,subfigure,listliketab}
+\usepackage[version=3]{mhchem}
+\versuch{Nichtleiter im elektrischen Feld}{NF}
+\author{P.~Eckstein, R.~Schwierz}
+
+\buch{1}{L.~Bergmann, C.~Schaefer}{Lehrbuch der Experimentalphysik, Band 2: Elektromagnetismus}{Verlag de Gruyter}{Berlin 1999}
+\buch{2}{W.~Demtröder}{Experimentalphysik~2: Elektronik und Optik}{Springer-Verlag}{Berlin, Heidelberg 1994}
+\buch{3}{H.~J.~Eichler, H.~D.~Kronfeldt, J.~Sahm}{Das neue physikalische Grundpraktikum}{Springer-Verlag}{Berlin, Heidelberg [u.a.] 2006}
+\buch{4}{H.~A.~Stuart, G.~Klages}{Kurzes Lehrbuch der Physik}{Springer-Verlag}{Berlin, Heidelberg 2005}
+
+\begin{document}
+\maketitle
+
+\section{Ziel und Aufgabenstellung}
+Wichtige Kenngrößen eines Dielektrikums sind neben der Durchschlagsfestigkeit und dem Isolationswiderstand die Permittivitätszahl 
+(auch als relative Permittivität, Dielektrizitätszahl oder relative Dielektrizitätskonstante bezeichnet)   
+und der Verlustfaktor. Das Ziel des Versuchs besteht in der Bestimmung der Permittivitätszahl $\epsilon_r$ eines Nichtleiters. 
+Zu diesem Zweck wird der Einfluss verschiedener fester Nichtleiter, die zwischen den Elektroden eines Kondensators 
+gebracht werden, auf die Kapazität dieses Kondensators untersucht.
+\begin{enumerate}
+ \item Einstellen, Beobachten und Dokumentieren von elektrischen Spannungsverläufen am Oszilloskop.
+ \item Festlegung des Kalibrierungsbereiches und Aufnahme der Kalibrierungskurve.
+ \item Bestimmung der Kapazität des Zylinderkondensators als Funktion der Dielektrikum-Fülltiefe und grafische Darstellung dieser Abhängigkeit.
+ \item Ermittlung der Permittivitätszahl $\epsilon_r$
+\end{enumerate}
+
+\section{Grundlagen}
+\subsection{Dielektrika}
+Bringt man zwischen die Platten eines Kondensators, der mit der Ladung $Q$ aufgeladen wurde, einen Isolator - ein sogenanntes Dielektrikum, 
+so bleibt die Ladung $Q$ auf den Platten konstant, die Spannung $U$ zwischen den Platten sinkt.  
+Da die elektrische Feldstärke $E$ im Plattenkondensator proportional der Spannung $U$ zwischen den Platten ist, sinkt auch sie um den gleichen Faktor.  
+Was ist der Grund für diese Verringerung der Stärke des elektrischen Feldes?
+Werden elektrische Ladungen in ein elektrisches Feld gebracht, so erfolgt durch die Kraftwirkung auf diese Ladungen im Allgemeinen 
+eine Verschiebung der Ladungen. In Isolatoren sind Ladungsträger jedoch nicht frei beweglich, sondern können nur innerhalb des Atoms 
+oder Moleküls verschoben werden. Erst durch das "`Anlegen"' eines elektrischen Feldes werden in den Atomen eines Nichtleiters die 
+Ladungsschwerpunkte der negativen Elektronenhüllen und der positiven Kerne getrennt. Unter der Wirkung des äußeren elektrischen Feldes 
+werden diese Atome zu elektrischen Dipolen. Diese Dipole werden als induzierte Dipole bezeichnet, der Vorgang dieser Dipolbildung als 
+Polarisierung.\\
+Im Gegensatz dazu können in Molekülen die Ladungsschwerpunkte der negativen und positiven Ladungen auch ohne das 
+Vorhandensein eines äußeren elektrischen Feldes getrennt sein. Aufgrund ihrer zufälligen Ausrichtung im Nichtleiter können diese 
+elementaren Dipole erst durch das "`Anlegen"' eines äußeren elektrischen Feldes ausgerichtet und damit nachgewiesen werden. Unabhängig 
+davon, ob die Dipole durch Polarisierung entstanden sind und sich im äußeren Feld ausrichten oder ob sich die permanenten Dipole nur 
+im äußeren Felde ausrichten, wird die Vektorsumme aller elementaren Dipolmomente pro Volumeneinheit als Polarisation $\vec P$ bezeichnet, bzw.
+anders formuliert, sind die durch das äußere elektrische Feld erzeugte Polarisationsladungen der Dichte $\rho_{Pol}$ die Quellen der elektrischen Polarisation $\vec P$.
+Beachtet man, dass in einfachen homogenen Dielektrika bei nicht zu großen elektrischen Feldern der Polarisationsvektor $\vec P$ in Richtung des äußeren elektrischen Feldes $\vec E$ zeigt, also 
+\begin{equation*}
+\vec P=\chi_e \epsilon_0 \vec E
+\end{equation*} 
+($\chi_e$ ist materialabhängig und heißt elektrische Suszeptibilität) und ein elektrisches Feld, welches nur durch die Polarisationsladungen bedingt würde, entgegen dem äußeren elektrischen Feld gerichtet ist, folgt 
+\begin{equation*}
+div\vec P=-\rho_{Pol} 
+\end{equation*} 
+Das elektrische Feld, welches von der Dichte aller Ladungen bestimmt wird, wird im Dielektrikum aus der Dichte der freien Ladungen 
+$\rho_{frei}$ und der Dichte der erzeugten Polarisationsladungen $\rho_{Pol}$ bestimmt, also
+\begin{equation*}
+\epsilon_0 div \vec E=\rho_{frei}+\rho_{Pol} 
+\end{equation*} 
+Die Verschiebungsdichte wird nur von den freien Ladungen bestimmt, so dass gilt: 
+\begin{equation*}
+div \vec D=\rho_{frei}=\epsilon_0 div \vec E+ div \vec P=\epsilon_0 div (\vec E + \chi_e \vec E)=\epsilon_0 \epsilon_r div \vec E
+\end{equation*} 
+Für die Permittivität $\epsilon$ bzw. für die relative Permittivität oder auch Permittivitätszahl $\epsilon_r$ folgt damit
+\begin{equation*}
+\epsilon=\epsilon_0 \epsilon_r=\epsilon_0 (1+\chi_e)
+\end{equation*}
+Ändert sich die Dichte der freien Ladungen nicht, unterscheidet sich die Verschiebungsdichte $\vec D$ mit und ohne Dielektrikum nicht, 
+das elektrische Feld $\vec E$ wird jedoch im Dielektrikum um den Faktor $\epsilon_r$ geschwächt.
+Die Bezeichnung  "`Dielektrizitätskonstante"' für die Permittivität $\epsilon$ und "`relative Dielektrizitätskonstante"' für die relative Permittivität oder für die Permittivitätszahl $\epsilon_r$ 
+sollten besser vermieden werden, da es sich streng um keine Konstanten handelt, beide Größen zeigen eine starke Frequenzabhängigkeit.
+Befindet sich das Material in einem sich zeitlich periodisch ändernden elektrischen Feld, muss sich auch die Polarisation 
+im Dielektrikum periodisch ändern. Das erfolgt jedoch i.a. phasenverschoben und verlustbehaftet, 
+dem sich ständig ändernden elektrischen Feld wird periodisch Energie entzogen,
+die im Dielektrikum in Wärme umgesetzt wird und zu einer Temperaturerhöhung führt.
+Die bei einem verlustbehafteten Dielektrikum entstehende, von $\pi/2$ verschiedene
+Phasenverschiebung zwischen Strom und Spannung $\Delta \phi$ führt zur Definition des Verlustfaktors $\delta$.
+\begin{equation*}
+\delta=\tan \Delta \phi
+\end{equation*}
+Im vorliegenden Versuch beschränken wir uns jedoch auf geringe Frequenzen, so dass die Verluste durch 
+das Umpolarisieren der Dielektrika vernachlässigt werden können und folgende anschauliche Erklärung 
+das Verhalten der Dielektrika beschreibt.
+Die Dichte der freien Ladungen im Kondensator mit und ohne Dielektrikum bleibt unverändert. Wie in Abb. 
+\ref{fig:kond}
+\begin{figure}[h!]
+ \centering
+ \subfigure[ohne Dielektrikum (Vakuum)]{\includegraphics[width=\linewidth/100*35]{kond_ohne_dielek.png}}
+ \subfigure[mit Dielektrikum]{\includegraphics[width=\linewidth/100*35]{kond_mit_dielek.png}}
+ \caption{Elektrisches Feld eines mit der Ladung Q geladenen Plattenkondensators}
+ \label{fig:kond}
+\end{figure}
+dargestellt, kompensieren sich alle induzierten Dipolmomente im Inneren des Dielektrikums. Demgegenüber konzentrieren sich an 
+der Oberfläche des Dielektrikums in unmittelbarer Nähe der angrenzenden Kondensatorplatten Ladungen mit dem der Ladungen 
+auf der angrenzenden Platte entgegengesetzten Vorzeichen. Diese Ladungen an der Oberfläche des Dielektrikums erzeugen ein 
+elektrisches Feld $\vec E_p$, welches dem durch die freien Ladungen auf den Kondensatorplatten erzeugtem Feld $\vec E_0$ 
+entgegengerichtet ist, aber nie größer als dieses werden kannn. 
+Der Betrag der resultierende Feldstärke im Dielekrikum $E_1 = E_0 - E_p = \frac{E_0}{\epsilon_r}$ wird also um den Faktor $\epsilon_r$, 
+kleiner. Die Kapazität des vollständig mit einem Dielektrikum mit der Permittivitätszahl $\epsilon_r$ 
+gefüllten Plattenkondensators wird dann gerade um diesen Faktor größer.
+\begin{equation}
+ C=\frac{Q}{U}=\frac{Q}{E_1\cdot d}=\frac{Q}{\displaystyle\frac{E_0}{\epsilon_r}\cdot d}=\epsilon_r\cdot C_0
+\end{equation}
+Die Bestimmung der Permittivitätszahl $\epsilon_r$ eines Dielektrikums kann also durch Messung der Kapazität $C$ eines Kondensators, 
+der vollständig mit diesem Dielektrikum ausgefüllt ist, und der Kapazität $C_0$ desselben Kondensators ohne Dielektrikum erfolgen.
+
+\subsection{Messtechnik}
+Die genaue Messung der Kapazität eines Kondensators ist mit erheblichem Aufwand verbunden, da sogenannte 
+"`parasitäre"' Kapazitäten bei der Messung zu berücksichtigen sind (s. Abb. \ref{fig:C_Paras}). Das heißt, dass die zu messende Kapazität $C$ eines Kondensators 
+durch die Kapazität der Zuleitung $C_{par-Zul}$ und durch die Kapazität der Metallflächen des Kondensators mit leitfähigen 
+Flächen der Umgebung $C_{par-Umg}$ verfälscht wird. 
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=\linewidth/100*80]{C_Paras.png}
+ \caption{Parasitäre Kapazitäten bei der Messung einer unbekannten Kapazität C}
+ \label{fig:C_Paras}
+\end{figure}
+Das erfordert eine Messanordnung, bei der sich die parasitären Kapazitäten der Messungen mit und ohne Dielektrikum nahezu nicht unterscheiden.
+Andererseits muss der Kondensator auch so aufgebaut sein, dass das definierte Füllen 
+desselben mit einem Dielektrikum einfach möglich ist. 
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=\linewidth/100*80]{zylinder.png}
+ \caption{Zylinderkondensator mit verschiebbarem Dielektrikum}
+ \label{fig:zylinder}
+\end{figure}
+Ein koaxialer Zylinderkondensator erfüllt diese Forderungen recht gut, da sein innerer Mantel durch den äußeren Mantel fast vollständig  
+gegen Leiteranordnungen der Umgebung abgeschirmt und das definierte Einbringen eines Dielektrikums einfach realisierbar ist.
+Die Kapazität des in Abb. \ref{fig:zylinder} dargestellten koaxialen Zylinderkondensators lässt sich als Parallelschaltung der Kapazität $C_{leer}$ eines 
+leeren Zylinderskondensators der Länge $(l-x)$ und der Kapazität $C_{voll}$ eines vollständig mit Dielektrikum gefüllten Zylinder der Länge $x$ mit gleichem 
+Innen- und Außenradius (siehe Anhang) herleiten.
+\begin{equation}
+ C=C_{leer} + C_{voll}= \frac{2\pi\epsilon_0\cdot (l-x)}{ln\frac{r_a}{r_i}}+\frac{2\pi\epsilon_0\epsilon_r\cdot x}{ln\frac{r_a}{r_i}}=\frac{2\pi\epsilon_0}{ln\frac{r_a}{r_i}}(l+(\epsilon_r-1)x))
+\end{equation}
+\piccaption{Permittivitätszahlen einiger wichtiger Materialien}
+\parpic[r]{
+ \begin{minipage}{\linewidth/100*45} 
+  \centering
+  \begin{tabular}{c|c}
+   Material  & Permittivitätszahl $\epsilon_r$\\\hline
+   Luft      & $\num{1,006}$\\
+   Glas      & $5\dots 10$\\
+   Plexiglas & $3\dots 4$\\
+   Glimmer   & $4\dots 10$\\
+   Pertinax  & $3\dots 4$\\
+   PVC       & $2\dots 4$\\
+   Wasser    & $80$
+  \end{tabular}
+ \end{minipage}
+}
+  
+Unter der gerechtfertigten Annahme, dass sich beim Eintauchen des Dielektrikums in den Kondensator die parasitären Kapazitäten nicht ändern, 
+lässt sich die Permittivitätszahl $\epsilon_r$ aus dem Anstieg in einer grafischen Darstellung $C=f(x)$, also der Messung der Kapazität $C$
+des Zylinderkondensators in Abhängigkeit der Eintauchtiefe $x$ des Dielektrikums bestimmen.
+Die Messung der Kapazitäten ist direkt mit einer Kapazitätsmessbrücke oder indirekt über die Messung einer von 
+der zu messenden Kapazität abhängigen Größe möglich. Letzteres Verfahren wird im Versuch genutzt, indem die Schwingungsdauer $T=f(C)$ eines Kippspannungsgenerators, 
+beschaltet mit der jeweiligen Kapazität $C$, bestimmt wird. Da die direkte Messung der Periodendauer einer Kippschwingung am Oszilloskop 
+jedoch relativ ungenau ist, erfolgt die Zeitmessung durch den Vergleich mit der harmonischen Schwingung hoher Genauigkeit und Stabilität eines Signalgenerators  
+und Lissajous-Figuren.  
+\begin{figure}[h]
+ \centering
+{\includegraphics[width=\linewidth/100*80]{Platz_NF.png}}
+ \caption{Experiemntierplatz Versuch NF}
+ \label{fig:NFPlatz}
+\end{figure} 
+Zur Erstellung der Kalibrierkurve $T_k=f(C_k)$ stehen 12 Kalibrierungskapazitäten zur Verfügung.
+Misst man anschließend die Schwingungsdauer $T_x$ der Kippschwingung mit angeschlossenem Zylinderkondensator 
+in Abhängigkeit der Eintauchtiefe $x$ des Dielektrikums, kann mit Hilfe der Kalibierkurve sofort $C=f(x)$ 
+dargestellt und aus dem Anstieg der grafischen Darstellung die Permittivitätszahl $\epsilon_r$ des Dielektrikums berechnet werden.
+\newpage
+
+\section{Anhang}
+\subsection{Kapazität eines Koaxialzylinders}
+Ein idealer Zylinderkondensator besteht aus zwei elektrisch leitenden Zylindermänteln, zwischen denen sich ein Dielektrikum befindet. 
+Die Zylindermäntel sind koaxial, gleich hoch, und die Grundflächen der beiden Zylinder befinden sich in einer gemeinsamen Ebene. 
+\piccaption{Koaxialzylinder \label{fig:KZylinder}}
+ \parpic[r]{
+  \includegraphics[width=\linewidth/3]{Koaxial_C.png}
+ }
+Der im Versuch verwendete Zylinderkondensator (s. Abb. \ref{fig:KZylinder}) besteht aus zwei Aluminiumrohren, so dass $r_i$ der Außenradius des inneren 
+Rohrs und $r_a$ der Innenradius des äußeren Rohres sind. Die Berechnung der Kapazität $C$ des Zylinderkondensators erfordert die Kenntnis des elektrischen Feldes $\vec E$
+zwischen dem inneren und äußeren Zylindermantel.
+\begin{equation*}
+C=\frac{Q}{U}=\frac{Q}{\Int_{r_i}^{r_a} \vec E \vec {dr}} 
+\end{equation*}
+Das Feld der elektrischen Verschiebung $\vec D$ zwischen dem Innen- und Außenzylinder, hervorgerufen durch die freien Ladungen $Q$, ist nicht homogen, 
+muss aber jeweils senkrecht auf der Oberfläche des Innen- und Aussenzylinders stehen, 
+also radial nach Außen zeigen, wenn auf dem Innenzylinder eine positive Ladung $Q$ vorliegt. 
+Wird der Innenzylinder koaxial von einer Integrationsfläche in Zylinderform mit dem Radius $r$ ($r_i<r<r_a$) und 
+der Länge $l$ umschlossen, ist der Betrag der elektrischen Verschiebungsdichte $D$ auf der Manteloberfläche dieses Zylinders konstant und der Vektor der elektrischen Verschiebungsdichte $\vec D$
+zeigt in Richtung des Flächenvektors $\vec {dA}$. 
+Unter der Vernachlässigung der Integration über die Boden- und Deckfläche dieses Zylinders folgt mit dem Gaußschen Satz:
+\begin{equation*}
+ Q= \oint{\vec D \vec{dA}}\approx\oint{D\vec{e_r}dA\vec{e_r}}= DA_{Zylindelmantel}=2\pi r l D
+\end{equation*}
+und mit
+\begin{equation*}
+ \vec D= \epsilon_0\epsilon_r \vec E
+\end{equation*}
+\begin{equation}
+ \vec E=\frac{Q}{2\pi\epsilon_o\epsilon_r rl}\vec{e_r}
+\end{equation}
+Damit folgt für die Kapazität des Zylinderkondensators:
+\begin{equation}
+C=\frac{Q}{\Int_{r_i}^{r_a} \vec E \vec {dr}}=\frac{Q}{\frac{Q}{2\pi\epsilon_0\epsilon_r l}\Int_{r_i}^{r_a}\frac{1}{r} \vec e_r \vec {dr}}=\frac{2\pi\epsilon_0\epsilon_r l}{\Int_{r_i}^{r_a}\frac{1}{r} dr}=\frac{2\pi\epsilon_0\epsilon_r l}{ln\frac{r_a}{r_i}} 
+\end{equation}
+\picskip{0}
+
+
+\subsection{Spannungsverlauf an einem Kippspannungsgenerator}
+Zur indirekten Messung der Kapazität von Kondensatoren kann die Schaltung eines Kippspannungsgenerators mit einer Glimmlampe (s. Abb. \ref{fig:GKurve}a) verwendet werden. 
+Zur exakten Berechnung des Spannungsverlaufs am Kondensator bedarf es eigentlich der genauen Analyse der Spannungs-Strom-Kennlinie einer Glimmlampe. 
+Zur Vereinfachung nehmen wir an, dass die nicht gezündete Glimmlampe durch einen unendlich großen Widerstand und die gezündete Glimmlampe einen sehr kleinen Widerstand genähert wird. 
+Mit dieser Vereinfachnung folgt nach Einschalten der Betriebsspannung
+die Spannung am Kondensator C der bekannten Ladekurve (s. Abb. \ref{fig:CKurve}a), die Kapazität $C$ wird über den Widerstand $R$ (bzw. $R_1$ in Abb. \ref{fig:GKurve}a) aufgeladen. 
+\begin{figure}[h]
+ \centering
+{\includegraphics[width=\linewidth/100*80]{G_le.png}}
+ \caption{Kippspannungsgenerator a) Schaltskizze, b) Spannungsverlauf am Kondensator}
+ \label{fig:GKurve}
+\end{figure}
+Beim Erreichen der Zündspannung $U_z$ wird der Widerstand der Glimmlampe (ersetzt durch $R_2$ in Abb. \ref{fig:GKurve}) klein gegen $R$, 
+so dass unter Vernachlässigung von $R$ (bzw. $R_1$ in Abb. \ref{fig:GKurve}b) die Spannung am Kondensator der bekannten Entladekurve (s. Abb. \ref{fig:CKurve}b)
+\begin{figure}
+ \centering
+{\includegraphics[width=\linewidth/100*80]{C_le.png}}
+ \caption{Reihenschaltung aus Kondensator und Widerstand a) Ladevorgang, b) Entladevorgang}
+ \label{fig:CKurve}
+\end{figure}
+folgt, bis beim Erreichen der Löschspannung $U_L$ dem Entladevorgang ein neuer Ladevorgang folgt.\\ 
+So folgt die Spannung am Kondensator C einem periodischen Aufladen mit einer großen Zeitkonstante und einem Entladen mit einer kleinen 
+Zeitkonstante zwischen der Lösch- und Zündspannung der Glimmlampe (s. Abb. \ref{fig:GKurve}b)). Die Periodendauer 
+\begin{equation}
+t_{Gl}=t_{Lade}+t_{Entlade}=R_1 C~ \ln (\frac{U_0-U_L}{U_0-U_Z})+R_2 C~ \ln (\frac{U_Z}{U_L})
+\end{equation}
+ist proportional der Kapazität des Kondensators,
+so dass mittels der Kalibierungskurve mit Kondensatoren bekannter Kapazität unbekannte Kapazitäten bestimmt werden können.\\      
+
+
+\subsection{Zeitmessung mit Hilfe von Lissajous-Figuren}
+Kurvengraphen, die durch Überlagerung harmonischer Schwingungen entstehen, werden als Lissajous-Figuren (benannt nach dem französischen Physiker Jules Antoine Lissajous ) bezeichnet.
+Am Oszilloskop erhält man diese Figuren, wenn man an die Eingänge für die y- und x-Ablenkung eine harmonische Wechselspannung anlegt.
+Die Lissajous-Figur am Oszilloskop ist dann eine Figur $U_y=f(U_x)$, die durch die Überlagerung der beiden harmonischen Spannungsverläufe in Abhängigkeit vom Parameter $t$
+\begin{equation*}
+U_x=U_{x_0}~\sin(\omega_x t+\phi_x)\hspace{1cm}
+U_y=U_{y_0}~\sin(\omega_y t+\phi_y)
+\end{equation*}
+entsteht.\
+\begin{figure}[h!]
+ \centering
+{\includegraphics[width=\linewidth/100*80]{Liss.png}}
+ \caption{Lissajous-Figuren für zwei Spannungen gleicher Amplitude }
+ \label{fig:HLiss}
+\end{figure}
+Dabei bestimmen die Frequenzen $\omega_x, \omega_y$ und Phasen $\phi_x, \phi_y$ der beiden Spannungen die Form dieser Figuren (s. Abb. \ref{fig:HLiss}).  
+Sind die Frequenzen beider angelegter Spannungen nahezu gleich oder nahe einem einfachen rationalen Verhältnis, zeigt der Schirm des Oszilloskops eine 
+geschlossene, aber sich zeitlich verändernde Figur. Je kleiner die Abweichung der Frequenzen von diesem einfachen rationalen Verhältnis ist,
+um so besser scheint diese Figur am Oszillografenschirm zu stehen. Das nutzt man, um mit hoher Empfindlichkeit kleine Frequenzunterschiede zu messen.
+Diese Messung ist nicht auf harmonische Spannungsverläufe beschränkt, diese hohe Empfindlichkeit erreicht man auch beim Vergleich einer 
+harmonischen Funktion mit einer einfachen periodischen Funktion. Überlagert man die nahezu Sägezahnspannung des Kippspannungsgenerators am x-Eingang des Oszilloskops 
+mit einer harmonischen Spannung gleicher Periode am y-Eingang des Oszilloskops erwartet man das Bild einer nahezu harmonischen Funktion am Oszilloskop (s. Abb. \ref{fig:Oszi}).
+\begin{figure}[h!]
+ \centering
+{\includegraphics[width=\linewidth/100*80]{Lissajous_all.png}}
+ \caption{a) erwartete und gemessene b) zeitabhängige und c) x-y-Graphen am Oszilloskop für gleiche Periodendauer der Kippspannung und der harmonischen Spannung}
+ \label{fig:Oszi}
+\end{figure}
+  
+
+
+\frage{Wie sind die Größen elektrische Feldstärke, elektrisches Potential und elektrische Verschiebung an einem Plattenkondensator in Luft, an dem eine Spannung U anliegt, definiert?}
+\frage{Wie ändern sich die genannten Größen, wenn ein Dielektrikum vollständig zwischen die Platten eigefügt wird bei a) konstanter Ladung auf den Platten und b) bei konstanter Spannung zwischen den Platten?}
+\frage{Wie groß ist die Kapazität eines Plattenkondensators (Plattenabstand $d$, Plattenlänge $l$), Plattenbreite $b$), wenn a) ein Isolator der Breite $b$ und der Dicke $d$ nur um die Länge $L<l$ hineingeschoben wird und b) ein Dielektrikum zwar vollständig hineingeschoben wird, aber nur eine Dicke $D<d$ hat?}
+\frage{Leiten Sie die Formel für die Kapazität eines koaxialen Zylinderkondensators ($r_a$ Außenradius, $r_i$ Innenradius, $l$ Länge) her!}
+\frage{Beantworten Sie die Fragen 1 bis 3 sinngemäß für den Koaxialkondensator aus Frage 4!}
+\frage{Ein Kondensator sei von einer geerdeten Metallfläche umgeben, die Platten des Kondensators bilden also auch mit diesen Flächen eine Kapazität. Welche Messungen mit einer Kapazitätsmessbrücke wären notwendig, um die Kapazität des Kondensators selbst zu bestimmen?}
+\frage{Wie berechnet man die Spannungsverläufe beim Laden und Entladen eines Kondensators?}
+\frage{Machen Sie sich mit dem Aufbau und der Wirkungsweise eines Oszillografen vertraut!}
+\frage{Konstruieren Sie sich Lissajous-Figuren, die bei Frequenzverhältnissen von $2:1$ zwischen zwei harmonischen Spannungen und zwischen Kippspannung und harmonischer Vergleichsspannung entstehen!}
+
+
+\end{document}

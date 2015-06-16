@@ -1,0 +1,721 @@
+\documentclass[11pt,twoside,a4paper]{article}
+\usepackage{verbatim}
+\usepackage{amsmath,amsthm}
+\usepackage{graphicx}
+\usepackage{color}
+
+\usepackage[german]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+
+\usepackage{fancybox}
+\usepackage{textcomp}
+\usepackage{fancyhdr}
+\usepackage{rotating}
+\setcounter{secnumdepth}{3}
+
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\raggedleft\arraybackslash}X}
+\newcolumntype{Z}{>{\centering\arraybackslash}X}
+
+\textheight			25cm
+\textwidth			16.5cm
+\topmargin			-1cm
+\oddsidemargin		0cm
+\evensidemargin	-0.42cm
+
+\pagestyle{fancy}
+
+ \title{Versuch FB \\ Frauenhoferbeugung \\}
+ \author{bearbeitet von \\ M. Kreller \\ i.A. Dr. Escher}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{table}[h]
+\begin{tabular}{|c|c|}
+\hline
+& \\
+\hspace{0.7cm} \begin{LARGE}Technische Universität Dresden \end{LARGE} \hspace{0.7cm} &
+\hspace{1cm}Physikalisches Praktikum \hspace{1cm} \\
+\begin{large} Fachrichtung Physik \end{large}               & \\
+\begin{footnotesize} L.Jahn 09/ 1998 \end{footnotesize}            & Versuch:
+\begin{LARGE} FB \end{LARGE} \\
+\begin{footnotesize} bearbeitet 03/ 2004 \end{footnotesize} & \\
+\hline
+\end{tabular}
+\end{table}
+\begin{huge}\textbf{Frauenhoferbeugung}\end{huge}
+
+\tableofcontents
+\newpage
+
+\section{Aufgabenstellung}
+	\begin{enumerate}
+		\item Aufnahme der Beugungsbilder von LASER- Licht am Einfach-und Doppelspalt.
+		\item Bestimmung der Geometrie der Blenden-Objekte aus den Beugungsbildern und Kontrolle am
+		Mikroskop.
+	\end{enumerate}
+
+\section{Fraunhoferbeugung}
+\subsection{Beugung und Interferenz mit LASER-Licht}
+\subsubsection{Fresnelsche und Fraunhofersche Beugung}
+	{\bf Prinzip von Huygens und Fresnel:}
+	Wird in den Strahlengang einer ebenen
+	Welle ein Hindernis (Blende) gebracht, so entsteht das
+	Beugungsbild als Überlagerung einer Vielzahl von Kugelwellen,
+	die von allen Punkten der Blendenöffnung ausgehen und in der Bildebene
+	interferieren. Voraussetzung für Interferenzen
+	ist die {\bf Kohärenz} der sich überlagernden Teil-Wellen des Lichts.\\
+	Bei der Fresnelschen Beugung
+	wird bei divergentem Licht eine Winkelabhängigkeit der Amplituden
+	und Phasen der Elementarwellen betrachtet. Bei der {\bf Fraunhofer'schen
+	Beugung}, als
+	Grenzfall sehr großer Entfernungen, sind die interferierenden Lichtstrahlen
+	parallel, so daß
+	{\bf nur Phasenunterschiede} wichtig sind.
+\subsubsection{He-Ne-LASER, Graukeil und Fotoelement}
+	Die Gasentladung im He erzeugt die Besetzungsinversion im Ne.
+	Durch induzierte Emission entsteht kohärentes
+	Licht mit der Wellenlänge von $\lambda$ = 632,8 nm.
+	Für die laterale Abhängigkeit der Intensität $I \:=\:I(r)$ gilt
+	bei minimaler Strahldivergenz von ca. 0,5 mrad näherungsweise
+	eine Gaußverteilung (Glockenkurve, Gaußsches Wellenbündel).
+	Die Gl.~(\ref{la1}) besagt z.~B.~bei $\delta_0\approx 0,65 $ mm, daß die
+	Intensität im Abstand von $r\approx 0,7\; \delta_0 $ vom
+	Strahlzenztrum auf $1/e^2$ abgesunken ist,
+	\begin{equation}
+	I(r)\:=\:I_0\cdot e^{-\frac{2r^2}{\delta_0^2}}\quad.\qquad\qquad  \label{la1}
+	\end{equation}
+	Infolge dieser seitlichen Begrenzung können breite Blendenobjekte
+	ohne Hilfsmittel zur Strahlaufweitung nicht gleichmäßig ausgeleuchtet
+	werden (begrenzte räumliche Kohärenz).
+	In $z\approx 1,5$~m Abstand vom Blendenobjekt befindet sich hinter
+	dem Empfängerspalt (50 $\mu\;m$) ein  Halbleiter-Fotoelement
+	(Si-Fotodiode ohne äußere Spannung). Dieses soll möglichst im linearen
+	Bereich seiner Kennlinie ~$U=U(I)$~ arbeiten.
+	$U(I)$~ wird relativ bei voller Beleuchtung
+	(ohne Beugungsobjekt) mit den Stufen des Graukeils aufgenommen, wobei
+	bei konstanter Wellenlänge für die relative Intensität nach n
+	Keilstufen  gilt:\\[-.3cm]
+	\begin{equation}
+	I_n\:=\:I_0\cdot 10 ^{-n\;\Delta D}\quad.
+	\label{I1}
+	\end{equation}
+	~\\[-.5cm]
+	Jede Stufe des Graukeils hat eine Breite von 4 mm und einen Zuwachs an
+	optischer Dichte (Absorption) von $\Delta D\:=\:0,1 $.
+	Trägt man die
+	Fotospannung $U$ über der nach Gl.~(\ref{I1})
+	berechneten relativen Intensität $I_n$ auf, so erhält man oberhalb
+	einer bestimmten
+	Graustufe, d.~h. unterhalb einer Intensitätsgrenze $I_{gr}$,
+	einen linearen Verlauf.
+	$I_{gr}$ darf bei einer
+	quantitativen Auswertung der Hauptmaxima nicht überschritten werden.
+	
+\subsection{Elementare qualitative Vorbetrachtung}
+	Paralleles, kohärentes und monochromatisches Licht fällt auf einen Spalt
+	(bzw. einen Doppelspalt oder ein Gitter), wobei gilt:\\[.1cm]
+	1.~Die betrachteten Spalte sind sehr hoch, so daß nur ihre Breiten $A$
+	das Beugungsgeschehen bestimmen.\\
+	2.~Die Breite $A$ und der Abstand des
+	Doppelspaltes (bzw.~die Gitterkonstante) $a$  sind
+	wesentlich größer als die Wellenlänge ($A\gg \lambda$; $a\gg \lambda$).\\
+	3.~Der Abstand zum Schirm ist so groß ($z_0\gg A$), daß er bezüglich der
+	Amplituden für alle Beugungsordnungen gleich ist ($r\approx z_0$,
+	Fraunhoferbeugung). Daher ist auch
+	$\sin \Theta\approx \Theta\approx \alpha/z_0$ ($z_0$~=~Schirmabstand,
+	$\alpha\approx z_0\,\Theta $~=~Auslenkung in der Schirmebene ([$\alpha$]~=~m).\\
+	[.1cm]
+	{\bf Spalt:}\\
+	Entsprechend Abb.~1 sollen z.~B.~von dem Spalt $N=16$ Elementarwellen
+	ausgehen. Man kann qualitativ das Beugungsbild erklären, wenn man annimmt,
+	daß von einer Hälfte des Spaltes $N/2=8$ Elemetarwellen ausgehen, die
+	mit den 8 Wellen der anderen Hälfte interferieren mögen (Nr.~1 mit Nr.~9;
+	2 mit 10 usw.).\\
+	Die sich für $\Theta >0 $ auf dem
+	Bildschirm überlagernden Wellenkombinationen (1 - 9; 2 - 10 usw.)
+	besizen einen {\bf Gangunterschied} (Unterschied in der optischen Weglänge)
+	von $\Delta=(A\,\sin\,\Theta)/2$. Die \\
+	{\bf Auslöschung am Spalt} finden wir daher wegen
+	\begin{equation}
+	\Delta=\frac{A\,\sin\,\Theta}{2}=\frac{\lambda}{2}\quad{\rm d.~h.\; wenn }\quad
+	A\,\sin\,\Theta=\lambda\quad{\rm allgemein}\quad
+	A\,\sin\,\Theta=n\,\lambda\quad.
+	\label{B10}
+	\end{equation}
+	~\\[.1cm]
+	\begin{minipage}{7cm}
+	($n=1,2,..)$. Die analoge Maximumbedingung lautet:\\
+	~$A\,\sin\,\Theta=((2n+1)\,\lambda)/2.$\\[.1cm]
+	Beim {\bf Gitter (Doppelspalt)}\\
+	interferieren Elementarwellen benachbarter Spalte (Abb.~1.b) und die\\
+	{\bf  Nebenmaxima am Doppelspalt} erscheinen unter den Beugungswinkeln
+	\begin{equation}
+	a\, \sin \;\Theta_{max,n} =n\lambda\quad.
+	\label{B21}
+	\end{equation}
+	\end{minipage}
+	\hspace{.5cm}
+	\begin{minipage}{8cm}
+	\begin{center}
+	\includegraphics[width=8cm]{abb1} \\
+	{\bf Abb.~1}: 
+	Elementare Veranschaulichung der Gangunterschiede
+	beim Spalt (a) und Gitter (b)
+	\end{center}
+	\stepcounter{figure}
+	\end{minipage}
+
+\subsection{Berechnung der Intensitätsverteilung}
+\subsubsection{Intensitätsverteilung am Spalt}
+	Um die experimentell beobachtete kontinuierliche Intensitätsverteilung
+	$I(\Theta)\sim I(\alpha)$ (Abb.~3) theoretisch zu berechnen, muß
+	über {\bf alle Elementarwellen}, die von benachbarten Spaltpunkten
+	ausgehen, {\bf aufsummiert bzw.~integriert} werden
+	(einfachster~=~linearisierter  Fall des
+	Kirchhoffschen Beugungsintegrals bzw. einer {\bf Fouriertransformation}).\\
+	Die vom Spalt ausgehenden Elementarwellen haben die gleiche Schwingungsphase.
+	Unter einem bestimmten Beobachtungswinkel $\Theta\neq 0$
+	interferieren eine große Zahl von Elementarwellen. Deren
+	Phasenunterschiede bzw.~Gangunterschiede in der Schirmebene entsprechen den
+	Wegunterschieden. \\[.2cm]
+	\begin{minipage}{8cm}
+	Der maßgebliche elektrische Feldvektor\\
+	$E(t,z)$ der  einfallenden harmonischen,\\
+	monochromatischen Welle werde komplex beschrieben
+	durch ($j=\sqrt{-1}$)
+	\begin{equation}
+	E(t,z)=
+	\hat E_0\,e^{j(\omega t-kz)}\approx
+	\hat E_0\,e^{j(\omega t-kr)}\quad.
+	\label{B111}
+	\end{equation}
+	Die sich in der Ebene des Schirmes für den Winkel $\Theta$ überlagernden
+	Wellen  unterscheiden sich in ihren Phasenwinkeln $\varphi$
+	\end{minipage}
+	\hspace{.5cm}
+	\begin{minipage}{8cm}
+	\begin{center}
+	\includegraphics[width=8cm]{abb1} \\
+	{\bf Abb.~2}: 
+	Geometrie des Spaltes und des Doppelspaltes
+	\end{center}
+	\stepcounter{figure}
+	\end{minipage}\\
+	\begin{eqnarray}
+	E(t,r,\varphi)&=&
+	\hat E_0\,e^{j(\omega t-kr-\varphi)}\quad{\rm mit}\nonumber\\
+	kr+\varphi&=&k(R+x\,\sin \Theta)\quad.
+	\label{B112}
+	\end{eqnarray}
+	(Fraunhofernäherung: $r\approx R+x\,\sin\,\Theta$)
+	Zur resultierenden Amplitudenverteilung gelangt man nach Integration über
+	$x$ in den Grenzen der beiderseits halben Spaltbreite.\\
+	Mit $\int  dx e^{ax}=\frac{1}{a}e^x$ sowie
+	$ \sin x=(e^{jx}-e^{-jx})/(2\,j)$  und einer Erweiterung mit $(A/2j)$ in
+	Zeile 2 ergibt sich:
+	\begin{eqnarray}
+	\underline{E}_{res}\sim
+	\hat E_0\int_{-A/2}^{A/2} dx\;e^{j(\omega t-k(R+x sin\Theta))}
+	=\hat E_0e^{j(\omega t-kR)}\;\int_{-A/2}^{A/2} dx\;e^{-(jkx sin\Theta)}
+	\nonumber \\
+	=\hat E_0e^{j(\omega t-kR)}\frac{1}{jk sin\Theta}\frac{A/2j}{A/2j}\left[
+	e^{(jk sin\Theta A/2)}-e^{(-jk sin\Theta A/2)}\right]\hspace{1.3cm}
+	\nonumber \\
+	=\hat E_0\,e^{j(\omega t-kR)}
+	\frac{2j}{j}\frac{A}{2}\left[\frac{sin(k sin \Theta A/2)}
+	{k sin\Theta A/2}\right]
+	=\hat E_0\,A\,
+	\left[\frac{sin(\pi \frac{A}{\lambda} sin \Theta)}
+	{\pi \frac{A}{\lambda}sin\Theta}\right]
+	\,e^{j(\omega t-kR)} \quad.
+	\nonumber \\ [.2cm]
+	{\rm Die \;\;Amplitude\;\;ist}\qquad  \hat{E}_{res}
+	\sim \hat E_0\,A sin\;c\;U\:
+	\approx \hat E_0\,A\,\frac{sin(\frac{\pi A}{\lambda}\frac{\alpha}{z})}
+	{(\frac{\pi A}{\lambda}\frac{\alpha}{z})}.
+	\hspace{2.5cm}
+	\label{in1}
+	\end{eqnarray}
+	Die Intensität folgt aus dem Quadrat von (\ref{in1})
+	(Multiplikation mit der konjugiert komplexen Größe) zu
+	\begin{center}
+	\fbox{\parbox{11cm}{
+	\begin{equation}
+	I(\alpha)\sim\;
+	\hat E_0^2\,A^2\,
+	\frac{[sin(\pi \frac{A}{\lambda} sin \Theta)]^2}
+	{(\pi \frac{A}{\lambda}sin\Theta)^2}
+	=I_0(sin c\;U)^2
+		\;.\label{sp01}
+	\end{equation}
+	}}
+	\end{center}
+	Diskussion und Bedeutung der Größen in Gl.~(\ref{sp01}), dargestellt in
+	Abb.~3:\\[-.7cm]
+	\begin{itemize}
+	\item
+	Nach Sommerfeld wird mit der Abkürzung
+	$U=U(k)=(\pi\,A\,\sin\,\Theta)/\lambda$, die \\
+	Fouriertransformierte der {\bf Spaltfunktion},
+	~$\frac{sinU}{U} \:=\:sinc\,U$ (Sinus-Koeffizient; engl. coefficient) genannt;
+	\item
+	Bei gegebener Wellenlänge ist für die Periode der $sincU$-Funktion
+	maßgeblich ~$ A\cdot sin \Theta$. Daher findet man bei schmaleren Spalten
+	die größeren Beugungswinkel $\Theta$.
+	\item
+	Die Intensität  $I(\alpha)\sim (sinc U)^2\sim E_0^2\sim A^2$. Sie ist
+	dem Quadrat der Spaltbreite $A$ proportional.
+	\item
+	$\alpha=z_0\,\sin\,\Theta$ ist die gemessene x-Koordinate in der
+	Schirmebene ($\Theta\approx sin\Theta=\alpha/z_0$);
+	\item
+	Die $sincU$-Funktion hat ihren normierten
+	Maximalwert $\frac{I(0)}{E_0^2\,A^2}=1$ ~bei $\Theta =0$ ($\alpha=0$,
+	nullte Ordnung;
+	man zeige, daß $\lim_{x\rightarrow 0}\frac{sin x}{x}=1$ ist);
+	\item
+	Für die Auswertung haben die {\bf Nullstellen} große Bedeutung: \\
+	$sinc U$ hat Nullstellen für $U=\pi;\;2\pi;\;3\pi;..$. Das bedeutet z.~B.~
+	für die erste, zweite und dritte Nullstelle:\\
+	$\pi=(\pi A\,\sin\,\Theta_1)/\lambda$ oder $\lambda=A\,\sin\,\Theta_1 $,\\
+	$2 \lambda=A\,\sin\,\Theta_2 $,    $3 \lambda=A\,\sin\,\Theta_3 $, usw.
+	in Übereinstimmung mit (\ref{B10}).
+	\item
+	Die ebenfalls für die Auswertung geeigneten {\bf Nebenmaxima
+	erster und höherer Ordnung} der Intensitäts-Funktion $(sin c\;U)^2$
+	liegen nicht genau bei den ungeraden Vielfachen von $\pi/2$
+	(vergl.~(\ref{B21})), sondern sind, wie man sich durch
+	Differenzieren und Null-Setzen von $(sin c\;U)^2$ überzeugt,
+	durch $tan U \,=\,U$ gegeben. Die grafische
+	Lösung dieser Bedingung zeigt Abb.~3  oben links.
+	Damit liegen die Nebenmaxima nicht bei $\frac{3\pi}{2},\:
+	\frac{5\pi}{2},\:   \frac{7\pi}{2}$.., sondern bei
+	\begin{equation}
+	\pm 1,4303 \pi,\;\pm 2,459 \pi,\;\pm 3,47 \pi,...
+	\label{F3}
+	\end{equation}
+	\end{itemize}
+	\begin{figure}[h]
+   \centering
+   \includegraphics[width=12cm]{abb3}
+   \caption{Intensitätsverteilung in der Schirmebene hinter dem
+	Einzelspalt: $(sin\;c\,U)^2\,=\,f(U)$; ~Einsatz oben: Lösung von
+	$tan U=U$}
+   \label{fig:abb3}
+	\end{figure}
+	
+\subsubsection{Doppelspalt und Gitter}
+	Beim Gitter (bzw.~beim Doppelspalt, n=2) überlagern sich
+	die Beugungsbilder von $n$ Einzelspalten der Breite $A$, die den Abstand $a$
+	haben. Die resultierende Intensität
+	ist im wesentlichen bestimmt durch 2 Faktoren:\\[.1cm]
+	1. durch die Geometrie des Einzelspaltes, den {\bf Formfaktor}
+	$(sinc\,U)^2$ und\\[.2cm]
+	2. den Überlagerungsterm, den {\bf Strukturfaktor}
+	$\frac{sin^2(n\pi\frac{a}{\lambda}\frac{\alpha}{z})}
+	{sin^2(\pi \frac{a}{\lambda}\frac{\alpha}{z})}=\frac{sin^2(ny)}{(sin^2y)}$) (s.~Anhang).\\[.2cm]
+	Beim {\bf Doppelspalt} ($n=2$) ergibt sich nach der Umformung
+	($\frac{sin^2\,2\,\beta}{sin^2\,\beta}=4\,cos^2\,\beta$) am Strukturfaktor
+	für die Intensität
+	\begin{center}
+	\fbox{\parbox{14cm}{
+	\begin{equation}
+	I(\alpha)\:\sim
+	\frac{I_0}{4}\;
+	\frac{sin^2(\pi \frac{A}{\lambda}\frac{\alpha}{z})}{(\pi
+	\frac{A}{\lambda}\frac{\alpha}{z})^2}\cdot
+	\;4\,cos^2(\pi\frac{a}{\lambda}\frac{\alpha}{z})
+	= I_0
+	\frac{sin^2(\pi \frac{A}{\lambda}\frac{\alpha}{z})}{(\pi
+	\frac{A}{\lambda}\frac{\alpha}{z})^2}\cdot
+	cos^2(\pi\frac{a}{\lambda}\frac{\alpha}{z})
+	\quad.\label{do1}
+	\end{equation}
+	}}
+	\end{center}
+	\begin{figure}[htp]
+   \centering
+   \includegraphics[width=16cm]{abb4}
+   \caption{Zwei Intensitästverteilungen
+	$I(\alpha)$ für zwei Doppelspalte mit
+	unterschiedlichen $a/A$ bzw. $A/\lambda$.}
+   \label{fig:abb4}
+	\end{figure}
+	Diskussion und Bedeutung der Größen in Gl.~(\ref{do1}), für 2 Beispiele
+	dargestellt in Abb.~4:\\[-.5cm]
+	\begin{itemize}
+	\item
+	Die Nebenminima sind nur dann eindeutig abzählbar, wenn $a/A$ rational,
+	im günstigsten Fall ein Verhältnis kleiner ganzer Zahlen ist (z.~B.~Abb.~4a).
+	\item
+	Die Nebenmaxima werden durch Maxima des Strukturfaktors in Gl.~(\ref{do1})
+	bestimmt:\\
+	$cos^2(\pi\frac{a}{\lambda}\frac{\alpha}{z})$ wird maximal für
+	$\pi\frac{a}{\lambda}\frac{\alpha}{z}=n \pi$ (n=1,2,..; vergl.~mit (\ref{B21}).
+	Damit kann bei bekannter Wellenlänge $a=\frac{n \lambda}{\sin \,\Theta}$
+	bestimmt werden.
+	\item
+	Entsprechend gilt für die Nullstellen oder {\bf Nebenminima:}\\
+	$a=\frac{\lambda}{2}\,\frac{(2n+1)}{2}\sin \,\Theta$;
+	\item
+	Die Anzahl $l$ der {\bf Nebenminima} innerhalb des zentralen Hauptmaximums
+	($l=2a/A$) ist ebenfalls zur Bestimmung von $a$ geeignet, sofern der
+	Quotient ($2a/A$) rational ist (s.~z.~B.~Abb.~4a mit $l=10$; entsprechend
+	findet man $l^*-1=2a/A$ für die $l^*$ Nebenmaxima).
+	\end{itemize}
+\newpage	
+\section{Experimente}
+\subsection{Versuchsaufbau und Justierung}
+	{\bf Weder direkt noch indirekt (Reflexionen an Metallflächen) in das
+	Laserlicht hineinsehen!!}\\[.2cm]
+	\begin{minipage}{7cm}
+	Der Versuch ist an einen Rechner gekoppelt und wird durch ein
+	Menü geführt.
+	Das Prinzip des Versuchsaufbaus ist in Abb.~5 skizziert.
+	Der Stellmotor für den Empfängerspalt überstreicht $\alpha$-Werte
+	von 0 bis 60 mm. Die Intensität $I(\alpha$)
+	wird automatisch registriert,
+	kann ausgedruckt und punktweise abgefragt werden.\\[.2cm]
+	\end{minipage}
+	\hspace*{.5cm}
+	\begin{minipage}{8cm}
+	\begin{center}
+	\includegraphics[width=8cm]{abb5} \\
+	{\bf Abb.~5}: 
+	Versuchsaufbau mit Laser, Graukeil, Blendenobjekt,
+	Fotometer
+	\end{center}
+	\stepcounter{figure}
+	\end{minipage}\\
+	Die Auswertung erfolgt teils von Hand, teils vom Rechner.
+	Während des gesamten Versuchs bleibt der Laser abgeblendet.
+	Zunächst wird für maximale mögliche Entfernung ($z_0\approx $1,5~m)
+	der Laserstrahl auf die Mitte des Empfänger-Spaltes der Fotodiode
+	gerichtet. Danach wird ein  Blendenobjekt, z.~B.~der Einzelspalt eingeschoben
+	und das Beugungsbild
+	qualitativ auf einem Papierschirm betrachtet und das Blendenobjekt justiert.
+	Dann wird der Graukeil
+	eingeschoben und der aus der
+	Linearitätsprüfung ermittelte Graukeilwert, z.~B.~5, eingestellt und die
+	Justierung mit Fotozelle und digitaler Anzeige wiederholt.\\
+	
+\subsection{Prüfen des Linearitätsbereichs}
+	Alle Intensitäten werden relativ zum Maximalwert bestimmt. Dazu
+	muß als Voraussetzung eine {\bf lineare Kennlinie} der Fotodiode vorliegen, die
+	allerdings begrenzt ist. Zur Ermittlung dieser Grenze
+	wird mit dem breiten Einzelspalt der
+	Fotozellenspalt in das Intensitätsmaximum gefahren und
+	im Menüschritt {\bf Kalibrierung} die Intensität für die verschiedenen
+	Werte des Graukeils aufgenommen.
+	Die angezeigte Fotospannung wird über den nach Gl.~(\ref{I1}) berechneten
+	relativen Intensitätswerten aufgetragen und
+	die Linearitätsgrenze ermittelt (z.~B.~50~mV). Diese kann auch absichtlich
+	überschritten werden, wenn z.~B.~das Interesse nur den Minima gilt und
+	die Intensitätsmaxima fehlerhaft (zu gering) sein können.
+	
+\subsection{Messen der Intensitätsverteilungen}
+	Das Menü umfaßt im wesentlichen die Schritte {\bf Kalibrierung},
+	{\bf Messung} und {\bf Darstellung}.\\
+	Der Meßspalt vor der Fotozelle hat eine endliche
+	Breite ($b\approx 50\,\mu$m), wodurch der registrierte Intensitätsverlauf im
+	Vergleich zum wahren Verlauf etwas modifiziert wird: Die Maxima von sehr
+	schmalen Reflexen erscheinen
+	flacher, die Minima angehoben, die Lage der Extrema etwas verschoben. Diese
+	Beeinflussung kann nur qualitativ diskutiert werden.
+	Da der Fehler mit abnehmender Halbwertsbreite anwächst,
+	sollte vor allem bei großen Spaltbreiten
+	der Abstand $z_0$ so groß wie möglich gewählt werden.
+\newpage	
+\section{Anhang}
+\subsection{Gitter (Doppel-Spalt)}
+	Zur Herleitung der Formel (\ref{do1}): Mit der Amplitude $E_0$ der
+	einfallenden Lichtwelle wird jeder der $n$ Einzelspalte angeregt.
+	Zur Berechnung der resultierenden Amplitude wird über jeden der n
+	Spalte (Abb.~2~b) integriert (analog zum Einzelspalt)
+	und anschließend über die $n$ einzelnen
+	Integrale summiert. Die resultierende Intensität ergibt
+	sich zu ~$\underline{E}_{res}\sim$
+	\begin{eqnarray}
+	\hat E_0\left( \int_{-A/2}^{A/2}\left[dx\;
+	e^{j(\omega t-k(R+x sin\Theta))}\right]+
+	\int_{a-A/2}^{a+A/2}\left[..\right]+
+	..+\int_{(n-1)a-A/2}^{(n-1)a+A/2}
+	\left[..\right]\right)\hspace{1cm}
+	\nonumber\\
+	\end{eqnarray}
+	\begin{eqnarray}
+	=\hat E_0 e^{j(\omega t-kR)}\frac{1}{j k sin\Theta}
+	[(e^{j k sin\Theta A/2}-e^{-jk sin\Theta A/2})+
+	(e^{j k sin\Theta (a+A/2)}- \hspace{1cm}
+	\nonumber\\
+	e^{-jk sin\Theta (a-A/2)})+ ...]
+	=\hat E_0 e^{j(\omega t-kR)}\frac{1}{j k sin\Theta}
+	\left[e^{j k sin\Theta A/2}-e^{-jk sin\Theta A/2}\right]
+	\cdot[1
+	\nonumber \\
+	+e^{j k sin\Theta a}+
+	e^{j k sin\Theta 2a}+ ..]
+	=\hat E_0 e^{j(\omega t-kR)} A sin\,c\;U
+	\left[\Sigma_{m=0}^{(n-1)}\;e^{-j k sin \Theta\; m\;a}\right]
+	=          \nonumber\\
+	\hat E_0 e^{j(\omega t-kR)} A sincU\left[\frac{
+	e^{+jk n sin \Theta a/2}e^{-jk n sin \Theta a/2}-e^{-jk n sin \Theta
+	a/2}e^{-jk n sin \Theta a/2}}
+	{e^{+jk sin \Theta a/2}e^{-jk sin \Theta a/2}-e^{-jk sin \Theta a/2}
+	e^{-jk sin \Theta a/2})}\right]\nonumber
+	\end{eqnarray}
+	Nach Ausklammern von
+	$(e^{-jk n sin \Theta a/2}\;/e^{-jk sin \Theta a/2})=
+	e^{-jk(n-1) sin \Theta a/2}$ ~~wird
+	die kleine Strecke ~$(n-1)\,sin\,\Theta \,a/2$~ im Exponenten
+	zum mittleren Abstand\\
+	~$\overline {R}^*=(z+(n-1) sin \Theta a/2)$~ addiert
+	und der periodische
+	Term ~$\hat E_0 e^{j(\omega t-k\overline {R}^*)}$ ~vorgezogen. Damit
+	(und nach Erweitern mit $n$) wird
+	\begin{eqnarray}
+	\hat{E}_{res}\sim  E_0\,A \,sin\,c\;U\,
+	\left[\frac{sin\;(k n sin \Theta a/2)}{sin\;(k sin \Theta a/2)}\right]
+	= \frac{n}{n}\,E_0\,A\,\left[\frac{sin(\pi \frac{A}{\lambda}\frac{\alpha}{z})}
+	{(\pi\frac{A}{\lambda}\frac{\alpha}{z})}\right]
+	\,
+	\left[\frac{sin\;(\pi n \frac{a}{\lambda}\frac{\alpha}{z})}
+	{sin\;(\pi \frac{a}{\lambda}\frac{\alpha}{z})}\right].\nonumber\\
+	\sim \frac{n E_0 A}{n}\,\left[\frac{sin(\pi \frac{A}{\lambda}\frac{\alpha}{z})}
+	{(\pi\frac{A}{\lambda}\frac{\alpha}{z})}\right]
+	\left[\frac{sin\;(\pi n \frac{a}{\lambda}\frac{\alpha}{z})}
+	{sin\;(\pi \frac{a}{\lambda}\frac{\alpha}{z})}\right]\;;\;I(\alpha)
+	\sim(\frac{n E_0 A}{n})^2\sim I_0\,(sinc\,U)^2
+	\,\left[\frac{sin\;(n y)}
+	{sin\;y}\right]^2
+	\;.
+	\label{do31}
+	\end{eqnarray}
+	Die maximale Intensität wächst mit $n^2$. Normiert man die gebeugten Intensitäten
+	auf den Maximalwert ($I_0=1$) der nullten Ordnung, so sind die gebeugten
+	Intensitäten durch $n^2$ zu dividieren (vergl. mit (\ref{do1}), $n^2=4$;
+	s.~Frage 12).
+		
+\subsection{Fouriertransformation (FT)}
+\subsubsection{Mathematischer Formalismus}
+	Die Gln.~(\ref{sp01} und \ref{do1}) sind Beispiele von FT.
+	Mit einer FT wird
+	eine {\bf Raumfunktion~=~Objektfunktion} $f(x)$,
+	z.~B.~ein Spalt [$f(x)=1$~für $-A/2\le x\le +A/2$; sonst $f(x)=0$]
+	bzw.~eine Zeitfunktion $f(t)$ in der Nachrichtentechnik
+	in eine {\bf Amplitudenfunktion} im {\bf reziproken Raum} $F(k)$
+	bzw.~in ein Frequenzspektrum $F(f)$ überführt.
+	Die allgemeine mathematische Vorschrift für FT lautet in komplexer
+	Schreibweise:
+	\begin{equation}
+	F(k)=\frac{1}{\sqrt {2\pi}}\int_{-\infty}^{+\infty}\,f(x)e^{jkx}dx\quad(a)\;;
+	\quad f(x)=\frac{1}{\sqrt {2\pi}}\int_{-\infty}^{+\infty}\,F(k)e^{-jkx}dk\quad(b)\;.
+	\label{ft01}
+	\end{equation}
+	Man nennt $F(k)=F^*{f(x)}$ die F.-Transformierte (FT) von $f(x)$
+	und umgekehrt nennt man
+	$f(x)=F^{*-1}{F(k)}=F^{*-1}{F^*{f(x)}}$ die inverse FT.\\
+	Der oft nur bei einer der Gln.~(\ref{ft01})~,b) stehende
+	Faktor $1/2\pi$ wurde symmetrisch auf
+	beide Transformationen als $1/\sqrt{2\pi}$ verteilt ($j=\sqrt{-1}$).
+	
+\subsubsection{Beispiele für FT}
+	In den Abb.~6 und 7 sind Beispiele von FT aus der Optik und
+	Nachrichtentechnik skizziert. Auf der rechten Seite stehen die Amplituden des
+	Frequenzspektrums, durch deren Quadrieren man die Intensitäten erhält.
+	Die der Abb.~7~entsprechenden FT für die Fraunhoferbeugung $F(k)$
+	erhält man mit $t\rightarrow x$ sowie $f\rightarrow k$
+	und mit $s(t)\rightarrow f(x)$ sowie $\underline {S}(f)\rightarrow F(k)$.\\
+	Etwas ausführlicher sollen folgende Fälle erörtert werden:
+	\begin{enumerate}
+	\item
+	Noch einmal erwähnt sei die schon behandelte Beugung am Einzelspalt mit
+	der maßgeblichen sinc$U$-Funktion
+	nach GL.~(\ref{sp01}) als FT der
+	Spaltfunktion (Rechteckfunktion nach Abb.~7,1).
+	\item
+	Die FT der {\bf Gaußschen Glockenkurve} (Abb.~7,4) wird \\
+	mit $f(x)=C\,e^{-ax^2}$; ($C=\sqrt{a/\pi}=const$) sowie
+	\begin{equation}
+	F(k)=\frac{1}{\sqrt {2\pi}}\int_{-\infty}^{+\infty}\,f(x)e^{jkx}dx=
+	\frac{C}{\sqrt {2\pi}}\int_{-\infty}^{+\infty}\,e^{-ax^2}e^{jkx}dx\quad,
+	\label{ft02}
+	\end{equation}
+	und
+	$\int_{-\infty}^{+\infty}\,e^{-\beta^2}=\sqrt{\pi}$ (Tafelwerk) sowie mit
+	$-ax^2+jkx=-(x\sqrt{a}-jk/s\sqrt{a})^2-k^2/4a$ und
+	$\beta=(x\sqrt{a}-jk/s\sqrt{a})$\\
+	wieder {\bf eine Gauß-Kurve}:
+	\begin{equation}
+	F(k)=e^{\frac{k^2}{4a}}\quad.
+	\label{ft03}
+	\end{equation}
+	Die Standardabweichungen von $f(x)$ bzw.~$F(k)$ sind
+	$\sigma_x=\frac{1}{\sqrt{2a}}$ bzw.~$\sigma_k=\sqrt{2a}$,
+	dh.,~$\sigma_x\cdot\sigma_k=1$.\\
+	Wird z.~B.~die Gauß-Verteilung $f(x)$ um den Faktor 2
+	schmaler~ ($a'$ 2 mal größer: $a'=4a;\;\sigma_x'=\sigma_x/2$) so wird die FT
+	um den Faktor 2 breiter, wobei das Amplitudenmaximum wegen der
+	Normierungsbedingung ~$\int_{-\infty}^{\infty}e^{\frac{k^2}{4a}}=1$ ~um
+	den gleichen Faktor sinkt.
+	\item
+	{\bf Dirak'sche Delta-Funktion:}~$\delta(x)$\\
+	Für verschwindenden $\sigma$-Wert ($a\rightarrow \infty$) geht die
+	Gaußsche Glockenkurve über in die Dirak'sche $\delta$-Funktion (Singularität),
+	die nebst der Nornierungsbedingung definiert ist:
+	\begin{eqnarray}
+		\delta(x) &=& 0 \quad{\rm für }\quad x\ne 0\quad \nonumber\\
+		\delta(x) &=& \infty \quad{\rm für }\quad x= 0\quad.\nonumber\\
+		\int_{-\infty}^{\infty}\delta(x)&=&1\quad.
+		\label{ft04}
+	\end{eqnarray}
+	Hat z.~B.~das Objekt (angenähert) die Form eines $\delta$-peaks,
+	so ist die zugehörige FT ein (angenähert) $\infty$ breites
+	Raumfrequenz-Spektrum (weißes Rauschen als
+	Frequenzspektrum in der Nachrichtentechnik, s.~Abb.~7,7), bzw.~
+	im Falle der Beugung an einem sehr feinen Spalt erhält man eine diffuse
+	gleichmäßige Ausleuchtung auf dem Schirm.\\
+	Wichtig sind weitere {\bf Eigenschaften} der $\delta$-Funktion,
+	die Multiplikation mit einer stetigen Fkt.~bzw. den Zusammenhang
+	zur FT betreffend:\\
+	\begin{eqnarray}
+	\int_{-\infty}^{\infty}\delta(x)f(x)dx=f(0)\quad(a)\quad;\quad
+	\int_{-\infty}^{\infty}\delta(x-x_0)f(x)dx=f(x_0)\quad(b)\nonumber \\
+	\delta(x)
+	=\frac{1}{2\pi}\int_{-\infty}^{\infty}e^{-jkx}dx=
+	\frac{1}{2\pi}\int_{-\infty}^{\infty}e^{jkx}dk\quad(c)\nonumber\\
+	\delta(x)=F^{*-1}[1]\quad(d)\quad;\quad
+	\delta(x)=
+	F^{*}[\delta(x)]=1\quad(e)\nonumber\\
+	\delta(x-x')=\delta(x'-x) \quad(f)\quad
+	\delta(x)=\delta(-x) \quad(g)\quad.
+	\label{ft05}
+	\end{eqnarray}
+	In Worten: Durch a.~bzw.~b~ist ein Fuktionswert an der Stelle $x=0$
+	bzw.~an der Stelle $x_0$ gegeben;\\
+	Die FT der $\delta$-Fkt. ist die 1; die $\delta$-Fkt.~ist die inverse FT
+	der Zahl 1., s.~Abb.~7,6 und 7,7.
+	\item
+	{\bf Beispiel:} Doppel-$\delta$-Funktion ($\infty$ schmaler
+	Doppelspalt, Abb.~6~A):\\[.1cm]
+	Mit $f(x)=\delta[x-(+a/2)]+\delta[x-(-a/2)]$ und den Gln.~(\ref{ft01}~a,
+	\ref{ft05}~b) sowie
+	\begin{equation}
+	[e^{jx}+e^{-jx}]/2=\cos x
+	\label{ft022}
+	\end{equation}
+	ergibt sich
+	\begin{eqnarray}
+	F(k))&=&\frac{1}{\sqrt {2\pi}}\int_{-\infty}^{+\infty}\,f(x)e^{jkx}dx\nonumber\\
+	&=&\frac{1}{\sqrt {2\pi}}
+	\int_{-\infty}^{+\infty}\delta[x-(+a/2)]+\delta[x-(-a/2)]\,e^{jkx}dx\nonumber\\
+	&=&\frac{1}{\sqrt {2\pi}}[e^{jka/2}+e^{-jka/2}] \nonumber\\
+	&=&\sqrt{\frac{1}{2\pi}}\,2\,\cos(\frac{ka}{2})
+	=\sqrt{\frac{2}{\pi}}\,\cos(\frac{ka}{2})
+	\quad.
+	\label{ft06}
+	\end{eqnarray}
+	Die Amplituden-Funktion der gebeugten Welle ist also periodisch mit konstanter
+	Amplitude.
+	\item
+	{\bf Beispiel:} cos-Gitter, Umkehrung von 4., Abb.~6,(b):\\
+	Mit den in (\ref{ft05}) angegebenen Beziehungen
+	sowie Gl.~(\ref{ft022}) findet man
+	\begin{eqnarray}
+	f(x)&=&A\,\cos (k_0x)=\frac{A}{2}[e^{jk_x}+e^{-jk_0x}] \nonumber \\
+	F(k)&=&\frac{A}{2}\frac{1}{\sqrt {2\pi}}\int_{-\infty}^{+\infty}e^{jk_0x}e^{jkx}dx+
+	\frac{A}{2}\frac{1}{\sqrt {2\pi}}\int_{-\infty}^{+\infty}
+	e^{-jk_0x}e^{jkx}dx\nonumber\\
+	&=&
+	\frac{A}{2}[\delta(-k-k_0)+\delta(k-k_0)]=
+	\frac{A}{2}[\delta(k+k_0)+\delta(k-k_0)]\quad.
+	\label{ft06}
+	\end{eqnarray}
+	In Worten: Ein cos-Gitter als Beugungsobjekt erzeugt zwei
+	scharfe Amplituden- (und Intensitäts-)~peaks auf dem Schirm.
+	\item
+	{\bf cos-Gitter} mit überlagerter gleichmäßiger Ausleuchtung, Abb.~6,(d)):\\
+	In diesem meist praktisch realisierten Fall haben wir eine Überlagerung der
+	Fälle der Abb.~6(a) und 6(b).
+	\end{enumerate}
+	
+	\begin{figure}[p]
+   \centering
+   \includegraphics[width=16cm]{abb6}\vspace{.5cm}
+	\caption{Beispiele von FT \cite{hecht}:}
+	Rechts sind Amplituden dargestellt, durch Quadrieren erhält man Beugungsbilder \\
+	A: Zwei $\infty$ schmale Spalte ergeben ein periodisches Bild;\\
+	B: Hypothetisch, experimentell von A nicht zu unterscheiden;\\
+	C: Umkehrung von A, exp. von (b) nicht zu unterscheiden;\\
+	(a): Gleichmäßige Ausleuchtung ergibt nur nullte Ordnung;\\
+	(b,c): cos-Gitter ergibt zwei scharfe Beugungsbilder;\\
+	(d): cos-Gitter mit konstantem Untergrund, entspricht Überlagerung von (a) und (b)
+   \label{fig:abb6}
+	\end{figure}
+	
+	\begin{figure}[p]
+   \centering
+   \includegraphics[width=16cm]{abb7}
+   \caption{Wichtige Zeitfunktionen $s(t)$ aus der Nachrichtentechnik mit
+	ihren FT ($\underline {S}(f)$, völlig analog den Blendenojekten mit
+	zugehörigen Beugungsamplituden \cite{hert}}
+   \label{fig:abb7}
+	\end{figure}
+	
+	\newpage
+\section{Fragen}
+	\begin{enumerate}
+	\item
+	Wie lassen sich Amplitude und Phase einer ebenen harmonischen Welle
+	darstellen? (auch Komplexe Darstellung).                          
+	\item
+	Was versteht man unter Beugung und Interferenz?
+	\item
+	Wie hängen Amplitude und Intensität zusammen? Woraus resultiert
+	bei Fraunhofer-Beugung der Gangunterschied?                               
+	\item
+	Erläutern Sie die Fraunhoferbeugung am Einzel-Spalt.      
+	\item
+	Was besagt das Theorem von Babinet (Beispiele)?           
+	\item
+	Was besagt das Prinzip von Huygens-Fresnel?
+	\item
+	Nennen Sie Beispiele zu Fraunhofer'scher und Fresnel'scher Beugung.
+	\item
+	Erläutern Sie in Fraunhofer-Näherung die  Gangunterschiede und
+	Intensitätsverteilungen für Spalt und Gitter.                                             
+	\item
+	Was versteht man unter der Kohärenzbedingung und der Kohärenz-Länge? 
+	\item
+	Skizzieren Sie  das (Fraunhofer-) Beugungs-Bild, d.~h.~
+	$E(\alpha)$; $I(\alpha)$~ für folgenden Einzelspalt:
+	anhand der  Gl.~\ref{sp01}):\\
+	A=0,1 mm; z=1,5 m; $\lambda$ = 632,8 nm!                             
+	\item
+	Warum ist LASER-~Licht besonders kohärent?                         
+	\item
+	Bezüglich der $n^2$-Abhängigkeit der maximalen Beugungsintensität beim Gitter
+	zeige man, daß gilt für das Maximum von $f^*=(sin\,(ny))/(sin\,y)$
+	(s.~Gl.~(\ref{do31}):\\
+	Wegen $\frac{\partial f^*}{\partial y}=0$ wird $f^*_{max}=n$.
+	\end{enumerate}
+
+\bibliographystyle{unsrt}
+
+\begin{thebibliography}{NAM99}
+\bibitem{hecht}
+E.~Hecht, Optik, Add.~Wesley 1989
+\bibitem{paus}
+H.~J.~Paus, Physik, C.h.-V. München 1995
+\bibitem{gert}
+Gerthsen (Vogel), Physik, Springer Berlin 1995
+\bibitem{nied}
+H.~Niedrig, Physik, Springer Berlin 1992
+\bibitem{reck}
+A.~Recknagel, Physik, Bd.~IV, Optik
+\bibitem{hert}
+E.~Herter, W.~Lörcher, Nachrichtentechnik, V.~C.-Hanser, München1994
+\end{thebibliography}
+\end{document}

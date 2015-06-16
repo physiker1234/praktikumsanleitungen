@@ -1,0 +1,134 @@
+\documentclass[11pt,twoside,a4paper]{article}
+\usepackage{verbatim}
+\usepackage{amsmath,amsthm}
+\usepackage{graphicx}
+\usepackage{color}
+
+\usepackage[german]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+
+\usepackage{fancybox}
+\usepackage{textcomp}
+\usepackage{fancyhdr}
+\usepackage{rotating}
+\setcounter{secnumdepth}{3}
+
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\raggedleft\arraybackslash}X}
+\newcolumntype{Z}{>{\centering\arraybackslash}X}
+
+\textheight			25cm
+\textwidth			16.5cm
+\topmargin			-1cm
+\oddsidemargin		0cm
+\evensidemargin	-0.42cm
+
+\pagestyle{fancy}
+
+ \title{Versuch Em \\ Elektrische Messung \\}
+ \author{bearbeitet von \\ M. Kreller \\ i.A. Dr. Escher}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{table}[h]
+\begin{tabular}{|c|c|}
+\hline
+& \\
+\hspace{0.7cm} \begin{LARGE}Technische Universität Dresden \end{LARGE} \hspace{0.7cm} &
+\hspace{1cm}Physikalisches Praktikum \hspace{1cm} \\
+\begin{large} Fachrichtung Physik \end{large}               & \\
+\begin{footnotesize} J. Bretschneider 08/ 2000 \end{footnotesize}            & Versuch:
+\begin{LARGE} EM \end{LARGE} \\
+\begin{footnotesize} bearbeitet 05/ 2004 \end{footnotesize} & \\
+\hline
+\end{tabular}
+\end{table}
+\begin{huge}\textbf{Elektrische Messung}\end{huge}
+
+\tableofcontents
+\newpage
+
+\section{Aufgabenstellung}
+Die  Kennlinien $I= f(U)$ und $R= f(I)$ eines Ohmschen Widerstands, einer Metallfadenlampe und eines
+Halbleiters sollen mittels Spannungs- und Strommessung bestimmt werden.
+
+\section{Grundlagen}
+\subsection{Ohmsches Gesetz}
+Elektrischer Strom kommt durch im elektrischen Feld bewegte Ladungen zustande. Als Stromstärke I wird die durch den Querschnitt A eines Leiters fließende Ladungsmenge dQ pro Zeitintervall dt definiert: I= dQ/dt. Bei vielen Materialien beobachtet man, dass der Strom proportional zur angelegten Spannung U ist (Ohmsches Gesetz). Der elektrische Widerstand R wird als Proportionalitätsfaktor eingeführt: \\
+\begin{equation}
+U \sim I \quad U=R \cdot I
+\label{e1-01} 
+\end{equation}
+Für einen elektrischen Leiter mit der Länge l ergibt sich für den Widerstand: \\
+\begin{equation}
+R=\frac{1}{\sigma} \cdot \frac{l}{A} \quad mit \quad \sigma = n Q_l \mu,
+\label{e1-02} 
+\end{equation}
+wobei die elektrische Leitfähigkeit $\sigma$ von der Anzahl der Ladungsträger pro Volumen (Ladungsträgerkonzentration n) sowie deren Ladung $Q_L$ und Beweglichkeit $µ$ abhängt. Neben der, z.B. bei Raumtemperatur gemessenen, Größe von $\sigma$, nach der die Stoffe in Leiter und Isolatoren eingeteilt werden können, interessiert insbesondere die Temperaturabhängigkeit der elektrischen Leitfähigkeit, die nach Gleichung \ref{e1-02} durch die Änderungen der Konzentration und der Beweglichkeit der Ladungsträger mit der Temperatur hervorgerufen wird. Offensichtlich gilt das Ohmsche Gesetz nur bei konstanter Temperatur oder wenn sich das Produkt $nµ$ mit der Temperatur nicht ändert.
+
+\subsection{Widerstandsmessung}
+Zur Messung des elektrischen Widerstandes mittels Spannungs- und Strommessung können zwei Schaltungen verwendet werden (Abb. \ref{e1-04}) Dabei wird jeweils nur eine der beiden Meßgrößen "`richtig"', d.h. bis auf die üblichen Meßfehler korrekt, gemessen. In die andere Meßgröße geht ein durch die Innenwiderstände der Meßgeräte bedingter Schaltungsfehler ein, der korrigiert werden muß. \\ \\
+Mit der Schaltung (a) wird die Stromstärke richtig gemessen. Das Voltmeter zeigt eine um den Spannungsabfall $\Delta U$ über dem Amperemeter zu große Spannung an. Mit dem Innenwiderstand $R_A$ des Amperemeters beträgt der Schaltungsfehler für die Spannungsmessung:
+\begin{equation}
+\frac{\Delta U}{U} = \frac{R_A}{R}
+\label{e1-03}
+\end{equation}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.8]{abb1} 
+\caption{Stromrichtige (a) und Spannungsrichtige (b) Schaltung zur Widerstandsmessung}
+\label{e1-04} 
+\end{figure}
+Die Schaltung (b) hat den Vorteil einer richtigen Spannungsmessung. Die Stromstärke wird um den durch das Voltmeter fließenden Strom zu groß gemessen. Bei bekanntem Innenwiderstand $R_V$ des Voltmeters beträgt der Schaltungsfehler bei der Strommessung:
+\begin{equation}
+\frac{\Delta I}{I} = \frac{R}{R_V}
+\label{e1-05}
+\end{equation}
+Grundsätzlich liefern nach Ausführung der Korrektur beide Schaltungen das gleiche Ergebnis. Es sollte dennoch immer die Schaltung mit dem kleineren Schaltungsfehler verwendet werden, da $R_A$ und $R_V$ fehlerbehaftete Größen sind. Aus den Gleichungen \ref{e1-03} und \ref{e1-05} folgt, dass für Widerstände $R > \sqrt{R_A \cdot R_V}$ die stromrichtige Schaltung und für Widerstände $R < \sqrt{R_A \cdot R_V}$ die spannungsrichtige Schaltung besser geeignet ist.
+
+\section{Hinweise zum Experiment}
+\begin{itemize}
+\item 
+Aus den im Anhang gegebenen Innenwiderständen der Meßgeräte und einer einzelnen Spannungs- und Strommessung (zur Bestimmung der ungefähren Größe der zu vermessenden Widerstände) ist zu ermitteln, welcher Schaltungstyp zur Messung der Kennlinien besser geeignet ist.
+\item 
+Der Spannungs-Stromzusammenhang wird für jeden Widerstand durch die Messung von ca. 12 Punkten ermittelt. Am Stromversorgungsgerät wird die Spannung mit einer geeigneten Schrittweite eingestellt (z.B. von 1 V bis 6 V in 1V-Schritten, weiter in 2V-Schritten). Die Maximalwerte für Spannung und Strom betragen 20 V bzw. 150 mA. Wird einer dieser beiden Werte erreicht, ist die Meßreihe zu beenden.
+\item 
+Der Halbleiter muß über den Vorwiderstand an das Stromversorgungsgerät angeschlossen werden; die Spannung wird jedoch nur über dem Halbleiter gemessen. Nach jeder Neueinstellung eines Spannungswertes muß vor dem Ablesen der Meßwerte gewartet werden, bis sich ein Temperaturgleichgewicht eingestellt hat, d.h. bis sich die Anzeige der Meßgeräte nicht mehr ändert.
+\item 
+Die Strom- und Spannungsmessung erfolgt mit Vielfachmessern. Es ist jeweils der kleinstmögliche Meßbereich zu verwenden.
+\item 
+Die Fehlerrechnung ist für mindestens einen der untersuchten Widerstände und für mindestens drei Messungen (kleine, mittlere und große Spannung) durchzuführen. Die Fehlerkreuze sollen in die Diagramme eingetragen werden.
+\item 
+Die gemessenen Kennlinien sind zu diskutieren. Dabei soll insbesondere auf die physikalischen Ursachen der beobachteten Abhängigkeiten des Widerstandes von der Stromstärke bzw. der Temperatur eingegangen werden.
+\item 
+(PHY): Die U-I-Kennlinien sollen in einem doppelt-logarithmischen Diagramm dargestellt werden (Abszisse: $lg (I/[I])$). Wegen $lg (U/[U]) = lg (I/[I]) + lg (R/[R])$ ist entlang unter 45° liegender Geraden R= const., während entlang dazu senkrechter Geraden wegen $lg (U/[U]) = lg (P/[P]) - lg (I/[I])$ die Leistung P konstant ist. Damit kann in der doppelt-logarithmischen Auftragung der Kennlinien ein zweites rechtwinkliges Koordinatensystem mit R- und P-Koordinaten konstruiert werden, aus dem der Widerstand in Abhängigkeit von der abgegebenen Leistung ablesbar ist.
+\end{itemize}
+
+\section{Vorbereitungsschwerpunkte}
+\begin{itemize}
+\item 
+Leitungsvorgänge im Metall und im Halbleiter, insbesondere: Einfluß der Temperatur auf Ladungsträgerkonzentration und Beweglichkeit
+\item
+Aussage des Ohmschen Gesetzes
+\item
+Fehler bei gleichzeitiger Strom- und Spannungsmessung
+\end{itemize} 
+
+\section{Anhang}
+Innenwiderstände der Vielfachmesser (Typ: Mellenbach)\\ \\
+\begin{tabular}{|l|l||l|l|}
+\hline
+\multicolumn{2}{|c||}{\hspace{0.4cm} als Voltmeter \hspace{0.4cm} }  & \multicolumn{2}{|c|}{\hspace{0.4cm} als Ampermeter \hspace{0.4cm} }  \\ \hline
+Spannungsmeßbereich [V] & $R_V [k \Omega]$ & Strommeßbereich [mA] & $R_A [\Omega]$ \\
+\hline
+2,5 & 50 & 2,5 & 80 \\
+10 & 200 & 25 & 8 \\
+50 & 1000 & 250 & 0,8 \\ \hline
+\end{tabular} 
+\begin{itemize}
+\item systematischer Fehler der Meßgeräte bei Gleichspannungsmessung: 1,5 \% vom Vollausschlag
+\item Ablesefehler: $\frac{1}{2}$ Skalenteil
+\end{itemize} 
+
+\end{document}

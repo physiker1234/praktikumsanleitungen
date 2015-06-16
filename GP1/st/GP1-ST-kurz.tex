@@ -1,0 +1,65 @@
+\documentclass[platz]{tudphygp}
+\usepackage{tudphymd,xcolor}
+
+%Der Versuchsname wird auf dieselbe Breite gezogen wie der Text "Platzanleitung ST", was bei diesem ausgesprochen kurzen Versuchsnamen zu riesigem Text führt. Um dies zu kompensieren, fügen wir auf beiden Seiten weißfarbigen Blindtext ein, der dafür sorgt, dass der Text nicht so weit hochskaliert wird.
+\versuch{{\color{white}Stoß}Stoß{\color{white}Stoß}}{ST}
+\author{Dr. Schwab,Dr. Escher}
+
+\begin{document}
+\maketitle
+
+\section*{Aufgabenstellung}
+
+\begin{enumerate}
+ \item Der elastische Stoß zweier Körper a) gleicher und b) unterschiedlicher Masse ist in Abhängigkeit vom Stoßwinkel $\varphi$ (schiefer bzw. ungerader Stoß) qualitativ zu untersuchen.
+ \item Der gerade unelastische Stoß zweier Körper gleicher Masse ist quantitativ zu untersuchen und die Stoßzahl $k$ der verwendeten Materialien ist zu bestimmen.
+\end{enumerate}
+
+\section*{Hinweise zur Versuchsdurchführung}
+
+\begin{enumerate}
+ \item Justieren der Apparatur
+  \begin{enumerate}
+   \item Scheibe horizontal einrichten (Dosenlibelle am Platz)
+   \item Fallhöhe $\bar h$ messen
+   \item Befestigen des Papiers (je ein Blatt für jeden Mitarbeiter) und des Blaubogens
+   \item Markieren des äußeren Randpunktes der Scheibe mit Hilfe des Lotes
+   \item Durchmesser $d$ der Scheibe messen
+  \end{enumerate}
+ \item Schiefer Stoß zweier Kugeln gleicher Masse (große Stahlkugeln verwenden)
+  \begin{enumerate}
+   \item Stoßwinkel $\varphi$ zwischen \ang{-90} und \ang{+90} in \ang{10}-Schritten variieren
+   \item Entfernung $x_0$ bestimmen (Kugel ohne Stoß durchrollen lassen, Mittelpunkt der Scheibe als Nullpunkt)
+   \item Einzeichnen des theoretischen Kreises ($x_0$ aus der Messung verwenden) $a = x_0/2$  (Mittelpunktskoordinate) und $r_1 = r_2 = x_0/2$  (Kreisradius)
+  \end{enumerate}
+ \item Schiefer Stoß zweier Kugeln ungleicher Masse (große stößt auf kleine Stahlkugel)
+  \begin{enumerate}
+   \item $x_0$ wie oben mit großer Kugel ermitteln, Stoßwinkel genauso variieren
+   \item Massen der Kugeln durch Wägung ermitteln
+   \item Vergleich mit der Theorie ($x_0$ aus der Messung), berechnete und gemessene Kreise eintragen
+  \end{enumerate}
+  \begin{align*}
+   a &= \frac{m_1}{m_1+m_2} \, x_0 && \text{Mittelpunkt}\\
+   r_1 &= \frac{m_2}{m_1+m_2} \, x_0 && \text{Radius des Auftreffkreises der stoßenden Kugel}\\
+   r_2 &= \frac{m_1}{m_1+m_2} \, x_0 && \text{Radius des Auftreffkreises der gestoßenen Kugel}
+  \end{align*}
+ \item Gerader Stoß unvollkommen elastischer Kugeln (das gleiche Material für beide Kugeln verwenden)
+  \begin{enumerate}
+   \item zwei der Materialien verwenden, jeweils beide Kugeln wiegen
+   \item $x_0$ aufnehmen (diesmal ist der Nullpunkt der Lotpunkt)
+   \item Kugeln zehn mal stoßen lassen (gerader Stoß), Ermittelung der mittleren Fallweiten der stoßenden ($x_1$) und der gestoßenen ($x_2$) Kugel
+   \item Stoßzahl $k$ und korrigierte Stoßzahl $k'$ berechnen nach
+   \[
+    k = \frac{x_2 -x_1}{x_0} \quad\text{und}\quad k' = \frac{2x_2}{x_0} - 1
+   \]
+   \item Angabe der Fehler $\Delta k$ und $\Delta k'$
+ \end{enumerate}
+\end{enumerate}
+
+\begin{figure}[h!b]
+ \centering
+ \includegraphics[width=\linewidth/3*2]{GP1-ST-Fallrinne}
+ \caption{Versuchsaufbau. Seitenansicht}
+\end{figure}
+
+\end{document}

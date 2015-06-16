@@ -1,0 +1,170 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd,mhchem,listliketab,nccmath}
+\usepackage[normalem]{ulem}
+\usepackage[colorlinks=true,implicit=false,urlcolor=blue]{hyperref}
+
+\versuch{Passiver Zweipol}{PZ}
+\author{P.~Eckstein,R.~Schwierz}
+\bearbeitet{A.~Otto}{}
+
+\buch{1}{L.~Bergmann, C.~Schaefer}{Lehrbuch der Experimentalphysik, Band 2: Elektromagnetismus}{Verlag de Gruyter}{Berlin 1999}
+\buch{2}{H.~J.~Eichler, H.~D.~Kronfeldt, J.~Sahm}{Das neue physikalische Grundpraktikum}{Springer-Verlag}{Berlin, Heidelberg [u.a.] 2006}
+\buch{3}{W.~Demtröder}{Experimentalphysik~2: Elektronik und Optik}{Springer-Verlag}{Berlin, Heidelberg 1994}
+\buch{skript}{R.~Mester}{Skript zur Vorlesung Technische Informatik I, Teil 2, 6. Kapitel}{\url{
+http://iktp.tu-dresden.de/IKTP/lehre/gprak/PZ-skript.html}}{2009}
+
+\begin{document}
+\maketitle
+
+\section{Ziel und Aufgabenstellung}
+Ein einfacher linearer passiver Zweipol, bestehend aus einem ohmschen Widerstand und einem Kondensator oder einer 
+Spule (ohne Eisenkern), ist anhand der Ortskurve seines komplexen Widerstandes $\uline Z$ zu identifizieren. Mit 
+Hilfe der komplexen Wechselstromrechnung ist die Größe der jeweiligen Elemente zu bestimmen.
+\begin{enumerate}
+ \item Aufnahme und Darstellung der Ortskurve eines passiven, linearen Zweipols, bestehend aus einem ohmschen 
+ Widerstand und einer Spule oder einem Kondensator.
+ \item Identifikation der Struktur des Zweipols: $R$-$L$- bzw. $R$-$C$-Reihenschaltung oder -Parallelschaltung.
+ \item Bestimmung des ohmschen Widerstandes und der Induktivität bzw. der Kapazität in der Zweipolschaltung.
+\end{enumerate}
+
+\section{Grundlagen}
+\subsection{Darstellung von Spannungen und Strömen, die sinusförmigen Zeitfunktionen gehorchen}
+\begin{center}
+ \storestyleof{itemize}
+ \begin{listliketab}
+  \begin{tabular}{lcl}
+   im Zeitbereich & \hspace{1.5cm} & im Komplexen\\
+   $u(t)=U_m\cdot\cos(\omega t+\varphi_u)$ & &$\uline u(t)=U_m\cdot\mathrm e^{j(\omega t+\varphi_u)}$\\
+   $i(t)=I_m\cdot\cos(\omega t+\varphi_i)$ & & $\uline i(t)=I_m\cdot\mathrm e^{j(\omega t+\varphi_i)}$
+  \end{tabular}
+ \end{listliketab}
+\end{center}
+\textbf{Achtung:} In der Elektrotechnik nimmt man für die imaginäre Einheit das kleine $j$, da $i$ für Ströme 
+reserviert ist.\\
+Wird an einen linearen passiven Zweipol eine sinusförmige Spannung gelegt, so fließt im stationären d.h. 
+eingeschwungenen Zustand ein ebenfalls sinusförmiger Strom, der grundsätzlich gegenüber der Spannung 
+phasenverschoben ist.
+\begin{figure}[h]
+ \centering 
+ \includegraphics[width=0.9\textwidth]{phase.png}
+ \caption{Strom- und Spannungsverlauf bei einem passiven Zweipol (in der Phasenebene)}
+ \label{fig:phase}
+\end{figure}
+In dem in Abb. \ref{fig:phase} dargestellten Beispiel sind die Phasenwinkel direkt ablesbar. Hier "`eilt"' der
+Strom der Spannung voraus oder anders ausgedrückt, die Spannung ist gegenüber dem Strom verzögert.
+\frage{Welcher Zusammenhang besteht zwischen der Phasenverschiebung $\varphi=\varphi_u-\varphi_i$ und der 
+Phasenverschiebungszeit $\tau$?}
+\frage{Handelt es sich bei dem in Abb. \ref{fig:phase} dargestellten Verhalten um ein induktives oder ein 
+kapazitives?}
+
+\subsection{Das Ohmsche Gesetz für sinusförmige Vorgänge}
+\vspace{0.3cm}
+\begin{minipage}[c]{0.3\linewidth}
+ \centering
+ \includegraphics[width=\linewidth]{widerstand.png}
+\end{minipage}
+\hspace{1cm}
+\begin{minipage}[c]{0.6\linewidth}
+ \begin{fleqn}
+  \begin{align*}
+   &i=\frac{u}{R}=\frac{U_m}{R}\cdot\sin(\omega t+\varphi_u)=I_m\sin(\omega t+\varphi_u)\\
+   &R=\frac{U_m}{I_m}\\
+   &\varphi_i=\varphi_u \quad\text{und}\quad \varphi_u-\varphi_i=0
+  \end{align*}
+ \end{fleqn}
+\end{minipage}\\[0.7cm]
+\rule{\textwidth}{0.2mm}\\[0.5cm]
+
+\begin{minipage}[c]{0.3\linewidth}
+ \centering
+ \includegraphics[width=\linewidth]{spule.png}
+\end{minipage}
+\hspace{1cm}
+\begin{minipage}[c]{0.6\linewidth}
+ \begin{fleqn}
+  \begin{align*}
+   &i=\frac{1}{L}\int\!\! u\,\diff t=-\frac{U_m}{\omega L}\cdot\cos(\omega t+\varphi_u)=I_m\sin(\omega t+\varphi_u-\frac{\pi}{2})\\
+   &\omega L=\frac{U_m}{I_m}\\
+   &\varphi_i=\varphi_u-\frac{\pi}{2} \quad\text{und}\quad \varphi_u-\varphi_i=\frac{\pi}{2}
+  \end{align*}
+ \end{fleqn}
+\end{minipage}\\[0.7cm]
+\rule{\textwidth}{0.2mm}\\[0.5cm]
+
+\begin{minipage}[c]{0.3\linewidth}
+ \centering
+ \includegraphics[width=\linewidth]{kondensator.png}
+\end{minipage}
+\hspace{1cm}
+\begin{minipage}[c]{0.6\linewidth}
+ \begin{fleqn}
+  \begin{align*}
+   &i=C\cdot\dquot{u}{t}=\omega C U_m\cdot\cos(\omega t+\varphi_u)=I_m\sin(\omega t+\varphi_u+\frac{\pi}{2})\\
+   &\frac{1}{\omega C}=\frac{U_m}{I_m}\\
+   &\varphi_i=\varphi_u+\frac{\pi}{2} \quad\text{und}\quad \varphi_u-\varphi_i=-\frac{\pi}{2}
+  \end{align*}
+ \end{fleqn}
+\end{minipage}\\[0.5cm]
+Für Spulen und Kondensatoren führt die Anwendung des Ohmschen Gesetzes zu gewöhnlichen Differentialgleichungen 
+und bei Zusammenschaltung passiver Elemente zu Netzsystemen, bei Anwendung der Kirchhoffschen Sätze zu 
+Differentialgleichungssystemen. Deren aufwendige Lösung man sich durch die \textbf{Transformation der 
+Zeitfunktionen in die komplexe Ebene} spart.
+\frage{Warum vereinfachen sich die Berechnungen, wenn man alle Größen ins Komplexe transformiert?}
+
+\subsection{Komplexe Formulierung des Ohmschen Gesetzes -- Einführung des Widerstandsoperators $\uline Z$ 
+(komplexer Widerstand, Impedanz)}
+Nach Transformation der sinusförmigen Signale ins Komplexe erhält man entsprechend obiger
+Darstellung bzw. Herleitung:\\[0.3cm]
+\storestyleof{itemize}
+\begin{listliketab}
+ \begin{tabular}{Llcl}
+  \textbullet & für den Widerstand:  & \hspace{0.5cm} & $\displaystyle{\frac{\uline U}{\uline I}=\uline Z=R}$\\[0.3cm]
+  \textbullet & für die Spule:       & & $\displaystyle{\frac{\uline U}{\uline I}=\uline{Z_L}=j\omega L}$\\[0.3cm]
+  \textbullet & für den Kondensator: & & $\displaystyle{\frac{\uline U}{\uline I}=\uline{Z_C}=\frac{1}{j\omega C}=-j\frac{1}{\omega C}}$
+ \end{tabular}
+\end{listliketab}
+\frage{Berechnen Sie die Impedanzen zusammengesetzter $R$-$L$- und $R$-$C$-Zweipole ($R$-$L$-Reihenschaltung,
+$R$-$L$-Parallelschaltung usw.) und stellen Sie die Ortskurven entsprechend Abb. \ref{fig:ortskurven}}
+
+\newpage
+\subsection{Ortskurven von Impedanzen und Admittanzen}
+\parpic[l]{\includegraphics[width=0.4\linewidth]{reihe.png}}
+Der Zeiger $\uline Z$ ändert in der komplexen Ebene seine Länge (Betrag) und seinen Winkel bezüglich der 
+reellen Achse wenn seine Parameter sich ändern. In Abhängigkeit von einem oder mehreren dieser Parameter 
+beschreibt die Spitze des Zeigers eine Kurve  die so genannte Ortskurve. In den meisten Fällen ist damit 
+die Frequenzabhängigkeit gemeint! Für das Beispiel der dargestellten $R$-$L$-Reihenschaltung können die 
+in Abb. \ref{fig:ortskurven} dargestellten Ortskurven konstruiert werden.
+\begin{figure}[h]
+ \centering
+ \begin{minipage}[c]{0.30\linewidth}
+  \includegraphics[width=\linewidth]{impedanz.png}
+ \end{minipage}
+ \hspace{2cm}
+ \begin{minipage}[c]{0.30\linewidth}
+  \includegraphics[width=\linewidth]{admittanz.png}
+ \end{minipage}
+ \caption{Ortskurven der Impedanz und Admittanz des $R$-$L$-Zweipols (nach \verweis{skript})}
+ \label{fig:ortskurven}
+\end{figure}
+
+\section{Messtechnik}
+An Hand der Ortskurven ihrer Impedanz (oder ihrer Admittanz) lassen sich einfache $R$-$L$- und $R$-$C$-
+Zweipole eindeutig identifizieren. Das betrifft sowohl das neben einem ohmschen Widerstand eingesetzte 
+Bauelement, Spule oder Kondensator, als auch die Schaltungsstruktur, Reihe oder Parallel. Die Größe des 
+ohmschen Widerstandes, der Induktivität oder der Kapazität kann dann aus dem Realteil bzw. Imaginärteil 
+der Impedanz bestimmt werden.\\ 
+Mit der in Abb. \ref{fig:mess} dargestellten Messschaltung können Sie den \textbf{unbekannten Zweipol $Z$} 
+mit einem \textbf{bekannten ohmschen Widerstand $R$} in Reihe schalten und mit einer sinusförmigen
+Wechselspannung variabler Frequenz und Amplitude beaufschlagen. Die Zeitverläufe der Spannungen über $R$ 
+und $Z$ sind getrennt auf den beiden Kanälen des Digital-Speicher-Oszilloskops (DSO) mit gleicher Zeitbasis 
+darstellbar. Ihre Speicherung erlaubt die Messung und Darstellung von Zeitdifferenzen, Frequenz und 
+Spannungsamplitude.
+\begin{figure}
+ \centering
+ \includegraphics[width=0.8\linewidth]{schaltung.png}
+ \caption{Spannungsteiler-Messschaltung}
+ \label{fig:mess}
+\end{figure}
+
+
+\end{document}

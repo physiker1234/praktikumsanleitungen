@@ -1,0 +1,384 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd}
+
+\versuch{Reversionspendel}{RP}
+\author{L.~Jahn,R.~Goldberg}
+\bearbeitet{M.~Kreller,J.~Kelling,F.~Lemke,S.~Majewsky,i.~A. Dr.~Escher}{}
+\date{01.02.1998}
+
+%HINWEIS: Herleitung Formel (3) ent-WTF-en!
+
+\buch{recknagel}{A.~Recknagel}{Physik: Mechanik}{Technik-Verlag}{Berlin 1990}
+\buch{praktikum}{W.~Ilberg (Hrsg.), M.~Krötzsch (Hrsg.) et.~al.}{Physikalisches Praktikum für Anfänger}{Teubner-Verlag}{Leipzig 1994}
+\buch{inbeispielen}{H.~J.~Paus}{Physik in Experimenten und Beispielen}{Verlag~C.-Hanser}{München 1995}
+
+\begin{document}
+\maketitle
+
+\section{Aufgabenstellung}
+
+Mit Hilfe eines symmetrischen, inhomogenen Reversionspendels ist die örtliche Fallbeschleunigung $g$ mit möglichst hoher Genauigkeit
+\begin{enumerate}
+ \item aus dem Schnittpunkt der Kurven $T_A(x)$ und $T_B(x)$ und
+ \item nach dem Verfahren für näherungsweise abgeglichene Schwingungsdauern $T_A(x)$ und $T_B(x)$ (auf $\abs{\frac{\Delta g}g} \leq 0{,}3\%$) zu bestimmen.
+\end{enumerate}
+
+\section{Allgemeine Grundlagen}
+
+\subsection{Mathematisches und physikalisches Pendel}
+
+\piccaption{Mathematisches und \newline physikalisches Pendel}
+\parpic[r]{
+ \includegraphics[width=\linewidth/3]{GP1-RP-MathematischPhysikalischesPendel}
+}
+
+Wird ein starrer Körper der Masse $m$ im Vakuum im Abstand $s$ vom Schwerpunkt drehbar um die Achse A ideal gelagert und nach Auslenken um den Winkel $\hat\varphi$ losgelassen, so führt er als physikalisches Pendel eine Schwingung um die Gleichgewichtslage ($\varphi=0$) durch.
+
+Das Direktionsmoment der Schwerkraft bewirkt die Änderung des Drehimpulses. Die Differentialgleichung der reibungsfreien Bewegung lautet
+
+\begin{equation}\label{p11}
+ J_A \cdot \dquot[2]\varphi t = -mgs \cdot \sin\varphi.
+\end{equation}
+
+\picskip0\vspace*{1em}
+
+Mit $J_A$ als Trägheitmoment bezüglich der Achse A ergibt die 1.~Näherungslösung der Dgl.~(\ref{p11}) die harmonische Schwingung (für sehr geringe Amplituden $\hat\varphi\rightarrow 0$):
+%
+\begin{subequations}
+ \begin{eqnarray}
+ \label{p2a} \varphi(t) &=& \hat\varphi \cdot \cos(\omega_0t) \\
+ \label{p2b} \text{mit}\quad \omega_0^2 &=& \frac{4\pi^2}{T_0^2} = \frac{mgs}{J_A} = \frac g{l^*}
+ \end{eqnarray}
+\end{subequations}
+%
+Für große $\hat\varphi$ führt die Lösung der Dgl. (\ref{p11}) auf elliptische Integrale. Die 2. Näherung für noch relativ geringe $\hat\varphi$ lautet bezüglich der Schwingungsdauer (s.~Anhang):
+
+\begin{equation}\label{p3}
+ T = T_0 \cdot \kla{1 + \frac{\hat\varphi^2}{16} + \cdots}
+ \quad{\rm bzw.}\quad
+ T_0 = \frac T{1 + \frac{\hat\varphi^2}{16} + \cdots} \approx T \cdot \brk{1 - \frac{\hat\varphi^2}{16} - \cdots}
+\end{equation}
+
+Garantiert man bei allen Messungen eine geringe Amplitude (z.~B. $\hat\varphi < 0{,}04 \approx \ang2$), so wird der Korrekturterm in (\ref{p3}) hinreichend klein ($\hat \varphi^2 / 16 < \num{e-4}$) und kann im folgenden vernachlässigt werden ($T=T_0$). Beim mathematischen Pendel ist die Masse in einem Punkt konzentriert, und $(\ref{p2b})$ vereinfacht sich mit $s=l$ und $J_A=ml^2$ zu
+\[
+ T_0 = \frac{2\pi}{\omega_0} = 2\pi \cdot \sqrt{\frac lg}
+\]
+$l^* = \frac{J_A}{ms}$ nennt man die \textbf{reduzierte Pendellänge} des physikalischen Pendels.
+
+\pagebreak
+
+\subsection{Homogenes Reversionspendel in Luft}
+
+\piccaption{Reversionspendel \label{fig::revpendel}}
+\parpic[r]{
+ \includegraphics[width=\linewidth/3]{GP1-RP-Reversionspendel}
+}
+
+Ein physikalisches Pendel heißt \textbf{Reversionspendel}, wenn bei \textit{asymmetrischer} Massenverteilung für abwechselnd durchgeführte Schwingungsversuche um zwei parallele Achsen A und B nahezu gleiche Schwingungsdauern $T_A$ und $T_B$ erreicht werden.
+
+Im Falle $T_A = T_B$ entspricht der Abstand $L$ der Achsen (geschliffene Schneiden A,~B) der reduzierten Pendellänge $l^*$ (s.~Abb.~\ref{fig::revpendel} und Anhang). Schwingt das Pendel vom Volumen $V$ in Luft mit der Dichte $\rho_L$, so sind im wesentlichen zwei Korrekturen nötig (siehe auch \ref{fehlerquellen}):
+
+\begin{minipage}{\linewidth/3*2-2em}
+ \begin{enumerate}
+  \item Das Pendel erfährt eine Auftriebskraft:
+   \[
+    F_A = m_Lg = \rho_LVg
+   \]
+  \item Es schwingt infolge innerer Reibung eine unbekannte Luftmasse
+   mit, die das Trägheitsmoment erhöht.
+ \end{enumerate}
+\end{minipage}
+
+Beim \textit{homogenen} Pendel mit bekannter Dichte $\rho$ kann die erste Korrektur angegeben werden. Da $F_A=gV\rho_L$ antiparallel zur Schwerkraft im Massenmittelpunkt angreift, folgt als Korrekturfaktor für die scheinbare Verringerung der Fallbeschleunigung infolge des Auftriebs $1-\frac{\rho_L}{\rho}$. Damit wäre:
+\begin{equation}\label{p4}
+ g = \frac{4\pi^2\,L}{T^2}\cdot\frac{1}{(1-\frac{\rho_L}{\rho})}
+\end{equation}
+
+\picskip0\vspace*{-8em}
+
+\subsubsection{Methode des Schnittpunktes}
+
+\begin{figure}[b!]\centering
+ \includegraphics[width=\linewidth/2]{GP1-RP-BestimmungVonT}
+ \caption{\label{fig::grafischebestimmung} Grafische Bestimmung von $T$}
+\end{figure}
+
+Misst man die beiden Schwingungsdauern $T_A(x)$ und $T_B(x)$ in Abhängigkeit von der Position $x$ einer Masse, und trägt sie entsprechend Abb.~\ref{fig::grafischebestimmung} über $x$ auf, so liefert der Schnittpunkt die zu $L$ gehörende Schwingungsdauer $T$ in Gl. $(\ref{p4})$.
+
+Dabei zeigt sich, dass der mögliche Fehler des Schnittpunktes ($\Delta T^{(s)}$) infolge des geringen Winkels zwischen den beiden Kurven deutlich über deren Unsicherheit (Fehlerschlauch) liegt.
+
+\subsubsection{Berechnung von $g$ bei $T_A \neq T_B$ }
+
+Die Fallbeschleunigung kann auch für $T_A\neq T_B$ ermittelt werden, wenn mit  $s_A$ zusätzlich die Lage des Massenmittelpunktes bestimmt wird. Zweckmäßigerweise stellt man den Ausdruck für $l^*$ mit Hilfe des Steiner'schen Satzes ($J_A = J_S+ms_A^2$) um und erhält:
+
+\begin{equation}\label{red1}
+ l^*_A = \frac{J_A}{ms_A} = \frac{J_S}{ms_A}+s_A
+ \quad\text{und}\quad
+ l^*_B = \frac{J_B}{ms_B} = \frac{J_S}{ms_B}+s_B
+\end{equation}
+
+Wir setzen die $l^*$ aus (\ref{red1}) in (\ref{p4}) ein und eliminieren die schwierig zu messende Größe $J_S/m$:
+
+\begin{eqnarray}
+ \label{pp4} \frac{J_S}{m}
+   = \frac{gT_A^2 \cdot \kla{1 - \frac{\rho_L}{\rho}}}{4\pi^2} \cdot s_A - s_A^2
+  &=& \frac{gT_B^2 \cdot \kla{1 - \frac{\rho_L}{\rho}}}{4\pi^2} \cdot s_B - s_B^2 \\
+ \label{p5} g &=& 4\pi^2 \cdot \frac{s_B^2-s_A^2}{(s_B \cdot T_B^2 - s_A \cdot T_A^2) \cdot \kla{1-\frac{\rho_L}{\rho}}}
+\end{eqnarray}
+
+Der Schneidenabstand $L$ wird sehr genau, $s_A$ bzw.~$s_B$ weniger genau aus der Gleichgewichtslage beim Unterstützen des horizontalen Pendels gemessen, und mit $s_B=L-s_A$ folgt aus (\ref{p5}) zunächst:
+
+\begin{equation}
+ \frac{g(1-\frac{\rho_L}{\rho})}{4\pi^2L} = \frac{L-2s_A}{\left[T_B^2L-s_A(T_A^2 +T_B^2)\right]}\label{p6}
+\end{equation}
+
+Führt man den Mittelwert $T$ und die kleine Größe $b$ ein mit
+
+\begin{equation} \label{T}
+ T = \frac{T_B+T_A}{2} \quad\text{und}\quad b=\frac{T_B-T_A}{2}
+ \quad\Leftrightarrow\quad
+ \left\{ \begin{matrix} T + b = T_B \\ T - b = T_A \end{matrix} \right.,
+\end{equation}
+
+so wird (s.~Anhang):
+
+\begin{equation} \label{p8}
+ \frac{g \cdot \kla{1 - \frac{\rho_L}{\rho}}}{4\pi^2 \cdot L} = \frac1{T^2 \cdot \brk{1 + \frac{b^2}{T^2} + \frac bT \cdot \frac{2L}{L-2s_A}}}
+\end{equation}
+
+Vernachlässigt man bei der exakten Gleichung (\ref{p8}) den quadratischen Term im Nenner sowie das Produkt $\frac{b(2L)}{T(L-2s_A)}\cdot\frac{\rho_L}{\rho}$ und schreibt für $\frac1{1+x}\approx 1-x$ ({\footnotesize $|x|\ll 1$ in zweiter Ordnung}), so folgt die für die Auswertung geeignete Beziehung:
+
+\begin{equation} \label{p9}
+ \boxed{g = \frac{4\pi^2L}{T^2} \cdot \brk{1 - \frac bT \cdot \frac{2L}{L-2s_A} + \frac{\rho_L}\rho}}
+\end{equation}
+
+\subsection{Symmetrisches Reversionspendel}
+
+Bisher wurde zwar der Auftrieb, aber nicht die mitschwingende Luft und die damit verbundene Erhöhung des Trägheitsmomentes berücksichtigt. Für ein homogenes (nicht symmetrisches) Reversionspendel sind die mitschwingenden Luftmassen bezüglich der Achsen A und B unsymmetrisch verteilt und daher schwer zu berücksichtigen. Hier gelingt eine Korrektur des gesamten Einflusses der Luft nur nach systematischer Variation des Luftdrucks und Extrapolation auf das Vakuum. Durch folgende Pendelanordnung (Abb.~\ref{fig::inhrevpendel}) lässt sich der gesamte Lufteinfluss (Auftrieb und
+mitschwingende Luft) korrigieren.
+
+\begin{figure}[t]\centering
+ \includegraphics[width=\linewidth/3*2]{GP1-RP-Achse}
+ \caption{Symmetrisches inhomogenes Reversionspendel \label{fig::inhrevpendel}}
+\end{figure}
+
+Bringt man an die homogene Pendelstange zwei Körper ungleicher Dichte (z.~B.~$\mol{Fe}$ und PVC; inhomogenes Pendel) mit gleichem Volumen, gleicher Geometrie und gleich rauen Oberflächen symmetrisch zum Schwerpunkt der Stange sowie zu den beiden Schneiden und den Stabenden an, so liegt der Angriffspunkt der Auftriebskraft $F_A = m_L \cdot g$ stets im geometrischen Mittelpunkt, und es sind wegen der äußerlichen Symmetrie die unbekannten Trägheitsmomente der mitschwingenden Luftmassen $J_L$ für die Achsen A und B gleich. Damit lautet die linearisierte Bewegungsgleichung etwa für die Schwingung um A:
+
+\begin{equation} \label{p1}
+ (J_A+J_L) \cdot \dquot[2]\varphi t = -g \cdot \kla{ms_A - m_L \cdot \frac L2} \cdot \varphi
+\end{equation}
+
+Deren Lösung liefert:
+
+\begin{equation} \label{L1}
+ \frac{T_A^2}{4\pi^2} = \frac{(J_A+J_L)}{g \cdot \kla{ms_A - m_L \cdot \frac L2}}
+\end{equation}
+
+Eine analoge Formel ergibt sich für B. Beim Ausbalancieren werden anstelle der Abstände $s_A$ und $s_B$ jetzt $s_A^*$ und $s_B^*$ gemessen und aus der
+Äquivalenz der Drehmomente beim Unterstützen in U, bezogen auf die Achse A (bzw. B), folgt:
+%
+\begin{equation} \label{L2}
+ (m-m_L) g \cdot s_A^* = mg \cdot s_A - m_Lg \cdot \frac L2
+ \quad\text{bzw.}\quad
+ (m-m_L) g \cdot s_B^* = mg \cdot s_B - m_Lg \cdot \frac L2
+\end{equation}
+
+Somit ergibt sich schließlich (s.~Anhang)
+
+\begin{equation} \label{p10}
+ \boxed{g = \frac{4\pi^2L}{T^2}\left[1-\frac{b}{T}\kla{\frac{2L}{L-2s_A^*}}\right]}
+\end{equation}
+
+mit dem wesentlichen Unterschied zu (\ref{p9}), dass in (\ref{p10}) der Einfluss der Luft nicht mehr explizit enthalten ist.
+
+\pagebreak
+
+\section{Experimente}
+\subsection{Zeitmessung}
+
+\piccaption{\label{fig::lichtschranke}Anordnung der Lichtschranke LS am Stabende}
+\parpic[r]{
+ \includegraphics[width=\linewidth/3]{GP1-RP-Lichtschranke}
+}
+
+Die Messung von $T$ erfolgt elektronisch auf der Basis eines Schwing-Quarzes und des damit gesteuerten Impulsgebers. Um zu sichern, dass $T$ unabhängig von der vorhandenen Dämpfung exakt erfasst wird, erfolgt die Messung im Nulldurchgang der Schwingung. Dies wird mit der Anordnung der Lichtschranke neben dem \SI{12}{mm} starken Pendelstab nach Abb.~\ref{fig::lichtschranke} erreicht.
+
+Dabei tritt während einer Schwingungsperiode \textit{nur ein Hell-Dunkel-Übergang} auf, solange die Amplitude $\hat y<$~\SI{10}{mm} bleibt. Beim Dunkel-Hell-Übergang entstehen keine Zählimpulse. Das richtige Schalten beim Nulldurchgang erkennt man bei sehr geringer Amplitude ($\hat y \approx \SI{0,1}{mm}$ am Stabende). Mit der endlichen Impulsfrequenz ($f_\mathrm{imp}=\SI{e3}{Hz}$) ist ein zufälliger maximaler "`Digitalisierungsfehler"' von $f_\mathrm{imp}^{-1}=\SI{e-3}{s}$ verknüpft. Um nachzuprüfen, dass sich die zufälligen Fehler in dieser Größenordnung bewegen, werden Wiederholungsmessungen durchgeführt. Der systematische Gang der Quarzfrequenz wird durch ein Korrekturglied erfasst.
+
+\subsubsection*{Vorversuch}
+
+%TODO: Schwingungszahl inkonsistent zur Platzanleitung
+Zur näherungsweisen Bestimmung des Schnittpunktes nach Abb.~\ref{fig::grafischebestimmung} werden zweimal $10$ Schwingungen ($10 \cdot T_A$ bzw. $10 \cdot T_B$) für verschiedene Werte des Abstandes $x$ der Massen vom Stabende gemessen. Dazu lässt man das Pendel für den jeweilig gleichen Massenabstand (z.~B.~$x_1$) von den Enden zunächst um Achse A, danach um Achse B schwingen. Nach Veränderung von $x$ wird der Vorgang mit dem Ziel wiederholt, zwei Punkte auf der anderen Seite des Schnittpunktes zu treffen ($x_2$).
+
+Um eine erste Näherung für den Pendelabgleich zu finden, werden die zusammengehörenden Messpunkte $T_A$ bzw.~$T_B$ durch Geraden verbunden und der Schnittpunkt festgestellt, woraus sich $x_3$ ergibt, u.~s.~w. Bei der vierten Masseneinstellung sollte der Abgleich mit ausreichender Näherung, d.~h.~$\abs{\frac bT}\leq3\cdot 10^{-4}$, erreicht sein.
+
+\subsubsection*{Hauptversuch}
+
+Für den optimalen Abstand $x$, der dem minimalen $\abs{\frac{b}{T}}$ entspricht, werden $T_A$ und $T_B$ möglichst genau bestimmt. Dazu werden zweimal $50 \cdot T_A$ bzw. $50 \cdot T_B$ gemessen.
+
+\subsection{Längenmessung}
+
+Der Schneidenabstand $L$ von etwa \SI1m wird mit dem Kathetometer auf $|\Delta L|\approx (0{,}1 \ldots 0{,}2) \;\SI{}{mm}$ bestimmt. Dabei ist sorgfältig auf eine vertikale Aufstellung des Kathetometers zu achten. Der Abstand $s^*_A$ (und damit auch $s^*_B=L-s^*_A$) des scheinbaren Schwerpunktes von der Achse A wird durch Unterstützung des Pendels in horizontaler Lage in U (s.~Abb.~\ref{fig::inhrevpendel}) mit einem einfachen Maßstab gemessen ($\Delta s^*_A < \SI1{mm}$). Der maximale Ausschlag des Pendelstab-Endes beträgt \SI1{cm}. Damit ist bei $L\approx\SI1m$ die Bedingung hinreichend kleiner Amplituden sehr gut erfüllt, sodass die Korrektur nach (\ref{p3}) entfallen kann; die entsprechende Abschätzung ist im Protokoll festzuhalten.
+
+\section{Anhang}
+\subsection{Zur Fehlerrechnung}
+Gemessen werden die Größen $L$, $s_A^*$, $T_A$ und $T_B$.
+
+Neben dem wesentlichen Faktor $\frac{4\pi^2 \cdot L}{T^2}$ in (\ref{p10}) muss der Ausdruck in der eckigen Klammer diskutiert werden. Da $\abs{\frac bT}$ eine sehr kleine Größe ist, reduziert sich der Beitrag der relativ ungenauen $s_A^*$-Messung zum Gesamtfehler erheblich. Bei $T$ sind sowohl systematische als auch zufällige, bei $b$ nur zufällige Fehler zu beachten (warum?).
+
+Eine wichtige Rolle spielt der Faktor $K = \frac{2L}{L-2s_A^*}$ aus (\ref{p10}). Der Kehrwert der Größe $K$ ist ein Maß für den Schnittwinkel der beiden Kurven nach Abb.~\ref{fig::grafischebestimmung} (s.~dazu \verweis{praktikum}). Daraus und aus der Fehleranalyse der Gl.~(\ref{p10}) sowie dem ausgeschlossenen Grenzfall ($s_A^* \to s_B^*$ und $|K|\to\infty$) erkennt man, dass $|K|$ möglichst gering sein sollte (im Versuch: ~$|K|\approx 6)$.
+
+Aus (\ref{p10}) folgt zunächst für den relativen Fehler von $g$:
+
+\begin{equation}
+\frac{\Delta g}g = \abs{\frac{\Delta L}L} + \abs{-2 \cdot \frac{\Delta T}T} + \abs{\frac{\Delta \brk{1-\frac bT \cdot K}}{1-\frac bT \cdot K}}
+\end{equation}
+
+Der Beitrag des Korrektur-Gliedes (letzter Summand) zum relativen Fehler vereinfacht sich, da~$\abs{\frac bT \cdot K}$ sehr klein ist:
+
+\begin{equation} \label{f1}
+\frac{\Delta\brk{1-\frac bT \cdot K}}{1-\frac bT \cdot K} \approx \frac{\Delta\brk{-\frac bT \cdot K}}1 \approx -\frac KT \cdot \Delta b - \frac bT \cdot \Delta K
+\end{equation}
+
+Außerdem wurde berücksichtigt, dass der relative Fehler von $b$ (als Differenz zweier nahezu gleicher Zeiten) um ein Vielfaches größer ist als der von $T$. Mit (\ref{T}) ergibt sich bei gleichen systematischen ($\Delta T_{As}=\Delta T_{Bs}= \Delta T_s$) sowie zunächst als verschieden angenommenen zufälligen Fehlern ($\Delta T_{Az}\neq\Delta T_{Bz}$):
+
+\begin{equation}
+ \Delta T = \frac12 \cdot \kla{2 \cdot \Delta T_s + \Delta T_{Az} + \Delta T_{Bz}}
+ \quad\text{und}\quad
+ \Delta b = \frac12 \cdot \kla{\Delta T_{Bz} - \Delta T_{Az}}
+\end{equation}
+und
+\begin{equation*}
+ \frac{\Delta g}{g}\approx
+    \abs{\frac{\Delta L}{L}}+\abs{-2\frac{\Delta T_s}T}
+  + \abs{\kla{1 + \frac K2} \cdot \frac{\Delta T_{Bz}}{T} + \kla{1 - \frac K2} \cdot \frac{\Delta T_{Az}}{T}}
+  + \underbrace{\abs{\frac bT} \cdot \frac{4L\cdot \Delta s_A^*}{(L-2s_A^*)^2}}_{\displaystyle= \abs{\frac bT} \cdot K^2 \cdot \frac{\Delta s_A^*}L}
+\end{equation*}
+Da $\abs{\frac bT \cdot K^2	}\leq 10^{-2}$ und $\frac{\Delta s_A^*}L\leq 10 \cdot \frac{
+\Delta L}L$ gilt, kann der Einfluss von $\Delta s_A^*$ gegenüber $\Delta L$
+vernachlässigt werden.
+Im Allgemeinen kann $\Delta T_{Az}=\Delta T_{Bz}=\Delta T_z$ gesetzt werden. Damit folgt:
+\begin{equation} \label{f3}
+ \boxed{
+  \frac{\Delta g}g \approx
+    \frac{\Delta L}L + 2\frac{\Delta T_s}T
+  + K \cdot \frac{\Delta T_z}{T}
+  +\frac{b}{T}\cdot K^2\,\frac{\Delta s_A^*}{L}
+ }
+\end{equation}
+
+\subsection{Zur Herleitung einiger Gleichungen}
+
+\subsubsection*{Gleichung (\ref{p3})}
+
+Gesucht ist eine bessere Lösung der Differentialgleichung:
+\[
+ \ddot\varphi+\omega_0^2\sin\varphi=0
+\]
+Als Ansatz wird eingesetzt:
+\begin{eqnarray*}
+ \varphi &=& a_1\cos(\omega t) \\
+ \ddot\varphi &=& a_1 \cdot \omega^2 \cdot \cos(\omega t) \\
+ \Rightarrow\quad \sin\varphi &=& a_1\cos\omega t - \frac{a_1^3}6 \cdot \cos^3(\omega t)  + \ldots \approx a_1 \cdot \cos(\omega t) - \frac{a_1^3}6 \cdot \frac34 \cdot \cos(\omega t)
+\end{eqnarray*}
+dabei sind
+\[
+ \left[-a_1\omega^2+\omega_0^2(a_1-\frac{a_1^3}{8})\right]=0\quad\text{oder}\quad
+ \omega^2=\omega_0^2(1-\frac{a_1^2}{8})\quad\text{und}\quad
+ \omega\approx\omega_0(1-\frac{a_1^2}{16})
+\]
+
+% \begin{eqnarray}
+%\ddot\varphi+\omega_0^2\sin\varphi&=&0\quad{\rm folgt \;mit\;}
+% \varphi=a_1\,\cos \omega t+ ..\quad;\quad
+% \ddot{\varphi}=a_1\,\omega^2\,\cos \omega t+ ..\quad;\nonumber\\
+% \sin \varphi&=&a_1\cos\omega t-\frac{a_1^3}{6}\cos^3\omega t\approx
+% a_1\cos\omega t-\frac{a_1^3}{6}\left[\frac{3}{4}\cos\omega t+..\right]
+%\nonumber\\
+%\left[-a_1\omega^2+\omega_0^2(a_1-\frac{a_1^3}{8})\right]&=&0\quad{\rm oder}\quad
+%\omega^2=\omega_0^2(1-\frac{a_1^2}{8})\quad{\rm und\;}
+%\omega\approx\omega_0(1-\frac{a_1^2}{16})
+%\end{eqnarray}
+
+\subsubsection*{Gleichung (\ref{red1}) -- Reduzierte Pendellänge}
+
+Durch den Versuch wurden $T_A$ und $T_B$ und somit auch $l_A^*$ und $l_B^*$ näherungsweise abgeglichen. Für diesen Fall folgt aus (\ref{red1}):
+\[
+ \frac{J_S}{m s_A} + s_A = \frac{J_S}{m(L-s_A)}+(L-s_A) \quad\Rightarrow\quad J_S = ms_A \cdot (L-s_A)
+\]
+Dies bedeutet für die reduzierten Pendellängen:
+\[
+ l_A^* = \frac{J_S}{m s_A} + s_A = L
+ \quad\text{und}\quad
+ l_B^* = \frac{J_S}{m(L-s_A)} + (L-s_A) = L
+\]
+Somit sind die beiden reduzierten Pendellängen dem Schneidenabstand gleich.
+
+\subsubsection*{Gleichung (\ref{p8})}
+Aus Gl.~(\ref{p5}) folgt nach Einsetzen von $T_A$ und $T_B$ aus
+Gl.~(\ref{T}):
+\begin{eqnarray*}
+ \frac{g \cdot \kla{1-\frac{\rho_L}{\rho}}}{4\pi^2 \cdot L}
+ &=& \frac{L-2s_A}{(T+b)^2\cdot L-s_A \cdot \brk{(T-b)^2 +(T+b)^2}} \\
+ &=& \frac{L-2s_A}{(T^2 + b^2) \cdot L + 2bT \cdot L - s_A \cdot (T^2 + b^2)} \\
+ &=& \frac1{T^2 \cdot \brk{1 + \frac{b^2}{T^2} + \frac bT \cdot \frac{2L}{L-2s_A}}}
+%\frac{4\pi^2L}{g (1-\frac{\rho_L}{\rho})} &=& T^2\cdot\brk{1+\frac{b^2}{T^2}+\frac{b}{T}\frac{2L} {(L-2s_A)}}
+\end{eqnarray*}
+
+\subsubsection*{Gleichung (\ref{p10})}
+Zerlegt man $J_A$ und $J_B$ analog zu den Herleitungen von (\ref{p5}) und (\ref{p9}) nach dem Satz von Steiner ($J_A = J_S + J_L + ms_A^2)$, so folgt aus (\ref{L1}) und (\ref{L2}):
+
+\[
+ \frac{T_A^2}{4\pi^2} = \frac{\frac{J_S+J_L}m + s_A^2}{(1-\frac{m_L}m)g \cdot s_A^*}
+ \quad\text{bzw.}\quad
+ \frac{T_B^2}{4\pi^2} = \frac{\frac{J_S+J_L}m + s_B^2}{(1-\frac{m_L}m)g \cdot s_B^*}
+\]
+
+Damit kann ähnlich zum Vorgehen bei (\ref{red1}) und (\ref{pp4}) die Größe $\frac{J_S+J_L}m$ eliminiert werden, denn:
+%
+\begin{eqnarray*}
+ \frac{J_S + J_L}m
+ &=& \frac g{4\pi^2} \cdot \kla{1 -\frac{m_L}m} \cdot s_A^* \cdot T_A^2 - s_A^2 \\
+ &=& \frac g{4\pi^2} \cdot \kla{1 -\frac{m_L}m} \cdot s_B^* \cdot T_B^2 - s_B^2
+\end{eqnarray*}
+
+Daraus folgt zunächst:
+
+\[
+g = \frac{4\pi^2}{1-\frac{m_L}m} \cdot \frac{\overbrace{s_B^2-s_A^2}^{=(s_B+s_A)\cdot(s_B-s_A)}}{s_B^* \cdot T_B^2 - s_A^* \cdot T_A^2}
+\]
+
+Aus der Äquivalenz der Drehmomente beim Unterstützen (Gl.~(\ref{L2})) ergibt sich mit $L=s_A+s_B=s_A^*+s_B^*$:
+%
+\begin{eqnarray*}
+mg \cdot (s_A - s_B + s_B^* - s_A^*) &=& m_Lg \cdot (s_B^*-s_A^*) \\
+s_B-s_A &=& (s_B^* - s_A^*) \cdot \kla{1 - \frac{m_L}m} \\
+\Rightarrow\quad g &=& \frac{4\pi^2}{1-\frac{m_L}m} \cdot \frac{L\cdot (s_B^*-s_A^*)\cdot \kla{1-\frac{m_L}m}}{s_B^* \cdot T_B^2 - s_A^* \cdot T_A^2}
+\end{eqnarray*}
+
+Daraus folgt (\ref{p10}).
+
+\subsection{Weitere Fehlerquellen}\label{fehlerquellen}
+
+Neben den im Praktikumsversuch behandelten Fehlerquellen müssten für höhere Ansprüche weitere Einflüsse sowie deren mögliche Korrekturen berücksichtigt werden. Bei absoluten Messungen sind etwa zu beachten:
+\begin{itemize}
+ \item die Dämpfung
+ \item die thermische Ausdehnung
+ \item das Mitschwingen der Aufhängung
+ \item die Elastizität des Pendels
+ \item der Krümmungsradius $r$ der Schneiden nach Bessel: $T_r=T_0 \cdot \kla{1 - \frac r{2L} - \ldots}$
+\end{itemize}
+Für Relativmessungen -- in der Praxis etwa bei der Erkundung von Erzlagerstätten -- genügt es, alle Einflussgrößen (Temperatur, Luftdruck, Krümmungsradius, Länge) konstant zu halten. (Zum Beispiel können Längenfehler durch Einsatz einer Invar-Legierung minimiert werden.) Daher sind Relativmessungen wesentlich einfacher mit hoher Genauigkeit durchzuführen.
+
+\frage{Wie sind Trägheitsmoment und Schwerpunkt des starren Körpers definiert?}
+\frage{Was sind ein physikalisches und ein Reversionspendel?}
+\frage{Was versteht man unter der reduzierten Pendellänge?}
+\frage{Mathematische Beschreibung (Dgl.) und Frequenz der harmonischen Drehschwingung.}
+\frage{Was besagt der Satz von Steiner?}
+\frage{Unter welcher Bedingung ist beim Reversionspendel $L(A,B) = l^*$?}
+\frage{Welchen Vorteil bieten kreiszylindrische Pendelstäbe und Abgleichmassen, wenn die Achsen A und B nicht parallel liegen?}
+\frage{Zeigen Sie, dass für $T_A=T_B$ die Gl.~(\ref{p5}) in (\ref{p4}) übergeht.}
+\frage{Kontrollieren Sie die Gl.~(\ref{L2})!}
+\frage{Erläutern Sie die Auftriebskorrektur beim unsymmetrischen Reversionspendel.}
+
+\end{document}

@@ -1,0 +1,563 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd,subfigure}
+
+\versuch{Fehleranalyse}{FA}
+\author{R.~Goldberg,L.~Jahn, R.~Schwierz}
+\date{01.05.1998, 11.11.2011}
+\bearbeitet{M.~Kreller,J.~Kelling,F.~Lemke,S.~Majewsky,i.~A.~Dr.~Escher}{01.03.2004}
+
+%HINWEIS: toc passt nicht auf das Deckblatt, was tun? -- tocdepth=2
+\setcounter{tocdepth}{2}
+
+%HINWEIS: die Größenänderungen ganzer Sections und Absätze wurden entfert, macht den Text vllt 'größer' aber vom Stil besser
+
+\buch{wal}{W.~Walcher}{Praktikum der Physik}{Teubner-Verlag}{Stuttgart 1989}
+\buch{il}{W.~Ilberg (Hrsg.), M.~Krötzsch (Hrsg.) et.~al.}{Physikalisches Praktikum für Anfänger}{Teubner-Verlag}{Leipzig 1994}
+\buch{kohl}{F.~Kohlrausch}{Praktische Physik, Band 3: Tabellen}{Teubner-Verlag}{Stuttgart 1996}
+\buch{web}{H.~Weber}{Einführung in die Wahrscheinlichkeitsrechnung und Statistik für Ingenieure}{Teubner-Verlag}{Stuttgart 1992}
+\buch{top}{J.~Topping}{Fehlerrechnung: eine Einführung für Naturwissenschaftler}{Physik-Verlag}{Weinheim 1975}
+\buch{taub}{P.~Täubert}{Abschätzung der Genauigkeit von Messergebnissen}{Technik-Verlag}{Berlin 1987}
+\buch{licht}{W.~Lichten, D.~Meschede}{Skriptum Fehlerrechnung}{Springer-Verlag}{Berlin, Heidelberg 1988}
+\buch{gran}{W.~H.~Gränicher}{Messung beendet, was nun?}{vdf, Hochschulverlag an der ETH Zürich}{Zürich 1996}
+\buch{wal-stat}{R.~Waldi}{Statistik für's Physik-Praktikum}{Skriptum der TU Dresden}{Dresden 1996}
+\buch{prof}{P.~Profos}{Handbuch der industriellen Messtechnik}{Oldenbourg-Verlag}{München, Wien 1992}
+
+\begin{document}
+\maketitle
+
+\section{Aufgabenstellung}
+
+Bestimmen Sie die Schwingungsdauer $T$ eines Fadenpendels in \num{10} bis \num{200} Einzelmessungen, und analysieren Sie die Resultate hinsichtlich des arithmetischen Mittels $\overline T$, der Standardabweichung $s_T$ und der Verteilungsfunktion von $T$:
+\begin{enumerate}
+ \item Für \num{10} Einzelmessungen sind von Hand $\overline T$ und $s_T$ zu berechnen.
+ \item Nach der Klasseneinteilung werden \num{200} Messungen durchgeführt und mit dem zur Verfügung stehenden Programm ausgewertet. Um die Entwicklung der das statistische Verhalten beschreibenden Größen zu verfolgen, werden nach \num{10}, \num{25}, \num{50}, \num{100} und \num{200} Messungen die Häufigkeiten der Messwerte ermittelt.
+ \item Aus den gewonnenen Daten sind die Fallbeschleunigung $g$ und deren Messabweichungen zu bestimmen.
+ \item Für die einzelnen Messungen ist anhand der Häufigkeitsverteilung und einer Darstellung der Summenkurve auf Wahrscheinlichkeitspapier das
+ Vorliegen einer Gauß-Verteilung zu prüfen.\footnote{Dieser Versuchsteil ist nur von Physikstudenten durchzuführen.}
+\end{enumerate}
+
+\section{Auswertung von Beobachtungen}
+\subsection{Messen}
+
+\emph{Messen} ist ein experimenteller Vorgang, durch den ein spezieller Wert einer physikalischen Größe (der \emph{Messgröße}) als Vielfaches ihrer
+Maßeinheit oder eines Bezugswertes ermittelt wird. Jedes Messergebnis wird unter speziellen \emph{Messbedingungen} erzielt. Diese sind möglichst konstant zu halten und stets anzugeben. Das Messresultat ist immer mit einer \emph{Messunsicherheit} (\emph{Fehler}, \emph{Messabweichung}) behaftet.
+
+\emph{Kalibrieren} bzw. -- im Eichamt -- \emph{Eichen} ist der Vergleich einer bezifferten Skale mit einem \emph{Normal}. Jedes \emph{Messgerät} (Messeinrichtung), das auf einem physikalischen \emph{Messprinzip} beruht, muss an ein \emph{Sekundär-} oder \emph{Primär-Normal} mit geringerer Messunsicherheit gekoppelt sein.
+
+\subsection*{Zur Begrifflichkeit der Messfehler und Messunsicherheiten}
+
+Alle Messungen sind immer mit \emph{Messabweichungen} behaftet. Im allgemeinen Sprachgebrauch wird für die Messabweichung meist (noch) der Begriff \emph{Messfehler} oder kurz \emph{Fehler} verwendet. Jedoch empfehlt z.~B.~die DIN-Norm~1319, diesen Begriff durch den der (Mess)Abweichung zu ersetzen.
+
+Dies betrifft somit auch die in der "`Fehlerrechnungsliteratur"' verwendeten Begriffe \emph{systematischer} und \emph{zufälliger} Fehler, die durch \emph{systematische} und \emph{zufällige Messabweichung} zu ersetzen sind. Lediglich die sogenannten \emph{groben Messfehler} können begrifflich so weiter geführt werden, denn deren Name drückt tatsächlich eine "`fehlerhafte"', sprich: falsche Handlung aus. Grobe Fehler sind prinzipiell vermeidbar oder können durch einfache Kontrollen gefunden werden.
+
+\subsection{Systematische und zufällige Messabweichungen}
+
+Obwohl die Physik eine exakte Wissenschaft ist, geben Anzeigen von Messgeräten nicht notwendig den exakten Wert einer Größe an. Vielmehr bleibt der wahre Wert ($\mu$) unbekannt, und der gemessene Wert weicht infolge systematischer oder zufälliger Messabweichungen davon ab. Im folgenden werden grobe Fehler bzw.~Irrtümer ausgeschlossen. \textbf{Messungen sollten wiederholt werden}.
+
+\subsection{Systematische Messabweichungen}
+
+Die systematische Messunsicherheit (oder Messabweichung) ist eine bestimmte gemeinsame Abweichung aller einzelnen Messwerte vom wahren Wert einer
+physikalischen Größe. Charakteristisch für eine systematische Messabweichung ist, dass sie bei einer Wiederholungsmessung unter gleichen Messbedingungen nach Betrag und Vorzeichen gleich bleibt.
+
+Die Ursachen systematischer Messabweichungen liegen z.~B. in Unvollkommenheiten der Messgeräte, der Versuchsbedingungen und der Sinnesorgane, in nicht erfaßten Umwelteinflüssen, in mangelnder Kalibrierung oder Justierung etc.
+
+\subsubsection{Erfaßte systematische Messabweichungen}
+
+In vielen Fällen können systematische Messabweichungen durch Experimente oder Berechnungen bestimmt und durch eine Korrektion nach Betrag und Vorzeichen berücksichtigt werden.
+
+Ist z.B.~ein metallischer Maßstab bei \SI{20}{\degC} kalibriert worden und weicht die Messtemperatur bei Messung einer Länge $l^*(T)$ von diesem Wert um $\pm \Delta T$ ab, so kann eine Korrektion $K$ über den bekannten Ausdehnungkoeffizienten $\alpha$ des Metalles erfolgen:
+\[
+ l(T) = l^*(T) \cdot K = l^*(T) \cdot (1\pm \alpha \cdot \Delta T)
+\]
+
+\subsubsection{Systematische Messabweichungen mit zufälligem Charakter}
+
+Bei konstanten Bedingungen (z.B.~Temperatur) bleiben die systematischen Messabweichungen konstant, sind aber nicht bekannt. Es ist zweckmäßig, die vom
+Hersteller angegebenen Garantie-Fehlergrenzen als maximal mögliche sytematische Messabweichungen einzusetzen. Für einen Maßstab kann diese Herstellerangabe zum Beispiel lauten:
+\[
+ \pm (\SI{,1}{mm} + \num{e-5} \cdot l)
+\]
+Bei systematischen Messabweichungen ist jedoch zu beachten, dass sie sich bei Differenzmessungen mit dem gleichen Gerät teilweise kompensieren.
+
+Hilfsmittel zur Abschätzung dieses Anteils der Messabweichungen sind im Rahmen des Praktikums die Garantie- und Eichfehler-Grenzen (\emph{Fehlergrenzen}), die einen vereinbarten Höchstbetrag für (positive oder negative) Abweichungen der Anzeige der Messgeräte (s.~Tabelle~\ref{tab::messfehler}) angeben.
+
+\begin{table}[b]
+ \centering
+ \begin{tabular}{|c|c|c|} \hline
+  Gerät                             & Grenze des Messbereiches & Fehlergrenze                            \\ \hline
+  mechanischer Messschieber         & \SI{15}{cm}              & $\SI{50}{µm} + \num{e-4}\cdot l$        \\
+  digitaler Messschieber            & \SI{15}{cm}              & $\SI{,03}{mm} + \num1 \mathrm{Digit}$   \\
+  Drehspulinstrument                & \SI{100}V                & \SI{,5}\% des Endausschlages            \\
+  Digital-Multimeter M 3610 B       & \SI{20}V                 & \SI{,3}\% des Wertes $ +\, \SI1{Digit}$ \\
+  Laborthermometer höchster Güte    & \num0 bis \SI{50}\degC   & \SI{,15}K                               \\
+  Stoppuhr (ein Umlauf in \SI{30}s) & z.~B.~\SI{80}s           & $\SI{,2}s + \num{5e-4} \cdot t$         \\ \hline
+\end{tabular}
+\caption{Beispiele für Garantie- und Eichfehler-Grenzen von Messgeräten \label{tab::messfehler}}
+\end{table}
+
+Bei vielen analogen Messgeräten besteht diese Herstellerangabe aus einem konstanten und einem vom Messwert abhängigen Term. Zum Beispiel wird
+bei der Stoppuhr eine konstante Messabweichung $\Delta t_\mathrm{ruck}$ durch das Ankuppeln und eine Messabweichung durch den Uhrengang (Frequenzfehler) verursacht.
+
+Da die von den Herstellern veröffentlichten Garantiefehlergrenzen so angegeben sind, dass der wahre Wert mit 100\%-iger Sicherheit innerhalb dieser Grenzen liegt, 
+der Hersteller aber keinerlei Aussage über die Verteilungsfunktion macht, muss eine Gleichverteilung innerhalb der Garantiefehlergrenzen angenommen werden. 
+
+\begin{itemize}
+ \item \emph{(Für Physikstudenten)}
+
+Die angegebenen Garantiefehlergrenzen sind nicht als systematische Messabweichungen übernehmbar, da das im Physikalischen
+Praktikum für Studierende der Physik geforderte Vertrauensniveau von 0,68 (s.~Abschnitt~\ref{ss::normalverteilung}) weit überschätzt würde. Hier ist ein Korrekturfaktor von $\frac1{\sqrt{12}}$ bei Herstellerangabe des Intervalls zwischen Ober- und Untergrenze bzw. $\frac1{\sqrt{3}}$ bei Herstellerangabe des einseitigen Garantiefehlers zu verwenden.
+
+ \item \emph{(Für Studierende der Ingenieurwissenschaften)}
+
+Die angegebenen Garantiefehlergrenzen sind als systematische Messabweichungen übernehmbar, da die kleine Abweichung von dem im 
+Physikalischen Praktikum für Ingenieure verwendeten Vertrauensniveau von 0,95 (s.~Abschnitt~\ref{ss::normalverteilung}) akzeptabel ist.
+ 
+\end{itemize}
+
+\subsection{Zufällige Messabweichungen}
+
+Die Theorie der Abweichungen, die auf statistischen Rechnungen beruht, behandelt die zufälligen Messabweichungen. Die Anteile der zufälligen Messabweichungen können um so genauer erfasst werden, je mehr Messungen durchgeführt wurden. Sie werden überwiegend dem Beobachter und Einflüssen der Umgebung zugeschrieben, sofern sie nicht in der Natur des Messobjektes zu suchen sind (z.~B. im statistischen Charakter des Rauschens von Messgeräten oder des radioaktiven Zerfalls). Sie treten bei Wiederholung der Messungen mit Unterschieden im Betrag und im Vorzeichen auf.
+
+\subsubsection{Standardabweichung von Messreihen einzelner Größen}
+
+Eine Größe $x$ werde $n$-mal gemessen (Messwerte $x_1, x_2, \ldots, x_n$). Den besten Schätzwert für den wahren Wert der Größe $x$ stellt das \emph{arithmetische Mittel}  dar:
+\begin{equation}
+ \overline x = \frac{\sum_{i=1}^n\,x_i}n
+ \label{fa101}
+\end{equation}
+Bildet man die $n$ Differenzen der Einzelmessungen vom Mittelwert und quadriert diese, so erhält man das mittlere Abweichungsquadrat und daraus das wichtigste Maß für die Streuung der Einzelmessung, die (empirische) \emph{Standardabweichung}:
+\begin{equation}
+ s_x = \sqrt{\frac{\sum_{i=1}^n \, (x_i - \overline x)^2}{n - 1}}      \quad(a)
+  \quad\text{oder}\quad
+ s_x = \sqrt{\frac{\sum_i\, (x_i \, - \frac1n \cdot \sum_j \,x_j)^2}{n - 1}} \quad(b)
+ \label{fa102}
+\end{equation}
+
+%{\footnotesize
+Mit der Formel (\ref{fa102}b) kann während der Aufnahme einer Messreihe die Veränderung der Standardabweichung verfolgt werden. Für große $n$
+ist $s_x$ unabhängig von $n$ und damit konstant und als ein Qualitätsmerkmal von Gerät und Beobachter anzusehen. %}
+Durch die doppelte Standardabweichung $\pm s_x$ rechts und links vom Mittelwert wird der Wertebereich markiert, in dem die Messwerte mit ca.~\SI{68}\% Wahrscheinlichkeit (Vertrauensniveau \num{,68}) liegen.
+
+Für den Mittelwert ergibt sich eine geringere (empirische) Standardabweichung
+\begin{equation}
+ \Delta\overline x = s_{\overline x} = \sqrt{\frac{\sum_{i=1}^n\,(x_i - \overline x)^2}{n \cdot (n-1)}} = \frac{s_x}{\sqrt n}, \label{fa103}
+\end{equation}
+die für $n\rightarrow \infty$ verschwindet. Die (empirische) \emph{Standardabweichung des Mittelwertes} $s_{\overline x}$ charakterisiert eine Messreihe ($n$ muss mit angegeben werden) und stellt ein Maß für die Streuung des Mittelwertes um den wahren Wert dar. Will man $s_{\overline x}$ z.~B. auf den zehnten Teil reduzieren, so hat man die hundertfache Anzahl von Messungen durchzuführen.
+
+\begin{itemize}
+ \item \emph{(Für Physikstudenten)}
+
+Im Praktikum für Studierende der Physik wird ein Vertrauensniveau von \num{0,68} zugrunde gelegt (s.~Abschnitt~\ref{ss::normalverteilung}), 
+damit ist der Schätzwert der Standardabweichung des Mittelwerts der Wert für die \emph{zufällige Messabweichung}.
+\begin{equation}
+ \Delta x_z = \Delta {\overline x} = \frac{s_x}{\sqrt n}
+ \label{fa1033a}
+\end{equation}
+
+ \item \emph{(Für Studierende der Ingenieurwissenschaften)}
+
+Im Praktikum für Studierende der Ingenieurwissenschaften wird ein Vertrauensniveau von \num{0,95} zugrunde gelegt (s.~Abschnitt~\ref{ss::normalverteilung}), wodurch sich die \emph{zufälligen Messabweichungen} $\Delta x_z$ gemäß \eqref{fa102} und \eqref{fa103} etwa um den Faktor 2 (genauer: \num{1,960}) erhöhen:
+\begin{equation}
+ \Delta x_z = \Delta {\overline x}_{\num{0,95}} = \frac{2 \cdot s_x}{\sqrt n}
+ \label{fa1033}
+\end{equation}
+\end{itemize}
+
+Wenn die Messbedingungen gleich bleiben, kann die Standardabweichung aus früheren Messungen übernommen werden und auf eine neue Einzelmessung übertragen werden.
+
+
+\subsubsection{Hinweise}
+% {\footnotesize
+\begin{itemize}
+ \item Ergeben sich bei einer Messreihe stets die gleichen Werte, dann sollte die zufällige Messabweichung als Bruchteil der Skalenteilung (\num{,2} bis \num{,5} Skalenteile) abgeschätzt werden. Das Experiment sollte möglichst mit einem empfindlicheren Gerät oder Messverfahren wiederholt werden.
+ \item Bei der Messung von zeitlichen (oder räumlichen) Längen einer Periode empfiehlt es sich, über eine große Anzahl $n^*$ von Perioden zu mitteln und dabei u.~U. nur eine Einzelmessung (z.~B. über $n^* \cdot T$) durchzuführen. Durch hohe $n^*$-Werte wird der Beitrag des konstanten Teils der systematischen Messabweichung sowie der Beitrag der zufälligen Messabweichung ($s_T$) zur resultierenden Messabweichung reduziert, während der vom Messwert abhängige Term der systematischen Messabweichung für beliebig große $n^*$ die verbleibende Messunsicherheit begrenzt.
+\end{itemize}
+% }
+
+\subsubsection{Zufälliger Digitalisierungsfehler}
+
+% {\small
+Bei digitalen Messgeräten (z.~B.~Digitalvoltmeter, Digitalstoppuhr) entfallen bei konstanten Messbedingungen die subjektiven Einflüsse auf die zufälligen Messabweichungen (insb.~\emph{Ablesefehler}). Der Messwert wird durch Zählen von Impulsen gewonnen und ist damit um ein \emph{Digit} (last digit), also eine Einheit der letzten Dezimale, unsicher.  
+\begin{itemize}
+ \item Ist der Mittelwert $\overline x$ konstant und die Auflösung des Messgerätes gering, sodass keine statistischen Schwankungen (verursacht z.~B. durch ein Rauschen des Verstärkers) bemerkt werden, so liest man stets denselben Wert ab. Unter Berücksichtigung des Vertrauensniveaus von \num{0,68} (Studierende Physik) ergibt sich die Messunsicherheit der Digitalisierung durch Multiplikation der letzten Dezimale mit $\frac1{\sqrt{3}}$. Bei der Berechnung der maximalen Messunsicherheit in der Ingenieurausbildung wird der Wert der letzten Dezimale als Messunsicherheit der Digitalisierung übernommen.
+ \item Wird eine Streuung der Messwerte beobachtet, so muss die Standardabweichung bestimmt werden. Bereits ab $s_x \ge \SI3{Digit}$ hat der Digitalisierungsfehler keinen Einfluß mehr auf $s_x$.
+\end{itemize}
+% }
+
+\subsubsection{Fehlerfortpflanzungsgesetz}
+
+Vielfach sind für die Bestimmung einer Größe die Messungen verschiedener (meist unabhängiger) Einzelgrößen $x, y, z, \ldots$ notwendig, aus deren
+Mittelwerten sich der Mittelwert der gesuchten Funktion $\overline f=f(\overline x,\overline y,\overline z, \ldots)$ berechnet. (Zum Beispiel ergibt sich der spezifische Widerstand aus vier Einzelmessungen, der Strom- und Spannungsmessung sowie der Bestimmung der Leitergeometrie (Querschnittsfläche $A$ und Länge $l$) zu $\varrho = \frac Al \cdot \frac UI$.)
+
+Der resultierende Messabweichung der Funktion $\Delta f$ wird nach dem Fehlerfortpflanzungsgesetz durch die partiellen Ableitungen ($\pdquot fx$ etc.) und die Messabweichung der Einzelmessungen ($\Delta x, \ldots$) bestimmt. 
+Sind die einzelnen Größen ($x, y, z, \ldots$) unabhängig (unkorreliert), 
+gilt für $\Delta f$ das \emph{Gaußsche Fehlerfortpflanzungsgesetz} in der Form ohne Korrelationsterme.
+\begin{equation}
+ \Delta f = \sqrt{\kla{\pdquot fx}^2 \cdot (\Delta x)^2 + \kla{\pdquot fy}^2 \cdot (\Delta y)^2 + \kla{\pdquot fz}^2 \cdot (\Delta z)^2 + \ldots}
+ \label{fa104}
+\end{equation}
+Die einzelnen Anteile der Messabweichung addieren sich also vektoriell (das heißt: wie Komponenten eines Vektors), da es unwahrscheinlich ist, dass sich alle Messabweichungen in einer Richtung auswirken. 
+
+\begin{itemize}
+ \item \emph{(Für Physikstudenten)}
+ 
+Der Physiker gibt im Endergebnis $f$ des physikalischen Experiments den wahrscheinlichsten Wert  $\overline f$ und die Werte der systematischen  $\Delta f_s$ und zufälligen  $\Delta f_z$ Messabweichung (üblich in dieser Reihenfolge) separat an. 
+Hierfür wird die systematische bzw. zufällige Messabweichung jeweils mit Hilfe des \emph{Gaußschen Fehlerfortpflanzungsgesetzes} aus den systematischen bzw. zufälligen Messabweichungen der Messgrößen getrennt berechnet.
+\begin{equation}
+ f = \overline f \pm \Delta f_s \pm \Delta f_z
+ \label{fa104a}
+\end{equation}
+
+
+
+ \item \emph{(Für Studierende der Ingenieurwissenschaften)}
+
+Wie in den Ingenieurwissenschaften bevorzugt, wird im Praktikum für die Berechnung von ~$\Delta f$ als Vereinfachung des \emph{Gaußschen Fehlerfortpflanzungsgesetzes} der Betrag der sogenannten \emph{maximalen Messabweichung} benutzt:
+\begin{equation}
+ \Delta f = \kla{\abs{\pdquot fx} \cdot \Delta x + \abs{\pdquot fy} \cdot \Delta y + \abs{\pdquot fz} \cdot \Delta z + \ldots}
+ \label{fa105}
+\end{equation}
+
+Die so berechnete Messunsicherheit berücksichtigt selbst die ungünstigste Annahme, dass die Messunsicherheiten der einzelnen Messgrößen ($x, y, z, \ldots$) noch vollständig korreliert sein dürfen. Damit wird auch für jede einzelne Messgröße 
+(z.B.~$\Delta x =\Delta x_z+\Delta x_s$) die Summe aus zufälliger und systematischer Messabweichung eingesetzt. 
+Der zufällige Anteil wird nach \eqref{fa1033} berechnet (bzw.~im Falle einer Einzelmessung der geschätzte Anteil eingesetzt), 
+der systematische Anteil wird beispielsweise der Tablle \eqref{tab::messfehler} entnommen. ~$\Delta f$ ist dann die maximale Messabweichung des Endergebnisses, 
+die sowohl die systematische als auch zufällige Messabweichung enthält.  
+
+Lässt man die Betragsstriche weg, so hat man das \emph{totale Differential}:
+\begin{equation}
+ \Delta f = \kla{\pdquot fx \cdot \Delta x + \pdquot fy \cdot \Delta y + \pdquot fz \cdot \Delta z + \ldots}
+ \label{fa106}
+\end{equation}
+In dieser Form wird es möglich, in den Fällen, in denen eine Abhängigkeit zwischen den Variablen besteht (z.~B.~auch indirekt über Hilfsgrößen), die Beiträge der Messabweichungen unter Beachtung der Vorzeichen der partiellen Ableitungen gegeneinander aufzurechnen. Dabei kann sich die resultierende Messabweichung u.~U.~merklich reduzieren. Anschließend wird zum Betrag übergegangen.
+
+Im physikalischen Praktikum für Ingenieure wird im Endergebnis $f$ des physikalischen Experiments der wahrscheinlichste Wert  $\overline f$ und der Wert der maximalen Messabweichung  $\Delta f$ angegeben:
+\begin{equation}
+ f = \overline f \pm \Delta f
+ \label{fa106a}
+\end{equation}
+\end{itemize}
+
+
+\subsection{Angabe des Messergebnisses und der resultierenden Messabweichung}
+
+\subsubsection{Absolute und relative Messabweichungen}
+
+Die resultierende Messabweichung kann sowohl absolut als auch relativ angegeben werden. Die \emph{relative Messabweichung} ist definiert als Quotient aus absoluter Messabweichung und Mittelwert.
+Wird die absolute Messabweichung getrennt in systematische und zufällige Messabweichung angegeben, ist sinnvollerweise auch die relative Messabweichung getrennt anzugeben.
+Die relative Messabweichung ist besonders gut geeignet, um die Qualität einer Messung oder eines Messverfahrens einzuschätzen. 
+In Sonderfällen hat sie jedoch keine Bedeutung, z.~B.~bei der Angabe einer Temperatur in der Celsius-Skala.
+
+
+\subsubsection{Angabe des Messergebnisses}
+
+Die vollständige Auswertung (im Protokoll) sollte neben dem Mittelwert und eventuell notwendigen Korrekturen sowie den Messabweichungen auch die Anzahl $n$ der Messungen und das zugrunde gelegte Vertrauensniveau $P$ enthalten.
+
+Die letzte angebenene Dezimalstelle des Ergebnisses richtet sich bei Einhaltung der Rundungs-Regeln vor allen Dingen nach der Messabweichung. Zuerst muss die letzte Dezimalstelle der Messabweichung sinnvoll gerundet werden.
+\begin{description}
+ \item [Stellenzahl bei geringen Messabweichungen]
+  Bei relativ geringen Messabweichungen und sorgfältig und aufwendig (große Anzahl $n$) bestimmten Messreihen sollte die Messabweichung auf soviel Dezimalen angegeben werden, dass die letzte Dezimale einer relativen Genauigkeit der Messabweichung von ca.~\SI3\% entspricht.
+
+  % {\small
+  Genaue Angaben der Messabweichung sind vor allem bei Wiederholungen der gleichen Messreihe von Interesse, um damit Mittelwerte und Standardabweichungen  vergleichen und die zugrundliegende Statistik beurteilen zu können.
+  %}
+ \item [Stellenzahl bei großen Messabweichungen]
+  Liegt die relative Messabweichung über \SI{20}\% oder liegen überwiegend grobe Schätzungen für die Ermittlung der resultierenden Messabweichung zugrunde, so genügt eine Angabe der Messabweichung auf die gerundete Dezimalstelle, die einer relativen Genauigkeit der Messabweichung von etwa \SI{10}\% bis \SI{20}\% entspricht.
+ \item [Stellenzahl des Messergebnisses]
+  Die sinnvoll gerundete resultierende Messabweichung bestimmt dann die letzten Dezimalstellen des Ergebnisses, zum Beispiel:
+  \[
+   x_1 = \errSI{307,3}{1,2}m \quad\text{(Ingenieure)}\quad x_2 = \kla{\num{310} \pm \num{120} \pm \num{110}} \SI{}{mm} \quad\text{(Physiker)}\quad
+  \]
+\end{description}
+
+\subsubsection{Beispiele}
+
+\begin{itemize}
+ \item \emph{(Für Physikstudenten)}
+% {\footnotesize
+\begin{enumerate}
+ \item Ein Längenmessgerät mit der Herstellerangabe der Garantiefehlergrenzen (Annahme Gleichverteilung) $\Delta x = (\SI{,01}{mm} + \num{5e-3}\cdot x)$ wird benutzt, um
+ $n = \num{50}$-mal die Länge $x$ zu bestimmen. Es ergibt sich $\overline x=\SI{3,75}{mm}$ mit $s_x=\SI{0,071}{mm}$. Die systematische und zufällige Messabweichung dieser Messung sind:
+  \begin{align*}
+   \Delta x_s &= \frac{1}{\sqrt{3}} \kla{\SI{,01}{mm} + \num{5e-3} \cdot \SI{3,75}{mm}} = \SI{0,016}{mm} \\
+   \Delta x_z &= \frac{s_x}{\sqrt n} = \SI{,01}{mm}
+  \end{align*}
+
+ \item\label{frage3} Mit einem Vorversuch wurde die Schwingungsdauer eines Fadenpendels $n=\num{10}$-mal gemessen: $\overline T = \SI{1,509}s$ mit $s_T = \SI{,085}s$. Vom Hersteller werden Garantiefehlergrenzen (Annahme Gleichverteilung) $\Delta t = \SI{0,2}s + \num{5e-4} \cdot t$ angegeben. Nun wird die Zeit einmalig für $n^* = \num{100}$ Perioden gemessen.
+
+  Die resultierenden systematischen und zufälligen Messabweichung für die Schwingungsdauer resultieren aus:
+  \begin{align*}
+   \Delta (n^*T)_s &= \frac{1}{\sqrt{3}}(\SI{0,2}s + \num{5e-4} \cdot n^*T) \\
+   \Delta (n^*T)_z &= s_T \\
+   \Delta T_s &= \frac{1}{\sqrt{3}}\kla{\frac{\SI{0,2}s}{n^*} + \num{5e-4} \cdot T} =\SI{,0016}s\\
+   \Delta T_z &= \frac1{n^*} \cdot s_T =\SI{,0008}s
+  \end{align*}
+
+ \item  Die Fallbeschleunigung wird mit einem Fadenpendel bestimmt. Für eine punktförmige Masse und hinreichend kleine Amplituden gilt näherungsweise: $g = \frac{4\pi^2 l}{T^2}$. 
+Dabei wurde die Fadenlänge zu $l = \kla{\num{0,566} \pm \num{0,0012} \pm \num{0,0014}}m$ bestimmt, die Schwingungsdauer $T$ ist die aus Beispiel 2. 
+Daraus folgt $g = \kla{\num{9,813} \pm \num{0,023} \pm \num{0,026}}m/s^2$, wobei die systematische und zufällige Messabweichung jeweils mit dem Gaußschen Fehlerfortpflanzungsgesetz ermittelt wird:
+  \[
+   \frac{\Delta g_{s/z}}g =\sqrt{ \kla{2 \cdot \frac{\Delta T_{s/z}}T}^2 + \kla{\frac{\Delta l_{s/z}}l}^2}
+  \]
+\end{enumerate}
+% }
+
+ \item \emph{(Für Studierende der Ingenieurwissenschaften)}
+% {\footnotesize
+\begin{enumerate}
+ \item Ein Längenmessgerät mit der Herstellerangabe der Garantiefehlergrenzen $\Delta x = (\SI{,01}{mm} + \num{5e-3}\cdot x)$ wird benutzt, um
+ $n = \num{50}$-mal die Länge $x$ zu bestimmen. Es ergibt sich $\overline x=\SI{3,75}{mm}$ mit $s_x=\SI{0,071}{mm}$. Die systematische und zufällige Messabweichung dieser Messung sind:
+  \begin{align*}
+   \Delta x_s &= \SI{,01}{mm} + \num{5e-3} \cdot \SI{3,75}{mm} = \SI{0,03}{mm} \\
+   \Delta x_z &= \frac{2 \cdot s_x}{\sqrt n} = \SI{,02}{mm}
+  \end{align*}
+  In der Summe ist $\Delta x = \SI{0,05}{mm}$, die relative Messabweichung ist $\frac{\Delta x}x = \frac{\num{0,05}}{\num{3,75}} = \num{,013} = \SI{1,3}\%$.
+
+ \item\label{frage3} Mit einem Vorversuch wurde die Schwingungsdauer eines Fadenpendels $n=\num{10}$-mal gemessen: $\overline T = \SI{1,51}s$ mit $s_T = \SI{,085}s$. Vom Hersteller werden Garantiefehlergrenzen (Annahme Gleichverteilung) $\Delta t = \SI{0,2}s + \num{5e-4} \cdot t$ angegeben. Nun wird die Zeit einmalig für $n^* = \num{100}$ Perioden gemessen.
+
+  Die resultierende Messabweichung für die Schwingungsdauer resultiert aus:
+  \begin{align*}
+   \Delta (n^*T) &= (\SI{0,2}s + \num{5e-4} \cdot n^*T) + 2 \cdot s_T \\
+        \Delta T &= \kla{\frac{\SI{0,2}s}{n^*} + \num{5e-4} \cdot T} + \frac2{n^*} \cdot s_T \\
+        \Delta T &= \kla{\frac{\SI{0,2}s}{\num{100}} + \num{5e-4} \cdot \SI{1,51}s} + \frac2{100} \cdot \SI{,085}s = \SI{,011}s
+  \end{align*}
+  Somit ist $T = \errSI{1,51}{,01}s$ mit einer relativen Messabweichung $\frac{\Delta T}T = \num{0,0066} \approx \SI{0,7}\%$.
+
+ \item  Die Fallbeschleunigung wird mit einem Fadenpendel bestimmt. Für eine punktförmige Masse und hinreichend kleine Amplituden gilt näherungsweise: $g = \frac{4\pi^2 l}{T^2}$. Dabei wurde die Fadenlänge zu $l = \errSI{,566}{,0017}m$ bestimmt, die Schwingungsdauer $T$ ist die aus Beispiel 2. Daraus folgt $g = \errSI{9,81}{,16}{m/s^2}$, wobei die Messabweichung mit dem vereinfachten Fehlerfortpflanzungsgesetz ermittelt wird:
+  \[
+   \frac{\Delta g}g = 2 \cdot \frac{\Delta T}T + \frac{\Delta l}l = \num{0,013} + \num{0,003} \approx \SI{1,6}\%
+  \]
+\end{enumerate}
+% }
+\end{itemize}
+
+\section{Statistik der zufälligen Messabweichungen}
+
+\subsection{Diskrete Häufigkeitsverteilung}
+
+Im Folgenden werden nur zufällige Messabweichungen betrachtet. Für die Größe $x$ werden $n$ Einzelmessungen durchgeführt, wobei $n$ sehr groß sei (z.~B.~$n > 50$). Zu deren Analyse wird der durch die $x_i$ (mit $i = 1,\ldots,n$) überstrichene Wertebereich an den Stellen $x_j$ in $r$ Intervalle mit gleicher Intervallbreite $x_j - x_{j-1}$ ($j = 1,\ldots,r$) eingeteilt. Eine sinnvolle Intervall-Breite kann mit $\text{Integralbreite} \approx \sigma/2$ oder auch mit $r \approx \sqrt n$ abgeschätzt werden.
+
+In den einzelnen Intervallen wird die Anzahl der Messwerte, die innerhalb des Intervalls liegen, bestimmt. Dies ist die \emph{Häufigkeit} $H_j$. Liegt ein Messwert auf einer Intervall-Grenze, kommt er zu je \SI{50}\% in beide Intervalle. Die diskrete Darstellung $H_j(x_j)$ heißt \emph{Häufigkeitsverteilung}. Mithilfe der Summe $S = \sum_{j=1}^r H_j(x_j)$ kann man die Häufigkeitsverteilung normieren, man erhält die \emph{relativen Häufigkeiten} $h_j = H_j / S$.
+
+Häufigkeitsverteilungen haben ein Maximum in der Nähe des Mittelwertes, und ihre Breite steht in direktem Zusammenhang zur Standardabweichung $s$ (s.~Gauß-Verteilung).
+
+\subsection{Kontinuierliche Gauß-Verteilung}
+
+In den meisten Fällen zeigt sich, dass die beste mathematische Näherung für eine relative Häufigkeits-Verteilungskurve bei hinreichend großen $n$ und nur zufälligen Messabweichungen durch die kontinuierliche \emph{Normalverteilung} oder \emph{Gaußsche Verteilung} gegeben ist. Tatsächlich spielt die Gauß-Verteilung in der Statistik eine ähnlich zentrale Rolle wie die Gerade in der Geometrie.
+
+Die Gauß-Verteilung wird durch zwei Parameter, den wahren Wert $\mu$ (in der Praxis durch den Mittelwert $\overline x$ abgeschätzt) und die Streuung $\sigma$ (Grenzfall von $s$ für große~$n$, siehe Abschnitt \ref{anhang-streuung}) eindeutig bestimmt. Aus der exakten Wahrscheinlichkeitsdichte $W(x) = \frac1{\sqrt{2\pi} \sigma} \cdot \exp\brk{-\frac{(x-\mu)^2}{2\sigma^2}}$ bzw. der \emph{Summenkurve} $S(x)$ die an eine Messreihe angepaßte
+Näherung:
+\begin{subequations}\label{fa108}
+ \begin{align}
+  W(x) &\approx \frac1{\sqrt{2\pi} \sigma} \cdot \exp\brk{-\frac{(x-\overline x)^2}{2\sigma^2}} \label{fa108a} \\
+  S(x) &\approx \frac1{\sqrt{2\pi} \sigma} \cdot \int_{-\infty}^x \exp\brk{-\frac{(t-\overline x)^2}{2\sigma^2}} \dif t \label{fa108b}
+ \end{align}
+\end{subequations}
+Mit der Gleichung \eqref{fa108a} als Modell der Häufigkeitsverteilung gibt $\Delta W = W(x) \cdot \Delta x$ für kleine $\Delta x$ die Wahrscheinlichkeit dafür an, dass ein einzelner Messwert im Intervall $[x, x+\Delta x]$ liegt.
+
+Die Wahrscheinlichkeitsverteilung $W$ hat einen glockenförmigen Verlauf mit einem Maximum beim Mittelwert $\overline x$. Nach beiden Seiten nimmt $W$ um so schneller ab, je geringer die Streuung $\sigma$ ist. Der Abszissen-Abstand der beiden Wendepunkte von \eqref{fa108a} beträgt $2\cdot \sigma$. Die zugehörige Verteilungskurve $S$ entspricht der Summenkurve über die Häufigkeiten und ist wie folgt \emph{normiert}:
+\begin{equation}
+S(\infty) = \frac1{\sqrt{2\pi} \sigma} \cdot \int_{-\infty}^{+\infty} \exp\brk{-\frac{(t-\overline x)^2}{2\sigma^2}} \dif t = 1
+\label{fa108c}
+\end{equation}
+
+\subsection{Grafische Tests}
+
+\begin{figure}[t]\centering
+ \subfigure[Glockenkurve]{
+  \includegraphics[height=\linewidth/4+1.0em]{GP1-FA-Kurven1}
+  \label{fig::kurven1}
+ }
+ \subfigure[Verteilungskurve]{
+  \includegraphics[height=\linewidth/4+1.0em]{GP1-FA-Kurven2}
+  \label{fig::kurven2}
+ }
+ \subfigure[Wahrscheinlichkeitsnetz]{
+  \includegraphics[height=\linewidth/4+1.0em]{GP1-FA-Kurven3}
+  \label{fig::kurven3}
+ }
+ \subfigure[Logarithmierte Häufigkeitskurve]{
+  \includegraphics[height=\linewidth/4+1.0em]{GP1-FA-Kurven4}
+  \label{fig::kurven4}
+ }
+ \caption{Gauß-Verteilung für die Parameter $\overline x = \num{10}$ und $\sigma = 2$ \label{fig::kurven}}
+\end{figure}
+
+Die beiden nichtlinearen Beziehungen \eqref{fa108} (siehe Abb.~\ref{fig::kurven1} und~\ref{fig::kurven2}) können für statistische
+Tests gemessener Häufigkeitsverteilungen auf das Vorliegen einer Normalverteilung linearisiert werden.
+
+Beim \emph{Wahrscheinlichkeitsnetz} wird von der Summenkurve \eqref{fa108b} ausgegangen: Auf dem Wahrscheinlichkeitspapier ist die Ordinate so verzerrt, dass die Darstellung der Summenhäufigkeit über den Messwerte-Klassen eine Gerade ergibt (Abb.~\ref{fig::kurven3}). Können die Messpunkte einer Regressionsgeraden zugeordnet werden, so kann von einer Gaußschen Verteilung gesprochen werden.
+
+Beim \emph{Logarithmieren} der Häufigkeitsverteilung (Wahrscheinlichkeitsdichte, \eqref{fa108a}) und Auftragen über dem Quadrat der Differenz aus dem jeweiligen Klassenwert ($x_j$) und dem Mittelwert ($\overline x$) ergibt sich eine Gerade (siehe Abb.~\ref{fig::kurven4}), deren Anstieg $\Delta (\ln(h))/\Delta (x_j- \overline x)^2 \approx -1/2 \sigma^2$ ist. Kann man durch die streuenden Punkte in dieser Darstellung eine Regressionsgerade legen, und entspricht deren Anstieg der Streuung $\sigma = s$ der Verteilung, so ist ebenfalls der Nachweis erbracht, dass eine Gauß-Verteilung vorliegt.
+
+\section{Experimente}
+
+\subsection{Schwingungsdauer eines Fadenpendels}
+
+\subsubsection{Vorversuch}
+
+Im Vorversuch wird die Schwingungsdauer eines ca.~\SI2m langen Fadenpendels zehnmal einzeln gemessen, wobei die Zeitdifferenz zwischen Start und Ende, von Hand durch Knopfdruck signalisiert, mit dem Rechner erfasst wird. Von diesen zehn Werten werden mit dem Taschenrechner der Mittelwert $\overline T$ und die Standardabweichung $s_T$ berechnet.
+
+\subsubsection{Hauptversuch}
+
+Anhand der Ergebnisse des Vorversuchs wird nach Beratung mit dem Betreuer die Anzahl und die Breite der Intervalle für die Ermittlung der Häufigkeitsverteilung festgelegt und in den Rechner eingegegeben. Dann wird von \textit{einem} Studenten unter möglichst gleichen Bedingungen \num{200}-mal die Schwingungsdauer $T$ gestoppt und automatisch vom Rechner erfasst. Bei einigen Zwischenwerten (nach \num{10}, \num{25}, \num{50}, \num{100} Perioden) sind Pausen im Programm, sodass die Schwingungsebene und die Amplituden kontrolliert, die bis dahin erzielte Statistik notiert und ihre Weiterentwicklung verfolgt werden kann.
+
+\subsection{Statistische Analyse}
+
+Zur Prüfung auf eine Gauß-Verteilung werden entsprechend Abb.~\ref{fig::kurven3} die relativen Häufigkeiten in Wahrscheinlichkeitspapier eingetragen. Vom Rechner wird außerdem eine Regressionsgerade entsprechend Abb.~\ref{fig::kurven4} ausgegeben.
+
+\section{Anhang}
+\subsection{Methode der kleinsten Quadrate und die Gauß-Verteilung}
+
+Der wahrscheinlichste Wert einer beobachteten Größe hat die Eigenschaft, dass die Summe der quadratischen Abweichungen der Beobachtungen von diesem Wert in ihm ihr Minimum findet.
+
+Es liegen z.~B.~$n$ Messwerte $x_1, \ldots, x_n$ mit dem unbekannten wahren Wert $\mu$ vor. Mit dem zunächst noch unbekannten wahrscheinlichsten Wert $x_w$ ergibt sich die Wahrscheinlichkeit für das Auftreten eines Beobachtungswertes $x_1$ nach \eqref{fa108a} zu:
+%\newpage
+\begin{equation}
+ \diff W(x_1) = \frac1{\sqrt{2\pi}\sigma} \cdot \exp\brk{-\frac{(x_1-x_w)^2}{2\sigma^2}} \cdot \diff x
+ \label{fa110}
+\end{equation}
+Die Wahrscheinlichkeit, die Werte $x_1$ bis $x_n$ zu messen, ist gleich dem
+Produkt der Einzelwahrscheinlichkeiten, d.h.
+\begin{equation}
+ \diff W_\mathrm{ges} = \kla{\frac1{\sqrt{2\pi}\sigma}}^n \cdot \exp\brk{-\frac{\sum_{i=1}^n \, (x_i-x_w)^2}{2\sigma^2}} \cdot \diff x
+ \label{fa111}
+\end{equation}
+Diese Wahrscheinlichkeit erreicht ihr Maximum, das heißt: das Resultat ist am wahrscheinlichsten, wenn die Summe $\sum_{i=1}^n (x_i-x_w)^2$ der Abweichungsquadrate minimal wird. Aus dieser Forderung resultiert \eqref{fa101} -- der Mittelwert ist tatsächlich der wahrscheinlichste Wert --, denn:
+\[
+                       \pdquot{}{x_w} \sum_{i=1}^n (x_i - x_w)^2 = 0
+ \quad\rightarrow\quad n \cdot x_w = \sum_{i=1}^n x_i
+ \quad\rightarrow\quad x_w = \overline x = \frac1n \cdot \sum_{i=1}^n x_i
+\]
+
+\subsection{Gewichtetes (gewogenes) Mittel}
+
+Bei Durchführung verschiedener Messreihen der gleichen Größe $x$ mit verschiedenen empirischen Mittelwerten $\overline x_1, \overline x_2, \ldots$ kann es vorkommen, dass die einzelnen Messreihen unterschiedliche Standardabweichungen $s_{x,1}, s_{x,2}, \ldots$ aufweisen, weil Sie zum Beispiel in verschiedenen Laboratorien oder von verschiedenen Personen durchgeführt wurden.
+
+In diesem Falle erscheint es sinnvoll, einen Mittelwert $\overline{\,\overline x\,}$ aller Mittelwerte unter Benutzung von Gewichtungsfaktoren so zu berechnen, dass die genaueste Messreihe am stärksten berücksichtigt wird. Dies erreicht man mit dem \emph{gewichteten Mittel}:
+\begin{equation}
+ \overline{\,\overline x\,} = \frac{g_1 \cdot \overline x_1+ g_2 \cdot \overline x_2 + \ldots}{g_1 + g_2 + \ldots} = \frac{\sum_i g_i \cdot \overline x_i}{\sum_i g_i}
+ \quad\text{mit}\quad g_i = \frac1{s_{\overline x,i}^2} = \frac{n_i}{s_{x,i}^2}
+ \label{fa1110}
+\end{equation}
+
+\subsection{Standardabweichung und Streuung der Normalverteilung \label{anhang-streuung}}
+
+Wir wollen uns davon überzeugen, dass die Standardabweichung $s$ im Grenzfall großer Zahlen $n$ mit der Streuung $\sigma$ zusammenfällt. Aus dem Quadrat der Standardabweichung aus \eqref{fa102} wird nach der Klasseneinteilung mit der relativen Häufigkeit $h_j$ eine Summe bzw. für $n\to\infty$ ein Integral:
+\[
+ s^2 = \frac{\sum_{j=1}^r h_j \cdot \Delta x \cdot (x_j - \overline x)^2}{\sum_{j=1}^r h_j \cdot \Delta x}
+ \quad\rightarrow\quad
+ s^2 = \frac{\int_{-\infty}^{+\infty} W(x) \cdot (x - \overline x)^2 \dif x}{\int_{-\infty}^{+\infty} W(x) \dif x}
+\]
+Das Integral im Nenner entspricht $S(x = \infty) = 1$ (siehe Gl.~\eqref{fa108c}). In das Integral im Zähler setzen wir die Darstellung \eqref{fa108a} für $W(x)$ ein:
+\[
+ s^2 = \frac1{\sqrt{2\pi} \sigma} \cdot \int_{-\infty}^{+\infty} (x - \overline x)^2 \cdot \exp\brk{-\frac{(x-\overline x)^2}{2\sigma^2}} \dif x
+\]
+Zur Lösung des rechten Integrals ersetzen wir $y \equiv x - \overline x$ sowie $a = \frac1{\sqrt 2\sigma}$:
+\[
+ s^2 = \frac a{\sqrt\pi} \cdot \int_{-\infty}^{+\infty} y^2 \cdot \eu{-a^2y^2} \dif y
+\]
+Das Integral rechts ist tabelliert mit dem Wert $\frac{\sqrt\pi}{2a^3}$. Letztendlich ist also $s^2 = \frac1{2a^2} = \sigma^2$.
+
+\subsection{Standard-Normal-Verteilung, Quantile, Vertrauensniveau \label{ss::normalverteilung}}
+
+Durch die Substitution $u = \frac{x-\overline x}{\sigma}$ entsteht aus den Gln.~(\ref{fa108}) die normierte Standard-Normal-Verteilung bzw. die zugehörige Summenfunktion (Verteilungsfunktion):
+\[
+ w(u) = \frac1{\sqrt{2\pi}} \cdot \eu{-\frac{u^2}2}
+ \quad\text{bzw.}\quad
+ s(u)= \frac1{\sqrt{2\pi}} \cdot \int_{-\infty}^u \eu{-\frac{t^2}2} \dif t
+\]
+Diese Verteilung liegt mit der Streuung $\sigma_u = 1$ symmetrisch zum Nullpunkt der normierten Zufallsvariablen $u$ und ermöglicht einen quantitativen Vergleich verschiedener Verteilungen. Die Symmetrien haben die folgende Form:
+\[
+ w(u) = w(-u) \quad\text{bzw.}\quad s(-u) = 1 - s(u)
+\]
+Hierbei werden $s(u_{\alpha}) = \alpha$ bzw. $(1-\alpha)$ als \emph{Quantile} der Standard-Verteilung bezeichnet. Mit den Quantilen und dem daraus abgeleiteten Begriff \emph{Vertrauensniveau} (Konfidenzniveau) wird es möglich, statistische Vorhersagen zu quantisieren.
+\begin{description}
+ \item [Beispiel 1]
+  Mit einem Vertrauensniveau von \num{0,95} kann vorhergesagt werden, dass höchstens \SI5\% der Messwerte den normierten Wert $u = \num{1,64}$ einseitig überschreiten. Die Irrtumswahrscheinlichkeit ist also $\alpha=\num{,05}$.
+ \item [Beispiel 2]
+  Beidseitig des Mittelwertes liegen \SI{95}\% der Messwerte in einem Bereich, der durch $\alpha=\num{0,025}$ und $(1-\alpha)=\num{0,975}$
+  gekennzeichnet ist. Der zugehörige maximale $u$-Wert beträgt auf jeder Seite $\num{1,96} \approx 2$ (s.~Tabelle~\ref{tab::quantile}).
+\end{description}
+
+\begin{table}[t]\centering
+ \begin{tabular}{|c|c|c|}\hline
+  Quantil ~$\alpha$ & Quantil ~$(1-\alpha)$ & max.~$u$-Wert  \\ \hline
+  $\alpha$          & $(1-\alpha)$          &   $(k_{1-\alpha})$  \\ \hline
+  \num{0,5}         & \num{0,5}             & \num{0,0}\\
+  \num{0,16}        & \num{0,84}            & \num{1}        \\
+  \num{0,05}        & \num{0,95}            & \num{1,64}                       \\
+  \num{0,025}       & \num{0,975}           & \num{1,96}        \\
+  \num{0,01}        & \num{0,99}            & \num{2,32}        \\ \hline
+ \end{tabular}
+ \caption{Beispiele für $\alpha$-Quantile und Vertrauensniveau $(1-\alpha)$ der Standard-Normalverteilung\label{tab::quantile}}
+\end{table}
+
+Gelegentlich wird für große $n$ der Standardfehler der Standardabweichung angegeben:
+\begin{equation}
+ s_{s_{x}} = \frac{s_x}{\sqrt{2(n-1)}} \approx \frac{s_x}{\sqrt{2n}}
+\end{equation}
+
+\subsection{Lineare Regression}
+
+Häufig ist zwischen zwei (oder mehr) gemessenen Größen theoretisch ein linearer Zusammenhang zu erwarten. Für die lineare Funktion, die gegebenenfalls erst mathematisch durch Linearisierung erzeugt wird (s.~Abb.~\ref{fig::kurven3} und Abb.~\ref{fig::kurven4}), werden die Koeffizienten $a$ und $b$ gesucht, für die gilt:
+\begin{equation}
+ y= a + b \cdot x
+ \label{fa112}
+\end{equation}
+Für $x$ und $y$ liegen im Allgemeinen mit Messunsicherheiten behaftete Messreihen vor. Für den einfacheren Fall, dass nur $y$ messunsicherheitbehaftet ist, ergeben sich aus der Forderung minimaler quadratischer Messabweichungen, also $\sum (y_i-a-b \cdot x_i)^2 = \mathrm{min.}$, als beste Näherungen für $\overline a$ und $\overline b$:
+\begin{equation}
+ \overline a = \frac{\sum y_i \cdot \sum x_i^2 - \sum x_i \cdot \sum x_iy_i}{n \cdot \sum x_i^2- \kla{\sum x_i}^2}
+ \quad\text{bzw.}\quad
+ \overline b = \frac{n\cdot\sum x_iy_i - \sum x_i \cdot \sum y_i}{n \cdot \sum x_i^2 - \kla{\sum x_i}^2}
+\label{fa113}
+\end{equation}
+Die Berechnungen von $\overline a$ und $\overline b$ nach (\ref{fa113}) sowie des Korrelationskoeffizienten können mit jedem wissenschaftlichen Taschenrechner durchgeführt werden. Sind die $x$-Werte äquidistant mit $x^*$, so ergibt sich für die Quadrate der Standardabweichungen:
+\begin{equation}
+ s_y^2 = \frac{\sum(\Delta y_i)^2}{n-2}
+ \quad\text{und}\quad
+ s_a^2 = s_y^2 \cdot \frac{2(2n+1)}{n(n-1)}
+ \quad\text{sowie}\quad
+ s_b^2=\frac{s_y^2}{x^{*2}} \cdot \frac{12}{n(n^2-1)}
+ \label{fa114}
+\end{equation}
+
+Ist hingegen auch die Größe $x$ mit Messunsicherheiten behaftet, so geben die Kovarianz $s_{xy}$ und besser der Korrelationskoeffizient $r_{xy}$ Aufschluss über die Schärfe der linearen Beziehung:
+\begin{equation}
+ s_{xy} = \frac{\sum (x_i - \overline x) \cdot (y_i - \overline y)}{n-1}
+ \quad\text{und}\quad
+ r_{xy} = \frac{(n-1) \cdot s_{xy}}{\sqrt{\sum (x_i - \overline x)}}
+\end{equation}
+Dabei bedeutet $r_{xy} \approx 0$, dass beide Messgrößen in keinem Zusammenhang stehen. $r_{xy} = \pm1$ besagt, dass $x$ und $y$ streng korreliert sind, wobei ein negatives Vorzeichen auf eine gegenläufige Korrelation hinweist.
+
+% Anfang vom Ende
+
+\frage{Wie berechnen sich für eine Messreihe aus $n$ Einzelmessungen der Mittelwert, die Standardabweichung der Einzelmessung und des Mittelwertes sowie die relative Messabweichung?}
+
+\frage{Was besagt das Fehlerfortpflanzungsgesetz? Berechnen Sie bei gegebenen systematischen und zufälligen Messabweichungen und Mittelwerten der unabhängigen Messgrößen $x,y,z$ die absoluten und relativen Messabweichungen der folgenden Funktionen!
+ \[
+  f_1(x,y,z) = \frac{x^2}{y^4 \cdot \sqrt{z^3}} \quad\text{und}\quad
+  f_2(x,y) = \frac1x + \frac1y                  \quad\text{und}\quad
+  f_3(x,y,z) = \frac{x^2 - y^2}{y - z}
+ \]
+}
+
+\frage{Zu Beispiel \ref{frage3} auf Seite \pageref{frage3}: Bis zu welchem Wert $n^*$ lohnt sich dessen Erhöhung in Hinblick auf eine möglichst geringe resultierende Messunsicherheit für die Periodendauer $T$?}
+
+\frage{Wie kann man für eine Serie von unter konstanten Bedingungen durchgeführten Messungen einer physikalischen Größe zeigen, dass die zufälligen Abweichungen vom Mittelwert einer Gaußschen Normalverteilung genügen?}
+
+\frage{Wie kann man sich die 1 im Nenner der Standardabweichung \eqref{fa102} plausibel machen?}
+
+\frage{Man beweise, dass die Wendepunkte der Gauß-Verteilung \eqref{fa108a} den Abszissen-Abstand $\sigma$ vom Mittelwert haben.}
+
+\AtEndDocument{
+ \newpage\fancyhf{}\renewcommand\headrulewidth{0pt}
+ % Auf einer leeren Extraseite wird ganz am Schluss des Dokumentes die Vorlage fürs Wahrscheinlichkeitsnetz angefügt.
+ \begin{figure}
+  \centering
+  \includegraphics[width=\linewidth]{GP1-FA-Wahrscheinlichkeitsnetz}
+  \caption{Vorlage für ein Wahrscheinlichkeitsnetz \label{fig::wahrscheinlichkeitsnetz}}
+ \end{figure}
+}
+
+\end{document}

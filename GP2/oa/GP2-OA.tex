@@ -1,0 +1,549 @@
+\documentclass[11pt,twoside,a4paper]{article}
+\usepackage{verbatim}
+\usepackage{amsmath,amsthm}
+\usepackage{graphicx}
+\usepackage{color}
+
+\usepackage[german]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+
+\usepackage{fancybox}
+\usepackage{textcomp}
+\usepackage{fancyhdr}
+\usepackage{rotating}
+\setcounter{secnumdepth}{3}
+
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\raggedleft\arraybackslash}X}
+\newcolumntype{Z}{>{\centering\arraybackslash}X}
+
+\textheight			25cm
+\textwidth			16.5cm
+\topmargin			-1cm
+\oddsidemargin		0cm
+\evensidemargin	-0.42cm
+
+\pagestyle{fancy}
+
+ \title{Versuch OA \\ Optische Abbildung \\}
+ \author{bearbeitet von \\ M. Kreller \\ i.A. Dr. Escher}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{table}[h]
+\begin{tabular}{|c|c|}
+\hline
+& \\
+\hspace{0.7cm} \begin{LARGE}Technische Universität Dresden \end{LARGE} \hspace{0.7cm} &
+\hspace{1cm}Physikalisches Praktikum \hspace{1cm} \\
+\begin{large} Fachrichtung Physik \end{large}               & \\
+\begin{footnotesize} M.Kuhndt, C. G. Oertel, C. Blochwitz 02/2003 \end{footnotesize}            &
+Versuch:
+\begin{LARGE} OA \end{LARGE} \\
+\begin{footnotesize} bearbeitet 03/ 2004 \end{footnotesize} & \\
+\hline
+\end{tabular}
+\end{table}
+\begin{huge}\textbf{Optische Abbildung}\end{huge}
+
+\tableofcontents
+\newpage
+
+\section{Aufgabenstellung}
+	\begin{enumerate}
+		\item Die Brennweiten einer dünnen bzw.~einer dicken Sammellinse sind aus
+		den Ding-~und Bild- Weiten bzw.~nach dem Bessel-Verfahren zu bestimmen.
+		\item Für ein Linsensystem sind nach dem Bessel-Verfahren die resultierende Brennweite und
+		die Brennweite der Zerstreuungs- Linse zu bestimmen.
+		\item Für eine Sammellinse sind die Brennweiten für einige Wellenlängen und
+		Zonen- Blenden aufzunehmen und daraus die sphärische und chromatische Aberration zu bestimmen.
+	\end{enumerate}
+
+\section{Abbildung durch sphärische Linsen}
+\subsection{Dünne Linsen}
+	Sphärische Linsen sind durchsichtige (Glas-) Körper mit $n>1$, die von
+	Kugelflächen begrenzt sind. Meist ist das umgebende Medium Luft, dessen
+	Brechungsindex (trockene Luft, bei 15$^o$C, $p$~=~101,325 kPa)
+	$n_L=1,000277\approx 1$ gesetzt wird.\\
+	In der elementaren Theorie der optischen Abbildung werden achsennahe Strahlen
+	betrachtet ({\bf Gauß-Optik} \cite{paus,hecht}), womit für kleine Winkel gilt:
+	$tan \alpha\approx sin \alpha\approx \alpha;\;cos \alpha\approx 1$.\\
+	Die Abbildung mit einer dicken Linse ist durch die Lage der
+	Hauptebenen ($H;\,H'$) und die
+	im Abstand $f$ bzw. $f'$ von den Hauptebenen befindlichen Brennebenen
+	eindeutig zu beschreiben. Bei {\bf dünnen Linsen} fallen die
+	Hauptebenen zusammen.
+	Mit den beiden Radien $r_1$ und $r_2$ der
+	Kugelflächen der Linse (Glas in Luft; $f=f'$) sowie der Brechzahl $n$ des
+	Glases berechnet sich die Brennweite nach der {\bf Linsenmacherformel}
+	\begin{center}
+	\fbox{\parbox{8cm}{
+	\begin{equation}
+	\frac{1}{f}=(n-1)\left(\frac{1}{r_1}+ \frac{1}{r_2} \right)\quad.
+		\label{oa01}
+	\end{equation}
+	}}
+	\end{center}
+	\begin{minipage}{7.5cm}
+	Man erhält bei gegebener Lage der Ding-\\
+	ebene die Bildebene der scharfen Abbildung mit einer (z.~B.~Sammel-) Linse,
+	indem man die ausgezeichneten Strahlen (Parallel-, Mittelpunkt-Strahl bzw.
+	den Brennpunktstrahl) zum Schnitt bringt (Abb.~1).
+	\end{minipage}\hspace{.5cm}
+	\begin{minipage}{9cm}
+	\begin{center}
+	\includegraphics[width=8.5cm]{abb1}\\
+	Abb.~1: Dünne Sammel-Linse\\
+	\end{center}
+	\end{minipage}\vspace{.5cm} \\
+	Bezeichnet man mit $a$ die Dingweite (Gegenstandsweite) und mit $a'$
+	die Bildweite, so lautet die {\bf Gauß'sche Abbildungsgleichung}
+	\begin{center}
+	\fbox{\parbox{8cm}{
+	\begin{equation}
+	\frac{1}{f}=\frac{1}{a}+ \frac{1}{a'}\quad.
+		\label{oa02}
+	\end{equation}
+	}}
+	\end{center}
+\begin{minipage}{7cm}
+\subsection{Dicke Linsen, Hauptebenen}
+	Bei dicken Linsen hat sich der Achsabstand $h_2$ eines aus der Linse
+	austretenden
+	Strahls bezüglich seines Eintrittsabstandes $h_1$ merklich verändert
+	(s.~Abb.~2).  \\[.1cm]
+	Um auch weiterhin die Gl.(\ref{oa01})
+	benutzen zu können, bedient man sich der fiktiven ding-bzw.~bildseitigen
+	Hauptebenen $H$ bzw. $H'$, auf die sich die Abstände ($a$, $a'$ und $f$)
+	beziehen.
+	\begin{flushright}
+	Abb.~2: Strahlenverlauf bei einer dicken Sammel-Linse; Lagen von Hauptebenen\\
+	\end{flushright}
+	\end{minipage}\hspace{.5cm}
+	\begin{minipage}{9cm}
+	\begin{center}
+	\includegraphics[width=8.5cm]{abb2}\\
+	\end{center}
+	\end{minipage}
+
+\subsection{Linsensysteme}
+	\begin{minipage}{7cm}
+	Es werde ein System aus zwei dünnen Linsen der Brennweiten $f_1$ und $f_2$
+	im Abstand $d$ betrachtet.
+	Wie man sich anhand der in Abb.~3 gegebenen Beispiele klar machen kann, gilt für die
+	resultierende Brennweite (und näherungsweise bei
+	kleinen  Abständen $d$ beider Linsen, d.~h. $d\ll f_1\,f_2$)
+	\begin{center}
+	\fbox{\parbox{7cm}{
+	\begin{equation}
+	\frac{1}{f_{res}}=\frac{1}{f_1}+ \frac{1}{f_2}- \frac{d}{f_1\,f_2}
+	\approx
+	\frac{1}{f_1}+ \frac{1}{f_2}
+	\quad.
+	\label{oa03}
+	\end{equation}}}
+	\end{center}
+	\end{minipage}\hspace{.5cm}
+	\begin{minipage}{9cm}
+	\begin{center}
+	\includegraphics[width=8.5cm]{abb3}\\
+	Abb.~3: Systeme von 2 Sammel-Linsen~(a,b); Sammel-~u.~Zerstreuungslinse~(c,d); $d\approx 0$~bei
+	(b,d)\\
+	\end{center}
+	\end{minipage}\hspace{0.5cm} \\
+	Die Kehrwerte der Brennweiten, die Brechkräfte $D$, addieren sich:
+	$D_{res}\approx D_1+D_2$ (Einheit von $D$: Dioptrie; [D]~=~m$^{-1}$).
+	In der gleichen Näherung ergibt sich für die Abstände der dünnen Linsen
+	von den zugeordneten Lagen der Hauptebenen $x=
+	\frac{f_{res}}{f_1}\cdot d\quad;\quad{\rm bzw.}\quad
+	x'=
+	\frac{f_{res}}{f_2}\cdot d$ (die zugeordnete Hauptebene ist näher an der
+	Linse mit geringerer Brennweite) \cite{paus}.\\[.2cm]
+	Ist eine der beiden Linsen eine Zerstreuungslinse, so
+	muß die Wirkung der Sammellinse überwiegen, damit es zu einer
+	Abbildung kommt. Das Vorzeichen der Brennweite der
+	Zerstreuungslinse ist negativ.
+	\newpage
+
+\subsection{Abbildungsfehler}
+\subsubsection{Monochromatisches Licht}
+	{\footnotesize
+	Abweichungen von den idealen Gauß'schen Bedingungen führen zu
+	Abbildungsfehlern (Aberrationen).
+	Man unterscheidet bei monochromatischem Licht zwischen
+	Koma, Astigmatismus, Verzeichnung und Sphärischer Aberration.\\[.1cm]
+	\begin{minipage}{7cm}
+	\underline{Koma}: Wenn parallele Strahlen schräg auf eine Linse
+	auftreffen, werden achsenferne Punkte in
+	radialer Richtung verwaschen. Abhilfe: Ausblenden der Randstrahlen.\\
+	\begin{flushright}
+	Abb.~4: Koma-Verzeichnung
+	\end{flushright}
+	\end{minipage}\hspace{.5cm}
+	\begin{minipage}{8.5cm}
+	\includegraphics[width=8cm]{abb4}
+	\end{minipage}\\-
+	\begin{minipage}{7cm}
+	\underline{Astigmatismus}: Schräg einfallende, nicht parallele
+	Lichtbüschel werden nicht in einem
+	Punkt, sondern in zueinander senkrechten Strichen fokussiert.
+	Abhilfe: Linsenkombinationen: Anastigmate.\\
+	\begin{flushright}
+	Abb.~5: Astigmatismus bei sphärischer Linse (a);\\ bei einer Zylinderlinse (b)
+	\end{flushright}
+	\end{minipage}\hspace{.5cm}
+	\begin{minipage}{8.5cm}
+	\includegraphics[width=8cm]{abb5}
+	\end{minipage}\\
+	\begin{minipage}{7cm}
+	\underline{Verzeichnung}: Sie tritt auf beim Versuch, durch Ausblenden
+	achsenferner
+	Strahlen mittels Blenden Koma und sphärische Aberration zu verringern.
+	(Tonnenförmig: Blende vor der Linse; Kissenförmig: Blende nach
+	der Linse).\\
+	\begin{flushright}
+	Abb.~6: Tonnen- bzw. Kissen-Verzeichnung
+	\end{flushright}
+	\end{minipage}\hspace{.5cm}
+	\begin{minipage}{8.5cm}
+	\includegraphics[width=8cm]{abb6}
+	\end{minipage} \\
+	\begin{minipage}{7cm}
+	{\underline{\bf Sphärische Aberration}} (Öffnungsfehler, Zonenfehler).\\
+	Wie beim sphärischen Spiegel werden zur Achse parallele aber achsenferne
+	Strahlen in einem anderen Brennpunkt vereinigt als achsennahe Strahlen.
+	(Abhilfe: Ausblenden von Randstrahlen oder speziellle Linsensysteme, die
+	Aplanate).
+	Der Betrag hängt sowohl vom Objektabstand, als auch von der Linsenform ab.
+	\begin{flushright}
+	Abb.~7: Sphärische Aberration (a);\\
+	Einfluß der Linsenform (Vertauschung der Richtung)(b)
+	\end{flushright}
+	\end{minipage}\hspace{.5cm}
+	\begin{minipage}{9cm}
+	\includegraphics[width=8.5cm]{abb7}
+	\end{minipage} \\
+
+\subsubsection{Chromatische Aberration (Farbfehler)}
+	Da die Brechzahl von der Wellenlänge abhängt (Dispersion),
+	ergeben sich
+	nach Gl.~(\ref{oa01}) für verschiedene Wellenlängen unterschiedliche
+	Brennweiten, wodurch bei weißem Licht
+	zusätzlich zu den o.~a. Fehlern der Farbfehler entsteht.
+	(Abhilfe: Kombination von Linsen aus Gläsern unterschiedlicher Brechzahlen
+	und Dispersion, wie z.B. Flint- und Kronglas).
+
+\section{Experimente}
+\subsection{Bestimmung der Brennweite von Linsen}
+\subsubsection{Brennweite einer dünnen Sammel-Linse}
+	1. Es werden für verschiedene Entfernungen $a$ des Gegenstandes die
+	zugehörigen Entfernungen $a'$ für ein scharfes Bild bestimmt.
+	Mit der umgestellten Gl.~(\ref{oa02}) errechnet man aus den $a;a'$~-Werten
+	einen Satz von $f$-Werten, deren
+	Mittelwert man auch grafisch als Schnittpunkt der Verbindungslinien
+	zwischen den Wertepaaren $a$;~$a'$ erhält, wenn man diese
+	auf der Ordinate bzw. Abszisse abträgt.\\[.2cm]
+	2. Anstelle der Entfernungen nach 1.~werden die Höhen von Ding ($G$) und
+	Bild ($B$) gemessen (Bestimmung der Lateralvergrößerung). Aus dem
+	Abbildungsmaßstab $\beta=m=B/G=y'/y$, der nach
+	dem Strahlensatz $a'/a$ entspricht, kann $f$ ermittelt werden zu
+	\begin{center}
+	\fbox{\parbox{8cm}{
+	\begin{equation}
+	f=\frac{a'}{1+m}\quad.
+		\label{oa05}
+	\end{equation}
+	}}
+	\end{center}
+
+\subsubsection{Brennweite dicker Linsen oder von Systemen nach Bessel}
+	\begin{minipage}{7cm}
+	Wegen der unbekannten Lagen der Hauptebenen können $a$ und $a'$ nicht
+	direkt ermittelt werden. (Im Sonderfall der plankonvexen Linse,
+	vergl.~Abb.~2 und Anhang, tangiert eine Hauptebene die gekrümmte
+	Linsenoberfläche \cite{west}). Nach Bessel werden für
+	schrittweise variierte
+	Abstände $L=a+a'+h>4f$ von Ding und Bild diejenigen beiden Positionen
+	\begin{flushright}
+	Abb.~8: Bessel-Verfahren
+	\end{flushright}
+	\end{minipage}\hspace{.5cm}
+	\begin{minipage}{8cm}
+	\includegraphics[width=8cm]{abb8}
+	\end{minipage} \vspace{.4cm} \\
+	(Marke am Ablesestift) der dicken Linse bestimmt, die eine scharfe
+	Abbildung (einmal vergößert und einmal verkleinert) realisieren
+	\cite{walcher}. Der Abstand dieser
+	beiden Positionen sei
+	$l=a_1'-a_2'$. Mit dem Abstand $h$ der beiden Hauptebenen sowie
+	Gl.~(\ref{oa02}) findet man (\cite{walcher};~s.~Anhang)
+	\begin{center}
+	\fbox{\parbox{12cm}{
+	\begin{equation}
+	f=\frac{1}{4}\left[(L-h)-\frac{l^2}{(L-h)}\right]\approx
+	\frac{1}{4}\left[L-\frac{l^2}{L}\right]
+	\quad.
+		\label{oa06}
+	\end{equation}
+	}}
+	\end{center}
+	Die Näherung gilt für $h\ll L$, was für den Versuch zutrifft.\\[-.8cm]
+
+\subsection{Bestimmung zweier Linsenfehler}
+\subsubsection{Öffnungsfehler, sphärische Aberration}
+	\begin{minipage}{6cm}
+	Für eine Wellenlänge werden
+	mit variablen Ringblenden auf der plankonvexen Linse verschiedene Zonen
+	(Durchmesser $D$) ausgeblendet (Abb.~8) und damit zwei
+	Abbildungsvarianten
+	realisiert: 1. $m=0; (a=\infty$) und 2. $m=-1; (a\approx 2\,f)$ (Abb.~9).
+	Sowohl die Brennweite als auch die
+	wirksame Linsendicke $d$ sind dabei abhängig von $D$ und
+	man findet\\
+	\begin{flushright}
+	Dicke Linse mit Zonenblende
+	\end{flushright}
+	\end{minipage}\hspace{.5cm}
+	\begin{minipage}{8cm}
+	\includegraphics[width=8cm]{abb9}
+	\end{minipage} \vspace{.4cm} \\
+	\begin{equation}
+	f=s_2'-s_1'\quad(a)\quad;\quad
+	d=2\,s_1-s_2   \quad.
+		\label{oa11}
+	\end{equation}
+	Enstprechend der Gl.~(\ref{oa11}) werden zunächst die Abhändigkeiten $f(D)$
+	und $d(D)$ und daraus der Krümmungsradius $r$ der Linse nach
+	\begin{equation}
+	r\approx \frac{D^2}{8(d_0-d(D)]}
+		\label{oa111}
+	\end{equation}
+	abgeschätzt (s.~Anhang).
+	Man mißt die Paare von scheinbaren Bildweiten ($a_1'(D_i)$ ; $a_2'(D_i)$;
+	($a_1'(D_{ii})$ ; $a_2'(D_{ii})$);
+	usw., die
+	den Zonen-Durchmessern $D_i$; $D_{ii}$;.. entsprechen.
+	Im Falle der plankonvexen Linse kann man
+	die Prozedur mit umgekehrtem Strahlengang wiederholen.\\
+
+\subsubsection{Farbfehler}
+	Für achsennahe Strahlen (innere Zone) werden für eine symmetrische
+	Sammel-Linse mit mehreren Interferenzfiltern bei fester Dingweite
+	die Bildweiten $a'(\lambda)$ bestimmt und daraus $f(\lambda)$ berechnet.
+	Im Bereich normaler Dispersion nimmt $n$ mit $\lambda$ ab, womit
+	der Zusammenhang $f=f(\lambda)$ (axiale chromatische Aberration) bestimmt ist.
+	(Vergleicht man die zugehörigen
+	Bildgrößen, d.~h.~$m(\lambda)$, so erhält man die transversale
+	chromatische Aberration) .
+	Zweckmäßigerweise sollten $|m|=1$, d.~h.~$G=B$ bzw. $a= a'\approx 2\,f$
+	betragen. Bei dicken Linsen muß der Hauptebenenabstand $h$
+	bekannt sein. Dann gilt
+	\begin{equation}
+	f(\lambda)=\frac{[a'(\lambda)-h]}{2}\approx
+	\frac{a'(\lambda)}{2} \quad,
+		\label{oa13}
+	\end{equation}
+	(Näherung für dünne Linsen). Bei bekannten Radien der (bzw. Radius der symmetrischen
+	oder plankonvexen)
+	Linse kann aus $f(\lambda)$
+	nach Gl.~(\ref{oa01}) die Dispersion $n(\lambda)$ abgeschätzt werden.
+
+\section{Anhang}
+\subsection{Zur Herleitung der Gl.~(\ref{oa06})}
+	Nach Umformung der Gleichungen
+	\begin{equation}
+	a+a'+h=L\quad;\;{\rm und}\quad \frac{1}{a}+\frac{1}{a'}=\frac{1}{f}
+	\end{equation}
+	folgt
+	\begin{equation}
+	a'^2+(h-L)a'+(L-h)f=0\quad.
+	\end{equation}
+	Mit den beiden Lösungen dieser quadratischen Gleichung
+	\begin{equation}
+	a'_{1,2}=-\frac{(h-L)}{2}\pm\sqrt{(\frac{(h-L)}{2})^2-(L-h)f}=
+	\frac{(L-h)}{2}\left[1\mp\sqrt{1-\frac{4f}{(L-h)}}\right]\quad,
+	\end{equation}
+	die der Vertauschung von Ding und Bild entsprechen,
+	ergibt sich für $l=a_1'-a_2'$
+	\begin{equation}
+	l=a'_1-a'_2=(L-h)\sqrt{1-\frac{4f}{(L-h)}}\quad,
+					{\rm u.\;Gl.~(\ref{oa06})}\;.
+	\end{equation}
+
+\subsection{Bestimmung von Brennweite und Hauptebenen nach Abb\'e}
+	Solange man bei einem Linsen-System die Lagen der Hauptebenen und
+	ihren Abstand $h=x+x'$ nicht kennt,
+	bleiben auch Gegenstandsweite $a$ und Bildweite $a'$  unbekannt.
+	Nach Abb\'e mißt man für zwei vom willkürlichen Punkt (Ablesemarke A)
+	gezählte Gegenstandsweiten $a^{0}_1=a_1+x$; $a^{0}_2=a_2+x$ die
+	ebenfalls auf A bezogenen Bildweiten $a^{'0}_1=a_1'+x'$; $a^{'0}_2=a_2'+x'$,
+	sowie den Abbildungsmaßstab
+	$m$ ($m=\beta=\gamma=B/G=\frac{f}{a-f}=\frac{a'-f}{f}$).
+	Für diesen gilt zunächst
+	\begin{equation}
+	a=f\,(\frac{1}{m}+1)\quad;\quad
+	a'=f\,(m+1)\quad.
+		\label{oa07}
+	\end{equation}
+	Der Ablesestift ist um $x$ von $H$ und um $x'$ von $H'$ entfernt.
+	Man erhält die Beziehungen \\  [.3cm]
+	\hspace*{1cm} $a^{0}_1=a_1+x=f\,(\frac{1}{m_1}+1)+x\quad;\quad
+	a^{0'}_1=a_1'+x'=f\,(m_1+1)+x'\quad$\\[.3cm]
+	\hspace*{1cm}$a^{0}_2=a_2+x=f\,(\frac{1}{m_2}+1)+x\quad;\quad
+	a^{0'}_2=a_2'+x'=f\,(m_2+1)+x'\quad.$ \\ [.1cm]
+	\begin{minipage}{7cm}
+	Mit der Lösung dieser Gleichungen\\
+	sind sowohl $f$ als auch die $x;\,x'$:\\
+	bestimmt (z.~B.~\cite{ilberg})\\[.1cm]
+	$f=\frac{a_2^{0'}-a_1^{0'}}{m_2-m_1}=\frac{a^{0}_2-a^{0}_1}
+	{\frac{1}{m_2}-\frac{1}{m_1}}\quad;\\ [.2cm]
+	x=a_1^{0} -f\,(\frac{1}{m_1}+1) =
+	a_2^{0} -f\,(\frac{1}{m_2}+1)\quad;\\[.2cm]
+	x'=a_1^{*'} -f\,(1m_1+1) =a_2^{*'} -f\,(m_2+1)
+	\quad.$\\
+	\end{minipage}\hspace{.5cm}
+	\begin{minipage}{8cm}
+	\includegraphics[width=8cm]{abb10}\\
+	\begin{center}
+	Abb.~10: Bestimmung von $f$ und $H;\,H'$ nach Abb\'e
+	\end{center}
+	\end{minipage} \vspace{.4cm} \\
+	\begin{minipage}{7cm}
+\subsection{Autokollimation}
+	Mit Hilfe eines hinter der zu untersuchenden Sammel-Linse angebrachten
+	Planspiegels wird für den Fall, daß die (dünne) Linse
+	\begin{flushright}
+	Abb.~11: Autokollimation und Gauß'sches Okular
+	\end{flushright}
+	\end{minipage}\hspace{.5cm}
+	\begin{minipage}{8cm}
+	\includegraphics[width=8cm]{abb11}\\
+	\end{minipage} \vspace{.4cm} \\
+	im Abstand $f$ vom Gegenstand angebracht ist,
+	dieser umgekehrt in sich selbst abgebildet.
+	Bei dieser Brennweitenbestimmung
+	benutzt man gern ein Gauß'sches Okular.
+
+\subsection{Zur plankonvexen dicken Linse}
+	\begin{minipage}{7cm}
+	{\bf 1. Hauptebene:}\\
+	Eine plankonvexe Linse, deren eine Fläche eben und die andere nur schwach
+	gekrümmt sei, habe die zentrale Dicke $d_0$.
+	Man kann sich anhand eines Parallelstrahles
+	klar machen, daß für achsnahe Strahlen eine Hauptebene ($H'$)
+	die konvexe Linsenoberfläche tangiert. Die andere Hauptebene ($H$) liegt im
+	Innern der Linse im Abstand $h=d_0-d$ von $H'$ (Abb.~10).\\
+	\end{minipage}\hspace{.5cm}
+	\begin{minipage}{8cm}
+	\includegraphics[width=8cm]{abb12}\\
+	\begin{center}
+	Abb.~10: Dicke plankonvexe Linse\\[.2cm]
+		\end{center}
+	\end{minipage} \vspace{.4cm} \\
+	Zur Abschätzung von $h$ findet man für den von links
+	kommenden Brennpunktstrahl
+	\begin{equation}
+	x=d_0\,tan\,\beta=(d_0-h)\,tan\,\alpha\quad{\rm oder}\quad
+	\frac{d_0}{(d_0-h)}=\frac{tan\,\alpha}{\tan\,\beta}\approx
+	\frac{sin\,\alpha}{\sin\,\beta}\approx n\quad.
+	\end{equation}
+	Die Umstellung nach $h$ ergibt
+	\begin{equation}
+	h\approx d_0\frac{(n-1)}{n}\quad,
+	\label{oa22}
+	\end{equation}
+	woraus z.~B.~für $n\approx 1,5$ folgt: $h\approx d_0/3$.\\[.5cm]
+	{\bf 2. Krümmungsradius:} Sind die Radien, die Brechzahl und die
+	zentrale Dicke $d_0$ der Linse bekannt, so
+	lautet die allgemeine Linsenmacherformel
+	\begin{equation}
+	\frac{1}{f}=(n-1)\left(\frac{1}{r_1}+ \frac{1}{r_2}
+	+\frac{(n-1)\,d_0}{n\,r_1r_2} \right)\quad,
+		\label{oa20}
+	\end{equation}
+	woraus für die plankonvexe Linse mit $r_2\rightarrow \infty$
+	folgt  $r_1=\frac{f}{(n-1)}$.\\
+	Z.~B.~ergibt sich danach für $n\approx 1,5$: $r_1\approx 2\,f$.\\[.2cm]
+	{\bf 3. Effektive Linsendicke $d$:} Für achsenferne Strahlen nimmt die
+	effektive Linsendicke $d$ mit zunehmendem
+	Zonendurcmesser $D$ ab ($d=d_0-h$; z.~B.~Abb.~10)).
+	\begin{equation}
+	r_1^2=(r_1-d_0+d)^2+\frac{D^2}{4}\quad;\quad
+	0=d^2+2d(r_1-d_0)-2r_1d_0+d_0^2+\frac{D^2}{4}\quad.
+		\label{oa21}
+	\end{equation}
+	Die Lösung dieser quadratischen Gleichung ergibt
+	\begin{equation}
+	d(D)=d_0-r_1 \pm \sqrt{r_1^2+\frac{D^2}{4}}\quad;\quad
+	{\rm oder}\quad
+	r\approx \frac{D^2}{8[d_0-d(D)]}
+		\label{oa22}
+	\end{equation}
+
+\newpage
+\section{Fragen}
+	\begin{enumerate}
+	\item
+	Was besagt das Fermat'sche Prinzip?
+	\item
+	Wie unterscheiden sich dünne und dicke Linsen?
+	\item
+	Was versteht man unter der Brechzahl?
+	\item
+	Zeichnen Sie die Strahlengänge für die in der Anleitung beschriebenen Verfahren
+	zur Brennweitenbestimmung.
+	\item
+	Wie leiten sich Linsenmacher-Formel bzw.~Abbildungsgleichung
+	(\ref{oa01}~bzw.~\ref{oa02}) her?
+	\item
+	Wie ändert sich der Charakter der Abbildung, wenn man bei einer Kombination
+	zweier Sammel-Linsen für verschiedene Gegenstandsweiten den
+	Abstand der Linsen $d$ bei Null beginnend systematisch vergrößert?
+	\item Was versteht man unter einer Kaustik?
+	\item
+	Was versteht man unter sphärischer und chromatischer Aberration?
+	\item
+	Welche weiteren Linsenfehler gibt es? Wie kann man sie nachweisen
+	und unterdrücken?
+	\item
+	Wie bestimmt man Brennweiten von dicken und dünnen Linsen sowie von
+	Linsensystemen?
+	\item
+	Mit Hilfe einer (dünnen) Sammel-Linse werde ein entfernter Gegenstand
+	abgebildet, der langsam näher kommt. In welche Richtung
+	muß der Schirm verschoben werden, damit das Bild scharf bleibt?
+	\item
+	Welche Linsen-Systeme ergeben Kondensoren, Projektive, Okulare
+	, Lupen oder Fernrohre?
+	\item
+	Wie kann man ein Teleobjektiv realisieren?
+	\item
+	Wie wird ein punktförmiges Objekt mit einer Zylinderlinse abgebildet?
+	\item
+	Wozu dient eine Fresnel'sche Stufenlinse?
+	\item
+	Zeichnen Sie für eine Abbildung (mit einer bikonkaven,
+	einer plankonvexen dicke Linse
+	sowie für ein Linsensystem) den Parallel-, den Brennpunkt- und
+	den Mittelpunktstrahl.
+	\end{enumerate}
+
+\bibliographystyle{unsrt}
+
+\begin{thebibliography}{NAM99}
+\bibitem{reck} A.~Recknagel, Physik, Optik, Verlag Technik, 1990
+\bibitem{paus} H.-J.~Paus, Physik in Experimenten und Beispielen, V.
+V.-Hanser München 1995
+\bibitem{ilberg} W.~Ilberg, M.~Krötsch, D.~Geschke, P.~Kirsten, W.~Schenk,\\
+ A.~Schneider, H.~Schulze, Physikalisches Praktikum für Anfänger,\\
+Leipzig 1994
+\bibitem{walcher} W.~Walcher, Praktikum der
+Physik, V.~Teubner, Stuttgart 1989
+\bibitem{berg} Bergmann-Schaefer, Lehrbuch der
+Experimentalphysik, Optik, V. de Cruyter 1993
+\bibitem{hecht} E. Hecht, Optik, Add.~Wesley 1989
+\bibitem{west} W.~H.~Westphal, Physikalisches Praktikum, V.~Vieweg 1970
+\end{thebibliography}
+
+\end{document}

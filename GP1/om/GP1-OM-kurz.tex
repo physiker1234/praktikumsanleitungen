@@ -1,0 +1,82 @@
+\documentclass[platz]{tudphygp}
+\usepackage{tudphymd}
+
+\versuch{Oszilloskop - Messtechnik}{OM}
+
+\begin{document}
+\maketitle
+
+\section*{Hinweise zum Protokoll}
+
+Ein Protokoll muss \emph{alle} Informationen enthalten, die zur Wiederholung des Versuchs unter gleichen
+Bedingungen notwendig sind. Tragen Sie \textbf{alle Einstellungen} und \textbf{alle abgelesenen Werte} sofort in
+Ihr Protokollheft ein. Geben Sie dazu immer die \textbf{Maßeinheit} und den \textbf{Fehler} (Messgenauigkeit)
+an. Auch Hilfsrechnungen und Zwischenergebnisse sind zum Nachvollziehen Ihrer Analyse wichtig.
+Notieren Sie also z.B. auch Kennbuchstaben des Versuchsplatzes, Typ der Messgeräte, usw. .
+
+\section{Inbetriebnahme der Geräte}
+
+Schalten Sie die Geräte ein und verbinden Sie den Funktionsgenerator mittels Koaxkabel
+mit dem Kanal 1 (\texttt{CH 1}) des DSO.
+
+\section{Grundmessungen mit dem Funktionsgenerator}
+
+\begin{enumerate}
+ \item Stellen Sie den Funktionsgenerator auf \emph{Sinusfunktion ohne Offset} mit einer Frequenz
+ $f = \SI{1,2}{kHz}$, drücken Sie \texttt{AUTOSET} am DSO und notieren Sie die auf dem Display
+ angezeigten Parameter der Sinusspannung.
+ \emph{Dokumentieren} Sie die Einstellungen des Vertikalmenüs (Menü \texttt{CH 1}) und des Triggermenüs sowie den Erfassungsmodus.
+ \item Stellen Sie nun mit Hilfe des Menüs Messung die Amplitude ein: $U_m = \SI{200}{mV}$.
+ Machen Sie sich mit der Vertikal- und Horizontalskalierung vertraut und dokumentieren
+ Sie den Einfluss der Triggerschwelle!
+ \item Stellen Sie am Funktionsgenerator die \emph{Offsetspannung} auf Maximum (rechter Anschlag)
+ und schalten Sie den Offset ein, was beobachten Sie?
+ 
+ Stellen Sie den Trigger so ein, dass auf dem Display eine auswertbare Darstellung entsteht.
+ Welche Möglichkeiten der Messung der Offsetspannung bietet das DSO?
+ 
+ Wählen Sie die Methode, die Ihnen den kleinsten Fehler liefert und stellen Sie das
+ Ergebnis mit Fehlergrenze dem einer direkten Messung mit dem Multimeter \texttt{FLUKE 175}
+ [Messunsicherheit: $\Delta U = \pm (\num{0,0015}\cdot U + 2 \mathrm{Digit})$] gegenüber.
+ \item Stellen Sie die vom Funktionsgenerator gelieferten \emph{Dreieck-} und \emph{Rechteckspannungen}
+ dar, messen und dokumentieren Sie die Parameter dieser Signale mit Hilfe der Funktionen
+ im Menü \texttt{MESSUNG}.
+ \item Aktivieren Sie den \texttt{CH 2} und verbinden Sie diesen Eingang mit dem \emph{Triggerausgang} des
+ Funktionsgenerators, vergleichen Sie dieses Triggersignal mit den Signalen des Generators.
+ Was zeichnet dieses Triggersignal aus?
+ 
+ Wählen Sie als Triggerquelle \texttt{Ext.} und nutzen Sie jetzt die externe Triggerquelle.
+\end{enumerate}
+
+
+\section{Identifizierung von Signalen des Signalgenerators}
+
+\begin{description}
+ \item [Achtung:] Messen und protokollieren Sie die wichtigsten Parameter der Signale sowie die Erfassungsart und dem Triggermodus.
+\end{description}
+
+\begin{enumerate}
+ \item Identifizieren Sie die Signale am BNC-Ausgang bei den\emph{Wahlschalter-Positionen} (WP) 1 bis 3
+ und messen Sie alle relevanten Parameter.
+ \item Bestimmen Sie die Frequenz der Sinusspannung am separaten Ausgang (BNC, links) und
+ überprüfen Sie das Ergebnis mit dem durch Frequenzvergleich mit dem Sinussignal des
+ \texttt{HM8030 - 5} im \emph{XY-Betrieb} des DSO und \emph{Lissajous-Figuren} erhaltenen Wert.
+ \item Messen Sie die Phasendifferenz zwischen dieser Sinusspannung und der bei WP 4 über eine
+ Zeitdifferenzmessung.
+ \item \textbf{Anwendung des passiven Tastkopfes}\\
+ Bringen Sie die Rechteckimpulsfolge WP 7 zur Darstellung, skizzieren Sie die Impulsform,
+ schließen Sie nun den DSO über den Tastkopf, Tastteilung $1:1$, an, skizzieren Sie die
+ Impulsform erneut und bestimmen Sie alle wichtigen Parameter.
+ Wiederholen Sie diese Darstellung und Messung mit dem Teilerverhältnis $10:1$.
+ 
+ \textbf{Wichtig:} Achten Sie auch auf die Einstellung des Teilerverhältnisses im Vertikalmenü!
+ 
+ Worauf sind die Unterschiede in den Impulsabbildungen zurückzuführen?
+ \item Führen Sie alle weiteren Messungen mit dem Tastkopf durch!\\
+ Welches Teilerverhältnis ist dabei zweckmäßig?
+ \item Identifizieren Sie die Signale bei den Wahlschalter-Positionen 5 und 8 sowie das Singleshot-Signal
+ WP 6. Skizzieren Sie diese Signale und geben Sie jeweils alle aussagekräftigen Parameter an.
+
+\end{enumerate}
+
+\end{document}

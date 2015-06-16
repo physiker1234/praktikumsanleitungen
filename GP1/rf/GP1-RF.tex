@@ -1,0 +1,241 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd}
+
+\versuch{Innere Reibung von Flüssigkeiten}{RF}
+\author{L.~Jahn}
+\date{01.04.1999}
+\bearbeitet{M.~Kreller,J.~Kelling,F.~Lemke,S.~Majewsky,i.~A.~Dr.~Escher}{01.03.2004}
+
+\buch{reck}{A.~Recknagel}{Physik: Mechanik}{Technik-Verlag}{Berlin 1990}
+\buch{kohl}{F.~Kohlrausch}{Praktische Physik, Band 2/3}{Teubner-Verlag}{Stuttgart 1985}
+\buch{eder}{F.~X.~Eder}{Moderne Messmethoden der Physik, Band 1: Mechanik, Akustik}{Verlag der Wissenschaften}{Berlin 1960}
+\buch{paus}{H.~J.~Paus}{Physik in Experimenten und Beispielen}{Verlag~C.-Hanser}{München 1995}
+\buch{gert}{C.~Gerthsen, H.~Vogel}{Physik}{Springer-Verlag}{Berlin, Heidelberg 1995}
+\buch{fran}{A.~W.~Francis}{Physics 4, 404}{}{1933}
+\buch{berg}{L.~Bergmann, C.~Schaefer}{Lehrbuch der Experimentalphysik}{Verlag de Gruyter}{Berlin 1954}
+\buch{joos}{G.~Joos, B.~Fricke}{Lehrbuch der theoretischen Physik}{Aula-Verlag}{Wiesbaden 1989}
+
+\begin{document}
+\maketitle
+
+\section{Aufgabenstellung}
+
+\begin{enumerate}
+ \item Bestimmen Sie die Abhängigkeit der Zähigkeit $\eta$ des Ethanols von der Temperatur $T$. Dazu sind für fünf verschiedene Temperaturen zwischen Raumtemperatur und \SI{50}{\degC} je zwei Messungen durchzuführen.
+ \item Geben Sie die Koeffizienten $A$ und $b$ der \emph{Andradeschen Gleichung} an.
+ \item \emph{(Für Physikstudenten)} Geben Sie die Standardabweichungen der Andradeschen Koeffizienten an. Berechnen Sie die \emph{Reynoldssche Zahl} $Re$ für die höchste Temperatur.
+ \item Bestimmen Sie aus der grafischen Darstellung des natürlichen Logarithmus der Viskosität ($\ln \eta$) über dem Reziproken der Temperatur ($1/T$) den Maximalfehler des Anstiegs ($\Delta b$). Tragen Sie dazu die Fehlerflächen der Messwerte sowie die Geraden minimalen und maximalen Anstiegs in die grafische Darstellung ein.
+ \item \emph{(Für Physikstudenten)} Überprüfen Sie anhand der berechneten \emph{Reynoldsschen Zahl}\footnote {O.~Reynolds 1842-1912}, ob die Strömung laminar war.
+ \item Diskutieren Sie den Einfluss der fehlerhaften Größen auf den Fehler von $b$.
+\end{enumerate}
+
+\section{Allgemeine Grundlagen}
+
+\subsection{Newtonsche zähe Flüssigkeiten}
+
+Flüssigkeiten, deren (Schub-) Viskosität im Bereich der \emph{laminaren} Strömung eine nur von der Temperatur abhängige Konstante ist, heißen \emph{Newtonsche Flüssigkeiten}.
+
+\begin{figure}[h!]
+ \centering
+ \includegraphics[height=3cm]{GP1-RF-NewtonscheFluessigkeiten}
+ \caption[]{Geschwindigkeitsgradient $D = \diff v_x / \diff z$ in Abhängigkeit von der Schubspannung $\tau$ \newline
+            1: Newtonsche Flüssigkeit \newline
+            2,3: Suspensionen (Kakao), Kolloide, Schmelzen \newline
+            4,5,6: Plaste mit Fließgrenzen (Ton, Kitt, Pasten) \newline
+            7,8: zeitabhängiges Verhalten mit Hysterese \verweis{kohl}
+           }
+ \label{fig::fluide}
+\end{figure}
+
+\piccaption{Kräfte und Geschwindigkeitsabnahme zwischen aneinander abgleitenden Schichten in der zähen Flüssigkeit zwischen bewegter und ruhender Platte~(a); mikroskopisch~(b) \label{fig::innereReibung}}
+\parpic[r]{
+ \includegraphics[width=\linewidth/2]{GP1-RF-InnereReibung}
+}
+Fließt eine Newtonsche Flüssigkeit laminar in $x$-Richtung an einer Wand (oder einem Hindernis) entlang, so gleiten Flüssigkeitsschichten in der $x$-$y$-Ebene aufeinander ab und verursachen dabei eine Schubkraft $F_x$ (tangentiale Reibungskraft), für die der \emph{Newtonsche Ansatz} gilt:
+\begin{subequations}
+ \label{rf01}
+ \begin{align}
+  F_x &= \eta \cdot A_{xy} \cdot \dquot{v_x}{z} \\
+  \tau &= \frac{F_x}{A_{xy}} = \eta \cdot \dquot{v_x}{z}
+ \end{align}
+\end{subequations}
+\picskip{0}\vspace{-1em}
+Dabei sind $\eta$ der Koeffizient der (dynamischen) Viskosität oder Zähigkeit, $A$ die Fläche, $\dquot{v_x}{z}$ der Geschwindigkeitsgradient senkrecht zu $\vec v$ und $\tau$ die Schubspannung (vgl. Abb.~\ref{fig::innereReibung}).
+
+\subsection{Temperaturabhängigkeit der Viskosität}
+
+Die Viskosität von Flüssigkeiten nimmt im Bereich der Raumtemperatur mit steigender Temperatur monoton ab. Bei vielen Flüssigkeiten kann der Temperaturgang mit zwei Konstanten $A$ und $b$ nach \emph{Andrade} beschrieben werden:
+\begin{equation}
+ \eta(T) = A \cdot \eu{b / T}
+ \label{rf02}
+\end{equation}
+Dabei ist $A = \eta_\infty$ der hypothetische $\eta$-Wert bei $T = \infty$ und in $b$ steckt im wesentlichen die Aktivierungsenergie als Höhe von
+Potentialwällen bei Platzwechselvorgängen (s.~Abb.~\ref{fig::innereReibung}(b)) in der Flüssigkeit, die der \emph{Boltzmann-Statistik} genügen. Für die Wahrscheinlichkeit $w$ gilt dabei:
+\[
+ w \sim \eu{-\frac bT} \sim \frac1\eta
+\]
+Die Auswertung der $\eta(T)$-Messungen erfolgt anhand der \emph{Arrhenius-Auftragung}:
+\begin{equation}
+ \ln\eta(T) = \ln A + \frac bT \label{rf03}
+\end{equation}
+
+\section{Experimente}
+
+\subsection{Kugelfall-Methode}
+
+Eine Kugel vom Radius $R$ bewegt sich mit geringer (laminare Strömung!) Geschwindigkeit $\vec v$ in einer (Newtonschen) zähen Flüssigkeit. Dabei resultiert als Folge von Gleichung \eqref{rf01} die \emph{Reibungskraft nach Stokes}\footnote {G.~G.~Stokes 1819-1903}:
+\begin{equation}
+ \vec F = -6 \pi \cdot \eta\,R \cdot \vec v \label{rf04}
+\end{equation}
+Bei der \emph{absoluten} Kugelfall-Methode läßt man eine Kugel, deren Radius und Dichte bekannt sind, in der Achse eines weiten ($r\gg R$) mit
+der zu untersuchenden Flüssigkeit (Dichte $\rho_f$) gefüllten Zylinders (Radius $r$) fallen. Man bestimmt die Endgeschwindigkeit $v_e$, die sich ergibt, wenn Schwerkraft, Auftriebskraft und Reibungskraft nach Gleichung \eqref{rf04} im Gleichgewicht stehen:
+\begin{equation}
+ \rho_k \cdot \frac{4\pi\cdot R^3}3 \cdot g -\rho_f \cdot \frac{4\pi\cdot R^3}3 \cdot g = 6 \pi \cdot \eta\,R \cdot v_e \label{rf05}
+\end{equation}
+Dann gilt für die Viskosität im Idealfall sehr großer Gefäß-Weite:
+\begin{equation}
+ \eta = (\rho_k - \rho_f) \cdot \frac{2 R^2 \cdot g}{9v_e} \label{rf06}
+\end{equation}
+Nach Francis \verweis{fran} muss der endliche Durchmesser $r$ des Fallrohres in einer Korrektur berücksichtigt werden:
+\begin{equation}
+ \eta = (\rho_k - \rho_f) \cdot \frac{2R^2 \cdot g}{9v_e} \cdot \kla{1 - \frac Rr}^{9/4}
+      \approx (\rho_k - \rho_f)\cdot \frac{2 R^2\cdot g}{9v_e} \cdot \kla{1 - \frac{9R}{4r}}
+ \label{rf061}
+\end{equation}
+Um die Korrektur gering zu halten, sollte mit möglichst kleinen Kugeln gearbeitet werden: z.~B. $2 R\approx \SI2{mm}$ für $\eta \approx \SI1{Pa.s}$ oder $2 R\approx \SI8{mm}$ für $\eta\approx \SI{30}{Pa.s}$ \verweis{eder}.
+
+\subsection{Höppler-Viskosimeter}
+
+Das \emph{Höppler-Viskosimeter} stellt eine technische Variante der Kugelfall-Methode dar, bei dem das mit der Flüssigkeit gefüllte und leicht geneigte Rohr nur wenig größer als der Kugelradius ist und die Kugel\footnote{Beim Viskosimeter nach Lawaczek ist die Kugel durch zylindrische Fallkörper ersetzt.} an einer Rohrwand abwärts gleitet. Damit braucht man bei Messungen mit dem Durchfluß-Thermostaten nur ein vergleichseweise geringes Flüssigkeitsvolumen zu temperieren. Die Gleichungen \eqref{rf06} und \eqref{rf061} sind stark modifiziert. Mit der vom Hersteller angegebenen Fallkörper-Konstate $K$ und $t$ als Fallzeit zwischen zwei Messmarken gilt:
+\begin{equation}
+ \eta = K \cdot (\rho_k - \rho_f) \cdot g\,t \label{rf07}
+\end{equation}
+
+\subsection{Kapillar-Viskosimeter}
+
+In einer laminaren Rohrströmung wird die Energie der Druckdifferenz in (innere) Reibungsarbeit umgewandelt. Das Gesetz von \emph{Hage-Poiseuille}\footnote{G.~H.~L.~Hagen 1797-1884; J-L.~M.~Poiseuille 1799-1869} stellt einen Zusammenhang zwischen der Druckdifferenz und der Zeit $t$, in der das Volumen $V$ durch ein Rohr mit dem Durchmesser $r$ und der Länge $l$ strömt, her:
+\begin{equation}
+ \frac Vt = \frac{\pi\cdot r^4}{8\eta\cdot l} \cdot \Delta p \label{rf08}
+\end{equation}
+
+\piccaption{Viskosimeter nach\newline Ubbelohde \label{fig::ubbelhode}}
+\parpic[r]{
+ \includegraphics[width=\linewidth/3]{GP1-RF-Ubbelohde}
+}
+Eine technische Ausführungsform stellt das \emph{Kapillar-Vis\-ko\-si\-me\-ter nach Ubbelohde} dar (s.~Abb.~\ref{fig::ubbelhode}). Die Flüssigkeit fließt aus dem Vorratsgefäß A unter der Wirkung des Schweredrucks $\rho\,g\,h$ durch die Kapillare K. Unterhalb der Kapillare zweigt das Rohr R ab. Seine obere Öffnung wird nach Ansaugen der Flüssigkeit freigegeben, wodurch unterhalb der Kapillare ein konstanter (äußerer Luftdruck) herrscht. Es wird die Zeit $t$ gemessen, in der der Flüssigkeitsspiegel die Marken m$_1$ und m$_2$ passiert. Am Eingang der Kapillare muss die Flüssigkeit beschleunigt werden, womit eine Verzögerung verbunden ist. Die entsprechende Hagenbachsche Korrektur-Zeit $t_k$ ist angegeben und von der Messzeit zu subtrahieren, sodass gilt:
+\begin{equation}
+ \eta = C \, \rho_f \, g \cdot (t - t_k) \label{rf09}
+\end{equation}
+
+Die nur von der Geometrie abhängige Gerätekonstante $C$ ist ebenfalls angegeben und kann mit der mittleren Druckhöhe $h$ aus Gleichung \eqref{rf08} bestimmt werden.
+
+\picskip0\vspace{-14em}
+
+\section{Hinweise zu den Versuchen}
+
+\subsection{Prüfung auf laminare Strömung}
+
+Bei höheren Temperaturen könnte bei gegebener Geschwindigkeit die laminare Strömung in die turbulente umschlagen, sodass unter Umständen die Anwendung der Gesetze \eqref{rf04} bis \eqref{rf08} zu Fehlern führen würde. Eine Überprüfung des möglichen Umschlags zur Turbulenz kann anhand der \emph{kritischen Reynoldsschen Zahl} $Re_\mathrm{krit}$ erfolgen. Die dimensionslose Reynoldssche Zahl $Re$ als Verhältnis von Reibungs- und
+Beschleunigungs-Arbeit berechnet sich mit $l^*$ als charakteristischer Länge zu:
+\begin{equation}
+ Re = \frac{\rho\cdot v\cdot l^*}{\eta} \label{rf10}
+\end{equation}
+
+\begin{description}
+ \item[Rohr] Hierbei ist die charakteristische Länge $l^*=d=2r$ damit folgt \verweis{reck}\verweis{eder}\verweis{gert}:
+ \begin{equation}
+  Re = \frac{\rho\cdot v\cdot d}{\eta} \quad\text{mit}\quad Re_\mathrm{krit}\approx 2200
+  \label{rf101}
+ \end{equation}
+ \item[Kugel] Mit der charakteristichen Länge $l^*=2\,R$ folgt für diesen Fall \verweis{berg}:
+ \begin{equation}
+  Re = \frac{2R\cdot \rho\cdot v}{\eta} \quad\text{mit}\quad Re_\mathrm{krit} \approx 1000
+  \label{rf102}
+ \end{equation}
+\end{description}
+
+Der Quotient $\eta / \rho$ heißt kinematische Zähigkeit. Es empfiehlt sich, zu dem jeweils niedrigsten gemessenen $\eta$-Wert anhand der eigenen Messdaten die Reynoldssche Zahl zu bestimmen und mit dem kritischen Wert zu vergleichen.
+
+\section{Anhang}
+
+\subsection{Viskositätswerte}
+
+\begin{table}[h!t] \centering
+ \begin{tabular}{ccc}
+  Flüssigkeit & Temperatur / \SI{}{\degC} & $\eta$ /\SI{}{Ns.m^{-2}} \\ \hline
+              & \num0     		  & \num{1,787e-3}           \\
+  Wasser      & \num{20}        	  & \num{1,002e-3}           \\
+	      & \num{50}          	  & \num{0,547e-3}           \\ \hline
+              & \num0               	  & \num{1,78e-3}            \\
+  Ethanol     & \num{20}               	  & \num{1,2e-3}             \\
+	      & \num{50}             	  & \num{0,7e-3}             \\ \hline
+              & \num0                	  & \num{12,1}               \\
+  Glyzerin    & \num{20}                  & \num{1,48}               \\
+	      & \num{50}		  & \num{0,18}               \\
+ \end{tabular}
+ \caption{Zähigkeitswerte einiger Flüssigkeiten \label{tab::eta}}
+\end{table}
+
+\subsection{Prüfung auf Newtonsches Verhalten*}
+
+Um zu entscheiden, ob eine Flüssigkeit Newtonsches Verhalten zeigt oder nicht, müsste anhand der Beziehungen \eqref{rf04} bzw. \eqref{rf07} die Konstanz des Proportionalitätsfaktors $\eta$ bei Variation der Kräfte bzw. Druckdifferenzen getestet werden. Beim Höppler-Viskosimeter gelingt das in geringem Maße durch Einsatz verschiedener Kugeln mit unterschiedlichen Dichten und Radien. Das Kappilar-Viskosimeter lässt dagegen eine Variation der Druckdifferenz nicht zu.
+
+Bei Rotations-Viskosimetern rotiert ein Zylinder (Radius $r_1$) in einem zylindrischen mit der Flüssigkeit gefüllten Gefäß (Radius $r_2$ mit $r_2 - r_1 \ll r_1$). Die Reibungskraft am Umfang beträgt (vergleich dazu auch Gleichung \eqref{rf01}):
+\[
+ F_\tau \approx 2\pi \cdot r_1\,h \cdot \eta\,\omega \cdot \frac{r_1}{r_2-r_1}
+\]
+Diese Kraft erzeugt das zu messende Drehmoment $M \approx F \cdot r_1$ und es gilt
+\begin{equation}
+ M \approx 2\pi \cdot \eta\,h \cdot \frac{r_1^3}{r_2 - r_1} \cdot \omega = C \cdot \eta \, \omega \label{rf11}
+\end{equation}
+Hiermit können Drehmoment und Winkelgeschwindigkeit mit Hilfe eines Motors in weiten Grenzen variiert und die Konstanz von $\eta$ überprüft werden.
+
+\subsection{Zur Herleitung*}
+
+\subsubsection{Hagen-Poiseuille}
+
+Am koaxialen Flüssigkeitszylinder mit dem Radius $r$ und der Länge $l$ greift am Mantel die folgende Reibungskraft an:
+\[
+ F_R = 2\pi \cdot r\,l\,\eta \cdot \dquot vr = A^* \cdot \eta \cdot \dquot Vr \quad\text{mit}\quad \dquot vr < 0
+\]
+Zusätzlich greift und an der Stirnfläche eine Druckkraft an:
+\[
+ F_p = \pi \cdot r^2 \cdot \Delta p = A \cdot \Delta p
+\]
+Aus der Gleichgewichtsbedingung $F_R = F_p$ folgt nach einer Integration\verweis{gert} zunächst das parabelförmige Geschwindigkeitsprofil $v(r)$:
+\begin{equation}
+ \dquot vr = -\frac{\Delta p}{2 \eta \cdot l} \cdot r \quad\Rightarrow\quad v(r) = v_0 - \frac{\Delta p}{4\eta\cdot l}\cdot r^2
+ \quad\text{mit}\quad v_0 = \frac{\Delta p}{4\eta\cdot l} \cdot R^2 \label{rf12}
+\end{equation}
+Weiter wird das Volumen und dessen zeitliche Änderung betrachtet, das zwischen zwei Schichten mit den Radien $r$ und $r + \diff r$ ströment
+\[
+ \diff V = 2\pi \cdot r \dif r \diff s \quad\text{und}\quad \dquot Vt = 2 \pi \cdot v(r) \cdot r \dif r
+\]
+Damit ergibt eine Integration über den ganzen Querschnitt:
+\begin{equation}
+ \frac Vt = 2\pi \cdot \Int_0^R v(r) \dif r = \frac{\pi\cdot \Delta p}{8 \eta\cdot l} \cdot R^4
+ \label{rf13}
+\end{equation}
+
+\subsubsection{Stokes}
+
+Die Stokes'sche Gleichung \eqref{rf04} wird exakt in der theoretischen Hydrodynamik hergeleitet (z.~B in \verweis{joos}). Ein grobe Abschätzung, in der das Geschwindigkeits-Gefälle in \eqref{rf01} vereinfacht wird zu $\dquot vr \approx \frac vr$ und als gleich auf der ganzen Kugeloberfläche angenommen wird ($A \approx 4\pi \cdot r^2$) liefert den zu geringen Wert:
+\begin{equation}
+ F \approx 4 \pi \cdot \eta\, r^2 \cdot \frac vr \approx 4 \pi \cdot \eta \,r \cdot v
+ \label{rf14}
+\end{equation}
+
+\frage{Was versteht man unter einer laminaren und einer turbulenten Strömung?}
+\frage{Wie berechnet sich der Strömungswiderstand in einer laminaren und in einer turbulenten Rohrströmung?}
+% \frage{Vergleichen Sie die Maßeinheiten für die Viskosität: poise [\SI{}P] und [\SI{}{Pa.s}].} TODO: Escher fragen, ob die Frage noch zeitgemäß ist!
+\frage{Man prüfe anhand eines Beispiels aus Tabelle~\ref{tab::eta} die Gültigkeit der Gleichung \eqref{rf03} und bestimme die Konstanten $A$ und $b$.}
+\frage{Was versteht man unter einer Newtonschen Flüssigkeit? Wie kann der Nachweis dafür erbracht werden?}
+\frage{Wie ist die Reynoldsche Zahl definiert?}
+\frage{Berechnen Sie $x(t)$ für die Start-Phase einer Kugel, die in einer zähen Flüssigkeit zu fallen beginnt. Nach welcher Strecke erreicht die Kugel $\num{0,67} v_e$ bzw. $\num{0,99}v_e$?\newline
+ (Beispiel: $\rho_k = \SI8{g.cm^{-3}}$; $\rho_f = \SI1{g.cm^{-3}}$; $R = \SI3{mm}$)}
+\frage{Wie unterscheiden sich Ursache und Temperaturabhängigkeit der Viskosität von Flüssigkeiten und Gasen?}
+\frage{Skizzieren Sie das Geschwindigkeitsprofil in einer laminaren Rohrströmung und für eine umströmte Kugel.}
+\frage{Was besagt das Gesetz von Stokes zur inneren Reibung?}
+\frage{Wie lautet das Gesetz von Hagen-Poiseuille?}
+
+\end{document}

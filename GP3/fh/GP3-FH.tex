@@ -1,0 +1,463 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd,mhchem,lmodern,mathtools,mdwlist,multirow,subfigure}
+
+\versuch{Franck-Hertz-Versuch}{FH}
+\author{Dr. A.~Schwab,M.~Rodenstein}
+\bearbeitet{A.~Otto}{}
+
+\buch{1}{H.~Haken}{Atom- und Quantenphysik}{Springer-Verlag}{Berlin 1990}
+\buch{2}{W.~Finkelnburg}{Einfuhrung in die Atomphysik}{Springer-Verlag}{Berlin 1967}
+\buch{3}{E.W.~Schpolski}{Atomphysik--Band 1: Einfuhrung in die Atomphysik}{Barth-Verlag}{Leipzig 1993}
+\buch{4}{W.~Jüngst}{Vorbereitungshilfe zum Franck-Hertz-Versuch}{Universität Karlsruhe}{1983}
+\buch{5}{C.~Weissmantel, C.~Hamann}{Grundlagen der Festkörperphysik}{Springer-Verlag}{Berlin 1979}
+
+\begin{document}
+\maketitle
+
+\section{Aufgabenstellung}
+  \begin{enumerate}
+    \item Messen Sie die Anodenstromkurve $I_A(U_1)$ ($I_A$-Anodenstrom, $U_1$-Beschleunigungsspannung) einer mit 
+    Neon (\ce{Ne}) gefüllten Elektronenröhre bei drei verschiedenen Steuerspannungen $U_3$.
+    \item Nehmen Sie die Anodenstromkurve $I_A(U_1)$ einer mit Quecksilber (\ce{Hg}) gefüllten Elektronenröhre bei 
+    drei verschiedenen Temperaturen des \ce{Hg}-Dampfes ($\vartheta_1=\SI{175}{^\circ C}$, 
+    $\vartheta_2=\SI{180}{^\circ C}$, $\vartheta_1=\SI{185}{^\circ C}$) auf.
+    \item Bestimmen Sie aus den Lagen der Maxima des Anodenstromes ${U_1^\text{max}}_i$ ($i=2,\dots,N$) die mittlere 
+    Anregungsenergie von Quecksilber und Neon. Ermitteln Sie anhand der so bestimmten Anregungsenergien $E_a$ und 
+    den Termschemata der Elemente die Elektronenzustände nach der Stoßanregung. Berechnen Sie anschließend die 
+    Frequenz und die Wellenlänge der von den jeweiligen Atomen nach der Stoßanregung emittierten elektromagnetischen 
+    Strahlung
+    \item Überprüfen Sie durch eine geschickte Auftragung der Maxima des Anodenstromes 
+    $I_A^\text{max}(U_1^\text{max})$ der \ce{Hg}-Röhre (für $\vartheta_1=\SI{185}{^\circ C}$) die zu erwartende 
+    $U_2$-Abhängigkeit im Raumladungsgebiet der Elektronenröhre (Childsches-Raumladungsgesetz). Ermitteln Sie 
+    anschließend die Kontaktspannung $U_K$ zwischen Kathode und Anode.
+  \end{enumerate}
+  
+\section{Motivation}
+  Vom Standpunkt der klassischen Elektrodynamik aus ist ein Atom, das aus einem positiv geladenen Kern besteht, der 
+  von Elektronen umkreist wird, instabil, da die Elektronen bei ihrer beschleunigten Bewegung um den Kern Energie in 
+  Form elektromagnetischer Wellen abstrahlen würden (Rutherfordsches Atommodell). Als Folge dessen würden die 
+  Elektronen sich dem Kern immer mehr annähern und schließlich in ihn hineinfallen. Mit einer stetigen Annäherung der 
+  Elektronen an den Atomkern würde sich auch die Umlauffrequenz stetig ändern, so dass man an Stelle von scharfen 
+  Spektrallinien ein kontinuierliches Spektrum beobachten müsste. Die Tatsache, dass man jedoch diskrete 
+  Spektrallinien beobachtet, deutet auf eine der klassischen Elektrodynamik widersprechenden Stabilität der Atome hin. 
+  Bohr schlussfolgerte aus diesem Befund, dass die Gesetze der klassischen Physik nicht auf inneratomare Bewegungen 
+  von Elektronen anwendbar sind. Diese Erkenntnis bildete für Bohr den Ausgangspunkt der Entwicklung einer neuen 
+  Mechanik inneratomare Bewegungen, der Quantenmechanik.
+ 
+\section{Das Bohrsche Atommodell}
+  Postulate der von Bohr entwickelten Quantenmechanik:
+  \begin{enumerate}
+    \item Atome können auf Dauer nur in stationären Zuständen existieren, in denen sie weder Energie emittieren noch 
+    absorbieren. In diesen Zuständen haben die Atome Energiewerte, die eine diskrete Folge $E_1,E_2,\dots,E_n$ 
+    bilden. Energieänderungen infolge Absorption oder Emission elektromagnetischer Strahlung oder infolge von Stößen
+    können nur bei einem Übergang aus einem dieser Zustände in einen anderen erfolgen.
+    \item Beim Übergang aus einem stationären Zustand in einen anderen emittieren oder absorbieren die Atome nur eine 
+    Strahlung bestimmter Frequenz. Die Strahlung, die beim Übergang aus dem Zustand $E_m$ in den Zustand $E_n$ 
+    emittiert oder absorbiert werden kann, ist monochromatisch. Ihre Frequenz $\nu$ wird durch die 
+    Bohrsche-Frequenzbedingung
+    \begin{equation}
+      \nu = \frac{\abs{E_m-E_n}}{h}
+      \label{for:frequenzbedingung}
+    \end{equation}
+    bestimmt. $h$ ist das Planksche Wirkungsquantum.
+  \end{enumerate}
+  
+\section{Versuchsanordnung und Messprinzip bei Elektronenstoßversuchen nach Franck und Hertz}
+  Die große Bedeutung der Elektronenstoßversuche von Franck und Hertz liegt im nicht-optischen Nachweis der Existenz 
+  diskreter Anregungszustände von Elektronen in der Atomhülle, wie sie von Bohr postuliert wurden. Im folgenden werden 
+  die Versuchsanordnungen und das Messprinzip des Franck- Hertz-Versuches an Hand der im Praktikum verwendeten 
+  Elektronenröhren näher erläutert.
+  
+\subsection{Elektronenstoßversuch an \ce{Hg}-Atomen}
+  Für die Elektronenstoßversuche an Quecksilberatomen stehen im Praktikum eine Dreielektrodenröhre mit ebenen und 
+  parallel angeordneten Elektroden (siehe Abb. \ref{fig:dreielektrodenröhre}) der Firma Phywe zur Verfügung.
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{dreielektrodenroehre.pdf}
+    \caption{Schematischer Aufbau einer \ce{Hg}-Dreielektrodenröhre; C--indirekt geheizte Oxidkathode, A--gitterförmige 
+    Beschleunigungselektrode, S--Auffängerelektrode}
+    \label{fig:dreielektrodenröhre}
+  \end{figure}
+  Die von der Kathode C emittierten Elektronen werden aufgrund der angelegten Beschleunigungsspannung $U_1$ zur 
+  gitterförmigen Anode A (=Beschleunigungsgitter) hin beschleunigt. Auf ihrem Weg zur Anode hin stoßen sie mit 
+  \ce{Hg}-Atomen zusammen. In Abhängigkeit von der Elektronenenergie ist der Zusammenstoß entweder nur elastisch oder 
+  auch unelastisch. Der unelastische Stoß ist mit einer Änderung des Atomhüllenzustandes (Anregung) bzw. mit der 
+  Ionisierung des Atoms verbunden. Während der Energieverlust des Elektrons beim elastischen Stoß gering ist, gibt es 
+  beim unelastischen Stoß genau die Anregungsenergie an das Atom ab und behält die Restenergie. Jenseits der Anode A 
+  befindet sich eine weitere Elektrode (S), die gegenüber A negativ geladen ist. Ist die kinetische Energie der 
+  Elektronen, die durch A hindurchgehen, groß genug zum Überwinden des Gegenfeldes ($U_2$), so werden diese Elektronen 
+  als Strom $I_A$ in der Auffängerzuleitung gemessen. Ist dagegen ihre Energie zu klein, so fließen sie nach Umkehr im 
+  Gegenfeld über die Anodenzuleitung ab.
+
+  Als Messergebnis erhält man mit steigender Beschleunigungsspannung $U_1$ zunächst einen steigenden Auffängerstrom $I_A$ 
+  (Abb. \ref{fig:messkurve}). Von einer bestimmten Spannung ab verflacht der Anstieg und dann sinkt der Strom sogar. Das 
+  bedeutet, die Elektronenenergie hat die kleinste Anregungsenergie $E_a=E_2-E_1$ überschritten und mit zunehmender 
+  Spannung wird die Zone vor der Anode A, in der unelastische Stöße möglich sind, breiter. Deshalb und auch, weil die
+  Wahrscheinlichkeit für unelastische Stöße mit der Überschussenergie wächst, nimmt die Anzahl der unelastischen Stöße 
+  zu. Nach einem Stromminimum steigt der Strom wieder an und fällt ab der doppelten kleinsten Anregungsenergie wiederum. 
+  Die Elektronen gewinnen nach der ersten Energieabgabe zunächst wieder genügend Energie um das Gegenfeld zu überwinden. 
+  Schließlich reicht ihre Energie für einen zweiten unelastischen Stoß aus. Mit weiter steigender Spannung kann sich 
+  dieser Vorgang mehrere Male wiederholen.
+  
+  Da längs der Messkurve die Punkte, bei denen der Stromanstieg zu verflachen beginnt, nur sehr ungenau zu bestimmen 
+  sind, wird ersatzweise aus dem Abstand der Maxima $\Delta U_1^\text{max}$ auf die Anregungsenergie $E_a$ geschlossen. 
+  Da die Franck-Hertz-Kurve nicht streng periodisch ist, ergeben sich unterschiedliche Spannunsdifferenzen aus den 
+  Abständen benachbarter Maxima. Der arithmetische Mittelwert aller Spannunsdifferenzen 
+  $\left<\Delta U_1^\text{max}\right>$, multipliziert mit der Elementarladung $e$, ist eine gute Näherung für den wahren 
+  Wert von $E_a$.
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{messkurve.pdf}
+    \caption{Franck-Hertz-Meßkurve einer mit \ce{Hg} gefüllten Elektronenröhre. Die gepunktete Kurve entspricht der 
+    Diodenkennlinie der Elektronenröhre.}
+    \label{fig:messkurve}
+  \end{figure}
+  
+\subsection{Elektronenstoßversuch an \ce{Ne}-Atomen}
+  Für die Elektronenstoßversuche an Neon Atomen wird eine Vierelektrodenröhre mit ebenen und parallel angeordneten 
+  Elektroden (siehe Abb. \ref{fig:vierelektrodenröhre}) verwendet.
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{vierelektrodenroehre.pdf}
+    \caption{Schematischer Aufbau einer \ce{Ne}-Vierelektrodenröhre; C--indirekt geheizte Oxidkathode, A1 und 
+    A2--gitterförmige Beschleunigungselektroden, S--Auffängerelektrode}
+    \label{fig:vierelektrodenröhre}
+  \end{figure}
+  Im Unterschied zur \ce{Hg}-Röhre enthält die Neon-Röhre zwei Beschleunigungselektroden A1 und A2 zwischen denen 
+  sich, wie bei einem Plattenkondensator, ein sehr homogenes elektrisches Feld ausbildet. Weiterhin führt das 
+  Vorhandensein der Beschleunigungselektrode A1 dazu, dass fast alle aus der Kathode austretenden Elektronen abgesaugt 
+  werden, so dass der Einfluss von Raumladungseffekten auf die Gestalt der Franck-Hertz-Kurve verringert wird. Der 
+  Abstand $d$ zwischen Kathode C und dem Gitter A2 ist groß gegenüber der mittleren freien Weglänge der Elektronen im 
+  \ce{Ne}-Gas bei Betriebstemperatur (Raumtemperatur). Damit wird eine hohe Stoßwahrscheinlichkeit erzielt, da diese 
+  proportional zu dem Quotienten $d/\lambda$ ist.
+
+\section{Kennlinien von gasgefüllten Elektronenröhren/Dioden}
+  Für eine qualitative als auch quantitative Diskussion des Einflusses der Versuchsparameter auf die Kennlinien der 
+  Franck-Hertz-Röhren ist es sinnvoll, die Mechanismen des Stromtransportes in gasgefüllten Elektronen-Röhren zu 
+  betrachten.
+  
+  Es ist seit längerem bekannt, dass die Kennlinie einer Vakuumdiode sich in drei charakteristische Spannungsbereiche 
+  unterteilen lässt: 1. Das Anlaufstromgebiet ($U_1<0$), 2. Das Raumladungsgebiet und 3. Das Sättigungsstromgebiet (Abb. 
+  \ref{fig:kennlinie}). Eine solche Bereichseinteilung kann auch auf eine mit Gas gefüllte Elektronenröhre übertragen 
+  werden. Es bestehen dabei weitgehende Analogien zum Stromtransport in Festkörpern (z.B. bei Halbleiterdioden). 
+  Allerdings gibt es auch Unterschiede, z.B. die Ordnung der Streuzentren der Elektronen. Im Festkörper erfolgt die 
+  Streuung der Elektronen im wesentlichen an den Atomen im Gitter (periodische Anordnung), dagegen sind die Atome im Gas 
+  statistisch verteilt (ungeordnet).
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{kennlinie.pdf}
+    \caption{ Strom-Spannungsverlauf einer Elektronenröhre}
+    \label{fig:kennlinie}
+  \end{figure}
+  
+\subsection{Das Anlaufstromgebiet}
+  Entsprechend der energetischen Verteilung der Elektronen, die aus der Kathode emittiert werden (Produkt aus 
+  Fermi-Verteilung und Tunnelwahrscheinlichkeit), besitzt ein Teil der Elektronen eine hinreichend große kinetische 
+  Energie, um auch gegen ein schwaches elektrisches Gegenfeld zur Anode zu gelangen, deshalb Anlaufstrom. Der Anlaufstrom 
+  ist dann in guter Näherung durch
+  \begin{equation}
+    I_A(U_1) = I_0\cdot\eu{-\frac{e\abs{U_1}}{k_{\!B}\cdot T_{\!K}}}
+  \end{equation}
+  gegeben mit $k_B$--der Boltzmann-Konstanten, $T_K$--der Temperatur der Kathode und $I_0$--der Dunkelstrom. Dieses 
+  Gesetz verliert sicherlich dann seine Gültigkeit, wenn der Energieverlust eines Elektrons durch elastische Stöße mit 
+  den Gasatomen nicht mehr zu vernachlässigen ist. Dies ist dann der Fall, wenn ein Elektron auf dem Weg von der Kathode 
+  zur Anode sehr viele elastische Stöße erleidet und dabei jedes Mal seine Richtung ändert. Der relative Energieverlust 
+  $\Delta W_\text{tot}/E$ eines Elektrons durch elastische Stöße auf seinem Zickzackweg von der Kathode zur Anode ist 
+  nach W. Jüngst durch
+  \begin{equation}
+    \frac{W_\text{tot}}{E} \approx \frac{1}{3}\cdot\kla{\frac{d}{\lambda}}^2\cdot\frac{2m_e}{M}
+    \label{for:W_tot}
+  \end{equation}
+  gegeben. In Gl. \eqref{for:W_tot} ist $d$ der Kathoden-Anoden-Abstand, $\lambda$ die mittlere freie Weglänge der 
+  Elektronen, $M$ die Masse eines Atoms und $m_e$ die Ruhmasse eines Elektrons. Die mittlere freie Weglänge $\lambda$ 
+  eines Elektrons zwischen zwei elastischen Stößen mit den Gasatomen hängt von der Temperatur $T$ im Gasraum ab und ist 
+  durch
+  \begin{equation}
+    \lambda(T) = \frac{1}{n(T)\cdot\sigma} = \frac{k_B\cdot T}{p(T)\cdot\sigma}
+    \label{for:weglänge}
+  \end{equation}
+  gegeben, wobei $n(T)$ die Teilchendichte der Gasatome in der Röhre bezeichnet. Diese wird über die Zustandsgleichung 
+  des idealen Gases durch die Temperatur $T$ und den Gasdruck $p(T)$ ausgedrückt.\\
+  Die Größe $\sigma$ in Gl. \eqref{for:weglänge} entspricht dem Wirkungsquerschnitt der Atome, der gleich der 
+  Querschnittsfläche des Atoms zu setzen ist, wenn diese elektrisch neutral sind. Nimmt man kugelförmige Atome an, dann 
+  ist $\sigma=\pi R^2$ mit $R$ dem Kugelradius. Zum Beispiel ergibt sich der Kugelradius der \ce{Hg}-Atome, der aus der 
+  \ce{Hg}-Flüssigkeitsdichte $\rho_\ce{Hg}=\SI{13,579}{g/cm^3}$ bestimmt wird, zu
+  \begin{equation}
+    R = \kla{\frac{3A_rf}{4\pi N_L\,\rho_\ce{Hg}}}^\frac{1}{3} = \SI{0,1631}{nm}.
+  \end{equation}
+  Zur Berechnung von $R$ wurde die molare Masse $A_r=\SI{200,59}{g/mol}$, der Füllfaktor der dichtesten Kugelpackung 
+  $f=\num{0,7405}$ und die Loschmidt-Zahl $N_L=\SI{6,023e23}{mol^{-1}}$ verwendet. Für den Wirkungsquerschnitt $\sigma$ 
+  ergibt sich damit der Wert $\sigma=\SI{8,35e-20}{m^2}$.\\
+  Der Druck des Gases $p(T)$, der dem Sättigungsdampfdruck des Gases bei der jeweiligen Temperatur entspricht, lässt sich 
+  als Funktion der Temperatur $T$ beschreiben. Im Temperaturbereich von $\SI{0}{^\circ C}$--$\SI{250}{^\circ C}$ gilt für 
+  \ce{Hg} mit hinreichender Genauigkeit
+  \begin{equation}
+    p(T) = \SI{8,7e9}{Pa}\cdot10^{-\frac{\SI{3110}{K}}{T}}.
+  \end{equation}
+  
+\subsection{Das Raumladungsgebiet}
+  Bei Beschleunigungsspannungen aus dem Raumladungsgebiet bilden die von der Glühkathode emittierten Elektronen eine 
+  Raumladungswolke, die das elektrische Feld der Kathode abschirmt. Dieses ist inhomogen und reicht nur noch bis an die 
+  äußeren Elektronen der Raumladungswolke heran (Abb. A1). Daher können auch nur die Elektronen am äußeren Rand 
+  beschleunigt werden, was zu einem Elektronenstau neu emittierter Elektronen führt. Mit steigender Spannung vergrößert 
+  sich der Strom überproportional, da das Feld entsprechend tiefer in die Raumladungswolke "`hineinreicht"'. Im Gegensatz 
+  zur Vakuumdiode wirken in der mit Gas gefüllten Röhre nicht nur die Raumladungen stromhindernd, sondern auch die 
+  Gasatome. Deshalb ist der $I_A(U_1)$-Zusammenhang nicht durch das Langmuir-Schottkysche Raumladungsgesetz 
+  ($I_A \sim U_1^{3/2}$), sondern durch das Child-Gesetz, zu beschreiben:
+  \begin{equation}
+    I_A(U_1) = \frac{9}{8}\cdot\epsilon_0\cdot\epsilon_r\cdot\mu\cdot\frac{A_K}{d^3} = \frac{9}{8}\cdot
+    \epsilon_0\cdot\epsilon_r\cdot\frac{e\cdot\lambda}{m_e\cdot v_\text{therm}}\cdot\frac{A_K}{d^3}\cdot U_1^2,
+    \label{for:child-gesetz}
+  \end{equation}
+  wobei $\epsilon_r$ die relative Dielektrizitätszahl bezeichnet, $\mu$ die Beweglichkeit der Elektronen im Gas angibt 
+  und $A_K$ dem Flächeninhalt der Kathode entspricht (Herleitung siehe Anhang). Die relative Dielektrizitätszahl 
+  $\epsilon_r$ ist in dem zu betrachtenden Temperaturbereich ($\vartheta < \SI{200}{^\circ C}$) in guter Näherung 
+  $\approx 1$. Die Beweglichkeit $\mu$ der Elektronen folgt nach dem Ansatz von Drude aus
+  \begin{equation}
+    \mu = \frac{e\cdot\lambda}{m_e\cdot v_\text{therm}}
+  \end{equation}
+  mit $v_\text{therm}$ dem Mittelwert des Betrages der Geschwindigkeit der Elektronen im Gasraum. Die Gültigkeit der 
+  Maxwellschen Geschwindigkeitsverteilung vorausgesetzt, folgt $v_\text{therm}$ aus
+  \begin{equation}
+    v_\text{therm} = \sqrt\frac{8\cdot k_B\cdot T}{\pi\cdot m_e}.
+  \end{equation}
+  Gl. \eqref{for:child-gesetz} berücksichtigt nicht die Existenz einer Kontaktspannung $U_K$, die aufgrund von 
+  verschiedenen Materialien von Kathode und Anode (verschiedene Austrittsarbeiten von Elektronen) sowie infolge von 
+  Temperaturunterschieden an den verschiedenen Materialübergängen im Kathoden-Anoden-Stromkreis entstehen kann. Die 
+  Existenz einer Kontaktspannung hat zur Folge, dass die Beschleunigungsspannung $U_B$ gegenüber der angelegten Spannung 
+  $U_1$ geändert ist ($U_B=U_1-U_K$).\\
+  Berücksichtigt man weiterhin, dass bei der Beschleunigungsspannung $U_B=0$ ein schwacher Anlaufstrom $I_0$ vorhanden 
+  ist, dann ergibt sich als quantitativer Zusammenhang zwischen Anodenstrom $I_A$ und der angelegten Spannung $U_1$ im 
+  Raumladungsgebiet die Beziehung
+  \begin{equation}
+    I_A(U_1) = I_0+\frac{9}{8}\cdot\epsilon_0\cdot\epsilon_r\cdot\frac{e\cdot\lambda}{m_e\cdot v_\text{therm}}\cdot
+    \frac{A_K}{d^3}\cdot(U_1-U_K)^2.
+  \end{equation}
+  
+\subsection{Sättigungsstromgebiet}
+  Bei der Emission von Elektronen ins Vakuum erreicht bei steigender Beschleunigungsspannung $U_1$ der Anodenstrom einen 
+  Wert $I_S$, der unabhängig von der Spannung $U_1$ ist, da die Anode alle Elektronen von der Kathode absaugt und die
+  Raumladungswolke sich auflöst. Der Sättigungsstrom $I_S$ hängt dann nach dem Richardson-Gesetz nur noch von der Anzahl 
+  der emittierten Elektronen ab und nicht mehr von der Spannung $U_1$.\\
+  Bei der Thermischen Emission von Elektronen aus einer Kathode in ein Dielektrikum (Gas) muss zusätzlich zur 
+  Austrittsarbeit $\Phi_A$ der Elektronen ins Vakuum eine Potentialbarriere $\Delta\Phi$ und die Dielektrizitätskonstante 
+  $\epsilon_r$ im Richardson-Gesetz berücksichtigt werden (Schottky-Emission).\\
+  Die Stromstärke des Sättigungsstromes $I_S$ ist dann gegeben durch den Ansatz
+  \begin{equation}
+    I_S = A_K\cdot C_K\cdot T_K^2\cdot\eu{-\frac{\Phi_{\!A}-\Delta\Phi}{k_{\!B}\cdot T_{\!K}}},
+  \end{equation}
+  mit $C_K$ dem Elektronenemissionsvermögen der Kathode.\\
+  Die Berechnung von $\Delta\Phi$ wird häufig zurückgeführt auf die Bestimmung der Wechselwirkungsenergie einer 
+  Bildladung an der Grenzfläche zwischen Kathode und Dielektrikum und dem emittierten Elektron. Für den Fall eines 
+  konstanten äußeren elektrischen Feldes $E$ gilt dann
+  \begin{equation}
+    \Delta\Phi = \sqrt\frac{e^3\cdot E}{4\pi\cdot\epsilon_0\cdot\epsilon_r}\:.
+  \end{equation}
+  Wird $E$ durch die Spannung $U_1$ und den Abstand der Elektroden $d$ ausgedrückt, dann folgt
+  \begin{equation}
+    I_S = I_S = A_K\cdot C_K\cdot T_K^2\cdot\exp\kla{-\frac{\Phi_A}{k_B\cdot T_K}+
+    \frac{\beta_S\cdot\sqrt{U_1}}{k_B\cdot T_K\cdot\sqrt{d}}}
+  \end{equation}
+  mit
+  \begin{equation}
+    \beta_S = \sqrt\frac{e^3}{4\pi\cdot\epsilon_0\cdot\epsilon_r}\;.
+  \end{equation}
+  Im Unterschied zur Emission von Elektronen ins Vakuum ist der Strom $I_S$ bei der Emission in ein Dielektrikum nicht 
+  mehr konstant, sondern abhängig von der angelegten Spannung $U_1$.
+
+\section{Termschemata von \ce{Hg} und \ce{Ne}}
+\subsection{Termschema des Quecksilbers}
+  Quecksilber hat im neutralen Zustand 80 Elektronen in der Atomhülle. Im Grundzustand (Zustand niedrigster "`innerer"' 
+  Energie) sind die Energieniveaus (Schalen bis zur N-Schale (Hauptquantenzahl $n=4$) aufgefüllt. Die O-Schale ($n=5$) 
+  ist mit 18 Elektronen noch nicht gefüllt, aber es befinden sich 2 Elektronen in der P-Schale ($n=6$).
+
+ Die Spektraleigenschaften von \ce{Hg} werden nur durch die Elektronenzustände der Elektronen in der P-Schale 
+ (Valenzelektronen) bedingt. Damit zerfällt das Niveausystem der Energie der beiden Valenzelektronen wie beim Helium in 
+ sogenannte Singulett- und in Triplett-Zustände (siehe Abb. \ref{fig:termschema_hg}). Die Singulett-Zustände sind dadurch gekennzeichnet, dass 
+ die Gesamtspinquantenzahl der Valenzelektronen den Wert $S=0$ hat (Eigendrehimpulse der Elektronen sind antiparallel 
+ ausgerichtet $\uparrow\downarrow$). Für diese Elektronenzustände ist die Quantenzahl des Gesamtdrehimpulses $J$ gleich 
+ der Quantenzahl des Gesamtbahndrehimpulses $L$. $L$ kann dabei Werte von $L=0,1,2,\dots$ usw. annehmen. Es ist in der 
+ Termbezeichnung üblich, die Quantenzahl des Gesamtbahndrehimpulses $L$ durch Grossbuchstaben anzugeben, d.h. $L=0$
+ entspricht S (Nicht mit Gesamtspinquantenzahl verwechseln!), $L=1$ entspricht P, $L=2$ entspricht D, usw.. Dagegen sind 
+ die Triplett-Zustände durch eine Gesamtspinquantenzahl $S=1$ gekennzeichnet (Parallelstellung der Eigendrehimpulse 
+ $\uparrow\uparrow$) und die Quantenzahl des Gesamtdrehimpulses $J$ kann in Abhängigkeit vom Gesamtbahndrehimpuls $L$ die 
+ Werte $J=0$ (für $L=0$) und $J=L+1,L,L-1$ (für $L>0$) annehmen. In der in Abb. 5a verwendeten Termbezeichnung für die 
+ Energiezustände der Valenzelektronen gibt der tiefgestellte Index den Gesamtdrehimpuls $J$ an und der hochgestellte 
+ Index die sogenannte Multiplizität, d.h. das Produkt $2\cdot S+1$ (Termbezeichnung nach Russell-Saunders). Damit ist die 
+ Termbezeichnung des Grundzustandes \ce{6 ^1S_0} ($n=6$, $S=0$, $L=0$, $J=0$).
+
+  Bei Elektronenstoßanregung können vom Grundzustand aus alle anderen Zustände angeregt werden, wenn auch mit 
+  unterschiedlicher Wahrscheinlichkeit. Die Anregungswahrscheinlichkeit hängt von der Art des Übergangs und von der 
+  Elektronenenergie ab. Sie hat unterhalb der Anregungsenergie den Wert Null, steigt dann bis zu einem Maximum an und 
+  fällt dann wieder auf Null ab. Es zeigt sich, dass die Anregungswahrscheinlichkeit optisch erlaubter Übergänge 
+  ($\Delta J=0$ oder $\pm 1$, $0 \rightarrow 0$ Übergänge sind verboten), das sind Übergänge unter Emission oder 
+  Absorption von Licht, auch für Elektronenstoßanregung größer ist als bei optisch verbotenen Übergängen. Nach einer 
+  Elektronenstoßanregung kehrt das Atom bald spontan wieder in den Grundzustand zurück. Bei optisch erlaubten Übergängen 
+  erfolgt das sehr schnell, in Bruchteilen von Mikrosekunden. Bei optisch verbotenen Übergängen geschieht das durch 
+  abermalige Elektronenstoßanregung in ein höheres Niveau mit erlaubtem Übergang oder durch Stöße mit der Wand, und es 
+  dauert erheblich länger.
+  
+\subsection{Termschema des Neon}
+  Neon ist ein Gas, das im neutralen Zustand 10 Elektronen in der Atomhülle hat. Im Grundzustand sind die K-Schale und 
+  die L-Schale vollständig aufgefüllt (Edelgaskonfiguration). In der Regel befindet sich in angeregten Zuständen ein 
+  Elektron in einem anderen Zustand mit anderen Quantenzahlen als im Grundzustand. Aufgrund dessen können auch beim Neon 
+  Singulett- und Triplett-Zustände im Termschema beobachtet werden (Abb. \ref{fig:termschema_ne}).
+  \begin{figure}[h]
+    \centering
+    \subfigure[\ce{Hg}]{
+    \includegraphics[width=0.5\textwidth]{termschema_hg.pdf}
+    \label{fig:termschema_hg}
+    }
+    \subfigure[\ce{Ne}]{
+    \includegraphics[width=0.4\textwidth]{termschema_ne.pdf}
+    \label{fig:termschema_ne}
+    }
+    \caption{Termschema von Quecksilber und Neon}
+  \end{figure}
+  
+\section{Versuchsdurchführung}
+  Die Messung der Anodenstromkurven von mit Neon und Quecksilber gefüllten Elektronenröhren erfolgt an einem 
+  computergestützten Messplatz. Der konkrete Aufbau des Messplatzes, die Handhabung der einzelnen Geräte sowie die 
+  Intervalle der Messparameter, in denen Variationen möglich sind, sind der ausliegenden Arbeitsplatzanleitung zu 
+  entnehmen.
+  \begin{enumerate}
+    \item Die Messungen der Anodenstromkurve $I_A(U_1)$ der mit Neon (\ce{Ne}) gefüllten Elektronenröhre sind bei drei 
+    verschiedenen Steuerspannungen $U_3$ aus dem Intervall (\SI{3}{V} bis \SI{4}{V}) durchzuführen. Dabei ist die 
+    Gegenspannung $U_2$ so zu variieren (\SI{7}{V} bis \SI{9}{V}), dass Sie eine optimale Anodenstromkurve erhalten. 
+    Beobachten Sie die Leuchterscheinungen in der Röhre!
+    \item Nehmen Sie die Anodenstromkurve $I_A(U_1)$ der mit Quecksilber gefüllten Elektronenröhre bei drei verschiedenen 
+    Temperaturen des \ce{Hg}-Dampfes ($\vartheta_1=\SI{175}{^\circ C}$, $\vartheta_1=\SI{180}{^\circ C}$, 
+    $\vartheta_1=\SI{185}{^\circ C}$) auf. Variieren Sie die Gegenspannung $U_2$ (\SI{1}{V} bis \SI{3}{V}) so, dass Sie 
+    eine optimale Anodenstromkurve erhalten.
+    \item Messen Sie den Dunkelstrom $I_0$ der \ce{Hg}-Röhre bei der Temperatur $\vartheta_1=\SI{185}{^\circ C}$ als 
+    Funktion der Zeit. Diese Messung erfolgt bei der Spannung $U_1=0$ und $U_2=0$ über eine Zeitdauer von $t=\SI{60}{s}$ 
+    in Zeitabständen der Messpunkte von $\delta t=\SI{0,1}{s}$.
+  \end{enumerate}
+
+\section{Auswertung}
+  \begin{enumerate}
+    \item Stellen Sie die gemessenen Anodenstromkurven der \ce{Ne}-Röhre bzw. der \ce{Hg}-Röhre in einem Diagramm dar und 
+    diskutieren Sie qualitativ den Einfluss der gewählten Messparameter auf den Kurvenverlauf. Nutzen Sie zur Darstellung 
+    der Messkurven in einem Diagramm das auf dem Computer installierte Grafik-Programm "`Origin"'.
+    \item Zur Ermittlung der Anregungsenergien $E_a$ der Atome sind die Lagen der Maxima des Anodenstromes 
+    ${U_1^\text{max}}_i$ ($i=1,\dots,N$) mittels der auf dem Computer installierten Messsoftware zu bestimmen. Aus den 
+    Differenzen der Beschleunigungsspannungen ${U_1^\text{max}}_{i+1}-{U_1^\text{max}}_i$ ($i=1,\dots,N$) erhält man die 
+    Anregungsenergien $E_{a,i}=e\cdot\Delta {U_1^\text{max}}_i$ in Einheiten von eV. Bilden Sie den Mittelwert 
+    $\left<E_a\right>$ und die Standardabweichung des Mittelwertes. Die Spannungsdifferenz $\Delta {U_1^\text{max}}_1$ 
+    ist aus der Mittelwertbildung für $\left<E_a\right>$ auszuschließen, da die Kontaktspannung $U_K$ in 
+    ${U_1^\text{max}}_1$ enthalten ist und somit zu einer Verfälschung des Ergebnisses führen würde.
+    \item Ermitteln Sie anhand der Anregungsenergien $\left<E_a\right>$ und dem Termschema des jeweiligen Elements den 
+    Elektronenzustand nach der Stoßanregung. Berechnen Sie anschließend die Wellenlänge $\lambda_{ph}$ der von den 
+    jeweiligen Atomen nach der Stoßanregung emittierten elektromagnetischen Strahlung unter Anwendung der Bohrschen 
+    Frequenzbedingung (Gl. \eqref{for:frequenzbedingung}) und von $\lambda_{ph}=c/\nu$ ($c$-Lichtgeschwindigkeit). Liegt 
+    die Wellenlänge des emittierten Lichts im Bereich des sichtbaren Spektrums? Auswahlregeln für optische Übergänge 
+    beachten!
+    \item Entsprechend den Betrachtungen zu raumladungsbegrenzten Strömen in gasgefüllten Röhren (Child-Gesetz, Gl.
+    \eqref{for:child-gesetz}) ist im Raumladungsgebiet ein überproportionales Anwachsen des Stromes mit der Spannung
+    ($\sim U^2$) zu erwarten. Überprüfen Sie durch eine geschickte Auftragung der Maxima des Anodenstromes 
+    $I_A^\text{max}(U_1^\text{max})$ der \ce{Hg}-Röhre (für $\vartheta_3=\SI{185}{^\circ C}$), dass das Child-Gesetz im
+    Raumladungsgebiet gilt. Ermitteln Sie anschließend die Kontaktspannung $U_K$.
+  \end{enumerate}
+
+\frage{Welches sind die wesentlichen Aussagen des Bohrschen Atommodells?}
+\frage{Wie ist der Aufbau der Franck-Hertz-Elektronenröhren, gefüllt mit \ce{Hg} und \ce{Ne}, im Prinzip?}
+\frage{Erläutern Sie qualitativ das Zustandekommen des Kurvenverlaufs der Anodenstromkurve beim Franck-Hertz-Versuch. 
+Warum gibt es keine scharfen Einbrüche in der Anodenstromkurve bei ganzen Vielfachen der Anregungsenergie, sondern eine 
+verschmierte Kurve?}
+\frage{In der Neon-Röhre sieht man unter bestimmten Bedingungen eine Abfolge von hellen und dunklen Zonen. Erklären Sie 
+deren Zustandekommen}
+\frage{Wie groß ist der Übertrag von Energie beim elastischen Stoß von Elektronen (Masse des Elektrons 
+$m_e=\SI{9,1e-31}{kg}$, Geschwindigkeit des Elektrons vor dem Stoß $v_e=\SI{6e5}{m/s}$) mit ruhenden \ce{Hg}-Atomen 
+im klassischen Kugelstoßmodell, wenn der Stoß zentral erfolgt?}
+\frage{Wie groß ist die mittlere freie Weglänge $\lambda$ eines Elektrons in einer mit \ce{Hg}-Dampf gefüllten Röhre bei 
+der Temperatur $\vartheta=\SI{180}{^\circ C}$.}
+\frage{Warum ist die praktische Durchführung des Elektronenstoßversuches von Franck-Hertz-mit \ce{Hg}-Atomen auf ein 
+relativ kleines Temperaturintervall beschränkt?}
+\frage{Worin besteht aus quantenmechanischer Sicht der Unterschied zwischen optischer Anregung und 
+Elektronenstoßanregung?}
+\frage{Was versteht man unter raumladungsbegrenzten Strömen in Elektronenröhren? Berechnen Sie das elektrische Feld 
+$E(x)$ und die Ladungsdichte der Elektronen $\rho(x)$ einer mit \ce{Hg} gefüllten Elektronenröhre bei der Temperatur 
+$\vartheta=\SI{180}{^\circ C}$, wenn die Beschleunigungsspannung zwischen Kathode und Anode $U_B=\SI{20}{V}$ beträgt. Die 
+$x$-Achse zeige von der Kathode zur Anode, wobei der Koordinatenursprung am Ort der Kathode sich befindet. Der Abstand 
+von Kathode und Anode ist $d=\SI{8}{mm}$. Stellen Sie die Funktionen $E(x)$ und $\rho(x)$ grafisch dar!}
+
+\renewcommand{\theequation}{A\arabic{equation}}    
+\setcounter{equation}{0}
+\renewcommand{\thefigure}{A\arabic{figure}}    
+\setcounter{figure}{0}
+\appendix
+\section{Raumladungsbegrenzter Strom in einer mit Gas gefüllten Elektronenröhre (Child-Gesetz)}
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{gaselektrodenroehre.pdf}
+    \caption{Gasgefüllte Elektrodenröhre}
+    \label{fig:gaselektrode}
+  \end{figure}
+  In einer gasgefüllten Elektronenröhre (Abb. \ref{fig:gaselektrode}) können sich Elektronen, die von der Kathode 
+  emittiert werden, nicht ungehindert zur Anode bewegen, da sie mit Gasatomen, z.B. \ce{Hg}-Atome, zusammenstoßen.
+  Bei diesen Stößen sollen die neutralen Gasatome weder ionisiert noch angeregt werden (nur elastische Stöße). Ähnlich 
+  wie in einem Elektrolyten bewegen sich die Elektronen dann mit einer Driftgeschwindigkeit $v_D$. Eine rigorose 
+  Berechnung der Driftgeschwindigkeit in Abhängigkeit vom angelegten elektrischen Feld ist nur auf der Grundlage der
+  Boltzmannschen Transportgleichung möglich. Auf diese Betrachtungen soll im Rahmen dieser Darstellung verzichtet werden 
+  und einem einfachen Modell von Drude (um 1900) zur Bestimmung der Driftgeschwindigkeit gefolgt werden. Um die hemmende 
+  Wirkung der Stöße der Ladungsträger mit den Stoßpartnern berücksichtigen zu können, fügte Drude eine Reibungskraft in 
+  die Bewegungsgleichung der Ladungsträger ein, die proportional zur Driftgeschwindigkeit $v_D$ ist. Damit ergibt sich 
+  folgende Bewegungsgleichung
+  \begin{equation}
+    m_e\dquot{\vec v_D}{t}+\frac{m_e}{\tau}\cdot\vec v_D = -e\cdot\vec E.
+    \label{for:bwgl}
+  \end{equation}
+  $\tau$ in Gl. \eqref{for:bwgl} ist die mittlere Stosszeit, also die Zeit, die auf der mittleren freien Weglänge 
+  $\lambda$ zwischen zwei Stößen verstreicht. Die mittlere Stoßzeit ist durch den Quotienten 
+  $\tau=\lambda/v_\text{therm}$ bestimmt, wobei $v_\text{therm}$ den Mittelwert des Betrages der Geschwindigkeit des 
+  Elektronengases bezeichnet. Ausgehend von der Maxwellschen Geschwindigkeitsverteilung ergibt sich die thermische 
+  Geschwindigkeit des Elektronengases zu
+  \begin{equation}
+    v_\text{therm} = \sqrt\frac{8k_B\cdot T}{\pi\cdot m_e}
+  \end{equation}
+  mit $T$ der Temperatur des "`Elektronengases"'.\\
+  Für den hier interessierenden stationären Fall ($\diff v_D/\diff t=0$) folgt aus \eqref{for:bwgl} für die 
+  Driftgeschwindigkeit
+  \begin{equation}
+    \vec v_D = -\frac{e\cdot\tau}{m_e}\cdot\vec E = -\frac{e\cdot\lambda}{m_e\cdot v_\text{therm}}\cdot\vec E =
+    -\mu\cdot\vec E.
+    \label{for:drift}
+  \end{equation}
+  Die Größe $\mu$ in \eqref{for:drift} wird als Beweglichkeit bezeichnet.\\ 
+  Ausgangspunkt der Berechnung raumladungsbegrenzter Elektronenröhren ist die Quellgleichung des elektrischen Feldes
+  \begin{equation}
+    \dquot{E}{x} = \frac{\rho(x)}{\epsilon_0\cdot\epsilon_r} = -\frac{e\cdot n_e(x)}{\epsilon_0\cdot\epsilon_r},
+    \label{for:quelle}
+  \end{equation}
+  wobei $\epsilon_r$ die relative Dielektrizitätszahl des Gases angibt, $\rho(x)$ die Ladungsdichte und $n_e(x)$ die 
+  Teilchendichte der Elektronen. Mit der Definitionsgleichung der Stromdichte $j=\rho\cdot v_D$ und dem Ausdruck für die 
+  Driftgeschwindigkeit $v_D$ \eqref{for:drift} ergibt sich aus Gl. \eqref{for:quelle} die folgende Differentialgleichung 
+  zur Bestimmung des elektrischen Feldes $E(x)$:
+  \begin{equation}
+    \dquot{E}{x} = \frac{j}{\epsilon_0\cdot\epsilon_r\cdot v_D} = -\frac{j}{\epsilon_0\cdot\epsilon_r\cdot\mu\cdot E}.
+    \label{for:dgl}
+  \end{equation}
+  Entsprechend dem Ladungserhaltungssatz ist die Stromdichte $j$ im hier interessierenden stationären Fall 
+  ($\diff \rho/\diff t=0$) eine konstante Größe. Die Integration von Gleichung \eqref{for:dgl} unter der Randbedingung 
+  $E(x=0)=0$ ergibt für das elektrische Feld den Zusammenhang
+  \begin{equation}
+    E(x) = \sqrt\frac{-2\cdot j\cdot x}{\epsilon_0\cdot\epsilon_r\cdot\mu}\;.
+  \end{equation}
+  Die elektrische Spannung $U(x)$ ergibt sich aus der Integration über das bekannte elektrische Feld $E(x)$ zu
+  \begin{equation}
+    U(x) = \varphi(x)-\varphi_K = -\Int_0^x\!E(x^\prime)\,\diff x^\prime = -\sqrt\frac{-2\cdot j}
+    {\epsilon_0\cdot\epsilon_r\cdot\mu}\,\Int_0^x\!\sqrt{x^\prime}\,\diff x^\prime = -\sqrt\frac{-2\cdot j}
+    {\epsilon_0\cdot\epsilon_r\cdot\mu}\cdot\frac{2}{3}\cdot x^\frac{3}{2}.
+    \label{for:spannung}
+  \end{equation}
+  $\varphi_K$ in Gl. \eqref{for:spannung} ist das elektrische Potential an der Kathode.\\
+  Mit der Randbedingung $U(x=d)=U_B$, $U_B$ die angelegte Beschleunigungsspannung, folgt der gesuchte Zusammenhang 
+  zwischen Strom und Beschleunigungsspannung für die gasgefüllte Röhre aus \eqref{for:spannung} zu
+  \begin{equation}
+    j = -\frac{9}{8}\cdot\frac{\epsilon_0\cdot\epsilon_r\cdot\mu}{d^3}\cdot U_B^2 = -\frac{9}{8}\cdot
+    \frac{\epsilon_0\cdot\epsilon_r}{d^3}\cdot\frac{e\cdot\lambda}{m_e\cdot v_\text{therm}}\cdot U_B^2.
+    \label{for:child}
+  \end{equation}
+  Gl. \eqref{for:child} wird als Childsches Gesetz bezeichnet.
+
+\end{document}

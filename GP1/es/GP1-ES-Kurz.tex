@@ -1,0 +1,80 @@
+\documentclass[platz]{tudphygp}
+\usepackage{tudphymd}
+\usepackage{nicefrac}
+
+\versuch{Erzwungene Schwingungen}{ES}
+\author{M.~Kauer,B.~Scholz}
+\date{27.03.12}
+
+\begin{document}
+\maketitle
+
+\section{Kurzübersicht}
+
+\begin{enumerate}
+\item Bestimmen Sie die Eigenfrequenz $\omega_0$ des ungedämpften Pohlschen Rads.
+\item Bestimmen Sie die Dämpfungskonstanten $\delta$ in Abhängigkeit von an der Wirbelstrombremse angelegten Stromstärken $I$. Bestimmen Sie durch graphische Auftragung den Wert von $\delta$ für $I=0$.
+\item Bestimmen Sie die Resonanzkurve einer ungedämpften und einer gedämpften Schwingung.
+\end{enumerate}
+
+\subsection{Aufgabenstellung}
+\subsubsection{Messung der Eigenfrequenz}
+Lenken Sie das Drehpendel maximal aus und stoppen Sie die Zeitdauer von mindestens fünf Schwingungen. Wiederholen Sie dies mindestens fünf mal und berechnen Sie hieraus die Eigenfrequenz im nahezu ungedämpften Zustand.\\
+Der systematische Fehler, welcher durch den unterschiedlich stark gespannten Faden eingeführt wird, kann hierbei gegenüber dem systematischen Fehler der Stoppuhr und dem statistischen Fehler vernachlässigt werden. Zeichnen Sie jetzt Schwingungen mithilfe des PCs auf. Bestimmen Sie die Frequenz durch den Fit der Funktion $\varphi(t)=a\,\sin(b\,x\,+\,c)$ an die aufgenommenen Daten und vergleichen sie die Ergebnisse. Sollte ein zu starker Abfall der Kurve zu erkennen sein, so können Sie schon jetzt statt der Funktion einer ungedämpften Schwingung die einer gedämpften Schwingung an die Daten fitten: $\varphi(t)\,=\,a\,e^{-b\,x}\,\sin(c\,x\,+\,d)$.\\
+Achten Sie darauf beim Fit den geeigneten Parametersatz zu wählen, d.h. (a,b,c) oder (a,b,c,d). Sie sollten sich weiterhin vergewissern, dass die maximale Anzahl der Iterationen auf ca. 3000 eingestellt ist, da der Fit meist erst nach mindestens 1000 Iterationen konvergiert.
+
+\subsubsection{Messung der Dämpfungskonstante}
+Stellen Sie die Stromstärke der Wirbelstrombremse auf $200\,$mA ein und zeichnen Sie mithilfe des PCs die gedämpfte Schwingung auf. Bestimmen Sie die Amplituden von mehreren aufeinanderfolgenden Maxima. Wiederholen Sie dies noch zweimal bei der selben Stromstärke. Berechnen Sie mithilfe von 
+\begin{eqnarray}
+\frac{\varphi(t_0)}{\varphi(t_0\,+\,T)} = \frac{e^{-\delta\,t_0}}{e^{-\delta(t_0\,+\,T)}} = e^{\delta\,T}
+\end{eqnarray}
+die Dämpfungskonstante $\delta$. Benutzen Sie dazu die Annahme, dass sich die Eigenfrequenz des Pohlschen Rads nur wenig durch die zusätzliche Dämpfung ändert. Dadurch können Sie direk $T\,\approx\,T_0\,=\,\nicefrac{2\,\pi}{\omega_0}$ einsetzen.\\
+Bestimmen Sie so auch die Dämpfungskonstanten für $I\,=\,400\,$mA und $I\,=\,600\,$mA. Tragen Sie die ermittelten Dämpfungskonstanten gegen $I^2$ graphisch auf. Es reicht hier sich auf den Wertebereich $\nicefrac{I^2}{A^2}\,\in\,[0;0.4]$ zu beschränken. Versuchen Sie anschließend eine Ausgleichsgerade durch die erhaltenen Datenpunkte zu legen.  Welcher Wert ergibt sich nun für $I\,=\,0\,$mA?
+
+\subsubsection{Resonanzkurven}
+Schalten Sie die Wirbelstrombremse wieder ab und stellen Sie den Motor auf 15 Skalenteile ein. Während das Pendel einschwingt, bestimmen Sie die Anregungsfrequenz des Motors. Messen Sie fünf Umläufe des Motors mithilfe der Stoppuhr und berechnen Sie daraus die Umlaufzeit. Wiederholen Sie dies insgesamt drei mal, mitteln Sie die Ergebnisse und berechnen Sie hieraus die \underline{Kreisfrequenz} der Anregung. Starten Sie jetzt die Messung am PC und nehmen Sie die Bewegung des Pendels für ca. 30 Sekunden auf. Lesen Sie anschließend die Amplitude der Schwingung ab.\\
+Wiederholen Sie die gesamte Messung für verschiedene Motoreinstellungen im Bereich von 15-30 Skalenteilen, sodass Sie insgesamt ca. 15 Messpunkte erhalten. Es ist sinnvoll, dabei die Resonanzfrequenz genauer abzutasten.\\
+Wiederholen Sie die Aufgabe für eine Stromstärke von 400 mA an der Wirbelstrombremse. Zeichnen Sie die beiden Resonanzkurven in einen Graphen. 
+
+\subsection{Das Messprogramm}
+Sie finden das Messprogramm "Measure" direkt auf dem Desktop unter dem Link "`measure"'. Das Programm ist relativ schlicht gehalten. Sie werden im Laufe des Versuchs folgende Punkte der Toolbar benötigen:
+\begin{center}
+\includegraphics[width=0.7\linewidth]{./images/toolbar.png}
+\end{center}
+Um eine Messung zu starten klicken sie auf den roten Button in der linken oberen Ecke. Es öffnet sich daraufhin ein Fenster in welchem sie zusätzliche Parameter der Messung einstellen können. Im Normalfall sollten diese wie folgt aussehen:
+\begin{center}
+\includegraphics[width=0.7\linewidth]{./images/messparameter.png}
+\end{center}
+Vergewissern Sie sich, dass sich das Rad in der Ruhelage befindet und klicken sie auf "`weiter"'. Es öffnen sich daraufhin zwei Fenster:
+\begin{center}
+\begin{minipage}{0.45\linewidth}
+\begin{center}
+\includegraphics[width=0.9\linewidth]{./images/winkel.png}
+\end{center}
+\end{minipage}
+\begin{minipage}{0.45\linewidth}
+\begin{center}
+\includegraphics[width=0.9\linewidth]{./images/start.png}
+\end{center}
+\end{minipage}
+\end{center}
+Lenken Sie nun das Rad aus und lassen Sie es los. Drücken Sie darauf hin möglichst schnell auf "`Messung starten"'. Nach einer angemessenen Aufnahmedauer, jedoch bevor das Rad zum Stillstand gekommen ist, können Sie die Messung beenden. Es wird daraufhin ein Graph angezeigt, der die Schwingung visualisiert:
+\begin{center}
+\includegraphics[width=0.7\linewidth]{./images/beispielmessung.png}
+\end{center}
+Um nun einen Fit vorzunehmen wählen Sie aus der Toolbar den Reiter "`Messauswertung"' und wählen aus dem Dropdown-Menü die Option Kurvenfitting:
+\begin{center}
+\includegraphics[width=0.3\linewidth]{./images/messauswertung.png}
+\end{center}
+Es öffnet sich daraufhin ein Fenster in dem Sie die zu fittende Funktion, sowie weitere Parameter einstellen können:
+\begin{center}
+\includegraphics[width=0.7\linewidth]{./images/fitparameter.png}
+\end{center}
+Wählen Sie hier unter der Rubrik \emph{Funktion} "`Sonstige Funktion"' und tragen Sie dort die Fitfunktion ein, d.h. die Bewegungsgleichung einer gedämpften oder ungedämpften Funktion. Passen Sie daraufhin unter \emph{Einstellungen} die verwendeten Parameter an. Achten Sie darauf, dass der Fit nicht durch die maximalen Iterationen beschränkt wird. Dies erreicht man am einfachsten damit, dass man hier einen Wert in der Größenordnung von 3000 einträgt. Zu allerletzt ist der maximale relative Fehler noch auf die kleinstmögliche Einstellung zu setzen. Klicken Sie im Anschluss auf berechnen und fügen Sie die Kurve im Anschluss dem Graphen hinzu. So können Sie nochmals überprüfen, ob der Fit wirklich die aufgenommene Kurve beschreibt, oder nicht.\\
+\\
+Bei der Messung der Dämpfungskonstante ist es hilfreich das eingebaute "`Vermessungstool"' des Programms zu verwenden. Sobald Sie dieses anklicken erscheint in ihrem aufgenommenen Graphen ein Rechteck, von dem Sie zwei Ecken beliebig verschieben können:
+\begin{center}
+\includegraphics[width=0.9\linewidth]{./images/vermessen.png}
+\end{center}
+Schieben Sie diese Punkte auf zwei aufeinanderfolgende Maxima, so können Sie direkt deren Positionen ablesen. Vergessen Sie hierbei jedoch nicht den Ablesefehler zu berücksichtigen.
+\end{document}

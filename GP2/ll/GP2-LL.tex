@@ -1,0 +1,271 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd,mhchem,subfigure}
+
+\versuch{Lecherleitung}{LL}
+\author{L.~Jahn}
+\bearbeitet{M.~Kreller,i.A. Dr.~Escher,A.~Otto}{}
+
+\buch{1}{A.~Recknagel}{Physik: Elektrizität und Magnetismus}{Technik-Verlag}{Berlin 1990}
+\buch{2}{K.~Simonyi}{Theoretische Elektrotechnik}{Verlag der Wissenschaften}{Berlin 1989} 
+\buch{3}{H.-G.~Unger}{Elektromagnetische Wellen auf Leitungen}{Verlag Hüthig}{Heidelberg 1991}
+\buch{}{L.~Bergmann, C.~Schaefer}{Lehrbuch der Experimentalphysik, Band 2: Elektromagnetismus}{Verlag de Gruyter}{Berlin 1999}
+
+\begin{document}
+\maketitle
+
+\section{Aufgabenstellung}
+\begin{enumerate}
+ \item Erzeugung von stehenden Wellen durch Reflexion an der am Ende kurzgeschlossenen und offenen Leitung.
+ \item Messung der Phasengeschwindigkeit in Luft und in Wasser.
+ \item Abschätzung der Frequenz des Senders
+\end{enumerate}
+
+\section{Allgemeine Grundlagen}
+\subsection{Kennzeichen einer Parallel-Drahtleitung}
+\piccaption{Geometrie und Ersatzschaltung einer Paralleleldrahtleitung \label{fig:ersatzschaltung}}
+\parpic[r]{\includegraphics[width=\linewidth/100*45]{abb1}}
+Zur Übertragung von Wechsel\-strömen können u.a. Koaxial- und Parallel-Draht\-leitungen benutzt werden.
+Lecher- oder Parallel-Draht\-leitungen sind durch die Widerstände $R'$ in der Leitung und die Ableitung
+$G'=1/R'_{par.}$ pro Meter sowie durch die Geometrie, d.h. den Abstand $d$ und den Durchmesser $2r$ 
+der beiden Leiter charakterisiert. Durch die Geometrie werden die Kapazität $C'$ und die Induktivität $L'$  
+pro Meter bestimmt. Im Vakuum gilt:
+\begin{equation}
+ \frac{L}{l}=L'=\frac{\mu_0}{\pi}\left(\ln\frac{d}{r}+\frac{1}{4}\right)
+ \approx\frac{\mu_0}{\pi}\ln\frac{d}{r} 
+\label{lech1}
+\end{equation}
+sowie
+\begin{equation}
+ \frac{C}{l}=C'=\frac{\pi\epsilon_0}{\ln\frac{(d-r)}{r}}
+ \cong\frac{\pi\epsilon_0}{\ln\left(\frac{d}{2r}+\sqrt{\left(\frac{d}{2r}\right)^2-1}\right)}
+ \approx\frac{\pi\epsilon_0}{\ln\frac{d}{r}}
+ \label{lech}
+\end{equation}
+(Die Näherungen gelten für große Abstände $d$ beider Drähte.)
+
+\subsection{Die Telegraphengleichung für die ideale Leitung}
+Große technische Bedeutung haben Leitungen z.B. auch bei der Hoch\-spannungs-Energie\-über\-tragung mit Fernleitungen. 
+Historisch wurde die Theorie im Zusammenhang mit der Telegraphie entwickelt. Wendet man auf das Ersatzschaltbild 
+der Abbildung \ref{fig:ersatzschaltung} den Maschen- bzw. Knoten-Satz an, so erhält man
+\begin{align}
+ U(x,t)-U(x+\Delta x,t)&=R'\Delta x\cdot I(x,t)+L'\Delta x\frac{\partial I}{\partial t}(x,t)\nonumber\\
+ I(x,t)-I(x+\Delta x,t)&=G'\Delta x\cdot U(x,t)+C'\Delta x\frac{\partial U}{\partial t}(x+\Delta x,t)
+ \label{tel1}
+\end{align}
+Für die infinitesimalen Änderungen von Strom bzw. Spannung längs der Leitung findet man
+aus Gleichung \eqref{tel1} im eingeschwungenen Zustand
+\begin{equation}
+ -\frac{\partial U}{\partial x}=R'I+L'\frac{\partial I}{\partial t}\quad\text{(a)}\quad
+ -\frac{\partial I}{\partial x}=G'U+C'\frac{\partial U}{\partial t}\quad\text{(b)}
+ \label{ind}
+\end{equation}
+Bei der idealen Leitung sind der Leitungswiderstand $\frac{R}{l}=R'$ und die Querableitung $\frac{G}{l}=G'$ 
+zu vernachlässigen. Durch Differenzieren von Gleichung (\ref{ind}a) und Einsetzen von $\partial I/\partial x$ 
+aus Gleichung (\ref{ind}b) ergeben sich für die Spannung und den Strom Wellengleichungen.
+Diese Telegraphengleichungen lauten bei vernachlässigter Dämpfung
+\begin{equation}
+ \frac{\partial^2 U}{\partial x^2}=L'C'\frac{\partial^2 U}{\partial t^2} \quad\text{bzw.}\quad
+ \frac{\partial^2 I}{\partial x^2}=L'C'\frac{\partial^2 I}{\partial t^2}
+ \label{tel2}
+\end{equation}
+mit den Lösungen, gleichphasig für Strom und Spannung
+\begin{equation}
+ U(x,t)=\hat U_{(+)}\cos(\omega t-kx)\quad\text{(a)}\quad
+ I(x,t)=\hat I_{(+)}\cos(\omega t-kx)\quad\text{(b)}
+ \label{tel3}
+\end{equation}
+mit
+\begin{equation}
+ v_{ph}=\frac{\omega}{k}=\frac{1}{\sqrt{L'C'}}
+ \label{phas}
+\end{equation}
+Danach breiten sich entsprechend der Gleichungen \eqref{lech1}, \eqref{lech} und \eqref{phas} die Wellen unabhängig von der
+Frequenz und im Vakuum für größere Abstände $d$ näherungsweise mit Lichtgeschwindigkeit aus 
+($v_{ph}\approx c_0$; z.B. in positiver $x$-Richtung $(+)$). Die den Lösungen (\ref{tel3}a, b) zugeordneten Felder 
+$\vec E(x,t)$ und $\vec H(x,t)$ stehen senkrecht aufeinander.
+
+\subsection{Wellenwiderstand und Reflexion}
+\subsubsection{Wellenwiderstand $Z_0$}
+Wendet man auf Gleichung (\ref{tel3}a) (\ref{ind}a) an, so folgt in $(+x)$-Richtung:
+\begin{equation}
+ k\hat U_{(+)}=\hat I_{(+)}\omega L'\quad\Rightarrow\quad
+ Z_0=\frac{\hat U_{(+)}}{\hat I_{(+)}}=\frac{\omega L'}{k}=v_{ph}L'=\sqrt{\frac{L'}{C'}}
+ \label{z0}
+\end{equation}
+\piccaption{Strom, Spannung und Amplituden bei der leitungsgeführten, fortlaufenden Welle für drei Zeiten (n. Simonyi)}
+\parpic[r]{\includegraphics[width=\linewidth/100*40]{abb2}}
+\picskip{10}
+bzw. $\hat U_{(-)}/\hat I_{(-)}=-Z_0$ für eine sich in $(-x)$-Richtung ausbreitende Welle.
+
+\subsubsection{Fortlaufende Welle}
+\picskip{10}
+Ist die Lecherleitung mit einem Ohmschen Widerstand $R=Z_0$ abgeschlossen, so läuft über die Leitung eine Welle
+und transportiert Energie zum Abschlusswiderstand, z.B. bei der Energieübertragung auf einer Hochspannungsleitung.
+
+\subsubsection{Reflexion}
+\picskip{7}
+Von $-\infty$ kommend soll die ungedämpfte Welle den Ort $x=0$ erreichen, wo die Leitung mit einem Ohmschen Widerstand 
+$R\not =Z_0$ abgeschlossen sei. Als Randbedingung bestimmt $R$ das Verhältnis von $U$ und $I$, d.h.
+\begin{equation}
+ \left(\frac{U(x,t)}{I(x,t)}\right)_{(x=0)}=R
+ \label{Rand}
+\end{equation}
+Die Bedingung \eqref{Rand} kann nur erfüllt werden, wenn man als Lösung von Gleichung \eqref{tel2} gleichzeitig eine 
+sich in $(+x)$- sowie in $(-x)$-Richtung ausbreitende Welle zulässt.
+\begin{align}
+ U(x,t)_{(+)}+U(x,t)_{(-)}&=\hat U_{(+)}\cos(\omega t-kx)+\hat U_{(-)}\cos(\omega t+kx)\\
+ I(x,t)_{(+)}+I(x,t)_{(-)}&=\hat I_{(+)}\cos(\omega t-kx)+\hat I_{(-)}\cos(\omega t+kx)
+\end{align}
+Daraus folgt unter Beachtung der Gleichungen \eqref{Rand}, \eqref{z0} und $x=0$
+\begin{equation}
+\begin{split}
+ R&=\left(\frac{U(x,t)}{I(x,t)}\right)_{(x=0)}=\frac{U(x,t)_{(+)}+U(x,t)_{(-)}}{I(x,t)_{(+)}+I(x,t)_{(-)}}
+ =\frac{\hat U_{(+)}+\hat U_{(-)}}{\hat I_{(+)}+\hat I_{(-)}}\\
+ &=\frac{\hat U_{(+)}+\hat U_{(-)}}{\displaystyle\frac{\hat U_{(+)}}{Z_0}-\displaystyle\frac{\hat U_{(-)}}{Z_0}}
+ =Z_0\cdot\frac{\left(1+\displaystyle\frac{\hat U_{(-)}}{\hat U_{(+)}}\right)}{\left(1-\displaystyle\frac{\hat U_{(-)}}{\hat U_{(+)}}\right)}=Z_0\cdot\frac{1+r}{1-r}
+\end{split}
+\end{equation}
+oder
+\begin{equation}
+r=\frac{R-Z_0}{R+Z_0}
+\label{r}
+\end{equation}
+Abweichungen des Abschlusswiderstandes $R$ von $Z_0$ führen demnach zu teilweiser Reflexion mit dem Reflexionsfaktor $r$ als relatives Maß für
+die reflektierte Amplitude ($r=\hat U_{(-)}/\hat U_{(+)}$).\\
+Die Gleichung \eqref{r} enthält als Spezialfälle die schon erwähnte fortlaufende Welle ($r=0$) sowie die beiden wichtigen Fälle der \textbf{Lecherleitung:}
+\begin{description}
+ \item[Kurzschluss:] Das kurzgeschlossene Ende bedeutet $R=0$ bzw. $r=-1$ und eine Reflexion am festen Ende mit einer Phasenumkehr für die Spannung. 
+ Der Strom bleibt bei der Reflexion in Phase.
+ \item[Offenes Ende:] $R\rightarrow \infty$, d.h. $r=1$, bedeutet Reflexion am losen Ende mit einen Spannungsmaximum und einem Stromknoten am Ende.
+\end{description}
+\begin{figure}[h]
+\centering
+\includegraphics[width=\linewidth/100*90]{abb3}
+\caption{Strom und Spannungsamplituden für vier Zeiten für die kuzgeschlossene (a) und offene (b) ideale Lecherleitung}
+\label{fig:offen_kurz}
+\end{figure}
+
+\subsection{Stehende Wellen}
+Sowohl bei der kurzgeschlossenen als auch der offenen Lecher-Leitung kommt es zur Ausbildung stehender Wellen. Bezüglich des Phasensprungs 
+($\varphi=0$ oder $\pi$) bei der Reflexion und auch hinsichtlich der Lage der Knoten und Bäuche verhalten sich Strom und Spannung komplementär.\\
+In der Abbildung \ref{fig:offen_kurz}a bzw. \ref{fig:offen_kurz}b sind diese komlementären Verhältnisse für die Strom- und Spannungs-Bäuche bzw. -Knoten 
+für beide Fälle dargestellt.\\
+Überlagert man z.B. $U(x,t)_{(+)}=\hat U\cos(\omega t-kx)$ mit $U(x,t)_{(-)}=\hat U\cos(\omega t+kx+\pi)=-\hat U\cos(\omega t+kx)$,
+so folgt als Gleichung für die stehende Welle:
+\begin{equation}
+ U_{res}=2\hat U\sin(kx)\cdot\sin(\omega t)
+ \label{steh}
+\end{equation}
+Zusammenfassend stellen sich alle 4 komplementären Fälle wie folgt dar:
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|cc|cc|}\hline
+Ende   & \multicolumn{2}{c|}{Phasensprung $\varphi$}  & \multicolumn{2}{c|}{Resultierende}\\
+       &                     U & I                   &  $U_{res}/\hat U$ & $I_{res}/\hat I$\\ \hline
+kurz   &                 $\pi$ & $0$                 & $2\sin(kx)\cdot\sin(\omega t)$ & $2\cos(kx)\cdot\cos(\omega t)$\\ \hline
+offen  &                 $0$   & $\pi$               & $2\cos(kx)\cdot\cos(\omega t)$ & $2\sin(kx)\cdot\sin(\omega t)$\\ \hline
+\end{tabular}
+\caption{Übersicht über stehende Wellen bei der Lecher-Leitung}
+\label{tab:steh_wellen}
+\end{table}
+
+\subsection{Kurze Leitungen}
+Beträgt die Gesamtlänge $l$ nur wenige Vielfache von $\lambda/4$, so ergeben sich analog zu den Musikinstrumenten Resonanzkreise.
+Diese können ohne Änderung der Eigenschaften im Spannungsknoten kurzgeschlossen bzw. im Stromknoten geöffnet werden. Die zugeordneten Wellenlängen
+bestimmen sich für die beiderseits offene (a), beiderseits geschlossene (b) (n=1,2,3..) und einseitig offene Lecherleitung (n=0,1,2,3,..) (c) zu
+\begin{align}
+ \lambda_n &=\frac{2}{n}l\quad\text{(a)}\nonumber\\ 
+ \lambda_n &=\frac{2}{n}l\quad\text{(b)}\nonumber\\
+ \lambda_n &=\frac{4}{2n+1}l\quad\text{(c)}
+ \label{l}
+\end{align}  
+
+\subsection{Einflüsse der Dämpfung}
+Sind $R'$ und $G'$ im Vergleich mit den Scheinwiderständen nicht zu vernachlässigen, so wird die Theorie wesentlich komplizierter.
+Der Wellenwiderstand wird komplex $\left(Z_0=\sqrt{\frac{R+j\omega L'}{G+j\omega C'}}\right)$ und die Phasengeschwindigkeit
+größer und frequenzabhängig. Zu beachten ist ferner, dass $R'$ infolge des Skin-Effekts und $G'$ wegen der dielektrischen Verluste mit der Frequenz
+ansteigen. Die Amplitude  der fortlaufenden Welle nimmt mit $\mathrm e^{-\alpha x}$ ($\alpha$=komplexer Dämfungsfaktor) ab entsprechend
+\begin{equation}
+ U(x,t)=\hat U\mathrm e^{-\alpha x}\mathrm e^{j(\omega t-kx)}
+\end{equation}
+Nur in zwei Fällen ergeben sich für $\alpha$ und $v_{ph}$ übersichtliche Resultate: Für \textbf{Geringe Dämpfung und $G'=0$} (gut isolierte Leitungen) gilt:
+\begin{equation}
+ \alpha\cong\frac{R'}{2}\sqrt{\frac{C'}{L'}} \qquad v_{ph}\cong\frac{1}{L'C'}\left[1-\frac{R'^2}{8\omega^2L'^2}\right]
+ \label{vd}
+\end{equation}
+worauf die für Fernleitungen wichtige Erkenntnis beruht, durch Einbau von (Pupin-) Spulen die Dämpfung zu reduzieren (Erhöhung von $L$').\\
+Bei \textbf{sehr großer Dämpfung} werden $\alpha$ und $v_{ph}$ reell und frequenzunabhängig.
+\begin{equation}
+ \alpha\cong\sqrt{R'G'} \qquad v_{ph}\cong\frac{1}{\sqrt{L'C'}}
+\end{equation}
+Die Ausbildung von \textbf{stehenden Wellen mit starker Dämpfung} auf der Lecherleitung wird nur in der Nähe der Reflexionsstelle
+zu beobachten sein, da in größer Entfernung davon die Amplituden beider Wellen zu unterschiedlich sind.
+
+\section{Experimente}
+\subsection{Anordung}
+Der Dezimeterwellen-Sender wird induktiv an den kurzgeschlossenen Anfang der Lecherleitung angekoppelt. Im Fall der am Ende offenen Leitung
+kommt es nur dann zur Ausbildung einer stehenden Welle, wenn die Gesamtlänge entsprechend Gleichung (\ref{l}c) ein ungerades Vielfaches von $\lambda/4$ ist.
+Demgegenüber kann im Falle des kurzgeschlossenen Endes der Kurzschlussbügel zur Abstimmung beliebig verschoben und damit die Gesamtlänge 
+nach Gleichung (\ref{l}b) abgestimmt werden.\\
+
+\subsection{Nachweis der Bäuche}
+\begin{figure}[h]
+ \subfigure[Nachweis des Strombauches]{
+ \includegraphics[width=\linewidth/100*45]{abb4}
+ \label{fig:strombauch}
+ }
+ \subfigure[Messung des Spannungsbauches mit der $\lambda/4$-Leitung]{
+ \includegraphics[width=\linewidth/100*40]{abb5}
+ \label{fig:spannungsbauch}
+ }
+ \caption{Nachweismethoden für verschiedene Bäuche}
+\end{figure}
+
+\subsubsection{Strombäuche}
+\begin{enumerate}
+ 
+ \item Eine entsprechend Abb. \ref{fig:strombauch}-a symmetrisch zum Strom-Maximum eingehängte Drahtschleife mit Glühlampe leuchtet 
+ infolge der induzierten Spannung.
+ \item Nach Abb. \ref{fig:strombauch}-b legt man die Anschlussdrähte der Lampe quer über
+ die Leitung.
+\end{enumerate}
+
+\subsubsection{Spannungsbauch, $\lambda/4$-Leitung}
+\begin{enumerate}
+ 
+ \item Am einfachsten bringt man eine Glimmlampe in Kontakt mit einem Spannungsbauch. Diese beginnt daraufhin zu leuchten
+ \item Eine am Ende kurzgeschlossene $\lambda/4$-Leitung, die mit dem offenen Ende senkrecht zur Lecherleitung am Ort des Bauches angebracht wird, 
+ koppelt Energie aus und zeigt an ihrem geschlossenen Ende einen Strombauch. Dieser Strombauch kann über die induzierte Spannung mit einer Glühlampe,
+ die entsprechend Abb. \ref{fig:strombauch}-a beiderseits des Maximums anliegt, angezeigt werden.
+ \item Alternativ dazu richtet eine Diode die induzierte Spannung gleich und nach Glättung mit einer Drossel und einem Ladekondensator wird 
+ die Gleichspannung mit einem Multimeter gemessen (Abb. \ref{fig:spannungsbauch}).
+\end{enumerate}
+
+\subsection{Wellenausbreitung in Luft und in Wasser}
+\piccaption{Lecherleitung in Wasser \label{fig:wasser}}
+\parpic[r]{\includegraphics[width=\linewidth/100*50]{abb6}}
+Die Wellenlänge wird zunächst aus den Knoten- oder Bauch-Abständen in Luft bestimmt. Anschließend wird nach Abb. \ref{fig:wasser} verfahren. 
+Durch die $\lambda/2$-Strecke in Luft wird erreicht, dass die Welle an einem Spannungsknoten in die Flüssigkeit eintritt. Bei festgehaltenem Indikator 
+(z.B. am Ort des Strombauches) wird bei Variation der Position des Kurzschlussbügels unter Wasser dessen Stellung für jedes erreichte Maximum
+notiert. Der Abstand der Maxima entspricht $\lambda/2$. Da die Permeabilität des Wassers $\mu_{W}=1$ ist, verhalten sich entsprechend Gleichung \eqref{phas}
+die Wellenlänge bzw. die Phasengeschwindigkeit im Wasser zu den Werten in Luft wie $\sqrt{\epsilon_W}:1$.
+(Man vergleiche das Ergebnis mit der bekannten Brechzahl des Wassers für optische Frequenzen!)
+
+\section{Aufgaben}
+\begin{enumerate}
+\item Überprüfen Sie Tab.\ref{tab:steh_wellen}! 
+\item Für die theoretische Vorbereitung sind für die Lecherleitung: $r=\SI{2,5}{mm}$, $d=\SI{22}{mm}$, $R'=\SI{0,01}{\Omega/m}$, $G'=0$ und $f=\SI{500}{MHz}$ 
+in verschiedenen Näherungen die Leitungsgrößen $C'$, $L'$, $Z_0$ sowie $v_{ph}$ zu berechnen.
+\end{enumerate}
+
+\frage{Maxwellsche Gleichungen.}
+\frage{Gleichung ebener elektromagnetischer Wellen.}
+\frage{Ausbreitung von elektromagnetischen Wellen auf Leitungen.}
+\frage{Kennwerte einer Parallel-Drahtleitung; Unterschied zur Koaxialleitung.}
+\frage{Ersatzschaltbild und Feldlinienbild bei einer Lecherleitung.}
+\frage{Wellenwiderstand und Reflexion.}
+\frage{Spannung und Strom am Ende der kurzgeschlossenen und offenen Lecherleitung. Stehende Wellen.}
+\frage{Nachweis von Spannungs- und Strom-Bäuchen bei stehenden Wellen.}
+\frage{Brechzahl, Dispersion, Maxwellsche Relation.}
+
+\end{document}

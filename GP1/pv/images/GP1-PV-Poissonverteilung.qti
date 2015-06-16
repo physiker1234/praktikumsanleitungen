@@ -1,0 +1,83 @@
+QtiPlot 0.9.7 project file
+<scripting-lang>	muParser
+<windows>	2
+<table>
+Table1	30	3	09.08.09 19:11
+geometry	0	0	445	220	
+header	1[X]	2[Y]	3[Y]
+ColWidth	100	100	100	
+<com>
+<col nr="2">
+3^(col("1"))/col("2")*exp(-3)
+</col>
+</com>
+ColType	0;0/13	0;0/13	0;1/4
+ReadOnlyColumn	0	0	0
+HiddenColumn	0	0	0
+Comments				
+WindowLabel		2
+<data>
+0	0.00000000000000e+00	1.00000000000000e+00	4.98000000000000e-02
+1	1.00000000000000e+00	1.00000000000000e+00	1.49400000000000e-01
+2	2.00000000000000e+00	2.00000000000000e+00	2.24000000000000e-01
+3	3.00000000000000e+00	6.00000000000000e+00	2.24000000000000e-01
+4	4.00000000000000e+00	2.40000000000000e+01	1.68000000000000e-01
+5	5.00000000000000e+00	1.20000000000000e+02	1.00800000000000e-01
+6	6.00000000000000e+00	7.20000000000000e+02	5.04000000000000e-02
+7	7.00000000000000e+00	5.04000000000000e+03	2.16000000000000e-02
+8	8.00000000000000e+00	4.03200000000000e+04	8.10000000000000e-03
+9	9.00000000000000e+00	3.62880000000000e+05	2.70000000000000e-03
+10	1.00000000000000e+01	3.62880000000000e+06	8.00000000000000e-04
+</data>
+</table>
+<multiLayer>
+Graph1	1	1	09.08.09 19:16
+geometry	445	0	510	430	active
+WindowLabel		2
+Margins	5	5	5	5
+Spacing	5	5
+LayerCanvasSize	417	323
+Alignement	0	0
+<graph>
+ggeometry	5	5	491	371
+PlotTitle		#000000	4228
+<Antialiasing>1</Antialiasing>
+Background	#ffffff	255
+Margin	0
+Border	0	#000000
+grid	0	0	0	0	#0000ff	0	0.5	#a0a0a4	2	0.4	#0000ff	0	0.5	#a0a0a4	2	0.4	0	0	2	0	0
+EnabledAxes	1	1	1	1	
+AxesTitles	x	P(X = x)			
+AxesTitleColors	#000000	#000000	#000000	#000000	
+AxesTitleAlignment	5124	5124	5124	5124
+AxesTitleDistance	2	2	2	2
+TitleFont	Sans Serif	12	75	0	0	0
+ScaleFont0	Sans Serif	16	75	0	0	0
+ScaleFont1	Sans Serif	16	75	0	0	0
+ScaleFont2	Sans Serif	16	75	0	0	0
+ScaleFont3	Sans Serif	16	75	0	0	0
+AxisFont0	Sans Serif	12	50	0	0	0
+AxisFont1	Sans Serif	12	50	0	0	0
+AxisFont2	Sans Serif	12	50	0	0	0
+AxisFont3	Sans Serif	12	50	0	0	0
+EnabledTickLabels	1	0	1	0	
+AxesColors	#000000	#000000	#000000	#000000
+AxesNumberColors	#000000	#000000	#000000	#000000
+AxesBaseline	0	0	0	0	
+CanvasBackground	#ffffff	255
+curve	Table1_1	Table1_3	3	1	0	0	0.1	7	0	0	0	1	19	0	50	0	2	0	0	29	1
+scale	0	0	0.26	0	6	5	0	0
+scale	1	0	0.26	0	6	5	0	0
+scale	2	-0.5	10.5	0	11	5	0	0
+scale	3	-0.5	10.5	0	8	5	0	0
+LabelsFormat	0	4	0	4	0	4	0	4	
+AxisType	0	0	0	0	
+MajorTicks	3	3	0	0	
+MinorTicks	3	3	0	0	
+TicksLength	5	9
+DrawAxesBackbone	1
+AxesLineWidth	1
+LabelsRotation	0	0
+</graph>
+</multiLayer>
+<open>1</open>

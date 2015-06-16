@@ -1,0 +1,68 @@
+\documentclass[platz]{tudphygp}
+\usepackage{tudphymd}
+
+\versuch{Umwandlungsenergien}{UE}
+\author{Dr. Schwab,Dr. Escher}
+\date{01.03.2006}
+
+\begin{document}
+\maketitle
+
+\section*{Aufgabenstellung}
+
+\begin{enumerate}
+ \item Bestimmen Sie die \textbf{Wärmekapazität $C$ eines Kalorimeters} nach der
+ Mischungsmethode.
+ \item Ermitteln Sie die \textbf{spezifische Schmelzwärme $q_s$} von Eis.
+ \item Bestimmen Sie die \textbf{innere Verdampfungsenthalpie $q_{v,i}$} einer Flüssigkeit.
+\end{enumerate}
+
+\section*{Hinweise zur Versuchsdurchführung}
+
+\subsection*{Bestimmung der Wärmekapazität des Kalorimetergefäßes}
+
+\begin{itemize}
+ \item Zunächst wird die Leermasse des Kalorimetergefäßes einschließlich Deckel und  Rührer (Abb.~3a) und bei nachfolgender Bestimmung der Verdampfungsenthalpie $q_{v,i}$ zusätzlich auch mit der Kondensationsspirale ermittelt (Abb.~3b).
+ \item Anschließend wird das Kalorimetergefäß mit ca. \num{500} bis \SI{560}{ml} kalter Flüssigkeit gefüllt. Nach ca. zwei bis fünf Minuten haben sich die Temperaturen von Gefäß und Flüssigkeit ausgeglichen und die Temperatur $T_1$ ist zu messen. Anschließend ist die Wägung des gefüllten Kalorimeters durchzuführen, um danach die Masse der kalten Flüssigkeit $m_{w,1}$ durch Differenzbildung bestimmen zu können.
+ \item Erhitzen Sie die Flüssigkeit auf $T_2 = \SI{100}\degC$, und geben Sie etwa \num{280} bis \SI{360}{ml} in das Kalorimetergefäß. Messen Sie nach einigem Rühren und dem Temperaturausgleich die Mischungstemperatur $T_M$ und führen Sie erneut eine Wägung des Kalorimeters durch. Bestimmen Sie anschließend durch Differenzbildung die Masse $m_{w,2}$ der zugefügten heißen Flüssigkeit.
+ \item Die gesuchte Wärmekapazität des Kalorimeters $C$ ergibt sich aus der Bilanzgleichung.
+ \begin{refequation}{6}
+ (m_{w,1} c_w + C) \cdot (T_1 - T_M) = m_{w,2} c_w \cdot (T_M - T_2)
+  \label{ue4}
+ \end{refequation}%
+ Verwenden Sie für die spezifische Wärmekapazität der Flüssigkeit den Wert $c_w = \SI{4,1868}{kJ/(kg.K)}$.
+\end{itemize}
+
+\subsection*{Ermittelung der spezifischen Schmelzwärme von Eis}
+
+\begin{itemize}
+ \item Vor Beginn des Experiments ist zu gewährleisten, dass die zur Messung verwendeten Eiswürfel eine Temperatur von $T_E \approx T_s = \SI0\degC$ haben. Um dies zu realisieren, füllen Sie das isolierte Vorratsgefäß mit der Flüssigkeit und fügen Sie ca. drei Paletten Eiswürfel \num{300} bis \SI{400}g hinzu. Die Temperatur der Flüssigkeit sollte dadurch von Raumtemperatur auf etwa $T = \SI5\degC$ erniedrigt werden. Befüllen Sie anschließend das eingesetzte Rohr (Abb.~4) mit weiteren Eiswürfeln (ca. \SI{100}g).
+ \item In das Kalorimetergefäß werden ca. \SI{700}{ml} der Flüssigkeit von Raumtemperatur gefüllt. Nach ca. zwei bis fünf Minuten wird die Ausgleichstemperatur $T_1$ gemessen, anschließend wird das gefüllte Kalorimetergefäß gewogen, um die Masse $m_w$ der zugefügten Flüssigkeit bestimmen zu können.
+ \item Etwa drei Minuten nach Zugabe des Eises in das Rohr des Vorratsgefäßes werden ca. sechs bis acht Eiswürfel (ca. \SI{50}g) entnommen und diese nach der Trocknung mittels Zellstofftüchern in das Kalorimetergefäß gegeben. Der Temperatur-Zeit-Verlauf der Abkühlung ist zu registrieren und die
+ Mischungstemperatur $T_M$ zu bestimmen. Danach ist eine erneute Wägung des gefüllten Kalorimeters durchzuführen. Die Masse des zugefügten Eises $m_\mathrm{Eis}$ folgt mittels Differenzbildung.
+ \item Die gesuchte spezifische Schmelzwärme $q_s$ von Eis folgt aus der Wärmebilanz.
+ \begin{refequation}{7}
+  (m_w c_w + C) \cdot (T_1 - T_M) = m_\mathrm{Eis} \cdot q_s + m_\mathrm{Eis} c_w \cdot (T_M - T_s)
+  \label{ue5}
+ \end{refequation}
+\end{itemize}
+
+\subsection*{Bestimmung der inneren Verdampfungsenthalpie einer Flüssigkeit}
+
+\begin{itemize}
+ \item Das Kalorimetergefäß, welches die gläserne Kondensationsspirale enthält, wird mit ca.~\SI{700}{ml} Flüssigkeit von Raumtemperatur gefüllt. Nach dem Temperaturausgleich (etwa zwei bis fünf Minuten) ist die Temperatur $T_1$ zu messen und anschließend das gefüllte Kalorimetergefäß zu wiegen, um die Masse $m_w$ der Flüssigkeit durch Differenzbildung zu bestimmen.
+ \item Die im Verdampferkolben befindliche Flüssigkeit (\num{100} bis \SI{150}{ml}) wird zum Sieden gebracht. Dazu sind beide Heizkreise der Heizplatte einzuschalten.
+ \item Nach Ausbildung eines stationären Dampfstromes ist die Verdampferapparatur mit der Kondensationsspirale zu verbinden und ca. zehn bis 15 Minuten lang Kondensat im Kalorimeter anzusammeln. Anschließend ist die Kondensationsspirale vom Verdampfer zu trennen. \textbf{Vorsicht beim Umgang mit den Glasgeräten. Bruchgefahr!}
+ \item Messen Sie die Mischtemperatur $T_M$ und wiegen Sie das gefüllte Kalorimeter erneut. Bestimmen Sie anschließend durch Differenzbildung die Masse $m_D$ des Kondensats. Die äußere Verdampfungsenthalpie folgt nun aus der Wärmebilanz.
+ \begin{refequation}{8}
+  m_D \cdot q_{v,a} + m_D c_w \cdot (T_\mathrm{si} - T_M) = (m_w c_w + C) \cdot (T_M - T_1)
+  \label{ue6}
+ \end{refequation}
+ \item Beachten Sie bei der Berechnung der inneren Verdampfungsenthalpie $q_{v,i}$, dass die spezifische Gaskonstante durch $R' = R/M$ gegeben ist, wobei $R = \SI{8,315}{J/(mol.K)}$ die universelle Gaskonstante und $M = \SI{18}{g/mol}$ die molare Masse der Flüssigkeit ist.
+ \begin{refequation}{9}
+  q_{v,i} \approx q_{v,a} - R' \cdot T_\mathrm{si}
+  \label{ue7}
+ \end{refequation}
+\end{itemize}
+
+\end{document}

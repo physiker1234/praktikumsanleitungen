@@ -1,0 +1,125 @@
+\documentclass[platz]{tudphygp}
+\usepackage{tudphymd}
+
+\versuch{Reale Gase}{RG}
+
+\begin{document}
+\maketitle
+
+\subsection*{Aufgabenstellung}
+
+\begin{enumerate}
+ \item Messen Sie vier Isothermen eines realen Gases 
+       (Schwefelhexafluorid \mol{SF_6}).
+ \item Bestimmen Sie das Koexistenzgebiet von gasf\"ormiger und fl\"ussiger Phase und den kritischen Punkt.
+ \item Bestimmen Sie aus den Messdaten die Stoffmenge und die
+       van-der-Waals-Koeffizienten. Berechnen Sie das molare Volumen f\"ur den kritischen Punkt.
+ \item \emph{(F\"ur Physikstud.)} Bestimmen Sie aus der Dampfdruckkurve $p_S(T)$
+                                die molare Verdampfungsw\"arme und zu jedem
+                                Messpunkt mit $T < T_c$ die Verdampfungsw\"arme $Q$.
+\end{enumerate}
+
+\subsection*{Hinweise zur Versuchsdurchf\"uhrung}
+
+Der Versuch wird mit einer Apparatur zum kritischen Punkt
+durchgef\"uhrt. Mittels einer Spindelmechanik und eines Kolbens wird ein durch
+eine Gummidichtung abgetrenntes Volumen Schwefelhexaflourid (\mol{SF_6}) innerhalb
+eines transparenten Zylinders komprimiert. Als Druck \"ubertragendes Medium
+kommt Rizinus\"ol zum Einsatz. Die gesamte Anordnung wird durch einen
+Umw\"alzthermostaten thermisch stabilisiert. 
+
+Der PC am Versuchplatz dient zur teilweise automatisierten
+Messwertaufnahme. Es werden der Spindelweg bzw. das Volumen, sowie die
+Temperatur der Apparatur und der \"Oldruck gemessen und ein $p$-$V$-Diagramm
+erstellt. 
+
+\begin{description}
+ \item [Achtung!] Der Maximaldruck von \SI{5}{MPa} (\SI{50}{bar}) darf auf
+   keinen Fall \"uberschritten werden. Die Temperatur darf \SI{60}{\degC} nicht
+   \"ubersteigen. Nach Beendigung des Versuches ist ein Druck von etwa \SI1{MPa}
+   (\SI{10}{bar}) einzustellen. Vermeiden Sie l\"angere Standzeiten bei hohem Druck!
+\end{description}
+
+Die Isothermen sollen bei \SI{30}{\degC}, \SI{38}{\degC}, \SI{45,5}{\degC} und
+\SI{55}{\degC} aufgenommen werden. Warten Sie nach dem Verstellen des
+Thermostaten 
+immer ca. \SI{10}{min} bis zum Erreichen einer S\"attigungstemperatur, sie
+weicht meist etwas von der Vorgabe ab. Die kritische Temperatur soll so genau
+wie m\"oglich eingestellt werden. Die anderen Temperaturen sind Richtwerte. Geringe
+Temperaturschwankungen im Bereich weniger Zehntel Kelvin w\"ahrend einer
+Messreihe sind tolerierbar.
+
+Stellen Sie den Kolben auf genau \SI{42}{mm} ein (Skala am Ger\"at), bevor Sie eine
+Messung starten, damit das Volumen richtig berechnet wird.
+
+Starten Sie jetzt das Programm \"uber die Verkn\"upfung ``RG'' auf dem
+Desktop. Warten Sie, bis das Messger\"at erkannt und das Programm initialisiert
+wurde. Bl\"attern Sie auf Seite 2 der Oberfl\"ache und starten Sie die
+Messung. Jetzt werden die aktuellen Messwerte angezeigt.
+
+Beginnen Sie mit der Messung etwa bei $V=\SI{8}{ml}$ und verringern Sie das
+Volumen anfangs in Schritten von \SI{1,0}{ml}. Zu Beginn und Ende des
+Koexistenzgebietes sollte die Schrittweite auf \SI{0,25}{ml} verringert
+werden, um den kritischen Punkt herum auf \SI{0,1}{ml}. Messen Sie die
+Isothermen bis ca. $p = \SI{45}{bar}$.
+
+Die \"Ubernahme des Messwertes erfolgt durch den Befehl ``Behalten'', der
+Abschluss einer Messreihe durch ``Stoppen''. Vor jedem Messpunkt muss anfangs
+ca. $30\ldots\SI{60}{s}$, sp\"ater bis zu \SI2{min} gewartet werden, bis sich
+das thermische Gleichgewicht eingestellt hat (stabiler Druck). 
+
+Notieren Sie zu jeder Isotherme die ersten Wertepaare f\"ur $V\ge \SI4{ml}$ in
+einer Tabelle. Nach Abschluss der Messreihen kann das Diagramm ausgedruckt
+werden (``Drucken'' $\to$ Seite 2, ``Allgemein'' $\to$ Querformat). 
+
+
+\subsection*{Auswertung}
+
+\begin{enumerate}
+ \item Beschreiben Sie Ihre Beobachtungen der Messzelle beim Durchfahren des Koexistenzgebietes.
+ \item In dem ausgedruckten $p$-$V$-Diagramm sind das Koexistenzgebiet von
+       gasf\"ormiger und fl\"ussiger Phase zu markieren und der kritische Punkt
+       einzuzeichnen. Geben Sie die kritischen Gr\"o\ss en $T_c$, $p_c$ und $V_c$ an.
+ \item Tragen Sie in einem zweiten Diagramm f\"ur alle Messreihen $p \cdot V$ \"uber $1/V$
+   auf und extrapolieren Sie linear bis nach $1/V = 0$. Ermitteln Sie die
+   Stoffmenge $n$ entsprechend Gleichung \eqref{LIM} aus den Schnittpunkten der
+   Extrapolationsgeraden mit der Ordinate.
+
+ \begin{refequation}{1}
+  \lim\limits_{V \to \infty} (p \cdot V) = n \cdot R \cdot T \label{LIM}
+ \end{refequation}
+ Berechnen Sie nach Gleichung \eqref{KOEFF} die van-der-Waals-Koeffizienten $a$ und $b$.
+ \begin{refequation}{2}
+  a = 3 p_k \cdot \kla{ \frac{V_{k}}{n} }^2
+  \quad\text{und}\quad
+  b = \frac{V_k}{3n} \label{KOEFF}
+\end{refequation}
+\end{enumerate}
+
+Zus\"atzlich f\"ur Physikstudenten:
+
+\begin{enumerate}\setcounter{enumi}{3}
+ \item Zeichnen Sie die Dampfdruckkurve laut Gleichung \eqref{DDK}. Tragen Sie
+   dabei $\ln p$ \"uber $1/T$ auf und bestimmen Sie aus dem Anstieg der
+   Geraden die molare Verdampfungsenthalpie.
+
+ \begin{refequation}{3}
+  p_S (T) = p_0 \cdot \eu{- \frac{L}{RT}} \label{DDK}
+ \end{refequation}
+
+  Bestimmen Sie zu jeder Isotherme mit $T<T_c$ die Verdampfungsw\"arme
+  nach Gleichung  \eqref{CCG}. Die Volumina $V_g$ und $V_f$ sind dem
+  p-V-Diagramm zu entnehmen. 
+  Stellen Sie die ermittelten Gr\"o\ss en $T$, $p_S$, $\diff p/\diff T$,
+  $V_g-V_f$ sowie $Q$ \"ubersichtlich in einer Tabelle zusammen.
+
+ \begin{refequation}{4}
+  Q = T \cdot \dquot{p_S}{T}(V_g - V_f) \label{CCG}
+ \end{refequation}
+
+\end{enumerate}
+
+Diskutieren Sie alle Ergebnisse und vergleichen Sie ggf. mit Literaturwerten.
+
+\end{document}
+

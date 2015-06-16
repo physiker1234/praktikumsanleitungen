@@ -1,0 +1,397 @@
+\documentclass{tudphygp}
+\usepackage{mhchem,tudphymd}
+
+\versuch{Stehende Wellen}{SW}
+\author{L. Jahn 09/ 1998}
+\date{01.01.1997}
+\bearbeitet{M.~Kreller,J.~Kelling,F.~Lemke,S.~Majewsky,i.~A.~Dr.~Escher}{}
+
+\buch{ilb}{W.~Ilberg (Hrsg.), M.~Krötzsch (Hrsg.) et.~al.}{Physikalisches Praktikum für Anfänger}{Teubner-Verlag}{Leipzig 1994}
+\buch{gert}{C.~Gerthsen, H.~Vogel}{Physik}{Springer-Verlag}{Berlin, Heidelberg 1995}
+\buch{kohl}{F.~Kohlrausch}{Praktische Physik, Band 2}{Teubner-Verlag}{Stuttgart 1996}
+\buch{paus}{H.~J.~Paus}{Physik in Experimenten und Beispielen}{Verlag~C.-Hanser}{München 1995}
+\buch{wal}{W.~Walcher}{Praktikum der Physik}{Teubner-Verlag}{Stuttgart 1989}
+
+\begin{document}
+\maketitle
+
+\section{Aufgabenstellung}
+
+\begin{enumerate}
+ \item Nach der Methode von Quincke ist anhand der Schallgeschwindigkeit der Luft die
+ Frequenz $f$ zweier gegebener Stimmgabeln (Mittelwert von jeweils fünf Messreihen) zu
+ ermitteln.
+ \item Mittels Tonfrequenzgenerator, Lautsprecher und Mikrophon ist mit Hilfe stehender
+ Wellen in einem horizontalen Glasrohr (\textsc{Kundt}sches Rohr) nahe der Reflexionswand
+ die Schallgeschwindigkeit $c$ in Gasen (Luft) zu bestimmen und auf \SI0{\degC} umzurechnen.
+\end{enumerate}
+
+\section {Allgemeine Grundlagen}
+
+\subsection{Schallwellen in Luft}
+
+Eine Welle ist ein \emph{zeitlich} und \emph{räumlich periodischer}
+Vorgang. Bei elastischen Wellen werden einzelne Volumenelemente
+durch elastische Deformation aus dem Gleichgewicht (homgener
+Körper, konstante Dichte) gebracht und führen (bei
+festgehaltenem Ort $x$) harmonische Schwingungen
+(Dichteschwankungen) aus. Infolge der elastischen Kopplung
+benachbarter Volumenelemente breiten sich die Schwingungen als
+elastische longitudinale Wellen räumlich aus.\\
+Bei Luft als elastischem Medium ist die "`elastische Konstante"'
+im entsprechenden \emph{Hookeschen Gesetz} ($ \diff p = -K\cdot {\diff V}/{V}$)
+das Kompressionsmodul $K$. Dieses ist bei einem idealen Gas
+für isotherme und adiabatische Prozesse unterschiedlich, durch den Druck
+$p$ und den Adiabatenexponenten $\kappa$ gegeben:
+\[
+ K^\mathrm{iso} = - V\dquot{p^\mathrm{iso}}{V} = p \quad\text{und}\quad
+ K^\mathrm{ad} = -V \dquot{p^\mathrm{ad}}{V}=\kappa
+\]
+\emph{Periodische Druckschwankungen} oder \emph{Schall} breiten sich in Luft
+als \emph{longitudinale Dichte-Welle} mit der \emph{Phasengeschwindigkeit}
+$c = \omega/k = f \lambda$ aus, wobei
+die periodischen Druckschwankungen so schnell erfolgen, dass
+die Kompressionen \emph{adiabatisch} ablaufen.
+
+Als  periodisch veränderliche Größen, deren Schwingungsphase
+sich mit $c$ ausbreitet, können z.~B.~
+der Schall-Aussschlag $\xi(t,x)$, die -Schnelle $v_s(x,t)$
+oder der -Wechseldruck $p_w(t,x)$ betrachtet werden. Die zugehörigen Lösungen
+der ebenen
+Wellengleichungen lauten:
+\begin{align*}
+ \xi(t,x) &= \hat {\xi}\cos(\omega t - kx)\\
+ v_s(t,x) = \dquot{\xi}{t} &= \omega \hat {\xi}\cos(\omega t - kx - \pi/2)\\
+ p_w(t,x) = \rho c\cdot  v_s &= \hat p \cos(\omega t- kx - \pi/2)
+\end{align*}
+Dabei ist $\rho$ die Dichte, $c$ die Schallgeschwindigkeit und $x$ die Ausbreitungsrichtung.
+Schallschnelle und Schallwechseldruck sind in Phase \verweis{paus}, während der Schallwechseldruck
+gegenüber dem Schallausschlag eine Phasenverzögerung um $\pi/2$
+aufweist (s.~Anhang). $c$ ist temperaturabhängig (Herleitung s.~Anhang):
+\begin{subequations}
+ \begin{align}
+  c(T) &= \sqrt{\frac{\kappa p}{\rho(T)}} = \sqrt{\kappa R T}\\
+  c_\mathrm{Luft}(\vartheta) &= \kla{ 331 + \num{0,6}\frac{\vartheta}{[\SI{}K]}} \SI{}{\frac ms}
+  \label{sw002}
+ \end{align}
+\end{subequations}
+Zahlenwerte für Luft: Molare Masse $M\approx\SI{29}{g/mol}$, $\kappa\approx \num{1,4}$, $R=\frac 1M\SI{8315}{J/(kg.K)}$.
+
+Dabei ist $\vartheta$ die Temperatur in \SI{}\degC. Für den Adiabatenexponenten gilt $\kappa\approx$ \num{1,67};
+\num{1,4} bzw. \num{1,33} für ein-,~zwei-~bzw.~dreiatomige Gase.
+
+\subsection{Reflexion und stehende Schallwellen}
+
+Bei der Reflexion einer Schallwelle an einer Wand, die sich
+senkrecht zur Ausbreitungsrichtung am Ort $x=0$ befindet, ist der
+Schallwechseldruck $p_w$ maximal (Phasensprung Null) und der
+Schallausschlag Null (Phasensprung $\pi$).
+
+Die Überlagerung (Addition, Superposition, Interferenz) von
+hin-~($\xi^{+}$) und rück-~($\xi^{-}$) laufender Welle
+gleicher Frequenz und Amplitude ergibt eine \emph{stehende Welle}
+\begin{equation}
+ \begin{split}
+  \xi^{+}(t,x) &= \hat \xi \cos(\omega t - kx)\\
+  \xi^{-}(t,x) &= \hat \xi \cos(\omega t + kx - \pi)
+ \end{split}
+ \label{sw003}
+\end{equation}
+Für den Schallausschlag folgt (das Endergebnis durch Separation bezüglich $x$ und $t$, Additionstheorem):
+\begin{align}
+ \xi_\mathrm{res} &= \hat \xi \cdot \brk{\cos(\omega t - kx) + \cos(\omega t + kx - \pi)} \nonumber\\
+ &= \hat \xi\cdot \brk{\cos(\omega t - kx) - \cos(\omega t + kx)}
+ \label{sw004}\\
+ \xi_\mathrm{res} &= \brk{2\hat \xi \sin(kx)}\cdot \sin \omega t
+ = \brk{2\hat \xi\sin\kla{\frac{2\pi x}{\lambda}}}\cdot\sin \omega t
+ \label{sw005}
+\end{align}
+Gleichung~\eqref{sw005} stellt als Gleichung einer stehenden Welle eine
+\emph{Schwingung} dar, deren Amplitude mit $[2\hat \xi\sin(kx)]$
+periodisch vom Ort $x$ abhängt. Die Orte mit der Amplitude
+Null (bei $x=0$, $x = n\cdot{\lambda}/{4}$) heißen \emph{Knoten}, die
+Orte maximaler Amplitude (bei $x=(2n+1)\cdot \lambda/4$) heißen \emph{Bäuche} für den Schallausschlag. Man diskutiere die den
+Gleichungen~\eqref{sw003} bis \eqref{sw005} entsprechenden
+Beziehungen für den Schallwechseldruck $p_w$.
+
+In jedem Fall beträgt der \emph{Knotenabstand} $\lambda/2$.
+Das Erzeugen und Ausmessen stehender Wellen ist eine der
+wichtigsten Methoden zur Bestimmung von Wellenlängen.
+
+\subsection{Eigenfrequenzen im endlich ausgedehnten Medium}
+
+Zur optimalen Ausbildung stehender Wellen
+muss die Gesamtlänge des Mediums, in dem sich die Welle ausbreitet, z.~B.~die
+Luftsäule in einem Rohr, ein Vielfaches von $\lambda/4$
+betragen (z.~B.~bei Musikinstrumenten)\footnote{siehe auch Versuchsanleitung zur
+Lecherleitung}.
+Die Serie von Eigenfrequenzen bei zwei
+geschlossenen Enden \eqref{EigFgeschlossen} bzw.~einem offenen Ende \eqref{EigFhalboffen} bei einem Rohr der
+Länge $l$ ist:
+\begin{subequations}\label{sw006}
+ \begin{align}
+ f_n = \frac{c}{\lambda_n} &= \frac{nc}{2l} \label{EigFgeschlossen}\\
+ f_n = \frac{c}{\lambda_n} &= \frac{(2n+1)\cdot c}{4l} \label{EigFhalboffen}
+ \end{align}
+\end{subequations}
+
+\section{Experimente}
+
+\subsection{Erzeugung und Messung der Frequenz}
+
+Der Versuch wird in zwei Richtungen durchgeführt:
+\begin{enumerate}
+ \item Bei bekanntem $c$ ist die Frequenz nach der Methode von Quincke zu bestimmen.
+ \item Umgekehrt wird bei bekannter Frequenz die Schalgeschwindigkeit $c$ mit dem Kundtschen Rohr bestimmt.
+\end{enumerate}
+
+\subsubsection{Longitudinale Stab-Schwingung}
+
+
+Beim klassischen Kundt'schen Versuch regt man einen ~$l\approx$~\SI{1,5}m langen
+Metallstab zu Lon\-gi\-tu\-di\-nal-Schwin\-gun\-gen an, die durch eine am Stabende
+(am Schwingungsbauch) befestigte leichte Platte auf die Luftsäule
+übertragen wird.
+\piccaption{a)~Einspannmöglichkeiten eines Metallstabs der Länge $l$\newline
+b)~Kundtsches Rohr \label{fig::kundt}}
+\parpic[r]{
+ \includegraphics[width=\linewidth/5*2]{GP1-SW-Kundt}
+}
+Ist der Stab z.~B.~in der Mitte eingespannt, so beträgt seine
+Gesamtlänge $l_M = \lambda_M/2$ mit Schwingungsbäuchen an den
+Enden, bei anderen Einspannungen kann auch mit den Oberschwingungen
+gearbeitet werden, siehe~Abb.~\ref{fig::kundt}a.
+Damit gitl bei bekannter Schallgeschwindigkeit für dünne Metall-Stäbe
+$c_M = \sqrt{{E}/{\rho}}$ für Longitudinalwellen (s.~Tab.~1) für die Frequenz:
+\begin{equation}
+ f = \frac{c_M}{\lambda_M} = \frac{c_M}{2l_M}
+ \label{MetallStabFreq}
+\end{equation}
+Ein freies Ende des Stabes wird dabei mit einem mit Kollophonium getränkten
+Lappen zur laut hörbaren Grundschwingung angeregt.
+
+\subsubsection{Stimmgabel}
+
+Bei dieser Ausführung des Quincke-Versuchs werden Stimmgabeln
+definierter Frequenz benutzt. Zur Erhöhung und zeitlichen
+Konstanz der Anregungsamplitude wird ein Röhren-Schwingkreis
+benutzt, in dessen Gitterkreis eine Induktivität in der
+Nähe eines eisernen Schenkels der Stimmgabel sitzt. Die
+anfänglich kleinen Ausschläge der Stimmgabel
+übertragen sich einerseits auf die Luftsäule und
+andererseits induktiv auf den Schwingkreis, dessen
+Rückkopplungsfaktor durch ein Potentiometer eingestellt werden
+kann. Damit bleibt die Amplitude konstant.
+
+\subsubsection{Tonfrequenzgenerator}
+
+Die aufgebaute Ausführungsform basiert in Abwandlung des Kundt-Versuchs
+auf einem Lautsprecher, der
+von einem auf $\frac{\Delta f}{f}\approx \SI1\%$ genau einstellbaren
+Tonfrequenzgenerator gespeist wird und die Luftsäule vom Rohrende über eine
+Membran zu Schwingungen anregt.
+Die Spannungsamplitude sollte ca.~\SI{80}{mV} betragen.
+Die genaue Frequenz kann mit Hilfe eines Impulszählers ermittelt werden.
+
+\subsection{Messung der Wellenlänge}
+
+Alle Varianten zur Bestimmung der Wellenlänge nutzen stehende
+Wellen aus. Die Knoten sind meistens besser zu lokalisieren
+als die Bäuche. Nach Möglichkeit ist über eine größere Knotenzahl
+zu mitteln. Sollten störende Oberschwingungen mit angeregt werden,
+so muss man sich auf den gewünschten Grundton konzentrieren.
+
+\subsubsection{Original Kundt'sche Methode}
+
+Im Glasrohr, an dessen einem Ende die Schwingung vom Metallstab nach Abb.~\ref{fig::kundt}b
+auf die Luft übertragen wird, befinden sich Korkteilchen, die anfangs nach leichtem Drehen
+des Rohres gleichmäßig an der Wand des Rohres verteilt sind.
+Nach dem Einschwingen des Tones kann die Rückwand (Reflexionsstelle) etwas
+verschoben werden (Längenabstimmung), bis optimale Resonanz erreicht ist.
+Dann bleiben an den Knoten die Korkteilchen in Ruhe und lagern sich
+sichtbar ab, während
+an den Bäuchen maximale Bewegung der Korkteilchen beobachtet wird.
+
+\subsubsection{Mikrophon}
+
+Bei der im Versuch benutzten Ausführung ($f\approx 2$ bis \SI3{kHz})
+kann auf der Achse eines relativ langen Glasrohres (\SI1m) in der
+Nähe der dem Lautsprecher gegenüberliegenden
+Abschlusswand ein Mikrophon um maximal \SI{20}{cm} verschoben werden.
+Das Mikrophon spricht auf den Schallwechseldruck $p_w\sim v_s\cdot \omega$
+an. Knoten und Bäuche werden als Maxima und Minima auf
+dem Digitalvoltmeter angezeigt. In unmittelbarer Nähe der Wand
+werden nahezu unabhängig von der relativ großen und
+konstanten Gesamtlänge des Rohres immer Knoten und Bäuche
+zu beobachten sein, so daß sich eine frequenzbezogene
+Längenabstimmung erübrigt.
+
+\subsubsection{Schallgeschwindigkeit nach Quincke}
+
+\piccaption{Bestimmung der Schallgeschwindigkeit nach Quincke \label{fig::quincke}}
+\parpic[r]{
+ \includegraphics[width=\linewidth/3]{GP1-SW-Quincke}
+}
+Die Luft im vertikalen Glasrohr von ca.~\SI3{cm} Durchmesser und \SI1m Länge
+wird am oberen Ende mit der Stimmgabel zu Schwingungen angeregt. Das untere
+Rohrende ist mit Wasser, dessen Stand über verbundene Röhren (Schläuche)
+mittels eines beweglichen Vorratsgefäßes  beliebig eingestellt
+werden kann, abgeschlossen (siehe Abb.~\ref{fig::quincke}).
+An der Wasseroberfläche als feste Wand befinden sich immer Knoten
+für den Schallausschlag.
+Im Resonanzfall ist am oberen Rohrende, dessen
+ungenaue Position durch Differenzbildung eliminiert wird, ein Bauch
+und der Ton laut hörbar (Resonanz, Kombination von festem Ende auf der einen
+und losen Ende auf der anderen Seite).
+Es müssen mindestens zwei Marken für den Wasserstand, die zwei
+Resonanzstellen im Abstand $\lambda/2$ entsprechen, ausgemessen werden.
+
+\subsection{Variation des Gases}
+
+Beim Kundt'schen Rohr besteht die Möglichkeit, die Luft mit einem zweiten
+Gas herauszudrücken (oder abzupumpen) und
+ca.~\SI5{min} lang entweder \ce{CO2} oder \ce{Ar} einzulassen. Danach kann bei
+geschlossenem Rohr der Versuch mit dem neuen Gas, das sich in $\rho$
+und $\kappa$ von Luft unterscheidet, wiederholt werden.
+
+% HINWEIS: rüber in die platzanleitung
+% \subsection{Hinweise zu den Versuchen}
+
+\section{Anhang}
+
+\subsection{Die Wellengleichung für den Schallwechseldruck}
+
+Gegeben sei ein luftgefüllter Zylinder (Achse $x$, z.~B.~eine
+Trompete) vom Querschnitt $A$ mit einem lokalen Druckgefälle
+oder Druck-Gradienten $\partial p/\partial x$. Dann wirkt auf das
+Volumenelement $\Delta V = A\cdot\Delta x$ die elastische
+Rückstellkraft $\Delta F = A\cdot \Delta p = -A\cdot\Delta x\,\partial
+p/\partial x$ und die Masse $\Delta m = \rho A\cdot \Delta x$
+erfährt die Beschleunigung
+\begin{equation}
+ a_x = \dquot{v_s}{t} = -\frac{A\cdot \Delta x\,\pdquot{p}{x}}{\rho A\cdot \Delta x} = -\frac1\rho\pdquot{p}{x}
+ \label{sw01}
+\end{equation}
+Die ortsabhängige Geschwindigkeit $v_s$ bewirkt eine lokale
+Volumenänderung $\diff V = A v_s\dif t = A\cdot\Delta x\dif t\cdot (\partial
+v_s/\partial x)$, die mit dem adiabatischen Kompressionsmodul
+$K^\mathrm{ad}$ und der Druckänderung
+$\diff p = -K^\mathrm{ad}\dif V/V = -K^\mathrm{ad}\cdot ({\partial v_s}/{\partial x})\dif t$ ergibt:
+\begin{equation}
+ \dquot{p}{t} = -\dquot{v_s}{x}\,K^\mathrm{ad}
+ \label{sw03}
+\end{equation}
+Nach Ableitung von Gleichung~\eqref{sw01} nach $x$ und
+von Gleichung~\eqref{sw03} nach $t$ sowie Gleichsetzen von
+$\pdquot{}{t}\,\pdquot{v_s}{x} = \pdquot{}{x}\,\pdquot{v_s}{t}$
+folgt für den Schallwechseldruck die Wellengleichung
+
+\begin{align}
+ \pdquot[2]{p_w}{t} &= \frac{K^\mathrm{ad}}{\rho} \pdquot[2]{p}{x} \nonumber\\
+ p_w(x,t) &= \hat p\cos(\omega\ t - kx) \label{sw04}
+\end{align}
+Der Quotient ${K^\mathrm{ad}}/{\rho}$ in dieser eindimensionalen
+Wellengleichung, einer partiellen Differntial gleichung zweiter Ordnung, bestimmt
+als temperaturabhängige Materialkonstante die
+Ausbreitungsgeschwindigkeit der Phase ($c^2 = {K^\mathrm{ad}}/{\rho}$).
+Die harmonische Schallwelle breitet sich demnach mit folgender Phasengeschwindigkeit aus:
+\begin{equation}
+ c = \frac{\lambda}{T} = \frac{\omega}{k} = \sqrt{\frac{K^\mathrm{ad}}{\rho}} =
+ \sqrt{\frac{\kappa p}{\rho}} = \sqrt{\kappa\cdot RT}
+ \label{sw05}
+\end{equation}
+
+\subsection{Schallwechseldruck}
+
+Der Zusammenhang zwischen $p_w$ und $v_s$ folgt über das Newtonsche
+Grundgesetz
+\[
+ F_w = \Delta m\cdot \vec a = \rho(A\Delta x)\dquot[2]{\xi}{t} = p_w A \quad\text{und}\quad -\dquot{p_w}{x} = \rho\dquot[2]{\xi}{t} = \rho\dquot{v_s}{t}
+\]
+Integration über $x$ liefert \verweis{paus}:
+\begin{equation}
+ p_w(t) = -\rho\int\dquot{v_s}{t}\diff x = -\rho\omega^2\hat{\xi}\int \cos(\omega t - kx)\diff x
+ = -\rho\frac{\omega^2\hat{\xi}}{k}\cdot \sin(\omega t - kx) = \rho c\cdot v_s(t)
+ \label{sw0513}
+\end{equation}
+
+\subsection{Adiabatisches Kompressionsmodul}
+
+Alle benutzten Beziehungen gelten im Rahmen des Modells des idealen Gases
+mit den Zustandgleichungen
+\begin{equation}
+ pV = mRT \quad\text{und}\quad pV = nR^*T
+ \label{sw0521}
+\end{equation}
+Hierbei sind $T$~die absolute Temperatur, $p$~der Druck, $V$~das Volumen,
+$R=\frac1M\SI{8314}{J/(kg.K)}$~die spezifische Gaskonstante und
+$R^* = \SI{8,314}{J/(Mol.K}$~die allgemeine Gaskonstante.
+Für einen isothermen Prozess ist $T = \mathrm{cons.}$. Beim adiabatischen Prozess besteht
+völlige Wärmeisolation also $\delta Q = 0$ im ersten Hauptsatz:
+\begin{equation}
+ \Delta U = \delta Q + \delta W = m c_v\cdot \Delta T = \delta W = -p\cdot \Delta V
+ \label{sw0522}
+\end{equation}
+Dabei sind $U$~die innere Energie, $\delta W$~die zugeführte Arbeit, $\delta Q$~die zugeführte Wärmenergie.
+Durch Kombination der Gleichungen~\eqref{sw0521} und \eqref{sw0522} erhält man die
+Poissonschen Adiabaten-Gleichungen:
+\begin{subequations}
+ \begin{align}
+  T\cdot V^{\kappa -1} = \mathrm{const.} \\
+  p\cdot V^{\kappa} = \mathrm{const.} \label{sw0523}\\
+  \frac{T^{\kappa}}{p^{\kappa -1}} = \mathrm{const.}
+ \end{align}
+\end{subequations}
+
+Aus Gleichung~\eqref{sw0523} folgt zunächst $\diff p = -\kappa p \cdot \diff V/V$
+woraus dann mit dem Hookeschen Gesetz $-\sigma = \Delta p = - K \Delta V/V$
+schließlich $K^\mathrm{ad} = \kappa p$ folgt.
+
+\begin{table}[hb]
+ \center
+ \begin{tabular}{|c|c|c|c|}\hline
+  Beispiel &Aggregatzustand &$\vartheta$/\SI{}\degC & c/\SI{}{m/s} \\ \hline
+  Luft		& Gas 			& 20	& 343 \\
+  \ce{H2}	& Gas 			& 0		& 1261\\
+  \ce{H2O}	& flüssig 		& 25	& 1493\\
+  Methanol	& flüssig 		& 25	& 1261\\
+  Stahl		& Festkörper	& 10	& 4880\\
+  Kupfer	& Festkörper	& 10	& 3666\\
+  Messing	& Festkörper	&		& 3479\\\hline
+ \end{tabular}
+ \caption{Longitudinale Schallgeschwindigkeiten}
+\end{table}
+
+\frage{Was versteht man unter einer harmonischen Schwingung, einer
+ebenen Welle und einer stehenden Welle? (Mathematische Beschreibung)}
+\frage{Wie groß ist die Phasengeschwindigkeit
+einer Schallwelle in Luft? Wie ändert sich bei einer
+fortlaufenden akustischen Welle die Phase des Schallausschlages
+und des Schallwechselduckes mit $x$ und $t$?}
+\frage{Wie unterscheiden sich isothermes und adiabatisches Kompressionsmodul
+und die damit berechneten Schallgeschwindigkeiten für ein
+ideales Gas?}
+\frage{Was bedeutet Reflexion einer ebenen
+Schallwellle an einer Wand? Wie enstehen stehende Wellen? Wie
+groß ist der Knotenabstand?}
+\frage{Man zeige durch zweimaliges
+partielles Differenzieren von Gl.~(\ref{sw04}b), dass dieser
+Ausdruck eine Lösung von Gl.~(\ref{sw04}a) ist.}
+\frage{Was versteht man unter der Wellenzahl, der Wellenlänge und der
+Frequenz einer harmonischen Welle? Wie hängen sie zusammen?
+Wovon hängt die Schallgeschwindigkeit ab?}
+\frage{Wie unterscheiden sich Longitudinal-und Transversal-Wellen? Wovon
+hängen die Phasengeschwindigkeiten akustischer
+Longitudinal- und Transversalwellen ab?}
+\frage{Was ist ein adiabatischer Prozess? Was versteht man unter dem
+Adiabatenexponent?}
+\frage{Wie unterscheiden sich Schallgeschwindigkeit und Schallschnelle?}
+\frage{Nennen Sie Methoden zur Bestimmung der Phasengeschwindigkeit von Wellen.}
+\frage{Beschreiben Sie die Reflexion einer Seilwelle und einer
+Schallwelle an einer festen Wand.}
+\frage{Nennen sie Indikatoren für den Schallwechseldruck und den Schallausschlag.}
+\frage{Beschreiben Sie die Methode zur Bestimmung von $c$ nach Quincke.}
+\frage{Beschreiben Sie die Methode zur Bestimmung von $c$ nach Kundt.}
+\frage{Man bestätige die Gl.~(\ref{sw002}~b).}
+
+\end{document}

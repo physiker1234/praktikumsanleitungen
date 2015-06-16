@@ -1,0 +1,96 @@
+\documentclass[platz]{tudphygp}
+\usepackage{tudphymd,booktabs,boxedminipage}
+
+\versuch{Innere Reibung von Flüssigkeiten}{RF}
+\author{Dr. Schwab, Dr. Escher}
+
+%\forceitem soll sich wie \item verhalten, nur ohne itemize drum herum
+\newlength\itempos
+\newcommand\forceitem[1][\labelitemi]{
+ \setlength\itempos{\labelsep} %eigentlich über \itemindent-\labelsep zu berechen, aber \itemindent = 0pt
+ \hspace*{\itempos}#1\hspace*{\labelsep}
+}
+
+\begin{document}
+
+\maketitle
+
+\subsection*{Aufgabenstellung}
+
+\begin{enumerate}
+ \item Bestimmen Sie die Abhängigkeit der Zähigkeit $\eta$ des Ethanols von der Temperatur $T$. Dazu sind für fünf verschiedene Temperaturen zwischen Raumtemperatur und \SI{50}{\degC} je zwei Messungen durchzuführen.
+ \item Geben Sie die Koeffizienten $A$ und $b$ der \emph{Andradeschen Gleichung}
+ \item \emph{(Für Physikstudenten)} Geben Sie die Standardabweichungen der Andradeschen Koeffizienten an. Berechnen Sie die \emph{Reynoldssche Zahl} $Re$ für die höchste Temperatur.
+ \item Bestimmen Sie aus der grafischen Darstellung des natürlichen Logarithmus der Viskosität ($\ln \eta$) über dem Reziproken der Temperatur ($1/T$) den Maximalfehler des Anstiegs ($\Delta b$). Tragen Sie dazu die Fehlerflächen der Messwerte sowie die Geraden minimalen und maximalen Anstiegs in die grafische Darstellung ein.
+ \item \emph{(Für Physikstudenten)} Überprüfen Sie anhand der berechneten \emph{Reynoldsschen Zahl}\footnote {O.~Reynolds 1842-1912}, ob die Strömung laminar war.
+ \item Diskutieren Sie den Einfluss der fehlerhaften Größen auf den Fehler von $b$.
+\end{enumerate}
+
+
+\subsection*{Hinweise zur Versuchsdurchführung}
+
+\begin{enumerate}
+ \item Die Viskosität bestimmen Sie aus den Messdaten des \emph{Höppler-Viskosimeters} nach:
+ \begin{refequation}{8}
+  \eta = K \cdot (\rho_k - \rho_f)\cdot g\,t
+  \label{rf07}
+ \end{refequation}%
+ %TODO: Gibt es überhaupt einen Versuchspaltz mit diesem Gerät?
+ \item Beim Viskosimeter nach \emph{Ubbelohde} gilt:
+ \begin{refequation}{10}
+  \eta = C\,\rho_f\,g\cdot (t - t_k) \label{rf09}
+ \end{refequation}%
+ \item Die \emph{Andradesche Gleichung} für die Temperaturabhängigkeit der Viskosität lautet:
+ \begin{refequation}{2}
+  \eta(T)=A\cdot \mathrm{e}^{\frac{b}{T}}
+ \label{rf02}
+ \end{refequation}%
+ \item Die \emph{Reynoldssche Zahl} bestimmen Sie mit:
+ \begin{refequation}{11}
+  Re = \frac{\rho\cdot v\cdot l^*}{\eta}
+  \label{rf10}
+ \end{refequation}%
+ Dabei gilt für die Kugel beim Viskosimeter nach \emph{Höppler} $l^* = 2R$, der kritische (nicht zu überschreitende) Wert ist $ Re_\mathrm{krit} \approx 1000$. Für die Anordnung beim Viskosimeter nach \emph{Ubbelohde}  gilt $l^* = d$, der kritische Werte beträgt $Re_\mathrm{krit}\approx 2200$.
+\end{enumerate}
+
+\newpage
+\subsection*{Geräte- und Umgebungsparameter}
+
+Der analytische Ausdruck für die Dichte des Ethanols in Abhängigkeit von der Temperatur lautet:
+\[
+ \rho(\vartheta) = \kla{\num{-8e-4}\cdot \frac\vartheta{\SI{}{\degC}} + \num{,8063} }\cdot \SI{}{g.cm^{-3}}
+\]
+
+\begin{table}[h!t]
+ \begin{boxedminipage}{\linewidth} \centering
+  \begin{tabular}{ccccc}
+   Messplatz & $V$ / [\SI{}{cm^3}] & $r$ / [\SI{}{mm}] & $K$ / [\SI{}{mm^2.s^{-2}}] & $t_k$ \\ \toprule
+   a         & \num{5,73}        & \num{0,7}       & \num{0,1005}                         & $\num{227,4} \; \SI{}{s^3} / t^2$ \\
+   b         & \num{5,73}        & \num{0,7}       & \num{0,09982}                        & $\num{227,4} \; \SI{}{s^3} / t^2$
+  \end{tabular}
+  \caption{Konstanten und Geräteparameter für die Viskosimeter nach \emph{Ubbelohde}\newline
+          Korrekturzeiten in Abhängigkeit von der Messzeit \newline
+          $K = C \cdot g$ \newline
+          $r$ = Radius des Rohres
+         }
+ \end{boxedminipage}
+\end{table}
+
+\begin{table}[h!t]
+ \begin{boxedminipage}{\linewidth} \centering
+  \begin{tabular}{c|cc|cc|cc}
+   Messplatz & $K_\text{vorwärts}$ / & $K_\text{rückwärts}$ / & $\rho_k$ /         & $\Delta \rho_k$ /  & $d$ /       & $\Delta d$ / \\
+             & [\SI{}m]              & [\SI{}m]               & [\SI{}{g.cm^{-3}}] & [\SI{}{g.cm^{-3}}] & [\SI{}{mm}] & [\SI{}{mm}]  \\\toprule
+   c         & \num{0,00937e-7}      & \num{0,00923e-7}       & \num{2,4}          & \num{0,01}         & \num{15,81} & \num{0,01}   \\
+   d         & \num{0,01123e-7}      & \num{0,01113e-7}       & \num{2,41}         & \num{0,01}         & \num{15,80} & \num{0,01}
+  \end{tabular}
+  \caption{Konstanten und Geräteparameter für die Viskosimeter nach \emph{Höppler}\newline
+          Stellung des Viskosimeters: \newline
+          \forceitem $K_\text{vorwärts}$ = Zuleitung zum Thermostat ist \emph{unten}; \newline
+          \forceitem $K_\text{rückwärts}$ = Zuleitung zum Thermostat ist \emph{oben}; \newline
+          $d$ = Kugeldurchmesser (Typ 1G-1)
+         }
+ \end{boxedminipage}
+\end{table}
+
+\end{document}

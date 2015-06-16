@@ -1,0 +1,304 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd}
+
+\versuch{Umwandlungsenergien}{UE}
+%TODO: mehr als zwei Autoren verursachen Fehler
+\author{U.~Escher,A.~Sadovsky}%,P.~Tetzel}
+\date{01.03.2004}
+\bearbeitet{M. Kreller,J.~Kelling,F.~Lemke,S.~Majewsky,i.~A.~Dr.~Escher}{}
+
+\buch{gert}{C.~Gerthsen, H.~Vogel}{Physik}{Springer-Verlag}{Berlin, Heidelberg 1995}
+\buch{rec}{A.~Recknagel}{Physik: Schwingungen, Wellen, Wärmelehre}{Technik-Verlag}{Berlin 1990}
+\buch{kohl}{F.~Kohlrausch}{Praktische Physik, Band 1/3}{Teubner-Verlag}{Stuttgart 1996}
+\buch{nied}{H.~Niedrig}{Physik}{Springer-Verlag}{Berlin, Heidelberg 1992}
+\buch{walch}{W.~Walcher}{Praktikum der Physik}{Teubner-Verlag}{Stuttgart 1989}
+\buch{paus}{H.~J.~Paus}{Physik in Experimenten und Beispielen}{Verlag~C.-Hanser}{München 1995}
+\buch{joos}{G.~Joos, B.~Fricke}{Lehrbuch der theoretischen Physik}{Aula-Verlag}{Wiesbaden 1989}
+\buch{il}{W.~Ilberg (Hrsg.), M.~Krötzsch (Hrsg.) et.~al.}{Physikalisches Praktikum für Anfänger}{Teubner-Verlag}{Leipzig 1994}
+\buch{dan}{J.~d'Ans (Hrsg.), E.~Lax (Hrsg.)}{Taschenbuch für Chemiker und Physiker}{Springer-Verlag}{Berlin, Heidelberg 1967}
+
+\begin{document}
+\maketitle
+
+\section{Aufgabenstellung}
+\begin{enumerate}
+ \item Die Wärmekapazität eines Kalorimeters ist nach der Mischungsmethode zu bestimmen.
+ \item Es sind die innere Verdampfungsenthalpie einer Flüssigkeit und
+ \item die Schmelzenthalpie von Eis zu bestimmen.
+\end{enumerate}
+
+\section{Allgemeine Grundlagen}
+
+\subsection{Phasenumwandlungen}
+
+\subsubsection{Verdampfen}
+
+Der flüssige und dampfförmige Zustand eines Stoffes sind zwei Phasen, die gleichzeitig existieren können und die sich beim Sättigungsdampfdruck
+im thermodynamischen Gleichgewicht befinden. Bei konstanter Temperatur tritt die gleiche Anzahl von Molekülen aus der Flüssigkeit aus wie auch wieder ein. Bei einer Temperaturerhöhung können mehr Moleküle die zum Verdampfen notwendige (Verdampfungs-) Energie aufbringen. Die
+Wahrscheinlichkeit, daß ein Molekül verdampft ist, genügt der Boltzmann-Statistik. Dies hat eine exponentiell mit $T$ ansteigende Dampfdruck-Kurve zur Folge (s.~Abb.~\ref{fig::kurven}):
+\begin{equation}
+ p_d(T)\approx n_\mathrm{fl} \cdot kT \cdot \exp\kla{-\frac{mq_v}{N\cdot kT}}
+ \label{ue0}
+\end{equation}
+\begin{figure}[ht]\centering
+ \begin{minipage}[c]{\linewidth/3}\includegraphics[width=\linewidth-1ex]{GP1-UE-Dampfdruck}\end{minipage}
+ \begin{minipage}[c]{\linewidth/3}\includegraphics[width=\linewidth-1ex]{GP1-UE-Tripelpunkt}\end{minipage}
+ \caption{Wasser: Dampfdruck-Kurve (a); Sublimations- und Schmelzdruck sowie Tripelpunkt (b) \verweis{gert} \label{fig::kurven}}
+\end{figure}
+
+Zwischen der Steigung der Dampfdruck-Kurve und der Verdampfungswärme (besser: Verdampfungs\textit{enthalpie}) $q_v$
+(bzw. entsprechend beim Schmelzen, $q_s$)
+vermittelt die Gleichung von Clausius-Clapeyron einen Zusammenhang:
+\begin{equation}
+ q_v = T \dquot{p_d}T \cdot (v_d - v_\mathrm{fl})
+ \quad\text{bzw.}\quad
+ q_s = T \dquot{p_s}T \cdot (v_\mathrm{fl} - v_\mathrm{fest})
+ \label{ue00}
+\end{equation}
+Dabei sind $v_d$, $v_\mathrm{fl}$ und $v_\mathrm{fest}$ die spezifischen Volumina der drei Aggregatzustände, $p_d$ der Dampfdruck und $p_s$ der Schmelzdruck.
+
+\subsubsection{Schmelzen}
+
+Bei der Schmelztemperatur sind Festkörper und Flüssigkeit im thermodynamischen Gleichgewicht. Die spezifische Schmelzenthalpie $q_s$ ist immer positiv. Das Vorzeichen des Anstiegs der Schmelzdruck-Kurve $p_s(T)$ hängt damit vom Vorzeichen von $v_\mathrm{fl} - v_\mathrm{fest}$ ab. Für Eis und wenige andere Stoffe (\mol{Ge},~\mol{Ga},~\mol{Bi}) ist $v_\mathrm{fl} - v_\mathrm{fest}$ negativ (die Dichte von Eis ist geringer als die von Wasser). Beim Tripelpunkt (Wasser: $p=\SI{6,1}{mBar}$ und $T=\SI{,0075}{\degC}$) besteht ein Gleichgewicht zwischen Festkörper, Flüssigkeit und Dampf. In ihm vereinigen sich Sublimationsdruck-, Dampfdruck- und Schmelzdruck-Kurve.
+
+\subsection{Spezifische Wärmekapazität und Umwandlungsenthalpie}
+
+Die einem Körper der Masse $m$ zugeführte Wärmeenergie $\Delta Q$ erzeugt entweder eine Temperaturerhöhung $\Delta T$, die der spezifischen Wärmekapazität $c$ umgekehrt proportional ist
+\begin{equation}
+ \Delta Q = m\cdot c \cdot \Delta T
+ \label{ue1}
+\end{equation}
+oder sie bewirkt bei konstanter Temperatur (im Idealfall adiabatisch; z.~B. bei der Schmelz- oder der Siedetemperatur) eine Änderung des Aggregatzustandes (oder allgemeiner eine Struktur- oder Phasenumwandlung), z.~B. den Übergang vom festen zum flüssigen oder vom flüssigen zum gasförmigen Zustand mit den Energiebilanzen:
+\begin{subequations}
+ \begin{eqnarray}
+  \Delta Q_s = m\cdot q_s \label{ue2a} \\
+  \text{bzw.}\quad
+  \Delta Q_v = m\cdot q_v \label{ue2b}
+ \end{eqnarray}
+\end{subequations}
+
+\piccaption{Schema des Aufheizens von Eis (bzw. Wasser) im idealen Kalorimeter \label{fig::Waermezufuhr}}
+\parpic[r]{
+ \includegraphics[width=7cm]{GP1-UE-Waermezufuhr}
+}
+
+Erwärmt man z.~B. eine vorgegebene Masse reinen Wassers bei konstantem Druck in einem idealen Kalorimeter, beginnend bei minus \SI{10}{\degC}, durch zeitlich konstante Zufuhr an Wärmeenergie, so ändert sich die Temperatur im Eis (bzw.~später im Wasser) entsprechend Abb.~\ref{fig::Waermezufuhr}.
+
+Hierbei sind die zwei ansteigenden Kurvenabschnitte der Gleichung~(\ref{ue1}) und die zwei horizontalen den Gleichungen~(\ref{ue2a}) und (\ref{ue2b}) zuzuordnen. Die Zeitdifferenz $t_2-t_1$ ist proportional zu $q_s$. Die Schmelz- und Siedetemperaturen ($T_s$ und $T_{si}$) sind
+druckabhängig (wie?).
+
+Die Kalorimetrie beruht auf dem ersten Hauptsatz der Wärmelehre. Es werden Differenzen der inneren Energie (besser: Enthalpie) zwischen zwei Zuständen eines Systems bestimmt. Man unterscheidet zwischen Kalorimetern konstanter Masse und Strömungskalorimetern\footnote{Strömungskalorimeter werden hier nicht betrachtet.} \verweis{kohl}
+
+\subsection{Aufheizen bzw. Abkühlen im realen Kalorimeter}
+
+Ein reales Kalorimeter konstanter Masse besitzt einerseits eine endliche Wärmekapazität $C$ und gibt andererseits infolge nicht idealer Wärmeisolation durch (Konvektion, Wärmestrahlung und) Wärmeleitung ($I_w^{(2)} = -\frac{\lambda A}l \cdot (T-T_u) = -k \cdot (T-T_u)$) an die Umgebung der Temperatur $T_u$ Wärme-Energie ab. Dabei ist der Energie-Verlust $I_w^{(1)}$ gleich dem Wärmestrom $I_w^{(2)}$. Mit $T' = T-T_u$ gilt:
+\begin{eqnarray*}
+ \left.\begin{array}{c}
+  I_w^{(1)} = \dquot Qt = (mc + C) \cdot \dquot{(T-T_u)}t
+  I_w^{(2)} = -k \cdot (T-T_u) \\
+ \end{array}\right\}
+ \quad\Rightarrow\quad
+ \dquot{T'}t = -\frac k{mc + C} \cdot T'
+\end{eqnarray*}
+Aus dieser Differentialgleichung erster Ordnung folgt das \textbf{Newtonsche Abkühlungsgesetz}:\footnote{Die Geschwindigkeit des Ausgleichsvorgangs wird also durch den Quotienten $\frac{k}{mc + C}$ (Wärmeleitfähigkeit \verweis{joos}) bestimmt, den man bei guten Kalorimetern bei geringer Wärmekapazität $mc + C$ (Empfindlichkeit) durch sehr gering gehaltene $k$-Werte möglichst klein halten will. In sogenannten isoperibolen Kalorimetern bildet der Wärmeübergang zur Umgebung hingegen die wesentliche Messgröße. \verweis{kohl}}
+\begin{equation}
+ \boxed{
+  T - T_u = (T_0 - T_u) \cdot \exp\kla{-\frac k{mc + C}\cdot t}
+ } \label{newt}
+\end{equation}
+Für geringe Temperaturdifferenzen kann das Newtonsche Abkühlungsgesetz in differentieller Form benutzt oder linearisiert werden:
+\[
+ T - T_u = (T_0 - T_u) \cdot \kla{1 - \frac k{mc + C} \cdot t}
+\]
+wonach die Temperatur im Kalorimeter (ohne zu- oder abgeführte Prozesswärme) näherungsweise linear mit der Zeit ab- bzw. zunimmt.
+
+\section{Experimente}
+
+\subsection{Bestimmung von $C$ nach der Mischungsmethode}
+
+\piccaption{Kalorimeter ohne (a) und mit (b) Kondensationsspirale \label{fig::Kalorimeter}}
+\parpic[r]{
+ \includegraphics[scale=0.8]{GP1-UE-Kalorimeter}
+}
+
+Zunächst wird die Leermasse des Kalorimetergefäßes einschließlich Deckel, Rührer, Thermometer und bei nachfolgender Bestimmung der Kondensationswärme zusätzlich auch der Kondensationsspirale (s.~Abb.~\ref{fig::Kalorimeter}) ermittelt. Anschließend wird das Kalorimetergefäß mit kaltem Wasser gefüllt. Aus einer Wägung des gefüllten Gefäßes kann die Masse $m_{w,1}$ des Wassers ermittelt werden. Nach einigen Minuten haben sich die Temperaturen von Gefäß und Wasser ausgeglichen und $T_{1}$ kann gemessen werden.
+
+Nach Hinzufügen einigen heißen Wassers der Temperatur $T_2$ und einigem Rühren wird die Mischungstemperatur $T_M$ gemessen. Durch nochmaliges Wägen des Gesamtgefäßes lässt sich die Masse des hinzugefügten heißen Wassers $m_{w,2}$ berechnen. Die gesuchte Wärmekapazität $C$ des Kalorimeters ergibt sich aus der Bilanzgleichung:
+\picskip0\vspace{-1em}
+\begin{equation}
+ (m_{w,1} c_w + C) \cdot (T_1 - T_M) = m_{w,2} c_w \cdot (T_M - T_2)
+ \label{ue4}
+\end{equation}
+
+\newpage %Das nächste parpic passt nicht mehr auf die aktuelle Seite, also sorgen wir dafür, dass auch die Überschrift erst dort erscheint.
+
+\subsection{Bestimmung der Schmelzenthalpie von Eis}
+
+\piccaption{Kalorimeter zur Bestimmung der Schmelzwärme \label{fig::KalorimeterEinsatz}}
+\parpic[r]{
+ \includegraphics[width=\linewidth/4]{GP1-UE-KalorimeterEinsatz}
+}
+
+Vor Beginn des Experimentes ist zu gewährleisten, dass die zur Messung verwendeten Eiswürfel auf eine Temperatur von $T_s = \SI0{\degC}$ gebracht wurden. Hierzu wird das Eis in ein isoliertes Wassergefäß $(T \approx \SI5{\degC})$ gebracht, ein Teil davon in einen speziellen Einsatz
+(s~Abb.~\ref{fig::KalorimeterEinsatz}).
+
+In das Kalorimetergefäß, welches zuvor mit Wasser (Masse $m_w$) bei Raumtemperatur $T_1$ gefüllt und anschließend gewogen wurde, werden nun ca. \SI{50}g trockene Eiswürfel gegeben und der Temperatur-Zeit-Verlauf der Abkühlung registriert. Die Eismasse $m_\mathrm{Eis}$ ergibt sich aus
+einer abschließenden Wägung des gesamten Gefäßes. Die spezifische Schmelzwärme für Eis ergibt sich dann aus der Wärmebilanz:
+\begin{equation}
+ (m_w c_w + C) \cdot (T_1 - T_M) = m_\mathrm{Eis} \cdot q_s + m_\mathrm{Eis} c_w \cdot (T_M - T_s)
+ \label{ue5}
+\end{equation}
+
+\picskip0
+\vspace{-2.5em}
+
+\subsection{Verdampfungs- oder Kondensationsenthalpie}
+
+\piccaption{Bestimmung der Verdampfungswärme \label{fig::Verdampfung}}
+\parpic[r]{
+ \includegraphics[width=.39\linewidth]{GP1-UE-Verdampfung}
+}
+
+Das Kalorimetergefäß, welches die gläserne Kon\-den\-sa\-tions\-spi\-rale enthält, wird mit Wasser von Raumtemperatur gefüllt. Die im Verdampferkolben befindliche Flüssigkeit etwa \num{100} bis \SI{150}{ml} wird zum Sieden gebracht (Siedetemperatur $T_\mathrm{si}$). Nach Ausbildung sta\-tio\-nä\-rer Verhältnisse im Ver\-bin\-dungs\-rohr zum Kalorimetergefäß wird die Verbindung zur Kondensationsspirale hergestellt (s.~Abb.~\ref{fig::Verdampfung}) und im Verlauf einiger Minuten Kondensat angesammelt. Nach Abtrennen der Verbindung zum Verdampfer und Abwarten des Temperaturausgleichs wird die Endtemperatur $T_M$ im Inneren des Kalorimetergefäßes registriert, die Masse des Kondensats $m_D$ ergibt sich in Analogie zu den oben beschriebenen Messabläufen aus mehreren Wägungen durch Differenzbildung. Die spezifische Kondensationswärme ergibt
+sich aus der Beziehung:
+\picskip0\vspace{-0.5em}
+\begin{equation}
+ m_{D}\cdot q_{v,a} + m_D \, c_w\cdot (T_\mathrm{si}-T_M) =
+ (c_w \cdot m_{w} + C)\cdot (T_M - T_1)
+ \label{ue6}
+\end{equation}
+Die damit bestimmte Größe $q_{v,a}$ setzt sich aus zwei Anteilen zusammen: Zum Trennen der Moleküle muss nur die innere Verdampfenthalpie $q_{v,i}$ aufgebracht werden. Die verbleibende geringe Differenz, die Verdrängungsarbeit des Dampfes gegen den äußeren Luftdruck $p_L$, berechnet sich
+über $p_L \cdot v_d = R'\cdot T$ zu:
+\begin{equation}
+ q_{v,i} = q_{v,a} - p_L \cdot (v_d - v_\mathrm{fl}) \approx q_{v,a} - p_L\cdot v_d = q_{v,a} - R' \cdot T \approx q_{v,a} - R'\cdot T_\mathrm{si}
+ \label{ue7}
+\end{equation}
+Dabei ist $R' = R/M$ die spezifische Gaskonstante, die sich aus der universellen Gaskonstante $R=\SI{8,315}{J/(mol.K)}$ sowie der molaren Masse $M = \SI{18}{g/mol}$ der Flüssigkeit zusammensetzt.
+
+\newpage
+\section{Anhang}
+
+\subsection{Gleichheit der Flächen}
+
+Es geht um die Berechnung der vom Kalorimeter aufgenommenen (oder abgegebenen) Wärmeenergie, z.B.~der linken Seite von Gleichung~(\ref{ue6}), worin ohne Korrektur die Temperaturdifferenz verfälscht ist. Diese Korrektur gelingt bei Berücksichtigung der an die Umgebung mit der Temperatur $T_u$ während der endlichen Mischungszeit abgeleiteten Wärmenenergie $Q^u$, die sich mit der Konstanten für die Kalorimeterverluste $k$ entsprechend Gleichung~(\ref{newt}) berechnet. Es werden zwei Abkühlungskurven (s.~Abb.~\ref{fig::AbkKurven}) verglichen:
+
+\begin{enumerate}
+ \piccaption{Abkühlungskurven \label{fig::AbkKurven}}
+ \parpic[r]{
+  \includegraphics[width=\linewidth/5*2]{GP1-UE-AbkKurven}
+ }
+ \item Ohne Mischungsvorgang würde die Kurve $T_1(t)$ von A über B und D nach F verlaufen und die dabei nach außen abgegebene Wärmeenergie wäre
+ nach (\ref{newt}):
+ \begin{equation}
+  Q_1^u = k\cdot \int_0^{\infty}(T_1 - T_u) \dif t
+  \label{w1}
+ \end{equation}
+ \item Beim Mischungsexperiment läuft die Kurve von A über B und E nach F und die dabei an die Umgebung abgegebene Wärme ist:
+ \begin{equation}
+  Q_m^u = k\cdot \int_0^{\infty} (T_m - T_u) \dif t
+  \label{w2}
+ \end{equation}
+\end{enumerate}
+
+Die Differenz beider Beträge der Wärmeenergie
+\begin{equation}
+ Q_1^u - Q_m^u = k\cdot \int_0^{\infty} (T_1 - T_m) \dif t \label{w3}
+\end{equation}
+stellt als Fläche die zu messende Wärmemenge, also die linke Seite von (\ref{ue4}), dar. Sie muss unabhängig von der Zeitdauer des Ausgleichs $\Delta t$ sein, also auch für den Idealfall $\Delta t\to 0$ (Verlauf über die Punkte A, B, C, D und E) gelten. Damit ist zu fordern, dass die Flächen (Integrale), die zu den Kurven A-B-E und A-B-C-D-E gehören, identisch sind. Das bedeutet aber, daß die schraffierten Flächen in Abb.~\ref{fig::AbkKurven} gleich sein müssen.
+
+\subsection{Herleitung der Clausius-Clapeyronschen Gleichung}
+
+\piccaption{Kreisprozess mit verdampfender Flüssigkeit \label{fig::Kreisprozess}}
+\parpic[r]{
+ \includegraphics[width=\linewidth/3]{GP1-UE-Kreisprozess}
+}
+
+Man betrachtet einen Kreisprozess mit einer Flüssigkeit, die bei der Temperatur $T + \diff T$ verdampft, wobei gegen den Dampfdruck $p_d + \diff p$ die Arbeit $W_1= (p_d + \diff p) \cdot (V_d - V_\mathrm{fl})$ aufzubringen ist (Punkt 1 zu Punkt 2). Nach adiabatischer Entspannung (zu Punkt 3) wird die Temperatur $T$ erreicht und der Dampf (bzw. dann das Dampf-Flüssigkeits-Gemisch) beim Druck $p_d$ komprimiert, bis alles verflüssigt ist (Punkt 4), wobei die Arbeit $W_2 = p_d\cdot (V_d - V_\mathrm{fl})$ gewonnen wurde. Danach wird durch geringfügige Temperatur- und Druckerhöhung wieder Punkt 1 erreicht.
+
+Bezüglich der Energiebeiträge entfallen die Übergänge $2\to3$ und $4\to1$ im Grenzfall $\diff T \to 0$, sodass die zugeführte Verdampfungswärme $Q_v$ mit dem Wirkungsgrad des Carnot-Prozesses ($\eta_C = \frac{\diff T}T$) teilweise in die Arbeit $\Delta W = W_1 - W_2 = \diff p_d\cdot (V_d - V_\mathrm{fl})$ umgewandelt wurde:
+\begin{equation}
+ \eta_C = \frac{\Delta W}{Q_v} = \frac{\diff p_d\cdot (V_d - V_\mathrm{fl})}{Q_v}=\frac{\diff T}{T}
+ \label{ue12}
+\end{equation}
+Nach Umstellung der rechten Seite sowie nach Übergang zur spezifischen Verdampfungsenthalpie $q_v = Q_v/m$ und den spezifischen Volunima $v_d = V_d/m$ und $v_\mathrm{fl} = V_\mathrm{fl}/m$ folgt die Gleichung~(\ref{ue00}).
+
+\begin{table}[t]\centering
+ \begin{tabular}{|c|c|}
+  \hline
+   T / \SI{}\degC & c / \SI{}{kJ.kg^{-1}} \\
+  \hline
+   \num{0}        & \num{2525}            \\
+   \num{100}      & \num{2249}            \\
+   \num{170}      & \num{2015}            \\
+   \num{264}      & \num{614}             \\
+   \num{374}      & \num{0}               \\
+  \hline
+ \end{tabular}
+ \caption{Spezifische Wärmekapazitäten von Wasser (\SI{374}{\degC} ist dessen kritische Temperatur) \label{tab::WK}}
+\end{table}
+
+Die Gleichungen (\ref{ue00}) und (\ref{w3}) enthalten auch näherungsweise die Temperaturabhängigkeit von $Q_{v,i}$ (siehe experimentelle Werte für \mol{H_2O} in Tabelle \ref{tab::WK}). Aus der Clausius-Clapeyronschen Gleichung lässt sich auch der wesentliche Verlauf der Dampfdruck-Kurve weit unterhalb der kritischen Temperatur abschätzen. Dazu multiplizieren wir (\ref{ue00}) mit $m$ und beachten $p \cdot V_d = R \cdot T$:
+\[
+ Q_v \approx T \cdot \dquot{p_d}T \cdot (V_d - V_\mathrm{fl}) = T \cdot \dquot{p_d}T \cdot \frac{R \cdot T}{p_d}
+\]
+Hieraus folgt eine Differentialgleichung für die Dampfdruck-Kurve $p_d(T)$:
+\[
+ \frac{\diff p_d}{p_d} \approx \frac{Q_v}{R \cdot T^2} \cdot \diff T
+ \quad\Rightarrow\quad p_d \sim \exp\kla{-\frac{Q_v}{R \cdot T}}
+\]
+
+\subsection{Versuchsbedingungen, thermodynamische Potentiale}
+
+Man muss unterscheiden, ob der betreffende Prozess (z.~B. eine Phasenumwandlung) bei konstantem Druck (isobar), konstantem Volumen (isochor), konstanter Temperatur (isotherm) oder konstanter Wärme (adiabatisch) durchgeführt wird. Allgemein ist je nach den Versuchsbedingungen das thermodynamische Gleichgewicht gegeben durch das Minimum der entsprechenden Energiegröße (siehe Tabelle \ref{tab::TP}), wobei -- Bezug nehmend auf die innere Energie $U$ -- differentiell kleine Änderungen in der Nähe des Gleichgewichtes betrachtet werden.
+
+\begin{table}[b]\centering
+ \begin{tabular}{|c|c|c|c|}
+  \hline
+   \textbf{Bedingungen}       & \textbf{Größe}  & \textbf{Integrale Form} & \textbf{Differientelle Form}                   \\
+  \hline
+   $Q^*, V = \mathrm{const.}$ & innere Energie  & $U$                     & $\diff U = T \cdot \diff S - p \cdot \diff V$  \\
+   $Q^*, p = \mathrm{const.}$ & Enthalpie       & $H = U + pV$            & $\diff H = T \cdot \diff S + V \cdot \diff p$  \\
+   $V, T = \mathrm{const.}$   & freie Energie   & $F = U - TS$            & $\diff F = -S \cdot \diff T - p \cdot \diff V$ \\
+   $p, T = \mathrm{const.}$   & freie Enthalpie & $G = U - TS + pV$       & $\diff G = -S \cdot \diff T + V \cdot \diff p$ \\
+  \hline
+ \end{tabular}
+ \caption{Thermodynamische Potentiale für verschiedene Versuchsbedingungen \label{tab::TP}}
+\end{table}
+
+Daher muss -- streng genommen -- bei konstantem Luftdruck und (auf den Idealfall korrigiert) adiabatischen Bedingungen von Umwandlungs\textit{enthalpien} gesprochen werden. Im Rahmen des Praktikums genügt auch der Begriff "`Umwandlungswärme"' (Enthalpie = Erwärmung).
+
+\begin{table}[h!t]
+ \centering
+ \begin{tabular}{|c|c|c|c|c|}
+  \cline{1-2}\cline{4-5}
+   \multicolumn2{|c|}{Wasser (\mol{H_2O})}             & \qquad & \multicolumn2{c|}{Ethanol (\mol{C_2H_5OH})}         \\
+  \cline{1-2}\cline{4-5}
+   \textbf{Temperatur} $T$ & \textbf{Dampfdruck} $p_d$ &        & \textbf{Temperatur} $T$ & \textbf{Dampfdruck} $p_d$ \\
+  \cline{1-2}\cline{4-5}
+   \SI{98,5}\degC          & \SI{960,2}{mbar}          &        & \SI{76}\degC            & \SI{926}{mbar}            \\
+   \SI{99,0}\degC          & \SI{977,6}{mbar}          &        & \SI{77}\degC            & \SI{963}{mbar}            \\
+   \SI{99,5}\degC          & \SI{995,3}{mbar}          &        & \SI{78}\degC            & \SI{1003}{mbar}           \\
+   \SI{100,0}\degC         & \SI{1013,2}{mbar}         &        & \SI{78,4}\degC          & \SI{1013,2}{mbar}         \\
+   \SI{100,5}\degC         & \SI{1031,5}{mbar}         &        & \SI{79}\degC            & \SI{1043}{mbar}           \\
+   \SI{101,0}\degC         & \SI{1049,9}{mbar}         &        & \SI{80}\degC            & \SI{1088}{mbar}           \\
+  \cline{1-2}\cline{4-5}
+ \end{tabular}
+ \caption{Auszüge aus Dampfdruck-Kurven \verweis{kohl}\verweis{dan}}
+\end{table}
+
+\frage{Wovon hängt der Dampfdruck einer Flüssigkeit ab?}
+\frage{Was ist die kritische Temperatur in Bezug auf die Dampfdruck-Kurve?}
+\frage{Welche Arten der Wärmeübertragung führen zum Temperaturausgleich beim realen Kalorimeter mit konstanter Masse? Wie gelingt gute Wärmeisolation?}
+\frage{Was versteht man unter Sublimation?}
+\frage{Was besagt die Gleichung von Clausius-Clapeyron?}
+\frage{Was versteht man unter dem Tripelpunkt? Bei welchen $(p,T)$-Koordinaten liegt er etwa bei Wasser?}
+\frage{Wie kann man Temperaturen und Wärmemengen messen?}
+\frage{Was besagt die van-der-Waals'sche Gleichung?}
+\frage{Wann siedet eine Flüssigkeit? Wie bestimmt man die Siedetemperatur $T_\mathrm{si}$ von Wasser?}
+\frage{Wodurch ist der Anstieg der Dampfdruck-Kurve $p_d(T)$ gegeben?}
+\frage{Wie korrigiert man bei kalorimetrischen Messungen die Verluste durch Wärmeaustausch mit der Umgebung?}
+\frage{Was versteht man unter Siedeverzug? Wie kann man ihn verhindern?}
+\frage{Wie erklären sich das Schlittschuh-Laufen und das Fließen der Gletscher über den Unterschied im spezifischen Volumen zwischen Wasser und Eis?}
+\frage{Zeichnen Sie den Temperatur-Zeit-Verlauf für eine gleichmäßige Energieabführung aus einer bestimmten Masse von Wasserdampf bis hin zu Eis! Was könnte man im Idealfall aus den Kurvenabschnitten bestimmen?}
+
+\end{document}

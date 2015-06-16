@@ -1,0 +1,464 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd,mhchem}
+
+\versuch{Atomare Spektren}{AS}
+\author{M. Kreller}
+\bearbeitet{A.~Otto}{}
+
+\buch{Ott93}{G.~Otter, R.~Honecker}{Atome--Moleküle--Kerne Band I: Atomphysik}{Teubner--Verlag}{Stuttgart 1993}
+\buch{Hec01}{E.~Hecht}{Optics}{Addison Wesley Publishing Company}{1997}
+\buch{Ber99}{L.~Bergmann, C.~Schaefer}{Lehrbuch der Experimentalphysik, Band 3: Optik}{Verlag de Gruyter}{Berlin 1993}
+
+\begin{document}
+\maketitle
+
+\section{Versuchsbeschreibung}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth/10*6]{aufbau}
+\caption{Spektrometeranordnung zur Vermessung der Spektrallinien von Spektrallampen.\label{aufbau}}
+\end{figure}
+
+Dieser Versuch beschäftigt sich mit den Spektren von Atomenen im sichtbaren Wellenlängenbereich. Diese Spektren
+entstehen durch übergänge von Elektronen zwischen verschiedenen Energiezuständen des atomaren Systems.
+Die Wellenlängen der dabei ausgesandten elektromagnetischen Strahlung wird mit einer einfachen Spektrometeranordnung
+selektiert. Ziel des Versuches ist ein generelles Verständnis der Eigenschaften dieses Spektrometers zu entwickeln
+sowie, mit dieser Anordnung das Spektrum von Wasserstoff zu messen und mit den Vorhersagen des Bohrschen Atommodells
+zu vergleichen. Gleichzeitig sollen Spektren unbekannter Spektrallampen mit Hilfe des Spektrometers identifziert werden.\\
+Der Versuchsaufbau ist in Abbildung \ref{aufbau} dargestellt.
+Die zu analysierende Metalldampflampe wird vor einem einstellbaren Spalt positioniert, welcher sich in der
+Fokalfläche einer Kollimatorlinse befindet. Auf diese Weise wird hinter der Kollimatorlinse
+ein paralleles Lichtbündel erzeugt. Diese ebene Welle fällt auf ein Strichgitter, das sich in einer Objekthalterung auf
+dem Spektrometertisch befindet.\\
+Das vom Gitter ausgehende Licht breitet sich in alle Raumrichtungen aus, die bei dieser Parallelspaltanordnung
+nur durch den Ablenwinkel $\varphi$ gegenüber der Einfallsrichtung charakterisiert werden. Denn da die Beugungsspalte
+im Verhältnis zu ihrer Breite lang sind und parallel zu dem ebenfalls langen Beleuchtungsspalt ausgerichtet werden,
+genügt es, die Beugung in einer dazu senkrechten Ebene zu untersuchen.\\
+Ein vom Gitter unter dem Austrittswinkel $\varphi$ austretendes Parallelstrahlbündel wird durch das Fernrohrobjektiv
+in dessen Brennebene zu einem reellen Bild des Beleuchtungsspaltes vereinigt. Dieses kann hinter dem Fernrohrokular
+mit Hilfe eines geeigneten Photonendetektors registriert werden. Der im vorliegenden Versuch benutzte Detektor beruht auf
+einm biophysikalischen Prinzip. Sie finden je ein Exemplar dieses Detektortyps rechts bzw. links von Ihrer Nase\nolinebreak
+\footnote{Beachten Sie: Zur quantitativen Beurteilung von Intensitäten ist dieser Detektor nicht geeignet, da
+die Empfindlichkeit für Intensitäten etwa logarithmisch ist, d.h. die Intensität von Linien geringer Helligkeit
+wird gegenüber der Intensität von Linien großer Helligkeit überschätzt. Das Maximum der Empfindlichekit liegt bei
+etwa \SI{550}{nm}.}.
+Das Beugungsbild besteht aus zum Beleuchtungsspalt parallelen hellen und dunklen Streifen, deren
+Verteilung und Intensität von der Struktur des Gitters und von der Wellenlänge des gebeugten Lichtes abhängt.
+
+
+\subsection{Justierung des Spektrometers}
+Eine übersicht über den Aufbau des Spektrometers gibt Abbildung \ref{spektrometer}. Richten Sie zur Justierung zunächst
+das Fernrohr (1), das Spaltrohr (21) und der Objekttisch (22) mit Hilfe der Justierschrauben (1.1), (21.1) und (7)
+nach Augenmaß horizontal aus. Montieren Sie danach die Beleuchtungseinrichtung (4) am Okular (3) und
+schalten Sie sie ein. Stellen Sie das Strichkreuz im Okular scharf und richten es horizontal aus. Es befindet sich dann
+in der Brennebene des Okulars. Stellen Sie anschließend das Fernrohr auf einen etwa \SI{500}{m} entfernten Gegenstand scharf.
+Das Fernrohr ist dann auf unendlich eingestellt.
+\begin{figure}[h]
+\centering
+\includegraphics[width=\linewidth/10*8]{spektrometer}
+\caption{übersicht über Spektrometer und Zubehör.(1) Fernrohr; (1.1) Justierschraube zum Ausgleich von
+Fluchtungsfehlern zwischen Fernrohr (1) und Spaltrohr (21); (2) Einstellschraube für Schärfe;
+(3) Verschiebbares Gaußsches Okular; (3.1) Eintrittsöffnung für Licht aus (4); (4) Beleuchtungseinrichtung; (4.1)
+Feststellschraube für Beleuchtungseinrichtung; (5) Justierschrauben zur seitlichen Verschiebung von Fernrohr (1);
+(6) feststellbare Höhenverstellschraube für Fernrohr (1);  (7) Nivellierschraube für Prismentisch (22);
+Feststellschraube für Prismentisch (22); (9) Feststellschraube für Teilkreisscheibe; (19) Teilkreisscheibe; (11)
+Feineinstellung für Fernrohrdrehung; (12) Feststellschraube für Fernrohr (1); (13) Nonien; (14) Ableselupen; (15)
+Höhenverstellschraube für Spaltrohr (21); (16) Justierschraube zur seitlichen Verschiebung von Spaltrohr (21); (17)
+Feststellschraube für Spaltauszug; (18) verstellbare Spaltbegrenzung; (19) verstellbarer Spalt; (20) Mikrometerschraube zur
+Spaltverbreiterung; (21) Spaltrohr; (21.1) Justierschraube zum Ausgleich von Fluchtungsfehlern gegenüber dem Fernrohr;
+(22) Tisch für Gitter (23) oder Prisma (24); (23) Halter mit Gitter;
+(24) Halter mit Prisma.\label{spektrometer}}
+\end{figure}
+
+Für die weitere Justierung benutzen Sie am besten einen Doppelspiegel. Klemmen Sie diesen
+in die Halterung des Gitters und positionieren Sie ihn mittig auf dem Objekttisch, und zwar so, dass die Verbindungslinie
+von zwei der drei Nivellierschrauben parallel zum Spiegel verläuft. Richten Sie das Fernrohr senkrecht zum Spiegel
+aus. Bringen Sie anschließend das Spiegelbild des Fadenkreuzes mit dem Fadenkreuz zur Deckung, indem Sie jeweils
+die Hälfte der Differenz der horizontalen Striche mit der Justierschraube (1.1) und die Hälte mit der dritten
+Nivellierschraube des Objekttisches ausgleichen. Drehen Sie dann das Fernrohr um $180^\circ$ und führen Sie die gleiche
+Prozedur auf der gegenüberliegenden Seite aus. Dieser Vorgang wiederholen Sie so lange, bis die beiden Striche auf beiden
+Seiten zur Deckung gebracht sind.
+Nun sollte der Objekthalter möglichst nicht mehr bewegt werden. Tauschen Sie den Doppelspiegel ohne die
+Halterung zu verrutschen gegen das Gitter aus.
+Es ist zweckmäßig, die Teilkreisscheibe (19) so auszurichten, dass die
+sich für die nullte Beugungsordnung ein Winkel von $0^\circ$ ergibt. Führen Sie alle
+Winkelablesungen mit beiden Nonien durch, um eine mögliche Exzentrizität oder Ungleichmäßigkeit der Teilkreisscheibe
+auszugleichen. Messen Sie alle Spektrallinien jeweils links und rechts der Richtung der einlaufenden Welle.
+Wenn die Lage der Linien beim Vergleich der beiden Seiten in der Höhe abweicht ist das Gitter seitlich verkippt
+und muss nachkorrigiert werden.
+Zur Ausrichtung des Gitters parallel zur einlaufenden Wellenfront benutzen Sie man am besten eine der Metalldampflampen.
+Richten Sie dazu das Gitter zunächst nach Augenmaß senkrecht zur Achse des Kollimators aus.
+Positionieren Sie die Lampe vor dem Eingangsspalt des Kollimators. Danach wählen Sie eine
+Linie bei einem möglichst großen Winkel ($>60^\circ$) und identifizieren diese auf beiden Seiten. Messen Sie die
+Winkel unter denen Sie sie sehen. benutzen Sie zur Feineinstellung des Fernrohrs die Schraube (12) (die Feststellschraube
+(11) muss dabei angezogen sein).
+Berechnen Sie den Mittelwert aus beiden Winkeln und stellen Sie das Fernrohr auf diesen Winkel ein. Drehen Sie dann am
+Objekttisch, bis die Linie wieder über dem Fadenkreuz liegt. Kontrollieren Sie auf der anderen Seite und wiederholen Sie
+die Prozedur gegebenenfalls. Das Gitter ist nun ausgerichtet und sollte nach Möglichkeit nicht mehr bewegt werden.
+
+
+\subsection{Untersuchung der Auflösungsgrenze des Spektrometers}
+Zur Demonstration des Aufösungsvermögens eignet sich die Na-Lampe am besten, da das Natrium-Spektrum über zwei eng
+beieinander liegende Linien verfügt. Diese erlauben es, den Einfluss der Spaltbreite des Beleuchtungsspaltes
+zu untersuchen. Schätzen Sie ab, welche der folgenden Größen die größte Auswirkung auf die Breite der beobachteten
+Linie hat (siehe dazu den Theorieteil):
+\begin{itemize}
+\item{natürliche Lininebreite}
+\item{Doppler-Verbreiterung}
+\item{Stoßverbreiterung}
+\item{Auflösungsvermögen des Spektrometers}
+\item{Breite des Beleuchtungsspaltes}
+\end{itemize}
+Für den letzten Punkt gehen Sie wie folgt vor:
+Drehen Sie den Beleuchtungsspalt ganz zu und lesen den Wert an der Mikrometerschraube (20) ab.
+Drehen Sie dann den Beleuchtungsspalt so weit auf, dass Sie die Linien des Na-Spektrums gerade
+sehen können. Sie sollten in beiden im Spektrometer erkennbaren Ordnungen getrennt erscheinen.
+Notieren Sie die Spaltbreite für diese Einstellung.
+Drehen Sie den Beleuchtungsspalt so weit auf, dass die beiden Linien gerade überlappen.
+Notieren Sie die Breite des Spaltes und messen sie die Winkelbreite des Spaltbildes aus.
+Nehmen Sie einen linearen Zusammenhang zwischen der Größe
+des Bildes des Beleuchtungsspaltes (in Grad) und der Spaltgröße an und berechnen Sie daraus die Auflösungsgrenze
+aufgrund der endlichen Spaltgröße für die Na-Doppellinen in beiden Ordnungen.
+
+\subsection{Bestimmung der Gitterkonstanten}
+Zur Bestimmung der Gitterkonstanten eignet sich im Prinzip jede bekannte Spektrallampe.
+Suchen Sie sich eine Lampe aus und identifizieren Sie das Spektrum mit Hilfe
+der Tabelle \ref{TabelleLinien}. Wählen Sie eine Spektrallinie aus und bestimmen Sie an Hand der in Abschnitt
+\ref{Kapgitter} beschriebenen Gleichungen die Gitterkonstante $g$. Diskutieren Sie den Fehler. Führen Sie die Messung
+jeweils rechts und links der Null-Grad-Achse durch.
+
+\subsection{Ausmessen der Linien der Balmerlampe}
+Bestimmen Sie die Linien der Balmerlampe.
+Berechnen Sie für die Ordnungen $n=1$ und $n=2$ aus den gemessenen Winkeln $\varphi_i$
+die entsprechenden Wellenlängen $\lambda_i$.
+Schätzen Sie den Fehler der Winkelmessung ab und berechnen Sie daraus den Fehler
+der Wellenlängenmessung ab. Tragen Sie $1/\lambda_i$ gegen $1/n_2^2$ auf  und
+bestimmen sie die Rydberg--Konstante aus der Steigung und dem Achsenabschnitt (siehe dazu Abschnitt \ref{KapBohr}).
+Diskutieren Sie den Fehler.
+\subsection{Ausmessen der Linien einer unbekannten Lampe}
+Nehmen Sie sich eine beliebige unbeschriftete Lampe und messen Sie das Spektrum. Identifizieren Sie an Hand
+der Tabelle \ref{TabelleLinien}, um welche Art Spektrallampe es sich handelt.
+
+
+\begin{table}
+\centering
+\renewcommand{\arraystretch}{1.2}
+\SIobeyboldtrue
+\begin{tabular}[htb]{lcccccccccc}\hline\hline
+Cadmium&\num{467.8}&\bf{\num{480.0}}&\bf{\num{508.6}}&\num{609.9}&\num{643.8}&&&&&\\
+Helium&\num{402.6}&\bf{\num{447.1}}&\num{471.3}&\num{492.2}&\bf{\num{501.6}}&\num{504.8}&\bf{\num{587.6}}&\bf{\num{667.8}}&\num{706.5}&\\
+Wasserstoff&\num{410.2}&\num{434.0}&\bf{\num{486.1}}&\bf{\num{656.2}}&&&&&&\\
+Quecksilber&\num{404.7}&\bf{\num{435.8}}&\bf{\num{546.1}}&\num{577.0}&\num{579.1}&\num{580.4}&\num{671.6}&\num{690.8}&\num{708.2}&\num{709.2}\\
+Neon&\bf{\num{585.2}}&603.0&\bf{\num{618.2}}&\num{626.7}&\bf{\num{640.2}}&\num{650.7}&&&&\\
+Natrium&\num{449.8}&\num{568.9}&\num{497.9}&\num{498.3}&\num{568.3}&\num{568.8}&\bf{\num{589.0}}&\bf{\num{589.6}}&\num{615.4}&\num{616.1}\\
+Zink&\num{468.0}&\bf{\num{472.2}}&\bf{\num{481.1}}&\num{518.2}&\bf{\num{636.2}}&&&&&\\ \hline\hline
+\end{tabular}
+\caption{Wellenlängen (in Luft) der Linien verschiedener Spektrallampen im sichtbaren Teil des Spektrums in Nanometern.
+Die stärksten Linien sind fett hervorgehoben.
+\label{TabelleLinien}}
+\end{table}
+
+\section{Theoretische Grundlagen}
+
+\subsection{Das Bohrsche Atommodell\label{KapBohr}}
+Das Auftreten von Linien in den Spektren von Atomen, welche durch eine Gasentladung zum Leuchten gebracht werden, war für
+die Physiker des ausgehenden 19. Jahrhunderts völlig unverständlich. Ein berühmtes Experiment und dessen Deutung sowie
+eine neuartige Strahlungstheorie brachten Anfang des 20. Jahrhunderts den Durchbruch zu ihrem Verständnis.\\
+Zum einen gelang es Max Planck 1910, die Intensität der von einem schwarzen Körper ausgesandten elektromagnetischen Strahlung
+für beliebige Wellenlängen zu beschreiben. Er musste dazu postulieren, dass die Atome eines Festkörpers Oszillatoren 
+darstellen, deren Schwingungsenergie $E$ nicht kontinuierliche Werte annehmen kann, sondernstets ein Vielfaches der 
+Schwingungsfrequenz $\nu$ beträgt:
+\begin{equation}
+E_n=n h \nu\,\,.\label{P1}
+\end{equation}
+Dabei ist $h$ die als Plancksches Wirkungsquantum benannt gewordene Konstante und $n$ eine ganze Zahl. Wenn diese
+Oszillatoren Energie in Form von elektromagnetischer Strahlung abgeben, so sollte diese Abgabe nach Planck
+in Sprüngen von $n$ nach $n-1$ erfolgen:
+\begin{equation}
+\Delta E=E_{n}-E_{n-1}=h\nu\,\,. \label{P2}
+\end{equation}
+
+
+Zum anderen konnte Ernest Rutherford 1911 an Hand der von Hans Geiger und Ernest Marsden auf Anregung von Rutherford
+durchgeführten Streuung von $\alpha$\,--Teilchen an Goldfolien nachweisen, dass
+Atome aus einem positiv geladenen Kern bestehen, der fast die gesamte Masse des Atoms ausmacht und in seiner Ausdehung
+sehr klein ist gegenüber der Ausdehung des gesamten Atoms. Dieser Kern sollte umgeben sein von einer Anzahl von Elektronen
+der umgekehrten Ladung, die an den Kern vermöge anziehender elektrischer Kräfte gebunden sind und das gesamte Gebilde
+nach aussen neutral erscheinen lassen. Aus dieser Beobachtung entwickelte Rutherford die Vorstellung, dass ein Atom ähnlich 
+einem Planetensystem aufgebaut ist.\\
+1913 war es schließliche Niels Bohr, der diese beiden Entdeckungen auf die von einem
+Atom ausgesandte Strahlung anwandte und damit das Spektrum von Wasserstoff erklären konnte.
+Nach dem Planetenmodell hätten die um den Kern kreisenden Elektronen ihre Energie nach und nach verlieren müssen, da
+beschleunigte Ladungen Energie in Form von elektromagnetischen Wellen abstrahlen. Dabei würde das Elektron seine Energie
+und Frequenz kontinuierlich verändern und, immer schneller kreisend, schließlich in den Kern stürzen. Um diesen
+Widerspruch aufzuklären stellet Bohr die folgenden Postulate auf:
+\begin{enumerate}
+\item Das Elektron kann auf bestimmten stationären Bahnen umlaufen ohne dabei
+Energie in Form von Strahlung zu verlieren. Die stationären Bahnen sollen
+durch die Gleichungen der klassischen Mechanik beschrieben werden.
+\item Lediglich der übergang von einer Bahn zur nächsten soll mit
+der Abstrahlung von Energie in Form von homogener elektromagnetischer Strahlung einhergehen. Die Beziehung zwischen
+der Frequenz der abgestrahlten Wellen und ihrer Energie wird durch Gleichung (\ref{P2}) gegeben.
+\end{enumerate}
+
+Die Bindungsenergie $E$ eines Elektrons der reduzierten Masse $m_e$, Ladung $e$ und Geschwindigkeit $v$ auf einer
+solchen klassischen Bahn lautet
+\begin{equation}
+E=\frac{1}{2 r}\left(\frac{e^2}{4 \pi \epsilon_0}\right)\label{B1}
+\end{equation}
+und ist gleich der kinetischen Energie.
+Dabei ist $e$ die Elementarladung, $\epsilon_0$ die dielektrische Konstante und $r$ der Bahnradius. Der Bahnradius ergibt
+sich aus dem Kräftegleichgewicht zu
+\begin{equation}
+r=\left(\frac{e^2}{4 \pi \epsilon_0}\right)\frac{1}{m v^2}\,\,.\label{B2}
+\end{equation}
+Die Größe $m=m_e\,m_p/(m_e+m_p)$ ($m_p$: Masse des Protons) wird als reduzierte Masse bezeichnet.
+Für die Umlauffrequenz $f$ erhält man
+\begin{equation}
+f=\left(\frac{4 \pi \epsilon_0}{e^2}\right)\sqrt{\frac{2}{m}}\,\frac{E^{3/2}}{\pi}\,\,.\label{B3}
+\end{equation}
+Für die stationären Bahnen forderte Bohr, dass
+\begin{equation}
+E_n=n\, h\, \frac{f}{2}\,\,.\label{B4}
+\end{equation}
+Mit Gleichung (\ref{B3}) ergibt sich für die stationären Bahnen eine Energie von
+\begin{equation}
+E=E_n=\left(\frac{e^2}{4 \pi \epsilon_0}\right)^2\frac{2 \pi^2 m}{h^2 n^2}\,\,.\label{B5}
+\end{equation}
+Aus dem zweiten Postulat folgt dann unmittelbar die Energie $\Delta E$ und die Frequenz $\nu$ der abgestrahlten Wellen:
+\begin{equation}
+\Delta E=E_{n_1}-E_{n_2}=h\nu=\left(\frac{e^2}{4 \pi \epsilon_0}\right)^2\frac{2 \pi^2 m}{h^2}
+\,\,\left(\frac{1}{n_1^2}-\frac{1}{n_2^2}\right)\,\,.\label{B6}
+\end{equation}
+Mit der Beziehung $\lambda=c/\nu$ ergibt sich für die Wellenlänge $\lambda$ der emittierten
+Strahlung ($c$ : Lichtgeschwindigkeit)
+\begin{equation}
+\frac{1}{\lambda}=R\left(\frac{1}{n_1^2}-\frac{1}{n_2^2}\right)\,\,.\label{B7}
+\end{equation}
+Die Konstante $R=\left(\frac{e^2}{4 \pi^2 \epsilon_0}\right)^2\frac{2 \pi m}{h^3 c}=\SI{1.097e7}{m^{-1}}$
+wird als Rydberg-Konstante bezeichnet. Für Wellenlängen im sichtbaren Bereich ist Gleichung (\ref{B7}) für $n_1=2$ und
+$n_2>2$ auf rein empirische Weise bereits 1885 von Johann Jakob Balmer gefunden worden.
+
+
+Für wasserstoffähnliche Ionen wie He$^+$, Li$^{2+}$, Be$^{3+}$ etc. behalten
+die Gleichungen (\ref{B1}) bis (\ref{B7}) ihre Gültigkeit wenn man die Ersetzung $e^2 \longrightarrow Z\,e^2$ macht. Dabei
+ist $Z$ die Kernladung des Ions.
+Die einfache Vorstellung des Wasserstoffatoms als "`Planetensystem"' wurde durch die Fortschritte der
+Quantenmechanik im Verlauf des 20. Jahrhunderts wieder verworfen. Die von Bohr gefundenen Energiezustände werden
+allerdings in diesem einfachen Bild korrekt wiedergegeben.
+Schon für das Heliumatom, das zweite Atom des Periodensystems, ist es nicht mehr möglich, eine ähnlich einfache
+analytische Darstellung zu finden. Dies liegt darin begründet, dass zwei Elektronen an den Heliumkern gebunden sind,
+die sich wechselseitig beeinflussen.
+Für ein solches System ist die Lösung der Schrödingergleichung der einzige Weg zur Ermittlung der Energiezustände
+der Elektronen. Sind die Energieniveaus bekannt, so kommt man wieder über die Beziehung $\Delta E=E_1-E_2=h\nu$ auf die
+Frequenz der abgestrahlten Energie beim übergang eines Elektrons von einem Zustand mit Energie $E_1$ in einen Zustand
+mit Energie $E_2$. Ganz allgemein ist der Zustand eines Elektrons in einem beliebigen Atom durch weitere Parameter
+charakterisiert. Der übergang von einem Zustand zu einem anderen kann durch bestimmte Nebenbedingungen, sogenannte
+Auswahlregeln, eingeschränkt sein. Für den vorliegenden Versuch soll jedoch im Wesentlichen die klassische
+Atomphysik betrachtet werden.
+
+\subsection{Linienbreite}
+Das Bohrsche Atommodell gibt zwar die Lage der Linien im Wasserstoffatom präzise an, sagt aber nichts über deren
+Breite aus. Die natürliche Linienbreite lässt sich aus der Lebensdauer eines angeregten Zustandes über die
+Heisenbergsche Unschärferelation
+\begin{equation}
+\delta E \,\delta t \geq \hbar \label{Heisenberg}
+\end{equation}
+abschätzen. Dabei ist $\Delta E$ die Breite der Linie und $\Delta t$ die Lebensdauer des Zustandes. Ein typischer Wert
+für $\delta t$ ist \SI{e-8}{s}. Mit diesem Wert lässt sich auch die Länge des von einem Atom ausgesandten Wellenzuges
+abschätzen.
+Durch die Bewegung der Atome (die bei Raumtemperatur typischerweise einige hundert Meter pro Sekunde beträgt, in einer
+Spektrallampe entsprechend mehr), wird die ausgesandte Strahlung durch den Doppler-Effekt je nach Bewegungsrichtung
+der Atome zu kleineren oder zu größeren Wellenlängen hin verschoben. Dies führt zu einer zusätzlichen
+Verbreiterung der Spektrallinien. Die Halbwertsbreite $\Delta E_D$ der Dopplerverbreiterung beträgt für eine Linie
+der Frequenz $\nu_0$ (siehe z. B. \verweis{Ott93}) :
+\begin{alignat}{2}
+\label{Doppler}
+&\qquad\qquad M &\quad&\text{Masse der Atome}\nonumber\\
+\frac{\delta E_{Doppler}}{h\nu}=\frac{2}{c}\sqrt{\frac{2kT}{M}\ln 2}\,\,. &\qquad\qquad k 
+&&\textrm{Boltzmann--Konstante}\\
+&\qquad\qquad T &&\text{Temperatur}\nonumber
+\end{alignat}
+Neben der Dopplerverbreiterung muss auch die Stossverbreiterung berücksichtigt werden. Wenn ein Atom
+während der Aussendung von Strahlung durch einen Stoß mit einem anderen Atom des Gases gestört wird, so führt dies
+in der Regel zu einer Veränderung der Polarisation, der Emissionsrichtung oder der Emissionsdauer. Dieser Prozess trägt
+zur Verbreiterung des Spektrums bei. Wenn man annehmen kann, dass die mittlere Zeit zwischen zwei Stößen deutlich länger
+ist als die Stoßzeit selber, aber kleiner als die mittlere Lebensdauer eines angeregten Zustandes, so ergibt sich für die
+Halbwertsbreite der resultierenden Verteilung (siehe z. B. \verweis{Ott93}):
+\begin{alignat}{2}
+\label{Stoss}
+&\qquad\qquad n &\quad&\text{Atomare Dichte des Gases}\nonumber\\
+\frac{\delta E_{Stoß}}{2}=h\,n\,\sigma\,\overline{v}\,\,.&\qquad\qquad \sigma&&\text{Wirkungsquerschnitt für elastische Stoße}\\
+&\qquad\qquad \overline{v}&&\text{mittlere Geschwindigkeit der Atome}\nonumber
+\end{alignat}
+Der Wirkungsquerschnitt lässt sich mit $\sigma=\pi a_0^2$ abschätzen, wobei $a_0=\SI{0.53}{\text{\AA}}$ der Bohrsche Radius ist.
+Für die mittlere Geschwindigkeit gilt:
+\begin{equation}
+\bar{v}=\sqrt{\frac{8\,k\,T}{\pi\,M}}\,\,\label{mittG}.
+\end{equation}
+
+\subsection{Funktionsweise des Gitters\label{Kapgitter}}
+Zur Auftrennung verschiedener Wellenlängen wird im vorliegenden Versuch ein Transmissionsgitter verwendet. Der
+Strahlengang ist in Abbildung \ref{gitter} veranschaulicht. Von links trifft eine ebene Welle auf das Gitter. Die
+Wellenberge- und täler sind durch dicke bzw. dünne Linien kenntlich gemacht. Das Gitter besteht aus einer Anzahl paralleler
+Spalte im Abstand $g$, welche hier zunächst als infinitesimal dünn und unendlich ausgedehnt betrachtet werden.
+Vor dem Gitter breitet sich die ebene Welle ungestört aus. Das Gitter stellt eine Störung dieses Wellenfeldes dar.
+Diese Störung führt zur Beugung des Wellenfeldes.
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\linewidth/10*7,clip]{gitter}
+\caption{Fraunhofersche Beugung am Gitter.\label{gitter}}
+\end{figure}
+Nach dem Huygensschen Prinzip kann jeder Punkt eines Wellenfeldes als Ausgangspunkt einer Kugelwelle betrachtet werden.
+Eine solche Kugelwelle ist in Abbildung \ref{gitter} für einen Spalt dargestellt.
+Bei korrekter Justage des Gitters senkrecht zum einlaufenden Wellenfeld starten die Kugelwellen mit gleicher Phase und
+Amplitude.
+Wegen der Symmetrie der Anordnung ist es ausreichend, das Problem in einer Ebene senkrecht zur Gitterebene und zur Lage der
+Spalte zu betrachten. Die resultierende Welle rechts des Gitters ergibt sich aus der überlagerung
+der von den einzelnen Spalten ausgehenden Kugelwellen. Betrachtet man das Wellenfeld in großem Abstand von dem beugenden
+Objekt, so kann das von einem Spalt ausgehende Kugelwellenfeld in sehr guter Näherung durch eine ebene Welle beschrieben
+werden. In Abbildung \ref{gitter} werden daher die von einem Spalt
+ausgehenden Wellen als Strahlen (Senkrechten auf den Wellenfronten der ebenen Welle)
+dargsetellt. Man betrachte nun nur die Strahlen der Wellenlänge $\lambda$ in einer bestimmten Richtung $\varphi$.
+Die Phasen der von zwei benachbarten Spalten ausgehenden Wellen sind dann um
+\begin{equation}
+\delta=2 \pi \frac{g \sin{\varphi}}{\lambda}  \label{delta}
+\end{equation}
+gegeneinander verschoben sind. Werden die von allen Gitterspalten ausgehenden Strahlen durch eine Linse fokussiert, so
+kommt es zur überlagerung und damit je nach Phasenlage zur Verstärkung oder Auslöschung. Die Linse ändert die relative
+Phasenlage der Strahlen nicht, da die optische Weglänge für alle Strahlen gleich ist.
+
+Eine Welle die sich in $x$--Richtung ausbreitet, lässt sich als Realteil einer komplexen Exponentialfunktion schreiben:
+\begin{equation}
+E=A\cos{\left(2\pi\nu(t-x/c)\right)}=A\,\Re\left\{\eu{\,i[2\pi\nu(t-x/c)]}\right\} \,\,.
+\end{equation}
+Für $p$ Strahlen, deren Phase um jeweils $\delta$ gegeneinander verschoben ist, ergibt sich damit
+\begin{eqnarray}
+E_1&=&A\,\Re\left\{\,\eu{\,i[2\pi\nu(t-x/c)]}\right\}\\
+E_2&=&A\,\Re\left\{\,\eu{\,i[2\pi\nu(t-x/c)-\delta]}\right\}\\
+\vdots\\
+E_p&=&A\,\Re\left\{\,\eu{\,i[2\pi\nu(t-x/c)-(p-1)\delta]}\right\}\,\,.
+\end{eqnarray}
+Für die resultierende Feldstärke $E=E_1+E_2+\dots+E_p$ erhält man demnach
+\begin{equation}
+E=A\,\Re\left\{\,\eu{\,i2\pi\nu(t-x/c)}\right\}\left[1+\eu{\,-i\delta}+\dots+
+\eu{-i(p-1)\delta}\right]\,\,.      \label{Esumme}
+\end{equation}
+Für die geometrische Reihe in den eckigen Klammern gilt:
+\begin{equation}
+\left[1+\eu{\,-i\delta}+\dots+
+\eu{-i(p-1)\delta}\right]=\frac{1-\eu{-i p \delta}}{1-\eu{-i\delta}}\,\,.\label{georeihe}
+\end{equation}
+Setzt man Gleichung (\ref{georeihe}) in Gleichung (\ref{Esumme}) ein und berechnet den Realteil, so ergibt sich
+\begin{equation}
+E=A\,\frac{\sin(p\,\delta/2)}{\sin(\delta/2)}\cos\left[2\pi\nu(t-x/c)-(p-1)\,\delta/2\right]\,\,.
+\end{equation}
+Die Intensität $I$ berechnet sich aus dem zeitlichen Mittel des Quadrates des Feldes zu
+\begin{equation}
+I=A^2/2\,\frac{\sin^2(p\,\delta/2)}{\sin^2(\delta/2)}\,\,.\label{Intensity}
+\end{equation}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth/10*5,clip]{multipleinterference}
+\caption{Intensitätsverteilung eines Gitters gemäß Gleichung (\ref{Intensity}).
+\label{multipleinterference}}
+\end{figure}
+Diese Funktion ist in Abbildung \ref{multipleinterference} graphisch dargestellt. Die Hauptmaxima
+liegen an den Stellen, an denen der Nenner Null wird, also bei $\delta/2=n\pi$, $n=\pm 1,\pm 2, \dots\,\,$.
+Dazwischen findet man $p-2$ Nebenmaxima an den Stellen, an denen der Zähler Null wird. Die Höhe der Hauptamxima
+skaliert mit $p^2$. Die Breite der Hauptmaxima nimmt mit der Zahl der interferierenden Strahlen $p$ zu.
+Die Nebenmaxima werden mit zunehmendem $p$ immer kleiner.
+
+Setzt man nun für $\delta$ den Wert aus Gleichung (\ref{delta}) ein, so erhält man für die Lage der Hauptamxima
+den Ausdruck
+\begin{equation}
+\frac{g \sin{\varphi}}{\lambda}=n\,, \,\,n=\pm 1,\pm 2, \dots\,\,.  \label{lagemax}
+\end{equation}
+Die Zahl $n$ wird als Ordnung der Beugung bezeichnet.
+Bei bekannter Gitterkonstante $g$ lässt sich damit aus dem Winkel $\varphi$ die Wellenlänge bestimmen. Umgekehrt kann man
+bei bekannter Wellenlänge die Gitterkonstante messen.
+
+Wenn nun für die Spaltbreite ein endlicher Wert $b$ angenommen wird, so verändert sich das Bild nur geringfügig. Die
+Lage der Maxima verändert sich dadurch nicht. Eine genaue Rechnung zeigt, dass Gleichung (\ref{Intensity})
+dann mit der Intensitätsverteilung des Einzelspaltes moduliert wird.
+Damit ergibt sich für die Intensität insgesamt der Ausdruck
+\begin{equation}
+I=A^2/2\,\frac{\sin^2(\tilde{\delta}/2)}{(\tilde{\delta}/2)^2}\,
+\frac{\sin^2(p\,\delta/2)}{\sin^2(\delta/2)}\,\,.\label{Intensity2}
+\end{equation}
+Die Größe $\tilde{\delta}$ ergibt sich durch die Ersetzung $g\rightarrow b$ in Gleichung (\ref{delta}).
+\begin{figure}[hb]
+\centering
+\includegraphics[width=\linewidth/10*5]{finiteslitsize}
+\caption{Intensitätsverteilung eines Gitters unter Berücksichtigung der endlichen Strichbreite.
+\label{finiteslitsize}}
+\end{figure}
+Gleichung (\ref{Intensity2}) ist in Abbildung \ref{finiteslitsize} für den Fall $g/b=3$ dargestellt.
+
+Falls das Gitter um einen kleinen Winkel $\varphi_0$ gegenüber den Wellenfronten verkippt ist, muss Gleichung
+(\ref{lagemax}) durch die folgenden Gleichungen ersetzt werden
+\begin{align}
+\sin(\varphi_l-\varphi_0)+\sin(\varphi_0)&=\frac{n}{g}\lambda \nonumber\\
+\sin(\varphi_r+\varphi_0)-\sin(\varphi_0)&=\frac{n}{g}\lambda\,\,.
+\end{align}
+Dabei sind $\varphi_l$ bzw. $\varphi_l$ die Winkel, welche sich links bzw. rechts der Kollimatorachse ergeben.
+Mit $\sin(\alpha+\beta)=\sin(\alpha)\cos(\beta)+\cos(\alpha)\sin(\beta)$ sowie der Kleinwinkelnäherung
+$\cos(\varphi_0)=1$ und $\sin(\varphi_0)=\varphi_0$ ergibt sich aus der Addition dieser Gleichungen
+\begin{equation}
+\sin(\varphi_r)+\sin(\varphi_l)+\varphi_0\left(\cos(\varphi_r)-\cos(\varphi_l)\right)=\frac{2\,n}{g}\lambda\,\,.\label{lage2}
+\end{equation}
+Der dritte Term auf der linken Seite ist für kleine $\varphi_0$ ebenfalls zu vernachlässigen.
+Gleichung (\ref{lage2}) veranschaulicht, dass in dem Fall, dass die Lage der Linine nicht ganz symmetrisch zur
+Null--Grad--Achse ist, nicht der Mittelwert der Winkel, sondern der Mittelwert der Sinus der Winkel gebildet werden muss.
+
+
+\subsection{Auflösungsvermögen}
+Das Auflösungsvermögen $R$ eines Spektrometers gibt an, wie gut das Trennungsvermögen für zwei Wellenlängen ist,
+welche sich um einen Betrag $\delta \lambda$ voneinander unterscheiden. Es ist definiert als
+$R=\lambda /\delta \lambda$.
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\linewidth/10*5,clip]{auflverm}
+\caption{Auflösungsvermögen eines Gitters mit $p=900$ interferierenden Teilstrahlen für die Na-Doppellinie.
+\label{AuflVerm}}
+\end{figure}
+Dazu betrachte man die Intensitätsverteilungen
+von zwei benachbarten Linien der Wellenlängen $\lambda$ und $\lambda+\delta\lambda$ in Abbildung
+\ref{AuflVerm}. Die Gesamtintensität ergibt sich
+durch Addition der Einzelintensitätsverteilungen, da man annehmen kann, dass im Allgemeinen die verschiedenen
+Linien aus zueinander inkohärenten Strahlungsprozessen stammen. Eine Trennung der  Linien ist dann möglich, wenn die
+Wellenlängen der beiden Linien um mehr als die Halbwertsbreite der Einzellinien auseinanderleigen. Dann ist gerade noch
+eine Einsattelung in der Mitte der Kurve der Gesamtintensität zu erkennen. Die Halbwertsbreite der Verteilung
+(\ref{Intensity}) als Funktion von $\delta$ beträgt $\delta_{1/2}=\num{2.783}/p$. Für die Halbertsbreite als Funktion von
+$\varphi$ ergibt sich dann $\varphi_{1/2}=\num{2.783}\tan(\varphi)/(p\pi n)$. Daraus folgt mit Gleichung (\ref{lagemax})
+\begin{equation}
+R=\frac{\lambda}{\left|\dquot{\lambda}{\varphi}\right|\diff\varphi}=\num{1.129}\,np\,\,.\label{Aufl}
+\end{equation}
+Je höher die Ordnung $n$ und je größer die Zahl der interferierenden Strahlen, um so besser ist die Auflösung.
+Gleichung (\ref{Aufl}) gilt unter Vernachlässigung von Abbildungsfehlern des Linsensystems und für einen infinitesimal
+dünnen Beleuchtungsspalt. Da der Beleuchtungsspalt durch die in Abbildung \ref{aufbau} dargestellte Versuchsanordnung
+in die Brenneben des Fernrohrs abgebildet wird, ergibt sich selbst für $p=\infty$ eine endliche Linienbreite, die größer
+ist als es nach Gleichung (\ref{Aufl}) zu erwarten ist.
+
+
+\frage{Wie groß ist der Unterschied zwischen den Wellenlängen im sichtbaren Bereich des Spektrums im Vakuum und in Luft ?
+(Hinweis: $c_{Vak}/c_{Luft}=\num{1.0003}$)}
+
+\frage{Leiten Sie Gleichung (\ref{B7}) her, indem Sie postulieren, dass der Drehimpuls $l$ ein Vielfaches
+von einer Größe $l_0=h/2\pi$ sein soll.}
+
+\frage{Finden Sie in \ref{TabelleLinien} für He irgendwelche Linien, die sich mit Gleichung (\ref{B7})
+und der Ersetzung $e^2 \rightarrow Z\,e^2$ ($Z=2$ für He) erklären lassen?}
+
+\frage{Wie stark ändern sich die Wellenlängen des Wasserstoffspektrums, wenn man statt Wasserstoff der (Masse: \SI{1}{u}) Deuterium
+(Masse: \SI{2}{u}) betrachtet?}
+
+\frage{Berechnen Sie Energien und Wellenlängenm für Photonen, die bei übergängen von $n_2=3,4,5,6$ nach $n_1=2$
+abgestrahlt werden. Wiederholen Sie die Berechnung für übergänge von $n_2=4,5,6$ nach $n_1=3$. Welche dieser
+übergänge sind sichtbar?}
+
+\frage{Wie groß ist der Fehler, der durch eine Verdrehung des Gitters gegenüber der einlaufenden ebenen Welle
+(Wellenfront ist senkrecht zur Kollimatorachse) um einen Winkel von $\varphi_0=\num{0.3}^\circ$ gemacht wird,
+wenn man den dritten Term auf der linken Seit in Gleichung (\ref{lage2}) vernachlässigt?}
+
+\end{document}

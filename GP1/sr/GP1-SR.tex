@@ -1,0 +1,222 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd}
+
+\versuch{Strömung im Rohr}{SR}
+\author{L. Jahn}
+\date{01.01.1997}
+\bearbeitet{M.~Kreller,J.~Kelling,F.~Lemke,S.~Majewsky,i.~A.~Dr.~Escher}{}
+
+\buch{gert}{C.~Gerthsen, H.~Vogel}{Physik}{Springer-Verlag}{Berlin, Heidelberg 1995}
+\buch{kohl}{F.~Kohlrausch}{Praktische Physik, Band 2}{Teubner-Verlag}{Stuttgart 1996}
+\buch{nied}{H.~Niedrig}{Physik}{Springer-Verlag}{Berlin, Heidelberg 1992}
+\buch{paus}{H.~J.~Paus}{Physik in Experimenten und Beispielen}{Verlag~C.-Hanser}{München 1995}
+\buch{reck}{A.~Recknagel}{Physik: Mechanik}{Technik-Verlag}{Berlin 1990}
+\buch{reck2}{A.~Recknagel}{Physik: Schwingungen, Wellen, Wärmelehre}{Technik-Verlag}{Berlin 1990}
+\buch{strop}{H.~Stroppe}{Physik}{Fachbuch-Verlag}{Leipzig 1984}
+
+\begin{document}
+\maketitle
+
+\section{Aufgabenstellung}
+
+\begin{enumerate}
+ \item Bestimmen Sie den Druckabfall (indirekt über $\Delta h$) als Funktion der Strömungsgeschwindigkeit von Wasser in einem horizontalen Rohr.
+ \item Berechnen Sie die Widerstandsbeiwerte ($c_w$) und Reynoldschen Zahlen ($Re$) im laminaren und turbulenten Gebiet und tragen Sie $c$ über $Re$ doppelt logarithmisch auf und  und vergleichen Sie mit den theoretischen Werten.
+ \item Bestimmen Sie die kritische Reynoldszahl $Re_\mathrm{krit}$.
+ \item Führen Sie die Fehlerbetrachtung für drei weit auseinanderliegende Punkte des Diagramms durch.
+\end{enumerate}
+
+\section{Allgemeine Grundlagen}
+
+\subsection{Ideale Flüssigkeit}
+
+In einer divergenzfreien (z.~B.~Rohr-) Strömung gilt für konstante Dichte die \emph{Kontinuitätsgleichung} (es seien $A_1$ bzw $A_2$ Querschnite und $v_1$ bzw. $v_2$ Strömungsgeschwindigkeiten an verschiedenen Orten):
+\begin{equation}
+ \frac Vt = A_1 \cdot v_1 = A_2 \cdot v_2
+ \label{sr01}
+\end{equation}
+Bei vernachlässigter Reibung wird aus dem auf ein Volumenelement bezogenes Ener\-gie-Er\-hal\-tungs\-satz pro Volumeneinheit entsprechend die \emph{Bernoullische Gleichung} (es seien $p_1$ bzw. $p_2$ statische Drucke und $h_1$ bzw. $h_2$ Höhen an verschiedenen Orten und $\rho$ die Dichte des Fluids):
+\begin{equation}
+ \frac\rho2 v_1^2 + p_1 + \rho g\cdot h_1 =
+ \frac\rho2 v_2^2 + p_2 + \rho g\cdot h_2 = \mathrm{const.}
+ \label{sr02}
+\end{equation}
+
+\subsection{Reale Flüssigkeit}
+
+\subsubsection{Innere Reibung, Viskosität, laminare Strömung}
+
+In realen Flüssigkeiten gilt Gleichung \eqref{sr02} nicht. Vielmehr treten Druckverluste (Druckabfälle) infolge der inneren Reibung auf. Bei geringen Strömungsgeschwindigkeiten (\emph{laminare Strömung}) gilt für die Reibungskraft der \emph{Newtonsche Ansatz}: Die Flüssigkeitsschichten ($xy$-Ebene) mit unterschiedlicher Geschwindigkeit $\vec v = v_x \cdot \vec e_x$ gleiten aneinander ab. Dabei üben sie Scherkräfte aufeinander aus:
+\begin{equation}
+ F_x = \eta \cdot A \cdot \dquot{v_x}z
+ \label{sr03}
+\end{equation}
+$\eta$ ist die \emph{Viskosität} oder \emph{Zähigkeit}, $A$ die Fläche und $\dquot{v_x}z$ der Geschwindigkeitsgradient. Für eine \emph{Rohrströmung} folgt aus \eqref{sr03} das Gesetz von \emph{Hagen-Poiseuille} bzw.~die zugehörige Druckkraft:
+\begin{subequations}
+ \begin{equation}
+  A \cdot \overline v = \frac{V}{t} = \frac{\pi \cdot \Delta p \cdot R^4}{8\eta\cdot l}
+  \label{RohrStroemungA}
+ \end{equation}
+ \begin{equation}
+  \boxed{
+   F_p = \pi \cdot \Delta p \cdot R^2 = 8\pi\cdot \eta l \cdot \overline v
+  \label{RohrStroemungB}}
+ \end{equation}
+\end{subequations}
+Dabei sind $A$ der Rohrquerschnitt, $V$ das Volumen, $R$ der Rohrradius, $l$ die Rohrlänge und $\Delta p$ die Druckdifferenz.
+
+\subsubsection{Turbulente Strömung}
+
+Durch Wirbel infolge der Reibung geht die laminare Störmung oberhalb einer kritischen Geschwindigkeit $v_\mathrm{krit}$ in eine turbulent über. Oberhalb von $v_\mathrm{krit}$ ist $v$ nicht mehr zu $\Delta p$ proportional, sondern wächst langsamer an. Die Werte von $v$ und $p$ schwanken um Mittelwerte. Die Bahnlinien sind nicht mehr näherungsweise geradlinig, es findet ein starke Durchmischung statt. Mit $A^*$ als Querschnitt eines umströmten Körpers wird für die Reibungskraft allgemein angesetzt
+\begin{equation}
+ F_r = c_w\cdot A^* \frac{\rho}{2} \cdot \overline v^2 \quad\text{oder}\quad
+ \frac{F_r}{A^*} = \Delta p = c_w \frac{\rho}{2}\cdot \overline v^2
+ \label{sr05}
+\end{equation}
+Hierbei sind $c_w$ der Widerstandsbeiwert und $\frac{\rho}{2}\cdot \overline v^2$ der Staudruck.
+
+Liegt an einem \emph{rauhwandigen Rohr} mit dem Durchmesser $d$ und der
+Länge $l$ die Druckdifferenz $\Delta p$ an, so ist die für die
+Reibung maßgebliche Fläche $A^*=\pi \cdot dl$ (Rohrmantel) und
+die Reibungskraft $F_r$ genügt mit (\ref{sr05}) der Beziehung:
+\begin{equation}\boxed{
+ F_r = A^*\cdot \Delta p = \pi d\,l\cdot \Delta p = \pi d\,l\cdot c_w \frac{\rho}{2}\cdot v^2
+\label{sr06}}
+\end{equation}
+
+\subsubsection{Reynoldssche Zahl und Widerstandsbeiwert}
+
+\begin{description}
+ \item [Ähnlichkeit:] Verschiedene Strömungen sind ähnlich, wenn die Verhältnisse ihrer kinetischen Energien $\frac 12 A\cdot \rho v^2$ denen  der Reibungsarbeiten $l A^* \cdot \eta \, \diff v/\diff r$ entsprechen oder wenn ihre dimensionslosen \emph{Reynoldsschen Zahlen} gleich sind. \item [Reynoldssche Zahl $Re$:] $l^*$ ist eine charakteristische Länge, für ein Rohr gilt $l^*=d$ :
+ \[
+  Re = \frac{\rho v\cdot l^*}{\eta} \quad (\text{allgemein})
+  \quad\text{bzw.}\quad
+  Re = \frac{\rho v\cdot d}{\eta} \quad(\text{Rohr)}\quad
+  \label{sr07}
+ \]
+\end{description}
+
+Der sprunghafte Übergang von der laminaren zur turbulenten
+Rohr-Strömung erfolgt etwa bei $Re_\mathrm{krit} \approx 2000$.
+Kombiniert man (\ref{sr05}) und (\ref{RohrStroemungB}) (im Grenzfall
+sicher erlaubt), so folgt im laminaren Fall aus \eqref{sr07}:
+\begin{align}
+ 8\pi\cdot \eta l\cdot \overline{v} &= \pi c_\mathrm{lam}\,\frac{\rho}{2}\cdot  v^2 \diff l \nonumber\\
+ c_\mathrm{lam} &= \frac{16}{Re} \label{sr08}
+\end{align}
+Für den Turbulenten Fall findet man empirisch:
+\begin{align}
+ c_\mathrm{turb} \approx \frac{\num{0.079}}{\sqrt[4]{Re}}
+ \label{sr09}
+\end{align}
+
+\clearpage
+
+\section{Experimente}
+
+\subsection{Meßanordnung}
+
+\piccaption{Schema der Versuchsanordnung \label{fig::schema}}
+\parpic[r]{
+ \includegraphics[width=\linewidth/3]{GP1-SR-Schema}
+}
+Über einen Druckminderer wird Leitungswasser mit variabler
+Geschwindigkeit einem langen
+horizontalen Rohr zugeführt -- \emph{ausgebildete Strömung}. An zwei im Abstand $l$
+angebrachten Messpunkten wird anhand von Steigrohren der
+statische Druck gemessen und die Druckdifferenz $\Delta p$
+ermittelt.
+
+Bei bekanntem Rohrdurchmesser wird die
+Strömungsgeschwindigkeit $\overline v$ aus dem in der Zeit $t$
+ausgeflossenen Volumen $V$ bestimmt (siehe Abb.~\ref{fig::schema}).
+\picskip0
+\vspace{-2em}
+
+\subsection{Grafische Darstellung}
+Man führt anhand der Gleichungen~(\ref{sr01}),(\ref{sr05}) und (\ref{sr06}) den Widerstandsbeiwert $c_w$ auf Messgrößen zurück und erhält mit $d=2R$, $A=\pi R^2$, $A^*=2\pi \cdot lR$ und $F_r=F_p$ :
+\begin{equation}\boxed{
+ c_w = \frac{2F_p}{\rho\cdot v^2 \cdot A^*} = \frac{2\pi\cdot \Delta p\cdot R^2}{\rho\cdot \kla{\frac{V}{tA}}^2\cdot A^*}
+     = \frac{\pi^2\cdot R^5}{l} \cdot \frac{\Delta p}{\kla{\frac{V}{t}}^2}
+	 = \frac{\pi^2\cdot R^5\cdot g}{l} \cdot \frac{\Delta h}{\kla{\frac{V}{t}}^2}
+	 = K_c\cdot \frac{\Delta h}{\kla{\frac{V}{t}}^2}
+	\label{sr10}}
+\end{equation}
+Ebenso lässt such ausgehend von Gleichung \eqref{sr07} die Reynolds-Zahl durch Messgrößen ausdrücken:
+\begin{equation}
+ Re = \frac{2R \cdot \rho}{A \cdot \eta} \cdot \frac vt = \frac2{\pi R \cdot \frac\eta\rho} \cdot \frac vt = \frac{K_{Re} \cdot \rho}\eta \cdot \frac vt
+\end{equation}
+Trägt man im doppelt logarithmischen Maßstab $c$ über $Re$ auf, so erhält man Geraden mit unterschiedlichen Steigungen, die dem laminaren bzw. turbulenten Gebiet entsprechen (\ref{sr08}) und (\ref{sr09}). Am Knick (Unstetigkeits-Punkt, \emph{Keimbildung}) lässt sich der kritische Wert der Reynolds-Zahl ablesen.
+
+\section{Anhang}
+
+\subsection{Zur Reynoldschen Zahl}
+
+Man betrachte zwei durchströmte Rohre mit dem
+Durchmesser-Verhältnis ${d_1}/{d_2} = \alpha$. Im gleichen
+Ähnlichkeits-Verhältnis stehen die entsprechenden Wege im
+Ausdruck für die Reibungsarbeiten. (${s_1}/{s_2}=
+{d_1}/{d_2}= \alpha$). Damit lassen sich die Quotienten aus
+kinetischer Energie bzw. Reibungsarbeit umformen~\verweis{paus}:
+\[
+ \frac{m_1}{m_2} = \frac{\rho_1}{\rho_2}\alpha^3 \quad\text{und}\quad
+ \frac{A_1}{A_2} = \alpha^2 \quad\text{und}\quad
+ \frac{\diff v_1/\diff r}{\diff v_2/\diff r} = \frac{v_1/d_1}{v_2/d_2}
+\]
+\vspace{-2em}
+\begin{align*}
+ \frac{m_1\,v_1^2}{m_2\,v_2^2} &= \frac{A_1\cdot\eta_1\,s_1 \cdot \diff v_1/\diff r}{A_2\cdot\eta_2\, s_2 \cdot\diff v_2/\diff r}\\
+ \frac{\rho_1 \, \alpha^3 v_1^2}{\rho_2\,v_2^2} &= \alpha^2 \frac{\eta_1\,v_1 d_2}{\eta_2 \,v_2 d_1} \cdot \alpha\\
+ \frac{\rho_1 \,v_1d_1}{\eta_1} &= \frac{\rho_2\, v_2d_2}{\eta_2} \\
+ Re_1 &= Re_2
+% \label{sr12}
+\end{align*}
+$Re$ hängt ab von $v$, der kinematischen Zähigkeit $\eta/\rho$ und einer charakteristischen Länge $l^*$: z.~B.~
+Rohrdurchmesser $l^* = 2\,R = d$.\\
+
+\subsection{Zum Gesetz von Hagen-Poiseuille}
+
+\piccaption{Laminare Rohr-Strömung\label{fig:lam}}
+\parpic[r]{
+ \includegraphics[width=\linewidth/4]{GP1-SR-LaminareStroemungen}
+}
+
+Am koaxialen Flüssigkeitszylinder mit dem Radius $R$ und der
+Länge $l$ greifen am Mantel die Reibungskraft (\ref{Fr}) und an der
+Stirnfläche die Druckkraft (\ref{Fp}) an.
+\begin{align}
+ F_r &= 2\pi r\cdot l\,\eta \cdot \dquot vr = A^*\,\eta \cdot \dquot vr && \text{mit} \dquot vr < 0 \label{Fr}\\
+ F_p &= \pi r^2\cdot \Delta p = A\cdot \Delta p \label{Fp}
+\end{align}
+Aus der Gleichgewichtsbedingung $F_r = F_p$ folgt nach einer
+Integration zunächst das parabelförmige $\vec
+v(\vec r)$-Profil~\verweis{gert}:
+\begin{align}
+ \dquot{v}{r} &= -\frac{\Delta p}{2 \eta \cdot l}\, r\\
+ v(r) &= v_0 - \frac{\Delta p}{4\eta\cdot l}\cdot r^2 && \text{mit}\quad v_0 = \frac{\Delta p}{4\eta \cdot l} \cdot R^2
+%  \label{sr13}
+\end{align}
+Betrachtet man weiter das zwischen zwei Schichten mit den Radien
+$r$ und $r + \diff r$ strömende Volumen $\diff^2 V = 2\pi r \, \diff r \diff s$ bzw.
+dessen zeitliche Änderung $\dquot{V}{t} = 2\pi r \cdot v(r) \,\diff r$, so
+ergibt eine Integration über den ganzen Querschnitt
+\[
+\frac{V}{t} = \int_0^R 2\pi r\cdot v(r) \,\diff r = \frac{\pi\cdot \Delta p}{8 \eta \cdot l} \cdot R^4
+%  \label{sr14}
+\]
+\picskip0
+
+\frage{Was versteht man unter einer laminaren und einer turbulenten Strömung?}
+\frage{Wie berechnet sich der Strömungswiderstand in einer laminaren und in einer
+turbulenten Rohr-Strömung?}
+\frage{Wie lautet der Zusammenhang zwischen $v$ und $\Delta p$ beim sehr kurzen
+Rohr (Ausfluß)?}
+\frage{Wie unterscheiden sich Ursache und Temperaturabhängigkeit der Viskosität von
+Flüssigkeiten und Gasen?}
+\frage{Wie ist die Reynoldsche Zahl definiert? Was besagt ihr kritischer Wert?}
+\frage{Was versteht man unter Kavitation?}
+\frage{Was versteht man unter dem hydrostatischen und dem hydrodynamischen Paradoxon?}
+\frage{Unter welcher Voraussetzung kann man Gasströmungen als inkompressibel ansehen?}
+\frage{Wie lauten die Bernoullische und die Kontinuitäts-Gleichung?}
+
+\end{document}

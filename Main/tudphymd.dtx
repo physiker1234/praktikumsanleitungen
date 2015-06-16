@@ -1,0 +1,312 @@
+% \iffalse meta-comment
+%
+% Copyright 2009 by Felix Lemke <lemke.felix@ages-skripte.org>
+% Copyright 2009 by Stefan Majewsky <majewsky.stefan@ages-skripte.org>
+% -----------------------------------
+%
+% This file may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.2
+% of this license or (at your option) any later version.
+% The latest version of this license is in:
+%
+%     http://www.latex-project.org/lppl.txt
+%
+% and version 1.2 or later is part of all distributions of LaTeX
+% version 1999/12/01 or later.
+%
+% \fi
+%
+% \iffalse
+%<style>\NeedsTeXFormat{LaTeX2e}[2005/12/01]
+%<style>\ProvidesPackage{tudphymd}
+%<style>   [2009/04/07 0.9beta2 Paket mit speziellen Vereinfachungen für die Praktikumsanleitungen]
+%
+%<*driver>
+\documentclass{ltxdoc}
+ \usepackage[ngerman]{babel}
+ \usepackage[latin1]{inputenc}
+ \usepackage[T1]{fontenc}
+ \usepackage{tudphymd}
+ \usepackage{calc}
+ \usepackage{booktabs,tabularx}
+ \usepackage{amsmath}
+
+ \parindent0pt
+ \parskip.5em
+ \EnableCrossrefs
+ \CodelineIndex
+ \RecordChanges
+ \begin{document}
+  \DocInput{tudphymd.dtx}
+ \end{document}
+%</driver>
+%
+% \fi
+%
+% \CheckSum{178}
+%
+% \CharacterTable
+%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%   Digits        \0\1\2\3\4\5\6\7\8\9
+%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%   Dollar        \$     Percent       \%     Ampersand     \&
+%   Acute accent  \'     Left paren    \(     Right paren   \)
+%   Asterisk      \*     Plus          \+     Comma         \,
+%   Minus         \-     Point         \.     Solidus       \/
+%   Colon         \:     Semicolon     \;     Less than     \<
+%   Equals        \=     Greater than  \>     Question mark \?
+%   Commercial at \@     Left bracket  \[     Backslash     \\
+%   Right bracket \]     Circumflex    \^     Underscore    \_
+%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%   Right brace   \}     Tilde         \~}
+%
+% \DoNotIndex{\ifthenelse,\@ifundefined,\equal,\fi,\ifpdf,\NOT,\OR,\else,\IfFileExists,\@for,\do}
+% \DoNotIndex{\\,\arabic,\bfseries,\centering,\hfill,\hline,\item,\Large,\large,\linewidth,\makebox,\newpage,\parbox,\selectfont,\setlength,\small,\textsc,\texttt,\thepage,\today,\vskip,\vspace,\flushleft,\LARGE,\section,\flushright,\newline,\parskip,\resizebox,\vfill}
+% \DoNotIndex{\begin,\end,\csname,\endcsname,\def,\edef,\endinput,\expandafter,\g@addto@macro,\global,\let,\newcommand,\newcounter,\PassOptionsToClass,\ProcessOptions,\protect,\relax,\renewcommand,\RequirePackage,\setcounter,\stepcounter,\includegraphics,\noexpand,\ensuremath,\input}
+% \DoNotIndex{\@temp@@newList,\@temp@Item}
+% \DoNotIndex{\{,\},\frac,\left,\right,\mathrm,\partial}
+%
+% \changes{v0.1}{2009/04/07}{Initial Version}
+% \changes{v0.1.1}{2009/08/04}{New commands errSI and errnum}
+% \changes{v0.2}{2009/08/10}{sublabel added}
+%
+% \GetFileInfo{tudphymd.sty}
+%
+% \title{Das \textsf{tudphymd}-Paket\thanks{Dieses Dokument entspricht \textsf{\filename} Version \fileversion, \filedate}}
+% \author{Felix Lemke, Stefan Majewsky \\ \texttt{info@ages-skripte.org}}
+%
+% \maketitle
+% \begin{abstract}
+%  Dieses Paket stellt für mit der \textsf{tudphygp}-Dokumentklasse gesetzten Dokumente einige Zusatzfunktionen bereit.
+% \end{abstract}
+%  \newpage
+% \tableofcontents
+% \newpage
+%
+% \section{Mathematische Befehle}
+% In diesem Abschnitt werden Befehle definiert, die das Schreiben von Formeln einfacher und lesbarer machen.
+%
+% \subsection{Differential- und Integralrechnung}
+% \begin{tabularx}{\linewidth}{lXcc}
+%  \textbf{Befehl} & \textbf{Beschreibung}                                  & \textbf{Beispielcode} & \textbf{Ausgabe}\\\toprule
+%  |\dquot|        & Differentialquotient (Ordnung als optionales Argument) & |$\dquot[2]xt$| & $\dquot[2]xt$ \\
+%  |\pdquot|       & partieller Differentialquotient                        & |$\pdquot px$| & $\pdquot px$ \\
+%  |\diff|         & Differentialoperator                                   & |$W \cdot \diff x$| & $W \cdot \diff x$ \\
+%  |\dif|          & Differentialoperator mit Abstand (für Integrale)       & |$\int f\dif x$| & $\int f\dif x$ \\
+%  |\Int|          & Integralsymbol für herausgestellte Formeln             & |$\Int_a^b$| & $\Int_a^b$
+% \end{tabularx}
+%
+% \subsection{Klammern}
+% Damit man nicht ständig |\left| und |\right| anwenden muss, wurden ein paar typische Klammerpaare vordefiniert.
+%
+% \begin{tabularx}{\linewidth}{lXcc}
+%  \textbf{Befehl} & \textbf{Beschreibung} & \textbf{Beispielcode} & \textbf{Ausgabe}\\\toprule
+%  |\abs| & Betragsstriche & |$\abs{-\frac12}$| & $\abs{-\frac12}$ \\[1ex]
+%  |\brk| & eckige Klammern & |$\brk{\int\diff x}$| & $\brk{\int\diff x}$ \\[1ex]
+%  |\brc| & geschweifte Klammern & |$\brc{\sum x^2}$| & $\brc{\sum x^2}$ \\[1ex]
+%  |\kla| & runde Klammern & |$\kla{b^2 + c}$| & $\kla{b^2 + c}$
+% \end{tabularx}
+%
+% \subsection{Angabe fehlerbehafteter Größen}
+% In der |tudphygp|-Dokumentklasse ist schon das Paket |sistyle| eingebunden, dass den einfachen Satz von Werten und Einheiten über die Befehle |\SI| und |\num| erlaubt. Die Befehle |\errSI| und |\errnum| erweitern dies auf fehlerbehaftete Größen. Die folgende Tabelle zeigt, wie und wann diese Befehle angewendet werden.
+%
+% \begin{tabularx}{\linewidth}{Xcc}
+%  \textbf{Anwendungsfall} & \textbf{Beispielcode}      & \textbf{Ausgabe}         \\\toprule
+%   nur Wert               & |\errnum{10}{3}|           & \errnum{10}{3}           \\
+%   mit Zehnerpotenz       & |\errnum[e5]{10}{3}|       & \errnum[e5]{10}{3}       \\
+%   mit Einheit            & |\errSI{10}{3}{A.m^2}|     & \errSI{10}{3}{A.m^2}     \\
+%   Einheit und Zehnerp.   & |\errSI[e5]{10}{3}{A.m^2}| & \errSI[e5]{10}{3}{A.m^2} \\
+% \end{tabularx}
+%
+% \subsection{Diverse}
+%
+% \DescribeMacro{\eu}
+% Die Eulersche Zahl sollte immer in Serifenschrift gesetzt werden. Da man das aber viel zu oft vergisst und zum Beispiel |$e^x$| schreibt, gibt es den Befehl |\eu|, der die Eulersche Zahl erzeugt. Das erste und einzige Argument wird zur Potenz.
+%
+% \begin{center}\begin{tabular}{ccc}
+%          & \textbf{Beispielcode}       & \textbf{Ausgabe}          \\\toprule
+%  falsch  & |$f(x,y) = e^{x^2 + y^2}$|  & $f(x,y) = e^{x^2 + y^2}$  \\
+%  richtig & |$f(x,y) = \eu{x^2 + y^2}$| & $f(x,y) = \eu{x^2 + y^2}$ \\
+% \end{tabular}\end{center}
+%
+% \section{Mathematischer Formelsatz}
+%
+% \DescribeEnv{refequation}
+% Damit man sich zum Beispiel in einer Platzanleitung auf eine Gleichung aus der Hauptanleitung beziehen kann, gibt es die |refequation|-Umgebung. Diese wird genau wie die |equation|-Umgebung, übernimmt aber als Parameter die anzuzeigende Formelnummer. (Der interne Zähler für Formeln wird durch eine solche Gleichung nicht beeinflusst.
+%
+% \begin{center}
+%  |\begin{refequation}{4.35c} a^2 + b^2 = c^2 \end{refequation}|
+% \end{center}
+% \begin{refequation}{4.35c}
+%  a^2 + b^2 = c^2
+% \end{refequation}
+%
+% \DescribeMacro{\sublabel}
+% Dieser Befehl kann in einer Mathematik-Umgebung angewendet werden, in der Spalten möglich sind. Es erzeugt an der entsprechenden Stelle eine Formelnummerierung, die der normalen folgt, allerdings pro Zeile immer die selbe Nummer verwendet und zusätzlich einen kleinen Buchstaben anhängt (ähnlich zu |\begin{subequations}|). Um auf die Unterformel zu verweisen gibt man dem Label eine Identifikation: |\sublabel{eqn::erg1}|. Das Beispiel:
+%
+% %  |\begin{align}|\\
+%  |a^2 &= b^2 + c^2 \sublabel{eqn::pyth} & | \\
+%  |1 &= \sin^2 + cos^2 \sublabel{eqn::trig}|\\
+%  |\label{eqn::beides}|\\
+% |\end{align}|\\
+% |\eqref{eqn::trig} folgt einfach aus \eqref{eqn::pyth}.|\\
+% |Aus \eqref{eqn::beides} folgt $\ldots$|
+%
+% Erzeugt die Ausgabe:
+% \begin{align}
+%  a^2 &= b^2 + c^2 \sublabel{eqn::pyth} &
+%  1 &= \sin^2 + cos^2 \sublabel{eqn::trig}
+%  \label{eqn::beides}
+% \end{align}
+% \eqref{eqn::trig} folgt einfach aus \eqref{eqn::pyth}. Aus \eqref{eqn::beides} folgt $\ldots$
+%
+% \section{Chemische Befehle}
+% \DescribeMacro{\mol}
+% Um komplexe chemische Formeln zu schreiben gibt es sehr gute Pakete wie \textsf{ochem} und \textsf{mhchem}. Diese sind aber für die einfache Anwendung, wie sie hier gebraucht wird, zu komplex. Deshalb gibt es einen eigenen sehr einfachen Befehl, der sich um die richtige Schriftart kümmert. Mit |\mol{}| kann man sehr einfache Formeln problemlos schreiben. Zum Beispiel erzeugt |\mol{H_2^+}| die Ausgabe \mol{H_2^+}.
+%
+% \StopEventually{\PrintChanges\PrintIndex}
+% \section{Implementation}
+%
+% Für die |\errnum|- und |\erSI|-Befehle benötigen wir zwei Pakete.
+%    \begin{macrocode}
+\RequirePackage{ifthen}
+\RequirePackage{sistyle}
+%    \end{macrocode}
+% \begin{macro}{Differentialrechnung}
+%    \begin{macrocode}
+\newcommand\diff{\mathrm d}
+\newcommand\dquot[3][]{\frac{\diff^{#1} #2}{{\diff #3}^{#1}}}
+\newcommand\pdquot[3][]{\frac{\partial^{#1} #2}{{\partial #3}^{#1}}}
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{Integralrechnung}
+%    \begin{macrocode}
+\newcommand\Int{\int\limits}
+\newcommand\dif{\,\diff}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{Klammern}
+%    \begin{macrocode}
+\newcommand\kla[1]{\left(#1\right)}
+\newcommand\brk[1]{\left[#1\right]}
+\newcommand\brc[1]{\left\{#1\right\}}
+\newcommand\abs[1]{\left|#1\right|}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{Fehlerbehaftete Größen}
+%    \begin{macrocode}
+\newcommand\errnum[3][]{\ensuremath{%
+ \ifthenelse{\equal{#1}{}}{%
+  \num{#2} \pm \num{#3}%
+ }{%
+  (\num{#2} \pm \num{#3}) \cdot \num{#1}%
+ }%
+}}
+\newcommand\errSI[4][]{\ensuremath{%
+ \ifthenelse{\equal{#1}{}}{%
+  (\num{#2} \pm \num{#3}) \; \SI{}{#4} %
+ }{%
+  (\num{#2} \pm \num{#3}) \cdot \SI{#1}{#4}%
+ }%
+}}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{Diverse}
+%    \begin{macrocode}
+\newcommand\eu[1]{\mathrm e^{#1}}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{refequation}
+% Die |refequation|-Umgebung sichert den Wert des equation-Zählers sowie den |\theequation|-Befehl, überschreibt letzteren, um das gewünschte Verhalten mit einer einfachen |equation|-Umgebung zu erzielen. Am Ende werden der Zähler und dessen Ausgabebefehl wiederhergestellt.
+%    \begin{macrocode}
+\newcounter{equationSAVE}
+\newenvironment{refequation}[1]{%
+ \setcounter{equationSAVE}{\value{equation}}%
+ \let\backup@theequation\theequation%
+ \edef\theequation{#1}%
+ \begin{equation}%
+}{%
+ \end{equation}%
+ \let\theequation\backup@theequation%
+ \setcounter{equation}{\value{equationSAVE}}%
+}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{sublabel}
+% Zunächst werden Counter definiert, die später sicher stellen sollen, dass die Unternummerierung zurückgesetzt wird, wenn sich die Hauptformelnummer ändert.
+%    \begin{macrocode}
+\newcounter{equationsave}
+\setcounter{equationsave}0
+\newcounter{lasteqn}
+\setcounter{lasteqn}{-1}
+\newcounter{subaligncnt}
+%    \end{macrocode}
+% Hier beginnt die eigentlich Definition. Zunächst müssen die originalen Befehle von |\\| und |\end{align}| zwischengespeichert werden.
+%    \begin{macrocode}
+\newcommand\sublabel[1]{%
+ \global\let\nextline\\
+ \global\let\endalignsave\endalign
+%    \end{macrocode}
+% Der equation-Counter wird erst am Ende einer Zeile oder am Ende der Umgebung erhöht. Er wird aber schon vorher von |sublabel| in der richtigen Zählung gebraucht.
+%    \begin{macrocode}
+ \setcounter{equationsave}{\theequation}
+ \stepcounter{equationsave}
+%    \end{macrocode}
+% Wenn sich die Hauptnummerierung ändert, muss die Unternummerierung zurückgesetzt werden. Richtig ist die Zählung: 1a, 1b, 2a (nicht 2c).
+%    \begin{macrocode}
+ \ifthenelse{\NOT\equal{\arabic{lasteqn}}{\arabic{equation}}}{%
+  \setcounter{subaligncnt}1
+ }{}
+%    \end{macrocode}
+% |\@currentlabel| enthält die Informationen der Nummerierung. Dazu wird die Hauptnummerirung genommen und ein kleiner Buchstabe für die Unternummerierung angehängt.
+%    \begin{macrocode}
+ \def\@currentlabel{\arabic{equationsave}\ensuremath{\mathrm{\alph{subaligncnt}}}}
+ \let\thepage\relax%
+ \def\protect{\noexpand\noexpand\noexpand}%
+%    \end{macrocode}
+% Hier wird die eigentliche Information in die \emph{.aux}-Datei geschrieben, inklusive Alies, Nummerierung und Seitenzahl.
+%    \begin{macrocode}
+ \edef\@tempa{\write\@auxout{\string\newlabel{#1}{{\@currentlabel}{\thepage}}}}%
+ \expandafter%
+ \@tempa%
+%    \end{macrocode}
+% Das Label soll auch in der Formelausgabe erscheinen. Dazu wird das |\@currentlabel| expandiert in |\@ausgabe| geschrieben.
+%    \begin{macrocode}
+\global\edef\@ausgabe{\ensuremath{\quad(\@currentlabel)}}%
+ &&\@ausgabe\nonumber
+%    \end{macrocode}
+% Oft ist es erwünscht, auf alle Formeln zu verweisen, die in einer Zeile stehen. Dazu kann man am Ende (vor dem Zeilenumbruch) den bekannten |\label{alies}| Befehl verwenden. Da er aber von |\nonumber| überschrieben wird, wird er an dieser Stelle neu definiert.
+%    \begin{macrocode}
+ \def\label##1{%
+  \def\protect{\noexpand\noexpand\noexpand}%
+  \edef\@tempa{\write\@auxout{\string\newlabel{##1}{{\arabic{equationsave}}{\thepage}}}}%
+  \expandafter%
+  \@tempa%
+ }%
+%    \end{macrocode}
+% Bei einem Zeilenumbruch und bei |\end{align}| muss der Formelcounter erhöht werden, da |\nonumber| normalerweise die Erhöhung verhindert.
+%    \begin{macrocode}
+ \def\endalign{\stepcounter{equation}\endalignsave}
+ \def\\{\nextline\stepcounter{equation}}
+ \stepcounter{subaligncnt}
+%    \end{macrocode}
+% Zur Prüfung wird nun |lasteqn| auf den Wert von |equation| gesetzt.
+%    \begin{macrocode}
+ \setcounter{lasteqn}{\value{equation}}
+}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{Chemische Formeln}
+%    \begin{macrocode}
+\newcommand\mol[1]{\ensuremath{\mathrm{#1}}}
+%    \end{macrocode}
+% \end{macro}
+%
+% \Finale

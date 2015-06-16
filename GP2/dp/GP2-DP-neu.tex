@@ -1,0 +1,556 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd,mhchem}
+
+\versuch{Brechzahl und Dispersion}{DP}
+\author{L.~Jahn,A.~Schwab}
+\bearbeitet{S.~Socher,i.~A. Dr.~Escher}{}
+
+\buch{1}{L.D.~Kislovskii}{Optics and Spectroscopy, Vol. VII, No.3, 201-206}{}{1959}
+\buch{2}{H.-J.~Paus}{Physik in Experimenten und Beispielen}{V.C.-Hanser München}{1995}
+\buch{3}{W.~Ilberg, M.~Krötsch, D.~Geschke, P.~Kirsten, W.~Schenk, A.~Schneider, H.~Schulze}
+	{Physikalisches Praktikum für Anfänger}{Leipzig}{1994}
+\buch{4}{E.~Hecht}{Optik}{Add. Wesley}{1989}
+\buch{5}{A.~Recknagel}{Physik, Optik}{Verlag Technik}{1990}
+\buch{6}{W.~Walcher}{Praktikum der Physik}{Teubner Stuttgart}{1989}
+
+\begin{document}
+\maketitle
+
+\section{Aufgabenstellung}
+
+\begin{enumerate}
+ \item Mit dem Refraktometer nach \textsc{Abbe} sind die Brechzahlen $n_D$ und die Standard-
+ Dispersion $n_F-n_C$ von destilliertem Wasser, einer zweiten Flüssigkeit und einer
+ Glasplatte zu bestimmen.
+ \item Es werden die Brechzahl $n_D$ und Standard-Dispersion $n_F-n_C$ für den ordentlichen und
+ den außerordentlichen Strahl eines Quarz-Kristalls bestimmt.
+ \item Für destilliertes Wasser ist bei Beleuchtung mit einer \ce{Cd}-Spektrallampe und einer \ce{Hg}-
+ Spektrallampe die Abhängigkeit der scheinbaren Brechzahl $x$ von der Wellenlänge $\lambda$ zu
+ messen. Anschließend ist mittels Korrekturrechnungen aus $x(\lambda)$ die Dispersionskurve
+ $n(\lambda)$ zu bestimmen und diese mit dem von \textsc{Kislovskii} [1] gefundenen $n(\lambda)$-
+ Zusammenhang zu vergleichen.
+\end{enumerate}
+
+\section{Grundlagen}
+
+\subsection{\textsc{Snellius}sches Brechungsgesetz und Totalreflexion}
+
+Trifft eine elektromagnetische ebene Welle aus dem Vakuum (Lichtgeschwindigkeit $c$) unter
+dem Einfallswinkel $\alpha$ (Winkel zwischen Wellennormale und Einfallslot) auf die ebene
+Grenzfläche eines Mediums (Lichtgeschwindigkeit $c_1 < c$), so wird ein Teil der Welle
+reflektiert\footnote{Der quantitative Zusammenhang zwischen einfallendem, gebrochenen und 
+reflektierten Anteil unter Berücksichtigung der Polarisation ist durch die \textsc{Fresnel}schen 
+Formeln gegeben} und der restliche Teil dringt in das Medium ein, wobei die Wellennormale in
+Richtung Einfallslot abgelenkt wird (Brechungswinkel $\beta$). Nach Snellius\footnote{1580-1626} gilt
+
+\begin{equation} \label{snellius}
+\frac{\sin \alpha}{\sin \beta} = \frac{c}{c_1} = \frac{n_1}{n_0}
+\end{equation}
+
+mit $n_0=1$ als Brechzahl des Vakuums und $n_1$ als Brechzahl des Mediums. Meist ist das
+umgebende Medium Luft, dessen Brechungsindex ist bei 15°C und $p=101,325~ \mathrm{kPa}$
+$n_L=1,00028 \approx 1$ (trockene Luft).
+
+\medskip
+
+Beim Übergang zwischen zwei Medien gilt
+
+\begin{equation*}
+\frac{\sin \alpha}{\sin \beta} = \frac{c_1}{c_2} = \frac{n_2}{n_1}
+\end{equation*}
+
+. Ist $n_1 > n_2$, so entfällt oberhalb eines bestimmten Einfallswinkels 
+($\alpha_{1,gr} = \arcsin \frac{n_2}{n_1}$) der gebrochene Anteil und es erfolgt Totalreflexion 
+($\alpha_{1,gr} =$ Grenzwinkel der Totalreflexion). Für nicht zu hohe Frequenzen (Radiowellen) gilt 
+die \textsc{Maxwell}sche Relation
+
+\begin{equation} \label{maxwell}
+n = \sqrt{\varepsilon_r \mu_r} \approx \sqrt{\varepsilon_r}
+\end{equation}
+
+angenähert für nicht ferromagnetische Stoffe durch $\mu_r \approx 1$. So ist z.B. für Wasser bei niedrigen
+Frequenzen (im Bereich von Radiowellen) $n = \sqrt{81} = 9$ , während im Bereich des sichtbaren Lichtes 
+etwa $n \approx 1,33$ gemessen wird. Eine derartige Frequenzabhängigkeit der Brechzahl weist auf eine 
+(starke) Dispersion hin.
+
+\subsection{Dispersion}
+
+Die Wechselwirkung der einzelnen Atome des Mediums mit der elektromagnetischen Welle
+(Kreisfrequenz $\omega$) führt zu gedämpften erzwungenen Schwingungen der Elektronen
+(Resonanz in der Nähe der Eigenfrequenz $\omega_0$), wobei nur bei verdünnten oder durchsichtigen
+Medien (weit entfernt von der Resonanzstelle) Dispersion und Absorption zu trennen sind (im
+folgenden wird Absorption nicht betrachtet).\\
+Zur anschaulichen Erklärung der Dispersion zeigt Abb. \ref{abb1} schematisch, wie die durch die
+Primärwelle angeregten Atome des Mediums die Sekundärwellen mit wachsender
+Phasenverschiebung und dadurch verkürzter Wellenlänge abstrahlen. Wegen der Größe $\omega_0^2-\omega^2$
+im Nenner der Resonanzamplitude wird die Brechzahl frequenzabhängig. Die Theorie
+ergibt für konzentrierte Nichtleiter (z.B. Gläser, s. Anhang 3.4.1.2; die Formel von Clausius-
+Mosotti\footnote{R. Clausius 1822-1888, O.-F. Mosotti 1791-1863} bzw. Lorentz-Lorenz\footnote{
+V. Lorenz 1829-1888, H.A. Lorentz 1853-1928}):
+
+\begin{equation}
+\frac{n^2-1}{n^2+2} \propto \frac{1}{\omega_0^2 - \omega^2}.
+\end{equation}
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centerline{\includegraphics[height=6cm]{abb1_neu.png}} 
+\fi 
+\captionof{figure}{Polarisationsstrom $J_P$ und Sekundärwelle einer mitschwingenden Atom-Ebene (a);
+Primärwelle ($\lambda_0$) und Phasenverschiebung der Sekundärwelle (b) [2] \label{abb1}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+Trägt man die Brechzahl über der Wellenlänge des einfallenden Lichtes auf, so erhält man
+die Dispersionskurve (Abb. \ref{abb2}). Für die meisten Gläser nimmt $n$ mit wachsendem $\lambda$ im
+Bereich des sichtbaren Lichtes ab (Abb. \ref{abb2}a; normale Dispersion), während in der Nähe einer 
+Resonanzstelle (meist im UV-Bereich) starke Absorption mit anomaler Dispersion beobachtet
+wird (Abb. \ref{abb2}b).
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centerline{\includegraphics[height=7cm]{abb2_neu.png}} 
+\fi 
+\captionof{figure}{$n(\lambda_0)$ für normale (a); (b) mit anomaler Dispersion um 
+$\lambda \approx 80~\mathrm{\mu m}$, begleitet von starker Absorption [2] \label{abb2}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+\subsection{Standard-Dispersion}
+
+Ein geeignetes Dispersions-Maß wäre z.B. $\frac{\partial n}{\partial \lambda}$ (s. Auflösungsvermögen von 
+Prismen), wobei die gesamte (bekannte) Kurve $n(\lambda)$ abzuleiten wäre.
+Traditionell und bei Festlegung auf bestimmte Wellenlängen werden zur Charakterisierung
+von Gläsern in der Optik Brechzahl und Dispersion den Fraunhofer-Linien C, D, F
+zugeordnet:
+
+\begin{enumerate}
+ \item Die Brechzahl $n$ bezieht man auf die Natrium-D-Linie; es wird $n_D$ angegeben.
+ \item Die Dispersion wird bezogen auf die Differenz der Brechzahlen für die F- und C-Linie,
+ d.h. es wird $n_F-n_C$ angegeben (Standard-Dispersion).
+\end{enumerate}
+
+Zur weiteren Charakterisierung eines brechenden Mediums wird häufig die relative
+Dispersion $\vartheta_{rel}$ oder deren Kehrwert, die \textsc{Abbe}-Zahl $\nu$ benutzt:
+
+\begin{equation}
+\vartheta_{rel} = \frac{n_F-n_C}{n_D-1} \quad \nu = \frac{n_D-1}{n_F-n_C}
+\end{equation}
+
+\subsection{Geradsichtprisma und \textsc{Abbe}-Refraktometer}
+
+Für ein Prisma bekannter Geometrie, Brechzahl und Dispersion lässt sich die Ablenkung, die
+um so stärker ist, je größer die Dispersion und die Basisbreite des Prismas sind, berechnen.
+Mit Kombinationen von Prismen aus unterschiedlichen Glassorten können entweder die
+Dispersion oder die Brechung unterdrückt werden.\\
+Bei Geradsichtprismen (Amici\footnote{G. Amici 1860}) werden drei oder fünf Kron- und 
+Flintglas-Prismen, deren \textsc{Abbe}-Zahlen verschieden sind und deren brechende Kanten gegeneinander stehen,
+abwechselnd in einer Reihe montiert (Abb. \ref{abb3}). Ein achsennaher Strahl mit der D-Wellenlänge
+passiert die Anordnung (im Innern zwar mehrfach gebrochen, aber am Ausgang) geradlinig,
+während Strahlen anderer Wellenlängen abgelenkt werden.
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centerline{\includegraphics[height=3.5cm]{abb3_neu.png}} 
+\fi 
+\captionof{figure}{Beispiel eines Geradsichtsprismas \label{abb3}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+Im Tubus des Beobachtungs-Fernrohres des \textsc{Abbe}-Refraktometers (Abb. \ref{abb4}) sind zwei
+Geradsichtprismen (Farb-Kompensator) entlang der Tubusachse in Reihe angeordnet. Bei
+einer gegenseitigen Verdrillung beider Prismen um die Strahl-Achse wird die $n_D$-Linie
+durchgelassen, während andere Wellenlängen ganz verschwinden, da sie zwei mal seitlich
+abgelenkt werden. Allerdings ist diese seitliche Ablenkung auch von der Dispersion des
+Messobjektes (Flüssigkeit) abhängig, was für die empirische Dispersionsbestimmung
+ausgenutzt wird. Die Drehstellung des Farb-Kompensators wird von der Trommel angezeigt.
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centerline{\includegraphics[height=8.5cm]{abb4_neu.png}} 
+\fi 
+\captionof{figure}{Schematische Darstellung des \textsc{Abbe}-Refraktometers (rechter Tubus) \label{abb4}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+Das Fernrohr ist mit einem Teilkreis fest verbunden, während das Doppelprisma $(P_1,P_2)$ mit
+einem Arm gegen das Fernrohr drehbar ist. Dadurch kann der Einfallswinkel des Lichts so
+lange variiert werden, bis die Grenzlinie zwischen Hell und Dunkel, die im Gesichtsfelde des
+Fernrohres erscheint, auf den Schnittpunkt des Fadenkreuzes im Okular eingestellt ist. Auf
+dem Teilkreis kann dann die entsprechende Brechzahl des Messobjektes abgelesen werden.
+
+\subsection{Strahlengang im Refraktometer nach \textsc{Abbe}}
+
+Die Refraktometer nach \textsc{Abbe} und \textsc{Pulfrich} nutzen den Grenzwinkel der Totalreflexion aus.
+Die Abb. \ref{abb5} zeigt den Strahlengang im Messprisma ($P_1$) eines Refraktometers nach \textsc{Abbe}.
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centerline{\includegraphics[height=7.5cm]{abb5_neu.png}} 
+\fi 
+\captionof{figure}{Schematischer Strahlengang im Messprisma nach \textsc{Abbe} \label{abb5}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+Das Messprisma $P_1$ ist durch den charakteristischen Prismenwinkel $\alpha$ (beim 
+\textsc{Pulfrich}-Refraktometer beträgt $\alpha=90°$) gekennzeichnet. Die maximale Brechzahl der Messflüssigkeit
+ist begrenzt: $n_{fl}<n_{pr}$. Man bringt einen Tropfen der Flüssigkeit zwischen beide Prismen. Über
+das Beleuchtungsprisma ($P_2$) gelangt diffuses weißes Licht in die Flüssigkeitsschicht. Dieses
+diffuse Licht wird nur bis $\alpha_{gr}$ in das Messprisma hineingebrochen. Der restliche
+Winkelbereich bleibt dunkel. Beim Austritt aus dem Prisma wird der Grenzwinkel $\delta$
+gemessen. Nach Gl. (\ref{snellius}) gilt mit $\alpha_1=\frac{\pi}{2} \, : \, \sin \alpha_{gr}=\frac{n}{n_{pr}}$. 
+Unter Beachtung der Winkelsumme im Dreieck sowie $n_{Luft} \approx 1$ gilt für die zu bestimmende 
+Brechzahl der Flüssigkeit $n_{fl}(\lambda)$
+
+\begin{equation} \label{n_fl}
+n_{fl}(\lambda) = \sin \alpha \cdot \sqrt{n_{pr}^2 - {\sin}^2 \delta} - \cos \alpha \cdot \sin \delta
+\end{equation}
+
+Die Messskala (linker Tubus des \textsc{Abbe}-Refraktometers) ist nicht in Winkeleinheiten (für $\delta$),
+sondern in $n_D$-Werten kalibriert.
+
+\medskip
+
+\textbf{Der Kompensator und die empirische Bestimmung der Standard-Dispersion:}\\
+Im Beobachtungsstrahlengang (rechter Tubus des \textsc{Abbe}-Refraktometers) befindet sich das
+erwähnte Paar von Geradsichtprismen (Farb-Kompensator), deren gegenseitige Verdrillung $z$
+bis zum Verschwinden des farbigen Saums angezeigt wird $(0 \le z \le 60$; Geradeausstellung
+entspricht $z=30~\mathrm{Skt.})$. Dieser Kompensator erfüllt (bei weißem Licht) zwei Aufgaben:\\
+
+\begin{itemize}
+ \item Er selektiert den \ce{Na}-D-Strahl für die $n_D$-Bestimmung.
+ \item Der dazu benötigte $z$-Wert ist ein empirisches Maß für die Dispersion.
+\end{itemize}
+
+$n_F-n_C$ kann daraus über eine empirische Tabelle bestimmt werden.
+
+\medskip
+
+\textbf{Gläser:}\\
+Zur Messung der Brechzahl und der Dispersion von Glas- (oder Quarz-) Platten bleibt das
+Beleuchtungsprisma aufgeklappt. Das Messobjekt wird mit einer Flüssigkeit hoher Brechzahl
+(MBN = Monobromnaphtalin) von unten an das Messprisma $P_1$ angeklebt $(n_{gl}< n_{MBN}<n_{pr},~
+n_{MBN}=1,6572;~ 19°$C).\\
+Die Platten sind zur diffusen Beleuchtung mit weißem Licht stirnseitig matt geschliffen.
+
+\subsection{Doppelbrechender Kristall}
+
+In einachsigen doppelbrechenden Kristallen existieren zwei Lichtgeschwindigkeiten ($c_o$ und
+$c_e$) und daher zwei Brechzahlen ($n_o$ und $n_e$; $o$ für ordentlich=ordinär und $e$ für extraordinär). 
+$c_o$ und $c_e$ fallen für eine ausgezeichnete Kristall-Richtung, die optische Achse, zusammen.
+Natürliches Licht, das nicht in der optischen Achse einfällt, wird in einen ordentlichen und in
+einen außerordentlichen Strahl aufgespalten. Beide Strahlen sind senkrecht zueinander
+polarisiert. Bei einem Hauptschnitt ist ein Kristall so geschliffen, dass die optische Achse in
+der Schnittebene liegt. Beim $o$-Strahl schwingt der $E$-Vektor der Lichtwelle senkrecht zum
+Hauptschnitt, beim $e$-Strahl in der Ebene des Hauptschnitts. Für den Versuch ist der Quarz
+senkrecht zur optischen Achse geschliffen und diese (Kreis-) Fläche wird mit MBN auf das
+Messprisma geklebt. Der tangierende Grenzstrahl beleuchtet also stets senkrecht zur optischen
+Achse. So treten ein $o$- und ein $e$-Strahl in das Messprisma ein und man beobachtet zwei
+scharfe Übergänge zwischen Hell-Grau bzw. Grau-Dunkel, die zur Bestimmung von $n_o$ bzw.
+$n_e$ dienen.
+
+\section{Versuchsdurchführung}
+
+\subsection{Standard-Messungen mit dem \textsc{Abbe}-Refraktometer}
+
+Zur Bestimmung der Brechzahl und der Dispersion von Flüssigkeiten (eine davon ist Wasser
+als Normal) wird das Refraktometer als Routine-Gerät mit "`weißem"' (Glühlampen-) Licht
+benutzt und nach Gebrauchsanweisung verfahren. Das gilt bei schonender Behandlung des
+Prismas (jeglichen Kratzer vermeiden!) auch für die Glas- bzw. die Quarz-Platte.
+
+\subsection{Beleuchtung mit Spektrallinien}
+
+Hätte man monochromatische Beleuchtung (z.B. \ce{Na}-D-Licht), so würde man einen Übergang
+von gelb nach dunkel beobachten. Der Kompensator würde nur in der neutralen Stellung
+($z = 30~\mathrm{Skt.}$) Licht durchlassen und eine Bestimmung der Dispersion wäre nicht möglich.
+Im Versuchsteil 3 wird bei $z = 30~\mathrm{Skt.} = \text{konstant}$ die Gültigkeit der empirische
+Dispersionsformel für Wasser nach Kislovskii [1]
+
+\begin{equation} \label{kislov}
+n(\lambda) = \left[ 1,29 + \frac{0,47 \cdot {\lambda}^2}{{\lambda}^2 - (0,119~\mathrm{\mu m})^2} - 
+ \frac{0,08 \cdot {\lambda}^2}{(2,92~\mathrm{\mu m})^2 - {\lambda}^2} \right]^{\frac{1}{2}}
+ \quad \text{mit} \quad \lambda ~ \text{in} ~ \mathrm{\mu m}
+\end{equation}
+
+mit den 4 Spektrallinien einer \ce{Cd}-Spektrallampe und 3 Spektrallinien der \ce{Hg}-Lampe
+überprüft.\\
+Dazu werden bei Verwendung der \ce{Cd}-Spektrallampe für die von schwarz nach rot sowie rot
+nach grün scharf (dann weniger scharfen; Verbesserung mit Blaufilter!) beobachtbaren
+Übergänge die scheinbaren $n$-Werte, ab sofort $x$-Werte, bestimmt. Bei Verwendung der \ce{Hg}-Lampe 
+werden durch geeignete Metallinterferenzfilter die entsprechenden Spektrallinien
+herausgefiltert, so dass man eine monochromatische Beleuchtung erhält, für die der
+entsprechende Übergang (Farbe-Schwarz) hinsichtlich der Bestimmung der scheinbaren
+Brechzahl auszumessen ist. Die Umrechnung des gemessenen $x(\lambda)$-Zusammenhangs auf den
+$n(\lambda)$-Zusammenhang erfolgt nach Gl. (\ref{n_fl}), wobei die den scheinbaren Brechzahlen
+zuzuordnenden wahren Winkel $\delta$ (bzw. $\sin \delta$) nach Gl. (\ref{sindelta})
+
+\begin{equation} \label{sindelta}
+\sin \delta = \sin \alpha \cdot \sqrt{{n_D^{'}}^2 -x^2} - x \cdot \cos \alpha
+\end{equation}
+
+zu berechnen sind. Die Brechzahl $n^{'}_D$ ist die Brechzahl des Messprismas $P_1$ bei der
+Wellenlänge $\lambda_D=589~\mathrm{\mu m}$. Die für diese Umrechnungen benötigten Brechzahlen des
+Messprismas als Funktion der Wellenlänge ($n_{pr}(\lambda)$) und der Prismenwinkel $\alpha$ sind für das
+jeweilige Messgerät den am Messplatz ausliegenden Arbeitsplatzanleitungen zu entnehmen.
+An die Messung anschließend, sind der Graph der Gleichung (\ref{kislov}) sowie die aus den
+scheinbaren Brechzahlen ermittelten Messwerte $n(\lambda)$ grafisch darzustellen und miteinander zu
+vergleichen.
+
+\section{Anhang}
+
+\subsection{Zum Messwinkel}
+
+Zur Herleitung der Gln. (\ref{n_fl})und (\ref{kislov}) geht man aus von der Winkelsumme im skizzierten Dreieck
+innerhalb des Messprismas (s. Abb. \ref{abb5}) und wendet das Brechungsgesetz für den Eintritt des
+Grenzstrahls in das Prisma und für den Austritt aus dem Prisma an. Diese 3 Beziehungen
+lauten:
+
+\begin{equation*}
+\alpha - \alpha_{gr} = \alpha_2 \quad \text{(a);} \quad
+\sin \alpha_{gr} = \frac{n}{n_{pr}} \quad \text{(b);} \quad
+\sin \delta = n_{pr} \cdot \sin \alpha_2 \quad \text{(c).}
+\end{equation*}
+
+Nach Einsetzen der Gleichungen (a) und (b) in (c) und Umformung folgt Gl. (\ref{sindelta}) und damit
+
+\begin{equation}
+\left( \sin \delta + n \cdot \cos \alpha \right)^2 = {n_{pr}}^2 \cdot {\sin}^2 \alpha - n^2 \cdot {\sin}^2 \alpha
+\end{equation}
+
+was auf eine quadratische Gleichung für $n$ führt. Deren Lösung mit positivem Vorzeichen der
+Wurzel ist
+
+\begin{equation} \label{n_anhang}
+n = -\cos \alpha \cdot \sin \delta + \sqrt{\left( \cos \alpha \cdot \sin \delta \right)^2 + n_{pr}^2\cdot {\sin}^2
+ \delta}
+\end{equation}
+
+Nach kurzer Rechnung ergibt sich aus Gl. (\ref{n_anhang}) dann Gl. (\ref{n_fl}).
+
+\subsection{\ce{Cd}- und \ce{Hg}-Spektrallinien, Fraunhoferlinien sowie ausgewählte 
+Brechzahlen}
+
+Aus dem Linienspektrum der Cadmium-Spektrallampe (5 min einbrennen lassen!) und der 
+Quecksilber-Spektrallampe werden folgende Wellenlängen benötigt: 
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+rot & $644,0~\mathrm{\mu m}$ \\
+grün & $508,7	~\mathrm{\mu m}$ \\
+blau & $480,1~\mathrm{\mu m}$ \\
+blau-violett & $467,9~\mathrm{\mu m}$ \\
+\hline
+\end{tabular}
+\caption{Vier Wellenlängen der \ce{Cd}-Spektrallampe}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+gelb & $579,0~\mathrm{\mu m}$ \\
+grün & $546,1~\mathrm{\mu m}$ \\
+violett & $435,81~\mathrm{\mu m}$ \\
+\hline
+\end{tabular}
+\caption{Drei Wellenlängen der \ce{Hg}-Spektrallampe}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+$\lambda_F$ & $486~\mathrm{\mu m}$ \\
+$\lambda_C$ & $656~\mathrm{\mu m}$ \\
+$\lambda_D$ & $589,3~\mathrm{\mu m}$ \\
+\hline
+\end{tabular}
+\caption{Wellenlängen von drei Fraunhoferlinien}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+Stoff & $n_D$ & $n_F-n_C$ \\
+\hline
+Destilliertes Wasser  & 1,3332 & 0,0059 \\
+Ethylalkohol & 1,362  & \\
+Benzol & 1,501  & 0,017 \\
+Kanada-Balsam & 1,54 & \\
+Schwerst-Flint-Glas & 1,9 & \\
+\hline
+\end{tabular}
+\caption{Einige Brechzahlen}
+\end{table}
+
+\subsection{Zur Doppelbrechung einachsiger Kristalle}
+
+Abb. \ref{abb6}a zeigt sogenannte Wellenflächen, in denen die Lichtgeschwindigkeit im Medium in 
+Abhängigkeit von der Richtung dargestellt ist. Das linke Bild betrifft den optisch negativen 
+Kristall (z.B. Kalkspat, $c_o < c_e$; $n_o > n_e$), das rechte den positiven (z.B. Quarz, $c_o > c_e$
+; $n_o< n_e$, s.a. Abb. \ref{abb6}c). In der Abb. \ref{abb6}b ist schematisch nach [2] die Entstehung des außerordentlichen 
+(E) und ordentlichen Strahles (O) für den Fall eines negativ doppelbrechenden Kristalls (z.B. 
+Kalkspat) angedeutet. Während die durch den Vektor der dielektrischen Verschiebung $\vec D$ bestimmten 
+Richtungen des Wellenzahlvektors $\vec k$ unverändert bleiben, sind die Pointing-Vektoren 
+der Energieströmung $\vec S$ verschieden. Ursache ist die Anisotropie der Dielektrizitätskonstanten. 
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centerline{\includegraphics[height=9.5cm]{abb6_neu.png}} 
+\fi 
+\captionof{figure}{(a) Wellenflächen im negativ (links) bzw. positiv doppelbrechenden einachsigen Kristall; b) 
+\textsc{Hygens}sche Elementarwellen im Kristall; c) Beispiele für anisotrope Dispersionskurven \label{abb6}}
+\vspace{0.05\linewidth}
+\end{minipage}
+
+\subsection{Zum mikroskopischen Verständnis der Dispersion}
+
+Durch das hochfrequente $E$-Feld wird im Medium (Konzentration $N$=Anzahldichte) infolge 
+der Störung der Gleichgewichtslage der Elektronen pro Atom ein Dipolmoment $p=\alpha^{*} E$ 
+erzeugt, das summarisch die elektrische Polarisation ($P=Np$)
+
+\begin{equation} \label{pol}
+P = \varepsilon_0 \chi E = \varepsilon_0 N \alpha^{*} E = \varepsilon_0 (\varepsilon_r - 1) E
+\end{equation}
+
+zur Folge hat. $(\chi = (\varepsilon_r-1) = \text{elektrische Suszeptibilität};~ N\alpha^{*} = \chi)$. 
+Mit Gl. (\ref{maxwell}) erhält man: $n^2 - 1 = N \alpha^{*};~(\alpha^{*}=\text{atomare Suszeptibilität})$.
+
+\subsection{Modell zur Abschätzung von $\alpha^{*}$, erzwungene Schwingung ohne 
+Dämpfung}
+
+Die maßgebliche Forderung, ein Elektron ($e$) sei elastisch gebunden ($\omega_0^2=\frac{k}{m}$), und seine Auslenkung 
+$x$ (und als Folge das atomare Dipolmoment $p=ex=\alpha^{*}E$) genügt bei periodischer Anregung 
+$E(t)= \hat{E} \mbox{e}^{i \omega t}$ der Dgl. 
+
+\begin{equation} \label{diff}
+m \frac{\partial^2 x}{\partial t^2} + kx= -e \hat{E} \mbox{e}^{i \omega t} \, ;
+\quad \text{Lösung:} \quad
+\hat{x} = -\frac{e \hat{E}}{m(\omega^2_0 - \omega^2)}.
+\end{equation}
+
+Es folgt
+
+\begin{equation} \label{alpha}
+\alpha^{*} = \frac{e \hat{x}}{\hat{E}} = \frac{e^2 / m}{\omega_0^2 - \omega^2}
+\quad \text{bzw.} \quad
+n^2-1= N \alpha^{*} = N \frac{e^2}{m} \cdot \sum\limits_i \frac{f_i}{\omega_{i,0}^2 - \omega^2} = Y
+\end{equation}
+
+wenn man in $\alpha^{*}$ pro Atom mehrere Elektronen ($f_i$ = Oszillator-Stärke) und mehrere
+Eigenfrequenzen $\omega_{i,0}$ berücksichtigt, über die summiert wird.
+
+\subsubsection{Verdünnte Medien (Gase)}
+
+In der Näherung verdünnter Medien ($n \approx 1$) gilt:
+
+\begin{equation*}
+n^2-1 \approx 2(n-1) \quad \text{d.h.} \quad n = 1 + \frac{Y}{2}
+\end{equation*}
+
+\subsubsection{Konzentrierte Medien mit geringer Absorption (Gläser)}
+
+Die atomaren Dipole beeinflussen sich gegenseitig über ihre Dipolfelder (Lorentz-Feld) als 
+Folge von Oberflächenladungen. Die daher notwendige Korrektur erfolgt über das Lorentz-Feld 
+$\frac{P}{3 \varepsilon_0}$ (s. Abb. \ref{abb7}).
+
+\begin{minipage}{\textwidth}
+\vspace{0.05\linewidth}
+\ifpdf 
+\centerline{\includegraphics[height=7.5cm]{abb7_neu.png}} 
+\fi 
+\captionof{figure}{ Eine homogen polarisierte Umgebung erzeugt im kugelförmigen Hohlraum ein 
+Lorentzfeld \label{abb7}}
+\vspace{0.05\linewidth}
+\end{minipage} 
+
+Denn zwischen dem inneren, mikroskopischen Feld $E_{int}$ in einem kugelförmigen Hohlraum 
+um das betrachtete Atom (Lorentzkugel, positiver Beitrag der Umgebung) und dem äußeren 
+angelegten Feld $E_{ext}$ besteht bei isotropen Medien die Relation
+
+\begin{equation} \label{E_int}
+E_{int} = E_{ext} + \frac{1}{3} \frac{P}{\varepsilon_0}
+\end{equation}
+
+Anstelle von Gl. (\ref{pol}) gilt jetzt mit dem gleichen Wert für $\alpha^{*}$
+
+\begin{equation}
+P = \varepsilon_0 N \alpha^{*} \left( E + \frac{P}{3\varepsilon_0} \right)
+\quad \text{oder} \quad
+P = \frac{\varepsilon_0 E N \alpha^{*}}{1-\frac{N \alpha^{*}}{3}}
+\end{equation}
+
+Aus dem Koeffizientenvergleich von Gl.(\ref{E_int}) mit Gl.(\ref{pol}) folgt:
+
+\begin{equation}
+N \alpha^{*} = \frac{3(\varepsilon_r - 1)}{\varepsilon_r +2} = \frac{3(n^2-1)}{n^2+2} = Y
+\end{equation}
+
+Es ist also $n^2-1$ in Gl. (\ref{alpha}) durch $\frac{3(n^2-1)}{n^2+2}$ zu ersetzen.
+
+\subsection{Beachtliche Dämpfung, Absorption}
+
+Mit einem Dämpfungsfaktor $\delta^{*} = \frac{r}{2m}$ wird aus Gl. (\ref{diff}) bzw. der Lösung 
+
+\begin{equation}
+m \frac{\partial^2 x}{\partial t^2} + r \frac{\partial x}{\partial t} + kx = -e \hat{E} \mbox{e}^{i \omega t}
+\quad \text{Lösung:} \quad
+\hat{x} = -\frac{e \hat{E}}{m(\omega_0^2 - \omega^2) + e i \omega^2 {\delta^{*}}^2}
+\end{equation}
+
+und
+
+\begin{equation*}
+\tan \varphi = \frac{2 \delta^{*} \omega}{\omega_0^2 - \omega^2}
+\end{equation*}
+
+Infolge der Dämpfung finden wir eine reduzierte Amplitude der Polarisation und eine
+Phasenverschiebung um $\varphi$. Sowohl $P$ und $\alpha^{*}$ als auch $c$ und $n$ werden komplex. 
+
+\subsection{Phasen-, Gruppen- und Signal-Geschwindigkeit}
+	
+Dispersion bedeutet eine Differenz zwischen Gruppen- und Phasengeschwindigkeit. Während die 
+Phasengeschwindigkeit sich zu $v_{ph} = \frac{\omega}{k}$ berechnet, gilt für die Gruppengeschwindigkeit 
+(bei akustischen Wellen gleich der Signalgeschwindigkeit, bei Materiewellen gleich der Teilchengeschwindigkeit) 
+
+\begin{equation}
+v_g = \frac{d \omega}{d k} = v_{ph} +k \frac{d v_{ph}}{d k} = v_{ph} - \lambda \frac{d v_{ph}}{d \lambda}
+\end{equation}
+
+Gruppen- und Phasengeschwindigkeit sind also identisch, wenn keine Dispersion vorliegt. Andernfalls gilt:
+
+\begin{align*}
+v_g < v_{ph} & :  \text{normale Dispersion} \\
+v_g > v_{ph} & :  \text{anomale Dispersion}
+\end{align*}
+
+Im Bereich anomaler Dispersion elektromagnetischer Wellen ist die Signalgeschwindigkeit 
+$v_{sig}$ von $v_g$ verschieden und es gilt $v_{sig} < c$, während $v_g > v_{sig}$ sein kann (s. z.B. [2]). 
+
+\frage{Was versteht man unter normaler und anomaler Dispersion?}
+\frage{Wie unterscheiden sich Prismen für Spektral-Apparate vom achromatischen und vom 
+Geradsichtprisma?}
+\frage{Wovon hängt das spektrale Auflösungsvermögen eines Prismas ab?}
+\frage{Was ist Totalreflexion?}
+\frage{Wie berechnet man den Grenzwinkel zwischen hell und dunkel beim \textsc{Abbe}-Prisma?
+Wie verläuft der Strahlengang, auch unter Beachtung der Dispersion?}
+\frage{Wie kann man das Brechungsgesetz mit Hilfe des Modells der Elementarwellen
+herleiten?}
+\frage{Wie verlaufen die Elementarwellen im anisotropen Kristall; durch welche 
+Brechzahlen ist Quarz charakterisiert?}
+\frage{Worauf beruht die Wirkung des Kompensators beim Refraktometer nach \textsc{Abbe}?}
+\frage{Wozu benutzt man Kanada-Balsam?}
+\frage{Könnte man mit dem beschriebenen Refraktometer die Brechzahl von Schwerst-
+Flint-Glas ($n = 1,9$) bestimmen?}
+
+\end{document}
+

@@ -1,0 +1,134 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd}
+
+\versuch{Gekoppelte Schwingung}{GS}
+\author{C.~Blockwitz}
+\date{01/07/2000}
+\bearbeitet{E.~Hieckmann,J.~Kelling,F.~Lemke,S.~Majewsky,i.A. Dr. Escher}{}
+
+\begin{document}
+
+\maketitle
+
+\section{Aufgabenstellung}
+Das Wissen über physikalische Pendel und Schwingungen soll durch diesen Versuch vertieft werden. Messen Sie die Schwebungsfrequenz der gekoppelten Pendel als Funktion der Kopplungslänge direkt und indirekt. Die Messergebnisse sind mit den theoretisch berechneten Werten zu vergleichen.
+
+\section{Grundlagen}
+
+\subsection{Das Physikalische Pendel}
+
+Mit dem Trägheitsmoment $J_A = \int_K r^2 \dif m$ des Körpers $K$ bezüglich der Drehachse $A$ und dem Abstand $s_A$ zwischen Drehachse und Massenmittelpunkt lautet die Differentialgleichung für das physikalische Pendel der Gesamtmasse $m$:
+\begin{equation}
+\ddot \varphi = - \frac{mg \cdot s_A}{J_A} \cdot \sin\varphi \approx -\frac{mg \cdot s_A}{J_A} \cdot \varphi
+\end{equation}
+Die Näherung $\sin\varphi \approx \varphi$ gilt für kleine Winkel $\varphi \ll 1$. Diese Differentialgleichung wird durch den bekannten Ansatz gelöst:
+\[
+ \varphi(t)= \hat\varphi \cdot \cos(\omega t + \varphi_0) \quad\text{mit}\quad \omega^2 = \kla{\frac{2\cdot\pi}T}^2 = \frac{mg \cdot s_A}{J_A}
+\]
+Hierbei ist $\omega$ die Kreisfrequenz der freien Schwingung.
+
+\subsection{Gekoppelte Pendel}
+
+\piccaption{schematischer Versuchsaufbau\label{fig::aufbau}}
+\parpic[r]{
+ \includegraphics[width=\linewidth/2]{GP1-GS-abb1}
+}
+Für kleine Auslenkungen $\varphi_1$ und $\varphi_2$ der Pendel 1 und 2 lauten die Bewegungsgleichungen der gekoppelten gleichartigen Pendel bei Vernachlässigung der Masse der Kopplungsfeder und jeglicher Dämpfung:
+\begin{subequations}
+ \begin{align}
+  J_A \cdot \ddot\varphi_1 &= -D \varphi_1 + D^* \cdot (\varphi_1 - \varphi_2) \label{eqn::dgl1} \\
+  J_A \cdot \ddot\varphi_2 &= -D \varphi_2 + D^* \cdot (\varphi_2 - \varphi_1) \label{eqn::dgl2}
+ \end{align}
+\end{subequations}
+$D = m \cdot g \cdot s_A$ ist das \emph{Richtmoment} des freien Pendels und $D^* = k \cdot l^2 $ das \emph{Richtmoment} der Kopplungsfeder.
+
+Wir legen die Anfangsbedingungen so fest, dass das Pendel am Anfang nur ausgelenkt wird, aber nicht angestoßen:
+\begin{equation}
+\varphi_{1}(0)=A\qquad\varphi_{2}(0)=B\qquad\dot{\varphi_{1}}(0)=\dot{\varphi_{2}}(0)=0
+\end{equation}
+Damit ergeben sich die Lösungen für die einzelnen Pendel aus den gekoppelten Bewegungsgleichungen (Gl.~\ref{eqn::dgl1} und \ref{eqn::dgl2}):
+\begin{align}
+ \begin{array}{cl}
+  \varphi_{1} = \frac{1}{2}\Bigl[(A+B) \cdot \cos(\omega\cdot t) + (A-B) \cdot \cos(\omega'\cdot t)\Bigr] \\[1.1ex]
+  \varphi_{2} = \frac{1}{2}\Bigl[(A+B) \cdot \cos(\omega\cdot t) - (A-B) \cdot \cos(\omega'\cdot t)\Bigr]
+ \end{array} \\
+ \text{mit}\quad \omega = \frac{2\pi}T = \sqrt{\frac D{J_A}} \quad\text{und}\quad \omega' = \frac{2\pi}{T'} = \sqrt{\frac{D + 2D^*}{J_A}} \label{eqn::frequenz}
+\end{align}
+
+\newpage
+Für bestimmte Anfangsbedingungen erhält man die beiden \emph{Fundamentalschwingungen}:
+\begin{itemize}
+ \item $\varphi_1 (0) = \varphi_2 (0) = \varphi_0$: Daraus folgt $A = B$ und es ergib sich die \emph{gleichsinnige Fundamentalschwingung} mit der Kreisfrequenz $\omega$, bei der beide Pendel so schwingen, als wäre die Kopplung nicht vorhanden.
+ \item $\varphi_1 (0) = - \varphi_2 (0) = \varphi_0$: Daraus folgt $A = -B$ und es ergibt sich die \emph{gegensinnige Fundamentalschwingung} mit der Kreisfrequenz $\omega'$.
+\end{itemize}
+
+Die \emph{Schwebungsschwingung} erhält man, indem ein Pendel in der Ruhelage festgehalten wird und das zweite Pendel zur Zeit $t = 0$ bei maximaler Auslenkung losgelassen wird ($\varphi_2(0) = \varphi_0$), also für $A = 0$ und $B = \varphi_0$ oder umgekehrt. Daraus ergeben sich die Funktionen $\varphi_{1/2}(t)$ der beiden Pendel während der Schwebungsschwingung:
+\begin{equation}
+ \varphi_1(t) = \frac{\varphi_0}2 \cdot \Bigl[\cos(\omega\cdot t) - \cos(\omega' \cdot t)\Bigr] \quad\text{und}\quad \varphi_2(t) = \frac{\varphi_0}2 \cdot \Bigl[\cos(\omega \cdot t) + \cos(\omega' \cdot t)\Bigr]
+\end{equation}
+Durch Differenzen und Summen der Fundamentalschwingungsfrequenzen ausgedrückt ergibt sich:
+\begin{equation}
+ \begin{split}
+  \varphi_1 &= \varphi_0 \cdot \sin\kla{\frac{\omega' - \omega}2 \cdot t} \cdot \sin\kla{\frac{\omega + \omega'}2 \cdot t} \\
+  \varphi_2 &= \varphi_0 \cdot \sin\kla{\frac{\omega' - \omega}2 \cdot t} \cdot \cos\kla{\frac{\omega + \omega'}2 \cdot t}
+  \label{eqn::schwebung} %label{3}
+ \end{split}
+\end{equation}
+
+\begin{figure}[h!b]\centering %an dieser Stelle verschiebt ein [b] das Bild auf die letzte Seite
+ \includegraphics[width=\linewidth]{GP1-GS-abb2}
+ \caption{Prinzip der Schwebungsschwingung eines Pendels mit der Schwebungdauer $\tau$}
+ \label{fig::schwebung}
+\end{figure}
+
+Nach Gleichung \eqref{eqn::schwebung} führen beide Pendel Schwingungen mit dem arithmetischen Mittel der Fundamentalschwingungsfrequenzen aus, während sich die Amplituden periodisch mit $\frac{\omega ' - \omega}2$ ändern.
+
+Die \emph{Schwebungsdauer} $\tau$ ist der Abstand zweier Nulldurchgänge der Amplitude eines Pendels. Aus der Bedingung $\frac{\omega' - \omega}2 \cdot \tau = \pi$ ergibt sich die \emph{Schwebungsfrequenz} als Differenz der Fundametalschwingungsfrequenzen:
+\begin{equation}
+ \frac1\tau = f_s = \frac{\omega'-\omega}{2\pi} = \frac1{T'} - \frac1T \label{eqn::schwebfrequenz1}
+\end{equation}
+Mit \eqref{eqn::frequenz} kann man die Schwebungsfrequenz aus den Richtmomenten bzw. den entsprechenden Werten für $g$, $k$, $m$, $s_A$ und $l$ errechnen:
+\begin{equation}
+f_s = \frac1\tau = \frac{\omega'-\omega}{2\pi} = \frac1T \cdot \kla{\sqrt{1 + \frac{2 \cdot k \cdot l^2}{m \cdot g \cdot s_A}} - 1} \label{eqn::schwebfrequenz2}
+\end{equation}
+
+\section{Experimentelle Aufgabenstellung}
+
+Am Versuchsplatz sind zwei physikalische Pendel aufgebaut, die in einer gemeinsamen Ebene schwingen können. Die Pendel werden durch eine Schraubenfeder (Federkonstante $k$) gekoppelt, die in variablem Abstand $l$ von der Drehachse jedes Pendels befestigt werden kann (siehe Abb.~\ref{fig::aufbau}).
+\begin{enumerate}
+ \item Justieren Sie die ungekoppelten Pendel durch Verschieben einer Tariermutter auf gleiche Schwingungsdauer, indem die Schwingungsdauern gemessen werden oder die Phasengleichheit der gegensinnigen Schwingungen der beiden ungekoppelten Pendel am inneren Umkehrpunkt über längere Zeit kontrolliert wird.
+ \item \emph{direkte Methode}: Messen Sie $\tau$ direkt und berechnen Sie die Schwebungsfrequenz $f_{S,1}$.
+ \item \emph{indirekte Methode}: Messen Sie für verschiedene Abstände $l$ die Schwingungsdauer $T$ der gleichsinnigen, die Schwingungsdauer $T'$ der gegensinnigen Fundamentalschwingung und bestimmen Sie daraus die Schwebungsfrequenz $f_{S,2}$.
+ \item \emph{theoretische Methode}: Bestimmen Sie die Federkonstanten $k$ mittels dynamischer Methode (Wie?). Erhalten Sie aus der Tabelle in der Platzanleitung die Parameter $m$ und $s_A$, die vom Versuchplatz abhängen. Berechnen Sie damit den theoretischen Wert für die Schwebungsfrequenz $f_{S,3}$.
+\end{enumerate}
+
+\section{Auswertung}
+Die Schwebungsfrequenz $f_{S,1}$ folgt \emph{direkt} aus dem gemessenen $\tau$. $f_{S,2}$ erhält man \emph{indirekt} nach \eqref{eqn::schwebfrequenz1} aus $T$ und $T'$. Weiterhin benutzt man den theoretischen Zusammenhang \eqref{eqn::schwebfrequenz2} um $f_{S,3}$ zu berechnen.
+
+Die auf drei verschiedenen Wegen ermittelten Schwebungsfrequenzen sind als Funktion der Kopplungslänge $l$ in einem gemeinsamen Diagramm darzustellen. Die relativen Maximalfehler von $f_S$ sind für die indirekte Methode (Gl.~\eqref{eqn::schwebfrequenz1}) und die theoretische Methode (Gl.~\eqref{eqn::schwebfrequenz2}) in Abhängigkeit vom Federabstand $l$ zu bestimmen.
+
+\frage{Wodurch ist eine mechanische Schwingung gekennzeichnet?}
+\frage{Wie sind im Experiment die Fundamentalschwingungen und die reine Schwebung anzuregen?}
+\frage{Wie könnte man feststellen, ob die Pendel bei der Bestimmung von $T'$ genau in Gegenphase schwingen?}
+\frage{Wie kann man die Federkonstante $k$ der Kopplungsfeder statisch und dynamisch bestimmen?}
+\frage{Wie erhält man den Massenmittelpunkt eines Pendels?}
+\frage{Die beiden Pendel sind in einem Metallrahmen aufgehängt. Wenn man ein Pendel zur Schwingung anstößt, beginnt nach längerer Zeit auch das zweite Pendel zu schwingen, selbst wenn die Pendel \emph{nicht} durch eine Feder verbunden sind. Wie ist das zu erklären?}
+\frage*{Da die Aufhängeplatte für den Federangriff (Masse $m_F$) für die Kopplungsfeder auf dem Pendel verschoben werden muss, hängt auch die Schwingungsdauer $T$ von $l$ ab. Versuchen Sie herzuleiten, dass der Einfluss der Verschiebung der Muffe auf die Frequenz $\overline f$ in erster Näherung erfasst wird, wenn die rechten Seite der Gleichung \eqref{eqn::schwebfrequenz2} mit dem folgenden Faktor multipliziert wird:
+ \[
+  \brk{1 - \frac12 \cdot \frac{m_M}{m_P} \cdot \frac1s \cdot \kla{1 + \frac{\omega^2}g}}
+ \]
+}
+
+\buch{Gert}{C.~Gerthsen}{Physik}{Springer-Verlag}{Berlin 1997}
+\buch{Gesch}{I.~Waldemar, D.~Geschke, E.~Horst}{Physikalisches Praktikum}{Teubner-Verlag}{Stuttgart, Leipzig 1998}
+\buch{Reck}{A.~Recknagel}{Physik: Schwingungen, Wellen, Wärmelehre}{Technik-Verlag}{Berlin 1990}
+%
+% \bibliographystyle{unsrt}
+%
+% \begin{thebibliography}{NAM99}
+% \bibitem 1 Gerthsen, Physik
+% \bibitem 2 Geschke, Physikalisches Praktikum
+% \bibitem 3 Recknagel, Physik: Schwingungen und Wellen/ Wärmelehre
+% \end{thebibliography}
+%
+\end{document}

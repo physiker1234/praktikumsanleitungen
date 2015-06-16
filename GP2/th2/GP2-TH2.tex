@@ -1,0 +1,420 @@
+\documentclass[11pt,twoside]{article}
+\usepackage{verbatim}
+\usepackage{amsmath,amsthm}
+\usepackage{graphicx}
+
+\usepackage[german]{babel}
+\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc
+
+\usepackage{fancybox}
+\usepackage{textcomp}
+\usepackage{fancyhdr}
+\usepackage{rotating}
+\setcounter{secnumdepth}{3}
+
+\textheight         23cm
+\textwidth          16.5cm
+\topmargin          15pt
+\oddsidemargin      4pt
+\evensidemargin     -7pt
+
+\pagestyle{fancy}
+
+ \title{Versuch TH2 \\ Thermische Analyse \\}
+ \author{bearbeitet von \\ M. Kreller \\ i.A. Dr. Escher}
+
+\begin{document}
+
+\thispagestyle{empty}
+\begin{table}[h]
+\begin{tabular}{|c|c|}
+\hline
+& \\
+\hspace{0.7cm} \begin{LARGE}Technische Universität Dresden \end{LARGE}
+\hspace{0.7cm} & \hspace{1cm}Physikalisches Praktikum \hspace{1cm} \\
+\begin{large} Fachrichtung Physik \end{large}               & \\
+\begin{footnotesize} C.G. Oertel, L. Jahn 09/ 1998 \end{footnotesize}            & Versuch:
+\begin{LARGE} TH 2 \end{LARGE} \\
+\begin{footnotesize} bearbeitet 03/ 2004 \end{footnotesize} & \\
+\hline
+\end{tabular}
+\end{table}
+\begin{huge}\textbf{Thermische Analyse}\end{huge}
+
+\tableofcontents
+\newpage
+
+\section{Aufgabenstellung}
+
+Es sind Teile des Zustandsdiagramms im Legierungs-System
+Blei-Zinn anhand von Abkühlungskurven von
+ Schmelzen verschiedener Konzentrationen zu bestimmen.
+
+\section{Thermodynamisches Gleichgewicht}
+\subsection{Phasengesetz von Gibbs}
+Ein Stoff ist {\bf homogen}, wenn in beliebig kleinen
+Raumgebieten (allerdings noch gemittelt über eine große Anzahl von Atomen)
+chemische Zusammensetzung und Eigenschaften gleich sind. Der Gegensatz dazu
+ist das {\bf heterogene} System, das aus verschiedenen, für sich
+genommen homogenen Teilen, den {\bf Phasen} besteht.\\
+Schmelzen und Legierungen werden i.~a.~bei konstantem Druck (Luftdruck)
+und konstanter Temperatur hergestellt bzw.~untersucht.
+Für $p=$konst.~und $T=$const. ($dp=0;\; dT=0$) ist die Gibbs'sche freie
+Enthalpie
+\begin{equation}
+G=U+pV-TS
+\label{th201}
+\end{equation}
+die geeignete
+Funktion zur Beschreibung des thermodynamischen Gleichgewichtes\\
+(U~=~innere Energie; p~=~Druck; V~=~Volumen; T~=~Temperatur;
+S~=~Entropie; $dG=dU+pdV-TdS$).\\
+In der Nähe oder im {\bf thermodynamischen Gleichgewicht} gilt
+\begin{equation}
+  d\,G\le 0\;\quad{\rm und}\quad G\rightarrow {\rm Minimum}\quad.
+  \label{th202}
+\end{equation}
+Die Bedingung (\ref{th202}) besagt, daß im thermodynamischen Gleichgewicht
+die frei Enthalpie ein Minimum annimmt.\\
+Žndern sich die Gleichgewichtsbedingungen merklich, z.~B.~bei
+šberschreitung der Keimbildungsschwelle infolge einer
+Temperaturänderung, so läuft aufgrund einer Erhöhung der freien Enthalpie
+um $\Delta G$ (Umwandlungs-Enthalpie)
+eine Phasenreaktion ab, die zu einem neuen Phasengleichgewicht
+führt (s.~Anhang).\\
+Allgemein besagt das {\bf Gibs'sche Phasen-Gesetz}
+(historisch Phasenregel):
+Im thermodynamischen Gleichgewicht gilt\\
+\begin{center}
+\fbox{\parbox[t]{8cm}{
+\begin{equation}
+f=k+2-\Phi \quad.
+\label{th203}
+\end{equation}
+}}
+\end{center}
+Gl.~(\ref{th203}) besagt, daß die Zahl $f$ der frei verfügbaren Variablen
+(Freiheitsgrade, z.B.~ $T$; $p$; Konzentration $c$)
+gegeben ist durch die Zahl der Komponenten $k$ (beim
+Einstoff-System $k=1$; Zweistoff-System $k=2$;..) vermindert um die Zahl der
+Phasen $\Phi$ (z.~B.~feste Phase; flüssige Phase;..) plus 2.
+
+\subsection{Phasengleichgewicht im Einstoff-System}
+Beim Einstoffsystem (z.B. $H_2O$, reine Metalle,..) ist $k=1$, d.h.,
+~$f=3-\Phi$.\\
+An den Koexistenzgrenzen der homgenen Zustandsgebiete ändern sich
+die physikalischen Eigenschaften diskontinuierlich:\\
+So ist z.~B. an der Koexistenzgrenze von 2 Phasen
+(z.~B.~bei Dampfdruck-; Schmelzdruck-;
+Sublimationsdruck-; Umwandlungs-Druck-Kurven) $\Phi=2$. Daher ist mit $f=1$
+und vorgegebener Temperatur der Druck festgelegt. Es gibt eine funktionale
+Abhängigkeit (z.~B.~die Dampfdruckkurve ~$p_D=p_D(T)$ oder die
+Schmelzdruckkurve ~$p_s=p_s(T)$).\\
+Beim Tripelpunkt sind 3 Phasen im Gleichgewicht ($\Phi=3$) und es wird $f=0$.
+Druck und Temperatur sind festgelegt.
+
+\subsection{Kondensiertes Zweiphasen-System}
+Bei {\bf Metallen und Legierungen} kann oft von der Existenz der Gasphase
+abgesehen werden.
+Ein derartiges {\bf kondensiertes System} wird im folgenden betrachtet.
+Dann reduzieren sich in Gl.~(\ref{th201}) die Freiheitsgrade um eins und
+es gilt:
+\begin{center}
+\fbox{\parbox[t]{8cm}{
+\begin{equation}
+f=k+1-\Phi \quad.
+\label{th2031}
+\end{equation}
+}}
+\end{center}
+Im {\bf metallischen Zweistoffsystem} ist $k=2$ (binäres System). Es gibt
+eine zusätzliche Variable, die Konzentration
+$c$ (= Anteil eines Legierungselementes in Atom-\% oder Gewichtsprozent).
+Im Existenzbereich {\bf einer} Phase
+(z.B. Schmelze)  gilt $\Phi=1$ und $f=2$, womit $c$ und $T$ in weiten
+Grenzen wählbar sind. $T(c)$-Phasen-Diagramme heißen auch Zustandsdiagramme.\\
+Alle Reaktionen vollziehen sich {\bf beliebig langsam,
+d.~h.~im thermodynamischen Gleichgewicht}, das
+im festen Zustand durch Diffusion (u.~U.~erst
+nach vielen Stunden) erreicht wird.
+
+\section{Zustandsdiagramm mit Eutektikum: Blei-Zinn}
+\subsection{šbersicht}
+\begin{minipage}{6cm}
+Wir betrachten das {\bf Zweistoffsystem Blei-Zinn} (Lotmaterialien), für das im
+flüssigen Zustand völlige Löslichkeit (Mischbarkeit) der Komponenten
+besteht. Im festen Zustand dagegen besteht {\bf beschränkte
+Löslichkeit} (Mischbarkeit)
+sowohl für Sn in Pb als auch umgekehrt (Abb.~2).
+D.~h.~an den beiden Rändern des Diagramms kann in dem vorherrschenden Metall
+das andere bis zu einer bestimmten Konzentration (temperaturabhängig) in den
+mit $\alpha $ bzw.~$\beta $ bezeichneten Phasen gelöst werden (Abb.~2).
+\end{minipage}\hspace{.5cm}
+\begin{minipage}{9.5cm}
+\centering{\includegraphics{abb1}} \\
+{\small {\bf Abb.~1:}\\
+Eutektisches Zustanddiagramm des Systems Blei-Zinn}
+\end{minipage}
+~\\[.2cm]
+Im mittleren Gebiet besteht im festen Zustand eine {\bf Mischungslücke}
+und es wird ein Gemisch aus
+$\alpha $ plus ~$\beta $ ausgeschieden (s.~Abb.~1).
+
+\subsection{Ausgewählte Pb-Sn-Legierungen}
+Wir betrachten im folgenden vier ausgewählte Pb-Sn-Legierungen:
+\subsubsection{Geringe Pb-Gehalte}
+\begin{enumerate}
+\item
+{\bf Reine $\alpha-$ Phase 0 bis 2\% Blei:}\\[.2cm]
+\begin{minipage}{5.5cm}
+Beim Abkühlen dieser Schmel-ze
+entsteht im festen Zustand
+eine einphasige feste Lösung, die Phase $\alpha$ (Abb.~2).\\
+{\footnotesize
+(Eine mechanische Härtung erfolgt
+durch Mischkristallverfestigung,
+durch Kaltverfestigung und durch
+Kornverfeinerung
+analog zum System Cu-Ni).
+}
+\end{minipage}\hspace{.5cm}
+\begin{minipage}{8.5cm}
+\centering{\includegraphics{abb2}} \\
+{\small {\bf Abb.~2:}\\
+Etappen der Ausscheidung der reinen $\alpha$-Phase}
+\end{minipage}
+\item
+{\bf 2 bis 19\% Blei:}\\[.2cm]
+\begin{minipage}{5.5cm}
+Beim Abkühlen einer Schmelze von z.~B.~10~\%~Blei entsteht
+nach verschiedenen Reaktionen letztlich ein Gemisch aus
+den beiden Phasen $\alpha$ und $\beta$ (Abb.~3). Dabei
+passiert im einzelnen folgendes:\\
+Beim Unterschreiten der {\bf Liquiduslinie} kristallisiert aus der
+sich langsam mit Sn anreichernden Restschmelze $L$ die
+Phase $\alpha$, in der (bis 19~\%) zunehemend größere Anteile
+$\beta$ gelöst sind, während sich die Restschmelze mit Sn anreichert.
+\end{minipage}\hspace{.5cm}
+\begin{minipage}{8.5cm}
+\centering{\includegraphics{abb3}} \\
+{\small {\bf Abb.~3:}\\
+Etappen der Ausscheidung und Gefügebildung der 10\%~(Pb)-Legierung}
+\end{minipage}
+~\\[.2cm]
+Bei 183 $^o$C finden wir festes $\alpha$ (Bild), das 19~\% Sn enthält
+und die Restschmelze $L$ ist verbraucht.
+Beim weiteren Abkühlen wird die {\bf Solvuslinie} unterschritten, $\alpha$
+entmischt sich durch Diffusion im festen Zustand und es liegt das
+in Abb.~3 unten skizzierte zweiphasige Gemisch
+vor. {\footnotesize(Auf derartigen oder ähnlichen feinen
+Ausscheidungen (Mikrophasen)
+beruht im wesentlichen eine mechanische Verfestigung, die
+Ausscheidungshärtung)}.
+\end{enumerate}
+
+\subsubsection{Eutektische Legierung}
+Bei der Abkühlung einer ~61,9~\%-Sn-Legierung setzt bei
+183$^o$C die eutektische Reaktion
+\begin{equation}
+L_{61,9\,Sn}\rightarrow
+\alpha_{19\,Sn}+\beta_{97,5\,Sn}
+\label{th204}
+\end{equation}
+ein und läuft vollständig ab. Es bilden sich simultan die Phasen
+$\alpha_{19\,Sn}+\beta_{97,5\,Sn}$, deren Zusammensetzung sich beim
+weiteren Abkühlen entlang der Solvuslinien ändert (Abb.~4).
+~\\[.2cm]
+\begin{minipage}{5.5cm}
+Die {\bf Abkühlungskurve eines Eutektikums}
+gleicht der eines reinen Metalls.
+Es entstehen letztlich lammelenförmige Ausscheidungen von $\alpha $
+und $\beta$ in einzelnen Kristalliten.
+Bei dieser Geometrie kann die frei
+werdende Wärme gut abgeführt werden und es sind nur kurzen Diffusionswege
+notwendig.
+\end{minipage}\hspace{.5cm}
+\begin{minipage}{8.5cm}
+\centering{\includegraphics{abb4}} \\
+{\small {\bf Abb.~4:}\\
+Erstarrung und Gefüge der eutektischen Pb-Sn~(61,9\%)-Legierung }
+\end{minipage}
+
+\subsubsection{30\% Zinn}
+\begin{minipage}{5.5cm}
+Bei der Abkühlung dieser\\
+Legierung
+vollziehen sich die in Abb.~5
+skizzierten Gleichgewichtsreaktionen. Die
+Ausgangskonzentrationslinie schneidet die Liquidus- und die eutektische
+Linie. Beim Erreichen der Liquidus-Linie bei 260~$^o$C kristallisiert die feste
+Phase $\alpha$ mit einem Sn-Gehalt von 12~\% aus (s.~horizontale
+gestrichelte ''Hebellinie'').
+\end{minipage}\hspace{.5cm}
+\begin{minipage}{8.5cm}
+\centering{\includegraphics{abb5}} \\
+{\small {\bf Abb.~5:}\\
+Erstarrung und Gefüge einer untereutektischen Pb-Sn~(30\%)-Legierung }
+\end{minipage}
+~\\[.2cm]
+Bei 184 $^o$C hat die Hebellinie (s.~Anhang) die eutektische Linie erreicht.
+Es herrscht Gleichgewicht zwischen $\alpha_{19}$ und $L_{61,9}$. D.~h.~die
+Restschmelze $L_{61,9}$ hat eutektische Zusammmensetzung und erstarrt bei
+183 $^o$C in der bekannten Lamellenform (Abb.~5). Die
+{\bf zugehörige Abküklungskurve} hat bei 260~$^o$C eine Knickpunkt.
+Die frei werdende Kristallisations-(Wärme)-Enthalpie verlangsamt die Abkühlung. Bei
+183 $^o$C schließt sich ein Haltepunkt an.
+
+\section{Experimente}
+\subsection{Differential-Thermoanalyse}
+Während es im allgemeinen bei der Aufnahme von Zustandsdiagrammen relativ
+leicht ist, Abkühlungskurven mit Haltepunkten zu messen, kann
+das Erkennen von Knickpunkten (s.~Anhang) schwierig sein. Daher bedient
+man sich eines zweiten Thermoelementes (2), das im gleichen Thermostaten
+wie die Meßprobe mit dem Thermoelement (1) und auf gleicher Temperatur,
+allerdings in einer Vergleichssubstanz ohne Phasenumwandlung befindet.
+Beide Thermoelemente werden gegeneinander geschaltet, so daß nur die
+Differenz ({\bf differentielle Thermoanalyse, DTA}) nach möglicher
+Verstärkung zur Verbesserung der Auflösung angezeigt wird (s.~a.~Anleitung zu
+TH~1).
+
+\subsection{Hinweise zur Aufnahme von Abkühlungskurven}
+\begin{enumerate}
+\item Vor Beginn des Versuchs TH~2 sollte der Versuch TH~1 durchgeführt
+sein oder mindestens die dort erstellten Kalibrierungskurven
+der Thermoelemente vorliegen.
+ \item
+Etwa vier bis fünf vorgefertigte Legierungen im System $Pb-Sn$ werden bis etwa
+50~K oberhalb des Schmelzpunktes aufgeheizt und nach Eintauchen des
+Thermoeelementes (in Edelstahlmantel gefaßt)
+die Abkühlungskurven gemessen.
+\item Zur Aufnahme einiger Punkte des Zustandsdiagramms ist
+das Erkennen der Knickpunkte im $T(t)$-Diagramm
+und die Zuordnung der entsprechenden Temperaturen ganz
+wesentlich (s.~Abb.~7).
+\end{enumerate}
+\section{Anhang}
+
+\subsection{Zum Ablauf einer Phasenumwandlung}
+\begin{minipage}{4.3cm}
+Ein im thermodyna-\\
+mischen Gleichgewicht befindlicher Stoff kann nur dann
+eine Žnderung bezüglich dieses stabilen Zustandes erfahren, wenn die
+Zustandsbedingungen geändert werden. Dann wird sich mit einer {\bf
+Phasenreaktion} ein {\bf neues Phasengleichgewicht}
+einstellen.\\
+Der neue Gleichge-
+wichtszustand mit
+erniedrigter freier
+Enthalpie kann dabei
+ein Zustand
+{\bf intensiverer \\
+Teilchenbindungen} \\
+(exotherme Reaktionen,
+Oxidationen, Erstar-
+rungen, {\bf Energieab-
+nahme}) sein\\
+(Abb.~6~a).\\
+Oder es folgt, wie \\
+z.~B.~beim Lösen oder
+Schmelzen, ein Zustand
+{\bf intensiverer Teilchendurchmischung}
+bei {\bf Entropiezunahme} (Abb.~6~b).
+\end{minipage}\hspace{.5cm}
+\begin{minipage}{10.5cm}
+\centering{\includegraphics{abb6}} \\
+{\small {\bf Abb.~6:}\\
+Schema der Abnahme der freien Enthalpie $G$ beim idealisierten
+Übergang von (2) kristallinen Phasen
+in die flüssige und die gasförmige Phase (Einstoffsystem) (a);~
+treibende Reaktionskraft $\Delta g(T)$ (bei $g=G/V$) in einem
+Kondensations-Keim mit
+begrenztem Volumen infolge einer Unterkühlung um $\Delta T'$ beim
+Erstarren (b); $G=G(r)$: Gleichgewichtsradius $r_{min}$ eines Keims
+beim Erstarren (Konkurrenz zwischen der Zunahme der Oberflächenspannung des
+sich bildenden Keims und Flüssigkeits-Oberfläche $+\Delta G_A\sim r^2$
+und der Abnahme um $-\Delta G_V\sim r^3$ durch frei werdende spezifische
+Schmelz-(Kristllisations-) Enthalpie \cite{berg}~ (c))
+}
+\end{minipage}
+
+\subsection{Hebelgesetz}
+Für eine gegebene Temperatur, z.~B.~240~$^o$C,
+hat die Hebellinie die Länge (x+y) (Abb.~6). Die
+relativen Anteile der im Gleichgewicht befindlichen
+Phasen $\alpha$ und Schmelze $L$ verhalten sich entsprechend folgender
+Beziehung
+\begin{equation}
+\frac{\alpha}{L}=\frac{x}{y}\quad.
+\label{th205}
+\end{equation}
+
+\subsection{Abkühlungskurven und binäres Phasendiagramm}
+\begin{minipage}{3.3cm}
+Die Abb.~7 zeigt
+schematisch die zu erwartenden $T(t)$-Kurven
+für ein bi-näres System (A, B) mit Haltepunkten
+für die Abküh-lung der reinen Phasen sowie des
+Eutektikums einerseits bzw.~mit Halte-~und Knick-Punkten
+für die übrigen Legierungen andererseits.
+\end{minipage}
+\hspace{.5cm}
+\begin{minipage}{12cm}
+\centering{\includegraphics{abb7}} \\
+{\small {\bf Abb.~7:}\\
+Abkühlungskurven und daraus ermittelte Punkte sowie
+konstruierte Koexistenzlinien in einem binären Phasendiagramm (schematisch)~
+\cite{kohl}
+}
+\end{minipage}
+\newpage
+
+\subsection{Fragen}
+\begin{itemize}
+\item
+Was besagt das Gibbs'sche Phasengesetz allgemein und
+für kondensierte Systeme?
+\item Warum darf man eine Lötstelle eines Thermoelemntes nicht direkt
+in eine Metallschmelze tauchen?
+\item
+Skizzieren Sie näherungsweise das binäre Zustandsdiagramm
+im System Blei-Zinn. Geben Sie eine Solidus-, eine Liquidus-~und eine
+Solvus-Linie an.
+\item
+Beschreiben Sie qualitativ die Abkühlung einer Pb-Sn-Schmelze a. für
+die eutektische, b. für eine andere Zusammensetzung. Wo ist mit einem
+Haltepunkt der T(t)-Kurve, wo mit Knickpunkten zu rechnen?
+\item Wie lautet die $T(t)$-Abhängigkeit bei der
+Newtonschen Abkühlungskurve (Skizze, quantitativ)?
+\item
+Welche Energie wird zum Schmelzen einer bestimmten Stoffmenge bei
+gegebener Masse benötigt?
+\item
+Welche Energie wird zum Aufheizen eines Körpers (ohne Phasenumwandlung)
+benötigt?
+\item
+Was versteht man unter einem homogenen und heterogenen System?
+\item
+Was bedeutet thermodynamisches Gleichgewicht?
+\end{itemize}
+
+\bibliographystyle{unsrt}
+
+\begin{thebibliography}{NAM99}
+\bibitem{ilb}
+W.~Ilberg, M.~Krötsch, D.~Geschke, P.~Kirsten, W.~Schenk,\\
+ A.~Schneider, H.~Schulze, Physikalisches Praktikum für Anfänger,\\
+  Leipzig 1994
+\bibitem{gert}
+Gerthsen (H.~Vogel), Physik,~V.~Springer 1995
+\bibitem{wal}
+W.~Walcher, Praktikum der Physik, V.~Teubner, Stuttgart 1989
+\bibitem{kohl}
+F.~Kohlrausch, Praktische Physik, Band 1,~V.~Teubner, Stuttgart 1996
+\bibitem{schu}
+G.~E.~R.~Schulze, Metallphysik, Berlin 1967
+\bibitem{berg}
+W.~Bergmann, Werkstofftechnik I, V.~Hanser, München 1989.
+\end{thebibliography}
+
+\end{document}

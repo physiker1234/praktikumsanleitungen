@@ -1,0 +1,82 @@
+\documentclass[platz]{tudphygp}
+\usepackage{tudphymd,mhchem,listliketab,multirow,tabulary}
+
+\versuch{Nichtleiter im elektrischen Feld}{NF}
+
+\begin{document}
+\maketitle
+
+\section*{Aufgabenstellung}
+\textbf{Bestimmen Sie die Permittivitätszahl $\epsilon_r$ eines vorgegebenen Dielektrikums mit Hilfe eines Zylinderkondensators.}\\
+Gehen Sie dabei wie folgt vor:
+\begin{enumerate}
+ \item Schalten Sie den Oszilloskop und den Generator (kombinierter Sinus- und Kippspannungsgenerator) sofort ein. Bedenken Sie, dass beide 
+ Geräte etwa $\SI{10}{min}$ Einlaufzeit benötigen, bevor die für die Messungen benötigte Stabilität erreicht ist.
+ \item\textbf{Vorbereitende Messungen mit dem Oszilloskop}
+ \begin{enumerate}
+  \item Stellen Sie die Impulsform der Kippschwingungen, die mit dem Kippspannungsgenerator für Kapazitäten $C_K\approx (50\dots 600)\SI{}{pF}$ 
+  erzeugt werden, mit dem Oszilloskop (Y-Ablenkung, Kanal 1) dar. Benutzen Sie dazu die interne Zeitablenkung (X-Ablenkung) und messen Sie die 
+  Schwingungsdauer für den Kalibrierkondensator $C_{10x}\approx\SI{110}{pF}$ (den genauen Wert für $C_{10x}$ entnehmen Sie der Tabelle 
+  \ref{tab:kapa}, $x$-Versuchsplatznummer, $x=1\dots 4$)
+  \item Stellen Sie am Sinusgenerator eine Frequenz ein, die der gleichen Schwingungsdauer entspricht und stellen Sie diese Impulsform auf dem 
+  Oszilloskop wie unter 2a) (Kanal 2) dar und messen Sie die Schwingungsdauer mit dem Oszilloskop.
+  \item Betreiben Sie jetzt den Oszilloskop im X-Y-Mode. Korrigieren Sie geringfügig die Frequenz des Sinusgenerators, so dass eine
+  Lissajous-Figur am Oszilloskop zu sehen ist, für die die Schwingungsdauer der Kippschwingung mit der der Sinusschwingung übereinstimmt, 
+  und zeichnen Sie diese Figur.
+ \end{enumerate}
+ \item\textbf{Messungen der Schwingungsdauer der Kippschwingung als Funktion der Kalibrierkapazitäten des Kippspannungsgenerators}
+ \begin{enumerate}
+  \item Messen Sie Schwingungsdauer $T_K$der Kippschwingung als Funktion der Kapazität $C_K$ (Werte siehe Tabelle. Welche Kondensatoren benötigen 
+  Sie zur Kalibrierung?) durch Frequenzvergleich mittels Lissajousfiguren. Weshalb ist dieses Verfahren der direkten Zeitmessung an diesem 
+  Oszilloskop vorzuziehen?
+  \item Erstellen Sie die Kalibrierungskurve $T=f(C)$.
+ \end{enumerate}
+ \item Bestimmen Sie mit Hilfe der Kalibrierungskurve $T=f(C)$ und der Messanordnung aus 3. die Kapazität eines Zylinderkondensators $C_x$, der mit einem 
+ Dielektrikum gefüllt wird, als Funktion der Füllhöhe $x$. Stellen Sie diesen Zusammenhang $C_x=f(x)$ grafisch dar.
+ \item Ermitteln Sie aus der Grafik die Permittivitätszahl $\epsilon_r$ des Dielektrikums.
+\end{enumerate}
+
+\newpage
+\section*{Technische Daten}
+\parpic[l]{\includegraphics[width=\linewidth/100*35]{abmessungen.png}}
+\picskip{3}
+Abmessungen des Messkondensators:\\
+\storestyleof{itemize}
+\begin{listliketab}
+ \begin{tabular}{lcl}
+  $a$    & $=$ & $\SI{100}{mm}$\\
+  $b$    & $=$ & $\SI{110}{mm}$\\
+  $2r_a$ & $=$ & $(\num{70,0}\pm\num{0,1})\SI{}{mm}$\\
+  $2r_i$ & $=$ & $(\num{65,0}\pm\num{0,1})\SI{}{mm}$
+ \end{tabular}
+\end{listliketab}
+\\\\\\
+Die maximale Messunsicherheit der Frequenz des Sinusgenarators ($\SI{200}{MHz}$ SINE-WAVE GENERATOR, Hersteller HAMEG) ist durch die Anzeige dominiert 
+und beträgt $\pm\SI{1}{Digit}$.
+
+\begin{table}[h]
+ \centering
+ %\scalebox{1.5}{
+ \begin{tabular}{|c|c|c|c|c|c|c|}
+  \hline
+           & \multicolumn{5}{c|}{Kalibrierkapazität für Kippgeneratoren}                   & Messunsicherheit\\\cline{2-7}
+           & $C_{n1}$      & $C_{n2}$      & $C_{n3}$      & $C_{n4}$      & $C_{n5}$      & \multirow{2}{*}{$\Delta C/\SI{}{pF}$}\\\cline{2-6}
+           & \multicolumn{5}{c|}{$C/\SI{}{pF}$}                                            & \\\hline
+  $C_1$    & $\num{593,0}$ & $\num{588,0}$ & $\num{582,0}$ & $\num{600,0}$ & $\num{585,0}$ & $\num{5,9}$\\\hline
+  $C_2$    & $\num{489,0}$ & $\num{479,0}$ & $\num{487,0}$ & $\num{505,0}$ & $\num{473,0}$ & $\num{5,4}$\\\hline
+  $C_3$    & $\num{415,0}$ & $\num{392,0}$ & $\num{417,0}$ & $\num{420,0}$ & $\num{400,0}$ & $\num{5,0}$\\\hline
+  $C_4$    & $\num{341,0}$ & $\num{341,0}$ & $\num{355,0}$ & $\num{329,0}$ & $\num{326,0}$ & $\num{4,7}$\\\hline
+  $C_5$    & $\num{284,0}$ & $\num{285,0}$ & $\num{285,0}$ & $\num{286,0}$ & $\num{289,0}$ & $\num{4,4}$\\\hline
+  $C_6$    & $\num{215,0}$ & $\num{213,0}$ & $\num{238,0}$ & $\num{218,0}$ & $\num{217,0}$ & $\num{4,1}$\\\hline
+  $C_7$    & $\num{197,5}$ & $\num{204,0}$ & $\num{206,0}$ & $\num{207,0}$ & $\num{195,8}$ & $\num{4,0}$\\\hline
+  $C_8$    & $\num{168,3}$ & $\num{178,1}$ & $\num{175,6}$ & $\num{184,2}$ & $\num{164,7}$ & $\num{1,2}$\\\hline
+  $C_9$    & $\num{152,0}$ & $\num{155,8}$ & $\num{150,6}$ & $\num{130,1}$ & $\num{130,3}$ & $\num{1,1}$\\\hline
+  $C_{10}$ & $\num{103,9}$ & $\num{110,7}$ & $\num{111,5}$ & $\num{107,4}$ & $\num{112,1}$ & $\num{0,9}$\\\hline
+  $C_{11}$ & $\num{ 86,1}$ & $\num{ 77,7}$ & $\num{ 80,6}$ & $\num{ 84,2}$ & $\num{ 79,6}$ & $\num{0,7}$\\\hline
+  $C_{12}$ & $\num{ 55,6}$ & $\num{ 55,5}$ & $\num{ 55,4}$ & $\num{ 54,9}$ & $\num{ 54,8}$ & $\num{0,6}$\\\hline  
+ \end{tabular}
+ %}
+ \caption{Werte und Messunsicherheiten der Kalibrierkapazitäten des Kippspannungsgenerators}
+ \label{tab:kapa}
+\end{table}
+\end{document}

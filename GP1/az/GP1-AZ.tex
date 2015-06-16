@@ -1,0 +1,377 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd,mhchem}
+
+\versuch{Adiabatische Zustandsänderungen}{AZ}
+\author{L.~Jahn,K.-F.~Wiehe}
+\bearbeitet{M.~Kreller,J.~Kelling,F.~Lemke,S.~Majewsky,i.~A. Dr.~Escher}{}
+
+\buch{1}{W.~Walcher}{Praktikum der Physik}{Teubner-Verlag}{Stuttgart 1989}
+\buch{2}{H.~Stroppe}{Physik}{Fachbuch-Verlag}{Leipzig 1984}
+\buch{3}{A.~Recknagel}{Physik: Schwingungen, Wellen, Wärmelehre}{Technik-Verlag}{Berlin 1990}
+\buch{4}{L.~Bergmann, C.~Schaefer}{Lehrbuch der Experimentalphysik, Band 1: Mechanik, Akustik, Wäremlehre}{Verlag de Gruyter}{Berlin 1987}
+\buch{5}{W.~Ilberg (Hrsg.), M.~Krötzsch (Hrsg.) et.~al.}{Physikalisches Praktikum für Anfänger}{Teubner-Verlag}{Leipzig 1994}
+
+\begin{document}
+\maketitle
+
+\section{Aufgabenstellung}
+
+Der Adiabatenexponent $\kappa = \frac{c_p}{c_v}$ von Luft ist auf folgende Arten zu bestimmen
+\begin{enumerate}
+ \item aus den Eigenfrequenzen einer mit offenen bzw. geschlossenen Hähnen schwingenden \ce{Hg}-Säule
+ \item nach der Methode von \textsc{Cl\`ement-Desormes}
+\end{enumerate}
+
+\section{Allgemeine Grundlagen}
+
+\subsection{Spezifische Wärmekapazität}
+
+Unter der spezifischen Wärmekapazität $c$ versteht man die auf die
+Masseneinheit $m$ und die erzielte Temperaturänderung $\Delta T$
+bezogene zu- (oder ab-) geführte Wärmemenge $Q$ :
+\begin{equation}
+ Q = m c\cdot \Delta T \quad\Rightarrow\quad c = \frac{Q}{m\cdot \Delta T }
+ \label{az01}
+\end{equation}
+Der erste Hauptsatz der Wärmelehre lautet für einen isobaren, also bei konstantem Druck geführtem Prozess:
+\[
+ \delta Q = \diff U + p\diff V
+%  \label{az1}
+\]
+
+\subsection{Adiabatenexponent idealer Gase}
+
+\subsubsection{Adiabatischer Prozess}
+
+Schreibt man den ersten Hauptsatz mit Gleichung \eqref{az01} differentiell
+\[
+ m c_p \diff T = m c_v \diff T + p \diff V
+%  \label{az02}
+\]
+und die Zustandsgleichung idealer Gase ebenfalls
+\begin{equation}
+ p \diff V + V\diff p = m R \diff T
+ \label{az2}
+\end{equation}
+so folgt daraus für die Differenz der spezifischen
+Wärmekapazitäten $c_p$ (bei konstantem Druck) und $c_v$
+(bei konstantem Volumen) für ideale Gase:
+\begin{equation}
+ c_p - c_v = R \label{az3}
+\end{equation}
+
+\subsubsection{Poissonsche Adiabatengleichungen}
+
+Wird ein thermodynamischer Prozess so schnell geführt oder
+ist so gut wärmeisoliert, dass kein Wärmeaustausch mit der
+Umgebung stattfindet ($\delta Q = 0$), nennt man ihn \emph{adiabatisch} oder \emph{isentropisch}.
+In diesem Fall lautet der erste Hauptsatz:
+\begin{equation}
+ \diff U= m c_v \diff T = m \frac{c_v}{mR}(p \diff V + V \diff p) = -p \diff V
+\end{equation}
+Hieraus folgt mit den Gleichungen \eqref{az2} und \eqref{az3} und der
+Abkürzung~$\kappa := c_p/c_v $~nach Integration, d.h.
+ $\frac{c_v}{c_p-c_v}(p\diff V+V \diff p)=-p \diff V$ , schließlich die \textbf{Poisson'sche Adiabatengleichung}:
+\begin{equation} \boxed{
+ p V^\kappa = \mathrm{const.}
+ }\label{az4}
+\end{equation}
+Durch Kombination von \eqref{az4} mit der
+Zustandsgleichung folgen entsprechende Adiabatengleichungen auch
+für die Variablensätze ($T$, $V$) bzw. ($T$, $p$) :
+\begin{equation}
+ T V^{\kappa-1} = c_2 \quad\text{bzw.}\quad T^{\kappa} p^{(1-\kappa)} = c_3
+ \label{az5}
+\end{equation}
+
+\subsubsection{Statistik. Freiheitsgrade}
+
+Der Adiabatenexponent $\kappa$ ist eng mit dem Aufbau der
+Gasmoleküle und der Zahl $f$ ihrer Freiheitsgraden bezüglich
+möglicher \emph{Translation} und \emph{Rotation} verknüpft. Bei
+zweiatomigen Gasen sind
+in der Nähe der Raumtemperatur dagegen Schwingungen nicht angeregt:
+\begin{align*}
+ f &= 3 \mathrm{Translationen} && = 3 && \text{einatomig} \\
+ f &= 3 \mathrm{Translationen} + 2 \mathrm{Rotationen} && = 5 && \text{zweiatomig} \\
+ f &= 3 \mathrm{Translation} + 3 \mathrm{Rotationen} && = 6 && \text{dreiatomig}
+\end{align*}
+
+\parpic[r]{
+ \begin{minipage}{\linewidth/3}
+ \centering
+  \begin{tabular}{lr}
+   Gas & $\kappa$\\\hline
+   \ce{He} & \num{1,66} \\
+   \ce{Ar} & \num{1,67} \\
+   \ce{O2} & \num{1,40} \\
+   \ce{H2} & \num{1,41} \\
+   \ce{CO2} & \num{1,30} \\
+   \ce{N2O} & \num{1,29} \\
+  \end{tabular}\\[.5em]
+  {\small
+  Beispiele für Adiabatenexponenten einiger Gase.}
+ \end{minipage}
+}
+
+Nach dem \emph{Gleichverteilungssatz} kann ein Atom pro
+Freiheitsgrad die Energie $kT/2$ aufnehmen. Daher gilt mit $\nu$
+als Stoffmenge und $N$~als Anzahl der Moleküle:
+\begin{align*}
+ C_v &= \frac{1}{\nu}\dquot{U}{T} &\text{und}&&
+ U &= N\cdot f\frac{k}{2}\,T = \nu\frac{f}{2}\cdot RT\\
+ C_v &= \frac{f}{2}R &\text{sowie}&&
+ C_p &= \brk{\frac{f}{2}+1}\cdot R
+\end{align*}
+\[
+ \kappa = \frac{C_p}{C_v} = \frac{c_p}{c_v} = \frac{f+2}{f}
+\]
+Somit finden wir für ein-, zwei-, bzw. dreiatomige ideale Gase theoretisch die Werte $\kappa=\num{1,67}$, $\num{1,4}$
+bzw. $\num{1,33}$. Die Bestimmung des Adiabatenexponenten dient damit der Charakterisierung von Gasen.
+
+\section{Experimente}
+
+\subsection{Schwingende Quecksilbersäule}
+
+Entsprechend Abbildung~\ref{fig::URohr} wird ein teilweise mit Quecksilber
+gefülltes U-Rohr mit Hilfe einer Kurbel und eines
+fremderregten Gleichstrom-Motors, dessen Frequenz variiert wird,
+zu erzwungenen Schwingungen angeregt. Unter Vernachlässigung der
+Dämpfung ist die Eigenfrequenz gleich der Resonanzfrequenz.
+Der Versuch besteht aus zwei Teilen:
+\begin{description}
+ \piccaption{U-Rohr mit Zusatzvolumen $V$ und Hähnen HA \label{fig::URohr}}
+ \parpic[r]{
+  \includegraphics[width=4.5cm]{GP1-AZ-URohr}
+ }
+ \item [1. Offenes U-Rohr] Lässt man die Hähne offen, so wird die Eigenfrequenz
+ bzw. die Schwingungsdauer $T_\mathrm{o}^*$ (beachte: $T$ ist die absolute
+ Temperatur) allein durch die Länge $l$ der
+ Quecksilbersäule und die Fallbeschleunigung bestimmt, wobei
+ gilt:
+ \begin{equation}
+  T_\mathrm{o}^* = 2\pi\sqrt{\frac{l}{2g}} \label{az6}
+ \end{equation}
+ \item [2. Geschlossenes U-Rohr] Bleiben die beiden Hähne geschlossen, so erzeugt das beim
+ Schwingen der \ce{Hg}-Säule komprimierte bzw. expandierte
+ Luftvolumen eine zusätzliche rück\-trei\-ben\-de Kraft. Wenn die
+ Frequenz der Schwingung hinreichend hoch ist, handelt es sich um
+ eine adiabatische Kompression bzw. Expansion. Die Schwingungsdauer
+ $T_\mathrm{zu}^*$ beträgt:
+ \begin{equation}
+  T_\mathrm{zu}^* = 2\pi\sqrt{\frac{l}{2g}\frac{V}{V + h_L A\kappa}} \label{az7}
+ \end{equation}
+ Dabei ist $A$ die Queerschnittsfläche des U-Rohres.
+\end{description}
+
+\piccaption{Resonanzkurve}
+\parpic[r]{
+ \includegraphics[width=\linewidth/5*2]{GP1-AZ-Resonanzkurve}
+}
+
+Die Gleichung~\eqref{az6} und \eqref{az8} führen auf:
+\begin{equation}
+ \kappa = \frac{V}{A h_L} \brk{\frac{T_o^{*2}} {T_{zu}^{*2}} - 1} \label{az8}
+\end{equation}
+Indem man für beide Fälle (Hähne offen bzw.~zu) durch Variation
+der Motordrehzahl die Resonanzkurve aufnimmt, daraus $T_\mathrm{o}^*$
+bzw. $T_\mathrm{zu}^*$ bestimmt, kann anhand von Gleichung~\eqref{az8} der
+Adiabatenexponent $\frac{c_p}{c_V}=\kappa$ errechnet werden
+(s.~Anhang).
+\picskip0
+
+\subsubsection{Messmethode}
+% HINWEIS: dieser Abschnitt stammt ursprünglich aus der Platzanleitung, gehört aufrgund des Umfangs und erkläenden Charakters jedoch eher in die Versuchanleitung
+
+\piccaption{Schmematische Darstellung des U-Rohres mit angebrachten Lichtschranken.}
+\parpic[r]{
+ \includegraphics[width=\linewidth/3]{GP1-AZ-URohrSchema}
+}
+Die Amplitude wird in diesem Versuch nicht direkt gemessen, sondern indirekt über eine
+Geschwindigkeitsmessung mittels zweier Lichtschranken bestimmt. Die beiden Lichtschranken sind
+dabei symmetrisch um die Gleichgewichtslage der Quecksilbersäule im Abstand $s$ zueinander
+angeordnet. Wird für die Schwingung der Quecksilbersäule eine Sinusschwingung mit der
+Amplitude $X$ angenommen, so folgt für die Auslenkung $x$ der Schwingung:
+\[
+ x = X\sin(\omega t) \quad\text{mit}\quad \omega = \frac{2\pi}{T_1}
+\]
+$T_1$ ist hierbei die Periodendauer. Für die Geschwindigkeit $v$ der Säule gilt:
+\[
+ v = \dquot xt = X\cdot \omega\cos(\omega t) \quad\text{und}\quad v_\mathrm{max} = X\omega = X\frac{2\pi}{T_1}\approx \frac s{T_2}
+\]
+Wobei $T_2$ die ist in der Die Quecksilbersäule beide Lichtschranken passiert. Man erhält für $X$ die folgende Relation:
+\begin{equation}
+ X \sim \frac{T_1}{T_2}
+\end{equation}
+Diese Proportionalität reicht zur Auswertung des Experimentes aus, da nur das Maximum der
+Resonanzkurve gesucht wird, nicht aber der absolute Wert der Amplitude. Mit Hilfe der beiden
+gemessenen Zeiten $T_1$ und $T_2$ lässt sich die Resonanzkurve zeichnen.
+
+\subsection{Methode von Cl\'ement Desormes}
+
+Ein mit Luft gefülltes Gefäß mit einem Volumen von $V_0\approx \SI{10}l$
+ist mit einem abnehmbaren Gummistopfen verschlossen, an
+einer Handpumpe angeschlossen und mit einem U-Rohr Manometer
+verbunden. Ist eine konstante Umgebungstemperatur $T_0$ gegeben geht man zur bestimmung von $\kappa$
+nun wie folgt vor:
+\begin{enumerate}
+ \piccaption{Gefäß mit Handpumpe HP, Stopfen und
+ U-Rohr-Manometer \label{fig::Gefaess}}
+ \parpic[r]{
+  \includegraphics[width=6cm]{GP1-AZ-Gefaess}
+ }
+ \item Mit der Handpumpe wird eine gegenüber dem äußeren Luftdruck
+ sehr geringe Kompression des Gasvolumens durchgeführt, die einen
+ ungefähren Überdruck von $\Delta p_1 = \rho_w \cdot g h_1$, bzw.~eine
+ Differenz der Wassersäulen von~$h_1\approx \SI{25}{cm}$ zur Folge hat.
+ Nach etwa \SI2{min} Wartezeit hat sich die Temperatur im Gefäß
+ der Aussentemperatur~$T_0$ hinreichend gut angeglichen und die nunmehr konstante Höhendifferenz $h_1$ wird notiert.
+ \item Der Gummistopfen wird für eine kurze Zeit von ca.~\SI2s geöffnet und
+ sofort wieder fest verschlossen. Nach einer Wartezeit von ca.~\SI3{min}
+ (wenn keine Druckänderung mehr zu beobachten ist), muss
+ $h_2 \sim \Delta p_2$ abgelesen werden. $\kappa$ folgt aus
+ der einfachen Beziehung (s.~Anhang) :
+ \begin{equation}\boxed{
+  \kappa = \frac{\Delta p_1}{\Delta p_1-\Delta p_2}=\frac{h_1}{h_1-h_2}
+  }\label{az9}
+ \end{equation}
+\end{enumerate}
+
+\section{Anhang}
+
+\subsection{Schwingende Quecksilbersäule}
+
+\subsubsection{Offenes U-Rohr}
+
+Ist $l$ die Länge der Quecksilbersäule (Dichte $\rho$) und der
+gesamte Höhenunterschied während der Schwingung $2x$, d.h.~die
+Amplitude $x$, so lautet die \emph{Bewegungsgleichung}:
+\[
+ \rho \cdot A l \dquot[2]{x}{t} = -2 \rho \cdot g A\cdot x
+ \quad\text{oder}\quad
+ \dquot[2]{x}{t} + \frac{2g}{l} \,x = 0
+\]
+Hieraus folgt die Eigenfrequenz bzw. die Schwingungsdauer
+\begin{equation}
+ \omega_\mathrm o^2 = \frac{2g}{l} \quad\text{bzw.}\quad
+ T_\mathrm o^* = 2\pi \sqrt{\frac{l}{2g}} \label{a0}
+\end{equation}
+
+\subsubsection{Geschlosenes U-Rohr}
+
+Oberhalb des Quecksilbers befindet sich Luft sowohl in den beiden
+Schenkeln der Höhe $h$ als auch im Zusatzvolumen $V$. Damit
+berechnet sich das Gasvolumen für den Gleichgewichtsfall zu $V_1 = Ah+V$
+und bei der Verschiebung einer Quecksilberoberfläche um $x$
+folgt $V(x) = V_1\pm A\cdot x = V + A(h\pm x)$ . Der Auslenkung $x$ ist eine
+Druckänderung $\Delta p$ zugeordnet, die in beiden Schenkeln die
+rücktreibende Kraft $\Delta F = A \Delta p$, d.h.~die
+Gesamtkraft $2 \Delta F$ erzeugt.
+
+\paragraph{Berechnung von $\Delta p$.}
+Im Gleichgewichtsfall ist der Druck durch den Luftdruck $b = h_L\rho g$ ("`barometrischer"' Druck),
+mit $\rho$ als Dichte des Quecksilbers, gegeben und die
+Adiabatengleichung \eqref{az4} liefert:
+\begin{align}
+ b(V + hA)^{\kappa} &=  (b + \Delta p)\cdot (V + (h-x)A )^{\kappa} \nonumber\\
+ b\kla{1 + \frac{hA}{V}}^{\kappa} &= (b + \Delta p)\cdot \kla{1 + \frac{(h-x)A}{V}}^{\kappa}
+ \label{a1}
+\end{align}
+Da $hA\ll V$, werden die Binome entwickelt und das sehr kleine
+Produkt mit $x/V\cdot \Delta p$ vernachlässigt. Damit folgt aus
+Gleichung~\eqref{a1}:
+\[
+ b\kla{1 + \kappa \frac{hA}{V}} = (b + \Delta p)\cdot\kla{1 + \kappa\frac{(h-x)A}{V}}
+ \quad\Rightarrow\quad
+ \Delta p = \frac{\kappa b\cdot  A x}{V}
+\]
+Für die Bewegungsgleichung folgt damit:
+\begin{equation}
+\dquot[2]{x}{t} + \kla{\frac{2g}{l} + \frac{2 b \cdot A \kappa}{\rho l V}}\cdot  x = 0
+\end{equation}
+Die Eigenfrequenz bzw. die Schwingungsdauer ergeben sich zu:
+\begin{align*}
+\omega_\mathrm{zu}^2 &= \kla{\frac{2g}{l}+\frac{2 b \kappa A}{\rho l V}} = \frac{2g}{l}\kla{1 + \frac{\kappa \cdot A h_L}{V}}  \nonumber \\
+T_\mathrm{zu}^* &= 2\pi\sqrt{\frac{l}{2g}\frac{V}{V + h_LA\kappa}}
+\end{align*}
+Nach Umstellung und mit Gleichung \eqref{a0} erhält man den Adiabatenexponenten als:
+\[
+ \kappa = \frac{V}{A h_L} \kla{\frac{T_\mathrm o^{*2}}{T_\mathrm{zu}^{*2}} - 1}
+\]
+
+\subsection{Methode von Cl\'ement Desormes}
+
+Für konstanten äußeren Luftdruck $b$
+gilt nach der Erzeugung eines kleinen Überdrucks und
+Abwarten des Temperaturausgleichs auf (konstante!)
+Zimmertemperatur ($T_0$) für den Zustand des idealen Gases
+\begin{equation}
+ V = V_0 \qquad p = b + \Delta p_1 \qquad T = T_0 \label{cl1}
+\end{equation}
+Während der adiabatischen Entspannung leistet das Gas Arbeit und
+kühlt sich ab. Der Zustand wird zu:
+\begin{equation}
+ V = V_0 + \Delta V \qquad p = b \qquad T = T_0 - \Delta T \label{cl2}
+\end{equation}
+Unmittelbar nach dem Verschließen gilt dann:
+\begin{equation}
+ V = V_0 \qquad p = b \qquad T = T_0 - \Delta T \label{cl3}
+\end{equation}
+Nach Abwarten des Temperaturausgleichs mit der Umgebung liegt schließlich der Zustand
+\begin{equation}
+ V = V_0 \qquad p = b + \Delta p_2 \qquad T = T_0 \label{cl4}
+\end{equation}
+vor. Die Adiabatengleichungen aus \eqref{az4} und \eqref{az5} lauten für die Adiabatische Enspannung von
+\eqref{cl1} zu \eqref{cl2}:
+\begin{subequations}
+ \begin{align}
+  (b + \Delta p_1)\cdot V_0^{\kappa} &= b(V_0 + \Delta V)^{\kappa} \label{cl5a}\\
+  T_0V_0^{\kappa-1} &= (T_0 - \Delta T)\cdot (V_0 + \Delta V)^{\kappa-1} \label{cl5b}
+ \end{align}
+\end{subequations}
+Die Entwicklung des Binoms in \eqref{cl5a} ergibt:
+\begin{align}
+ b V_0^{\kappa} + \Delta p_1 V_0^{\kappa} &=  b V_0^{\kappa} + b \kappa\cdot  V_0^{\kappa - 1}\Delta V \nonumber\\
+ \frac{\Delta p_1}{b} &= \kappa\frac{\Delta V}{V_0} \label{cl6}
+\end{align}
+Ähnlich liefert die Entwicklung und Umstellung der
+Gleichung \eqref{cl5b} unter Vernachlässigung des Produktes der
+Differentiale:
+\begin{align*}
+ T_0 = (T_0 - \Delta T)\cdot \kla{1 + \frac{\Delta V}{V_0}}^{\kappa-1}
+ &= (T_0 - \Delta T)\cdot \kla{1 + (\kappa-1) \frac{\Delta V} {V_0}} \nonumber \\
+ \frac{\Delta T}{T_0} &= (\kappa-1) \frac{\Delta V}{V_0}
+\end{align*}
+Formuliert man für \eqref{cl3} und \eqref{cl4} die Zustandsgleichung
+idealer Gase mit Gleichung~\eqref{cl6}, so gilt mit Gleichung \eqref{cl5a}:
+\begin{align*}
+ \frac{b}{b + \Delta p_2} &= \frac{T_0 - \Delta T}{T_0} = 1 - \frac{\Delta T}{T_0}
+  = 1 - (\kappa-1) \frac{\Delta V}{V_0} \\
+ (\kappa - 1)\frac{\Delta V}{V_0} &= 1 - \frac{b}{b + \Delta p_2} = \frac{\Delta p_2}{b + \Delta p_2} \\
+ \kappa &= 1 + \frac{\kappa b\cdot \Delta p_2}{(b + \Delta p_2)\Delta p_1}
+ \approx 1 + \frac{\kappa \cdot \Delta p_2}{\Delta p_1}
+\end{align*}
+Die Näherung beruht auf der Annahme $b\gg \Delta p$. Auf die gemessenen Höhenunterschiede zurückgeführt ist der Adiabatenexponent also gegeben durch:
+\[
+ \kappa = \frac{\Delta p_1}{\Delta p_1 - \Delta p_2} = \frac{h_1}{h_1 - h_2}
+\]
+
+\frage{Erläutern Sie Verfahren zur Bestimmung des
+Adiabatenexponenten $\kappa$.}
+\frage{Warum muss man bei Gasen zwei verschiedene spezifische
+Wärmekapazitäten unterscheiden?}
+\frage{Wie lautet die Zustandsgleichung idealer und realer Gase?
+Welche kinetische Bedeutung haben die Größen $p$, $T$ und $R$?}
+\frage{Was ist ein adiabatischer Prozess und wie kann man ihn
+realisieren?}
+\frage{Wieviele Freiheitsgrade und welche $\kappa$-Werte besitzen
+ein-, zwei-und mehratomige Gase?}
+\frage{Formulieren Sie die Adiabaten-Gleichungen!}
+\frage{Warum kann man $\kappa$ auch aus der Schallgeschwindigkeit
+bestimmen?}
+\frage{Was versteht man unter einer erzwungenen Schwingung und
+unter der Resonanz? Welchen Einfluss hat die Dämpfung auf
+die Resonanz-Amplitude und die Resonanzfrequenz?}
+\frage*{Machen Sie sich klar warum die verwendeten Näherungen gültig sind.}
+
+\end{document}

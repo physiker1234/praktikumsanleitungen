@@ -1,0 +1,90 @@
+\documentclass[platz]{tudphygp}
+\usepackage{tudphymd}
+
+\versuch{Röntgenstrahlung}{ROE}
+\author{Jakob Krämer, R. Schwierz}
+\date{17.04.2013}
+
+\begin{document}
+\maketitle
+
+\section*{Aufgabenstellung}
+
+Analysieren Sie die charakteristische Röntgenstrahlung von Kupfer, Eisen, Molybdän oder Wolfram mit einem LiF-Einkristall. Identifizieren Sie die Linien im Röntgenspektrum und berechnen Sie die zugehörigen Energien. Diskutieren Sie mit Ihrem Betreuer die atomaren Übergänge, die den gemessenen Energien beim jeweiligen Anodenmaterial entsprechen.
+\begin{enumerate}
+ \item Nutzen Sie zur Messung einen vollständig ausgerüsteten Röntgen-Messplatz XR 4.0 expert unit.
+ \item Befestigen Sie den LiF-Einkristall in der vorgesehenen Halterung des Goniometers.
+ \item Messen Sie die Zählrate des Geiger-Müller-Zählrohres in Abhängigkeit vom Kristall- und Detektorwinkel mit den unten angegebenen Parametern für die in Ihrem Messplatz montierte Röntgenquelle und stellen Sie diese Spektren am Rechner dar.
+ \item Analysieren Sie die Spektren und identifizieren Sie die scharfen Linien.
+ \item Berechnen Sie die Energien der Röntgenquanten der gefundenen Linien und bestimmen Sie aus der Breite der Linien die Messungenauigkeit der Energien.  
+\end{enumerate}
+
+\section*{Hinweise zur Versuchsdurchführung}
+
+\begin{itemize}
+ \item Überzeugen Sie sich, dass eine Röntgenröhre mit einem oben angegebenen Material in das Röntgengerät eingesetzt ist.
+ \item  Nehmen Sie anschließend die 2\,mm Kollimatorblende aus der Schublade des Röntgengeräts (unten) und setzen Sie sie wie in Abb.~\ref{fig:Blende} dargestellt ein. Wählen Sie den LiF-Analysatorkristall aus und stecken Sie dessen Halterung mit dem Kristall in die dafür vorgesehenen Löcher am Goniometer. Als Detektor wird ein Geiger-Müller-Zähler verwendet, der bereits am Ende des Goniometerarms befestigt ist. Die Arbeitsspannung des Geiger-Müller-Zählers beträgt $U = 450V$. Das Röntgengerät kann entweder über das Bedienfeld oder über den per USB verbundenen Computer mit der Software \emph{measure} gesteuert werden.\\
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.8\textwidth]{Bilder/phywe_unit.jpg}
+\caption{PHYWE X-ray expert unit.}
+\label{fig:messplatz}
+\end{figure}
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.8\textwidth]{Bilder/aufbau.png}
+\caption{Aufbau des Experimentierraums mit Goniometer und Einsetzen der Kollimatorblende, Quelle: PHYWE.}
+\label{fig:Blende}
+\end{figure}
+
+ \item Wenn alle Komponenten eingesetzt und angeschlossen sind, kann das Röntgengerät eingeschaltet werden. 
+ \item Das Goniometer muss vor Beginn der Experimente kalibriert werden. Über das Bedienfeld am Röntgengerät wird dazu zunächst eingestellt, dass als Analysatorkristall LiF verwendet wird. Anschließend wird die Autokalibrierung gestartet (unter Goniometer - Parameter - Kristall und danach Goniometer - Autokalibrierung). Die Autokalibrierung sowie anschließende Messungen können nur gestartet werden, wenn die Glastür geschlossen und verriegelt wurde (Schloss-Symbol am Gerät).
+\end{itemize}
+Die Datenerfassung und -auswertung erfolgt mit der Software \emph{measure}. 
+\begin{itemize} \item Stellen Sie nach erfolgreicher Autokalibrierung die Parameter für das Anodenmaterial der an Ihrem Messplatz eingebauten Röntgenröhre ein. Durch Klicken in die verschiedenen Bereiche des angezeigten Röntgengeräts können Sie die entsprechenden Einstellungen ändern (Abb.~\ref{fig:measure}). Kontrollieren Sie, dass in den Röhreneinstellungen die Röhrenspannung auf 35\,kV und der Emissionsstrom auf 1\,mA eingestellt sind. Die Goniometereinstellungen sind unterschiedlich zu wählen, je nachdem welche Röntgenröhre Sie benutzen. Der Detektorwinkel muss aber immer so gewählt werden, dass die im Glanzwinkel reflektierte Röntgenstrahlen gemessen werden, d.\,h. dass der Detektorwinkel immer doppelt so groß wie der Kristallwinkel sein muss (vergl. Abb.~\ref{fig:bragg}). Dieses feste Verhältnis wird im Modus "`1:2 Kopplung"' automatisch beibehalten.
+\begin{figure}{r}[tbp]
+\centering
+\includegraphics[width=0.4\textwidth]{Bilder/braggdrawing.pdf}
+\caption{Bragg-Reflexion im Glanzwinkel $\vartheta$ an zwei Netzebenen.}
+\label{fig:bragg}
+\end{figure}
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.5\textwidth]{Bilder/einstellungen.png}
+\caption{Röhren- und Goniometereinstellungen mit dem Programm \emph{measure}, Quelle: PHYWE.}
+\label{fig:measure}
+\end{figure}
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.9\textwidth]{Bilder/einstellungendialog.png}
+\caption{Einstellungen für Goniometer und Röntgenröhre, Quelle: PHYWE}
+\label{fig:einstellungen}
+\end{figure}
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|l||l|r|r|r|r|}
+\hline
+Anodenmaterial	& Kristall	& Startwinkel		& Stoppwinkel	& Schrittweite	& Integrationszeit\\
+\hline\hline
+Cu				& LiF		& 4°				& 55°		& 0,1°		& 2\,s\\
+\hline
+Fe				& LiF		& 4°				& 80°		& 0,1°		& 2\,s\\
+\hline
+Mb				& LiF		& 3°				& 65°		& 0,1°		& 2\,s\\
+\hline
+W				& LiF		& 10°				& 30°		& 0,1°		& 6\,s\\
+\hline
+\end{tabular}
+\end{center}
+\caption{Goniometereinstellungen}
+\label{tab:Goniometer}
+\end{table}
+
+ \item Stellen Sie keine Winkel unterhalb von 3° ein, um den Geiger-Müller-Zähler nicht dem Primärstrahl auszusetzen!
+ \item Um das Experiment zu starten klicken Sie schließlich auf den roten \emph{record} Knopf. Nach der Messung wählen Sie "`alle Messungen an measure übertragen"'. Speichern Sie Ihre Messung zunächst und werten Sie anschließend das charakteristische Spektrum aus. Sie können dazu in \emph{measure} vorhandenen Funktionen nutzen. Markieren Sie im Spektrum den Bereich, in dem Sie die Peaks analysieren wollen und klicken Sie auf \emph{Peakanalyse}. Aus den Winkeln des Schwerpunkts des Peaks und unter Beachtung der Ordnung berechnen Sie die zugehörige Energie $E$ der Röntgenstrahlung. Aus der charakteristischen Breite der Peaks berechnen Sie die jeweilige Messunsicherheit $\Delta E$ der Energie.
+
+\end{itemize}
+
+
+
+\end{document}

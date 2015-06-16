@@ -1,0 +1,75 @@
+\documentclass[platz]{tudphygp}
+\usepackage{tudphymd}
+
+\versuch{Luftfeuchtigkeit}{LF}
+
+\begin{document}
+\maketitle
+
+\subsection*{Aufgabenstellung}
+
+Bestimmen Sie die absolute und relative Luftfeuchtigkeit mithilfe eines Aspirationspsychrometers nach Aßmann.
+
+\subsection*{Durchführung}
+
+Für ein stationäres thermodynamisches Gleichgewicht gilt ensprechend der Anleitung:
+\begin{refequation}{7}
+ p_\mathrm w = p_\mathrm{w,s}(T_\mathrm w) - p_\mathrm L \cdot (T - T_\mathrm w) \cdot A^* \quad\text{mit}\quad A^* = \frac{c_p}{q_v} \cdot \frac{M_\mathrm L}{M_\mathrm w}
+\end{refequation}%
+Es kann aber im Freien (z.B. durch plötzliche Sonneneinstrahlung, Strum, etc.) oder in Räumen (z.B. durch Zugluft, Heizung, etc.) zu kurzfristigen thermodynamischen Änderungen kommen. Im Versuch ist es anzustreben, mindestens \num{15} Minuten unter konstanten Bedinungen zu messen und Änderungen zu notieren. Die mittlere molare Masse $M_\mathrm L$ der trockenen Luft ergibt sich aus den vier Hauptbestandteilen \mol{N_2}, \mol{O_2}, \mol{CO_2} und \mol{Ar} zu $M_\mathrm L = \SI{28,954}{\frac g{mol}}$ (wie?). Wasser hat die molare Masse $M_\mathrm w = \SI{18,00}{\frac g{mol}}$. Für $c_p$ setzt man den Näherungswert $c_p = \SI{1,01}{\frac J{g.K}}$ ein und begründet Abweichungen in der Fehlerrechnung (siehe Anleitung, Abschnitt 4.3). $q_v$ ist temperaturabhängig (siehe Tab.~\ref{tab::warmeKap}). Für $\vartheta < 0\degC$ nutzt man die spezifische Sublimationswärme von Eis $q_s = \SI{2850}{\frac Jg}$.
+
+\begin{enumerate}
+ \item Im trockenen Zustand werden die Thermometer zur Kontrolle abgelesen, die Lüfter eingeschaltet und beide Thermometer noch einmal abgelesen. Danach wird das feuchte Thermometer durch einmaliges Eintauchen in destilliertes Wasser angefeuchtet. Nach Einstellung eines stationären Zustandes (Temperaturverlauf beobachten und protokollieren) wird über einen Zeitraum von 10 bis 15 Minuten je einmal pro Minute $T$ und $T_\mathrm w$ mit einer Genauigkeit von \SI{0,1}K gemessen.
+ \item Zur Kontrolle wird das feuchte Thermometer erneut angefeuchtet. Nach anfänglichem Temperaturanstieg (Begründung!) muss sich der gleiche Endwert einstellen.
+ \item Die Lüfter sind so lange in Betrieb zu lassen, bis beide Thermometer wieder die gleiche Temperatur anzeigen, also das feuchte Thermometer getrocknet ist.
+\end{enumerate}
+
+\begin{table}[p]\centering
+ \begin{tabular}{cc|cc|cc|cc}
+  $\vartheta/\degC$ & $q_v/\SI{}{J\,g^{-1}}$ & $\vartheta/\degC$ & $q_v/\SI{}{J\,g^{-1}}$ & $\vartheta/\degC$ & $q_v/\SI{}{J\,g^{-1}}$ & $\vartheta/\degC$ & $q_v/\SI{}{J\,g^{-1}}$ \\\hline
+  0              & 2525                   & 8              & 2483                   & 16             & 2464 & 24  & 2445 \\
+  1              & 2499                   & 9              & 2480                   & 17             & 2461 & 25  & 2443 \\
+  2              & 2497                   & 10             & 2478                   & 18             & 2459 & 26  & 2440 \\
+  3              & 2494                   & 11             & 2476                   & 19             & 2457 & 27  & 2438 \\
+  4              & 2492                   & 12             & 2473                   & 20             & 2454 & 28  & 2435 \\
+  5              & 2490                   & 13             & 2471                   & 21             & 2452 & 29  & 2433 \\
+  6              & 2487                   & 14             & 2469                   & 22             & 2450 & 30  & 2433 \\
+  7              & 2485                   & 15             & 2466                   & 23             & 2447 & 100 & 2249 \\
+ \end{tabular}
+ \caption{Temperaturabhängige Verdampfungswärme von Wasser} \label{tab::warmeKap}
+\end{table}
+
+\begin{table}[p]\centering
+ \begin{tabular}{ccc|ccc}
+  $\vartheta / \degC$ & $p_{W,S}/\SI{}{Pa}$ & $\varrho_{W,S} / \SI{}{g.m^{-3}}$ & $\vartheta / \degC$ & $p_{W,S} / \SI{}{Pa}$ & $\varrho_{W,S} / \SI{}{g.m^{-3}}$ \\\hline
+  -10 & 260  & \num{2,14}  & 17 & 1938 & \num{14,47} \\
+   -9 & 284  & \num{2,33}  & 18 & 2064 & \num{15,36} \\
+   -8 & 310  & \num{2,33}  & 19 & 2198 & \num{16,30} \\
+   -7 & 338  & \num{2,75}  & 20 & 2339 & \num{17,29} \\
+   -6 & 369  & \num{2,99}  & 21 & 2487 & \num{18,33} \\
+   -5 & 421  & \num{3,25}  & 22 & 2644 & \num{19,42} \\
+   -4 & 437  & \num{3,52}  & 23 & 2810 & \num{20,57} \\
+   -3 & 476  & \num{3,82}  & 24 & 2985 & \num{21,77} \\
+   -2 & 517  & \num{4,14}  & 25 & 3169 & \num{23,04} \\
+   -1 & 562  & \num{4,48}  & 26 & 3363 & \num{24,37} \\
+    0 & 610  & \num{4,85}  & 27 & 3567 & \num{25,76} \\
+    1 & 657  & \num{5,19}  & 28 & 3782 & \num{27,23} \\
+    2 & 706  & \num{5,56}  & 29 & 4008 & \num{28,76} \\
+    3 & 758  & \num{5,94}  & 30 & 4245 & \num{30,37} \\
+    4 & 813  & \num{6,36}  & 31 & 4495 & \num{32,05} \\
+    5 & 872  & \num{6,80}  & 32 & 4758 & \num{33,82} \\
+    6 & 935  & \num{7,26}  & 33 & 5033 & \num{35,66} \\
+    7 & 1002 & \num{7,75}  & 34 & 5323 & \num{37,59} \\
+    8 & 1073 & \num{8,27}  & 35 & 5626 & \num{39,61} \\
+    9 & 1148 & \num{8,82}  & 36 & 5945 & \num{41,72} \\
+   10 & 1228 & \num{9,40}  & 37 & 6279 & \num{43,93} \\
+   11 & 1313 & \num{10,01} & 38 & 6630 & \num{46,24} \\
+   12 & 1403 & \num{10,66} & 39 & 6697 & \num{48,65} \\
+   13 & 1498 & \num{11,34} & 40 & 7381 & \num{51,16} \\
+   14 & 1599 & \num{12,06} & 45 & 9590 & \num{65,46} \\
+   15 & 1705 & \num{12,82} & 50 & 12345 & \num{83,02} \\
+   16 & 1818 & \num{13,63} &  &  &
+ \end{tabular}
+ \caption{Dampfdruck $p_{W,S}$ und Dampfdichte $\varrho_{W,S} = f_0$ des gesättigten Wasserdampfes \newline (aus: Kohlrausch, Bd.~3, 1996)} \label{tab::dampf}
+\end{table}
+\end{document}

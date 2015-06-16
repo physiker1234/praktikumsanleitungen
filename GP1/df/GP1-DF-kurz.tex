@@ -1,0 +1,105 @@
+\documentclass[platz]{tudphygp}
+\usepackage{multirow}
+
+\versuch{Dichte von Flüssigkeiten}{DF}
+
+\begin{document}
+\maketitle
+
+\subsection*{Aufgabenstellung}
+
+\begin{enumerate}
+ \item Ermittlen Sie die Genauigkeit der Massenbestimmung mit einer elektronischen Waage.
+ \item Bestimmen Sie die Dichte eines Festkörpers nach dem \emph{Absolutverfahren}.
+ \item Bestimmen Sie die Dichte eines Festkörpers nach dem \emph{Relativverfahren}.
+ \item Bestimmen Sie die Dichte einer Flüssigkeit mit Hilfe eines \emph{Pyknometers}.
+ \item Vergleichen Sie die Genauigkeit der verwendeten Verfahren.
+\end{enumerate}
+
+\subsection*{Genauigkeit der Massenbestimmung}
+
+\begin{enumerate}%TODO: "zehn" nach eigenem Ermessen hingeschrieben (original: "wiederholt")
+ \item Wiegen Sie eine Materialprobe \emph{zehn} mal und geben Sie $m \pm \Delta m$ an. (Berücksichtigen Sie systematische und zufällige Fehler.)
+ \item Für alle weiteren Messungen ermitteln Sie den Kallibrierfehler mittels einer bekannten Masse.
+\end{enumerate}
+
+\subsection*{Festkörperdichte mittels Absolutverfahren}
+
+\begin{enumerate}
+ \item Wiegen Sie die Masse eines zylindrischen Probekörpers mittles elektronischer Waage.
+ \item Messen Sie den Durchmesser und die Höhe des Zylinders und gewinnnen Sie daraus das Volumen.
+ \item Berechnen Sie \emph{direkt} aus dem Volumen und der Masse die Dichte und deren Fehler: $\varrho = \frac mV$
+\end{enumerate}
+
+\subsection*{Festkörperdichte mittels Relativverfahren}
+
+\begin{enumerate}
+ \item Nutzen für die Messung den \emph{Jolly-Aufsatz}.
+ \item Messen Sie die Masse des Festkörpers einmal auf der Schale, die in das Wasser taucht ($m_\mathrm{Fl}$) und einmal auf der Schale, die nicht in das Wasser taucht ($m_\mathrm{Luft}$).
+ \item Berechnen Sie die Dichte und deren Fehler:
+  \[
+   \varrho_x = \frac{m_\mathrm{Luft}}{m_\mathrm{Luft} - m_\mathrm{Fl}} \cdot \varrho_0
+  \]
+  Näherung der Luftdichte im Bereich zwischen \num{10} und \SI{30}{\degC} (Temperaturen $\vartheta$ in \degC{} einsetzen):
+  \[
+   \varrho_0 = \frac{\num{999,8395} + \num{16,95258} \cdot \vartheta - \num{7,9905e-3}\cdot \vartheta^2}{1 + \num{1,6887e-2} \cdot \vartheta} \cdot \num{e-3} \cdot \SI{}{g.cm^{-3}}
+  \]
+\end{enumerate}
+
+\subsection*{Flüssigkeitsdichte mittels Pyknometer}
+
+\begin{enumerate}
+ \item Messen Sie (Reihenfolge überlegen!): Leermasse $m_P$ des Pyknometers, Masse $m_1$ des Pyknometers gefüllt mit Wasser, Masse $m_2$ des Pyknometers mit zu untersuchender Flüssigkeit gefüllt.
+ \item Berechnen Sie die Dichte und deren Fehler nach:
+  \[
+   \varrho_x = \frac{m_x}{m_0} \cdot \varrho_0 = \frac{m_2 - m_P}{m_1 - m_P} \cdot \varrho_0
+  \]
+\end{enumerate}
+
+\subsection*{Hinweise zum Versuch}
+
+\begin{itemize}
+ \item Wägestücke sind mit einer Pinzette mit Plastspitzen anzufassen.
+ \item Legen Sie den zu wägenden Körper nach Nullabgleich der Waage vorsichtig möglichst in die Mitte der Schale.
+ \item Bei der Ausmessung des Testkörpers mit dem Messschieber sind die Messungen an verschiedenen Stellen vorzunehmen, um einen reellen Mittelwert zu erhalten.
+ \item Vermeiden Sie bei der Wägungen in oder von Flüssigkeiten die Bildung von Luftblasen.
+ \item Bei Messungen mit dem Pyknometer ist die exakte Füllhöhe zu gewährleisten und Verdunstungsverluste müssen durch Abdeckung der Kapillare mit einem Deckgläschen reduziert werden.
+ \item Das Pyknometer ist vor der Verwendung zu trocknen, damit exaktes Leergewicht erreicht bzw. eine Vermischung von Flüssigkeiten vermieden wird.
+ \item Achten Sie auf Konstanz der Temperatur während der Messung mit einem Pyknometer.
+\end{itemize}
+
+\subsection*{Zusammenstellung der systematischen Fehler der verwendeten Messmittel}
+\begin{itemize}
+ \item \emph{Elektronische Waage}: siehe Datenblatt
+ \item \emph{Wägestücke}: sie genügen der OIML-Norm\footnote{OIML: Organisation Internationale de M\'etrologie L\'egale} und sind \emph{Feingewichtsstücke} der Klasse F1.
+  \begin{table}[h!t]\centering
+   \begin{tabular}{l|ccccccccccc}
+    Nennmasse  & \SI1{kg} & \SI{500}g & \SI{200}g & \SI{100}g & \SI{50}g & \SI{20}g & \SI{10}g & \SI5g & \SI2g & \SI1g & \SI{500}{mg}\\\hline
+    $\Delta m / \SI{}{mg}$ & \num{5,0} & \num{2,5} & \num{1,0} & \num{0,5} & \num{0,3} & \num{0,25} & \num{0,2} & \num{0,15} & \num{0,12} & \num{0,1} & \num{0,05}
+   \end{tabular}
+   \caption{Zur verwendende Fehler der Wägestücke}\label{tab::errMass}
+  \end{table}
+ \item \emph{Pyknometer}: hat die Genauigkeitsklasse B
+  \begin{table}[h!t]\centering
+   \begin{tabular}{l|ccccc}
+    $V_n / \SI{}{ml}$ & \num1 & \num5 & \num{10} & \num{25} & \num{50} \\\hline
+	$\Delta V / \SI{}{ml}$ & \num{0,003} & \num{0,003} & \num{0,005} & \num{0,010} & \num{0,020}
+   \end{tabular}
+   \caption{Volumenfehler für Pyknometer mit dem Nenninhalt $V_n$}
+  \end{table}
+ \item \emph{Laborthermometer}:
+  \begin{table}[h!t]\centering\def\cc#1{\multicolumn1c{#1}}
+   \begin{tabular}{lc|rrrr}
+    \multicolumn{2}{l|}{Skaleneinteilung in \SI{}K}                         & \cc{\num1}&\cc{\num{0,5}}&\cc{\num{0,2}}&\cc{\num{0,1}}\\\hline
+	\multirow{5}{*}{Messbereich in \SI{}\degC} & $\num{-5}\ldots \num{60}$  & \SI{0,7}K & \SI{0,5}K & \SI{0,2}K & \SI{0,15}K \\
+	                                           & $\num{60}\ldots\num{110}$  & \SI1K     & \SI{0,5}K & \SI{0,3}K & \SI{0,25}K \\
+	                                           & $\num{110}\ldots\num{210}$ & \SI{1,5}K & \SI1K     & \SI{0,5}K &            \\
+	                                           & $\num{210}\ldots\num{310}$ & \SI{2}K   & \SI{1,5}K &           &            \\
+	                                           & $\num{310}\ldots\num{400}$ & \SI{2,5}K &           &           &            \\
+   \end{tabular}
+  \caption{Messfehler der Thermometer abhängig vom Temperaturbereich und von der Skaleneinteilung}
+  \end{table}
+ \item \emph{Messschieber}: Messfehler $\Delta l$ für die gemessenen Länge $l$: $\Delta l = \SI{50}{µm} + \num{e-4} \cdot l[\SI{}{µm}]$
+\end{itemize}
+
+\end{document}

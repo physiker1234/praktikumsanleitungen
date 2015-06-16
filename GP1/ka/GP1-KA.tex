@@ -1,0 +1,213 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd,nicefrac,subfigure}
+
+\versuch{Spezifische Wärmekapazität}{KA}
+\author{L.~Jahn,B.~Wehner,J.~Pöthig,J.~Stelzer}
+\date{01.06.1997}
+\bearbeitet{M.~Kreller,J.~Kelling,F.~Lemke,S.~Majewsky,i.~A. Dr.~Escher}{01.03.2004}
+
+\buch{kohl}{F.~Kohlrausch}{Praktische Physik, Band 2}{Teubner-Verlag}{Stuttgart 1996}
+\buch{wal}{W.~Walcher}{Praktikum der Physik}{Teubner-Verlag}{Stuttgart 1989}
+\buch{ilb}{W.~Ilberg (Hrsg.), M.~Krötzsch (Hrsg.) et.~al.}{Physikalisches Praktikum für Anfänger}{Teubner-Verlag}{Leipzig 1994}
+\buch{gran}{W.~H.~Gränicher}{Messung beendet, was nun?}{vdf, Hochschulverlag an der ETH Zürich}{Zürich 1996}
+
+\begin{document}
+\maketitle
+
+\section{Aufgabenstellung}
+
+Bestimmen Sie die Wärmekapazität eines Aufheizkalorimeters sowie mit dessen Hilfe die spezifische und molare Wärmekapapazität eines Festkörpers.
+
+\section{Allgemeine Grundlagen}
+\subsection{Spezifische und molare Wärmekapazität}
+
+%ÜBERARBEITUNG: Wärmekapazität als Zwischenbegriff eingeführt, anstelle direkt zur spezifischen WK überzugehen
+Bei konstantem Volumen bewirkt die einem Körper der Masse $m$ zugeführte Wärmeenergie $\Delta Q$ entsprechend dem \emph{1.~Hauptsatz der Wärmelehre} eine Temperaturerhöhung $\Delta T$. Diese ist dem Zuwachs $\Delta U$ an innerer Energie proportional. Der Proportionalitätsfaktor ist die \emph{Wärmekapazität} des Körpers:
+\begin{equation}
+ \Delta Q = C \cdot \Delta T = \Delta U
+ \quad\to\quad
+ C = \frac{\Delta Q}{\Delta T}
+\end{equation}
+Die Wärmekapazität ist proportional zur Masse $m$ bzw. der Stoffmenge $\nu$ im Körper. Um eine allgemeine Aussage über Körper aus einem bestimmten Material zu können, geht man zur \emph{spezifischen Wärmekapazität} $c$ (der Wärmekapazität pro Masseneinheit) bzw. zur \emph{molaren Wärmekapazität} $c_\mathrm{mol}$ (der Wärmekapazität pro Stoffmenge) über:
+\begin{align}
+              c &= \frac Cm   = \frac1m   \cdot \frac{\Delta Q}{\Delta T} &
+ c_\mathrm{mol} &= \frac C\nu = \frac1\nu \cdot \frac{\Delta Q}{\Delta T}
+\end{align}
+Die SI-Einheiten der verschiedenen Wärmekapazitäten lauten also:
+\begin{align*}
+               \brk C &= \SI{}{\frac JK}      &
+               \brk c &= \SI{}{\frac J{kg.K}} &
+ \brk{c_\mathrm{mol}} &= \SI{}{\frac J{mol.K}}
+\end{align*}
+Die spezifische und die molare Wärmekapazität sind über die \emph{molare Masse} $M$ verknüpft:
+\[
+ c_\mathrm{mol} = \frac m\nu \cdot c = M \cdot c
+\]
+
+\subsection{Regel von Dulong und Petit}
+
+\piccaption{Spezifische Wärmekapazität einiger Metalle (Einsatz: Verlauf für kleine Temperaturen) \label{fig::waermekapazitaet}}
+\parpic[r]{
+ \includegraphics[width=\linewidth/2]{GP1-KA-WaermekapazitaetFestkoerper}
+}
+
+Die spezifische Wärmekapazität $c(T)$ fester Stoffe ist temperaturabhängig (Abb.~\ref{fig::waermekapazitaet}). Bei höheren Temperaturen ist jedoch die maximale Anzahl von näherungsweise sechs Freiheitsgraden angeregt, jeweils drei in kinetischer und potentieller Energie von Schwingungen der Atome im Festkörper. Somit wird $c$ temperaturunabhängig.
+
+%ÜBERARBEITUNG: Diese Stelle habe ich etwas genauer ausgeführt.
+Nach dem Gleichverteilungssatz wird dann pro Teilchen (Atom bzw. Molekül) und pro Freiheitsgrad die thermische Energie $kT/2$ aufgenommen. Jedes Atom hat also eine innere Energie $U_A \approx 3kT$. Da in \SI1{mol} genau $N_A$ Teilchen enthalten sind, nimmt \SI1{mol} die Energie $U_\mathrm{mol} \approx 3kT \cdot N_A$. Dies führt auf die \emph{Regel von Dulong-Petit} für die molare Wärmekapazität:
+\begin{equation}
+ c_\mathrm{mol} = \frac{\Delta U_\mathrm{mol}}{\Delta T} \approx 3R \approx \SI{25}{\frac J{mol.K}}
+ \label{c3}
+\end{equation}
+Hierbei ist $R = \SI{8,314}{\nicefrac J{mol.K}}$ die universelle Gaskonstante. Im Rahmen dieses Modells ist die molare Wärmekapazität also für alle Festkörper gleich (Tab.~\ref{tab::waermekapazitaet}).
+
+\begin{table}[t]\centering
+ \begin{tabular}{c@{$\qquad$}ccc}
+  Stoff     & $c / \SI{}{\frac J{g.K}}$ & $M / \SI{}{\frac g{mol}}$ & $c_\mathrm{mol} / \SI{}{\frac J{mol.K}}$ \\ \hline
+  Aluminium & \num{,888} & \num{27,0}  & \num{24,0} \\
+  Eisen     & \num{,460} & \num{55,9}  & \num{25,7} \\
+  Blei      & \num{,130} & \num{207,2} & \num{26,9} \\
+ \end{tabular}
+ \caption{Beispiele für Wärmekapazitäten von Festkörpern bei \SI{20}\degC \label{tab::waermekapazitaet}}
+\end{table}
+
+\section{Kalorimeter}
+
+\subsection{Ideales Mischungskalorimeter}
+
+In einem möglichst ideal wärmeisolierten Gefäß, das selbst eine geringe Wärmekapazität $C_W$ besitzt (ein sogenanntes \emph{Kalorimeter}), wird z.~B.~nach der Mischungsmethode oder nach der Aufheizmethode die spezifische Wärmekapazität von flüssigen und festen Körpern bestimmt.
+
+\begin{itemize}
+ \piccaption{Aufbauskizze \label{fig::schema-mischungskalorimeter}}
+ \parpic[r]{
+  \includegraphics[width=\linewidth/4]{GP1-KA-SchemaMischungskalorimeter}
+ }
+
+ \item \emph{Bestimmung von $C_W$:} Im Kalorimeter befindet sich eine Wassermenge $m_{w,1}$ mit der Anfangstemperatur $T_1$. Es wird eine bekannte Wassermenge $m_{w,2}$ mit der (z.~B.~geringeren) Temperatur $T_2$ hinzugefügt und die Mischtemperatur $T_M$ (siehe Abb.~\ref{fig::temperatur-mischungskalorimeter}) gemessen. Unter Vernachlässigung von Wärmeverlusten an die Umwelt folgt die Wärmekapazität $C_W$ des Kalorimeters aus der Energiebilanz $\Delta Q_\mathrm{auf} = \Delta Q_\mathrm{zu}$:
+  \begin{equation}
+   (m_{w,1} c_w + C_W) \cdot (T_1 - T_M) = m_{w,2} c_w \cdot (T_M - T_2)
+   \label{c4}
+  \end{equation}
+  Hierbei ist $c_w$ die Wärmekapazität von Wasser.
+ \item \emph{Bestimmung von $c_k$:} Der Probekörper (bzw. die Probeflüssigkeit) mit der Masse $m_k$ wird auf die Temperatur $T_1$ aufgeheizt und in das teilweise mit Wasser (Masse $m_w$) gefüllte Kalorimeter mit der Ausgangstemperatur $T_2$ gebracht. Analog zu \eqref{c4} folgt die Wärmekapazität $c_k$ des Probekörpers aus der Energiebilanz:
+  \begin{equation}
+  (m_w c_w + C_W) \cdot (T_M - T_2) = m_k c_k \cdot (T_1 - T_M)
+   \label{c5}
+  \end{equation}
+\end{itemize}
+
+\subsection{Reales Mischungskalorimeter}
+
+\piccaption{Temperaturverlauf im realen Mischungskalorimeter \label{fig::temperatur-mischungskalorimeter}}
+\parpic[r]{
+ \includegraphics[width=6.5cm]{GP1-KA-TemperaturverlaufMischungskalorimeter}
+}
+
+Die Verluste in realen Kalorimetern können dann berücksichtigt werden, wenn sie die linken Seiten der Gleichungen \eqref{c4} und \eqref{c5} betreffen. Verluste, die ein Körper vor und während des Einbringens in das Kalorimeter erfährt, sind zunächst keiner Quantifizierung zugänglich. (Sie entfallen aber bei einer elektrischen Heizung wie im nächsten Abschnitt.)
+
+Infolge einer endlichen Mischungszeit und Wärmeableitung nach außen kommt es bei der vom Kalorimeter aufgenommenen Wärme zu Verlusten. Man erkennt sie in Abb.~\ref{fig::temperatur-mischungskalorimeter} an fallenden oder steigenden Kurven $T(t)$ in den stationären Bereichen (Vorversuch: Punkte A -- C, Nachversuch: Punkte D -- E).
+
+Zur Korrektur dieser Verluste extrapoliert man die Vor- und Nachversuchs-Kurven in den Bereich der Mischung und verbindet sie derart durch eine vertikale Linie, dass die in Abb.~\ref{fig::temperatur-mischungskalorimeter} schraffierten Flächen gleich sind (s.~Anhang). Der senkrechte Abstand ist die Temperaturdifferenz $\Delta T$. $T_1^*$ ist die maßgebliche Anfangstemperatur und tritt an die Stelle von $T_1$ in den Gleichungen \eqref{c4} und \eqref{c5}. Die exakte Mischungstemperatur ergibt sich zu $T_M = T_1^*-\Delta T$.
+
+\subsection{Elektrisches Aufheizkalorimeter}
+
+\begin{figure}[b!]\centering
+ \subfigure[Aufbauskizze]{
+  \label{fig::schema-heizkalorimeter}
+  \includegraphics[width=\linewidth/4]{GP1-KA-SchemaHeizkalorimeter}
+ }
+ \subfigure[Schematische $T(t)$-Verläufe mit (oben) und ohne Verlusten (unten)]{
+  \label{fig::temperatur-heizkalorimeter}
+  \includegraphics[width=\linewidth/2]{GP1-KA-TemperaturverlaufHeizkalorimeter}
+ }
+ \caption{Zum Heizkalorimeter}
+\end{figure}
+
+Beim elektrischen Aufheizkalorimeter (s.~Abb.~\ref{fig::schema-heizkalorimeter}) erfolgt die Energiezufuhr allmählich durch elektrisches Heizen. Während des Haupfversuchs fließt für die Zeit $\Delta t = t_2 - t_1$ durch die Heizspirale im Gefäß der elektrische Strom $I$. Die aufgewendete elektrische Energie $\Delta E_\mathrm{el} = P_\mathrm{el} \cdot \Delta t = UI \cdot \Delta t$ geht als Wärmeenergie vollständig in das Kalorimeter über, was eine Temperaturänderung $\Delta T$ verursacht. Aus der Energiebilanz kann man auf die Wärmekapazität des Systems schließen:
+\begin{equation}
+ C = \frac{UI \cdot \Delta t}{\Delta T}
+ \label{c6}
+\end{equation}
+Der Versuch zur Bestimmung der spezifischen Wärmekapazität $c_k$ eines Probekörpers (bzw. einer Probeflüssigkeit) gliedert sich wiederum in zwei Teilversuche:
+\begin{enumerate}
+ \item \emph{Bestimmung von $C_1$:} Im Gefäß befindet sich eine Wassermenge $c_w$. Es wird für eine Zeit $\Delta t_1$ mit Gleichstrom (Leistung $U_1 \cdot I_1$) geheizt, was in einem Temperaturanstieg $\Delta T_1$ resultiert. Mit Gleichung \eqref{c6} ergibt sich die Wärmekapazität $C_1 = m_wc_w + C_W$.
+ \item \emph{Bestimmung von $c_k$:} Neben der gleichen Wassermenge befindet sich im Gefäß auch der Probekörper (bzw. die Probeflüssigkeit) mit der Masse $m_k$. Ein analoger Heizversuch mit einem Gleichstrom $U_2 \cdot I_2$ führt über eine Heizzeit $\Delta t_2$ zu einer Temperaturänderung $\Delta T_2$. Es resultiert gemäß \eqref{c6} die Wärmekapazität $C_2$, für die gilt:
+\end{enumerate}
+\[
+ C_2 = m_kc_k + m_wc_w + C_W = m_kc_k + C_1
+\]
+Die gesuchte spezifische Wärmekapazität lautet nun:
+\begin{equation}
+ c_k = \frac{C_2 - C_1}{m_k} = \frac1{m_k} \cdot \brk{\frac{U_2I_2 \cdot \Delta t_2}{\Delta T_2} - \frac{U_1I_1 \cdot \Delta t_1}{\Delta T_1}}
+ \label{c8}
+\end{equation}
+Liegen Verluste vor, müssen die Temperaturdifferenzen wie im vorigen Abschnitt extrapoliert werden. Bei vernachlässigbaren Verlusten kann auch die Steigung der $T(t)$-Kurven im Hauptversuch ausgewertet werden.
+
+%ÜBERARBEITUNG: raus mit den Abschnitten, die ein nicht mehr eingesetztes Messprogramm beschreiben
+
+\section{Anhang}
+
+%ÜBERARBEITUNG: Dieser Abschnitt bezog sich auf die Funktionsweise des früheren Messprogrammes. Die Sprungtemperatur wird zurzeit grafisch ermittelt. Daher habe ich diesen Abschnitt als allgemeine Information zum Verfahren
+\subsection{Zur rechnerischen Bestimmung der Sprungtemperatur}
+
+Die Sprungtemperatur $\Delta T$ kann über eine Ausgleichsrechnung auf der Basis zeitlich äquidistanter fehlerbehafteter Messpunkte $T \pm \Delta T$ ermittelt werden, wobei der zeitliche Abstand $t^*$ zwischen den Messpunkten als fehlerfrei angenommen werden kann \verweis{gran}. Man geht wie folgt vor:
+\begin{enumerate}
+ \item Berechnung der Regressionsgeraden $T(t) = a + b \cdot t$ (also Bestimmung der Koeffizienten $a$ und $b$) für alle drei Abschnitte der $T(t)$-Kurve (Vor-, Haupt- und Nachversuch)
+ \item Berechnung der Standardabweichungen der Temperatur (und daraus der Koeffizienten $a$ und $b$) an den Grenzen $n$ äquidistanter Zeitintervalle $t^*$ \verweis{ilb} \verweis{gran}, wiederum für alle Abschnitte der $T(t)$-Kurve
+  \begin{align*}
+   s_T^2 &= \frac{\sum_i (\Delta T_i)^2}{n - 2}    &
+   s_a^2 &= s_T^2 \cdot \frac{2(2n+1)}{n(n-1)} &
+   s_b^2 &= \frac{s_T^2}{t^{*2}} \cdot \frac{12}{n(n^2-1)}
+  \end{align*}
+ \item Ermittlung der fiktiven mittleren Zeit $t_m$ sowie der zugehörigen Temperaturdifferenz $\Delta T$, die einer sprunghaften Energiezufuhr entspricht, aus der Forderung gleicher Flächen entsprechend Abb.~\ref{fig::temperatur-heizkalorimeter}
+  \begin{align*}
+      \Delta T  &= (a_2 - a_1) + (b_2 - b_1) \cdot t_m &
+   s_{\Delta T} &= \sqrt{s_{a_1}^2 + s_{a_2}^2 + (s_{b_1}^2 + s_{b_2}^2) \cdot t_m^2}
+  \end{align*}
+ \item Ermittlung von $c_k$ durch \eqref{c8} sowie des Fehlers $\Delta c_k$ aus Fehlerfortpflanzung von \eqref{c8}
+\end{enumerate}
+
+\subsection{Beweis für die Gleichheit der Flächen}
+
+Es geht um die Berechnung der vom Kalorimeter aufgenommenen (oder abgegebenen) Wärmeenergie, z.~B.~der linken Seite von \eqref{c4}, worin die Temperaturdifferenz verfälscht ist. Dies gelingt bei Berücksichtigung der an die Umgebung mit der Temperatur $T_u$ während der endlichen Mischungszeit $t_M$ abgeleiteten Wärmeenergie $Q^u$, die sich mit der \emph{Konstanten für die Kalorimeterverluste} $K$ wie folgt berechnet
+\[
+ \Delta Q^u = K \cdot (T - T_u)
+\]
+Es werden zwei Abkühlungskurven (Abb.~\ref{fig::temperatur-mischungskalorimeter}) verglichen:
+\begin{enumerate}
+ \item Ohne Mischungsvorgang würde die Kurve $T_1(t)$ über die Punkte A -- B -- C -- F verlaufen.
+ \item Beim Mischungsexperiment läuft die Kurve über A -- B -- E.
+\end{enumerate}
+Bei diesen Wegen werden die folgenden Wärmemengen an die Umgebung abgegeben:
+\begin{align*}
+ Q_1^u &= K \cdot \Int_0^\infty (T_1 - T_u) \dif t &
+ Q_m^u &= K \cdot \Int_0^\infty (T_m - T_u) \dif t
+\end{align*}
+Die Differenz beider Beiträge
+\[
+ Q_1^u - Q_m^u = K \cdot \Int_0^\infty (T_1 - T_m) \dif t
+\]
+stellt als Fläche die zu messende Wärmemenge (linke Seite von \eqref{c4}) dar. Sie muss unabhängig von $\Delta t_m$ sein, also auch für den Idealfall $\Delta t_m\to 0$ (Kurve A -- B -- C -- D -- E) gelten. Damit müssen die Integrale der Kurven A -- B -- E und A -- B -- C -- D -- E gleich sein. Das bedeutet aber, daß die schraffierten Flächen in Abb.~\ref{fig::temperatur-mischungskalorimeter} gleich sein müssen.
+
+\subsection{Wärmekapazität bei tiefen Temperaturen}
+
+Für tiefe Temperaturen (s.~Einsatz in Abb.~\ref{fig::waermekapazitaet}) liefert die quantenmechanische \emph{Debye-Theorie} für die Wärmekapazität von Festkörpern:
+\begin{align*}
+ c_\mathrm{mol}(T) &= \frac{12\pi^4}5 \cdot R \cdot \kla{\frac T{\Theta_D}}^3      && \text{für } 0 < T \leq \num{,1} \cdot \Theta_D \\
+ c_\mathrm{mol}(T) &= 3R \cdot \brk{1 - \frac3{20} \cdot \kla{\frac{\Theta_D}T}^2} && \text{für } T > \num{,5} \cdot \Theta_D
+\end{align*}
+Hierbei ist $\Theta_D = \nicefrac{h \cdot f_d}k$ die \emph{Debye-Temperatur}, und $f_d$ die obere Gitterschwingungsfrequenz.
+
+\frage{Wie unterscheiden sich ein ideales und ein reales Kalorimeter?}
+\frage{Wie bestimmt man Wärmemengen, spezifische und molare Wärmekapazitäten?}
+\frage{Erläutern Sie die Energiebilanz bei der Mischungsmethode zur Bestimmung von $c_k$!}
+\frage{Erläutern Sie die Energiebilanz bei der Aufheizmethode zur Bestimmung von $c_k$!}
+\frage{Wie kann man welche Wärmeverluste reduzieren?}
+\frage{Was besagt die Regel von Dulong-Petit? Wann gilt sie, und wann nicht?}
+\frage{Welche Maßeinheiten hat die Wärmekapazität, die spezifische Wärmekapazität, die molare Wärmekapazität und die spezifische Schmelzwärme?}
+\frage{Leiten Sie die Gleichungen \eqref{c4} bis \eqref{c8} her!}
+\frage{Was kann man allgemein über $c_p$ und $c_v$ bei Gasen, Flüssigkeiten und Festkörpern aussagen?}
+\frage{Nennen und erläutern Sie fünf Möglichkeiten zur Temperaturmessung!}
+\frage{Wie lautet der erste Hauptsatz der Wärmelehre?}
+
+\end{document}

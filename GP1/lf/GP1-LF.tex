@@ -1,0 +1,250 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd,booktabs,caption,boxedminipage}
+
+\versuch{Luftfeuchtigkeit}{LF}
+\bearbeitet{M.~Kreller,J.~Kelling,F.~Lemke,S.~Majewsky,i.A. Dr.~Escher}{}
+
+\buch{berg}{L.~Bergmann, C.~Schaefer}{Lehrbuch der Experimentalphysik}{Verlag de Gruyter}{Berlin 1954}
+\buch{walch}{W.~Walcher}{Praktikum der Physik}{Teubner-Verlag}{Stuttgart 1989}
+\buch{rec}{A.~Recknagel}{Physik: Schwingungen, Wellen, Wärmelehre}{Technik-Verlag}{Berlin 1990}
+\buch{kohl}{F.~Kohlrausch}{Praktische Physik, Band 3: Tabellen}{Teubner-Verlag}{Stuttgart 1996}
+\buch{paus}{H.~J.~Paus}{Physik in Experimenten und Beispielen}{Verlag~C.-Hanser}{München 1995}
+
+\begin{document}
+\maketitle
+
+\section{Aufgabenstellung}
+
+Bestimmen Sie die absolute und relative Luftfeuchtigkeit mithilfe eines Aspirationspsychrometers nach Aßmann.
+
+\section{Allgemeine Grundlagen}
+
+\subsection{Absolute und relative Luftfeuchtigkeit}
+
+Die freie atmosphärische Luft besitzt einen gewissen Wasserdampfgehalt, der durch \emph{Verdunstung} an großen freien Wasserflächen entsteht. Als absolutes Maß für den Wasserdampfgehalt kann entweder der \emph{Partialdruck des Wasserdampfes} $p_\mathrm w$ dienen oder aber die \emph{absolute Luftfeuchte} $f$. Letztere ist der am Messort und der Messtemperatur vorhandene Quotient aus der Wassermasse $m_\mathrm w$ und dem Luftvolumen $V$, auch als Wasserdampfdichte der Luft bezeichnet:
+\begin{equation}
+ f=\frac{m_\mathrm w}V \label{lf01}
+\end{equation}
+Die \emph{relative Luftfeuchte} $\varphi$ ist der Quotient aus absoluter Luftfeuchte $f$ und der bei der Messtemperatur maximal möglichen Feuchte (Sättigungsdampfdichte) $f_0$ bzw. das Verhältnis aus dem Partialdruck des Wasserdampfes $p_\mathrm w$ zum temperaturabhängigen Sättigungsdampfdruck $p_\mathrm{w,s}$:
+\begin{equation}
+ \varphi = \frac f{f_0} = \frac{p_\mathrm w}{p_\mathrm{w,s}} \label{lf02}
+\end{equation}
+
+\subsection{Partialdruck des Wasserdampfes}
+
+\begin{description}
+ \item[Daltonsches Gesetz:] Der Druck eines Gasgemisches ist gleich der Summe derjenigen Drücke (\emph{Partialdrücke}), die jedes einzelne Gas ausüben würde, wenn es den gesamten Raum allein ausfüllen würde (im Rahmen der Näherung für ideale Gase, wobei das Eigenvolumen der Moleküle vernachlässigt ist).
+\end{description}
+
+Luft ist ein Gasgemisch und besteht aus \SI{78,1}\% \mol{N_2}, \SI{20,9}\% \mol{O_2}, \SI{0,93}\% \mol{Ar}, \SI{0,036}\% \mol{CO_2} (jeweils Masse-\%) und weiteren Spurenbestandteilen sowie einem Anteil von Wasserdampf. Ein Vergleich der relativen Molekülmassen der Bestandteile zeigt, daß die Luftdichte mit zunehmender Feuchtigkeit abnimmt. Für trockene und feuchte Luft sowie für den Anteil an Wasserdampf gilt die  Zustandsgleichung idealer Gase:
+\begin{equation}
+ p V = n R \cdot T = m R^* \cdot T = m \cdot \frac{R}M \cdot T \label{lf03}
+\end{equation}
+Hierbei sind $R = \SI{8315}{\frac J{kmol.K}}$ die universelle bzw. $R^* = R/M$ die spezifische Gaskonstante, $n$ die Stoffmenge (Mol-Zahl), $m$ die Masse, $M$ die molare Masse, $p$ der Druck, $V$ das Volumen und $T$ die absolute Temperatur. Der Sättigungsdampfdruck des Wassers $p_\mathrm{w,s}(T)$ und damit auch die Sättigungsdampfdichte $f_0(T)$ steigt exponentiell mit der Temperatur (siehe Abb.~\ref{fig::Dampfdruck}), wofür die Boltzmann-Statistik (siehe Gleichung von Clausius-Clapeyron) die theoretische Grundlage liefert.
+
+\newpage
+\section{Hygrometrie}
+
+\subsection{Absorptionshygrometer nach Regnault}
+
+\piccaption{Hygrometer nach Regnault}
+\parpic[r]{
+ \includegraphics[width=\linewidth/4]{GP1-LF-AbsolutHygrometer}
+}
+Zur direkten Bestimmung der absoluten Luftfeuchtigkeit nach Gleichung $(\ref{lf01})$ kann der Wasserdampfgehalt der Luft durch ein hygroskopisches Trockenmittel (z.B. Phosphorpentoxid oder Kalziumchlorid) vollständig entzogen und durch Wägung direkt bestimmt werden. Entsteht eine Differenz zwischen Mess- und Ansaugtemperatur, so muss anhand der Zustandsgleichung (isobarer Prozess) das Volumen korrigiert werden.
+\picskip0\vspace{-1em}
+
+\subsection{Aspirations-Psychrometer nach Aßmann}
+
+\piccaption{Psychrometer n. Aßmann}
+\parpic[r]{
+ \includegraphics[width=\linewidth/3]{GP1-LF-Psychrometer}
+}
+Aspiration steht in der Technik für das Ansaugen von Gasen, Flüssigkeiten und Feststoffen. Bei dieser Methode wird die Lufttemperaturdifferenz (psychrometrische Differenz) gemessen, die sich einstellt, wenn die Luft der Temperatur $T$ mit einer bestimmten Geschwindigkeit an zwei gleichen Thermometern vorbeigeführt wird, wovon eines (hier Nr.~2) feucht ist. Dazu ist es mit einer mit destilliertem Wasser getränkten Gaze $G$ umgeben. Das Wasser in der Gaze verdunstet um so schneller und verringert die Temperatur $T_2 = T_\mathrm w$ der Luft um so stärker, je trockener die vorbeiströmende Luft ist.
+
+Zur Herleitung des quantitativen Zusammenhanges zwischen gemessener Temperaturdifferenz ($T-T_\mathrm w$) und dem gesuchten Partialdruck des Wasserdampfes $p_\mathrm w$ in der Luft werden folgende Teilprozesse betrachtet:
+
+\begin{minipage}{\linewidth - \linewidth/3 - 4ex}
+ \begin{enumerate}
+  \item Die Luft nimmt am Punkt 2 solange Wasserdampf auf, bis sie gesättigt ist und $T_\mathrm w$ konstant bleibt. Der Partialdruck des Wasserdampfes hat dann den aus Abb.~\ref{fig::Dampfdruck} bekannten Sättigungsdruck $p_\mathrm{w,s}(T_\mathrm w)$ erreicht.
+ \end{enumerate}
+\end{minipage}
+\begin{enumerate}\setcounter{enumi}1
+ \item Der Wasserdampf wird als ideales Gas behandelt (molare Masse $M_\mathrm w=\SI{18}{\frac g{mol}}$). Nun wird die Zunahme der Masse $m_\mathrm w$ des Wasserdampfes in der Luft beim Sättigen berechnet. Zweimalige Anwendung von \eqref{lf03} sowohl auf den Wasserdampfgehalt der feuchten Luft als auch auf den auf $T_\mathrm w$ abgekühlten gesättigten Dampf liefert:
+ \begin{align}
+  p_\mathrm w V &= m \cdot \frac{R}{M_\mathrm w} \cdot T \quad\text{und}\quad p_\mathrm{w,s} V_\mathrm w = m_\mathrm{w,s} \cdot \frac{R}{M_\mathrm w} \cdot T_\mathrm w \nonumber\\
+  m_\mathrm w   &= m_\mathrm{w,s} - m = \frac{M_\mathrm w}{R}\brk{\frac{p_\mathrm{w,s}(T_\mathrm w) \cdot V_\mathrm w}{T_\mathrm w} - \frac{p_{w}(T) \cdot V}T} \label{lf04}
+ \end{align}
+ \item Die Proportionalität zwischen $m_\mathrm w$ und $(T-T_\mathrm w)$ folgt aus einer Energiebetrachtung. Die Luft liefert die zum Verdampfen notwendige Energie und kühlt sich dabei ab:
+  \begin{equation}
+   m_\mathrm w q_v = m_\mathrm L c_p \cdot (T-T_\mathrm w) \label{lf05}
+  \end{equation}
+  $q_v$ ist die temperaturabhängige spezifische Verdampfungswärme des Wassers (siehe Tab.~\ref{tab::cv}) und $c_p$ die spezifische Wärmekapazität der näherungsweise trockenen Luft (siehe Tab.~\ref{tab::realGas}).
+ \item Wir wenden \eqref{lf03} auf die Luft an und finden bei konstantem Luftdruck $p=p_\mathrm L$:
+  \begin{equation}
+   \frac{V_\mathrm w}{T_\mathrm w} = \frac VT = \frac{m_\mathrm LR}{p_\mathrm LM_\mathrm L} \label{lf06}
+  \end{equation}
+\end{enumerate}
+
+Nach Einsetzen der Gleichungen \eqref{lf05} und \eqref{lf06} in die nach $p_\mathrm w$ umgestellte Gleichung \eqref{lf04} folgt die \emph{Psychrometer-Formel}:
+\begin{equation}
+ \boxed{
+  p_\mathrm w = p_\mathrm{w,s}(T_\mathrm w) - p_\mathrm L \cdot (T-T_\mathrm w) \cdot A^* \quad\text{mit}\quad A^*=\frac{c_p}{q_v} \cdot \frac{M_\mathrm L}{M_\mathrm w} \label{lf07}
+ }
+\end{equation}
+Mit den Werten $c_p = \SI{1,006}{\frac{kJ}{kg.K}}$, $q_v = \SI{2460}{\frac Jg}$ und $M_\mathrm L = \SI{29}{\frac g{mol}}$ ergibt sich der Näherungswert für $A^* \approx \SI{0,66e-3}{\frac1K}$.
+
+\subsection{Taupunkt-Hygrometer nach Lambrecht}
+
+\piccaption{Taupunkt-Hygrometer nach Lambrecht}
+\parpic[r]{
+ \includegraphics[width=\linewidth/3]{GP1-LF-TaupunktsHygrometer}
+}
+In dem zu untersuchenden Raum wird eine polierte und geeignet geformte, mit einem Schlitz $D$ versehene Metallflläche $A$ durch ein Kühlmittel kontinuierlich gekühlt, bis bei der Temperatur $T_d$ der erste kondensierte feine Niederschlag von Wassertröpfchen oberhalb von $D$ beobachtet wird. Am \emph{Taupunkt} $T_d$ reicht die in der Luft enthaltene Feuchtigkeit gerade aus, um die Luft zu sättigen.
+
+Aus Abb.~\ref{fig::Dampfdruck} liest man die absolute Feuchtigkeit $f(T_d)$ bzw. $p_\mathrm{w,s}(T_d)$ direkt ab und muß beim Übergang zur Raumtemperatur $T$ nur noch die Volumenabnahme beim isobaren Abkühlen von $T$ auf $T_d$ berücksichtigen.
+\begin{equation}
+ f(T)=f(T_d) \cdot \frac{T_d}T \label{lf08}
+\end{equation}
+\picskip0\vspace{-1em}
+
+\subsection{Haar-Hygrometer}
+
+\piccaption{Haar-Hygrometer}
+\parpic[r]{
+ \includegraphics[width=\linewidth/4]{GP1-LF-HaarHygrometer}
+}
+Gewisse organische (auch synthetische) proteinhaltige Fasern absorbieren Wasserdampf aus der Luft und werden dabei länger. Dies wird in den einfachen Haar-Hygrometern ausgenutzt. Dazu wird z.B. ein eingefettetes Haar zwischen einem Fixpunkt und einem Gewicht über eine Rolle mit Zeiger aufgespannt. Zur Kalibrierung wird das Haar-Hygrometer für einige Zeit in ein feuchtes Tuch eingepackt und anschließend die Anzeige für die relative Luftfeuchte auf \SI{100}\% eingestellt.
+\picskip0
+
+\section{Anhang}
+
+\subsection{Dampfdichte und absolute Luftfeuchtigkeit}
+
+Die Umrechnung von der Dampfdichte (absolute Feuchte $f$) auf den Partialdruck $p_\mathrm w$ folgt aus:
+\begin{align*}
+                  p_\mathrm w V &= m_\mathrm w R^*_\mathrm w \cdot T \\
+ \text{und}\quad p_\mathrm{w,s} &= \rho_\mathrm{w,s} R^*_\mathrm w \cdot T \quad\text{wegen}\quad m_\mathrm{w,s} = \rho_\mathrm{w,s} \cdot V \\
+ \Rightarrow\quad             f &= \frac{m_\mathrm w}V = \frac{p_\mathrm w}{R^*_\mathrm w \cdot T} = \frac{p_\mathrm w}{p_\mathrm{w,s}} \cdot \rho_\mathrm{w,s}
+\end{align*}
+Die Sättigungsdampfdichte für Wasserdampf ist $\rho_\mathrm{w,s} = \SI{0,8042}{\frac{kg}{m^3}}$ bei $\vartheta_0 = \SI0\degC$ (siehe Tab.~\ref{tab::Gasdichten}). Bei anderen Temperaturen muss man in der Gleichung für $f$ wie in \eqref{lf08} noch einen Faktor $T_0 / T$ einführen. Für den Normdruck $p_L = \SI{1,013e5}{Pa}$ gilt also:
+\[
+ f \brk{\frac{\SI{}g}{\SI{}{m^3}}} = \frac{\SI{804,2}{g/m^3} \cdot \SI{273}K}{T\SI{}{[K]} \cdot \SI{1,013e5}{Pa}} \cdot p_\mathrm w [\SI{}{Pa}] = \num{2,167} \cdot \frac{p_\mathrm w[\SI{}{Pa}]}{T[K]} \label{lf09}
+\]
+
+\subsection{Zur Dampfdruck-Kurve}
+
+Die Wahrscheinlichkeit, dass ein Molekül verdampft ist, genügt der Boltzmann-Statistik und ist  proportional zu $\exp(-\frac{mq_v}{kT})$. Die Gleichung von Clausius-Clapeyron stellt einen Zusammenhang zwischen der Steigung der Dampfdruck-Kurve und der Verdampfungsenthalpie $q_v$ dar:
+\begin{equation}
+ q_v = T \cdot \frac{\diff p_\mathrm{w,s}}{\diff T} \cdot (v_\mathrm{w,s} - v_{fl}) \label{lf10}
+\end{equation}
+
+$v_\mathrm{w,s}$ und $v_{fl}$ sind die spezifischen Volumina der beiden Aggregatzustände, und $p_\mathrm{w,s}$ ist der Sättigungsdampfdruck. Zur Herleitung der Clausius-Clapeyron-Gleichung wird ein Kreisprozess mit einer Flüssigkeit betrachtet, die bei der Temperatur $T + \diff T$ verdampft, wobei:
+\begin{enumerate}
+ \item isotherm-isobar gegen den Dampfdruck $p_\mathrm{w,s} + \diff p$ die Arbeit $W_1 = (p_\mathrm{w,s} + \diff p) \cdot (v_\mathrm{w,s} - v_{fl})$ aufzubringen ist,
+ \item nach adiabatischer Entspannung die Temperatur $T$ erreicht wird,
+ \item der Dampf beim Druck $p_\mathrm{w,s}$ isotherm-isobar komprimiert wird, bis alles flüssig ist, wobei die Arbeit $W_2 = p_\mathrm{w,s} \cdot (v_\mathrm{w,s} - v_{fl})$ gewonnen wird, und
+ \item durch Erhöhung von Durck und Temperatur der Ausgangszustand erreicht wird.
+\end{enumerate}
+Die Energiebeiträge für die Übergänge 2. zu 3. und 4. zu 1. entfallen im Grenzfall $\diff T = \SI0\degC$. Damit wird die Verdampfungswärme $q_v$ teilweise in die Arbeit $\Delta W = W_1 - W_2 = \diff p_\mathrm{w,s} \cdot (v_\mathrm{w,s} - v_{fl})$ umgewandelt. Der Wirkungsgrad $\eta = \Delta W / q_V$ soll gleich dem des Carnot-Prozesses sein:
+\[
+ \eta = \frac{\Delta W}{q_v} = \frac{\diff p_\mathrm{w,s} \cdot (v_\mathrm{w,s} - v_{fl})}{q_v} \overset!= \eta_C = \frac{\diff T}T \label{lf11}
+\]
+Umstellen führt auf \eqref{lf10}. Mit dieser Gleichung lässt sich unterhalb der kritischen Temperatur durch Integration der wesentliche \emph{exponentielle} Verlauf von $p_\mathrm{w,s}(T)$ bei Vernachlässigung von $v_{fl}$ gegenüber $v_\mathrm{w,s}$ bestimmen (Näherung für die Gasphase: $p_\mathrm{w,s} v_\mathrm{w,s} = R^*_\mathrm w T$).
+\[
+ m q_v \approx \frac{R^*_\mathrm w T^2}{p_\mathrm{w,s}} \cdot \frac{\diff p_\mathrm{w,s}}{\diff T}
+ \quad\text{bzw.}\quad
+ \frac{\diff p_\mathrm{w,s}}{p_\mathrm{w,s}} \approx \frac{mq_v}{R^*_\mathrm w} \cdot \frac{\diff T}{T^2}
+ \quad\Rightarrow\quad
+ p_\mathrm{w,s} \sim \exp\kla{-\frac{m q_v}{R^*_\mathrm w T}}
+\]
+
+\subsection{Zur Wärmekapazität der Luft}
+
+Die spezifische Wärmekapazität von \emph{idealen Gasen} kann man näherungsweise aus den Freiheitsgraden $f$ der einzelnen Moleküle mittels $c_p = (f/2 + 1) \cdot R^*$ mit $R^* = R/M$ bestimmen. Ein einatomige Gas hat drei Freiheitsgrade (Translation in alle drei Raumrichtungen), entsprechend $c_p = 5/2 \cdot R^*$. Bei zweiatomigen Gasen kommen zwei Freiheitsgrade für die Rotation hinzu, denn die Rotation um die Verbindungsachse der beiden Atome liefert keinen Beitrag (man stelle sich vor, das Molekül habe in dieser Achse keine Ausdehnung und kann deshalb nicht um sie rotieren). Somit ist $f = 5$ und $c_p = 7/2 \cdot R^*$. Für dreiatomige Gase kommt noch die dritte Rotationsachse hinzu, weshalb $c_p = 8/2 \cdot R^*$ gilt. Mit dem Zahlenwert $R = \SI{8,31451}{\frac J{mol.K}}$ resultiert Tabelle \ref{tab::spezKapa}.
+
+Setzt man nun die molare Masse der \emph{trockenen} Luft ein, so erhält man aus den Anteilen der einzelnen Gase den Mittelwert $\overline{c_{p,id}} = \SI{29,015}{\frac J{mol.K}} = \SI{1,002}{\frac J{g.K}}$. Der tatsächliche Wert der spezifischen Wärmekapazität weicht ca. um \SI{0,05}\% ab und hat ein schwaches Minimum bei $\SI0\degC$ (siehe Tab.~\ref{tab::realGas}), da Luft natürlich nicht ein ideales, sondern ein reales Gas ist.
+
+Für \emph{feuchte Luft} ist der Anteil an dreiatomigen Molekülen erhöht. Damit erhöht sich auch $c_p$. Seien zum Beispiel $\vartheta = \SI{25}\degC$, $\varphi = \SI{80}\%$ und $p_\mathrm L = \SI{1,013e5}{Pa}$. Wegen $p_\mathrm w = \num{0,8} \cdot p_\mathrm{w,s} = \SI{2536}{Pa}$ enthält die Luft \SI{2,503}\% Wasser. Somit muss $c_p$ wie folgt korrigiert werden:
+\[
+ c_{p,\mathrm{korr}} = \SI{1,007}{\frac J{g.K}} \cdot \brk{(1 - \num{0,02503}) + \num{0,02503} \cdot \frac87} = \SI{1,106}{\frac J{g.K}}
+\]
+Als Näherungswert kann $c_p = \SI{1,01}{\frac J{g.K}}$ benutzt, und Abweichungen in der Fehlerdiskussion betrachtet werden.
+
+\subsection{Tabellen}
+
+\fbox{\parbox{\linewidth}{\centering
+ \begin{tabular}{rccccc}
+  Temperatur $\vartheta$ & $\SI{-60}\degC$  & $\SI{-20}\degC$  & $\SI0\degC$    & $\SI{20}\degC$   & $\SI{40}\degC$   \\ \toprule
+  trockene Luft & \num{1,007} & \num{1,006} & \num{1,006} & \num{1,007} & \num{1,008} \\[0.5ex]
+  Wasserdampf & & & & \num{1,840}
+ \end{tabular}
+ \captionof{table}{Auswahl realer spezifischer Wärmekapazitäten $c_p$ in \SI{}{\frac{kJ}{kg.K}} \verweis{kohl}} \label{tab::realGas}
+}}
+
+\begin{minipage}[c]{\linewidth/2+1cm}
+ \begin{boxedminipage}{\linewidth}\centering
+  \begin{tabular}{cc}
+   Stoff         & Gasdichte \\ \toprule
+   trockene Luft & $\rho_\mathrm L = \SI{1,293}{\frac{kg}{m^3}}$ \\
+   Wasserdampf   & $\rho_\mathrm{w,s} = \num{0,622} \cdot \rho_\mathrm L = \SI{0,8042}{\frac{kg}{m^3}}$
+  \end{tabular}
+  \captionof{table}{Gasdichten für $\SI0\degC$} \label{tab::Gasdichten}
+ \end{boxedminipage}
+ \begin{boxedminipage}{\linewidth}\centering
+  \begin{tabular}{lc}
+   $\vartheta$   & $q_v$               \\ \toprule
+   \SI0\degC     & \SI{2525}{\frac Jg} \\[0.7ex]
+   \SI{100}\degC & \SI{2249}{\frac Jg}
+  \end{tabular}
+  \captionof{table}{Verdampfungswärme von Wasser} \label{tab::cv}
+ \end{boxedminipage}
+\end{minipage}
+%
+\newlength\tempwidth
+\setlength\tempwidth{\linewidth/2-0.85cm}%Im Parameter von boxedminipage kann man nicht rechnen.
+\begin{boxedminipage}{\tempwidth}\centering
+ \begin{tabular}{ccc}
+  Stoff                & Molekülart & $c_{p,m}$                   \\\toprule
+  \mol{Ar}             & einatomig  & \SI{20,786}{\frac J{mol.K}} \\[0.7ex]
+  \mol{O_2}, \mol{N_2} & zweiatomig & \SI{29,101}{\frac J{mol.K}} \\[0.7ex]
+  \mol{CO_2}           & dreiatomig & \SI{33,258}{\frac J{mol.K}}
+ \end{tabular}
+ \captionof{table}{Einige spezifische\newline Wärmekapazitäten} \label{tab::spezKapa}
+\end{boxedminipage}
+
+% der Anfang vom Ende
+
+\frage{\SI{1,2}g Wasser mit $\vartheta=\SI{20}\degC$ gelangen in ein Gefäß von $V = \SI{100}l$, das a.)~evakuiert und b.)~mit Luft von $T = \SI{20}\degC$ gefüllt ist. Wie groß ist jeweils der Partialdruck des Wasserdampfes? Wie groß sind für Fall b.) die absolute und relative Luftfeuchtigkeit?}
+
+\frage{Wie ändert sich die Dichte eines idealen Gases mit der Temperatur?}
+
+\frage{Hängt der Sättigungsdampfdruck vom Volumen ab?}
+
+\frage{Trocknet man Räume in Gebäuden (z.B. Keller) besser im Sommer oder im Winter?}
+
+\frage{Unter welcher Voraussetzung gilt die Zustandsgleichung idealer Gase?}
+
+\frage{Bei einer Raumtemperatur von $\SI{25}\degC$ wird ein Taupunkt von $T_d = \SI{10}\degC$ gemessen. Wie groß sind absolute und relative Luftfeuchte?}
+
+\frage{Bei einer Raumtemperatur von $\SI{25}\degC$ wird bei normalem Luftdruck ($p_\mathrm L= \SI{1013}{mbar}$) mit dem Aspirations-Psychrometer eine Temperaturerniedrigung auf $T_\mathrm w = \SI{10}\degC$ gemessen. Wie groß sind absolute und relative Luftfeuchte?}
+
+\frage{Wie berechnet sich die temperaturabhängige Dichte eines idealen Gases (z.B. von trockener Luft oder reinem Wasserdampf)?}
+
+\frage{Unter welchen Voraussetzungen gilt die Psychrometer-Formel \eqref{lf07}?}
+
+\frage{Welches "`Vakuum"' erreicht man im günstigsten Fall mit einer \emph{Wasserstrahlpumpe}, wenn die Temperatur des Wassers a.) $\SI1\degC$ und b.) $\SI{40}\degC$ beträgt?}
+
+\frage{Mit welchen Zusätzen kommt man von der Zustandsgleichung für ideale Gase zu einer Gleichung für reale Gase? Skizzieren Sie im $p$-$V$-Diagramm eine Isotherme für ein ideales und ein reales Gas unterhalb der kritischen Temperatur. Was bedeutet darin $p_\mathrm{w,s}$?}
+
+\AtEndDocument{
+ \newpage\fancyhf{}\renewcommand\headrulewidth{0pt}
+ % Auf einer leeren Extraseite wird ganz am Schluss des Dokumentes die Vorlage fürs Wahrscheinlichkeitsnetz angefügt.
+ \begin{figure}\centering
+  \includegraphics[height=\textheight - 1cm]{GP1-LF-DampfdruckKurve}
+  \caption{Dampfdruck ($p_\mathrm{w,s}$) und -dichte ($\rho_\mathrm{w,s}=f_0$) des gesättigten Wasserdampfes}
+  \label{fig::Dampfdruck}
+ \end{figure}
+}
+
+\end{document}

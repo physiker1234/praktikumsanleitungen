@@ -1,0 +1,323 @@
+\documentclass[11pt,twoside,a4paper]{article}
+\usepackage{verbatim}
+\usepackage{amsmath,amsthm}
+\usepackage{graphicx}
+\usepackage{color}
+
+\usepackage[german]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+
+\usepackage{fancybox}
+\usepackage{textcomp}
+\usepackage{fancyhdr}
+\usepackage{rotating}
+\setcounter{secnumdepth}{3}
+
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\raggedleft\arraybackslash}X}
+\newcolumntype{Z}{>{\centering\arraybackslash}X}
+
+\textheight			25cm
+\textwidth			16.5cm
+\topmargin			-1cm
+\oddsidemargin		0cm
+\evensidemargin	-0.42cm
+
+\pagestyle{fancy}
+
+ \title{Versuch EO \\ Elektonenstrahloszillograph \\}
+ \author{bearbeitet von \\ M. Kreller \\ i.A. Dr. Escher}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{table}[h]
+\begin{tabular}{|c|c|}
+\hline
+& \\
+\hspace{0.7cm} \begin{LARGE}Technische Universität Dresden \end{LARGE} \hspace{0.7cm} &
+\hspace{1cm}Physikalisches Praktikum \hspace{1cm} \\
+\begin{large} Fachrichtung Physik \end{large}               & \\
+\begin{footnotesize} P. Engelmann 07/ 2000 \end{footnotesize}            & Versuch:
+\begin{LARGE} EO \end{LARGE} \\
+\begin{footnotesize} bearbeitet 03/ 2004 \end{footnotesize} & \\
+\hline
+\end{tabular}
+\end{table}
+\begin{huge}\textbf{Elektronenstrahloszillograph}\end{huge}
+
+\tableofcontents
+\newpage
+
+\section{Ziel und Aufgabenstellung} \vspace{-.2cm}
+	Oszillographen haben eine grundlegende und universelle Bedeutung für die gesamte Meßtechnik
+	erlangt, weil im Prinzip mittels geeigneter Wandler alle physikalischen Größen in elektrische
+	Spannungen umgewandelt werden können. Im Versuch ist der Umgang mit einem  EO zu üben. An einigen
+	Beispielen werden seine umfangreichen Einsatzmöglichkeiten als nahezu trägheitsloses elektronisches
+	Meßgerät kennengelernt. Die Aufgaben umfassen: Darstellung von Wechselspannungen, Messung von
+	Gleichspannungen, Messung von Zeiten und Frequenzen, Messung von Wechselspannungsamplituden und
+	Phasenverschiebungen. \vspace{-.2cm}
+
+\section{Vorbemerkungen} \vspace{-.2cm}
+	Für die Versuchsdurchführung wird vorausgesetzt, daß Sie den Aufbau einer Elektronenstrahlröhre
+	(Braunsche Röhre, Oszillographenröhre, Bildröhre) und die Wirkungsweise ihrer Bestandteile kennen.
+	Diese Kenntnisse werden Ihnen in der Vorlesung Experimentalphysik vermittelt. Da die Vorlesung
+	parallel zum physikalischen Praktikum gehalten wird, ist es insbesondere in den ersten
+	Semesterwochen nötig, sich diese Kenntnisse durch Selbststudium der vorlesungsbegleitenden
+	Literatur und der Vorlesungsnachschriften vergangener Studienjahre zu erwerben. \\
+	Überprüfen Sie Ihre Kenntnisse durch Beantwortung folgender Fragen: \vspace{-.2cm}
+	\begin{itemize}
+		\item Welche Aufgabe hat die Kathode? \vspace{-.2cm}
+		\item Wie wird die Intensität (Stromstärke) des Elektronenstrahls eingestellt? \vspace{-.2cm}
+		\item Welche Aufgaben erfüllen das Linsensystem und der Bildschirm? \vspace{-.2cm}
+		\item Durch welche Vorrichtung erreicht man bei einerElektronenstrahlröhre mit elektrostatischer
+		Ablenkung die Auslenkung des Elektronenstrahls in x- bzw. y- Richtung? \vspace{-.2cm}
+		\item Warum sindElektronenstrahlröhren Vakuumgefäße? \vspace{-.2cm}
+		\item Welche Gefährdungen birgt der Umgang mit Elektronenstrahlröhren? \vspace{-.2cm}
+		\item Nennen Sie Anwendungsbeispiele für Elektronenstrahlröhren! \vspace{-.2cm}
+		\item Was ist eine sinusförmige Wechselspannung, was versteht man unter Scheitelspannung
+		(=Amplitude) U, Periodendauer T, Frequenz f und Kreisfrequenz $\omega$? \vspace{-.2cm}
+		\item  Was ist der Effektivwert $U_{v}$ einer Wechselspannung, was ist eine Gleichspannung ?
+\vspace{-.2cm}
+	\end{itemize}
+
+\section {Theoretische Vorbereitung} \vspace{-.2cm}
+\subsection{Aufbau und Wirkungsweise} \vspace{-.2cm}
+	Kernstück eines EO ist eine \underline{Elektronenstrahlröhre}. Ihr Leuchtschirm ist zur Messung der
+	Auslenkung des Elektronenstrahls bzw. des Leuchtflecks mit einer durchsichtigen
+	\underline{Rasterplatte} (Koordinatenkreuz) abgedeckt. Der EO enthält außerdem alle Baugruppen, die
+	das Betreiben der Elektronenstrahlröhre erfordert. Sie sind in Abb. \ref{abb1} schematisch
+	skizziert und im folgenden Text kurz erläutert.\\
+	\underline{Verstärker mit meßbar veränderlicher Verstärkung} für die x- und y- Richtung. (Die
+	Auslenkung des Elektronenstrahls von der Bildmitte zum Bildschirmrand erfordert an den
+	Ablenkplatten Spannungen von einigen  10 Volt. In den meisten Fällen sind die zu untersuchenden
+	Spannungen jedoch kleiner und müssen deshalb verstärkt werden, dabei werden jedoch auch
+	Störspannungen verstärkt. Ihr Einfluß auf das Meßergebnis wird dadurch vermieden, daß die
+	Verstärkereingänge über abgeschirmte Leitungen -geerdeter Mantel um den Leitungsdraht- mit dem
+	verbunden werden). An allen Stellknöpfen der Verstärker befinden sich Skalen, die für die
+	betreffende Stellung das zugehörige Verhältnis von Eingangsspannung (Volt) zu Auslenkung (cm oder
+	Skalenteile) des Leuchtflecks (Ablenkfaktor $A_y$ bzw. $A_x$; [$A_y,A_x$] = V/cm oder V/Skalenteil)
+	zeigen.\\
+	Durch Ablesen der Auslenkung und Multiplikation mit dem Ablenkfaktor beträgt die zu messende, am
+	Verstärkereingang anliegende Spannung. \vspace{-.2cm}
+	\begin{equation}
+	u_y = A_y \cdot y \qquad \qquad u_x = A_x \cdot x
+	\label{gl1}
+	\end{equation} \vspace{-.2cm}
+	Damit wird der EO zu einem Spannungsmeßgerät. \\
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=0.65]{abb1} \vspace{-.4cm}
+		\caption{Vereinfachtes Blockschaltbild eines Elektronenstrahloszillographen}
+		\label{abb1}
+	\end{figure} \vspace{-.6cm} \\
+	Häufig sind die zu messenden Wechselspannungen einer Gleichspannung überlagert. Die Abtrennung der
+	Gleichspannungskomponente geschieht dadurch, daß den y- und x- Verstärkern ein \textbf{Kondensator}
+	vorgeschaltet wird. Dieses Bauelement ist zusammen mit dem dazu nötigen Schalter im EO enthalten.\\
+	Eine eingebaute \textbf{Kalibriereinrichtung} gestattet jederzeit, den Istwert des Ablenkfaktors
+	auf den Sollwert einzustellen.\\
+	Legt man an die x- Ablenkplatten eine zeitproportionale Spannung$u_x(t) = u_0 \cdot t/t_0$, dann
+	bewegt sich der Leuchtfleck zeitproportional in die x- Richtung, die x- Achse wird zur Zeitachse
+	eines Koordinatensystems mit den Achsen  t  und  y . Im EO ist ein Zeitbasisgenerator eingebaut, er
+	erzeugt eine solche zeitproportionale Spannung mit dem im Abb. 2 gezeigten Verlauf. Die
+	flach ansteigende Flanke der Dauer  th  besorgt die Strahlablenkung von links nach rechts, die
+	steil abfallende Flanke der Dauer $t_r$  führt  den  Elektronenstrahl  wieder  zurück  zum linken
+	Bildschirmrand.\\
+	Wegen ihrer Form heißt diese Spannung Sägezahnspannung oder Rampenspannung. Der Zeitbasisgenerator
+	sorgt dafür, daß periodische Vorgänge nicht nur einmal, sondern beliebig oft  aufgezeichnet werden.
+	Das ist nötig, weil Bildschirme nur eine kurze Nachleuchtdauer haben. Die Umstellung der x-
+	Ablenkung auf die Zeitbasis erfolgt durch einen Schalter am x- Verstärker. Liegt am y- Eingang
+	gleichzeitig eine zeitabhängige Spannung $u_y(t)$ an, so zeigt das Schirmbild wegen Gl. \ref{gl1}
+	den Zeitverlauf dieser Spannung. Auch der Zeitbasisgenerator verfügt über einen Stufenschalter, mit
+	dem kalibrierte Zeitbasis- Faktoren $A_t$ eingestellt werden, [$A_t$] = s/cm (oder s/Skalenteil).\\
+	\begin{minipage}{8cm}
+	\begin{equation}
+	t = A_t \cdot x
+	\label{gl2}
+	\end{equation}
+	Deshalb können mit dem EO Zeiten gemessen werden, beispielsweise die Schwingungsdauer T einer
+	Sinusschwingung.\\
+	Zur übersichtlichen Darstellung von Oszillogrammen ist es nötig, daß der Strahlrücklauf unsichtbar
+	bleibt. Dazu wird mit Hilfe der Wehnelt-Elektrode der Elektronenstrahl während des Rücklaufs
+	unterdrückt  (Dunkeltastung)  oder er fließt nur während des Hinlaufs (Helltastung). Die
+	Wehnelt-Elektrode ist über eine weitere Eingangsbuchse - \underline{z-Eingang} - von außen
+	zugänglich. Der z-Eingang kann benutzt werden, um die Bildhelligkeit durch eine äußere
+	Wechselspannung zu beeinflussen (Helligkeitsmodulation).\\
+	\end{minipage}
+	\begin{minipage}{7cm}
+		\centering
+		\includegraphics[scale=0.7]{abb2}
+		{\small {\bf Abbildung 2:}\\
+		Ausgangspunkt der Zeitbasis}
+	\end{minipage}\\
+	\stepcounter{figure}
+	Damit die Leuchtspur bei jeder Wiederholung auf dem Bildschirm an der gleichen Stelle liegt
+	(stehendes Bild) , müssen Sägezahnspannung und zu messende Spannung  $u_y$  in geeigneter Weise
+	synchronisiert sein. Dieses Problem wird dadurch gelöst, daß der Sägezahn durch einen internen  (im
+	Gerät vorhandenen)  oder externen Auslöser  (Trigger)  immer dann beginnt, wenn  $u_y$  einen
+	einstellbaren Schwellwert  (Triggerschwelle)  durchläuft. Es ist sogar möglich, die Impulsdauer
+	$t_h$ der Sägezahnspannung wesentlich kleiner als die Periodendauer der Eingangsspannung zu wählen
+	und dadurch einen Ausschnitt  von  $u_y$  darzustellen. Die Zusammenhänge zeigt Abb. \ref{abb3} am
+	Beispiel einer mit Wechselspannung betriebenen Glimmlampe.\\
+	\begin{minipage}{7cm}
+	Das rechte Teilbild zeigt den Spannungsverlauf über einer mit Wechselspannung betriebenen
+	Glimmlampe. \\
+	Die Triggerschwelle  $U_{T_r}$  ist so eingestellt, daß der Sägezahn immer kurz vor Erreichen der
+	Zündspannung ausgelöst wird  (unteres Teilbild). Rechts ist das zu beobachtende Oszillogramm
+	skizziert. (In der Pause zwischen zwei Zeitbasisimpulsen ist der Strahl dunkel)
+	\end{minipage}%\hspace{.5cm}
+	\begin{minipage}{11cm}
+		\centering
+		\includegraphics[scale=0.8]{abb2}
+		{\small {\bf Abbildung 4:} Wirkungsweise eines Triggers}
+	\end{minipage}
+	\stepcounter{figure}
+	%\begin{figure}[h]
+	%	\centering
+	%	\includegraphics[scale=0.65]{abb3}
+	%	\caption{Wirkungsweise eines Triggers}
+	%	\label{abb3}
+	%\end{figure}\\
+
+\subsubsection{Messungen von Phasenverschiebungen}
+	Bei der Untersuchung physikalischer Erscheinungen wird oft beobachtet, daß Ursache und Wirkung
+	nicht gleichzeitig, sondern mit Phasenverschiebung auftreten. Mit dem EO können
+	Phasenverschiebungen auf einfache Weise gemessen werden.\\
+	Legt man an den x-Eingang eine Spannung $u_x = U_x \cdot \sin(\omega t)$, an den y-Eingang die um
+	den Winkel  phasenverschobene Spannung $u_y = U_y \cdot \sin(\omega t - \varphi)$ an, dann gilt
+	wegen Gleichung (1) für die Auslenkungen in x- bzw. y-Richtung:
+	\begin{equation}
+	x = X \cdot \sin(\omega t) \qquad \qquad y = Y \cdot \sin(\omega t - \varphi)
+	\label{gl3}
+	\end{equation}
+	\begin{minipage}{9cm}
+	Das ist die Parameterdarstellung einer Ellipse. Durch Umformen (unter Verwendung von
+	Additionstheoremen) ergibt sich:
+	\begin{equation}
+	\left (\frac{x}{X} \right)^{2}-2 \cdot \left( \frac{x}{X} \right) \cdot \left( \frac{y}{Y} \right)
+	\cdot \cos \varphi+ \left( \frac{y}{Y} \right)^{2}= \sin^{2} \varphi
+	\label{gl4}
+	\end{equation}
+	Diese Ellipse ist mit ihrem Extremwerten und Achsenabschnitten in Abb. 4 gezeigt. Der Phasenwinkel
+	wird durch Ausmessen des Schirmbildes ermittelt.\\
+	$\sin\varphi=\frac{x'}{X}=\frac{y'}{Y}$  \\
+	Achsenabschnitt für: $y_{x=0} = 0$\\ \\
+	\begin{flushright}
+	{\small {\bf Abbildung 4:}\\
+	Bestimmung des Phasenwinkels durch Ausmessen der Ellipse}
+	\end{flushright}
+	\end{minipage}
+	\begin{minipage}{7cm}
+		\centering
+		\includegraphics[scale=0.5]{abb4}
+	\end{minipage}\\
+	\stepcounter{figure}
+
+\subsection{Frequenzmessung}
+	Auf den gleichen Grundlagen beruht ein Verfahren zur genauen Messung einer unbekannten Frequenz.
+	Man schließt an einen Eingang des Oszillographen die Spannung mit der unbekannten Frequenz $f_u$
+	an, der andere Eingang wird mit einem durchstimmbaren Frequenzgenerator verbunden. Dessen Frequenz
+	$f_b$ wird so lange nachgestellt, bis auf dem Bildschirm ein stehendes Bild (Ellipse, Kreis,
+	Gerade) entsteht, dann ist $ f_u = f_b $.\\
+	Diese Art der Frequenzmessung funktioniert auch dann, wenn die beiden Frequenzen in einem
+	ganzzahligen Verhältnis zueinander stehen ($m \cdot f_u = n \cdot f_b $ m, n ganz). Die
+	entstehenden Lissajous~-~Figuren sind sehr interessante Gebilde.
+
+\section{Experimente}
+Am Versuchsplatz stehen außer dem Oszillographen ein Tonfrequenzgenerator und ein Experimentiergerät
+bereit. Letztere liefern alle zu untersuchenden Spannungen. Nach Herstellung der
+Betriebsbereitschaft, Justierung des Strahles (Lage, Schärfe und Lichtintensität) sind mit der
+internen Kalibrierspannung die Verstärker zu prüfen und ggf. nachzustellen. Danach werden
+verschiedene Spannungen, wie gefilterte und ungefilterte Netzspannung, Spannungen an einer
+Gleichrichterschaltung und die Spannung über einer mit Wechselspannung betriebenen Glimmlampe
+untersucht. Für jede untersuchte Spannung ist das Oszillogramm zu zeichnen, alle Messungen sollen
+quantitativ ausgewertet werden (Kurvenform, Frequenz, Amplitude, Verhältnis von Wechsel- zu
+Gleichspannungsanteil bei einer Mischspannung). Von zwei gleichfrequenten, aber phasenverschobenen
+Spannungen ist der Phasenwinkel zu bestimmen. Mit Hilfe der Netzfrequenz soll die Skalierung des
+Tonfrequenzgenerators kontrolliert werden.
+
+\subsection{Versuchsplatzzubehör}
+	\begin{tabular}{l p{9cm}}
+	Elektronenstrahloszillograph EO 171 & mit 1 Meßleitung und 1 Meßleitung mit Tastteiler 10:1 \\
+	Experimentiergerät (Eigenbau TU) & Hinweise: Abschirmung von Meßleitungen immer an Buchse (4) oder
+	(6) des Experimentiergeräts! Gerät erst einschalten, wenn alle Verbindungen hergestellt sind. \\
+	Tonfrequenzgenerator GF 22 & \\
+	Unterlagen zum Arbeitsschutz und & \\
+	zur Anfangseinstellung des EO & \\
+	\end{tabular}
+
+\subsection{1.Thema: Elektronenstrahloszillograph als Meßgerät für periodische Signale}
+	Spannungs-, Zeit- und Strommessung. Untersuchungsobjekte ist eine Glimmlampe, die im
+	Experimentiergerät fest eingebaut ist. Sie wird mit Netzspannung (230 V, 50 Hz) betrieben.
+	\begin{enumerate}
+	\item \textbf{Messung des Spannungsverlaufs} über der Glimmlampe sowie der Periodendauer der
+		Netzspannung mit dem internen Ablenkgenerator \\
+		Schaltung: \\
+		\includegraphics[scale=0.5]{abb5} \\
+		\textbf{Einstellung des EO}
+		\begin{tabular}{l l}
+		y-Eingangstaste: & gedrückt \\
+		y-Feinregler: & Rechtsanschlag \\
+		x-Dehnung: & Linksanschlag \\
+		\end{tabular} \\
+		\textbf{Einstellung des Experimentiergeräts:}
+		\begin{tabular}{l l}
+		Schalter 6 & in Stellung 2 \\
+		\end{tabular} \\
+		Aufgaben: \textbf{Übersichtsbild} mit mehreren Perioden einstellen: Triggerwahl: AUTO,
+		Triggerpegel: Linksanschlag Zeitbasis: 10 ms/cm, Zeitbasis-Feinregler: Rechtsanschlag.
+		\textbf{Untersuchung von Details:} Zeitbasis: 2 ms/cm, Triggerwahl: + (-), Triggerpegel:
+		durchdrehen. Oszillogramme im Protokollheft skizzieren und erläutern! Messung von Zündspannung
+		$U_z$, Brennspannung $U_b$, Periodendauer T, Brenndauer $T_b$ (während einer Periode), Berechnung
+		der Frequenz $f_N$ der Wechselspannung, Fehlerschätzung für $U_b$. (Fehler des Ablenkfaktors
+		$\frac{\Delta A}{A} \vert_y$).
+	\item \textbf{Messung des Glimmlampenstromes}\\
+		Der EO ist ein Spannungsmeßgerät. Wenn man Ströme messen will, benötigt man einen Meßwiderstand,
+		über dem der zu messende Strom einen Spannungabfall erzeugt.\\
+		Schaltung:\\
+		\includegraphics[scale=0.4]{abb6} \\
+		\textbf{Einstellung des Experimentiergeräts:}
+		\begin{tabular}{l l}
+		Schalter 6 & in Stellung 3 \\
+		\end{tabular} \\
+		Aufgaben: Messung von Spannung U über dem Meßwiderstand, Periodendauer T, Brenndauer $T_b$
+		(während einer Periode), Berechnung des Spitzenwertes des Stromes $\hat{I}_b$.
+	\end{enumerate}
+
+\subsection[Frequenzvergleich mittels
+	Lissajous-Figuren]{2.Thema: Elektronenstrahloszillograph zum genauen Frequenzvergleich mittels
+	Lissajous-Figuren}
+	Untersuchungsobjekt ist ein handelsüblicher Tonfrequenz-Generator, als Bezugsfrequenz dient die
+	Netzfrequenz ($f_N$=50 Hz). \\
+	Schaltung:\\
+	\includegraphics[scale=0.7]{abb7} \\
+	\textbf{Einstellung des EO}
+	\begin{tabular}{l l}
+	y-Eingangstaste: & gedrückt \\
+	y-Feinregler: & Rechtsanschlag \\
+	x-Dehnung: & Linksanschlag \\
+	Triggerwahl: & X \\
+	\end{tabular} \\
+	\textbf{Einstellung des Tonfrequenz-Generators:}
+	\begin{tabular}{l l}
+	Frequenzbereich: & 20 Hz bis 200 Hz \\
+	Ausgangsspannung: & 5 V bis 10 V
+	\end{tabular} \\
+	\textbf{Einstellung des Experimentiergeräts:}
+	\begin{tabular}{l l}
+	Schalter 6 & in Stellung 4 \\
+	\end{tabular} \\
+	Aufgaben: Stellen Sie durch Beobachtung der Lissajous-Figuren am EO die Frequenzverhältnisse
+	$f_x:f_N$ = 2:5, 3:5, 4:5, 1:1, 6:5, 5:4, 5:3, 2:1, 5:2, 3:1, 4:1 ein und lesen Sie an der Skale
+	des Tonfrequenz-Generators die Frequenz $f_{Skale}$ ab. Sie werden feststellen, daß der Skalenwert
+	$f_{Skale}$ nicht ganz genau mit der eingestellten Frequenz $f_x$ übereinstimmt. Die graphische
+	Darstellung (Meßwerte durch Geraden verbinden!) von ($f_x- f_{Skale})/ f_x$ über $f_x$ liefert
+	Ihnen eine Aussage über die Frequenzgenauigkeit des Generators. \vspace{.4cm}\\
+	Vorschlag für eine Wertetabelle \vspace{.25cm}\\
+	\begin{tabular}{|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
+	\hline
+	$f_x:f_N$ & $f_x/Hz$ & $f_{Skale}/Hz$ & $(f_x-f_{Skale})/f_x$ \\ \hline
+	& & & \\ \hline
+\end{tabular}
+
+\end{document}

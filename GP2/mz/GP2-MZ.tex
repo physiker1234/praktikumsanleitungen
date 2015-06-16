@@ -1,0 +1,300 @@
+\documentclass{tudphygp}
+\usepackage{tudphymd,mhchem,subfigure}
+
+\versuch{Magnetfeldmessung an Zylinderspulen}{MZ}
+\author{A.~Schwab,C.~Schröter}
+\bearbeitet{M.~Kreller,A.~Otto,i.A. Dr.~Escher}{}
+
+\buch{1}{W.~Ilberg (Hrsg.), M.~Krötzsch (Hrsg.) et.~al.}{Physikalisches Praktikum für Anfänger}{Teubner-Verlag}{Leipzig 1994}
+\buch{2}{W.~H.~Westphal}{Physikalisches Praktikum}{Vieweg-Verlag}{Braunschweig 1974}
+\buch{3}{A.~Recknagel}{Physik: Elektrizität und Magnetismus}{Technik-Verlag}{Berlin 1990}
+\buch{4}{G.~Wunsch, H.~G.~Schulz}{Elektromagnetische Felder}{Technik-Verlag}{Berlin 1989}
+\buch{5}{G.~Mierdel, S.~Wagner}{Aufgaben zur Theoretischen Elektrotechnik}{Technik-Verlag}{1959}
+\buch{6}{H.~J.~Paus}{Physik in Experimenten und Beispielen}{Verlag~C.-Hanser}{München 1995}
+\buch{7}{C.~Gerthsen, H.~Vogel}{Physik}{Springer-Verlag}{Berlin, Heidelberg 1995}
+\buch{8}{H.~Niedrig}{Physik}{Springer-Verlag}{Berlin, Heidelberg 1992}
+
+\begin{document}
+\maketitle
+
+\section{Einleitung}
+Nach dem Durchflutungsgesetz ist jeder stromdurchflossener Leiter von einem Magnetfeld umgeben. Durch das Aufwickeln des Leiters 
+auf einen Spulenkörper können relativ hohe Feldstärken erreicht werden. Der Vorteil gegenüber Permanentmagneten liegt in der Regelbarkeit 
+der Feldstärke über den Spulenstrom. Technisch interessant sind oft homogene Magnetfelder, d.h. eine möglichst kleine Änderung 
+der Magnetfeldstärke über einen möglichst großen Raumbereich. Solche Magnetfelder kann man im Innern langer Spulen erzeugen, 
+jedoch ist dieser Bereich experimentell schwer zugänglich. Dieses Problem kann durch die sog. Helmholtz-Konfiguration zweier Spulen gelöst
+werden, bei welcher in einem frei zugänglichen Bereich ein homogenes Magnetfeld besteht. Dieselbe Anordnung erlaubt auch die Erzeugung 
+von Magnetfeldern mit konstantem Gradienten, wie sie beispielsweise in der Magnetresonanztomographie benötigt werden.
+
+\section{Aufgabenstellung}
+\begin{enumerate}
+ \item Messen Sie die axiale Flussdichte $B_a(z)$ einer einlagigen Zylinderspule vom Radius $R$ und der Länge $L$ in Abhängigkeit von 
+ der $z$-Koordinate. Vergleichen Sie Ihr Messergebnis mit der nach dem Biot-Savartschen-Gesetz berechneten axialen Flussdichte.
+ \item Untersuchen Sie an einer einlagigen Zylinderspule den Zusammenhang zwischen der axialen Flussdichte $B_a$ und der Windungszahldichte 
+ $n$ in der Spulenmitte bei fest vorgegebener Stromstärke $I=\SI{10}{A}$. Stellen Sie diesen Zusammenhang graphisch dar und bestimmen Sie 
+ aus dem Anstieg des $B_a(n)$-Zusammenhangs die magnetische Feldkonstante $\mu_0$.
+ \item  Messen Sie die axiale Flussdichte $B_a$ eines Helmholtzspulenpaares für den Fall, dass der Spulenabstand $D$ gleich dem mittleren 
+ Spulenradius $r_m$ (mehrlagige Zylinderspulen) ist. Untersuchen Sie dabei die Fälle:
+ \begin{enumerate}
+  \item gleichsinniger Stromfluss durch das Spulenpaar
+  \item gegensinniger Stromfluss durch das Spulenpaar
+ \end{enumerate}
+ Vergleichen Sie Ihre Messergebnisse mit dem aus dem Biot-Savart-Gesetz folgendem Zusammenhang.
+\end{enumerate}
+  
+\section{Theoretische Grundlagen}
+\subsection{Das Magnetfeld im Innern einer sehr langen Zylinderspule}
+Nach dem Durchflutungsgesetz (1. Maxwellsche Gleichung der Magnetostatik)
+\begin{equation}
+ \oint\limits_{\partial A}\vec H\cdot\diff\vec s=\int\limits_A\vec j\cdot\diff\vec A
+ \label{for:max1}
+\end{equation}
+ist jede elektrische Stromdichte $\vec j$ mit einer magnetischen Feldstärke H verknüpft. Das Linienelement $\diff r$ gehört zu einem beliebig 
+wählbaren geschlossenen Integrationsweg $\partial A$, der die Fläche $A$ umschließt. Um mit Gleichung \eqref{for:max1} das Feld im Innern 
+einer langen Spule ($\text{Radius }R\ll\text{Spulenlänge }L$) berechnen zu können, ist folgender Integrationsweg $\partial A$ zu wählen: 
+Man bewegt sich zunächst entlang der Spulenachse, auf der das Feld nahezu homogen ist, und schließt den Weg außerhalb der Spule, wo praktisch 
+kein Feld mehr vorhanden ist. Die linke Seite von Gleichung \eqref{for:max1} ergibt somit $H\cdot L$. Die Fläche, die der Integrationsweg umschließt, 
+wird $N$-mal von der Stromdichte $\vec j$ durchsetzt ($N$-Windungszahl). Das Integral über die Fläche $A$ (rechte Seite von Gleichung \eqref{for:max1}) 
+ergibt daher $N\cdot I$ ($I$-Stromstärke). Somit ergibt sich für die Magnetfeldstärke einer langen Zylinderspule
+\begin{equation}
+ H_{z,\infty}=\frac{N\cdot I}{L}=n\cdot I
+\end{equation}
+mit $n=N/L$ der Windungszahldichte.\\
+Die magnetische Feldstärke $\vec H$ hängt mit der magnetischen Flussdichte $\vec B$ in Luft über
+das Materialgesetz
+\begin{equation}
+ \vec B=\mu_0\mu_r\vec H=\mu\vec H
+\end{equation}
+zusammen, wobei $\mu_0$ die magnetische Feldkonstante bezeichnet und $\mu_r$ der relativen Permeabilität entspricht. Für Luft ist $\mu_r\approx 1$.
+
+\subsection{Das Magnetfeld einer endlichen Zylinderspule}
+\subsubsection{Das Magnetfeld eines stromdurchflossenen Kreisringes}
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=\linewidth/100*80]{abb1}
+ \caption{Stromdurchflossener Kreisring vom Radius $R$ am Orte $z'$}
+ \label{fig:kreisring}
+\end{figure}
+Die Grundlage für die Berechnung von beliebigen zylindrischen Spulen stellt die kreisförmige Stromschleife dar (Abb. \ref{fig:kreisring}).
+Die magnetische Flussdichte des stromdurchflossenen Kreisringes $\vec B_R$ auf der Symmetrieachse $z$ folgt aus dem Gesetz von Biot-Savart.
+\begin{equation}
+ \begin{split}
+  \vec B_R(z,z')&=\oint\limits_C\diff\vec B=\frac{\mu I}{4\pi}\oint\limits_C\frac{\diff\vec r\,'\times\left(z\vec e_z-\vec r\,'\right)}{\left|z\vec e_z-\vec r\,'\right|^3}\\
+  &=\frac{\mu I}{2}\cdot\frac{R^2\vec e_z}{\left[(z-z')^2+R^2\right]^\frac{3}{2}}
+ \end{split}
+ \label{for:kreisring}
+\end{equation}
+mit $\diff\vec r\,'=\diff s\cdot\vec e_\phi$ dem Linienelement des Kreises $C$ vom Radius $R$ ($\vec e_\phi$-Tangenteneinheitsvektor des Kreises $C$).
+Die Radialkomponenten des Magnetfeldes, erzeugt durch die einzelnen Stromelemente, kompensieren sich. In großer Entfernung des jeweiligen Aufpunktes 
+$P(x,y,z)$ von der Kreisschleife am Orte $z'$ (Dipolnäherung $R\ll\left(x^2+y^2+(z-z')^2\right)^\frac{1}{2}$) erzeugt diese ein Dipolfeld.
+In der $x$-$z$-Ebene gilt:
+\begin{equation}
+ \vec B_{Dip}(x,z,z')=\frac{R^2\cdot I\cdot\mu}{4\left(x^2+\left(z-z'\right)^2\right)^\frac{5}{2}}
+ \left(3x\left(z-z'\right)\vec e_x+\left(2\left(z-z'\right)^2-x^2\right)\vec e_z\right)
+\end{equation}
+
+\newpage
+\subsubsection{Magnetfeld der einlagigen Zylinderspule}
+\piccaption{Zylinderspule vom Radius $R$ und der Länge $L$ \label{fig:spule}}
+\parpic[r]{\includegraphics[width=\linewidth/100*40]{abb2}}
+Bei genügend großer Windungszahldichte $n=N/L$ kann die endliche Zylinderspule (\emph{Solenoid}) als eine Aneinanderreihung einzelner vom Strom $I$ 
+durchflossener Kreisringe mit dem Radius $R$ betrachtet werden (Abb. \ref{fig:spule}). Das Magnetfeld der Spule folgt aus der Superposition 
+der Magnetfelder der einzelnen stromdurchflossenen Kreisringe. Für eine als konstant angenommene Windungszahldichte $n$ ergibt sich das Magnetfeld 
+auf der Spulenachse $z$ aus der Integration von Gleichung \eqref{for:kreisring} mit dem Bruchteil der Windungen $\diff N=n\cdot\diff z'$ im Intervall 
+$\diff z'$ zu
+\begin{equation}
+ \begin{split}
+  \vec B(z)&=n\int\limits_{-L/2}^{L/2}\vec B_R(z,z')\diff z'\\
+  &=\frac{n\cdot I\cdot\mu}{2}\left(\frac{z+L/2}{\sqrt{R^2+\left(z+L/2\right)^2}}-\frac{z-L/2}{\sqrt{R^2+\left(z-L/2\right)^2}}\right)\vec e_z\\
+  &=B_0\cdot f(z,R,L)\cdot\vec e_z=B_a(z)\cdot\vec e_z
+ \end{split}
+ \label{for:spule}
+\end{equation}
+mit $B_0=n\cdot I\cdot\mu/2$. Aus Gleichung \eqref{for:spule} ist ersichtlich, dass die axiale Flussdichte $B_a(z)$ sowohl vom Radius $R$ als
+auch von der Länge $L$ der Spule abhängt. Der Feldstärkeverlauf ist in Abb. \ref{fig:feldstärke} für das Verhältnis $2R/L=\num{0,2}$ aufgezeichnet.
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=\linewidth/100*80]{abb3}
+ \caption{Verlauf der axialen Flussdichte $B_a(z)$ für die einlagige Zylinderspule. Auf der Abszisse ist die Ortskoordinate $z$ bezogen auf die Hälfte 
+ der Spulenlänge $L/2$ abgetragen. Dem Diagramm liegt das Verhältnis $2R/L=\num{0,2}$ zugrunde.}
+ \label{fig:feldstärke}
+\end{figure}
+Das Magnetfeld ist maximal in der Spulenmitte bei $z=0$ und hat den Wert
+\begin{equation}
+ B_m=B_a(0)=\frac{2B_0}{\sqrt{\frac{4R^2}{L^2}+1}}
+ \label{for:B_max}
+\end{equation}
+Für $R\ll L$ geht Gleichung \eqref{for:B_max} über in
+\begin{equation}
+ B_m\approx 2B_0=n\cdot I\cdot\mu
+\end{equation}
+was dem Magnetfeld der langen Spule entspricht. Am Spulenanfang ($z_a=-L/2$) und am Spulenende ($z_e=L/2$) ist der Wert des Magnetfeldes durch
+\begin{equation}
+ B_{\text{Rand}}=\frac{B_0}{\sqrt{\frac{R^2}{L^2}+1}}
+ \label{for:B_rand}
+\end{equation}
+gegeben. Für $R\ll L$ geht Gleichung \eqref{for:B_rand} über in
+\begin{equation}
+ B_{\text{Rand}}\approx B_0=\frac{1}{2}n\cdot I\cdot\mu
+\end{equation}
+Das heißt, unmittelbar am Spulenrand ist die Feldstärke noch gerade halb so groß wie in der Spulenmitte.
+
+\subsubsection{Magnetfeld der mehrlagigen Zylinderspule}
+Für mehrlagige Zylinderspulen ist bei bekannten Radien ($r_i$-innerer Radius, $r_a$-äußerer Radius) des Wickelkörpers und bei homogen 
+verteilter Windungszahl $N$ ($\diff N=N\frac{\diff z'}{L}\cdot\frac{\diff R}{r_a-r_i}$) das Magnetfeld auf der Spulenachse durch das Integral
+\begin{equation}
+ \begin{split}
+  B_a(z)&=N\int\limits_{r_i}^{r_a}\frac{\diff R}{r_a-r_i}\int\limits_{-L/2}^{L/2}B_R(z,z')\frac{\diff z'}{L}=\frac{n\cdot I\cdot\mu}{2}g(z,L,r_a,r_i)\\
+  &=B_0\cdot g(z,L,r_a,r_i)
+ \end{split}
+ \label{for:spule_mehrlagig}
+\end{equation}
+gegeben, wobei
+\begin{equation}
+ \begin{split}
+  g(z,L,r_a,r_i)=&
+  \frac{1}{r_a-r_i}\cdot\left((z+L/2)\cdot\ln\left(\frac{r_a+\sqrt{r_a^2+\left(z+L/2\right)^2}}{r_i+\sqrt{r_i^2+\left(z+L/2\right)^2}}\right)\right.\\
+  &\left.-(z-L/2)\cdot\ln\left(\frac{r_a+\sqrt{r_a^2+\left(z-L/2\right)^2}}{r_i+\sqrt{r_i^2+\left(z-L/2\right)^2}}\right)\right)
+ \end{split}
+\end{equation}
+bezeichnet. Ist $\Delta r=r_a-r_i\ll r_m=(r_a+r_i)/2$, dann ist Gleichung \eqref{for:spule} mir $R=r_m$ eine sehr gute Näherung für den axialen 
+Feldverlauf der mehrlagigen Zylinderspule.
+\subsection{Das Magnetfeld der Helmholtzspule}
+\begin{figure}
+ \centering
+ \includegraphics[width=\linewidth/100*55]{abb4}
+ \caption{Helmholtz-Spule: Zwei Zylinderspulen, die sich im Abstande $D$ gegenüberstehen}
+ \label{fig:helmholtz}
+\end{figure}
+Untersuchungen, die einen hohen Homo\-genitäts\-grad des Magnetfeldes erfordern, werden oft mit der sog. Helm\-holtz\-spule durchgeführt 
+(Abb. \ref{fig:helmholtz}). Bei der Helm\-holtz\-spule, die im Experiment verwendet wird, stehen im Abstand $D$ zwei mehrlagige dünne Spulen mit 
+den Radien $r_i$, $r_a$, der Windungszahl $N$ und der Länge $L$ parallel zueinander. Zwischen den Spulen ergibt sich bei gleichsinnigem Stromfluss 
+der Stromstärke $I$ ein nahezu homogenes Magnetfeld, wenn der Abstand $D\approx r_m$ ist. Die magnetische Feldstärke auf der Spulenachse $z$ 
+folgt aus der Addition der Magnetfelder der einzelnen Spulen. Mit Hilfe von Gleichung \eqref{for:spule_mehrlagig} ergibt sich für die magnetische 
+Flussdichte der Helmholtzspule
+\begin{equation}
+ B_{a,H}(z)=B_0\left(g(z+\frac{D}{2},L,r_a,r_i)+g(z-\frac{D}{2},L,r_a,r_i)\right)
+ \label{for:gleichsinnig}
+\end{equation}
+wobei man den Nullpunkt der $z$-Achse zweckmäßigerweise in den Mittelpunkt $0$ der Spulenanordnung legt. Die axiale Homogenität des Feldes ist 
+der Abb. \ref{fig:gleichsinnig} zu entnehmen. Bei gegensinnigem Stromfluss in den einzelnen Spulen der Helmholtzkonfiguration ergibt sich im Bereich 
+zwischen den Spulen nahe der Achse $z$ ein Raumbereich, in dem der Gradient des Magnetfeldes nahezu konstant ist (Abb. \ref{fig:gegensinnig}). 
+Es gilt in diesem Fall für die magnetische Flussdichte
+\begin{equation}
+ B_{a,G}(z)=B_0\left(g(z+\frac{D}{2},L,r_a,r_i)-g(z-\frac{D}{2},L,r_a,r_i)\right)
+ \label{for:gegensinnig}
+\end{equation}
+\begin{figure}
+ \subfigure{
+ \includegraphics[width=\linewidth/100*45]{abb5a}
+ \label{fig:gleichsinnig}
+ }
+ \subfigure{
+ \includegraphics[width=\linewidth/100*45]{abb5b}
+ \label{fig:gegensinnig}
+ }
+ \caption{Axiale Flussdichte der Helmholtzspule bei gleichsinnigem Stromfluss (a) und bei
+ gegensinnigem Stromfluss (b)
+ }
+\end{figure}
+
+\subsection{Der Hall-Effekt}
+Wird ein stromdurchflossener Leiter (Stromstärke $I$) senkrecht zur Stromrichtung von einem Magnetfeld durchsetzt (Abb. \ref{fig:hall}), so wirkt auf 
+die Leitungselektronen, die sich mit der Driftgeschwindigkeit $\vec v$ bewegen, die Lorentzkraft $\vec F_L=q(\vec v\times\vec B)$.
+\begin{figure}
+ \centering
+ \includegraphics[width=\linewidth/100*80]{abb6}
+ \caption{Hall-Effekt}
+ \label{fig:hall}
+\end{figure}
+Die Elektronen werden senkrecht zu $\vec v$ und $\vec B$ abgelenkt und bauen quer zur Stromrichtung ein elektrisches Feld mit der Feldstärke $E=U_H/b$ auf. 
+Dieses Feld übt auf die Elektronen eine elektrostatische Kraft $\vec F_e=q\cdot\vec E$ aus. Zwischen $\vec F_L$ und $\vec F_e$ stellt sich ein Kräftegleichgewicht ein. 
+Aus dem Kräftegleichgewicht folgt
+\begin{equation}
+ -e\cdot\nu\cdot B-e\cdot\frac{U_H}{b}=0
+ \label{for:hallgl}
+\end{equation}
+Durch die Querschnittfläche des Leiters $A=b\cdot d$ tritt während der Zeitspanne $\Delta t$ die Ladungsmenge
+\begin{equation}
+ \Delta Q=-b\cdot d\cdot\nu\cdot\Delta t\cdot n_e\cdot e
+\end{equation}
+($n_e$-Anzahldichte der Leitungselektronen, $e$- Elementarladung).\\
+Wegen $I=\Delta Q/\Delta t$ ist
+\begin{equation}
+ I=-b\cdot d\cdot\nu\cdot n_e\cdot e
+ \label{for:hallstrom}
+\end{equation}
+Wird $e\cdot\nu$ in Gleichung \eqref{for:hallstrom} durch $e\cdot\nu$ aus Gleichung \eqref{for:hallgl} ersetzt, dann ergibt sich die Spannung $U_H$ zu
+\begin{equation}
+ U_H=\frac{1}{n_e\cdot e}\cdot\frac{I\cdot B}{d}
+ \label{for:hallspannung}
+\end{equation}
+Der Zusammenhang \eqref{for:hallspannung} zeigt, dass mit einem Leiter- oder Halbleiterplättchen (Hallsonde) die magnetische Flussdichte $B$ über 
+die Messung der Hallspannung $U_H$ bestimmt werden kann, vorausgesetzt, die Hall-Konstante $R_H=1/(n_e\cdot e)$, die Stromstärke $I$ und die Dicke $d$ 
+des Plättchens sind bekannt.
+
+\section{Versuchsaufbau}
+\begin{figure}
+ \centering
+ \includegraphics[width=\linewidth/100*80]{abb7}
+ \caption{Prinzipieller Versuchsaufbau}
+ \label{fig:versuchsaufbau}
+\end{figure}
+\begin{itemize}
+ \item\textbf{Hinweis: Netzverbindung der Schaltung erst nach Prüfung durch den Betreuer herstellen!}
+ \item Schließen Sie die jeweils zu untersuchende Zylinderspule an das Hochstromnetzgerät 52155 (einlagige Zylinderspulen) bzw. an das Statron Typ
+ 3207 (mehrlagige Zylinderspulen) und verbinden Sie die Spule zur Messung des Spulenstromes $I_S$ mit der $\SI{30}{A}$-Box auf dem Sensor-Cassy, 
+ welches an das Cassy-Display angesteckt ist (Abb. \ref{fig:versuchsaufbau}). Für die Magnetfeldmessungen mit den \textbf{einlagigen} Zylinderspulen ist als 
+ Spulenstrom \textbf{$I=\SI{10}{A}$} zu verwenden und bei den Magnetfeldmessungen mit den \textbf{mehrlagigen} Zylinderspulen ist \textbf{$I=\SI{0,9}{A}$} 
+ zu wählen!
+ \item Verbinden Sie die axiale $B$-Sonde mit der $B$-Box auf dem Sensor-Cassy und justieren Sie die axiale $B$-Sonde auf die Längsachse der Zylinderspule ein. 
+ Der Reiter, in dem sich die Hallsonde befindet, ist vorher auf einer Schiene mit Bankmaßstab zu positionieren (fehlt in Abb. \ref{fig:versuchsaufbau}).
+ \item Das Cassy-Display ist über ein Steckernetzgerät $\SI{12}{V}$/$\SI{1,6}{A}$ an das Netz anzuschließen.
+ \item Details zur Bedienung des Cassy- Displays entnehmen Sie bitte der Platzanleitung.
+\end{itemize}
+
+\section{Messprogramm und Auswertung}
+Aufgabe 1:
+\begin{itemize}
+ \item Messen Sie vor dem Anschluss der zu untersuchenden Zylinderspule an das Netzgerät den Radius $R$ und die Länge $L$ der Zylinderspule mit geeigneten
+ Messinstrumenten. Bestimmen Sie durch Abzählen die Windungszahl $N$ der jeweiligen Spule.
+ \item Positionieren Sie die Hall-Sonde in der Mitte der Zylinderspule ($z=0$) und messen Sie in Schritten von $\SI{1}{cm}$, bei stark abnehmendem Magnetfeld 
+ in Schritten von $\SI{0,5}{cm}$, von innen nach außen die axiale Flussdichte $B_a(z)$. Dabei ist für jede Sondenposition die laufende Koordinate $z$ und der 
+ jeweilige Wert der magnetischen Flussdichte $B_a$ zu notieren. Das Feld der Spule ist bis etwa $\SI{5}{cm}$ außerhalb der Spule zu messen.
+ \item Stellen Sie $B_a(z)$ graphisch dar und vergleichen Sie Ihre Messergebnisse mit den aus Gleichung \eqref{for:spule} berechneten Werten.
+ \item Eine quantitative Fehlerbetrachtung ist nicht durchzuführen!
+\end{itemize}
+Aufgabe 2:
+\begin{itemize}
+ \item Bestimmen Sie durch Abzählen die Windungszahl $N$ einer einlagigen Zylinderspule mit einstellbarer Spulenlänge $L$.
+ \item Messen Sie für $5$ Windungszahldichten $n_i=N/L_i$ ($L_1=\SI{40}{cm}$, $L_2=\SI{35}{cm}$, $L_3=\SI{30}{cm}$, $L_4=\SI{25}{cm}$, $L_5=\SI{20}{cm}$) 
+ die axiale Flussdichte $B_a$ in der jeweiligen Mitte der Spule ($z=0$) bei einem Spulenstrom $I=\SI{10}{A}$.
+ \item \textbf{Änderungen der Spulenlänge sind nur im stromlosen Zustand der Spule vorzunehmen!}
+ \item Stellen Sie $B$ als Funktion von $n$ grafisch dar und zeigen Sie, dass $B(n)$ linear mit $n$ anwächst. Bestimmen Sie aus dem Anstieg die magnetische 
+ Feldkonstante $\mu_0$ für $\mu_{r,\text{Luft}}\approx 1$.
+ \item Schätzen Sie mittels einem grafischen Geradenausgleich den Größtfehler $\Delta\mu_0$ ab!
+\end{itemize}
+Aufgabe 3:
+\begin{itemize}
+ \item Messen Sie die Spulenradien $r_i$ und $r_a$ sowie die Spulenlänge $L$ der Helmholtzspulen. Die Windungszahl $N$ einer Helmholtzspule beträgt $N=320$.
+ \item Positionieren Sie die Helmholtzspulen im Abstand $D=r_m=(r_i+r_a)/2$ parallel zueinander.
+ \item Messen Sie die axiale Flussdichte $B_a(z)$ zwischen den Helmholtzspulen und außerhalb (bis $\SI{2}{cm}$) in Schritten von $\SI{0,5}{cm}$ bei 
+ gleichsinnigem und gegensinnigem Stromfluss durch die Helmholtzspulen.
+ \item Stellen Sie $B_a(z)$ graphisch dar und vergleichen Sie Ihre Messergebnisse mit den aus den Gleichungen \eqref{for:spule_mehrlagig}-\eqref{for:gegensinnig} 
+ berechneten Werten. Formeln nach Möglichkeit schon zu Hause im Taschenrechner programmieren bzw. geeignete Näherungslösungen verwenden!
+ \item Eine quantitative Fehlerbetrachtung ist nicht durchzuführen!
+\end{itemize}
+
+\frage{Wie lautet das Durchflutungsgesetz in integraler und differentieller Form für den Fall stationärer und nichtstationärer Ströme?}
+\frage{Zeichnen Sie die Magnetfeldlinien zu folgenden Anordnungen: (a) gerader stromdurchflossener Draht, (b) zwei parallel angeordnete Drähte, durch die 
+der Strom in die gleiche Richtung fließe, (c) zwei parallel angeordnete Drähte, durch die der Strom in entgegengesetzten Richtungen fließe}
+%TODO: Wie macht man in \frage eine Aufzählung? Mit enumerate oder sogar newlines compiliert es nicht.
+\frage{Skizzieren Sie das Feldlinienbild des Dipolfeldes eines stromdurchflossenen Kreisringes in der $x$-$z$-Ebene ($z$-Achse steht senkrecht auf dem Kreisring)!}
+\frage{Welche Messverfahren gibt es für die magnetische Flussdichte?}
+\frage{Erklären Sie die Wirkungsweise einer Hallsonde!}
+\frage{Man berechne für eine einlagige Spule das mindest notwendige Verhältnis $L/R$, so dass in der Spulenmitte $H_z(0)\ge \num{0,99}H_{z,\infty}$ beträgt.}
+\frage{Zeigen Sie durch Taylorreihenentwicklung von Gleichung \eqref{for:spule_mehrlagig} nach Potenzen von $\Delta r/r_m$ ($\Delta r=r_a-r_i$), dass im Grenzfalle 
+$\Delta r\ll r_m$ das axiale Magnetfeld der mehrlagigen Zylinderspule (Gl. \eqref{for:spule_mehrlagig}) in das Magnetfeld der einlagigen Zylinderspule 
+(Gl. \eqref{for:spule}) mit $R=r_m$ übergeht!
+}
+\end{document}

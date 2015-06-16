@@ -1,0 +1,533 @@
+\documentclass[11pt,twoside,a4paper]{article}
+\usepackage{verbatim}
+\usepackage{amsmath,amsthm}
+\usepackage{graphicx}
+\usepackage{color}
+
+\usepackage[german]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+
+\usepackage{fancybox}
+\usepackage{textcomp}
+\usepackage{fancyhdr}
+\usepackage{rotating}
+\setcounter{secnumdepth}{3}
+
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\raggedleft\arraybackslash}X}
+\newcolumntype{Z}{>{\centering\arraybackslash}X}
+
+\textheight			25cm
+\textwidth			16.5cm
+\topmargin			-1cm
+\oddsidemargin		0cm
+\evensidemargin	-0.42cm
+
+\pagestyle{fancy}
+
+ \title{Versuch MF \\ Erdmagnetfeld \\}
+ \author{bearbeitet von \\ M. Kreller \\ i.A. Dr. Escher}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{table}[h]
+\begin{tabular}{|c|c|}
+\hline
+& \\
+\hspace{0.7cm} \begin{LARGE}Technische Universität Dresden \end{LARGE} \hspace{0.7cm} &
+\hspace{1cm}Physikalisches Praktikum \hspace{1cm} \\
+\begin{large} Fachrichtung Physik \end{large}               & \\
+\begin{footnotesize} L. Jahn 07/ 2001 \end{footnotesize}            & Versuch:
+\begin{LARGE} MF \end{LARGE} \\
+\begin{footnotesize} bearbeitet 05/ 2004 \end{footnotesize} & \\
+\hline
+\end{tabular}
+\end{table}
+\begin{huge}\textbf{Erdmagnetfeld}\end{huge}
+
+\tableofcontents
+\newpage
+
+\section{Aufgabenstellung}
+	Es sind zu bestimmen:
+\begin{enumerate}
+	\item Die Horizontal-Komponente $H_h$ des erdmagnetischen Feldes nach {\sc Gauss};
+	\item die Vertikal-Komponente $H_v$ des erdmagnetischen Feldes;
+	\item das magnetische Moment $m^*$ und die Polarisation $J^*$ eines Magneten.
+\end{enumerate}
+
+
+\section{Allgemeine Grundlagen}
+\subsection{Magnetisches Moment, Dipolfeld  und Gaußsche Hauptlagen}
+Der Quotient aus dem magnetischen Moment $\vec {m}^*$ eines Dauermagneten
+und seinem Volumen $V$
+ist die Polarisation $\vec {J^*}=\vec {m}^*/V$.
+Bei besseren Dauermagneten sind in geringen
+äußeren Magnetfeldern (z.~B.~im Erdfeld) und bei konstanter
+Temperatur $\vec J^*$ bzw. $\vec {m}^*$ als
+konstant anzusehen.\\
+Ein kleiner  Dauermagnet (magnetisches Moment
+$\vec m^*=m^*\vec {e}_x$) sei in Ost-West-Richtung  orientiert.
+ Wir betrachten in größerer Entfernung $x$ bzw. $y$
+vom Mittelpunkt sein {\bf Magnetfeld}. Gilt
+beim Stabmagneten $\frac{L}{x}\ll 1$ bzw. $\frac{L}{y}\ll 1$ (Dipolnäherung,
+s.~Anhang, Abb.~5), so
+betragen die x-Komponenten der magnetischen Feldstärke $\vec H$
+auf zwei ausgezeichneten Positionen, der ersten und zweiten
+{\sc Gauss}'sche Hauptlage (GHL, Abb.~1)
+\begin{center}
+\fbox{\parbox[t]{14cm}{
+\begin{equation}
+{\bf \rm 1.\;GHL:}\;\;H_x^{(1)}\:
+=\:\frac{m^*}{2\;\pi\;\mu_0\;\tilde{x}^3}\quad,\;\;{\rm bzw.\;2.\;GHL:\;}\;
+  H_x^{(2)}\:=\;-\:\frac{m^*}{4\;\pi\;\mu_0\;\tilde{y}^3}
+\quad.
+\label{gauss02}
+\end{equation}
+}}
+\end{center}
+\subsection{Erstes Experiment, Überlagerung von Dipolfeld und Erdfeld}
+\begin{minipage}{6.6cm}
+Eine in der horizontalen (xy-) Ebene frei drehbare Kompass-Nadel
+ stellt
+sich parallel zur Horizontal-Komponente $H_h$ des Erdfeldes in y-(= Nord-)
+Richtung. Bringt man anschließend
+den Magneten horizontal mit seinem
+magnetischen Moment $\vec m^*$ parallel
+zur Ost-West-Richtung ($\vec m^*=m^* \vec e_x$)
+in den Abständen $\tilde{x}$ bzw.~$\tilde{y}$  vom Mittelpunkt der
+Kompassnadel an (d.h. nacheinander in die erste bzw. zweite GHL, s. Abb.~1),
+so dreht sich
+die Nadel beim Einstellen in die Resultierende aus
+Erdfeld ($H_h$) und Dipolfeld ($H_x^{(1)}$ bzw. $H_x^{(2)}$)
+\end{minipage}
+\hspace{.5cm}
+\begin{minipage}{8.5cm}
+\parbox[t]{8.5cm}{
+\includegraphics[width=8cm]{abb1}
+Abb.~1: Anordnung
+des Stabmagneten bezüglich der Kompass-Nadel für die erste
+bzw. zweite GHL}
+\end{minipage}\\[.2cm]
+um die jeweiligen Winkel
+$\delta^{(1)}$ bzw. $\delta^{(2)}$ aus der NS-Richtung
+heraus (Abb.~1). Dabei gilt
+\begin{equation}
+\tan \vartheta^{(1)}=\frac{H_x^{(1)}}{H_h}\;(a)\;;\;
+\tan \vartheta^{(2)}=\frac{H_x^{(2)}}{H_h}\;(b)\;.
+\label{gauss01}
+\end{equation}
+Mit Gl.~(\ref{gauss02}) erhält man für den Quotienten der beiden
+Unbekannten ($H_h$ sowie $m^*$)
+\begin{center}
+\fbox{\parbox{12cm}{
+\begin{equation}
+\frac{m^*}{\mu_0 H_h}\:=\:2\;\pi\;\tilde{x}^3\;\tan \delta^{(1)}
+\quad=\quad  4\;\pi\;\tilde{y}^3\;\tan \delta^{(2)}
+\label{m3} \quad.
+\end{equation}
+}}
+\end{center}
+\subsection{Zweites Experiment, Drehschwingungen}
+Der gleiche Stabmagnet wird nun an einem langen dünnen Faden
+so aufgehängt, dass er horizontal hängt. Lenkt man ihn bezüglich
+der Horizontalkomponente des Erdfeldes $ \vec {H}_h $
+um den  kleinen Winkel $\alpha$ aus
+der N-S~-Richtung aus, so wirkt auf ihn das
+rücktreibende Drehmoment $\vec M_{mech}$
+\begin{equation}
+|\vec {M}_{mech}|=|\vec {m}^*\times\vec {H}_h|
+=m^*H_h\sin\alpha \quad.
+\label{m4}
+\end{equation}
+Nach Loslassen beginnt der Stabmagnet
+um die N-S-Richtung zu schwingen. Die Schwingungsdauer $T_0$ wird gemessen.
+Die Bewegungsgleichung (\ref{m5}~a)
+vereinfacht sich für kleine Auslenkungen (\ref{m5}~b für
+$\hat\alpha<0,1\;;\;\approx 6^o$, s.~Anhang)
+\begin{equation}
+J_T\frac{d^2\alpha}{d t^2}=
+-m^*H_h\sin\alpha\;(a);\;
+;\;\frac{d^2\alpha}{d t^2}+\frac{m^*H_h}{J_T}\alpha=0\;\;(b)\;;
+\quad M_D=\frac{M_{mech}}{\alpha}=m^*H_h\;(c)\;.
+   \label{m5}
+\end{equation}
+($M_D=$ Direktionsmoment). Mit $J_T$ als Trägheitmoment bezogen auf die
+Drehachse lautet die Lösung der Dgl.~(\ref{m5}~b) (harmonische
+Schwingung):
+~$\alpha(t)=\hat\alpha\cos\omega_0\;t$ ~, wobei gilt
+\begin{center}
+\fbox{\parbox{12cm}{
+\begin{equation}
+\omega_0^2=\frac{4\pi^2}{T_0^2}=\frac{m^*H_h}{J_T} \quad(a)
+\quad{\rm oder}\quad T_0=2\pi\sqrt{\frac{J_T}{m^*H_h}}\quad(b)\quad.\label{m6}
+\end{equation}
+}}
+\end{center}
+
+\subsection{Horizontal-Komponente}
+Aus der Gl.~(\ref{m6}~b) folgt für das Produkt der beiden Unbekannten
+\begin{equation}
+  m^* H_h=\frac{4\pi^2 J_T}{T^2}\quad.
+  \label{m8}
+\end{equation}
+Zweckmäßigerweise wird das magnetische Moment $m^*$ aus den
+Gleichungen (\ref{m8}) und (\ref{m3}) eliminiert. Damit folgt für die
+Horizontalkomponente
+\begin{center}
+\fbox{\parbox{13cm}{
+\begin{equation}
+H_h=
+\sqrt{\frac{2\pi J_T}{\mu_0 \tan \vartheta^{(1)} x^3 T^2}}=
+\sqrt{\frac{\pi J_T}{\mu_0 \tan \vartheta^{(2)} y^3 T^2}}
+\quad.
+  \label{m81}
+\end{equation}
+}}
+\end{center}
+
+\subsection{Massenträgheitsmoment}
+Bei einfachen Formen eines homogenen Körpers läßt sich dessen
+Trägheitsmoment $J_T$ bezüglich günstiger Achsen (z.B. die
+Hauptträgheitsachsen) berechnen. So gilt für den um die vertikale
+Schwerpunkts-Achse rotierenden horizontal aufgehängten Kreiszylinder
+(Masse $m$, Länge $L$ und Radius $R$; s. Anhang)
+\begin{center}
+\fbox{\parbox{8cm}{
+\begin{equation}
+J_T=m\left(\frac{L^2}{12}+\frac{R^2}{4}\right)\quad. \label{m9}
+\end{equation}
+}}
+\end{center}
+Man betrachte die Grenzen $R\rightarrow 0$ oder $L\rightarrow 0$!\\
+Somit können anhand der beiden Gln.~(\ref{m3},\ref{m8}bzw. \ref{m81})
+ {\bf allein aus mechanischen Messungen}
+die magnetische Feldstärke ($H_h$) und das magnetische Moment ($m^*$)
+bestimmt werden.
+
+\subsection{Vertikalkomponente}
+Mit geeigenten Winkelmessern (Inklinatorien) kann die Abweichung
+von $\vec H$ von der Horizontalen, d.~h.~der
+Inklinationswinkel $\beta$ bestimmt werden.\\
+Mit $\cos\beta=H_h/|\vec H|$  und
+$ \tan\beta=\frac{H_v}{H_h}$
+~folgt für die Vertikalkomponente $H_v=H_h\tan\beta$.
+
+\section{Hinweise zur Versuchsdurchführung}
+1. Bestimmung von $m$ (Waage) sowie von $R$ und $L$ (Mess-Schieber).\\[.1cm]
+2. Horizontale Aufhängung des Magneten an langem Faden
+(N-S-Richtung kontrollieren);
+Anstoßen zu Drehschwingungen ($\hat \alpha \approx 6^o$); 3 Werte für 30 $T$ messen.\\[.1cm]
+3. Bei zunächst ca. 2m entferntem Magneten
+den Justier-Balken mit Kompass einrichten: erstens in O-W-Richtung bei 1. GHL;
+später in N-S für die 2. GHL.\\
+Nun den Magneten {\bf immer in O-W-Richtung} im Abstand $x$
+(bzw. später $y$; vom Mittelpunkt der Kompaßnadel zum Mittelpunkt
+des Magneten) bingen.
+Die Abstände $x$ (bzw. $y$) und die Winkel $\delta_1$,
+$\delta_2$ messen.\\[.1cm]
+{\bf Beachte:}\\
+a. Die Abstands-Marken sind nur grobe Richtwerte;
+ $x$ bzw. $y$ genau messen!\
+b. Reduzierung des Nullpunktfehlers für $\delta_1$ und $\delta_2$:
+Umdrehen des Magneten.\\
+c. Ältere mechanische Stoppuhren sind eisenhaltig. Daher
+1 m Abstand vom Magneten bei der Zeit-Messung.\\
+d. Zur Bestimmung der Vertikalkomponente wird die Kompaßnadel eines
+''Deklinatoriums'' zunächst auf den
+Deklinationswinkel Null (N-S) eingestellt und danach die Nadel-Achse aus
+der Vertikalen um  90 $^o$
+in die Horizontale gedreht, wonach der Inklinationswinkel $\beta$
+(auch bei Vertauschung der Seiten) abgelesen wird.\\[.1cm]
+e. Über das Volumen des Magneten und
+ $m^*$ wird die Polarisation $J^*=m^*/V$ bestimmt. \\
+f. Abgesehen von den natürlichen Schwankungen
+(s.~Anhang) ist das lokale Feld infolge der im Hause befindlichen
+Eisenteile (Eisenträger, Heizkörper) stark verfälscht.\\
+\begin{minipage}{8cm}
+g. Die Störungen durch
+die Nachbar-Plätze sollten minimal gehalten werden (ca. 2m Abstand).
+(Aufbewahrung der Magnete im Eisenjoch).\\
+Vorsicht mit modernen Seltenerd-Magneten, sie sind spröde
+ und leicht zerbrechlich!
+ 
+\section{Anhang}
+\subsection{Zum Erdfeld}
+\subsubsection{Zum Ursprung des Erdfeldes}
+Über den Ursprung des Erdfeldes gibt es Hypothesen und Modelle \cite{sof}.
+Gesichert scheinen zirkulierende Konvektionsströme aus zähflüssigem
+Plasma von geeigneter Topologie
+zwischen festem Erdkern und flüssigem Mantel bei etwa $R_E/2$ zu sein.
+Diese können sich
+stabilisieren, wobei das bereits vorhandene Feld über Lorentzkräfte
+die Ladungsträgerdichte und damit Strom und Erdfeld erhöhen
+kann \cite{sof,gert}.
+\end{minipage}
+\hspace{.5cm}
+\begin{minipage}{7cm}
+\includegraphics[width=6.5cm]{abb2}
+Abb.~2: a.~Erdfeld als Dipolfeld \cite{sof}; b.~Verzerrung
+durch den Sonnenwind \cite{gert}
+\end{minipage}
+~\\[.2cm]
+Die Relativgeschwindigkeiten zwischen festem Kern und der darüberliegenden
+Flüssigkeit liegen in der Größenordnung
+von 1~m/a \cite{gert}.
+Diese Effekte sind Schwankungen unterworfen, die
+sich in Änderungen von Betrag und Richtung von $\vec H$ äußern (s.~u.).\\
+1991 konnte das Erdfeld grob durch ein geozentrisches Dipolfeld,
+dessen Achse um ca.~11$^o$ von der geografischen NS-Richtung abweicht,
+angenähert werden \cite{sof} (s.~Abb.~2~a).\\
+Der Betrag entspricht einem durch eine Stromschleife erzeugten
+Dipolmoment im Erdmittelpunkt
+von $m^*_e/\mu_0 \approx 8\cdot 10^{22}$~Am$^2$. Durch den Sonnenwind
+(überwiegend Elektronen und Protonen) wird das Erdfeld in größerer Entfernung
+stark deformiert (die abgelenkten geladenen Teilchen erzeugen
+ Zusatz-Magnetfelder), d.~h.~auf der Tagseite abgeflacht und auf der
+Nachtseite langgestreckt (Abb.~2~b).
+Diese Deformation rotiert mit der Erde und verursacht auf der
+Erdoberfläche einen Teil der täglichen Schwankungen (\%-Bereich).
+Zu Zeiten starker
+Sonnenaktivität (magnetische Stürme) treten wesentlich höhere
+Schwankungen auf (über 10 \%).
+
+\subsubsection{Globales Bild vom magnetischen Feld der Erde}
+In den Abb.~3~a und b
+sind in Mercator-Projektion
+die Beträge $|\vec H|$ (a) und $H_h$ (b)
+auf der Erdoberfläche dargestellt (1980,~\cite{sof}).
+Man erkennt  beachtliche Abweichungen vom
+Dipol-Modell sowie die Pole und Zusatzpole.\\
+\begin{center}
+\includegraphics[width=12cm]{abb3}\\
+Abb.~3: Im Jahre 1980 aufgenommene Linien gleicher Total- (a) und
+Horizontal-Intensität (b) des Erdfeldes in Mercator-Projektion \cite{sof};
+die Maßeinheit für $\mu_0\cdot H$ ist nT
+\end{center}
+
+\subsubsection{Langfristige Schwankungen des Erdfeldes}
+Seit Gauß (um 1800 und auch schon früher, z.~B.~Gilbert um 1600) wurde
+das Erdfeld regelmäßig vermessen. Der Betrag nahm seit 1800 monoton
+ab (Abb.~4~a, verschwindet das Feld in etwa 2000 Jahren?). Informationen über
+frühere Zeiten erhält man durch Untersuchung eisenhaltiger Minerale
+und Sedimente.\\
+\begin{center}
+\includegraphics[width=15.5cm]{abb4}\\
+Abb.~4: Zeitliche Variationen des Erdfeldes:\\
+a. Abnahme des globalen Momentes $m^*_e$ in den letzten 200~Jahren;\\
+b. normale (heutige, schwarz) und inverse Polarität (weiß) in den
+letzten $5 \cdot 10^6$ Jahren, Paläomagnetismus,~\cite{sof}.
+~\\[.2cm]
+\end{center}
+Mit diesem {\bf Paläomagnetismus} wird auf
+Betrag und Richtung des Erdfeldes derjenigen Zeitepoche
+rückgeschlossen, in der das Gestein unter den Curie-Punkt
+(je nach Gestein um 200 bis 700 $^o$C ~\cite{sof}) abkühlte, d.~h.~ferro-oder
+ferrimagnetisch wurde.\\
+In geologischen Zeiträumen gab es laufend Schwankungen, die auch durch die
+Kontinentalverschiebung beeinflusst wurden.
+Unterschritten die Dipolkomponenten die Anteile von Momenten höherer
+Ordnung, so konnte es zum {\bf Wechsel der Polarität} kommen
+(Aussage von Modell-Rechnugen \cite{sof}). Der letzte
+gesicherte Polwechsel fand vor ca.~$0,7\cdot 10^6$ a statt (Abb.~4~b).
+\subsection{Zur Dipol-Näherung}
+Man kann die Gln.~(\ref{gauss02})
+näherungsweise über das elektrische Analogon herleiten,
+auch für geringere relative Abstände $L/x$ bzw. $L/y$.
+Wir betrachten dazu zwei
+Punktladungen, $+Q$ und $-Q$, im Abstand $2a=L$. ($m^* \vec e_x
+= QL \vec e_x$).
+Die Feldstärken der Einzel-Ladungen im Abstand $\vec r$ berechnen
+sich nach {\sc Coulomb} zu:\\
+\begin{minipage}{6.5cm}
+\begin{equation}
+\vec E =\pm \frac{Q}{4\pi \epsilon_0}\frac{1}{r^2}\frac{\vec r}{r}\;;\;
+ E=\frac{Q}{4\pi \epsilon_0 r^2} \;.
+\label{coul1}
+\end{equation}
+{\bf 1.GHL:}\\
+Auf der Verbindungs- ($=x$-) Achse im Aufpunkt $P$
+soll gelten $r^{(+)}= x-\frac{L}{2}$ und $r^{(-)}= x+\frac{L}{2}$ ~
+($a=\frac{L}{2} $ =  halbe Dipol-Länge).
+Die  Feldstärke des aus beiden Punktladungen erzeugten Dipols
+  folgt aus Gl.~(\ref{coul1}) (Vektor-Summe) zu
+\begin{eqnarray}
+E_{dipol}^{(1)} &=&\frac{Q}{4\pi \epsilon_0 }
+\left[\frac{1}{(x-a)^2}-
+\frac{1}{(x+a)^2}\right]
+\nonumber \\
+&=& \frac{Q}{4\pi \epsilon_0 }
+\left[\frac{2ax}{(x^4-2a^2x^2+a^4)}\right]
+\nonumber \\
+&=&\frac{2\cdot 2a Q}{4\pi \epsilon_0 x^3}\cdot\frac{1}{(1-\frac{L^2}{4x^2})^2}
+\nonumber \\
+&=&\frac{m^*}{2\pi \epsilon_0 x^3}\cdot F_{korr}^{(1)}(L/x)
+\quad.
+\label{coul2}
+\end{eqnarray}
+{\bf 2.GHL:}\\
+Sekrecht zur Verbindungsachse
+ist der in GL.~(\ref{coul1}) maßgebliche Abstand $r=(a^2+y^2)^{1/2}$.
+Die resultierende Feldstärke in $P$ folgt durch vektorielle Überlagerung
+von $\vec E^{(+)}$ und $\vec E^{(-)}$  mit
+\end{minipage}
+\hspace{.5cm}
+\begin{minipage}{9cm}
+\begin{center}
+\includegraphics[width=8.5cm]{abb5}
+Abb.~5: Abweichungen vom idealen Dipolfeld in der Nähe des
+Dipols bzw. Zylinder-Magneten:
+zugehörige Korrekturen $F^{(1)}$ und $F^{(2)}$
+für zwei Punktladungen (Gln.~(\ref{coul2},\ref{coul4}))
+sowie für reelle Zylinder
+(lang $L/D = 10$; kurz $L=D$)
+
+\end{center}
+\end{minipage}
+\begin{eqnarray}
+\sin \beta&=&
+ \frac{a}{\sqrt{a^2+y^2}}=\frac{E^{(2)}/2}{E_0}\;;
+%\;;\nonumber\\
+ \quad E_0 =\frac{Q}
+{4\pi \epsilon_0 (y^2+a^2)}
+\label{coul3}
+\end{eqnarray}
+\begin{eqnarray}
+{\rm zu}\;|E_{dipol}^{(2)}|& =&
+\frac{2 Q}{4\pi \epsilon_0 (y^2+a^2)}
+\cdot\frac{a}{(a^2+y^2)^{1/2}}
+=\frac{m^*}{4\pi \epsilon_0 y^3}\cdot\frac{1}{(1+\frac{L^2}{4y^2})^{1/2}}
+\nonumber \\
+&=&\frac{m^*}{4\pi \epsilon_0 y^3}\cdot F_{korr}^{(2)}(L/y) \quad.
+\label{coul4}
+\end{eqnarray}
+Wie in Abb.~5 gezeigt, entsprechen die für zwei Punktladungen
+ermittelten $F_{korr}^{(1)}$ und $F_{korr}^{(2)}$ etwa denen für den
+langen Zylinder, die durch Summationen
+von ca. $10^8$ Dipolen über das Zylinder-Volumen berechnet werden
+können.
+Im magnetischen Fall ist $\epsilon_0$ durch $\mu_0$ zu ersetzen.\\
+{\bf Beachte:} Ein kugeförmiger Magnet
+(grob anzunähern durch Würfel oder ''dicke'' Zylinder)
+erzeugt in jedem Abstand
+im Außenraum ein Dipolfeld (vergl. Korrekturfaktoren für $D=L$ in Abb.~5).
+Andernfalls bedeutet {\bf Dipol-Näherung}
+ $L/x\ll 1$ bzw. $L/y\ll 1$,  d.h. $F_{korr}\rightarrow 1$
+(Abb.~5).\\[.1cm]
+{\bf Beispiel:}\\
+Es sei $L=10$ cm; $x$ bzw. $y=50$ cm; d.h. $L/x=L/y=0,2$.\\
+Nach Abb.~5 würden mit den um $F_{korr}$ verfälschten Feldwerten
+$\tan \vartheta^{(1)}$ um 2\% zu groß ($F=1,02$) und
+$\tan \vartheta^{(2)}$ um 1,5\% zu klein ($F=0,985$) bestimmt.
+D.h. der ermittelte $H_h$-Wert muss nach Gl.~(\ref{m81}) um
+ca. 1\% nach unten (1. GHL) bzw. um 0,75 \% nach oben (2.GHL)
+korrigiert werden.
+Die Korrekturen sind für längere Zylinder-Magnete gegenläufig.
+Es empfielt sich demnach mit beiden GHL zu arbeiten.
+\subsection{Trägheitsmoment}
+Das sogenannte polare Trägheitsmoment einer flachen Kreisscheibe
+(Achse = Zylinderachse) beträgt (für infinitesimales
+$dm$) ~ $J_P=dm\cdot R^2/2$.
+Das äquatoriale Trägheitsmoment (Achse = Durchmesser),
+$J_a$, ist die Hälfte davon:
+  ~  $d J_a=dm \cdot R^2/4$.\\
+Bei dem langen Zylinder der Länge $L$
+sind infinitesimale Scheiben aneinander gereiht, über deren
+ äquatoriale Trägheitsmomente in z-Richtung
+ zu integrieren ist.
+Die infinitesimale Scheibe sei um $z$ parallel zur Drehachse
+verschoben. Der Steinersche Satz, zunächst allgemein
+\begin{equation}
+J_A=J_s^*+ ms^2\quad,
+\label{coul6}
+\end{equation}
+lautet hier mit $J_s^*=dm(\frac{R^2}{4})$: ~  $dJ_T=dm(\frac{R^2}{4})+dm z^2 $.
+Die Integration liefert
+\begin{eqnarray}
+J_T=J_s&=& (\rho\pi R^2)\int_{-L/2}^{+L/2}dz (R^2/4+z^2)
+ \nonumber\\
+&=&
+ (\rho\pi R^2) (R^2/4\cdot [z]_{-L/2}^{+L/2}+[\frac{z^3}{3}]_{-L/2}^{+L/2})
+ \nonumber\\
+&=&\rho\pi R^2 L\left[\frac{R^2}{4} +\frac{L^2}{12}\right]\quad.
+\label{coul6}
+\end{eqnarray}
+Mit $m=\rho\pi R^2 L$ folgt die Gl.~(\ref{m9}).
+\subsection{SI-Maßeinheiten}
+\begin{enumerate}
+\item
+$\mu_0=4\pi \cdot 10^{-7}$ $\frac{\rm Vs}{\rm Am}$;
+\item
+magnetische Feldstärke:\\
+a. $[H] =  \frac{\rm A}{\rm m}$ ;
+b. $[\mu_0 H] =  \frac{\rm Vs}{\rm m^2}=$ T (Tesla) ;
+\item
+Induktion $B$; Magnetisierung $M$; Polarisation $J^*$:\\
+$B=\mu_0 H +J^*=\mu_0(H +M)$;
+ ~$[\mu_0 H] = [B] = [J^*] =\frac{\rm Vs}{\rm m^2}=$ T  ;
+\item
+magnetisches Moment:\\[.1cm]
+a. [$m^*$] = [$VJ$] = Vsm;\\[.3cm]
+b. [$m^{**}=\frac{m^*}{\mu_0}$]= [VM] = ${\rm Am^2}$.
+\item
+beachte:\\[.2cm]
+1J= 1VAs=1Nm=1kgm$^2$/s$^2$
+\end{enumerate}
+\newpage
+
+\section{Fragen}
+\begin{enumerate}
+\item
+Man zeichne nach Abb.~2 eine Feldlinie des Erdfeldes ($\vec H$)
+für eine geografische Breite
+von ca. 50$^o$ und skizziere Horizontal-und Vertikal-Komponente.
+\item
+Man entnehme der Abb.~3 den Wert von $H_h$ für Mitteleuropa und rechne
+die Einheit nT ~in ~A/m um.
+\item
+Erläutere die Bewegungsgleichung für Drehschwingungen
+mit Lösungen für kleine Amplituden. Wovon hängt die Schwingungsdauer
+des Magneten im Erdfeld ab?
+\item
+Was vertsteht man unter dem (Massen-) Trägheitsmoment? Wie berechnet man es
+für einen langen Stab um alle drei Hauptachsen?
+ Wie groß ist
+das äquatoriale und polare Trägheitsmoment einer flachen Kreisscheibe?
+\item
+Wie berechnet sich das Trägheitsmoment für einen Kreiszylinder der Länge
+$L$ und dem Durchmesser $2R$ bezüglich aller drei Hauptachsen?
+\item Wie lautet der Satz von Steiner?
+\item
+Wie berechnet man in der Elektrostatik
+die Feldstärke a. einer Punktladung und b. eines Dipols
+und in der Magnetostatik das Dipolfeld? In welcher Potenz gehen die
+Abstände bei den Feldern von Punktladung und Dipol ein?
+\item
+Was versteht man unter den {\sc Gauß}'schen Hauptlagen bezüglich des
+Feldes eines Stabmagneten?
+\item
+Wie hängen das magnetische Moment $m^*$ und die
+magnetische Polarisation $J^*$ zusammen?.
+\item
+In welchen Abstand $x$ (z.~B.~vom Nachbarn beim Versuch) muss ein Magnet
+gebracht werden, damit das von ihm ausgehende Magnetfeld
+die lokale Horizontalkomponente (z.B.~20 A/m) weniger als 0,1 \%
+verändert? (s.~Gl.~(\ref{gauss02}))\\
+Beispiel: Magnet-Volumen $V=2$ cm$^3$; Polarisation $J^*=$ 1 Vs/m$^2$;
+$m^*= 2\cdot 10^{-6}$ Vsm.
+\end{enumerate}
+
+
+\bibliographystyle{unsrt}
+
+\begin{thebibliography}{NAM99}
+\bibitem{nied}  H.~Niedrig, Physik, 1992
+\bibitem{kohl} F.~Kohlrausch, Praktische Physik Bd.~2, V.~Teubner Stgt. 1985
+\bibitem{sof} H.~Cr.~Soffel, Paläomagnetismus, V.~Springer Berlin 1991
+\bibitem{gert} Gerthsen (H.~Vogel), Physik, V.~Springer 1995
+\bibitem{jahn} L. Jahn, Einführung in Magnetismus und
+Magnetlabor, Skriptum TU Dresden 2001
+\end{thebibliography}
+
+\end{document}

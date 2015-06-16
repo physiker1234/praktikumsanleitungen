@@ -1,0 +1,127 @@
+QtiPlot 0.9.7 project file
+<scripting-lang>	muParser
+<windows>	1
+<multiLayer>
+Graph1	1	1	05.06.09 16:59
+geometry	445	-99	373	563	active
+WindowLabel		2
+Margins	5	5	5	5
+Spacing	5	5
+LayerCanvasSize	417	323
+Alignement	0	0
+<graph>
+ggeometry	5	5	354	504
+PlotTitle		#000000	4228
+<Antialiasing>1</Antialiasing>
+Background	#ffffff	255
+Margin	0
+Border	0	#000000
+grid	1	0	1	0	#000000	0	0.3	#a0a0a4	2	0.4	#000000	0	0.3	#a0a0a4	2	0.4	0	0	2	0	0
+EnabledAxes	1	1	1	1	
+AxesTitles	<i>Poissonzahl µ</i>	 			
+AxesTitleColors	#000000	#000000	#000000	#000000	
+AxesTitleAlignment	5124	5124	5124	5124
+AxesTitleDistance	2	2	2	2
+TitleFont	Sans Serif	16	75	0	0	0
+ScaleFont0	Sans Serif	14	75	0	0	0
+ScaleFont1	Sans Serif	14	75	0	0	0
+ScaleFont2	Sans Serif	14	75	0	0	0
+ScaleFont3	Sans Serif	14	75	0	0	0
+AxisFont0	Sans Serif	14	50	0	0	0
+AxisFont1	Sans Serif	14	50	0	0	0
+AxisFont2	Sans Serif	14	50	0	0	0
+AxisFont3	Sans Serif	14	50	0	0	0
+EnabledTickLabels	1	0	1	0	
+AxesColors	#000000	#000000	#000000	#000000
+AxesNumberColors	#000000	#000000	#000000	#000000
+AxesBaseline	0	0	0	0	
+CanvasBackground	#ffffff	255
+<Function>
+<Type>0</Type>
+<Title>F1</Title>
+<Expression>1/(2 + 2*x)</Expression>
+<Variable>x</Variable>
+<Range>0	0.5</Range>
+<Points>100</Points>
+<Style>0</Style>
+<LineStyle>1</LineStyle>
+<Pen>
+	<Color>#000000</Color>
+	<Style>0</Style>
+	<Width>2</Width>
+</Pen>
+<xAxis>2</xAxis>
+<yAxis>0</yAxis>
+<Visible>1</Visible>
+</Function>
+<Function>
+<Type>0</Type>
+<Title>F2</Title>
+<Expression>1/(3-6*x)</Expression>
+<Variable>x</Variable>
+<Range>0	0.5</Range>
+<Points>100</Points>
+<Style>0</Style>
+<LineStyle>1</LineStyle>
+<Pen>
+	<Color>#000000</Color>
+	<Style>0</Style>
+	<Width>2</Width>
+</Pen>
+<xAxis>2</xAxis>
+<yAxis>0</yAxis>
+<Visible>1</Visible>
+</Function>
+scale	0	0	2	0	8	0	0	0
+scale	1	0	2	0	6	0	0	0
+scale	2	0	0.5	0	6	0	0	0
+scale	3	0	0.5	0	6	0	0	0
+LabelsFormat	0	4	0	4	0	4	0	4	
+AxisType	0	0	0	0	
+MajorTicks	3	3	3	3	
+MinorTicks	3	3	3	3	
+TicksLength	5	9
+DrawAxesBackbone	1
+AxesLineWidth	1
+LabelsRotation	0	0
+<Legend>
+<Frame>0</Frame>
+<Color>#000000</Color>
+<FrameWidth>1</FrameWidth>
+<LineStyle>0</LineStyle>
+<x>0.29513888888889</x>
+<y>0.93541202672606</y>
+<right>0.402777777777778</right>
+<bottom>0.748329621380846</bottom>
+<Text>
+K/E
+</Text>
+<Font>Sans Serif	19	50	0	0	0</Font>
+<TextColor>#000000</TextColor>
+<Background>#ffffff</Background>
+<Alpha>0</Alpha>
+<Angle>0</Angle>
+<AutoUpdate>0</AutoUpdate>
+</Legend>
+<Legend>
+<Frame>0</Frame>
+<Color>#000000</Color>
+<FrameWidth>1</FrameWidth>
+<LineStyle>0</LineStyle>
+<x>0.29166666666667</x>
+<y>0.38307349665924</y>
+<right>0.40625</right>
+<bottom>0.195991091314031</bottom>
+<Text>
+G/E
+</Text>
+<Font>Sans Serif	19	50	0	0	0</Font>
+<TextColor>#000000</TextColor>
+<Background>#ffffff</Background>
+<Alpha>0</Alpha>
+<Angle>0</Angle>
+<AutoUpdate>0</AutoUpdate>
+</Legend>
+</graph>
+</multiLayer>
+<open>1</open>

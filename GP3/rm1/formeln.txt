@@ -1,0 +1,33 @@
+\[
+\begin{array}{l}
+ 1 \\ 
+ dN =  - \lambda  \cdot N \cdot dt \\ 
+ 2 \\ 
+ \int\limits_{N(0)}^{N(t)} {\frac{{dN}}{N} =  - \int\limits_0^t {\lambda  \cdot dt} }  \\ 
+ 2a \\ 
+ \ln N(t) - \ln N(0) =  - \lambda  \cdot t \\ 
+ 3 \\ 
+ N(t) = N(0) \cdot e^{ - \lambda  \cdot t}  \\ 
+ 4 \\ 
+ t_{1/2}  = \frac{{\ln 2}}{\lambda } = \ln 2 \cdot \tau  \\ 
+ 5 \\ 
+ A =  - \frac{{dN}}{{dt}} = \lambda  \cdot N \\ 
+ 6 \\ 
+ \eta  = \frac{Z}{S} \\ 
+ 7 \\ 
+ S = A \cdot f_G  \cdot f_{St}  \cdot f_A  \cdot f_E  \\ 
+ 8 \\ 
+ \eta _{rel}  = \frac{Z}{{A \cdot f_E }} \\ 
+ 9 \\ 
+ \eta _{rel.}  = \frac{{Z_{\Pr obe}  - Z_{Wassser} }}{{c \cdot k \cdot K_A  \cdot \varepsilon  \cdot \lambda  \cdot f_E  \cdot V}} \\ 
+ 10 \\ 
+ \sigma _n  = \Delta n = \sqrt {\bar n}  \\ 
+ 11 \\ 
+ \Delta Z = \frac{{\Delta n}}{t} = \frac{{\sigma _n }}{t} = \frac{{\sqrt {\bar n} }}{t} \\ 
+ 12 \\ 
+ \frac{{\Delta Z}}{{\bar Z}} = \frac{{\Delta n}}{{\bar n}} = \frac{{\sqrt {\bar n} }}{{\bar n}} = \frac{1}{{\sqrt {\bar n} }} = \frac{1}{{\sqrt {\bar Z \cdot t} }} \\ 
+ 13 \\ 
+ \Delta Z_{nt}  = \sqrt {\frac{{\bar n_b }}{{t^2 }} + \frac{{\bar n_0 }}{{t^2 }} = } \sqrt {\frac{{\bar Z_b }}{t} + \frac{{\bar Z_0 }}{t}}  \\ 
+ 14 \\ 
+ \end{array}
+\]
